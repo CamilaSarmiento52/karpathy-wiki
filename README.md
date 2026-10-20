@@ -12,3 +12,13 @@ alive. Obsidian is the viewer.
 
 `raw/` is not committed (it is his words). Rebuild it with the collectors in `scripts/`
 using `raw/_manifest.json`.
+
+## Setup
+
+```bash
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+.venv/bin/python -m pytest tests      # lint checker's own tests
+python3 scripts/lint_check.py         # wiki health; non-zero on any finding
+```
+
+Open the `karpathy-wiki/` folder as a vault in Obsidian to browse.
