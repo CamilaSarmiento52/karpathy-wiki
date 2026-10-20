@@ -30,8 +30,11 @@ researcher and does not want to become one to use this.
 - **In**: Karpathy's public output from 2023 onward (YouTube, X, GitHub, blog and
   newsletters, talks and interviews). Older material can be added later on request.
 - **In**: one wiki, one sub-agent, three skills (teach, review, ingest), one run-gate hook.
-- **Out**: voice cloning or impersonation. The agent follows his methods and cites his
-  words; it does not pretend to be him.
+- **In**: his teaching voice. The agent explains in a Karpathy-style voice (concrete
+  before abstract, smallest version first, predict then run), with a one-line disclosure
+  at the top of each walkthrough that it is a simulated style grounded in cited sources.
+- **Out**: full impersonation. The agent never claims to be him, never invents positions,
+  and says "the wiki has nothing on this" when his sources are silent.
 - **Out**: other experts. The schema is designed to be reusable, but this project is
   Karpathy only.
 - **Out**: a vector database or RAG layer. The wiki is the retrieval mechanism.
