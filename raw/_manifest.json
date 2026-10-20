@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "1886192184808149383",
+      "url": "https://x.com/karpathy/status/1886192184808149383",
+      "medium": "x",
+      "published": "2025-02-02",
+      "path": "raw/x/1886192184808149383.md",
+      "sha256": "9ce30373d2cbc1017ac6e174ea36056ce92c178c81c118ca2218df0cd516f85b"
+    },
+    {
+      "id": "LCEmiRjPEtQ",
+      "url": "https://www.youtube.com/watch?v=LCEmiRjPEtQ",
+      "medium": "youtube",
+      "published": "2025-06-19",
+      "path": "raw/youtube/LCEmiRjPEtQ.md",
+      "sha256": "5f5039917983ce4e1fb3b719b8d5b4f7e8fdf5b0a42e23a7178fd13afb3749ed"
+    },
+    {
+      "id": "year-in-review-2025",
+      "url": "https://karpathy.bearblog.dev/year-in-review-2025/",
+      "medium": "blog",
+      "published": "2025-12-19",
+      "path": "raw/blog/year-in-review-2025.md",
+      "sha256": "bb73fddb6fa7da44baca32c6b62d550b4891039b8dfd08ab529fdbaa67093bc3"
+    },
+    {
+      "id": "2039805659525644595",
+      "url": "https://x.com/karpathy/status/2039805659525644595",
+      "medium": "x",
+      "published": "2026-04-02",
+      "path": "raw/x/2039805659525644595.md",
+      "sha256": "c8aa74173c0790c11fce22da5d56dc4ddaa5b297173ee23fb66e966a978de26a"
+    },
+    {
+      "id": "karpathy__nanochat",
+      "url": "https://github.com/karpathy/nanochat",
+      "medium": "github",
+      "published": "2026-07-03",
+      "path": "raw/github/karpathy__nanochat.md",
+      "sha256": "d2950d0456cd5d7122bc77a9b9c09e7ab86123cf02effb98f49ae26ad26d2dda"
+    }
+  ]
+}
