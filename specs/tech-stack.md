@@ -16,7 +16,7 @@
 |---|---|---|
 | Engine | Claude Code (sub-agent, skills, hooks in `.claude/`) | already runs code, supports sub-agents with separate context, hooks for the run gate |
 | Viewer | Obsidian, vault = `karpathy-wiki/` | wikilinks, backlinks, graph; zero lock-in |
-| Collectors | Python 3.12 scripts in `scripts/` | small, inspectable, runnable on a schedule |
+| Collectors | Python 3.12+ scripts in `scripts/`, deps pinned in `requirements.txt`, local `.venv/` | small, inspectable, runnable on a schedule |
 | YouTube | `youtube-transcript-api` for captions, `yt-dlp` for metadata, Whisper fallback | free; timestamps kept so rules can cite `video@mm:ss` |
 | X | `twitterapi.io` | full archive since 2023 for about a dollar |
 | GitHub | GitHub REST API | READMEs, release notes, commit messages; code linked, not copied |
@@ -37,15 +37,17 @@ karpathy-wiki/
 │   └── _manifest.json   what was fetched: id, url, medium, published, path, sha; committed
 ├── wiki/                LLM-owned pages; committed
 ├── .claude/             agent, skills, hooks
-├── scripts/             collectors + run_ingest.sh
-└── tests/prompts.md     real-task validation prompts
+├── scripts/             collectors, run_ingest.sh, lint_check.py (fetch_one.py in phase 1)
+├── tests/               test_lint_check.py; prompts.md (real-task validation, phase 4)
+└── .obsidian/           vault config: graph colours by folder, wikilinks on
 ```
 
 ### raw/ file
 
 Frontmatter: `id, url, medium (youtube|x|github|blog|talk), author, published, fetched,
-title, duration_or_length`. Body: verbatim text. YouTube bodies keep `[mm:ss]` markers per
-caption block. X threads are one file per thread, posts in order.
+title, duration_or_length`. GitHub READMEs are living documents, so `published` is the date
+of the README's last commit, not the repo's creation. Body: verbatim text. YouTube bodies keep `[mm:ss]` markers per
+caption block (grouped into ~30-second blocks so citations stay readable). X threads are one file per thread, posts in order.
 
 ### wiki/ page types
 
@@ -66,7 +68,10 @@ Plus three fixed files: `index.md` (TOC by type), `hot.md` (recent changes), `lo
 ### Invariants (checked by lint)
 
 - Every factual sentence cites a source page; every source page cites a raw path.
-- No orphan pages. Wikilinks only.
+- No orphan pages: every page has an inbound link from another content page (links from
+  `index.md`, `hot.md`, `log.md` do not count). Wikilinks only.
+- Quotes in `wiki/` are one sentence and under 15 words; everything else is paraphrase,
+  because the repo is public and `raw/` is not.
 - A principle is promoted only with two or more independent sources; otherwise it stays on
   the bench. A principle without a quote is `inferred: true`.
 - Conflicting claims are linked with `contradicts`, never overwritten; the timeline page

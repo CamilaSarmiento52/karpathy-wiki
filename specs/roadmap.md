@@ -5,7 +5,7 @@ Status: ⬜ not started · 🟨 in progress · ✅ done
 
 | # | Phase | Status | Outcome |
 |---|---|---|---|
-| 1 | [Skeleton and schema](phases/phase-1-skeleton-and-schema/plan.md) | ⬜ | Folders, CLAUDE.md, Obsidian config, and five hand-picked sources ingested so the page design can be checked before any pipeline exists |
+| 1 | [Skeleton and schema](phases/phase-1-skeleton-and-schema/plan.md) | 🟨 | Folders, CLAUDE.md, Obsidian config, and five hand-picked sources ingested so the page design can be checked before any pipeline exists |
 | 2 | Collectors and backfill | ⬜ | Five idempotent collector scripts, manifest, parallel backfill from 2023 onward, coverage report |
 | 3 | Compile the wiki | ⬜ | Batch ingest of the backfill, first lint, index, hot, log; free questions answered with citations |
 | 4 | Rules and agent | ⬜ | Rule extraction with quotes, bench and promotion, karpathy sub-agent, teach and review skills, run-gate hook; validated with the real-task prompts |
