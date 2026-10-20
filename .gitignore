@@ -1,0 +1,19 @@
+# raw sources: his words, reproducible via scripts/ + raw/_manifest.json
+raw/*
+!raw/_manifest.json
+!raw/.gitkeep
+
+# secrets
+.env
+
+# obsidian per-machine state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+.DS_Store
