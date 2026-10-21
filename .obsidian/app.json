@@ -5,5 +5,9 @@
   "newFileFolderPath": "wiki/syntheses",
   "alwaysUpdateLinks": true,
   "showUnsupportedFiles": false,
-  "userIgnoreFilters": [".claude/", "scripts/", "tests/"]
+  "userIgnoreFilters": [
+    ".claude/",
+    "scripts/",
+    "tests/"
+  ]
 }
