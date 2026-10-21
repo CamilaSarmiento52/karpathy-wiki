@@ -1,0 +1,61 @@
+{
+  "version": 2,
+  "items": [
+    {
+      "id": "1886192184808149383",
+      "ref": "1886192184808149383",
+      "url": "https://x.com/karpathy/status/1886192184808149383",
+      "medium": "x",
+      "published": "2025-02-02",
+      "path": "raw/x/1886192184808149383.md",
+      "sha256": "ce58f6c719a695db06ff0cf7751662f9add982f2cf2aabfef80d5958bdb8205b"
+    },
+    {
+      "id": "LCEmiRjPEtQ",
+      "ref": "LCEmiRjPEtQ",
+      "url": "https://www.youtube.com/watch?v=LCEmiRjPEtQ",
+      "medium": "youtube",
+      "published": "2025-06-19",
+      "path": "raw/youtube/LCEmiRjPEtQ.md",
+      "sha256": "49e12dda2aa8af125631861c9995be356b4743064660353290da3a8ff77d1d31"
+    },
+    {
+      "id": "karpathy__nanoGPT",
+      "ref": "karpathy/nanoGPT",
+      "url": "https://github.com/karpathy/nanoGPT",
+      "medium": "github",
+      "published": "2025-11-12",
+      "path": "raw/github/karpathy__nanoGPT.md",
+      "sha256": "26be0e7db2b5c3839eb9301eb3dafe7261046ec75faa8a3f3ed99722e7dae9f1",
+      "commit": "3adf61e154c3fe3fca428ad6bc3818b27a3b8291"
+    },
+    {
+      "id": "year-in-review-2025",
+      "ref": "https://karpathy.bearblog.dev/year-in-review-2025/",
+      "url": "https://karpathy.bearblog.dev/year-in-review-2025/",
+      "medium": "blog",
+      "published": "2025-12-19",
+      "path": "raw/blog/year-in-review-2025.md",
+      "sha256": "ee6148abc7ce6d7da568fb9fedffd7d1423fb2eda79b5654c41fc4a911ba8baf"
+    },
+    {
+      "id": "2039805659525644595",
+      "ref": "2039805659525644595",
+      "url": "https://x.com/karpathy/status/2039805659525644595",
+      "medium": "x",
+      "published": "2026-04-02",
+      "path": "raw/x/2039805659525644595.md",
+      "sha256": "166703095f4aa7cbb3f7009240e305d56a9a8a3799ad93b21236fa338b319967"
+    },
+    {
+      "id": "karpathy__nanochat",
+      "ref": "karpathy/nanochat",
+      "url": "https://github.com/karpathy/nanochat",
+      "medium": "github",
+      "published": "2026-07-03",
+      "path": "raw/github/karpathy__nanochat.md",
+      "sha256": "bcf2e6117021289a4350ee7d2f58ce4308f02c65e6f58335004d86dc01e47f28",
+      "commit": "eb16d017f28f9642958e09ca9b2c42667159031f"
+    }
+  ]
+}
