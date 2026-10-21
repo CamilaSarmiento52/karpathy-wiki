@@ -18,8 +18,8 @@
 - [x] At least one cross-link exists between pages that came from different sources.
 - [x] `index.md` lists every page by type; `log.md` has one entry per ingested source;
       `hot.md` lists the pages touched.
-- [ ] Obsidian opens `karpathy-wiki/` as a vault, links resolve, graph shows the pages.
-- [ ] The user has reviewed the pages in Obsidian and approved the schema, or corrections
+- [x] Obsidian opens `karpathy-wiki/` as a vault, links resolve, graph shows the pages.
+- [x] The user has reviewed the pages in Obsidian and approved the schema, or corrections
       were applied to CLAUDE.md and ingest re-run until approved.
 - [x] `raw/` and `.env` are gitignored; `_manifest.json` is committed; repo is public.
 
@@ -39,5 +39,5 @@
   matched.
 - Produced: 6 sources, 9 topics, 6 claims, 2 artifacts, 3 methods, 1 timeline.
 - Repo visibility: public.
-- **Open:** the user re-reviews the corrected pages in Obsidian and approves. This is the
-  1 → 2 phase gate.
+- **Approved by the user on 2026-10-21** after browsing the vault in Obsidian and reading
+  the review corrections. Phase gate 1 → 2 passed.
