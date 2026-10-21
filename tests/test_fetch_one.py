@@ -1,25 +1,17 @@
 """Fetcher bookkeeping, with the network call replaced by a stub."""
-import importlib.util
 import json
-from pathlib import Path
 
 import pytest
 
-spec = importlib.util.spec_from_file_location(
-    "fetch_one", Path(__file__).resolve().parent.parent / "scripts" / "fetch_one.py")
-fetch_one = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(fetch_one)
+import fetch_one
+import rawstore
 
 META = dict(id="post", url="https://example.com/post/", medium="blog", author="A",
             published="2025-01-01", title="Post", duration_or_length="2 words")
 
 
 @pytest.fixture
-def repo(tmp_path, monkeypatch):
-    monkeypatch.setattr(fetch_one, "ROOT", tmp_path)
-    monkeypatch.setattr(fetch_one, "RAW", tmp_path / "raw")
-    monkeypatch.setattr(fetch_one, "MANIFEST", tmp_path / "raw" / "_manifest.json")
-    (tmp_path / "raw").mkdir()
+def repo(store, monkeypatch):
     calls = []
 
     def fake_fetch(medium, ref, commit=None):
@@ -27,7 +19,7 @@ def repo(tmp_path, monkeypatch):
         return dict(META), "hello world"
 
     monkeypatch.setattr(fetch_one, "fetch", fake_fetch)
-    return tmp_path, calls
+    return store, calls
 
 
 def test_fetch_creates_medium_folder_and_manifest(repo):
@@ -38,6 +30,9 @@ def test_fetch_creates_medium_folder_and_manifest(repo):
     item = json.loads((root / "raw/_manifest.json").read_text())["items"][0]
     assert item["ref"] == "https://example.com/post/"
     assert item["sha256"] == fetch_one.digest("hello world")
+    queued = json.loads((root / "raw/_queue.json").read_text())["items"]
+    assert [(i["ref"], i["status"]) for i in queued] == [("https://example.com/post/",
+                                                         "collected")]
 
 
 def test_manifest_only_checkout_is_restored(repo):
@@ -47,7 +42,7 @@ def test_manifest_only_checkout_is_restored(repo):
                  published="2025-01-01", path="raw/blog/post.md",
                  sha256=fetch_one.digest("hello world"))
     (root / "raw/_manifest.json").write_text(json.dumps({"items": [entry]}))
-    assert fetch_one.restore(json.loads((root / "raw/_manifest.json").read_text())) == 0
+    assert fetch_one.restore() == 0
     assert (root / "raw/blog/post.md").read_text().endswith("hello world\n")
     assert calls == [("blog", "https://example.com/post/", None)]
 
@@ -56,7 +51,8 @@ def test_restore_reports_changed_content(repo):
     root, _ = repo
     entry = dict(id="post", ref="x", url=META["url"], medium="blog", published="2025-01-01",
                  path="raw/blog/post.md", sha256="0" * 64)
-    assert fetch_one.restore({"items": [entry]}) == 1
+    (root / "raw/_manifest.json").write_text(json.dumps({"items": [entry]}))
+    assert fetch_one.restore() == 1
 
 
 def test_existing_file_is_skipped(repo):
@@ -72,3 +68,7 @@ def test_blog_parser_keeps_links():
     p = fetch_one.Text("https://karpathy.bearblog.dev/year/")
     p.feed('<p>See <a href="/verifiability/">Verifiability</a>.</p>')
     assert p.text() == "See [Verifiability](https://karpathy.bearblog.dev/verifiability/)."
+
+
+def test_every_medium_has_a_fetcher():
+    assert set(fetch_one.FETCHERS) == rawstore.MEDIA

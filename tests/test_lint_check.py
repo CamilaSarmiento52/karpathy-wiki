@@ -208,12 +208,37 @@ def test_missing_raw_path(tmp_path, capsys):
     assert "manifest entry with no raw file" in out
 
 
-def test_raw_file_without_source_page(tmp_path, capsys):
+def test_raw_file_without_source_page_is_backlog(tmp_path, capsys):
+    # phase 2: collectors add raw files before ingest compiles them; that is not an error
+    files = base()
+    files["raw/x/123.md"] = "---\nid: 123\n---\n\npost\n"
+    items = json.loads(files["raw/_manifest.json"])["items"]
+    items.append({"id": "123", "path": "raw/x/123.md",
+                  "sha256": hashlib.sha256(b"post").hexdigest()})
+    files["raw/_manifest.json"] = json.dumps({"items": items})
+    code, out = run(tmp_path, capsys, files)
+    assert code == 0
+    assert "(1 not yet compiled)" in out
+
+
+def test_uncompiled_raw_file_still_needs_manifest(tmp_path, capsys):
     files = base()
     files["raw/x/123.md"] = "---\nid: 123\n---\npost"
     code, out = run(tmp_path, capsys, files)
-    assert "raw file with no source page: raw/x/123.md" in out
     assert "raw file not in manifest: raw/x/123.md" in out
+
+
+def test_link_to_versioned_snapshot_resolves(tmp_path, capsys):
+    files = base()
+    snap = "raw/github/k__repo@1a2b3c4.md"
+    files[snap] = "---\nid: k__repo@1a2b3c4\n---\n\nreadme\n"
+    items = json.loads(files["raw/_manifest.json"])["items"]
+    items.append({"id": "k__repo@1a2b3c4", "path": snap,
+                  "sha256": hashlib.sha256(b"readme").hexdigest()})
+    files["raw/_manifest.json"] = json.dumps({"items": items})
+    files["wiki/topics/tok.md"] = TOPIC + "- Readme [[raw/github/k__repo@1a2b3c4]] ([[blog-post]]).\n"
+    code, out = run(tmp_path, capsys, files)
+    assert "broken link" not in out
 
 
 def test_page_not_in_index(tmp_path, capsys):
