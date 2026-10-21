@@ -2,13 +2,18 @@
 """Fetch one source into raw/ with standard frontmatter and a manifest entry.
 
 Phase 1 helper for hand-picked sources; phase 2 replaces it with per-medium collectors.
-Idempotent: an id already in the manifest is skipped.
+
+The manifest records how each file was fetched (`ref`, plus the pinned `commit` for
+GitHub) and a sha256 of the body, so a fresh checkout can rebuild raw/ with --restore.
+Restoring re-downloads from the original URL: GitHub is exact (pinned commit); other
+media are only as stable as the source, and a hash mismatch is reported, not hidden.
 
 Usage:
   python scripts/fetch_one.py youtube <video_id>
   python scripts/fetch_one.py x <tweet_id>
   python scripts/fetch_one.py github <owner/repo>
   python scripts/fetch_one.py blog <bearblog post url>
+  python scripts/fetch_one.py --restore      # rebuild every missing raw file
 """
 import datetime as dt
 import hashlib
@@ -16,6 +21,7 @@ import json
 import re
 import subprocess
 import sys
+import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
@@ -42,12 +48,12 @@ def stamp(seconds):
 
 
 class Text(HTMLParser):
-    """HTML to plain text, keeping paragraph breaks, headings and list bullets."""
+    """HTML to plain text, keeping paragraph breaks, headings, list bullets and links."""
     BLOCK = {"p", "div", "br", "li", "h1", "h2", "h3", "h4", "pre", "blockquote", "tr"}
 
-    def __init__(self):
+    def __init__(self, base):
         super().__init__()
-        self.out = []
+        self.out, self.base, self.href = [], base, None
 
     def handle_starttag(self, tag, attrs):
         if tag in self.BLOCK:
@@ -56,6 +62,15 @@ class Text(HTMLParser):
             self.out.append("#" * int(tag[1]) + " ")
         if tag == "li":
             self.out.append("- ")
+        if tag == "a" and dict(attrs).get("href"):
+            # keep link targets: they are leads to his other posts
+            self.href = urllib.parse.urljoin(self.base, dict(attrs)["href"])
+            self.out.append("[")
+
+    def handle_endtag(self, tag):
+        if tag == "a" and self.href:
+            self.out.append(f"]({self.href})")
+            self.href = None
 
     def handle_data(self, data):
         self.out.append(data)
@@ -98,18 +113,24 @@ def x(tid):
                 duration_or_length=f"{len(body.split())} words"), body
 
 
-def github(repo):
-    info = json.loads(subprocess.run(["gh", "api", f"repos/{repo}"],
-                                     capture_output=True, text=True, check=True).stdout)
-    # a README is a living document: date it by its last commit, not the repo's creation
-    last = json.loads(subprocess.run(["gh", "api", f"repos/{repo}/commits?path=README.md&per_page=1"],
-                                     capture_output=True, text=True, check=True).stdout)
-    readme = subprocess.run(["gh", "api", f"repos/{repo}/readme", "-H",
-                             "Accept: application/vnd.github.raw"],
-                            capture_output=True, text=True, check=True).stdout
+def gh(path, raw=False):
+    cmd = ["gh", "api", path] + (["-H", "Accept: application/vnd.github.raw"] if raw else [])
+    out = subprocess.run(cmd, capture_output=True, text=True, check=True).stdout
+    return out if raw else json.loads(out)
+
+
+def github(repo, commit=None):
+    info = gh(f"repos/{repo}")
+    # a README is a living document: pin it to the last commit that touched it, and date it
+    # by that commit, so the snapshot can be fetched again exactly
+    if commit is None:
+        commit = gh(f"repos/{repo}/commits?path=README.md&per_page=1")[0]["sha"]
+    c = gh(f"repos/{repo}/commits/{commit}")
+    readme = gh(f"repos/{repo}/readme?ref={commit}", raw=True)
     return dict(id=repo.replace("/", "__"), url=info["html_url"], medium="github",
-                author="Andrej Karpathy", published=last[0]["commit"]["committer"]["date"][:10],
-                title=f"{info['name']} README", duration_or_length=f"{len(readme.split())} words"), readme
+                author="Andrej Karpathy", published=c["commit"]["committer"]["date"][:10],
+                title=f"{info['name']} README", duration_or_length=f"{len(readme.split())} words",
+                commit=commit), readme
 
 
 def blog(url):
@@ -119,7 +140,7 @@ def blog(url):
     for e in feed.findall("a:entry", ns):
         link = e.find("a:link", ns).get("href").rstrip("/") + "/"
         if link == url:
-            p = Text()
+            p = Text(url)
             p.feed(e.find("a:content", ns).text)
             body = p.text()
             return dict(id=url.rstrip("/").rsplit("/", 1)[1], url=url, medium="blog",
@@ -129,25 +150,66 @@ def blog(url):
     sys.exit(f"{url} not in feed")
 
 
-def main(medium, ref):
-    manifest = json.loads(MANIFEST.read_text())
-    meta, body = {"youtube": youtube, "x": x, "github": github, "blog": blog}[medium](ref)
-    if any(i["id"] == meta["id"] for i in manifest["items"]):
-        print(f"skip {meta['id']}: already in manifest")
-        return
+def digest(body):
+    # hash the verbatim body only, so a refetch on another day (new `fetched`) still matches
+    return hashlib.sha256(body.strip().encode()).hexdigest()
+
+
+def fetch(medium, ref, commit=None):
+    fn = {"youtube": youtube, "x": x, "github": github, "blog": blog}[medium]
+    return fn(ref, commit) if medium == "github" else fn(ref)
+
+
+def write(meta, body):
     meta["fetched"] = dt.date.today().isoformat()
-    order = ["id", "url", "medium", "author", "published", "fetched", "title", "duration_or_length"]
-    fm = yaml.safe_dump({k: meta[k] for k in order}, sort_keys=False, allow_unicode=True)
-    path = RAW / FOLDER[medium] / f"{meta['id']}.md"
-    text = f"---\n{fm}---\n\n{body.strip()}\n"
-    path.write_text(text, encoding="utf-8")
-    manifest["items"].append(dict(id=meta["id"], url=meta["url"], medium=medium,
-                                  published=meta["published"], path=str(path.relative_to(ROOT)),
-                                  sha256=hashlib.sha256(text.encode()).hexdigest()))
+    order = ["id", "url", "medium", "author", "published", "fetched", "title",
+             "duration_or_length", "commit"]
+    fm = yaml.safe_dump({k: meta[k] for k in order if k in meta}, sort_keys=False,
+                        allow_unicode=True)
+    path = RAW / FOLDER[meta["medium"]] / f"{meta['id']}.md"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(f"---\n{fm}---\n\n{body.strip()}\n", encoding="utf-8")
+    return path
+
+
+def save(manifest):
     manifest["items"].sort(key=lambda i: (i["published"], i["id"]))
     MANIFEST.write_text(json.dumps(manifest, indent=2) + "\n")
+
+
+def restore(manifest):
+    """Rebuild missing raw files from the manifest; report any whose content changed."""
+    changed = 0
+    for item in manifest["items"]:
+        if (ROOT / item["path"]).exists():
+            continue
+        meta, body = fetch(item["medium"], item["ref"], item.get("commit"))
+        write(meta, body)
+        same = digest(body) == item["sha256"]
+        changed += not same
+        print(f"restored {item['path']}" + ("" if same else " (CONTENT CHANGED since manifest)"))
+    return 1 if changed else 0
+
+
+def main(medium, ref):
+    manifest = json.loads(MANIFEST.read_text())
+    meta, body = fetch(medium, ref)
+    known = next((i for i in manifest["items"] if i["id"] == meta["id"]), None)
+    if known and (ROOT / known["path"]).exists():
+        print(f"skip {meta['id']}: already fetched (use --restore for missing files)")
+        return
+    path = write(meta, body)
+    entry = dict(id=meta["id"], ref=ref, url=meta["url"], medium=medium,
+                 published=meta["published"], path=str(path.relative_to(ROOT)),
+                 sha256=digest(body))
+    if "commit" in meta:
+        entry["commit"] = meta["commit"]
+    manifest["items"] = [i for i in manifest["items"] if i["id"] != meta["id"]] + [entry]
+    save(manifest)
     print(f"wrote {path.relative_to(ROOT)} ({meta['duration_or_length']})")
 
 
 if __name__ == "__main__":
+    if sys.argv[1:] == ["--restore"]:
+        sys.exit(restore(json.loads(MANIFEST.read_text())))
     main(sys.argv[1], sys.argv[2])
