@@ -22,11 +22,19 @@ it is cheap to write now.
 
 ## As built
 
-- `scripts/lint_check.py` checks everything in the list above, and two more things: pages
-  missing from `index.md`, and pages whose type does not match their folder.
-  "Every factual sentence cites" is approximated per paragraph: every prose paragraph on a
-  topic or claim page must link at least one source page.
-- `tests/test_lint_check.py` (pytest, 9 tests) builds a tiny wiki in a temp dir, breaks one
-  rule per test, and asserts lint reports it; one test asserts a clean wiki passes. This
-  keeps the checker honest as later phases change it.
+- `scripts/lint_check.py` is **structural lint**: it proves the wiki is well-formed, not
+  that summaries are right. Checks: required and non-empty frontmatter, allowed values,
+  dates, type/folder, broken links, orphans, index coverage, a source citation in every
+  evidence block (paragraphs and list items), body citations matching `sources`/`context`,
+  Fed pages matching who cites each source, `contradicts`/`extends` set on both sides and
+  on a timeline, claim and principle quotes found verbatim in the cited raw file and under
+  15 words, raw files matching manifest hashes.
+- `tests/test_lint_check.py` (20 tests) builds a tiny wiki per test and breaks one rule;
+  it includes the two false negatives the review demonstrated (uncited bullet, empty
+  `sources`).
+- `tests/test_fetch_one.py` (5 tests) stubs the network and checks the fetcher's
+  bookkeeping: folders created, manifest-only restore, changed-content report, skip of an
+  existing file, blog links kept.
+- Not automated: whether a citation supports its sentence. That is the semantic pass in
+  CLAUDE.md §7 and a manual check in validation.md.
 - Run: `.venv/bin/python -m pytest tests && python3 scripts/lint_check.py`.

@@ -71,3 +71,28 @@ essay share LLM apps, jagged intelligence, the LLM OS and the LLM GUI.
 - On a fresh clone without `raw/`, lint reports every raw link as broken. That is correct
   until the collectors rebuild `raw/`.
 - Auto-captions misspell names ("Andre Carpathy", "menu.app"); pages use correct spellings.
+
+## Correction round (2026-10-21)
+
+An external review (`reports/karpathy-wiki-review/review-2026-10-20.md`, outside this repo)
+found the structure sound but eight problems. All were fixed on this branch:
+
+| # | Finding | Fix |
+|---|---|---|
+| 1 | Vibe-coding `contradicts` was invented: "fine for weekend projects" ≠ "only for" | new `extends` relation; timeline rewritten as a widening; note labelled editorial |
+| 2 | Citations that did not support their sentence | each side of a comparison cites its own source; CLAUDE.md invariant 9 "a citation is not proof" |
+| 3 | Wording stronger than the source (token share; "no RAG needed" as a general rule) | softened; claim titles must not exceed the evidence |
+| 4 | nanoGPT described from nanochat's README | fetched nanoGPT's own README (pinned commit) and rewrote the page |
+| 5 | `raw/` could not be rebuilt from the manifest; missing folders crashed; GitHub not pinned | `--restore`, body-only hash, `ref` + `commit` in manifest, mkdir; blog links kept |
+| 6 | Lint passed an uncited bullet and `sources: []` | evidence blocks, non-empty lists, allowed values, dates, reciprocity, quotes, hashes; called "structural lint" everywhere |
+| 7 | `first_seen` mixed direct and background sources | `context` field for background; dates use `sources` only |
+| 8 | No way to fix compiler mistakes without inventing a contradiction | invariant 6 separates "he changed his mind" from "the wiki got it wrong"; corrections logged |
+
+Also from the review: DESIGN.md schema drift fixed (`location`, `medium: talk`, CLAUDE.md
+named authoritative), the guaranteed-improvement claim for saved answers removed, planned
+features labelled in the README, and the coverage gaps recorded in the roadmap.
+
+What I got wrong, in my own words: I ticked "every factual sentence cites a source" on the
+strength of a lint run that only checked prose paragraphs, and I encoded a judgement call
+(the contradiction) as a fact even after flagging it as a judgement call. The schema now
+makes both harder to repeat, but the semantic pass is still a human/LLM reading step.

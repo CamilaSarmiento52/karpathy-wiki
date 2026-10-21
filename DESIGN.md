@@ -163,21 +163,24 @@ karpathy-wiki/
 
 ## 3. Page types (the schema)
 
+> `CLAUDE.md` is the authoritative schema. This table is a summary; where they differ,
+> `CLAUDE.md` wins.
+
 | Type | One page per… | Required frontmatter | Typical links |
 |---|---|---|---|
 | **source** | one raw item | `type, raw_path, published, medium, summary` | → every page it fed |
 | **topic** | thing he knows (e.g. tokenization) | `type, aliases, first_seen, last_updated, sources[]` | → artifacts, claims, timeline, principles |
-| **claim** | a specific stated position, dated | `type, stated_on, confidence, sources[]` | → topic; `contradicts:` / `supports:` other claims |
+| **claim** | a specific stated position, dated | `type, stated_on, confidence, sources[]` | → topic; `supports:` / `extends:` / `contradicts:` other claims |
 | **artifact** | repo, library, lecture series | `type, repo_url, language, status, sources[]` | → topics it demonstrates, methods it shows |
 | **timeline** | evolution of one topic | `type, topic` | → claims in chronological order |
-| **principle** | a rule he works by | `type, status (bench/promoted), quotes[] (text, source, timestamp), inferred: bool` | → sources, methods, topics |
+| **principle** | a rule he works by | `type, status (bench/promoted), quotes[] (text, source, location), inferred: bool` | → sources, methods, topics |
 | **method** | a repeatable way he does something (explains, debugs, builds, reviews) | `type, steps[], sources[]` | → principles it applies, artifacts that show it |
 | **synthesis** | an answer you asked for | `type, question, answered_on, sources[], rules_applied[]` | → whatever it cited |
 
 Rules that apply to every page:
 
 - Every factual sentence cites a `source` page, which cites a `raw/` file.
-- Every **principle** carries at least one exact quote with its source and timestamp.
+- Every **principle** carries at least one exact quote with its source and location (`mm:ss` or section).
   If the LLM is generalising rather than quoting, the page says `inferred: true` and
   the agent says so out loud when it uses that rule.
 - A principle starts in `_bench/` with one source. It is **promoted** when a second
@@ -324,8 +327,9 @@ sequenceDiagram
 ```
 
 The key difference from RAG: the LLM reads a few dense, already-organised pages instead of
-re-chunking 700k words of transcript. Answers improve the longer the wiki lives, because
-good answers are written back in.
+re-chunking 700k words of transcript. Saved answers can make the wiki more useful over time,
+but they can also compound mistakes, so a synthesis is never cited as evidence and its
+claims must trace back to source pages.
 
 ### 6c. Lint (weekly health pass)
 
@@ -359,7 +363,7 @@ can check coverage. Expect roughly 45–60 minutes and ~700k words. Ingest in ba
 | X / Twitter | `twitterapi.io`, full archive since 2023 | ~$1 one-time, cents per update | threads stored as one file |
 | GitHub | GitHub API: READMEs, release notes, commit messages of key repos | free | code is linked, not copied |
 | Blog / newsletters | RSS; Obsidian Web Clipper for one-offs | free | karpathy.github.io, bearblog, any newsletter |
-| Podcasts / interviews | yt-dlp or podcast RSS + Whisper | free | tagged `medium: interview` |
+| Podcasts / interviews | yt-dlp or podcast RSS + Whisper | free | tagged `medium: talk` (covers talks, podcasts, interviews) |
 
 ### Ongoing
 

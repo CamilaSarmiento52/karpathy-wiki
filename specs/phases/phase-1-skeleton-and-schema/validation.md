@@ -6,12 +6,15 @@
 - [x] `CLAUDE.md` defines all eight page types with required frontmatter, the invariants,
       and procedures for ingest, query and lint.
 - [x] Five raw files exist with complete frontmatter; `_manifest.json` lists them.
-- [x] Ingest produced: five source pages, at least three topic pages, at least one artifact
+- [x] Ingest produced: five source pages (six after the nanoGPT README was added), at least three topic pages, at least one artifact
       page, at least one claim page, at least one method page.
 - [x] Every wiki page has valid frontmatter per its type.
 - [x] Zero orphan pages (every page has at least one inbound link).
-- [x] Every factual sentence on a topic or claim page cites a source page; every source page
-      cites its raw path.
+- [x] Every evidence block (paragraph or list item) on topic, claim, artifact, method and
+      timeline pages cites a source page; every source page cites its raw path. *(Structural
+      lint.)*
+- [x] Semantic pass: each cited passage supports its sentence at that strength. *(External
+      review 2026-10-20 found 8 problems; all corrected 2026-10-21, see log.md.)*
 - [x] At least one cross-link exists between pages that came from different sources.
 - [x] `index.md` lists every page by type; `log.md` has one entry per ingested source;
       `hot.md` lists the pages touched.
@@ -26,12 +29,15 @@
 2. Pick a claim, check the date and the quoted sentence exist in the raw file.
 3. Open graph view: no isolated nodes.
 
-## Status (2026-10-20)
+## Status (2026-10-21, after the review corrections)
 
-- Lint: 29 pages, 5 raw files, 0 findings. `pytest tests`: 9 passed.
-- Produced: 5 sources, 9 topics, 6 claims, 2 artifacts, 3 methods, 1 timeline.
-- Every quote checked against raw by script: all verbatim, all under 15 words.
-- Citations checked automatically per paragraph; per sentence by reading.
+- Structural lint: 30 pages, 6 raw files, 0 findings. `pytest tests`: 25 passed.
+- Lint now also checks: empty required lists, allowed values, topic dates, body citations
+  vs `sources`, Fed pages reciprocity, two-way `contradicts`/`extends` on a timeline,
+  quotes verbatim in raw, manifest hashes. Both false negatives from the review are tests.
+- `fetch_one.py --restore` rebuilt all six raw files from a manifest-only copy; all
+  matched.
+- Produced: 6 sources, 9 topics, 6 claims, 2 artifacts, 3 methods, 1 timeline.
 - Repo visibility: public.
-- **Open:** Obsidian check and the user's schema review — both need the user (Obsidian is
-  not installed on this machine). This is the 1 → 2 phase gate.
+- **Open:** the user re-reviews the corrected pages in Obsidian and approves. This is the
+  1 → 2 phase gate.
