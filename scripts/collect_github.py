@@ -4,7 +4,8 @@
 A README is a living document. Each snapshot is pinned to the last commit that touched
 the README and dated by that commit. When a later run finds a newer README commit, it
 writes a new snapshot `<repo-id>@<short-commit>` instead of skipping the repo; old
-snapshots stay. Discussions are his opening post only (the nanochat walkthroughs).
+snapshots stay. Discussions are his opening post only (the nanochat walkthroughs). Gists
+linked from his posts are kept when they hold markdown (e.g. llm-wiki), pinned to a revision.
 
 Uses the `gh` CLI, so no token is needed beyond `gh auth login`.
 
@@ -13,12 +14,15 @@ Usage: python scripts/collect_github.py [--dry-run] [--limit N] [--priority teac
 import json
 import re
 import sys
+import tempfile
+from pathlib import Path
 
 import rawstore as rs
 from rawstore import Skip
 
 USER = "karpathy"
 DISCUSSION = re.compile(r"([\w.-]+)/([\w.-]+)/discussions/(\d+)")
+GIST = re.compile(r"gist/([0-9a-f]+)")
 
 
 def gh(path, raw=False):
@@ -81,7 +85,39 @@ def discussion(ref):
                 duration_or_length=f"{len(d['body'].split())} words"), d["body"]
 
 
+def gist_files(gid, commit=None):
+    """A gist is a small git repo: clone it (the REST API returns 502 for some of his gists)
+    and read its files at `commit`, or at the latest revision."""
+    with tempfile.TemporaryDirectory() as d:
+        rs.run(["git", "clone", "--quiet", f"https://gist.github.com/{gid}.git", d])
+        if commit:
+            rs.run(["git", "-C", d, "checkout", "--quiet", commit])
+        sha = rs.run(["git", "-C", d, "rev-parse", "HEAD"]).strip()
+        date = rs.run(["git", "-C", d, "log", "-1", "--format=%cI"]).strip()[:10]
+        files = {p.name: p.read_text(encoding="utf-8", errors="replace")
+                 for p in sorted(Path(d).iterdir()) if p.is_file()}
+    return files, sha, date
+
+
+def gist(ref, commit=None):
+    """A gist's markdown files, pinned to a revision. Code-only gists are not collected
+    (code is linked, not copied); their prose lives in the post that links them. Only
+    gists linked as gist.github.com/karpathy/<id> reach the queue."""
+    gid = GIST.fullmatch(ref).group(1)
+    files, sha, date = gist_files(gid, commit)
+    docs = [(name, text) for name, text in files.items() if name.endswith(".md")]
+    if not docs:
+        raise Skip("excluded", "code-only gist")
+    body = "\n\n".join(text for _, text in docs)
+    return dict(id=f"{USER}__gist-{gid}", url=f"https://gist.github.com/{USER}/{gid}",
+                medium="github", author="Andrej Karpathy", published=date,
+                title=docs[0][0].removesuffix(".md"),
+                duration_or_length=f"{len(body.split())} words", commit=sha), body
+
+
 def fetch(ref, commit=None):
+    if GIST.fullmatch(ref):
+        return gist(ref, commit)
     return discussion(ref) if DISCUSSION.fullmatch(ref) else readme(ref, commit)
 
 
@@ -98,7 +134,8 @@ def snapshots(repo):
 
 def refresh(q, args):
     """New snapshot for every collected repo whose README changed since its last snapshot."""
-    repos_ = [i for i in q.of("github", "collected") if not DISCUSSION.fullmatch(i["ref"])]
+    repos_ = [i for i in q.of("github", "collected")
+              if not DISCUSSION.fullmatch(i["ref"]) and not GIST.fullmatch(i["ref"])]
     done = 0
     for i in repos_:
         if args.limit is not None and done >= args.limit:

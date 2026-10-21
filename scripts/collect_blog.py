@@ -54,7 +54,13 @@ def from_feed(url):
 
 def from_page(url):
     html = rs.get(url)
-    body = rs.html_text(rs.region(html), url)
+    content = rs.region(html)
+    if url.startswith(BEAR):
+        # match the feed body: drop the post's own heading and date line
+        content = re.sub(r"<h1[^>]*>.*?</h1>", "", content, count=1, flags=re.S)
+        content = re.sub(r"<p>\s*<i>\s*<time.*?</time>\s*</i>\s*</p>", "", content, count=1,
+                         flags=re.S)
+    body = rs.html_text(content, url)
     title = re.search(r"<title[^>]*>(.*?)</title>", html, re.S | re.I)
     # bearblog pages carry <time datetime>; old github.io posts are dated by their URL
     date = re.search(r'datetime="(\d{4}-\d{2}-\d{2})', html)
@@ -62,7 +68,7 @@ def from_page(url):
     published = date.group(1) if date else "-".join(in_url.groups()) if in_url else ""
     return dict(id=slug(url), url=url, medium="blog", author="Andrej Karpathy",
                 published=published,
-                title=rs.html_text(title.group(1), url).split(" | ")[0] if title else slug(url),
+                title=re.split(r" [|–] ", rs.html_text(title.group(1), url))[0] if title else slug(url),
                 duration_or_length=f"{len(body.split())} words"), body
 
 

@@ -85,6 +85,9 @@ def test_add_never_overwrites_a_decision(store):
     q.add("v1", medium="youtube", priority="other", title="filled")
     assert q.get("v1")["status"] == "excluded"
     assert q.get("v1")["priority"] == "teaching"
+    q.add("v2", medium="youtube")
+    q.add("v2", medium="youtube", priority="teaching")
+    assert q.get("v2")["priority"] == "teaching"
     assert q.get("v1")["title"] == "filled"
 
 
@@ -117,3 +120,16 @@ def test_teaching_exception_to_the_cutoff():
     assert rs.priority("github", "karpathy/micrograd", "") == "teaching"
     assert rs.priority("youtube", "x", "Let's build the GPT Tokenizer") == "teaching"
     assert rs.priority("youtube", "x", "Stable diffusion dreams of tattoos") == "other"
+
+
+def test_http_and_https_are_one_item(store):
+    q = rs.Queue()
+    q.add("http://karpathy.github.io/2026/02/12/microgpt/", medium="blog")
+    assert q.get("https://karpathy.github.io/2026/02/12/microgpt") is not None
+
+
+def test_crlf_body_matches_its_hash_when_read_back(store):
+    rs.save(dict(META), "line one\r\nline two\r\n", "v1")
+    text = (store / "raw/youtube/v1.md").read_text()  # universal newlines, like lint
+    body = text.split("---\n", 2)[2]
+    assert rs.digest(body) == rs.read_manifest()["items"][0]["sha256"]

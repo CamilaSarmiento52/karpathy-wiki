@@ -129,6 +129,9 @@ def fetch_item(item, since):
         raise Skip("excluded", "not-karpathy")
     if posts[0]["replying_to"] and posts[0]["replying_to"].lower() != USER:
         raise Skip("excluded", "reply-to-other")
+    if not body.strip():
+        # an X Article: the text is not in the post; he usually also posts it on his blog
+        raise Skip("pending", "no-text (X article)")
     meta["ref"] = ",".join(ids)  # the manifest records every post, so restore needs no key
     return meta, body
 

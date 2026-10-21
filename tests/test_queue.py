@@ -25,8 +25,13 @@ import rawstore as rs
     ("https://karpathy.bearblog.dev/blog/", None),
     ("https://pytorch.org/get-started/locally/", None),
     ("https://huggingface.co/datasets/openwebtext", None),
-    ("https://www.dwarkesh.com/p/andrej-karpathy",
-     ("unknown", "https://www.dwarkesh.com/p/andrej-karpathy")),
+    ("https://www.dwarkesh.com/p/andrej-karpathy", None),
+    ("https://www.amazon.com/dp/B0FXDQX5XQ", None),
+    ("https://karpathy.ai/microgpt.html", ("unknown", "https://karpathy.ai/microgpt.html")),
+    ("https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95",
+     ("github", "gist/8627fe009c40f57531cb18360106ce95")),
+    ("https://karpathy-public.s3.us-west-2.amazonaws.com/eval_bundle.zip", None),
+    ("https://raw.githubusercontent.com/karpathy/makemore/master/names.txt", None),
 ])
 def test_classify(url, expected):
     assert cq.classify(url) == expected
@@ -40,7 +45,7 @@ def write_raw(root, rel, body):
 
 def test_seed_twice_adds_nothing(store):
     write_raw(store, "raw/blog/a.md", "see https://github.com/karpathy/minbpe and "
-              "https://www.dwarkesh.com/p/andrej-karpathy and https://pytorch.org/")
+              "https://karpathy.ai/microgpt.html and https://pytorch.org/")
     q = rs.Queue()
     assert cq.seed(q) == 2
     q.save()
@@ -51,7 +56,7 @@ def test_seed_twice_adds_nothing(store):
     assert (store / "raw/_queue.json").read_text() == before
     item = q.get("karpathy/minbpe")
     assert (item["priority"], item["found_in"]) == ("teaching", "raw/blog/a.md")
-    triage = q.get("https://www.dwarkesh.com/p/andrej-karpathy")
+    triage = q.get("https://karpathy.ai/microgpt.html")
     assert (triage["medium"], triage["reason"]) == ("unknown", "needs-triage")
 
 
@@ -70,3 +75,14 @@ def test_check_catches_disagreement_and_missing_reason(store):
     (store / "raw/_queue.json").write_text(json.dumps({"version": 1, "items": items}))
     q = rs.Queue()
     assert cq.check(q) == 1
+
+
+def test_seed_drops_triage_items_the_rules_no_longer_raise(store):
+    q = rs.Queue()
+    q.add("https://shop.example/thing", medium="unknown", found_in="raw/blog/a.md")
+    q.set("https://shop.example/thing", reason="needs-triage")
+    q.save()
+    q = rs.Queue()
+    cq.seed(q)
+    q.save()
+    assert rs.Queue().get("https://shop.example/thing") is None

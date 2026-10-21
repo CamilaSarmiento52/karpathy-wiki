@@ -291,7 +291,8 @@ LIST = """<ul><li><span><time datetime="2025-12-01T00:00Z">1 Dec</time></span>
 <a href="/new/">New</a></li><li><span><time datetime="2024-03-01T00:00Z">1 Mar</time></span>
 <a href="/older/">Older</a></li></ul>"""
 OLD_PAGE = """<html><head><title>Older | karpathy</title></head><body><nav>menu</nav><main>
-<h1>Older</h1><time datetime="2024-03-01T00:00Z">1 Mar</time><p>Old words.</p></main></body></html>"""
+<h1>Older</h1><p><i><time datetime="2024-03-01T00:00Z">1 Mar</time></i></p><p>Old words.</p>
+</main></body></html>"""
 
 
 @pytest.fixture
@@ -311,6 +312,7 @@ def test_blog_feed_and_page_fallback(blog):
     assert "[older](https://karpathy.bearblog.dev/older/)" in new
     old = (blog / "raw/blog/older.md").read_text()
     assert "Old words." in old and "menu" not in old and "published: '2024-03-01'" in old
+    assert "title: Older\n" in old and "# Older" not in old
     item = rs.Queue().get("https://karpathy.github.io/2019/04/25/recipe/")
     assert (item["status"], item["reason"]) == ("excluded", "before-2023")
 
@@ -357,3 +359,29 @@ def test_talk_page_with_transcript(store, monkeypatch):
     e = rs.read_manifest()["items"][0]
     assert (e["id"], e["published"], e["medium"]) == ("pod-example-p-ep-1", "2025-10-17",
                                                       "talk")
+
+
+def test_github_gist_markdown_kept_code_only_excluded(github, monkeypatch):
+    gists = {"aaa": ({"llm-wiki.md": "the idea"}, "v2" * 20, "2026-04-04"),
+             "bbb": ({"x.py": "print()"}, "v1" * 20, "2026-04-02")}
+    monkeypatch.setattr(collect_github, "gist_files", lambda gid, commit=None: gists[gid])
+    q = rs.Queue()
+    q.add("gist/aaa", medium="github")
+    q.add("gist/bbb", medium="github")
+    q.save()
+    collect_github.main([])
+    e = next(i for i in rs.read_manifest()["items"] if i["id"] == "karpathy__gist-aaa")
+    assert (e["commit"], e["published"]) == ("v2" * 20, "2026-04-04")
+    assert rs.Queue().get("gist/bbb")["reason"] == "code-only gist"
+
+
+def test_x_article_without_text_is_not_written(x, monkeypatch):
+    root, _ = x
+    monkeypatch.setattr(collect_x, "api_key", lambda: None)
+    monkeypatch.setattr(collect_x, "post", lambda tid: tweet(tid, ""))
+    q = rs.Queue()
+    q.add("107", medium="x")
+    q.save()
+    collect_x.main([])
+    assert not (root / "raw/x/107.md").exists()
+    assert rs.Queue().get("107")["reason"] == "no-text (X article)"

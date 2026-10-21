@@ -68,3 +68,22 @@ Medium-specific:
   coverage report.
 
 Run: `.venv/bin/python -m pytest tests && python3 scripts/lint_check.py`.
+
+## As built
+
+- 88 tests, no network: `test_rawstore.py` (13), `test_collectors.py` (22, all five media),
+  `test_queue.py` (25 incl. link classification cases), `test_lint_check.py` (22),
+  `test_fetch_one.py` (6).
+- Added beyond the plan, each from a bug found in a live run: Discussion bodies with
+  `\r\n` must match their hash when read back; X Articles with no text are not written;
+  http and https URLs are one queue item; discovery can raise priority to teaching; gists
+  with markdown are kept and code-only gists excluded; triage items the rules no longer
+  raise are dropped on re-seed.
+- Live checks, not automated: a full re-run of all five collectors left manifest and queue
+  byte-identical; a restore of every GitHub, blog and X file (59) in a scratch copy rebuilt
+  them all with matching hashes (re-run after the line-ending fix, with lint on the restored
+  copy reporting no mismatch); YouTube restore was not run because YouTube was
+  rate-limiting this connection.
+- Lesson: the restore check compared two hashes computed the same wrong way and passed;
+  lint, which reads files back from disk, is what caught the line-ending bug. Run lint after
+  every collection, not just tests.

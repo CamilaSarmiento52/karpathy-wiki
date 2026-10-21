@@ -7,8 +7,9 @@
   check                    exit 1 if the queue is inconsistent
 
 Links are classified: his own posts, videos and repos become `pending`; known third-party
-sites are dropped; anything else becomes `pending` with reason `needs-triage` and
-medium `unknown`, for a person to decide.
+sites are dropped; links that could be his own writing elsewhere
+(his domains, gists, Medium) become `pending` with reason `needs-triage` and medium
+`unknown`, for a person to decide; everything else (products, papers, docs) is dropped.
 """
 import argparse
 import re
@@ -24,6 +25,7 @@ THIRD_PARTY = {"pytorch.org", "huggingface.co", "numpy.org", "docs.astral.sh", "
                "en.wikipedia.org", "openai.com", "google.com", "colab.research.google.com",
                "pypi.org", "docs.python.org", "t.co", "pbs.twimg.com", "imgur.com",
                "i.imgur.com"}
+DATA_HOSTS = {"raw.githubusercontent.com", "llmc.s3-us-west-2.amazonaws.com"}
 
 
 def classify(url):
@@ -60,10 +62,25 @@ def classify(url):
         return ("blog", f"https://karpathy.github.io{u.path}") if len(parts) >= 4 else None
     if host in THIRD_PARTY or any(host.endswith("." + d) for d in THIRD_PARTY):
         return None
-    return "unknown", url
+    # only links that could be his own writing go to a person: his domains, his gists,
+    # his Medium; data files and downloads are not sources
+    if host in DATA_HOSTS or "karpathy-public" in host or re.search(r"\.(bin|log|zip|txt|sh)$",
+                                                                     u.path):
+        return None
+    if host == "gist.github.com" and parts[:1] == ["karpathy"] and len(parts) > 1:
+        return "github", f"gist/{parts[1]}"
+    if "karpathy" in host:
+        return "unknown", url
+    return None
 
 
 def seed(q):
+    # drop triage items the current rules would drop or now classify as a known medium
+    for i in list(q.items.values()):
+        if (i["medium"], i["status"], i["reason"]) == ("unknown", "pending", "needs-triage") \
+                and i["found_in"].startswith("raw/") \
+                and classify(i["ref"]) != ("unknown", i["ref"]):
+            q.drop(i["ref"])
     added = 0
     for f in sorted(rs.raw().rglob("*.md")):
         text = f.read_text(encoding="utf-8")
@@ -96,8 +113,9 @@ def check(q):
             problems.append(f"bad status: {i['ref']} {i['status']!r}")
         if i["status"] == "excluded" and not i["reason"]:
             problems.append(f"excluded without a reason: {i['ref']}")
-        if i["medium"] not in rs.MEDIA and not (i["medium"] == "unknown"
-                                                and i["reason"] == "needs-triage"):
+        # "unknown" is fine while awaiting triage, or once triage decided it is not his
+        if i["medium"] not in rs.MEDIA and not (i["medium"] == "unknown" and (
+                i["reason"] == "needs-triage" or i["status"] == "excluded")):
             problems.append(f"bad medium: {i['ref']} {i['medium']!r}")
     # `collected` must agree with the manifest in both directions
     derived = {k: dict(v) for k, v in q.items.items()}

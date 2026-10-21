@@ -125,9 +125,15 @@ def region(html):
 
 # --- raw files and manifest -----------------------------------------------------------
 
+def clean(body):
+    # GitHub Discussions use \r\n; reading a file back turns that into \n, so normalise
+    # before hashing and writing or the hash would never match the file
+    return body.replace("\r\n", "\n").replace("\r", "\n").strip()
+
+
 def digest(body):
     # hash the verbatim body only, so a refetch on another day (new `fetched`) still matches
-    return hashlib.sha256(body.strip().encode()).hexdigest()
+    return hashlib.sha256(clean(body).encode()).hexdigest()
 
 
 def default_path(meta):
@@ -141,7 +147,7 @@ def write(meta, body, path=None):
                         allow_unicode=True)
     full = ROOT / (path or default_path(meta))
     full.parent.mkdir(parents=True, exist_ok=True)
-    full.write_text(f"---\n{fm}---\n\n{body.strip()}\n", encoding="utf-8")
+    full.write_text(f"---\n{fm}---\n\n{clean(body)}\n", encoding="utf-8")
     return full.relative_to(ROOT)
 
 
@@ -215,9 +221,12 @@ QUEUE_FIELDS = ["ref", "medium", "url", "status", "priority", "found_in", "reaso
 
 
 def key(ref):
-    # GitHub names are case-insensitive; video and post ids are not
+    # GitHub names are case-insensitive; video and post ids are not; a URL is the same
+    # page over http or https, with or without a trailing slash
     if re.fullmatch(r"[\w.-]+/[\w.-]+(/discussions/\d+)?", ref):
         return ref.lower()
+    if ref.startswith(("http://", "https://")):
+        return "https://" + ref.split("://", 1)[1].rstrip("/")
     return ref
 
 
@@ -246,7 +255,9 @@ class Queue:
     def _apply(items, op):
         kind, ref, fields = op
         k = key(ref)
-        if kind == "add":
+        if kind == "drop":
+            items.pop(k, None)
+        elif kind == "add":
             if k not in items:
                 items[k] = {f: "" for f in QUEUE_FIELDS} | {"ref": ref, "status": "pending",
                                                             "priority": "other"} | fields
@@ -254,6 +265,9 @@ class Queue:
                 for f, v in fields.items():
                     if not items[k].get(f) and f not in ("status", "reason", "priority"):
                         items[k][f] = v
+                # discovery may recognise teaching material that a lead added as "other"
+                if fields.get("priority") == "teaching":
+                    items[k]["priority"] = "teaching"
         else:
             items.setdefault(k, {f: "" for f in QUEUE_FIELDS} | {"ref": ref,
                                                                 "priority": "other"})
@@ -270,6 +284,11 @@ class Queue:
         if fields.get("status") == "excluded" and not fields.get("reason"):
             raise ValueError(f"excluding {ref} needs a reason")
         op = ("set", ref, fields)
+        self._apply(self.items, op)
+        self.ops.append(op)
+
+    def drop(self, ref):
+        op = ("drop", ref, {})
         self._apply(self.items, op)
         self.ops.append(op)
 
@@ -330,7 +349,7 @@ TEACHING_REPOS = {"nanogpt", "build-nanogpt", "llm.c", "minbpe", "llama2.c", "na
                   "ng-video-lecture"}
 TEACHING_TITLE = re.compile(r"spelled-out|let's build|let's reproduce|building makemore|"
                             r"intro to large language models|deep dive into llms|"
-                            r"how i use llms", re.I)
+                            r"how i use llms|microgpt", re.I)
 
 
 def priority(medium, ref, title):

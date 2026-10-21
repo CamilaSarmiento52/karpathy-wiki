@@ -32,11 +32,14 @@ def metadata(vid):
 
 def captions(vid):
     from youtube_transcript_api import YouTubeTranscriptApi
-    from youtube_transcript_api._errors import NoTranscriptFound, TranscriptsDisabled
+    from youtube_transcript_api._errors import (NoTranscriptFound, RequestBlocked,
+                                                TranscriptsDisabled)
     try:
-        return YouTubeTranscriptApi().fetch(vid, languages=["en"])
+        return YouTubeTranscriptApi().fetch(vid, languages=["en", "en-US", "en-GB"])
     except (NoTranscriptFound, TranscriptsDisabled):
         raise Skip("pending", "no-transcript")
+    except RequestBlocked:  # YouTube throttles after many requests; a later run retries
+        raise Skip("pending", "rate-limited")
 
 
 def blocks(snippets):
