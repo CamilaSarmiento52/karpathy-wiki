@@ -3,11 +3,12 @@ type: topic
 aliases: [LLM Knowledge Bases, LLM Wiki, personal wiki]
 first_seen: 2026-04-02
 last_updated: 2026-04-02
-sources: ["[[x-2026-04-02-llm-knowledge-bases]]", "[[youtube-2025-06-19-software-is-changing]]"]
+sources: ["[[x-2026-04-02-llm-knowledge-bases]]"]
+context: ["[[youtube-2025-06-19-software-is-changing]]"]
 related: ["[[llm-wiki-workflow]]", "[[no-rag-needed-for-a-small-wiki]]", "[[jagged-intelligence]]"]
 ---
 # LLM knowledge bases
-His practice of having an LLM compile research sources into a linked markdown wiki that the LLM maintains and queries, which he says now takes more of his tokens than code ([[x-2026-04-02-llm-knowledge-bases]]).
+His practice of having an LLM compile research sources into a linked markdown wiki that the LLM maintains and queries, which he says is shifting a large share of his recent token use from code toward knowledge ([[x-2026-04-02-llm-knowledge-bases]]).
 
 ## What he says
 Sources go into a `raw/` folder and the LLM incrementally compiles a wiki of summaries, backlinks and concept articles ([[x-2026-04-02-llm-knowledge-bases]] §Data ingest). He views it in Obsidian and rarely edits it himself ([[x-2026-04-02-llm-knowledge-bases]] §IDE).

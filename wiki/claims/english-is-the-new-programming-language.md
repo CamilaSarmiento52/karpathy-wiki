@@ -14,5 +14,5 @@ He made this point while presenting Software 3.0, calling it remarkable that the
 
 In December 2025 he says AI crossed the threshold for building impressive programs simply via English ([[blog-2025-12-19-year-in-review-2025]] §5).
 
-## Supports / contradicts
-- Supports [[vibe-coding-will-terraform-software]]: if anyone can program in English, much more software gets written ([[blog-2025-12-19-year-in-review-2025]] §5).
+## Related claims
+- Supports [[vibe-coding-will-terraform-software]]: the essay ties building programs via English to more software being written by more people ([[blog-2025-12-19-year-in-review-2025]] §5).

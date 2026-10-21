@@ -41,3 +41,5 @@ an LLM GUI (§6). He closes saying LLMs are both smarter and dumber than he expe
 - [[llm-gui]]
 - [[english-is-the-new-programming-language]]
 - [[software-3-0]]
+- [[this-is-the-decade-of-agents]]
+- [[vibe-coding-is-for-throwaway-weekend-projects]]

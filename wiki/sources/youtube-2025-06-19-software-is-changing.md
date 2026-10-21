@@ -47,3 +47,4 @@ vibe coding and MenuGen (@29:22, @31:38), and closes on building infrastructure 
 - [[building-for-agents]]
 - [[nanogpt]]
 - [[llm-knowledge-bases]]
+- [[claude-code-is-the-first-convincing-llm-agent]]

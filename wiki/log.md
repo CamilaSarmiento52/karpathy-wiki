@@ -24,3 +24,19 @@ Append-only journal of every ingest, query and lint. Never edit past entries.
 - created: [[github-2026-07-03-nanochat-readme]], [[quick-experiment-loop]]
 - updated: [[nanochat]], [[nanogpt]], [[building-for-agents]]
 - notes: README snapshot dated by its last commit (2026-07-03); the repo dates from 2025-10-13.
+
+## 2026-10-21 correction
+Review of the first ingest (external review, 2026-10-20). Compilation errors, fixed in place:
+- [[vibe-coding-is-for-throwaway-weekend-projects]], [[vibe-coding-will-terraform-software]]: `contradicts` was wrong; the Feb post names where vibe coding is acceptable, not the only use. Now `extends`, and each comparison cites both sources.
+- [[vibe-coding-over-time]]: no longer says the Feb post "limits" vibe coding; the closing note is labelled as editorial.
+- [[this-is-the-decade-of-agents]]: the local-computer argument was cited to the talk @27:09; it is in the blog §4. Now cited there.
+- [[claude-code-is-the-first-convincing-llm-agent]], [[english-is-the-new-programming-language]]: relationship lines now cite the passage they describe.
+- [[llm-knowledge-bases]]: said knowledge now takes more of his tokens than code; the post says a large share is shifting toward knowledge. Talk moved from `sources` to `context`, so `first_seen` counts only direct sources.
+- [[no-rag-needed-for-a-small-wiki]]: title narrowed to his one ~100-article wiki.
+- [[nanogpt]]: said it covered only pretraining (nanochat's contrast); its own README also covers finetuning. Rewritten from that README; `superseded` now rests on its stated deprecation, not inference.
+- [[nanochat]], [[quick-experiment-loop]]: kept the 2-hour 8×H100 and multi-GPU assumptions next to the $48 and five-minute figures.
+
+## 2026-10-21 ingest [[github-2025-11-12-nanogpt-readme]]
+- created: [[github-2025-11-12-nanogpt-readme]]
+- updated: [[nanogpt]]
+- notes: raw/ was refetched with the fixed fetcher (manifest v2: `ref`, pinned GitHub `commit`, body-only hash). Bodies unchanged except the blog, which now keeps its link targets.
