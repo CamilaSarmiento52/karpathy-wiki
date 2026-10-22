@@ -11,6 +11,8 @@ import collect_x
 import collect_youtube
 import rawstore as rs
 
+REAL_METADATA = collect_youtube.metadata  # fixtures replace it; one test needs the real one
+
 
 def files(root):
     return (root / "raw/_manifest.json").read_text(), (root / "raw/_queue.json").read_text()
@@ -385,3 +387,41 @@ def test_x_article_without_text_is_not_written(x, monkeypatch):
     collect_x.main([])
     assert not (root / "raw/x/107.md").exists()
     assert rs.Queue().get("107")["reason"] == "no-text (X article)"
+
+
+def test_talk_search_queues_candidates_for_triage_only(store, monkeypatch):
+    results = [
+        dict(id="AAAAAAAAAAA", channel_id="sequoia", channel="Sequoia", duration=1800,
+             title="Andrej Karpathy: fireside chat"),
+        dict(id="BBBBBBBBBBB", channel_id="clips", channel="Clips", duration=120,
+             title="Andrej Karpathy short clip"),
+        dict(id="CCCCCCCCCCC", channel_id=collect_youtube.CHANNEL_ID, channel="Andrej Karpathy",
+             duration=6000, title="Let's build GPT (Karpathy)"),
+        dict(id="DDDDDDDDDDD", channel_id="x", channel="X", duration=3000,
+             title="AI news this week"),
+    ]
+    monkeypatch.setattr(collect_talks, "search", lambda query, n=40: iter(results))
+    fetched = []
+    monkeypatch.setattr(collect_talks, "fetch", lambda ref, commit=None: fetched.append(ref))
+    collect_talks.main(["--search"])
+    q = rs.Queue()
+    item = q.get("AAAAAAAAAAA")
+    assert (item["medium"], item["status"], item["reason"]) == ("talk", "pending", "needs-triage")
+    assert item["found_in"] == "search: Sequoia (30:00)"
+    assert [q.get(v) for v in ("BBBBBBBBBBB", "CCCCCCCCCCC", "DDDDDDDDDDD")] == [None] * 3
+    assert fetched == []  # nothing is collected before a person approves it
+
+
+def test_youtube_removed_video_is_excluded(youtube, monkeypatch):
+    import subprocess
+
+    def gone(cmd):
+        raise subprocess.CalledProcessError(1, cmd, stderr="ERROR: This video is unavailable")
+    monkeypatch.setattr(rs, "run", gone)
+    monkeypatch.setattr(collect_youtube, "listing", lambda: [])
+    monkeypatch.setattr(collect_youtube, "metadata", REAL_METADATA)
+    q = rs.Queue()
+    q.add("ZZZZZZZZZZZ", medium="youtube")
+    q.save()
+    collect_youtube.main([])
+    assert rs.Queue().get("ZZZZZZZZZZZ")["reason"] == "unavailable (removed or private)"

@@ -57,8 +57,7 @@ _How we know the phase is done. Drafted at the start of the phase._
   all hashes match) but not YouTube/talks, because YouTube was rate-limiting this
   connection. Versioned snapshots are verified by tests only: no README changed during
   the phase.
-- Teaching first: every teaching item is collected except State of GPT
-  (`pending: rate-limited`).
+- Teaching first: every teaching item is collected; nothing is pending (2026-10-22).
 - Phase gate: counts match for GitHub (63/63), YouTube (17/17) and the blog (13/13 +
   10/10 old); X has no independent count without an API key. Ten random files
   spot-checked (`spot_check.py --seed 2`); the check found and fixed the blog

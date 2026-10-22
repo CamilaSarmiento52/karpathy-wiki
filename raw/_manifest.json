@@ -107,6 +107,15 @@
       "sha256": "8b5162f1b47ddaad27b11669134656f48f37ba2a67f7ad5f52db577b22cf9f7c"
     },
     {
+      "id": "bZQun8Y4L2A",
+      "ref": "bZQun8Y4L2A",
+      "url": "https://www.youtube.com/watch?v=bZQun8Y4L2A",
+      "medium": "talk",
+      "published": "2023-05-25",
+      "path": "raw/talks/bZQun8Y4L2A.md",
+      "sha256": "065b8b53351510e8b1d0dcb9078c85e541ae1aef40f743e323ec2da3661b66e2"
+    },
+    {
       "id": "karpathy__karpathy",
       "ref": "karpathy/karpathy",
       "url": "https://github.com/karpathy/karpathy",
@@ -328,6 +337,24 @@
       "sha256": "f55a10694ea645b4e10426c9104835fb62ee6f0da540d235054f026b06efcdb1",
       "commit": "315b8d1f626885db31a895510cb299cb282616cc",
       "repo": "karpathy/llm.c"
+    },
+    {
+      "id": "1841536804073439268",
+      "ref": "1841536804073439268",
+      "url": "https://x.com/karpathy/status/1841536804073439268",
+      "medium": "x",
+      "published": "2024-10-02",
+      "path": "raw/x/1841536804073439268.md",
+      "sha256": "cda2a5331a17663ef9653efe2f61552997f06adb8584e3f7144e3485585b4586"
+    },
+    {
+      "id": "aR6CzM0x-g0",
+      "ref": "aR6CzM0x-g0",
+      "url": "https://www.youtube.com/watch?v=aR6CzM0x-g0",
+      "medium": "talk",
+      "published": "2024-10-03",
+      "path": "raw/talks/aR6CzM0x-g0.md",
+      "sha256": "2a74fd8aebc1b353ee8c3fd170b42b806296f54c9418e66dfe4f0f05ecf080b9"
     },
     {
       "id": "1886192184808149383",

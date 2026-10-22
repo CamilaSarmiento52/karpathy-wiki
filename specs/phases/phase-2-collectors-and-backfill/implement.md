@@ -11,7 +11,7 @@ deviations from the plan._
 | `scripts/collect_youtube.py` | lists his channel with yt-dlp, captions via youtube-transcript-api in ~30 s `[mm:ss]` blocks |
 | `scripts/collect_github.py` | his non-fork repos (README pinned to its last commit, new `@<commit>` snapshot when it changes), Discussions he opened, markdown gists |
 | `scripts/collect_blog.py` | karpathy.bearblog.dev (list page + feed) and the old karpathy.github.io (feed) |
-| `scripts/collect_talks.py` | talks/podcasts from the queue: YouTube uploads on other channels, or pages with a transcript |
+| `scripts/collect_talks.py` | talks/podcasts from the queue: YouTube uploads on other channels, or pages with a transcript; `--search` queues YouTube search results for triage |
 | `scripts/collect_x.py` | twitterapi.io discovery with thread grouping; post text from fxtwitter; known posts only without a key |
 | `scripts/fetch_one.py` | now a thin wrapper: one-off fetches and `--restore` for all five media |
 | `scripts/coverage_queue.py` | `seed` (leads from raw files), `add`, `set`, `check` |
@@ -25,19 +25,26 @@ ids in `ref`. The two phase 1 GitHub entries were given `repo` in place.
 
 ## The backfill
 
-79 raw files (6 from phase 1, 73 new); 164 queue items: 79 collected, 2 pending, 83
+82 raw files (6 from phase 1, 76 new); 205 queue items: 82 collected, 0 pending, 123
 excluded. Full numbers in [coverage.md](coverage.md).
 
 - **Teaching material**: all 12 lecture videos on his channel (Zero to Hero series,
   Intro to LLMs, tokenizer, GPT-2 reproduction, Deep Dive, How I use LLMs), 25 GitHub items
   (READMEs of nanoGPT, minGPT, micrograd, makemore, minbpe, llm.c, llama2.c, build-nanogpt,
   nanochat, LLM101n, nn-zero-to-hero, ng-video-lecture, and his walkthrough Discussions in
-  llm.c, nanochat and minbpe), the microgpt post, and the Stanford CS25 lecture. One teaching
-  talk is pending: State of GPT (YouTube rate limit, see below).
-- **Talks**: 7 collected (CS25, Sequoia 2024 and 2026, No Priors x2, Berkeley hackathon,
-  Dwarkesh). Found with yt-dlp searches and kept only official uploads; re-uploads and
-  clickbait channels were ignored.
-- **X**: 9 posts, all leads from other sources (no API key, so no discovery).
+  llm.c, nanochat and minbpe), the microgpt post, and three teaching talks: Stanford CS25,
+  State of GPT (Microsoft Build 2023) and the CUDA MODE keynote on building llm.c.
+- **Talks**: 9 collected (CS25, State of GPT, CUDA MODE keynote, Sequoia 2024 and 2026,
+  No Priors x2, Berkeley hackathon, Dwarkesh), all official uploads by the host.
+- **Talk search (2026-10-22, at the user's request)**: `collect_talks.py --search` ran
+  eight YouTube searches for his name and kept long videos (15 min+) with "Karpathy" in the
+  title that are not on his own channel: 48 candidates, 40 new. Triage approved one (the
+  CUDA MODE keynote, uploaded by Accel) and excluded 39: 17 unofficial re-uploads of talks
+  already collected (matched by length and opening), 11 videos about him by others
+  (summaries, commentary, news), 10 Tesla-era or older talks, 1 dubbed copy. Both videos
+  the user pointed at were already covered: `96jN2OCOfLs` is the collected Sequoia 2026
+  talk, `EsQ_bmXKA4A` a re-upload of the collected Stanford CS25 lecture.
+- **X**: 10 posts, all leads from other sources (no API key, so no discovery).
 - **Independent counts** (phase gate 1): GitHub profile shows 63 public repos, the queue
   has 63 (21 collected, 33 before 2023, 9 forks). His channel lists 17 videos, all 17 are
   in the queue (12 collected, 5 excluded 2022 non-teaching). The bearblog post list has 13
@@ -83,6 +90,8 @@ excluded. Full numbers in [coverage.md](coverage.md).
 - **One test file for the collectors** (`tests/test_collectors.py`) instead of one per
   medium; they share fixtures.
 - **Gists added** to the GitHub collector (not in the plan), for `llm-wiki`.
+- **`--search` added** to the talks collector after the user asked for interviews and
+  lectures on other channels (the plan had talks as queue-only).
 - **The pilot was spot-checked by me, not the user**, before the full run, since the user
   asked for the phase to be built. Raw files are reproducible and uncompiled, so nothing
   downstream depends on them yet.
@@ -109,12 +118,14 @@ excluded. Full numbers in [coverage.md](coverage.md).
 - **X has no discovery** until a `TWITTERAPI_IO_KEY` is in `.env`. The search, thread
   grouping and exclusions are tested against the documented response shape but have never
   run against the live API.
-- **2 pending**: State of GPT (teaching, rate-limited) and one video linked from a blog post
-  (`qpeu0guMKw4`, probably not him), both waiting for YouTube to unblock.
+- **Nothing pending.** State of GPT was collected once YouTube lifted its rate limit; the
+  last linked video turned out to be removed and is excluded as unavailable.
 - **Pre-2023 teaching writing is excluded by decision 2**, e.g. "A Recipe for Training
   Neural Networks" (2019) and "Deep Reinforcement Learning: Pong from Pixels" (2016) on the
   old blog, and his 2017 Medium posts. Promoting them is one `coverage_queue.py set`.
-- **Talks have no discovery**: the list is what searches found on 2026-10-21.
+- **Talk discovery is search-based and needs a person**: YouTube search is not exhaustive
+  and is mostly re-uploads and commentary, so every result waits in triage. Talks whose
+  title does not name him, and podcasts not on YouTube, are only found through leads.
 - **README history before the first snapshot** is not reconstructed.
 - **A repo excluded as before-2023 is not re-checked** if its README later changes; only
   collected repos get new snapshots.

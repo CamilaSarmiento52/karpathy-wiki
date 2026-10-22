@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """Collect talks, podcasts and interviews hosted by someone else (`medium: talk`).
 
-There is no single feed, so this works from the coverage queue only: items reach it from
-leads in other sources or are added by hand with `coverage_queue.py add`. A YouTube upload
-gets captions like his own videos; any other page is kept only if it carries a transcript.
+There is no single feed. Items reach the queue from leads in other sources, by hand with
+`coverage_queue.py add`, or from `--search`: YouTube searches for his name. Search results
+are full of re-uploads, clips and videos about him, so every new result is queued as
+`needs-triage` (with its channel in `found_in`) and nothing is collected until a person
+approves it with `coverage_queue.py set <id> --reason ""` or excludes it.
 
-Usage: python scripts/collect_talks.py [--dry-run] [--limit N] [--priority teaching]
+A YouTube upload gets captions like his own videos; any other page is kept only if it
+carries a transcript.
+
+Usage: python scripts/collect_talks.py [--search] [--dry-run] [--limit N] [--priority teaching]
 """
 import re
 import sys
@@ -16,6 +21,11 @@ import rawstore as rs
 from rawstore import Skip
 
 MIN_WORDS = 1500  # shorter pages are show notes, not transcripts
+MIN_SECONDS = 15 * 60  # shorter videos are clips and trailers
+SEARCHES = ["Andrej Karpathy", "Andrej Karpathy interview", "Andrej Karpathy podcast",
+            "Andrej Karpathy lecture", "Andrej Karpathy talk", "Andrej Karpathy keynote",
+            "Andrej Karpathy fireside chat", "Andrej Karpathy conversation"]
+PER_SEARCH = 40
 VIDEO_ID = re.compile(r"[\w-]{11}")
 
 
@@ -45,9 +55,48 @@ def fetch_item(item, since):
     return fetch(item["ref"])
 
 
+def search(query, n=PER_SEARCH):
+    out = rs.run(yt.YT + ["--flat-playlist", "--print",
+                          "%(id)s\t%(channel_id)s\t%(channel)s\t%(duration)s\t%(title)s",
+                          f"ytsearch{n}:{query}"])
+    for line in out.splitlines():
+        vid, channel_id, channel, duration, title = line.split("\t", 4)
+        yield dict(id=vid, channel_id=channel_id, channel=channel, title=title,
+                   duration=float(duration) if duration not in ("NA", "None", "") else 0)
+
+
+def candidates(results):
+    """Long videos with his name in the title, not on his own channel."""
+    seen = {}
+    for r in results:
+        if (r["channel_id"] != yt.CHANNEL_ID and r["duration"] >= MIN_SECONDS
+                and "karpathy" in r["title"].lower()):
+            seen.setdefault(r["id"], r)
+    return list(seen.values())
+
+
+def discover(q):
+    found = candidates(r for query in SEARCHES for r in search(query))
+    new = 0
+    for r in found:
+        if q.get(r["id"]) is None:
+            new += 1
+            q.add(r["id"], medium="talk", url=yt.url(r["id"]), title=r["title"],
+                  found_in=f"search: {r['channel']} ({rs.stamp(r['duration'])})")
+            q.set(r["id"], reason="needs-triage")
+    print(f"talks: {len(found)} candidates from {len(SEARCHES)} searches, {new} new for triage")
+
+
 def main(argv=None):
-    args = rs.parser(__doc__).parse_args(argv)
-    return rs.collect(rs.Queue(), "talk", fetch_item, args)
+    ap = rs.parser(__doc__)
+    ap.add_argument("--search", action="store_true", help="search YouTube for new candidates")
+    args = ap.parse_args(argv)
+    q = rs.Queue()
+    if args.search:
+        discover(q)
+        if not args.dry_run:
+            q.save()
+    return rs.collect(q, "talk", fetch_item, args)
 
 
 if __name__ == "__main__":

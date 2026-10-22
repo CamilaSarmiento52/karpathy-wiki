@@ -33,6 +33,7 @@ Collecting (each is idempotent; `--dry-run` shows what it would fetch):
 
 ```bash
 .venv/bin/python scripts/collect_github.py     # also collect_youtube, _blog, _talks, _x
+.venv/bin/python scripts/collect_talks.py --search  # queue YouTube search results for triage
 .venv/bin/python scripts/coverage_queue.py seed     # add leads found in raw files
 .venv/bin/python scripts/coverage_report.py         # write the coverage report
 ```

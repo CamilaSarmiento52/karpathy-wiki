@@ -8,6 +8,7 @@ from other sources that turn out to be on another channel become `talk` items fo
 Usage: python scripts/collect_youtube.py [--dry-run] [--limit N] [--priority teaching]
 """
 import json
+import subprocess
 import sys
 
 import rawstore as rs
@@ -27,7 +28,12 @@ def listing():
 
 
 def metadata(vid):
-    return json.loads(rs.run(YT + ["-j", "--skip-download", url(vid)]))
+    try:
+        return json.loads(rs.run(YT + ["-j", "--skip-download", url(vid)]))
+    except subprocess.CalledProcessError as e:
+        if "unavailable" in (e.stderr or "") or "Private video" in (e.stderr or ""):
+            raise Skip("excluded", "unavailable (removed or private)")
+        raise
 
 
 def captions(vid):
