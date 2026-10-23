@@ -2,8 +2,8 @@
 type: topic
 aliases: [Gradient descent, learning rate, minibatch, SGD, optimization]
 first_seen: 2022-08-16
-last_updated: 2022-10-04
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]"]
+last_updated: 2022-11-21
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-11-21-makemore-5-wavenet]]"]
 related: ["[[loss-functions]]", "[[backpropagation]]", "[[micrograd]]", "[[training-diagnostics]]"]
 ---
 # Gradient descent
@@ -22,6 +22,8 @@ On the learning rate, his initial 0.1 was a guess, and he cannot tell from the l
 
 The third makemore lecture adds a way to judge the learning rate from the updates themselves. He tracks, per weight tensor, the update-to-data ratio, the standard deviation of learning rate times gradient divided by the standard deviation of the parameter, and plots its log10 over time ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:40:26, @1:41:00). He calls -3 on that scale, updates about a thousandth of the tensor's magnitude, a rough guide: well below it usually means parameters train too slowly, and with learning rate 0.001 the updates were 10,000× too small ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:42:06, @1:43:12, @1:43:45). Dead neurons can arise during training when a high learning rate knocks a neuron off the data manifold ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @21:58, @22:33). Changing the activation scale changes the update scale: with batch normalization and no fan-in scaling the ratio fell well below -3 and he raised the learning rate 10× to 1.0, and he admits he did not fully explain why a different gain needs a different learning rate ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:49:50, @1:50:24, @1:51:00, @1:54:48). He also mentions the earlier learning-rate finding mechanism and says the field has not settled the best update rule ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:53:45, @1:55:22).
 
+In the WaveNet lecture he says the same of hyperparameter tuning as of weights: with no experimental harness they are just guessing and checking, and he says this is not representative of typical deep-learning workflows, which run scripted experiments, plot training and validation losses and search hyperparameters ([[youtube-2022-11-21-makemore-5-wavenet]] @46:42, @54:32).
+
 ## Claims
 - [[approximate-gradient-with-more-steps-beats-exact-gradient]]
 - [[counting-and-gradient-bigram-models-are-the-same-model]]
@@ -38,3 +40,4 @@ The third makemore lecture adds a way to judge the learning rate from the update
 - [[training-diagnostics]] — the update-to-data ratio plot that checks it
 - [[batch-normalization]] — why the rate had to be retuned
 - [[overfitting-and-generalization]]
+- [[prototype-in-jupyter-then-repo]] — the harness he says is missing

@@ -2,8 +2,8 @@
 type: topic
 aliases: [Regularization, smoothing, label smoothing, weight decay, dropout]
 first_seen: 2022-09-07
-last_updated: 2022-09-12
-sources: ["[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]"]
+last_updated: 2023-01-17
+sources: ["[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2023-01-17-gpt-from-scratch]]"]
 related: ["[[loss-functions]]", "[[bigram-language-model]]", "[[gradient-descent]]"]
 ---
 # Regularization
@@ -16,6 +16,8 @@ In the gradient framework, W all zeros gives logits all zero, counts all one and
 
 In the second makemore lecture he lists regularisation strength among the hyperparameters tuned on the dev split, alongside hidden size and embedding size, without yet using it ([[youtube-2022-09-12-makemore-2-mlp]] @55:22).
 
+In the GPT lecture he adds dropout, from a 2014 paper: every forward-backward pass shuts off a random subset of neurons, effectively training an ensemble of sub-networks merged at test time ([[youtube-2023-01-17-gpt-from-scratch]] @1:38:40, @1:39:13). He places it right before the connection back into the residual pathway, at the end of multi-head attention, and on the affinities after softmax to randomly prevent some nodes from communicating ([[youtube-2023-01-17-gpt-from-scratch]] @1:38:07). He treats it as a regularisation technique added because he was about to scale the model and was concerned about overfitting; the scaled model uses dropout 0.2 ([[youtube-2023-01-17-gpt-from-scratch]] @1:39:13, @1:39:46).
+
 ## Claims
 - [[weight-regularization-is-equivalent-to-count-smoothing]]
 
@@ -24,3 +26,4 @@ In the second makemore lecture he lists regularisation strength among the hyperp
 - [[bigram-language-model]]
 - [[gradient-descent]]
 - [[overfitting-and-generalization]] — what regularisation is tuned against
+- [[transformer-architecture]] — where dropout sits in the block

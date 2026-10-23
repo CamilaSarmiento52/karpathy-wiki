@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [Batch normalization, BatchNorm, running statistics, batchnorm, BatchNorm1d]
+aliases: [Batch normalization, BatchNorm, running statistics, batchnorm, BatchNorm1d, batchnorm pitfalls, channels-last]
 first_seen: 2022-10-04
-last_updated: 2022-10-11
-sources: ["[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]"]
+last_updated: 2022-11-21
+sources: ["[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[youtube-2022-11-21-makemore-5-wavenet]]"]
 related: ["[[weight-initialization]]", "[[activation-functions]]", "[[training-diagnostics]]", "[[pytorch]]", "[[backpropagation]]"]
 ---
 # Batch normalization
@@ -20,6 +20,8 @@ PyTorch's `BatchNorm1d` takes `num_features`, `eps`, `momentum` (default 0.1), `
 
 In the following lecture, writing batchnorm's backward pass by hand, he normalises the variance by 1/(n-1), Bessel's correction, rather than the paper's 1/m, deliberately ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @1:00:11, @1:00:43, @1:05:16). He says the paper uses the biased 1/n estimate during training but the unbiased n-1 estimate when calibrating running statistics for inference, which he finds extremely confusing; 1/n almost always underestimates the variance, which matters with small mini-batches ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @1:05:49, @1:06:22, @1:06:57). `torch.var` takes an `unbiased` flag whose default he believes is true but the docs do not state; the `BatchNorm1d` docs say biased but the implementation uses the unbiased version for the running std, which others have flagged in issues ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @1:06:57, @1:07:31). BatchNorm takes no keyword to choose the estimator consistently in train and test, so in his view anyone using it has a bit of a bug, less of a problem with larger batch sizes ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @1:08:05, @1:08:38). He derives the layer's whole backward pass analytically on paper, backpropagating in the order x-hat, sigma-squared, mu, x, and lands on one line of code that uses only dL/dy and the x-hats from the forward pass, which he calls the notable exception to the rest of the backward pass being about three lines per layer ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @1:38:18, @1:39:25, @1:48:17, @1:53:52).
 
+In the WaveNet lecture he recaps the layer as one that keeps running mean and variance trained outside backpropagation by exponential moving average, has a training flag because its behaviour differs between train and eval, and couples the activations of examples in a batch; he calls it a weird layer with state, and state is harmful, that causes a lot of bugs because you must set the right mode and wait for the statistics to settle ([[youtube-2022-11-21-makemore-5-wavenet]] @03:18, @03:52, @04:25). Sampling with BatchNorm left in training mode on a single example gave NaN, because the variance of one number is not a number; he calls this a bug introduced by not maintaining training state ([[youtube-2022-11-21-makemore-5-wavenet]] @15:30, @16:03, @16:35). On a 3-D input of (32, 4, 68) his `BatchNorm1d` reduced only over dimension 0, so it silently kept a running mean of shape (1, 4, 68), maintaining separate statistics for each of the four positions instead of 68 channels ([[youtube-2022-11-21-makemore-5-wavenet]] @38:53, @39:26, @40:32). `torch.mean` accepts a tuple of dimensions, so reducing over (0, 1) gives 68 channel statistics; he makes the reduce dims depend on `x.ndim` and raises for anything else ([[youtube-2022-11-21-makemore-5-wavenet]] @41:42, @42:13, @42:49, @43:22). PyTorch's `BatchNorm1d` expects (N, C) or (N, C, L) and reduces over dims 0 and 2, whereas his version assumes channels are last, (N, L, C), and reduces over 0 and 1; he acknowledges the deviation, says he prefers it that way, and keeps it ([[youtube-2022-11-21-makemore-5-wavenet]] @43:22, @43:55, @44:28). The fix moved validation loss from 2.029 to 2.022, which he says may not be statistically significant but is expected because each statistic is now estimated from 32×4 numbers rather than 32 ([[youtube-2022-11-21-makemore-5-wavenet]] @45:01, @45:35).
+
 ## Claims
 - [[avoid-batch-normalization-where-possible]]
 - [[batchnorm-train-test-variance-mismatch-is-a-bug]]
@@ -32,3 +34,5 @@ In the following lecture, writing batchnorm's backward pass by hand, he normalis
 - [[gradient-descent]] — the learning-rate retune it demands
 - [[backpropagation]] — its backward pass derived in closed form
 - [[pytorch]], [[overfitting-and-generalization]], [[makemore]]
+- [[wavenet-hierarchical-model]] — where the 3-D input bug appeared
+- [[transformer-architecture]] — LayerNorm, the per-example variant that drops the running statistics

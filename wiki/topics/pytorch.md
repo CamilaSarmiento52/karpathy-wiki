@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [PyTorch, tensors, view, nn.Module, torch.cat]
+aliases: [PyTorch, tensors, view, nn.Module, torch.cat, Sequential, pytorchifying, torch.nn-style modules]
 first_seen: 2022-08-16
-last_updated: 2022-10-11
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]"]
+last_updated: 2022-11-21
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[youtube-2022-11-21-makemore-5-wavenet]]"]
 related: ["[[micrograd]]", "[[verify-gradients-against-pytorch]]", "[[backpropagation]]", "[[batch-normalization]]", "[[weight-initialization]]"]
 ---
 # PyTorch
@@ -22,7 +22,11 @@ In the third makemore lecture he wraps evaluation in `@torch.no_grad` to skip gr
 
 In the backprop lecture he calls `retain_grad` on intermediate tensors so their `.grad` can be compared against his manual gradients, and compares with `torch.allclose` for floating-point wiggle ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @09:26, @09:58, @17:46). He uses `**-1` rather than division because he found something wrong with PyTorch's backward for division, and `F.one_hot` to scatter a gradient to the indices `max` returns ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @21:38, @38:55, @40:03). `torch.var` takes an `unbiased` flag whose default he believes is true but is not sure, and the docs do not state; the `BatchNorm1d` docs say biased while the implementation uses the unbiased estimate for the running std ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @1:06:57, @1:07:31). `F.cross_entropy` gives the same loss as the hand-rolled version and is faster in both forward and backward because the gradient collapses analytically ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @1:27:11).
 
+In the WaveNet lecture the layers are modules treated like Lego bricks, with APIs and signatures modelled on `torch.nn` so that his `Linear` mirrors `torch.nn.Linear` ([[youtube-2022-11-21-makemore-5-wavenet]] @02:11, @02:44, @03:18). He drops the per-layer generator argument in favour of seeding the torch RNG once globally ([[youtube-2022-11-21-makemore-5-wavenet]] @04:59). He moves the embedding table and the view operation into `Embedding` and `Flatten` modules, both of which exist in PyTorch with extra keyword arguments he does not use, so the forward pass needs no special cases ([[youtube-2022-11-21-makemore-5-wavenet]] @09:24, @10:31, @11:03, @11:36). He introduces a PyTorch-style `Sequential` container that holds a list of layers, passes input through them in order and reports the parameters of its children; the code then calls `model(xb)` and takes cross-entropy on the logits, which simplifies training, evaluation and sampling ([[youtube-2022-11-21-makemore-5-wavenet]] @12:42, @13:16, @13:48, @14:22, @14:54, @15:30). PyTorch's matrix multiply works on the last dimension and treats all leading dimensions as batch dimensions, so a (4, 5, 80) input through an 80-by-200 weight gives (4, 5, 200) ([[youtube-2022-11-21-makemore-5-wavenet]] @24:52, @25:27). `torch.mean` accepts a tuple of dimensions to reduce over ([[youtube-2022-11-21-makemore-5-wavenet]] @41:42, @42:13). A small demo of `view` semantics: the noisy per-step loss list, viewed as 200 rows of 1,000 and averaged per row, gives a smooth curve that also shows the learning-rate decay ([[youtube-2022-11-21-makemore-5-wavenet]] @05:33, @08:17, @08:51). He says they have effectively re-implemented `torch.nn` on top of `torch.tensor` and now understand roughly what is in it, so future lectures will use `torch.nn` directly ([[youtube-2022-11-21-makemore-5-wavenet]] @51:42, @52:15). On the documentation itself, he says it is not very good: wrong, incomplete and unclear, with no one maintaining it as far as he can tell ([[youtube-2022-11-21-makemore-5-wavenet]] @52:51).
+
 ## Claims
+- [[pytorch-documentation-is-unreliable]]
+- [[deep-learning-is-largely-shape-gymnastics]]
 - [[micrograd-is-all-you-need-everything-else-is-efficiency]]
 - [[treat-broadcasting-with-respect]]
 - [[batchnorm-train-test-variance-mismatch-is-a-bug]]
@@ -36,3 +40,5 @@ In the backprop lecture he calls `retain_grad` on intermediate tensors so their 
 - [[check-shapes-and-broadcasting]]
 - [[embeddings]] — indexing the lookup table
 - [[batch-normalization]], [[weight-initialization]] — the `BatchNorm1d` and `kaiming_normal` APIs
+- [[wavenet-hierarchical-model]] — the reshape-plus-Linear hierarchy built on matmul's batch dimensions
+- [[prototype-in-jupyter-then-repo]] — where the docs reading happens

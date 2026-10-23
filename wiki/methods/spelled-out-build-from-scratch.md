@@ -10,8 +10,11 @@ steps:
   - Walk the real repo at the end
   - Seed randomness so viewers reproduce the numbers
   - Build the explicit baseline, then the neural net
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]"]
-aliases: [spelled-out lecture, spell it out step by step, explicit baseline then neural net, build from a blank notebook]
+  - Package the baseline as a script with a stable loss estimate
+  - Add one component at a time and read validation loss
+  - Release the code with its git log
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2023-01-17-gpt-from-scratch]]"]
+aliases: [spelled-out lecture, spell it out step by step, explicit baseline then neural net, build from a blank notebook, build up from a bigram baseline, incremental model build-up]
 ---
 # Spelled-out build from scratch
 How he teaches: he starts with a blank Jupyter notebook and builds the whole thing step by step, commenting on every piece ([[youtube-2022-08-16-micrograd]] @00:00, @00:32).
@@ -32,7 +35,17 @@ How he teaches: he starts with a blank Jupyter notebook and builds the whole thi
 12. **Show a bug on purpose.** He invites viewers to pause and think about why the `keepdim` bug happens before explaining it ([[youtube-2022-09-07-makemore-1-bigram]] @46:57).
 13. **Warn about the framework.** He cautions viewers about framework APIs and tells them to get used to reading docs and threads ([[youtube-2022-09-07-makemore-1-bigram]] @1:07:47, @1:09:28).
 
+14. **Start from the bigram again.** In the GPT lecture he begins with an empty file and defines the Transformer piece by piece on tiny Shakespeare, starting from the bigram model he calls the simplest possible neural network for language modelling ([[youtube-2023-01-17-gpt-from-scratch]] @06:45, @21:57).
+15. **Package the baseline as a script.** He converts the notebook into a roughly 120-line script, `bigram.py`, as starter code to iterate on, with hyperparameters at the top, GPU support and a loss estimator ([[youtube-2023-01-17-gpt-from-scratch]] @37:41, @38:15, @41:36).
+16. **One addition, one number.** He reads validation loss after each addition: bigram about 2.5, one self-attention head about 2.4, four heads about 2.28, feed-forward about 2.24, residuals with the 4x inner layer about 2.08, LayerNorm about 2.06, the scaled-up model about 1.48 ([[youtube-2023-01-17-gpt-from-scratch]] @41:36, @1:21:27, @1:23:41, @1:25:52, @1:31:57, @1:36:59, @1:40:21).
+17. **Adjust the learning rate as the model grows.** He lowers the learning rate when adding self-attention because attention cannot tolerate very high learning rates, and again when the network gets much bigger ([[youtube-2023-01-17-gpt-from-scratch]] @1:21:27, @1:39:46).
+18. **Borrow the paper's fixes, not tuning.** When stacking blocks fails to train well he recognises deep-network optimisation issues and borrows residual connections and LayerNorm from the paper ([[youtube-2023-01-17-gpt-from-scratch]] @1:28:02).
+19. **Regularise, then scale up last.** He adds dropout before scaling up because he is concerned about overfitting ([[youtube-2023-01-17-gpt-from-scratch]] @1:39:13).
+20. **Release the git log.** He releases the code with the commits made along the way so the build-up can be followed step by step ([[youtube-2023-01-17-gpt-from-scratch]] @1:54:50).
+
 ## Seen in
+- [[youtube-2023-01-17-gpt-from-scratch]]
+- [[ng-video-lecture]], [[nanogpt]]
 - [[youtube-2022-08-16-micrograd]]
 - [[youtube-2022-09-07-makemore-1-bigram]]
 - [[makemore]]

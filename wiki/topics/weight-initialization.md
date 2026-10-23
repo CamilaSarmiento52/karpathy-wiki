@@ -2,8 +2,8 @@
 type: topic
 aliases: [Weight initialization, Kaiming init, He init, initial loss, Kaiming normal, fan-in scaling, expected loss at initialization]
 first_seen: 2022-10-04
-last_updated: 2022-10-04
-sources: ["[[youtube-2022-10-04-makemore-3-activations-batchnorm]]"]
+last_updated: 2023-01-31
+sources: ["[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[github-2023-01-31-ng-video-lecture-readme]]"]
 related: ["[[batch-normalization]]", "[[activation-functions]]", "[[training-diagnostics]]", "[[multilayer-perceptron]]"]
 ---
 # Weight initialization
@@ -16,6 +16,8 @@ Multiplying a unit-Gaussian input by Gaussian weights expands the standard devia
 
 A one-hidden-layer MLP is forgiving of bad initialisation, but with 50-layer networks the problems stack up and a network can fail to train at all ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @27:02, @27:35). In his deep linear-tanh sandwich, gain 1 shrinks the activations towards zero over depth and gain 3 saturates them, and the gradients distort when the gain is too small or too large ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:28:47, @1:29:56, @1:31:03, @1:31:35). He does not know where PyTorch's 5/3 gain for tanh comes from; he searched briefly and found nothing, but empirically it stabilises the sandwich ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:29:56, @1:30:30). In a sandwich of linear layers alone the right gain is 1; with 5/3 the activations diffuse and the gradients shrink with depth, an asymmetry he calls bad for deep nets ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:32:09, @1:32:43, @1:33:16). Before normalization layers, Adam and residual connections, training deep nets was a balancing act and very deep networks were basically impossible to train ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:33:49, @1:34:21). Calibrating gains in a linear-tanh sandwich, he says, feels like balancing a pencil on your finger ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:45:56). With batch normalization the activations come out homogeneous regardless of the linear gain, even without fan-in scaling, though the update scale changes so the learning rate may need retuning ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:47:37, @1:48:44, @1:49:50).
 
+The ng-video-lecture README restates the point for the GPT lecture's code: he did not go much into model initialisation in that lecture, but says it is quite important for good performance; the code trains and works fine, yet converges more slowly because it starts off in a not-great spot in weight space ([[github-2023-01-31-ng-video-lecture-readme]] §intro). The proper initialisation, he says, is nanoGPT's `_init_weights` function in `model.py`, which cannot be copy-pasted into the lecture code because the modules are named and stored differently; he planned a supplementary lecture and a code push to follow ([[github-2023-01-31-ng-video-lecture-readme]] §intro).
+
 ## Claims
 - [[the-hockey-stick-loss-means-training-is-wasting-steps]]
 - [[modern-innovations-make-precise-initialization-less-important]]
@@ -26,3 +28,4 @@ A one-hidden-layer MLP is forgiving of bad initialisation, but with 50-layer net
 - [[training-diagnostics]] — the plots that show whether the initialisation is right
 - [[loss-functions]] — the expected loss at initialisation
 - [[multilayer-perceptron]], [[pytorch]], [[makemore]]
+- [[ng-video-lecture]], [[nanogpt]] — the GPT lecture code that skipped initialisation, and where its fix lives

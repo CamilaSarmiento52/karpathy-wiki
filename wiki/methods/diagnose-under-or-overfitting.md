@@ -7,8 +7,10 @@ steps:
   - If roughly equal, scale the model up
   - If dev departs above train, overfitting has begun
   - Evaluate the test split once at the end
-sources: ["[[youtube-2022-09-12-makemore-2-mlp]]"]
-aliases: [overfit a single batch, compare train and dev loss, reading train vs dev loss, sanity-check the training loop]
+  - Match parameter counts before comparing architectures
+  - Check for bugs before reading a null result
+sources: ["[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-11-21-makemore-5-wavenet]]"]
+aliases: [overfit a single batch, compare train and dev loss, reading train vs dev loss, sanity-check the training loop, control for parameter count, parameter-matched comparison]
 ---
 # Diagnose under- or overfitting
 How he reads whether a model is too small or memorising: first check the training loop by overfitting a handful of examples, then compare the loss on the train and dev splits ([[youtube-2022-09-12-makemore-2-mlp]] @39:23, @1:00:20).
@@ -24,6 +26,13 @@ How he reads whether a model is too small or memorising: first check the trainin
 8. **Watch for departure.** When train and validation performance slowly depart, the parameters may be large enough to start overfitting ([[youtube-2022-09-12-makemore-2-mlp]] @1:09:55).
 9. **Test once.** Hyperparameters are tuned on dev performance across many experiments; the test set is evaluated a single time ([[youtube-2022-09-12-makemore-2-mlp]] @1:10:30).
 
+10. **Read the gap before scaling.** In the WaveNet lecture, train 2.05 against validation 2.10 means little overfitting, so he scales the network up ([[youtube-2022-11-21-makemore-5-wavenet]] @17:09).
+11. **Match parameter counts.** When comparing a new architecture against the old one, he picks the hidden size so that total parameters match: 68 hidden units gives 22,000 parameters, the same as before, so the question is whether the parameters are used more efficiently rather than whether a bigger model does better ([[youtube-2022-11-21-makemore-5-wavenet]] @37:15, @37:47).
+12. **Clean run.** He removes debugging cells and reruns the optimisation before reading the result ([[youtube-2022-11-21-makemore-5-wavenet]] @37:47).
+13. **Suspect bugs before concluding.** Before reading the null result (2.029 against 2.027), he notes the architecture has not been tuned and that BatchNorm might still have a bug, which it did ([[youtube-2022-11-21-makemore-5-wavenet]] @38:20, @45:01).
+14. **Watch both losses.** He admits to looking only at training loss and says normally you watch training and validation together ([[youtube-2022-11-21-makemore-5-wavenet]] @46:42, @47:13).
+
 ## Seen in
+- [[youtube-2022-11-21-makemore-5-wavenet]]
 - [[youtube-2022-09-12-makemore-2-mlp]]
 - [[makemore]]

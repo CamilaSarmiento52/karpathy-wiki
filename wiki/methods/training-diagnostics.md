@@ -9,7 +9,9 @@ steps:
   - Plot gradient-to-data ratios per weight tensor
   - Track the update-to-data ratio over time against -3
   - Retune the learning rate from the update-ratio plot
-sources: ["[[youtube-2022-10-04-makemore-3-activations-batchnorm]]"]
+  - Average the loss over many batches before reading it
+  - Switch eval and train mode deliberately
+sources: ["[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2023-01-17-gpt-from-scratch]]"]
 aliases: [training diagnostics plots, activation and gradient statistics, update-to-data ratio, check the loss at initialization, evaluate with a single loss number]
 ---
 # Training diagnostics
@@ -27,7 +29,11 @@ How he tells whether a training run is healthy: sanity-check the loss at initial
 
 The plots are read over time rather than as one snapshot ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:52:40, @1:53:12). To gather the statistics he adds a `.out` attribute to his modules, which PyTorch's do not have ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:23:48). He demonstrates that forgetting fan-in normalisation shows up at once in the saturation, gradient and update-ratio plots, and that with batchnorm and no fan-in scaling the update ratio fell well below -3, so he raised the learning rate 10× to 1.0 ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:44:49, @1:45:22, @1:50:24, @1:51:00). He also mentions the learning-rate finding mechanism from an earlier lecture ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:53:45). **Note:** that mechanism is [[learning-rate-sweep]]; and [[quick-experiment-loop]] is a later, higher-level habit of judging runs by fixed plots ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:53:45).
 
+The GPT lecture repeats the first step on a new problem: with 65 vocabulary elements he expects an initial loss of about -ln(1/65), roughly 4.17, and the measured 4.87 tells him the initial predictions are not diffuse and the model is guessing wrong at init ([[youtube-2023-01-17-gpt-from-scratch]] @28:03, @28:37). Hygiene he adds in the same script: average the loss over many batches with an `estimate_loss` function because a single batch is a noisy measurement ([[youtube-2023-01-17-gpt-from-scratch]] @39:23, @39:56); switch the model between eval and train mode as good practice even when no layer yet depends on it ([[youtube-2023-01-17-gpt-from-scratch]] @40:31); wrap evaluation in `torch.no_grad` so PyTorch can save memory ([[youtube-2023-01-17-gpt-from-scratch]] @41:04).
+
 ## Seen in
+- [[youtube-2023-01-17-gpt-from-scratch]]
+- [[bigram-language-model]], [[ng-video-lecture]]
 - [[youtube-2022-10-04-makemore-3-activations-batchnorm]]
 - [[makemore]]
 - [[weight-initialization]], [[batch-normalization]], [[activation-functions]], [[gradient-descent]]

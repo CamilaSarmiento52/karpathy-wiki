@@ -31,6 +31,7 @@ Continuing the makemore character-level MLP, he says the point of staying at the
 - The makemore MLP is now limited by its three-character context, not by optimisation → [[makemore]] (@1:53:45)
 - Initialisation and backpropagation are still active research, not solved → [[modern-innovations-make-precise-initialization-less-important]] (@1:55:22)
 - The lecture is part 3 of the makemore series → [[makemore]] (@00:00)
+- He suspects the three-character MLP is bottlenecked by context length, not optimisation → [[wavenet-hierarchical-model]] (@1:53:45, @1:54:17)
 
 ## Fed pages
 - [[weight-initialization]]
@@ -47,3 +48,4 @@ Continuing the makemore character-level MLP, he says the point of staying at the
 - [[overfitting-and-generalization]]
 - [[multilayer-perceptron]]
 - [[makemore]]
+- [[wavenet-hierarchical-model]]

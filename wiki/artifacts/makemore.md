@@ -3,7 +3,7 @@ type: artifact
 repo_url: https://github.com/karpathy/makemore
 language: Python
 status: active
-sources: ["[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]"]
+sources: ["[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[github-2022-11-20-makemore-readme]]", "[[youtube-2022-11-21-makemore-5-wavenet]]"]
 aliases: [make more]
 ---
 # makemore
@@ -15,7 +15,7 @@ makemore is a repository on his GitHub that, like micrograd before it, he builds
 - The announced series implements bigram and bag-of-words models, MLPs, RNNs and a transformer he says is basically equivalent to GPT-2 ([[youtube-2022-09-07-makemore-1-bigram]] @02:13).
 - Possible later extensions: word level, then images and image-text networks such as DALL-E and Stable Diffusion ([[youtube-2022-09-07-makemore-1-bigram]] @02:13, @02:45).
 - Part 1 builds the bigram model twice, by counting and as a one-layer net, and shows they are the same model ([[youtube-2022-09-07-makemore-1-bigram]] @1:49:31, @1:55:39).
-- `status: active` comes from this 2022 source; a later GitHub README snapshot should decide the real status ([[youtube-2022-09-07-makemore-1-bigram]] @00:00).
+- `status: active` comes from this 2022 source; the README snapshot of 2022-11-20 carries no deprecation notice, so it stands until a later snapshot says otherwise ([[youtube-2022-09-07-makemore-1-bigram]] @00:00; [[github-2022-11-20-makemore-readme]] §intro).
 
 - Part 2 implements the MLP step of the plan on 228,000 three-character examples from the same 32,000 names, reaching a best validation loss of 2.17 ([[youtube-2022-09-12-makemore-2-mlp]] @01:40, @08:55, @41:35, @1:11:38).
 - He shares a Google Colab so the notebook runs in the browser with no installation ([[youtube-2022-09-12-makemore-2-mlp]] @1:14:57, @1:15:30).
@@ -29,13 +29,30 @@ makemore is a repository on his GitHub that, like micrograd before it, he builds
 - Its starter code expands the forward pass into many intermediate tensors and retains their grads so each manual gradient can be checked ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @09:26, @09:58).
 - Exercise four trains the MLP with only manual gradients, `torch.no_grad` and a zip of parameters and gradients for the update, reaching a similar loss and name-like samples with about 20 lines of backward code; the next lecture moves to RNNs and LSTMs ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @1:51:04, @1:52:13, @1:52:46, @1:53:18, @1:54:58).
 
+- Part 5 starts from part 3's code (part 4 was the manual-backpropagation aside) with about 12,000 parameters, a validation loss of 2.10 and name-like samples not in the training set; with block size 3 there are 182,000 examples ([[youtube-2022-11-21-makemore-5-wavenet]] @01:36, @02:11, @05:33, @06:06, @06:40).
+- It grows the MLP into a WaveNet-like hierarchical model: block size 8 alone gives 2.02, and the final 76,000-parameter model reaches 1.993; he invites viewers to beat it by reallocating channels, changing the embedding size, scaling the one-hidden-layer network, implementing WaveNet layers from the paper, or tuning initialisation and optimisation ([[youtube-2022-11-21-makemore-5-wavenet]] @20:29, @46:08, @55:06, @55:40, @56:12).
+- Future lectures he names at the end of part 5: a convolutional version, residual and skip connections, an experimental harness, RNNs, LSTMs, GRUs and Transformers ([[youtube-2022-11-21-makemore-5-wavenet]] @53:57, @54:32, @55:06).
+
+- The README describes makemore as taking a text file with one training example per line and generating more examples like it; under the hood it is an autoregressive character-level language model with models ranging from a bigram count table to a Transformer as in GPT ([[github-2022-11-20-makemore-readme]] §intro).
+- He suggests feeding it names to get name-like baby names that do not already exist, company names, or valid Scrabble words for English-like babble ([[github-2022-11-20-makemore-readme]] §intro).
+- It is one hackable file, mostly intended for education, and PyTorch is its only requirement ([[github-2022-11-20-makemore-readme]] §intro).
+- The implementations follow specific papers: a lookup table of counts for the bigram, Bengio et al. 2003 for the MLP, WaveNet 2016 for the CNN (marked in progress in this snapshot), Mikolov et al. 2010 for the RNN, Graves et al. 2014 for the LSTM, Cho et al. 2014 for the GRU and Vaswani et al. 2017 for the Transformer ([[github-2022-11-20-makemore-readme]] §intro).
+- The bundled `names.txt` is the 32K most common names from ssa.gov for 2018 ([[github-2022-11-20-makemore-readme]] §Usage).
+- The default model is a roughly 200K-parameter Transformer; other configurations are reachable through argparse and reading the code ([[github-2022-11-20-makemore-readme]] §Usage).
+- Training needs no special hardware and runs on his MacBook Air, faster with a GPU; a `--sample-only` flag samples from the best model so far ([[github-2022-11-20-makemore-readme]] §Usage).
+- The default settings reach a test log-probability of about 1.92, and he says lower is achievable with hyperparameter tuning ([[github-2022-11-20-makemore-readme]] §Usage).
+- Licensed MIT; the README also backs the `repo_url` above, which group A1 took from the merge map ([[github-2022-11-20-makemore-readme]] §License).
+
 ## Related
 - [[character-level-language-modeling]] — the task
 - [[bigram-language-model]] — the first model
 - [[multilayer-perceptron]], [[embeddings]] — the second model
 - [[learning-rate-sweep]], [[diagnose-under-or-overfitting]], [[training-diagnostics]]
 - [[weight-initialization]], [[batch-normalization]] — the third lecture's fixes
+- [[wavenet-hierarchical-model]] — the fifth lecture's deeper model
+- [[prototype-in-jupyter-then-repo]] — how he says the code gets written
 - [[micrograd]] — the predecessor repo and lecture
 - [[spelled-out-build-from-scratch]], [[check-shapes-and-broadcasting]], [[verify-gradients-against-pytorch]]
 - [[backpropagation]] — the fourth lecture's hand-written tensor backward pass
+- [[small-hackable-educational-code]] — the README's one-file, PyTorch-only framing
 - **Note:** the series' endpoint is a GPT-2-grade transformer; [[nanogpt]] is his later repo for that, a connection the source does not make.

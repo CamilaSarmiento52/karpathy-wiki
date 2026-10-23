@@ -2,8 +2,8 @@
 type: topic
 aliases: [Overfitting, underfitting, train/dev/test split, validation loss, generalization]
 first_seen: 2022-09-12
-last_updated: 2022-10-04
-sources: ["[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]"]
+last_updated: 2022-11-21
+sources: ["[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-11-21-makemore-5-wavenet]]"]
 related: ["[[diagnose-under-or-overfitting]]", "[[regularization]]", "[[gradient-descent]]", "[[embeddings]]", "[[batch-normalization]]"]
 ---
 # Overfitting and generalization
@@ -16,6 +16,8 @@ With 3,400 parameters and 32 examples the network overfits a single batch and re
 
 In the third lecture he notes an accidental regulariser: batch normalization couples the examples in a batch, so each example's hidden states jitter depending on the others, which he says pads out the examples like a form of data augmentation and makes overfitting harder ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @50:57, @51:31, @52:04).
 
+In the fifth lecture a training loss of 2.05 against a validation loss of 2.10 tells him the model is not overfitting much, so he can make progress by scaling the network up ([[youtube-2022-11-21-makemore-5-wavenet]] @17:09). He admits they were only looking at training loss, whereas normally you look at training and validation loss together, and that things look different when squeezing out numbers ([[youtube-2022-11-21-makemore-5-wavenet]] @46:42, @47:13). After the hierarchical model he says a large enough one-hidden-layer network might still beat it ([[youtube-2022-11-21-makemore-5-wavenet]] @55:40).
+
 ## Claims
 - [[approximate-gradient-with-more-steps-beats-exact-gradient]] — the minibatch loss is noisy, so progress is read on the full set
 - [[avoid-batch-normalization-where-possible]] — the regularising side effect is one reason the layer has been hard to remove
@@ -26,4 +28,5 @@ In the third lecture he notes an accidental regulariser: batch normalization cou
 - [[regularization]] — a hyperparameter tuned on dev
 - [[gradient-descent]]
 - [[embeddings]] — the bottleneck he found
+- [[wavenet-hierarchical-model]] — the scale-up the 2.05/2.10 reading licensed
 - [[makemore]]
