@@ -86,3 +86,13 @@ Verified 2026-10-23 by a fresh reader. Sources: [[github-2022-11-20-makemore-rea
 - [[mingpt]]: 9 sentences, all supported by the README (F6 is the "which became nanoGPT" tail only).
 - [[nanogpt]]: 5 group-B sentences (two files of 300 lines, GPT-2 124M reproduction @05:36/@06:12 without the "2017" slip; train.py features @1:46:28; batched heads, GELU "because OpenAI used it and I want to be able to load their checkpoints", weight-decay split @1:47:36/@1:48:10; pretraining focus @1:54:16; `_init_weights` from the README), all supported.
 - [[ng-video-lecture]]: 9 sentences (Colab in the description @07:50; 120 lines @41:36; hyperparameters at top/GPU/estimate_loss @37:41–@39:56; 6 layers/384/6 heads/256/64/0.2 and 1.48 in ~15 min on his A100 @1:39:13–@1:40:21; "I would not run this on a CPU or MacBook" @1:40:54; ~200 lines with git log @1:54:50; all README caveats), all supported.
+
+## Resolution
+Resolved 2026-10-23 (log entry `## 2026-10-23 correction`).
+- F1 — fixed
+- F2 — fixed, using the shorter option (Note points at [[pytorch]]; only the general complaint is cited here), so no new sources were added to the claim
+- F3 — fixed
+- F4 — fixed
+- F5 — fixed (nanoGPT README under `context` and in its Fed pages; dating remark now a **Note:**)
+- F6 — fixed
+- F7 — fixed

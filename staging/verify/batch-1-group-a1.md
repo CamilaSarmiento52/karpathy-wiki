@@ -73,3 +73,11 @@ Method note: all 12 claim quotes are verbatim in the raw file at the cited block
 - [[diagnose-under-or-overfitting]]: 9 makemore-2 steps checked (first five words for efficiency, 3,400 params vs 32 examples, max logits vs labels, dots → E/O/A/S, dev about 2.3, equal = under-fitting, 300 neurons then 10-dim embeddings, slow departure, test once), all supported; see F3 for the definition sentence.
 - [[micrograd]]: 7 sentences checked (two years earlier and source-only, ~100 + ~50 lines, relu present and tanh "intend to add", `Module` and `zero_grad` matching nn.Module, test against PyTorch, demo with batching / max-margin / L2 / lr decay, `_prev` set "I believe for efficiency"), all supported.
 - [[makemore]]: 7 sentences citing makemore-1/2 checked (32,000 names from a government website, Dontal/Irot/Zendy, GPT-2-equivalent transformer, DALL-E / Stable Diffusion extensions, 228,000 examples and 2.17, Colab with no installation), all supported.
+
+## Resolution
+Resolved 2026-10-23 (log entry `## 2026-10-23 correction`).
+- F1 — fixed
+- F2 — fixed
+- F3 — fixed (definition sentence reworded; alias "sanity-check the training loop" dropped)
+- F4 — fixed
+- F5 — fixed

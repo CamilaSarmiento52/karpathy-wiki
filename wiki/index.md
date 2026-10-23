@@ -57,7 +57,7 @@ Every wiki page, grouped by type. Maintained by ingest; do not edit by hand.
 - [[attention-is-a-communication-mechanism|Attention is a communication mechanism between nodes in a directed graph]] — 2023-01-17; no notion of space; the mask makes it a decoder
 - [[avoid-batch-normalization-where-possible|He tells learners to avoid batch normalization as much as possible]] — 2022-10-04; coupling examples regularises by accident and causes bugs
 - [[backpropagation-is-more-general-than-neural-networks|Backpropagation does not care about neural networks]] — 2022-08-16; it works on arbitrary expressions
-- [[batchnorm-train-test-variance-mismatch-is-a-bug|Using the biased variance in training and the unbiased one at test time is a bug in batchnorm]] — 2022-10-11; he uses Bessel's correction throughout
+- [[batchnorm-train-test-variance-mismatch-is-a-bug|He considers batchnorm's biased-in-training, unbiased-at-test variance a bug]] — 2022-10-11; he uses Bessel's correction throughout
 - [[claude-code-is-the-first-convincing-llm-agent|Claude Code is the first convincing LLM agent]] — 2025-12-19; agents belong on your own computer
 - [[counting-and-gradient-bigram-models-are-the-same-model|The counting bigram model and the one-layer net are the same model]] — 2022-09-07; W.exp() is the count table
 - [[deep-learning-is-largely-shape-gymnastics|Much of deep-learning development is making tensor shapes work]] — 2022-11-21; 2-D, 3-D, 4-D, NCL vs NLC, view and permute

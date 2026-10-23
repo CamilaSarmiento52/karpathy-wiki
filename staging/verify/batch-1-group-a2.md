@@ -86,3 +86,15 @@ Verified 2026-10-23 by a fresh reader. Sources: [[youtube-2022-10-04-makemore-3-
 - [[youtube-2022-10-04-makemore-3-activations-batchnorm]]: Summary + 8 key points checked (27 vs 3.29, √2 / 5/3, "most common", 1e-3, pencil, linear collapse, redundant bias, context-length bottleneck), all supported at the cited blocks
 - [[youtube-2022-10-11-makemore-4-backprop-ninja]]: Summary + 6 key points checked (leaky abstraction, 2010–2014 MATLAB/numpy, 1e-9, 5e-9, n−1 throughout, 20 lines; "highly non-trivial" is at @1:49:24, one block after the cited @1:48:50, within tolerance), all supported; only F4
 - Paper attributions: Kaiming/He et al. findings (√2 gain, forward→backward, fan-in vs fan-out) and BatchNorm paper proposals (scale/shift, calibration stage, running stats, biased 1/m) are everywhere attributed to the papers, not to him. No disguised claims in **Note:** sentences. Caption garble ("ARS prop", "one5", "bathroom", "Bachelor") is corrected outside quotes throughout.
+
+## Resolution
+Resolved 2026-10-23 (log entry `## 2026-10-23 correction`).
+- F1 — fixed; `supports` kept on both pages (CLAUDE.md sets it on both), with the line on [[avoid-batch-normalization-where-possible]] stating that the support runs variance-bug → avoid only
+- F2 — fixed
+- F3 — fixed (title and index line)
+- F4 — fixed
+- F5 — fixed
+- F6 — fixed
+- F7 — fixed
+- F8 — fixed
+- F9 — fixed

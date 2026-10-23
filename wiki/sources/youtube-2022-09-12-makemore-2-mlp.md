@@ -21,7 +21,7 @@ He opens by showing why the bigram count table cannot take more context: the num
 - `.view` manipulates storage offset, strides and shape without copying; `torch.cat` creates new memory → [[pytorch]] (@24:24, @27:10)
 - A bias broadcast onto a 32×100 matrix is checked against the rules; always check broadcasting → [[broadcasting]], [[check-shapes-and-broadcasting]] (@28:16, @28:49)
 - Use `F.cross_entropy` instead of rolling your own: fused kernels, simpler backward, and max-subtraction avoids overflow → [[loss-functions]], [[use-cross-entropy-not-a-hand-rolled-loss]] (@33:16, @34:56, @37:08)
-- Overfit a single small batch first to check the training loop; loss cannot reach zero where one context has several labels → [[diagnose-under-or-overfitting]] (@39:23, @40:28)
+- Developing on 32 examples, he gets a very low loss and names it overfitting a single batch; loss cannot reach zero where one context has several labels → [[diagnose-under-or-overfitting]] (@39:23, @40:28)
 - Minibatches trade gradient quality for speed; more approximate steps beat fewer exact ones → [[gradient-descent]], [[approximate-gradient-with-more-steps-beats-exact-gradient]] (@43:50, @44:24)
 - Find a learning rate by sweeping exponents from -3 to 0 over 1,000 steps and plotting loss against exponent → [[learning-rate-sweep]], [[gradient-descent]] (@47:07, @50:25)
 - Rough recipe: find a decent rate, train a while, decay by 10x at the end → [[gradient-descent]] (@52:37)

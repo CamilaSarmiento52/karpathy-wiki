@@ -25,8 +25,10 @@ His earlier repo for training and finetuning medium-sized GPTs, a rewrite of min
 - Two weeks after the lecture, the ng-video-lecture README points to the `# init all weights` comment and the `_init_weights` function in nanoGPT's `model.py` as the proper weight initialisation the lecture code lacks ([[github-2023-01-31-ng-video-lecture-readme]] §intro).
 
 ## Related
-- [[weight-initialization]]- [[ng-video-lecture]] — the lecture code that builds toward it
-- [[self-attention]], [[transformer-architecture]], [[pretraining-and-finetuning]]- [[mingpt]] — the predecessor it rewrote
-- [[transformer-architecture]]
-- [[small-hackable-educational-code]]- [[nanochat]]
+- [[weight-initialization]]
+- [[ng-video-lecture]] — the lecture code that builds toward it
+- [[self-attention]], [[transformer-architecture]], [[pretraining-and-finetuning]]
+- [[mingpt]] — the predecessor it rewrote
+- [[small-hackable-educational-code]]
+- [[nanochat]]
 - [[building-for-agents]]

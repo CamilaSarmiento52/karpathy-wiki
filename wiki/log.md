@@ -90,3 +90,25 @@ Review of the first ingest (external review, 2026-10-20). Compilation errors, fi
 - created: [[github-2023-01-31-ng-video-lecture-readme]]
 - updated: [[ng-video-lecture]], [[weight-initialization]], [[nanogpt]], [[small-hackable-educational-code]]
 - notes: per the merge map, model-initialization-matters-for-good-performance is a paragraph on [[weight-initialization]], not a claim page. [[ng-video-lecture]]'s `repo_url` is now backed by this source; its `status: active` rests on his stated plan to keep the repo as taught. The supplementary lecture and code push are written as plans at snapshot time, not as done. The digest's unsourced alias "Let's build GPT code" was not added. neural-networks-zero-to-hero stays a mention. End of merge group B; lint clean.
+
+## 2026-10-23 correction
+Batch 1 verification (three fresh readers, reports in staging/verify/). Compilation errors fixed in place:
+- [[youtube-2022-08-16-micrograd]]: said it took him 15 minutes to find the tanh backward kernel; he spent about 15 minutes without finding it and reached it through a pointer in a thread. Overstated.
+- [[youtube-2022-09-12-makemore-2-mlp]], [[diagnose-under-or-overfitting]]: said he overfits a small batch "to check the training loop"; he develops on five words for efficiency and names the low loss overfitting a single batch. Purpose was invented; alias "sanity-check the training loop" dropped.
+- [[weight-regularization-is-equivalent-to-count-smoothing]]: the smoothing/regularisation identification was cited to blocks that do not make it; now cites @1:50:05, where he does, and is worded as his tie-back.
+- [[treat-broadcasting-with-respect]]: reversed the order of the encouragement (@44:10) and the `keepdim` demonstration; now in his order.
+- [[avoid-batch-normalization-where-possible]], [[batchnorm-train-test-variance-mismatch-is-a-bug]]: the `supports` lines implied the variance mismatch was one of the coupling bugs he had in mind at @1:17:07 and called it PyTorch's; he attributes it to the paper (PyTorch follows it) and never connects the two. Both lines now say so; `supports` kept on both pages, with the line stating that the support runs variance-bug → avoid only, as the report allows.
+- [[batchnorm-train-test-variance-mismatch-is-a-bug]], [[index]]: title stated the bug as fact; now "He considers … a bug", matching his hedged wording (@1:08:05, @1:08:38).
+- [[youtube-2022-10-11-makemore-4-backprop-ninja]]: Summary called the variance mismatch PyTorch's; it is the paper's, which PyTorch follows (@1:05:49, @1:07:31).
+- [[activation-functions]]: credited the ±1.5, no-saturation result to a 0.2 weight scale; it belongs to 0.1, after which he relaxed to 0.2 (@24:48, @25:22).
+- [[the-hockey-stick-loss-means-training-is-wasting-steps]]: presented garbled caption numbers (2.2 → 2.16) as fact; now uses his clean summary, 2.17 → 2.13 (@25:57).
+- [[understand-backprop-even-with-autograd]]: listed RNN gradient problems as "already covered"; he says he is about to cover them (@01:37).
+- [[training-diagnostics]]: step 6's cause (weights shrunk by 0.1) was stated at @1:42:39, not in the cited blocks; added.
+- [[batch-normalization]]: "forcing a unit Gaussian always gives poor results" misplaced his "always"; now "forcing the activations to stay unit Gaussian throughout training gives poor results".
+- [[deep-learning-is-largely-shape-gymnastics]]: said the WaveNet lecture had "one bug"; it has two on camera. Now "its shape bug"; first stamp moved to @32:15 where the view is written.
+- [[pytorch-documentation-is-unreliable]]: the Note cited the WaveNet lecture for `torch.tensor`/`torch.var` complaints made in other lectures; shortened to point at [[pytorch]], citing only the general complaint here.
+- [[youtube-2023-01-17-gpt-from-scratch]]: 1 MB figure is at @03:57; added to the citation.
+- [[pretraining-and-finetuning]]: labelled the reward-model/PPO stage "RLHF" as if his term; he never uses it. Now described in his words, with the modern label marked as the wiki's.
+- [[gpt-is-not-a-complicated-model]], [[github-2025-11-12-nanogpt-readme]]: the Note compared the minGPT README to the nanoGPT README's line count citing only the former; now cites both, with the nanoGPT README under `context` and in its Fed pages. The January-2023 dating remark is now a labelled Note.
+- [[small-hackable-educational-code]], [[mingpt]]: said the direction change "is why he started" / "became" nanoGPT; the README only points to his rewrite nanoGPT. Now worded as the pointer.
+- [[nanogpt]], [[ng-video-lecture]]: run-together Related bullets split; duplicate [[transformer-architecture]] dropped.

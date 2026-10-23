@@ -9,4 +9,4 @@ topic: "[[broadcasting]]"
 > "And I encourage you to treat this with respect." — [[youtube-2022-09-07-makemore-1-bigram]] @44:10
 
 ## Context
-Having shown that dropping `keepdim=True` silently normalises columns instead of rows, he strongly encourages reading the broadcasting semantics, practising, and checking the direction of broadcasting, because mistakes produce very subtle, hard-to-find bugs ([[youtube-2022-09-07-makemore-1-bigram]] @44:10, @46:21, @49:08, @49:40).
+He strongly encourages reading the broadcasting semantics and treating them with respect, then demonstrates dropping `keepdim=True`, which silently normalises columns instead of rows, and repeats that such mistakes produce very subtle, hard-to-find bugs ([[youtube-2022-09-07-makemore-1-bigram]] @44:10, @46:21, @49:08, @49:40).

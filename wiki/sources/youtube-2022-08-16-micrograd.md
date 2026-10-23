@@ -28,7 +28,7 @@ He starts from a blank Jupyter notebook and rebuilds micrograd, the scalar-value
 - Forgetting to zero the gradients before `backward` is a common, subtle bug he made on camera; the simple problem still trained because accumulated grads acted as a huge step size (@2:10:28, @2:11:01, @2:12:42) → [[forgetting-to-zero-grad-is-a-common-neural-net-bug]], [[a-buggy-neural-net-can-still-train-on-a-simple-problem]]
 - He builds live from a blank notebook, derives everything by hand first, picks inputs so the numbers come out nice, and leaves his own errors in (@00:00, @1:01:09, @1:15:05) → [[spelled-out-build-from-scratch]]
 - Every manually derived gradient is checked by bumping the input by h and reading the change in the output, and the same expression is run in PyTorch to confirm forward and gradients agree (@37:50, @46:45, @1:39:28, @1:42:48) → [[verify-gradients-against-pytorch]], [[pytorch]]
-- Production libraries like PyTorch are meant to be used, not inspected: it took him 15 minutes to find the tanh backward kernel (@2:21:33, @2:22:07) → [[pytorch]], [[micrograd-is-all-you-need-everything-else-is-efficiency]]
+- Production libraries like PyTorch are meant to be used, not inspected: he spent about 15 minutes searching PyTorch for tanh's backward without finding it, and only reached the kernel through a pointer in a thread (@2:21:33, @2:22:07) → [[pytorch]], [[micrograd-is-all-you-need-everything-else-is-efficiency]]
 
 ## Fed pages
 - [[backpropagation]]

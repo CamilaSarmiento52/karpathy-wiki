@@ -21,6 +21,7 @@ The code written during the GPT lecture: he develops it in a Google Colab notebo
 
 ## Related
 - [[weight-initialization]] — what the lecture skipped
-- [[small-hackable-educational-code]] — published to be hacked, with its history- [[nanogpt]] — the repo the lecture writes toward; its `model.py` is almost identical to the lecture code
+- [[small-hackable-educational-code]] — published to be hacked, with its history
+- [[nanogpt]] — the repo the lecture writes toward; its `model.py` is almost identical to the lecture code
 - [[spelled-out-build-from-scratch]] — the method the commits record
 - [[transformer-architecture]], [[self-attention]], [[tokenization]]

@@ -10,10 +10,10 @@ steps:
   - Match parameter counts before comparing architectures
   - Check for bugs before reading a null result
 sources: ["[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-11-21-makemore-5-wavenet]]"]
-aliases: [overfit a single batch, compare train and dev loss, reading train vs dev loss, sanity-check the training loop, control for parameter count, parameter-matched comparison]
+aliases: [overfit a single batch, compare train and dev loss, reading train vs dev loss, control for parameter count, parameter-matched comparison]
 ---
 # Diagnose under- or overfitting
-How he reads whether a model is too small or memorising: first check the training loop by overfitting a handful of examples, then compare the loss on the train and dev splits ([[youtube-2022-09-12-makemore-2-mlp]] @39:23, @1:00:20).
+How he reads whether a model is too small or memorising: note that a few dozen examples are overfit to a very low loss, then compare the loss on the train and dev splits ([[youtube-2022-09-12-makemore-2-mlp]] @39:23, @1:00:20).
 
 ## Steps
 1. **Tiny dataset.** He develops on the first five words, 32 examples, for efficiency and plans to erase that later ([[youtube-2022-09-12-makemore-2-mlp]] @10:02).
