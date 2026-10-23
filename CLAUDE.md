@@ -64,9 +64,21 @@ Body is verbatim; blog bodies keep link targets as `[text](url)`. YouTube bodies
 thread, posts in order, separated by `---`. `medium: talk` covers talks, podcasts and
 interviews.
 
+`medium: youtube` is a video on his own channel; `medium: talk` is anything hosted by
+someone else (the YC talk `LCEmiRjPEtQ` is a known exception, filed as `youtube`). Talk
+transcripts include the other speakers: attribute only what he says.
+
+GitHub READMEs are versioned: the first snapshot is `raw/github/<owner>__<repo>.md`, later
+ones `raw/github/<owner>__<repo>@<short-commit>.md`, each dated by its commit. A newer
+snapshot is a new source, not a correction of the old one. Discussions he opened are
+`raw/github/<owner>__<repo>__discussion-<n>.md`; gists, `raw/github/karpathy__gist-<id>.md`.
+
 `raw/_manifest.json` lists every raw file: `id, ref, url, medium, published, path, sha256`,
-plus `commit` for GitHub. `ref` is what was passed to the fetcher; `sha256` is of the body
-only. `python3 scripts/fetch_one.py --restore` rebuilds missing raw files from it.
+plus `commit` and `repo` for GitHub READMEs. `ref` is what was passed to the fetcher (for
+an X thread, its post ids in order); `sha256` is of the body only.
+`python3 scripts/fetch_one.py --restore` rebuilds missing raw files from it.
+`raw/_queue.json` lists everything known to exist, collected or not; it is the collectors'
+bookkeeping, not a source. A raw file with no source page yet is the ingest backlog.
 
 ## 4. Page types
 

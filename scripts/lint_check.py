@@ -6,6 +6,8 @@ values, dates), topic date ranges, links, orphans, index coverage, citations pre
 every evidence block, frontmatter `sources` matching body citations, source pages'
 `## Fed pages` matching who cites them, two-way claim relations backed by a timeline,
 quotes found verbatim in the cited raw file, and raw files matching the manifest.
+Raw files without a source page are counted as an uncompiled backlog, not reported as
+findings: collectors add raw files before ingest compiles them.
 
 A clean run means the wiki is well-formed. It does NOT mean a cited passage supports its
 sentence; that is the semantic pass in CLAUDE.md §7 Lint.
@@ -288,9 +290,8 @@ def main(root):
 
     raw_paths = {str(m.get("raw_path")) for _, m, _, _ in pages.values()
                  if m and m.get("type") == "source"}
-    for f in raw_files:
-        if str(rel(f)) not in raw_paths:
-            findings.append(f"raw file with no source page: {rel(f)}")
+    # collected but not yet compiled into a source page: a backlog for ingest, not an error
+    backlog = [f for f in raw_files if str(rel(f)) not in raw_paths]
 
     manifest = raw / "_manifest.json"
     if manifest.exists():
@@ -316,7 +317,8 @@ def main(root):
 
     for line in findings:
         print(line)
-    print(f"{len(pages)} pages, {len(raw_files)} raw files, {len(findings)} findings (structural)")
+    print(f"{len(pages)} pages, {len(raw_files)} raw files ({len(backlog)} not yet compiled), "
+          f"{len(findings)} findings (structural)")
     return 1 if findings else 0
 
 

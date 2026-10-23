@@ -1,6 +1,361 @@
 {
-  "version": 2,
+  "version": 3,
   "items": [
+    {
+      "id": "VMj-3S1tku0",
+      "ref": "VMj-3S1tku0",
+      "url": "https://www.youtube.com/watch?v=VMj-3S1tku0",
+      "medium": "youtube",
+      "published": "2022-08-16",
+      "path": "raw/youtube/VMj-3S1tku0.md",
+      "sha256": "27ce0f942d1889694ccafb949fc642c021b456d82be3d27a8a1e21b7bc7f5d20"
+    },
+    {
+      "id": "PaCmpygFfXo",
+      "ref": "PaCmpygFfXo",
+      "url": "https://www.youtube.com/watch?v=PaCmpygFfXo",
+      "medium": "youtube",
+      "published": "2022-09-07",
+      "path": "raw/youtube/PaCmpygFfXo.md",
+      "sha256": "0c4e7e075586c29cbb335ddabec7db512ffdb8ef8937bf57dd5a5c955dfa604e"
+    },
+    {
+      "id": "TCH_1BHY58I",
+      "ref": "TCH_1BHY58I",
+      "url": "https://www.youtube.com/watch?v=TCH_1BHY58I",
+      "medium": "youtube",
+      "published": "2022-09-12",
+      "path": "raw/youtube/TCH_1BHY58I.md",
+      "sha256": "0071193206ab6777b72675a440aa425039b03b59dae25bebcaf25c8899756655"
+    },
+    {
+      "id": "P6sfmUTpUmc",
+      "ref": "P6sfmUTpUmc",
+      "url": "https://www.youtube.com/watch?v=P6sfmUTpUmc",
+      "medium": "youtube",
+      "published": "2022-10-04",
+      "path": "raw/youtube/P6sfmUTpUmc.md",
+      "sha256": "c66851d5e0b0e06d4d8184af6c5df24f59661c86a4929a0306a58bd1755cee9c"
+    },
+    {
+      "id": "q8SA3rM6ckI",
+      "ref": "q8SA3rM6ckI",
+      "url": "https://www.youtube.com/watch?v=q8SA3rM6ckI",
+      "medium": "youtube",
+      "published": "2022-10-11",
+      "path": "raw/youtube/q8SA3rM6ckI.md",
+      "sha256": "8e98cc7ba67097edcceae248735bfff65beaad930daf0cda51e1e2994c777fe9"
+    },
+    {
+      "id": "karpathy__makemore",
+      "ref": "karpathy/makemore",
+      "url": "https://github.com/karpathy/makemore",
+      "medium": "github",
+      "published": "2022-11-20",
+      "path": "raw/github/karpathy__makemore.md",
+      "sha256": "44fc40522a1389ddc8fe2377a569a21f5d3d6a7a3e4a22fa394e25041573f0db",
+      "commit": "988aa59e4d8fefa526d06f3b453ad116258398d4",
+      "repo": "karpathy/makemore"
+    },
+    {
+      "id": "t3YJ5hKiMQ0",
+      "ref": "t3YJ5hKiMQ0",
+      "url": "https://www.youtube.com/watch?v=t3YJ5hKiMQ0",
+      "medium": "youtube",
+      "published": "2022-11-21",
+      "path": "raw/youtube/t3YJ5hKiMQ0.md",
+      "sha256": "8b84923d6c979bdf94b97c4f6d42ff28f7e86736cd535bd9c8da381dd993545f"
+    },
+    {
+      "id": "karpathy__minGPT",
+      "ref": "karpathy/minGPT",
+      "url": "https://github.com/karpathy/minGPT",
+      "medium": "github",
+      "published": "2023-01-08",
+      "path": "raw/github/karpathy__minGPT.md",
+      "sha256": "7203cc5f87957572d43e965e492c95fd610d4adcb0b4f73d028b3c41a3813743",
+      "commit": "37baab71b9abea1b76ab957409a1cc2fbfba8a26",
+      "repo": "karpathy/minGPT"
+    },
+    {
+      "id": "kCc8FmEb1nY",
+      "ref": "kCc8FmEb1nY",
+      "url": "https://www.youtube.com/watch?v=kCc8FmEb1nY",
+      "medium": "youtube",
+      "published": "2023-01-17",
+      "path": "raw/youtube/kCc8FmEb1nY.md",
+      "sha256": "bd40cfc215e246589432840d9ab75aafd79ab6dbe64f9b37e41aaae329e0c0d8"
+    },
+    {
+      "id": "karpathy__ng-video-lecture",
+      "ref": "karpathy/ng-video-lecture",
+      "url": "https://github.com/karpathy/ng-video-lecture",
+      "medium": "github",
+      "published": "2023-01-31",
+      "path": "raw/github/karpathy__ng-video-lecture.md",
+      "sha256": "f4ee5d1a295a61cc03c48193f0d3b18bec6406aed8f5b73418189ad62e0668a6",
+      "commit": "5301c27d52dace5699faedb3a67bc29ebfd89ea6",
+      "repo": "karpathy/ng-video-lecture"
+    },
+    {
+      "id": "XfpMkf4rD6E",
+      "ref": "XfpMkf4rD6E",
+      "url": "https://www.youtube.com/watch?v=XfpMkf4rD6E",
+      "medium": "talk",
+      "published": "2023-05-19",
+      "path": "raw/talks/XfpMkf4rD6E.md",
+      "sha256": "8b5162f1b47ddaad27b11669134656f48f37ba2a67f7ad5f52db577b22cf9f7c"
+    },
+    {
+      "id": "bZQun8Y4L2A",
+      "ref": "bZQun8Y4L2A",
+      "url": "https://www.youtube.com/watch?v=bZQun8Y4L2A",
+      "medium": "talk",
+      "published": "2023-05-25",
+      "path": "raw/talks/bZQun8Y4L2A.md",
+      "sha256": "065b8b53351510e8b1d0dcb9078c85e541ae1aef40f743e323ec2da3661b66e2"
+    },
+    {
+      "id": "karpathy__karpathy",
+      "ref": "karpathy/karpathy",
+      "url": "https://github.com/karpathy/karpathy",
+      "medium": "github",
+      "published": "2023-07-25",
+      "path": "raw/github/karpathy__karpathy.md",
+      "sha256": "577f4a7187cd84741d97120c19d8d87d10fe24e8420a1f21df164fe622b4b1c2",
+      "commit": "48866c2237b19b430e0f91e3ac1a82250e2759aa",
+      "repo": "karpathy/karpathy"
+    },
+    {
+      "id": "zjkBMFhNj_g",
+      "ref": "zjkBMFhNj_g",
+      "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g",
+      "medium": "youtube",
+      "published": "2023-11-23",
+      "path": "raw/youtube/zjkBMFhNj_g.md",
+      "sha256": "cec2f7018b04a19d69b548f706e27667f62d7d6abfecac6c847aa143e002116a"
+    },
+    {
+      "id": "karpathy__nn-zero-to-hero",
+      "ref": "karpathy/nn-zero-to-hero",
+      "url": "https://github.com/karpathy/nn-zero-to-hero",
+      "medium": "github",
+      "published": "2024-02-20",
+      "path": "raw/github/karpathy__nn-zero-to-hero.md",
+      "sha256": "dd89fa9e9e8cd186f55058c1ed827794147bd5c0093d84d2f89b8df2e8902b1e",
+      "commit": "73c3fcc741f0ec104ca850b1fb0df90e7e8d4cde",
+      "repo": "karpathy/nn-zero-to-hero"
+    },
+    {
+      "id": "zduSFxRajkE",
+      "ref": "zduSFxRajkE",
+      "url": "https://www.youtube.com/watch?v=zduSFxRajkE",
+      "medium": "youtube",
+      "published": "2024-02-20",
+      "path": "raw/youtube/zduSFxRajkE.md",
+      "sha256": "d555e4d61772875f936e6ffb6cd89d26b270cea7954ca958cdadb52ee9fe61c8"
+    },
+    {
+      "id": "1760388761349927356",
+      "ref": "1760388761349927356",
+      "url": "https://x.com/karpathy/status/1760388761349927356",
+      "medium": "x",
+      "published": "2024-02-21",
+      "path": "raw/x/1760388761349927356.md",
+      "sha256": "f589398ea76da8fcd9b0b2b0f34e32ae7fcfe4eff13e3f0866c967938fbae4b5"
+    },
+    {
+      "id": "c3b-JASoPi0",
+      "ref": "c3b-JASoPi0",
+      "url": "https://www.youtube.com/watch?v=c3b-JASoPi0",
+      "medium": "talk",
+      "published": "2024-03-26",
+      "path": "raw/talks/c3b-JASoPi0.md",
+      "sha256": "12c009b00c90acaf4c6221af8c39a729778a4a2856d09c4c1f2d7915abf2d5dd"
+    },
+    {
+      "id": "karpathy__llm.c__discussion-84",
+      "ref": "karpathy/llm.c/discussions/84",
+      "url": "https://github.com/karpathy/llm.c/discussions/84",
+      "medium": "github",
+      "published": "2024-04-12",
+      "path": "raw/github/karpathy__llm.c__discussion-84.md",
+      "sha256": "2396c45a356b22d1c6d1ac13c38b418fee51f4e0f17e9761f7a4ecacea831800"
+    },
+    {
+      "id": "karpathy__llm.c__discussion-224",
+      "ref": "karpathy/llm.c/discussions/224",
+      "url": "https://github.com/karpathy/llm.c/discussions/224",
+      "medium": "github",
+      "published": "2024-04-22",
+      "path": "raw/github/karpathy__llm.c__discussion-224.md",
+      "sha256": "5ae066d113c9da2673384f1a28d5da6c1f467651ac10489a4ce2b03cf9b1a894"
+    },
+    {
+      "id": "karpathy__minbpe",
+      "ref": "karpathy/minbpe",
+      "url": "https://github.com/karpathy/minbpe",
+      "medium": "github",
+      "published": "2024-04-22",
+      "path": "raw/github/karpathy__minbpe.md",
+      "sha256": "07f5ce980596d1e34441b328f74982529119dfdbe721fa91015114542e4e78bb",
+      "commit": "45a0c2f8b29d31c5234a7e2ea9568564fc020f9d",
+      "repo": "karpathy/minbpe"
+    },
+    {
+      "id": "karpathy__llm.c__discussion-344",
+      "ref": "karpathy/llm.c/discussions/344",
+      "url": "https://github.com/karpathy/llm.c/discussions/344",
+      "medium": "github",
+      "published": "2024-05-03",
+      "path": "raw/github/karpathy__llm.c__discussion-344.md",
+      "sha256": "727783e515b549943363d5b387f3217650952b2d2852aa8c27a656885519d71d"
+    },
+    {
+      "id": "karpathy__llm.c__discussion-454",
+      "ref": "karpathy/llm.c/discussions/454",
+      "url": "https://github.com/karpathy/llm.c/discussions/454",
+      "medium": "github",
+      "published": "2024-05-24",
+      "path": "raw/github/karpathy__llm.c__discussion-454.md",
+      "sha256": "fac7a8a6a8cbe13aea6c372c72bb469e91c68e6bd8f3ced15329966ac202df29"
+    },
+    {
+      "id": "karpathy__llm.c__discussion-481",
+      "ref": "karpathy/llm.c/discussions/481",
+      "url": "https://github.com/karpathy/llm.c/discussions/481",
+      "medium": "github",
+      "published": "2024-05-28",
+      "path": "raw/github/karpathy__llm.c__discussion-481.md",
+      "sha256": "56e7ab77623b2b754aba96afa10c0dfae1ab406ae43a56ec84bf3f215475a60a"
+    },
+    {
+      "id": "karpathy__llama2.c",
+      "ref": "karpathy/llama2.c",
+      "url": "https://github.com/karpathy/llama2.c",
+      "medium": "github",
+      "published": "2024-05-29",
+      "path": "raw/github/karpathy__llama2.c.md",
+      "sha256": "ec387ba97b8c5d33cbfb48b71d74ebe05ac1d96371a666875591de88830f49e0",
+      "commit": "350e04fe35433e6d2941dce5a1f53308f87058eb",
+      "repo": "karpathy/llama2.c"
+    },
+    {
+      "id": "karpathy__calorie",
+      "ref": "karpathy/calorie",
+      "url": "https://github.com/karpathy/calorie",
+      "medium": "github",
+      "published": "2024-05-30",
+      "path": "raw/github/karpathy__calorie.md",
+      "sha256": "0d7c9144870de7ed6d902461d3fb9cc1851dc0e797017a3dc6b314f335e051d2",
+      "commit": "a3c5d0dda0a8314f6b69d58e774e0745e3e87f5c",
+      "repo": "karpathy/calorie"
+    },
+    {
+      "id": "l8pRSuU81PU",
+      "ref": "l8pRSuU81PU",
+      "url": "https://www.youtube.com/watch?v=l8pRSuU81PU",
+      "medium": "youtube",
+      "published": "2024-06-09",
+      "path": "raw/youtube/l8pRSuU81PU.md",
+      "sha256": "324b664d84765c164481c537fbceff3135fa58b0f7f47427e478dee58940d9a6"
+    },
+    {
+      "id": "karpathy__llm.c__discussion-580",
+      "ref": "karpathy/llm.c/discussions/580",
+      "url": "https://github.com/karpathy/llm.c/discussions/580",
+      "medium": "github",
+      "published": "2024-06-12",
+      "path": "raw/github/karpathy__llm.c__discussion-580.md",
+      "sha256": "e662ceb67accc195f91809eaa096ce7472a67595291a5ba65a1a61484cfa9d5b"
+    },
+    {
+      "id": "karpathy__build-nanogpt",
+      "ref": "karpathy/build-nanogpt",
+      "url": "https://github.com/karpathy/build-nanogpt",
+      "medium": "github",
+      "published": "2024-06-17",
+      "path": "raw/github/karpathy__build-nanogpt.md",
+      "sha256": "595344e0b1cb01a5f9867315bd1ada34339ff1376007576801f440fcea2ac5ca",
+      "commit": "f6d194b90f63ee6b7159974078ea60221c172617",
+      "repo": "karpathy/build-nanogpt"
+    },
+    {
+      "id": "tsTeEkzO9xc",
+      "ref": "tsTeEkzO9xc",
+      "url": "https://www.youtube.com/watch?v=tsTeEkzO9xc",
+      "medium": "talk",
+      "published": "2024-07-03",
+      "path": "raw/talks/tsTeEkzO9xc.md",
+      "sha256": "2389ae5a1f529a312276df45b97195382e4457bc78206e804979ff3c674212f3"
+    },
+    {
+      "id": "karpathy__llm.c__discussion-677",
+      "ref": "karpathy/llm.c/discussions/677",
+      "url": "https://github.com/karpathy/llm.c/discussions/677",
+      "medium": "github",
+      "published": "2024-07-11",
+      "path": "raw/github/karpathy__llm.c__discussion-677.md",
+      "sha256": "6422aca32a8172c5d51f72e2ac5bf27829398c31277558120a4cede44a6c2fa5"
+    },
+    {
+      "id": "karpathy__LLM101n",
+      "ref": "karpathy/LLM101n",
+      "url": "https://github.com/karpathy/LLM101n",
+      "medium": "github",
+      "published": "2024-08-01",
+      "path": "raw/github/karpathy__LLM101n.md",
+      "sha256": "88116bb6187ba680b40028f24dc545456c195b31625e93583f9078bb41ac760d",
+      "commit": "c6de374acd4b57b6fea3b1a1b6e945d58f19cd30",
+      "repo": "karpathy/LLM101n"
+    },
+    {
+      "id": "hM_h0UA7upI",
+      "ref": "hM_h0UA7upI",
+      "url": "https://www.youtube.com/watch?v=hM_h0UA7upI",
+      "medium": "talk",
+      "published": "2024-09-05",
+      "path": "raw/talks/hM_h0UA7upI.md",
+      "sha256": "2f21fe6988766f6efd352aad48a2078480d2249180d6675a03200c7eb831d126"
+    },
+    {
+      "id": "i-love-calculator",
+      "ref": "https://karpathy.bearblog.dev/i-love-calculator/",
+      "url": "https://karpathy.bearblog.dev/i-love-calculator/",
+      "medium": "blog",
+      "published": "2024-09-08",
+      "path": "raw/blog/i-love-calculator.md",
+      "sha256": "b652dd2df31abd8e5c5a85bfcf61ea49057bbb1b601180e63d183003787120b4"
+    },
+    {
+      "id": "karpathy__llm.c",
+      "ref": "karpathy/llm.c",
+      "url": "https://github.com/karpathy/llm.c",
+      "medium": "github",
+      "published": "2024-09-24",
+      "path": "raw/github/karpathy__llm.c.md",
+      "sha256": "f55a10694ea645b4e10426c9104835fb62ee6f0da540d235054f026b06efcdb1",
+      "commit": "315b8d1f626885db31a895510cb299cb282616cc",
+      "repo": "karpathy/llm.c"
+    },
+    {
+      "id": "1841536804073439268",
+      "ref": "1841536804073439268",
+      "url": "https://x.com/karpathy/status/1841536804073439268",
+      "medium": "x",
+      "published": "2024-10-02",
+      "path": "raw/x/1841536804073439268.md",
+      "sha256": "cda2a5331a17663ef9653efe2f61552997f06adb8584e3f7144e3485585b4586"
+    },
+    {
+      "id": "aR6CzM0x-g0",
+      "ref": "aR6CzM0x-g0",
+      "url": "https://www.youtube.com/watch?v=aR6CzM0x-g0",
+      "medium": "talk",
+      "published": "2024-10-03",
+      "path": "raw/talks/aR6CzM0x-g0.md",
+      "sha256": "2a74fd8aebc1b353ee8c3fd170b42b806296f54c9418e66dfe4f0f05ecf080b9"
+    },
     {
       "id": "1886192184808149383",
       "ref": "1886192184808149383",
@@ -9,6 +364,78 @@
       "published": "2025-02-02",
       "path": "raw/x/1886192184808149383.md",
       "sha256": "ce58f6c719a695db06ff0cf7751662f9add982f2cf2aabfef80d5958bdb8205b"
+    },
+    {
+      "id": "7xTGNNLPyMI",
+      "ref": "7xTGNNLPyMI",
+      "url": "https://www.youtube.com/watch?v=7xTGNNLPyMI",
+      "medium": "youtube",
+      "published": "2025-02-05",
+      "path": "raw/youtube/7xTGNNLPyMI.md",
+      "sha256": "084588afbe5b166dda7ba23387a3873fcf586fa611be3f298af9cb90d3fae373"
+    },
+    {
+      "id": "EWvNQjAaOHw",
+      "ref": "EWvNQjAaOHw",
+      "url": "https://www.youtube.com/watch?v=EWvNQjAaOHw",
+      "medium": "youtube",
+      "published": "2025-02-27",
+      "path": "raw/youtube/EWvNQjAaOHw.md",
+      "sha256": "417fc31d11eb9704556fa70c1232cc1abbcb9fd153dea907e60a32c513cffee9"
+    },
+    {
+      "id": "digital-hygiene",
+      "ref": "https://karpathy.bearblog.dev/digital-hygiene/",
+      "url": "https://karpathy.bearblog.dev/digital-hygiene/",
+      "medium": "blog",
+      "published": "2025-03-17",
+      "path": "raw/blog/digital-hygiene.md",
+      "sha256": "9c32058425143009bd92d7db91c6798c6410a1769cd86ced7771cd7c0a489c0a"
+    },
+    {
+      "id": "the-append-and-review-note",
+      "ref": "https://karpathy.bearblog.dev/the-append-and-review-note/",
+      "url": "https://karpathy.bearblog.dev/the-append-and-review-note/",
+      "medium": "blog",
+      "published": "2025-03-19",
+      "path": "raw/blog/the-append-and-review-note.md",
+      "sha256": "454cc8e86103d319390bb0e54a2bdaed45837a80972ac296af234d1ec5923932"
+    },
+    {
+      "id": "finding-the-best-sleep-tracker",
+      "ref": "https://karpathy.bearblog.dev/finding-the-best-sleep-tracker/",
+      "url": "https://karpathy.bearblog.dev/finding-the-best-sleep-tracker/",
+      "medium": "blog",
+      "published": "2025-03-24",
+      "path": "raw/blog/finding-the-best-sleep-tracker.md",
+      "sha256": "23dd7e2796d2221b6dcebc47de0a6d6b20e8beffa6b7db200f7d8fc801342a89"
+    },
+    {
+      "id": "power-to-the-people",
+      "ref": "https://karpathy.bearblog.dev/power-to-the-people/",
+      "url": "https://karpathy.bearblog.dev/power-to-the-people/",
+      "medium": "blog",
+      "published": "2025-04-07",
+      "path": "raw/blog/power-to-the-people.md",
+      "sha256": "046c739e2fc250a8a42702060eab97807a1ae35ff77b0b9d4e538f9e2f1a9e1c"
+    },
+    {
+      "id": "vibe-coding-menugen",
+      "ref": "https://karpathy.bearblog.dev/vibe-coding-menugen/",
+      "url": "https://karpathy.bearblog.dev/vibe-coding-menugen/",
+      "medium": "blog",
+      "published": "2025-04-27",
+      "path": "raw/blog/vibe-coding-menugen.md",
+      "sha256": "682d0eb354b718fe0ba95467530b4a4d18c800aead73ed78f820caf30a17ce71"
+    },
+    {
+      "id": "1917961248031080455",
+      "ref": "1917961248031080455",
+      "url": "https://x.com/karpathy/status/1917961248031080455",
+      "medium": "x",
+      "published": "2025-05-01",
+      "path": "raw/x/1917961248031080455.md",
+      "sha256": "1cf4e5f72b37d4812a5b2636cef764b295ee911338c8530c0276e1f31964fc8f"
     },
     {
       "id": "LCEmiRjPEtQ",
@@ -20,6 +447,80 @@
       "sha256": "49e12dda2aa8af125631861c9995be356b4743064660353290da3a8ff77d1d31"
     },
     {
+      "id": "1942612984481870068",
+      "ref": "1942612984481870068",
+      "url": "https://x.com/karpathy/status/1942612984481870068",
+      "medium": "x",
+      "published": "2025-07-08",
+      "path": "raw/x/1942612984481870068.md",
+      "sha256": "4a2ff8135b0e58fccf446b4c170fda9fe32358a10a754304044b833d2fc280e8"
+    },
+    {
+      "id": "karpathy__minbpe__discussion-98",
+      "ref": "karpathy/minbpe/discussions/98",
+      "url": "https://github.com/karpathy/minbpe/discussions/98",
+      "medium": "github",
+      "published": "2025-08-08",
+      "path": "raw/github/karpathy__minbpe__discussion-98.md",
+      "sha256": "66260807170795e52f68289a7b62308b308bfd92802eaa59149ee1102a537c9b"
+    },
+    {
+      "id": "karpathy__rendergit",
+      "ref": "karpathy/rendergit",
+      "url": "https://github.com/karpathy/rendergit",
+      "medium": "github",
+      "published": "2025-08-21",
+      "path": "raw/github/karpathy__rendergit.md",
+      "sha256": "0ad69cb7bd2f307846598d507e4ed8925514b48cda041ce322a154e6eaffc941",
+      "commit": "14d7a58c0f4d815a3447f25e9ef1088c7e9ade84",
+      "repo": "karpathy/rendergit"
+    },
+    {
+      "id": "1973435013875314729",
+      "ref": "1973435013875314729",
+      "url": "https://x.com/karpathy/status/1973435013875314729",
+      "medium": "x",
+      "published": "2025-10-01",
+      "path": "raw/x/1973435013875314729.md",
+      "sha256": "314e68175ba8604951b90b9c96590d6e2283ce8f79f7ddb1f0eb93eb2a365a9b"
+    },
+    {
+      "id": "animals-vs-ghosts",
+      "ref": "https://karpathy.bearblog.dev/animals-vs-ghosts/",
+      "url": "https://karpathy.bearblog.dev/animals-vs-ghosts/",
+      "medium": "blog",
+      "published": "2025-10-01",
+      "path": "raw/blog/animals-vs-ghosts.md",
+      "sha256": "c11aaea5d61a2f4a8966b8bb50e751157de92d088169e141d1044f7f3a54943b"
+    },
+    {
+      "id": "karpathy__nanochat__discussion-1",
+      "ref": "karpathy/nanochat/discussions/1",
+      "url": "https://github.com/karpathy/nanochat/discussions/1",
+      "medium": "github",
+      "published": "2025-10-13",
+      "path": "raw/github/karpathy__nanochat__discussion-1.md",
+      "sha256": "691c859181bc692b039d598172121eb5d85f570aceb34a8e7235aabc0bb940dc"
+    },
+    {
+      "id": "lXUZvyajciY",
+      "ref": "lXUZvyajciY",
+      "url": "https://www.youtube.com/watch?v=lXUZvyajciY",
+      "medium": "talk",
+      "published": "2025-10-17",
+      "path": "raw/talks/lXUZvyajciY.md",
+      "sha256": "2c66176887125586d75cd66ab90708a34f25ed6b11178ec9407cecd86a0f6879"
+    },
+    {
+      "id": "karpathy__nanochat__discussion-164",
+      "ref": "karpathy/nanochat/discussions/164",
+      "url": "https://github.com/karpathy/nanochat/discussions/164",
+      "medium": "github",
+      "published": "2025-10-24",
+      "path": "raw/github/karpathy__nanochat__discussion-164.md",
+      "sha256": "47c22627aadefd68cc288b80448862b5a48e06dae66702748f098b118680bf0f"
+    },
+    {
       "id": "karpathy__nanoGPT",
       "ref": "karpathy/nanoGPT",
       "url": "https://github.com/karpathy/nanoGPT",
@@ -27,7 +528,95 @@
       "published": "2025-11-12",
       "path": "raw/github/karpathy__nanoGPT.md",
       "sha256": "26be0e7db2b5c3839eb9301eb3dafe7261046ec75faa8a3f3ed99722e7dae9f1",
-      "commit": "3adf61e154c3fe3fca428ad6bc3818b27a3b8291"
+      "commit": "3adf61e154c3fe3fca428ad6bc3818b27a3b8291",
+      "repo": "karpathy/nanoGPT"
+    },
+    {
+      "id": "verifiability",
+      "ref": "https://karpathy.bearblog.dev/verifiability/",
+      "url": "https://karpathy.bearblog.dev/verifiability/",
+      "medium": "blog",
+      "published": "2025-11-17",
+      "path": "raw/blog/verifiability.md",
+      "sha256": "ea303a08df69bcd2b826ac2f1be52eddd19fd454b82ab9d14f4cd155404d649f"
+    },
+    {
+      "id": "1990577951671509438",
+      "ref": "1990577951671509438",
+      "url": "https://x.com/karpathy/status/1990577951671509438",
+      "medium": "x",
+      "published": "2025-11-18",
+      "path": "raw/x/1990577951671509438.md",
+      "sha256": "ae14ee9ace5c97005fdc5dce915d5352f710f15f324aefe37409059b05f2ccef"
+    },
+    {
+      "id": "karpathy__reader3",
+      "ref": "karpathy/reader3",
+      "url": "https://github.com/karpathy/reader3",
+      "medium": "github",
+      "published": "2025-11-18",
+      "path": "raw/github/karpathy__reader3.md",
+      "sha256": "43f9f6fe50a72268a73a8cf9124263fc389525336deba044288fcb9310fce77d",
+      "commit": "64960f99d8d3c2eaaec56c6765b4c1aeae14c80b",
+      "repo": "karpathy/reader3"
+    },
+    {
+      "id": "karpathy__nanochat__discussion-314",
+      "ref": "karpathy/nanochat/discussions/314",
+      "url": "https://github.com/karpathy/nanochat/discussions/314",
+      "medium": "github",
+      "published": "2025-11-20",
+      "path": "raw/github/karpathy__nanochat__discussion-314.md",
+      "sha256": "d543ddd850db95f2091ba3e33e2ef1aac16e1fab3e7856b91883c8769832b4d1"
+    },
+    {
+      "id": "karpathy__llm-council",
+      "ref": "karpathy/llm-council",
+      "url": "https://github.com/karpathy/llm-council",
+      "medium": "github",
+      "published": "2025-11-22",
+      "path": "raw/github/karpathy__llm-council.md",
+      "sha256": "bf92465ea29ee71a797dae3bfef4670b93e7ee367f40f0ac92fc53279b7ef830",
+      "commit": "92e1fccb1bdcf1bab7221aa9ed90f9dc72529131",
+      "repo": "karpathy/llm-council"
+    },
+    {
+      "id": "the-space-of-minds",
+      "ref": "https://karpathy.bearblog.dev/the-space-of-minds/",
+      "url": "https://karpathy.bearblog.dev/the-space-of-minds/",
+      "medium": "blog",
+      "published": "2025-11-29",
+      "path": "raw/blog/the-space-of-minds.md",
+      "sha256": "01845f4f42a20732077f07ececf12f48937ddc5b046121db6c3d12af213108a7"
+    },
+    {
+      "id": "auto-grade-hn",
+      "ref": "https://karpathy.bearblog.dev/auto-grade-hn/",
+      "url": "https://karpathy.bearblog.dev/auto-grade-hn/",
+      "medium": "blog",
+      "published": "2025-12-10",
+      "path": "raw/blog/auto-grade-hn.md",
+      "sha256": "523e9222da969aa443c1b92cbb3955b9e60f9b43ce7645f789af7aa5656df3cd"
+    },
+    {
+      "id": "karpathy__hn-time-capsule",
+      "ref": "karpathy/hn-time-capsule",
+      "url": "https://github.com/karpathy/hn-time-capsule",
+      "medium": "github",
+      "published": "2025-12-10",
+      "path": "raw/github/karpathy__hn-time-capsule.md",
+      "sha256": "77d9e715cc0fd3d20794cab5a83d81c32ac0f9c00f5bd5de87cd13ae109e5f4b",
+      "commit": "ca02ebb4de5e953bf1629689abd1f82b454b6905",
+      "repo": "karpathy/hn-time-capsule"
+    },
+    {
+      "id": "chemical-hygiene",
+      "ref": "https://karpathy.bearblog.dev/chemical-hygiene/",
+      "url": "https://karpathy.bearblog.dev/chemical-hygiene/",
+      "medium": "blog",
+      "published": "2025-12-18",
+      "path": "raw/blog/chemical-hygiene.md",
+      "sha256": "2e2e5e2a4a8d0f53bb7f0c963a50ff02544ea912f0e7e5f43f4e060ab0347394"
     },
     {
       "id": "year-in-review-2025",
@@ -39,6 +628,102 @@
       "sha256": "ee6148abc7ce6d7da568fb9fedffd7d1423fb2eda79b5654c41fc4a911ba8baf"
     },
     {
+      "id": "karpathy__rustbpe",
+      "ref": "karpathy/rustbpe",
+      "url": "https://github.com/karpathy/rustbpe",
+      "medium": "github",
+      "published": "2026-01-03",
+      "path": "raw/github/karpathy__rustbpe.md",
+      "sha256": "5bda093ca5d8e40542554d1c9750b808a87ebf3a2b154306a416aa843cceb243",
+      "commit": "ddf848f6961a0655dc8693742fc338e5682c0d3b",
+      "repo": "karpathy/rustbpe"
+    },
+    {
+      "id": "karpathy__nanochat__discussion-420",
+      "ref": "karpathy/nanochat/discussions/420",
+      "url": "https://github.com/karpathy/nanochat/discussions/420",
+      "medium": "github",
+      "published": "2026-01-07",
+      "path": "raw/github/karpathy__nanochat__discussion-420.md",
+      "sha256": "0f9de3e27cb3fdc036013d278090c53c769d9927d8888c390870133ed95d9c59"
+    },
+    {
+      "id": "karpathy__nanochat__discussion-481",
+      "ref": "karpathy/nanochat/discussions/481",
+      "url": "https://github.com/karpathy/nanochat/discussions/481",
+      "medium": "github",
+      "published": "2026-01-31",
+      "path": "raw/github/karpathy__nanochat__discussion-481.md",
+      "sha256": "e21694aecf2d6eefe0a9145d4f50da130d2b08cb0f74b2bb47736282541e8aab"
+    },
+    {
+      "id": "microgpt",
+      "ref": "https://karpathy.github.io/2026/02/12/microgpt/",
+      "url": "https://karpathy.github.io/2026/02/12/microgpt/",
+      "medium": "blog",
+      "published": "2026-02-12",
+      "path": "raw/blog/microgpt.md",
+      "sha256": "bc1ee8f97ce04e91f0ca13e0561f1188deefe2c14b1ac082bd62f75a5438fe5a"
+    },
+    {
+      "id": "2029701092347630069",
+      "ref": "2029701092347630069",
+      "url": "https://x.com/karpathy/status/2029701092347630069",
+      "medium": "x",
+      "published": "2026-03-05",
+      "path": "raw/x/2029701092347630069.md",
+      "sha256": "00c5002fa0ed5b3c009a96d9cc7d22f8a29cd3399ba8e7221687d96fda622da2"
+    },
+    {
+      "id": "karpathy__autoresearch__discussion-43",
+      "ref": "karpathy/autoresearch/discussions/43",
+      "url": "https://github.com/karpathy/autoresearch/discussions/43",
+      "medium": "github",
+      "published": "2026-03-08",
+      "path": "raw/github/karpathy__autoresearch__discussion-43.md",
+      "sha256": "544c6720c5391d2356365279e56241495b4b6fc178311c826a7c2bde21fe2686"
+    },
+    {
+      "id": "2031135152349524125",
+      "ref": "2031135152349524125",
+      "url": "https://x.com/karpathy/status/2031135152349524125",
+      "medium": "x",
+      "published": "2026-03-09",
+      "path": "raw/x/2031135152349524125.md",
+      "sha256": "328c8a154b784325495be4f84fd08ab12f6be76ffdbb7c05d95f43906d1dd441"
+    },
+    {
+      "id": "karpathy__jobs",
+      "ref": "karpathy/jobs",
+      "url": "https://github.com/karpathy/jobs",
+      "medium": "github",
+      "published": "2026-03-16",
+      "path": "raw/github/karpathy__jobs.md",
+      "sha256": "09c018fc642d7332d2d992e2d51501868650922cfbbeef5d6e729f4ef9ffcd16",
+      "commit": "f51275d8b076bac4159c7370ff3acc2121cf1296",
+      "repo": "karpathy/jobs"
+    },
+    {
+      "id": "kwSVtQ7dziU",
+      "ref": "kwSVtQ7dziU",
+      "url": "https://www.youtube.com/watch?v=kwSVtQ7dziU",
+      "medium": "talk",
+      "published": "2026-03-20",
+      "path": "raw/talks/kwSVtQ7dziU.md",
+      "sha256": "2f41d7b3402e175611103f292ebc62d3c19d1567bf4bf24abbdd194291b71e71"
+    },
+    {
+      "id": "karpathy__autoresearch",
+      "ref": "karpathy/autoresearch",
+      "url": "https://github.com/karpathy/autoresearch",
+      "medium": "github",
+      "published": "2026-03-21",
+      "path": "raw/github/karpathy__autoresearch.md",
+      "sha256": "9fea3e8778967133da35a58aa91ba61f2de2ad87af7813feca9df4734a529ee3",
+      "commit": "e6d79c123441a53d91bb8df7adf4db45cf120bf1",
+      "repo": "karpathy/autoresearch"
+    },
+    {
       "id": "2039805659525644595",
       "ref": "2039805659525644595",
       "url": "https://x.com/karpathy/status/2039805659525644595",
@@ -48,6 +733,34 @@
       "sha256": "166703095f4aa7cbb3f7009240e305d56a9a8a3799ad93b21236fa338b319967"
     },
     {
+      "id": "karpathy__gist-442a6bf555914893e9891c11519de94f",
+      "ref": "gist/442a6bf555914893e9891c11519de94f",
+      "url": "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
+      "medium": "github",
+      "published": "2026-04-04",
+      "path": "raw/github/karpathy__gist-442a6bf555914893e9891c11519de94f.md",
+      "sha256": "a402e64fc0c46e618b01acc3502f18a992b4a42222bfd7f87c9abbee3801c98f",
+      "commit": "ac46de1ad27f92b28ac95459c782c07f6b8c964a"
+    },
+    {
+      "id": "96jN2OCOfLs",
+      "ref": "96jN2OCOfLs",
+      "url": "https://www.youtube.com/watch?v=96jN2OCOfLs",
+      "medium": "talk",
+      "published": "2026-04-29",
+      "path": "raw/talks/96jN2OCOfLs.md",
+      "sha256": "53c0ace59808387491826247afd449b0e32414b9183bb52473d0a05aa8ab8151"
+    },
+    {
+      "id": "sequoia-ascent-2026",
+      "ref": "https://karpathy.bearblog.dev/sequoia-ascent-2026/",
+      "url": "https://karpathy.bearblog.dev/sequoia-ascent-2026/",
+      "medium": "blog",
+      "published": "2026-04-30",
+      "path": "raw/blog/sequoia-ascent-2026.md",
+      "sha256": "33a8d2fa225ea62fc91e37d1640f242f4c89aafe6ed79b3fc8a6521838979aaf"
+    },
+    {
       "id": "karpathy__nanochat",
       "ref": "karpathy/nanochat",
       "url": "https://github.com/karpathy/nanochat",
@@ -55,7 +768,19 @@
       "published": "2026-07-03",
       "path": "raw/github/karpathy__nanochat.md",
       "sha256": "bcf2e6117021289a4350ee7d2f58ce4308f02c65e6f58335004d86dc01e47f28",
-      "commit": "eb16d017f28f9642958e09ca9b2c42667159031f"
+      "commit": "eb16d017f28f9642958e09ca9b2c42667159031f",
+      "repo": "karpathy/nanochat"
+    },
+    {
+      "id": "karpathy__micrograd",
+      "ref": "karpathy/micrograd",
+      "url": "https://github.com/karpathy/micrograd",
+      "medium": "github",
+      "published": "2026-08-03",
+      "path": "raw/github/karpathy__micrograd.md",
+      "sha256": "66e986b81985c99a2832098beba4f66dd5e229cfb12e33583987569f76377056",
+      "commit": "7bc720e951fe422b8f8814aa5aa1b64121d26b4c",
+      "repo": "karpathy/micrograd"
     }
   ]
 }

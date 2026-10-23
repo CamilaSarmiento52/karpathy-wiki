@@ -1,6 +1,7 @@
 # raw sources: his words, reproducible via scripts/ + raw/_manifest.json
 raw/*
 !raw/_manifest.json
+!raw/_queue.json
 !raw/.gitkeep
 
 # secrets

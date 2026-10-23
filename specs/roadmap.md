@@ -6,7 +6,7 @@ Status: ⬜ not started · 🟨 in progress · ✅ done
 | # | Phase | Status | Outcome |
 |---|---|---|---|
 | 1 | [Skeleton and schema](phases/phase-1-skeleton-and-schema/plan.md) | ✅ | Folders, CLAUDE.md, Obsidian config, and five hand-picked sources ingested so the page design can be checked before any pipeline exists |
-| 2 | Collectors and backfill | ⬜ | Five idempotent collector scripts with versioned snapshots, manifest, a coverage queue (collected / pending / excluded, seeded from leads in existing sources), parallel backfill from 2023 onward prioritising his teaching material, coverage report |
+| 2 | [Collectors and backfill](phases/phase-2-collectors-and-backfill/plan.md) | 🟨 built, awaiting user review | Five idempotent collector scripts with versioned snapshots, manifest, a coverage queue (collected / pending / excluded, seeded from leads in existing sources), parallel backfill from 2023 onward prioritising his teaching material, coverage report |
 | 3 | Compile the wiki | ⬜ | Batch ingest of the backfill, first lint, index, hot, log; free questions answered with citations |
 | 4 | Rules and agent | ⬜ | Rule extraction with quotes, bench and promotion, karpathy sub-agent, teach and review skills, run-gate hook; validated with the real-task prompts |
 | 5 | Keep it alive | ⬜ | `/karpathy-ingest`, weekday scheduled collection with morning brief, Sunday lint, sub-agent regeneration |

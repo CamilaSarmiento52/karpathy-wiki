@@ -2,7 +2,8 @@
 
 ## Principles
 
-- **Markdown is the database.** Every piece of state is a `.md` file (plus one JSON manifest).
+- **Markdown is the database.** Every piece of state is a `.md` file (plus the JSON manifest
+  and coverage queue in `raw/`).
   No vector store, no SQL. Anything can be read in a text editor or Obsidian.
 - **raw/ is immutable.** Collectors write it; the LLM only reads it. Nothing else touches it.
 - **The LLM owns wiki/.** Humans browse it; they do not edit it. Fixes go through ingest or lint.
@@ -17,7 +18,7 @@
 | Engine | Claude Code (sub-agent, skills, hooks in `.claude/`) | already runs code, supports sub-agents with separate context, hooks for the run gate |
 | Viewer | Obsidian, vault = `karpathy-wiki/` | wikilinks, backlinks, graph; zero lock-in |
 | Collectors | Python 3.12+ scripts in `scripts/`, deps pinned in `requirements.txt`, local `.venv/` | small, inspectable, runnable on a schedule |
-| YouTube | `youtube-transcript-api` for captions, `yt-dlp` for metadata, Whisper fallback | free; timestamps kept so rules can cite `video@mm:ss` |
+| YouTube | `youtube-transcript-api` for captions, `yt-dlp` (pinned in requirements) for metadata and channel listing; Whisper fallback not built (items without captions stay `pending: no-transcript`) | free; timestamps kept so rules can cite `video@mm:ss` |
 | X | `twitterapi.io` | full archive since 2023 for about a dollar |
 | GitHub | GitHub REST API | READMEs, release notes, commit messages; code linked, not copied |
 | Blog / newsletters | RSS, Obsidian Web Clipper for one-offs | free |
@@ -34,10 +35,13 @@ karpathy-wiki/
 ├── DESIGN.md            explanatory design with diagrams
 ├── specs/               mission, tech stack, roadmap, phases
 ├── raw/                 immutable sources, one .md per item, by medium; gitignored
-│   └── _manifest.json   id, ref, url, medium, published, path, body sha256, commit; committed
+│   ├── _manifest.json   id, ref, url, medium, published, path, body sha256, commit, repo; committed
+│   └── _queue.json      coverage queue: collected / pending / excluded with reasons; committed
 ├── wiki/                LLM-owned pages; committed
 ├── .claude/             agent, skills, hooks
-├── scripts/             collectors, run_ingest.sh, lint_check.py (fetch_one.py in phase 1)
+├── scripts/             rawstore.py, collect_{youtube,x,github,blog,talks}.py, fetch_one.py
+│                        (one-offs, --restore), coverage_queue.py, coverage_report.py,
+│                        spot_check.py, lint_check.py
 ├── tests/               test_lint_check.py; prompts.md (real-task validation, phase 4)
 └── .obsidian/           vault config: graph colours by folder, wikilinks on
 ```
@@ -47,8 +51,13 @@ karpathy-wiki/
 Frontmatter: `id, url, medium (youtube|x|github|blog|talk), author, published, fetched,
 title, duration_or_length`, plus `commit` for GitHub. GitHub READMEs are living documents,
 so each is read at a pinned commit (the last one that touched it) and dated by that commit.
-Phase 2 collectors should store a new versioned snapshot when a README changes, rather than
-skipping a repo already seen. Body: verbatim text. YouTube bodies keep `[mm:ss]` markers per
+When a README changes, the GitHub collector stores a new snapshot `<repo-id>@<short-commit>`
+next to the earlier ones instead of skipping the repo; the first snapshot keeps the plain
+`<repo-id>`. GitHub Discussions he opened are stored as `<owner>__<repo>__discussion-<n>`,
+and gists he links that contain markdown as `karpathy__gist-<id>` (fetched with `git clone`).
+`medium: youtube` is a video on his own channel; `medium: talk` is a talk, podcast or
+interview hosted by someone else (the phase 1 YC talk is a recorded exception, filed as
+`youtube`). Body: verbatim text. YouTube bodies keep `[mm:ss]` markers per
 caption block (grouped into ~30-second blocks so citations stay readable). X threads are one file per thread, posts in order.
 
 ### wiki/ page types
@@ -107,5 +116,11 @@ support the sentence, is a `contradicts` link a real conflict) need a reading pa
 - Public GitHub repository. `raw/` is gitignored for copyright reasons; `_manifest.json` is
   committed so the corpus is reproducible by running the collectors.
 - No secrets in the repo. `.env` is gitignored; `.env.example` lists the variable names.
-- Collectors must be idempotent: re-running fetches only what the manifest does not have.
+- Collectors must be idempotent: re-running fetches only what the manifest does not have,
+  plus a new snapshot of any README that changed. They may run in parallel; manifest and
+  queue writes are serialised by a file lock in `scripts/rawstore.py`.
+- Scope: 2023 onward, plus the pre-2023 Zero to Hero lectures and teaching repos (phase 2
+  decision). Anything left out is in `raw/_queue.json` as `excluded` with a reason.
+- X discovery needs `TWITTERAPI_IO_KEY` in `.env`; without it the X collector fetches only
+  posts already in the queue (via the free fxtwitter API, which also serves restores).
 - Ingest batches of 20 to 30 sources so the schema can be corrected early.
