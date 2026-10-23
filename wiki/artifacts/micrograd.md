@@ -1,0 +1,28 @@
+---
+type: artifact
+repo_url: https://github.com/karpathy/micrograd
+language: Python
+status: active
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]"]
+aliases: [micrograd autograd engine]
+---
+# micrograd
+A scalar-valued autograd engine he released on GitHub about two years before the August 2022 lecture, originally source-only, which he rebuilds from scratch in that video ([[youtube-2022-08-16-micrograd]] @00:00, @00:32, @05:24).
+
+## What it demonstrates
+- Two files: `engine.py`, the roughly 100-line autograd engine, and `nn.py`, the neural-net library defining neuron, layer and MLP; roughly 150 lines in total ([[youtube-2022-08-16-micrograd]] @07:03, @07:35).
+- It works on individual scalars for pedagogical reasons; he says you would never do this in production ([[youtube-2022-08-16-micrograd]] @05:24, @05:56).
+- As of recording, `engine.py` has data, grad, `_backward`, `_prev`, `_op`, add, mul, pow and relu (not tanh, which he intends to add); `nn.py` has a `Module` parent class with `zero_grad`, mirroring PyTorch ([[youtube-2022-08-16-micrograd]] @2:17:07, @2:18:12).
+- The repo includes a test comparing forward and backward against PyTorch, and `demo.ipynb`, a larger 2-D binary classifier with batching, max-margin loss, L2 regularisation and learning-rate decay ([[youtube-2022-08-16-micrograd]] @2:18:45, @2:19:18, @2:19:51, @2:20:23).
+- In the lecture he uses `_prev` as a set built from a `_children` tuple, which he believes was for efficiency ([[youtube-2022-08-16-micrograd]] @23:02).
+- `status: active` rests only on his stated intent to keep developing it; a later GitHub snapshot should decide the real status ([[youtube-2022-08-16-micrograd]] @2:16:34, @2:17:07).
+
+- In the first makemore lecture he presents makemore as the next repo built the same way, and points back to micrograd for backpropagation and the training loop ([[youtube-2022-09-07-makemore-1-bigram]] @00:00, @1:10:02, @1:33:26).
+
+## Related
+- [[backpropagation]] — what the engine implements
+- [[multilayer-perceptron]] — what `nn.py` builds
+- [[pytorch]] — the API it is modelled on
+- [[spelled-out-build-from-scratch]], [[verify-gradients-against-pytorch]]
+- [[micrograd-is-all-you-need-everything-else-is-efficiency]]
+- **Note:** [[nanogpt]] and [[nanochat]] are his later from-scratch training repos; the sources here do not connect them.
