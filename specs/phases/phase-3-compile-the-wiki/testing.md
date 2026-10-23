@@ -6,7 +6,8 @@ _What the phase's automated tests cover and why. Drafted at the start of the pha
 
 - **`tests/test_batches.py`**: `scripts/batches.py` assigns every manifest entry to exactly
   one batch by `published` date; the assignment is stable across runs; status counts
-  (raw, digest, source page, verified) match a fixture.
+  (raw, digest, source page, verified) match a fixture; the CLI listing names the source
+  page and verified state. _Built 2026-10-23, 4 tests._
 - **Lint, if the index is split**: a split index (`index.md` + `wiki/index/<type>.md`)
   counts as coverage; links from index files do not count against orphans; a page missing
   from its type's index file is reported.
