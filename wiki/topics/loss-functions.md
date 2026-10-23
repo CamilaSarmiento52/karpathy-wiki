@@ -2,9 +2,9 @@
 type: topic
 aliases: [Loss functions, cross-entropy, negative log likelihood, NLL, mean squared error]
 first_seen: 2022-08-16
-last_updated: 2022-09-12
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]"]
-related: ["[[gradient-descent]]", "[[backpropagation]]", "[[micrograd]]"]
+last_updated: 2022-10-11
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]"]
+related: ["[[gradient-descent]]", "[[backpropagation]]", "[[micrograd]]", "[[training-diagnostics]]"]
 ---
 # Loss functions
 The trick in deep learning, as he puts it, is to compute a single number, the loss, that measures total performance, and then minimise it ([[youtube-2022-08-16-micrograd]] @1:52:10).
@@ -18,12 +18,19 @@ For the neural net the loss is again the average negative log likelihood, becaus
 
 In the second makemore lecture the hand-rolled loss exponentiates logits to fake counts, normalises to probabilities, plucks the correct-class probability and takes the mean negative log ([[youtube-2022-09-12-makemore-2-mlp]] @29:55, @31:03, @31:36). `F.cross_entropy` computes exactly the same loss ([[youtube-2022-09-12-makemore-2-mlp]] @32:44, @33:16). He gives three reasons to prefer it: PyTorch avoids the intermediate tensors and uses fused kernels; the backward pass is simpler analytically, as with tanh in micrograd; and it is numerically stable, since exp of a large positive logit overflows to inf and gives nan while very negative logits are fine ([[youtube-2022-09-12-makemore-2-mlp]] @33:16, @33:49, @34:23, @35:30, @36:02). Logits can be offset by any constant without changing the probabilities, so PyTorch subtracts the maximum logit internally ([[youtube-2022-09-12-makemore-2-mlp]] @36:35, @37:08). `F.softmax` is likewise careful about overflow when sampling ([[youtube-2022-09-12-makemore-2-mlp]] @1:13:50).
 
+The loss also serves as a sanity check before training: he says you almost always have a rough idea of the loss to expect at initialisation from the loss function and the problem setup, and with 27 equally likely characters that is -log(1/27), about 3.29, whereas his network recorded 27 because its logits were extreme and confidently wrong ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @04:28, @05:03, @05:38).
+
+In the backprop lecture he derives the gradient of cross-entropy with respect to the logits: the softmax probabilities with 1 subtracted at the correct label, divided by n for the mean, which is why PyTorch can glue the whole loss into one faster `F.cross_entropy` ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @1:27:11, @1:30:32, @1:31:36). Each row of that gradient sums to zero; he reads it as a force that pulls the correct probability up and the incorrect ones down in proportion to how wrong the prediction was, and calls that the magic of the cross-entropy loss ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @1:33:50, @1:35:31, @1:36:04).
+
 ## Claims
 - [[use-cross-entropy-not-a-hand-rolled-loss]]
 - [[the-logits-softmax-nll-machinery-stays-fixed-up-to-transformers]]
 - [[weight-regularization-is-equivalent-to-count-smoothing]]
+- [[the-hockey-stick-loss-means-training-is-wasting-steps]]
 
 ## Related
+- [[training-diagnostics]] — the expected loss at initialisation and the plots beyond the single number
+- [[weight-initialization]]
 - [[gradient-descent]] — minimising the loss
 - [[backpropagation]]
 - [[micrograd]]

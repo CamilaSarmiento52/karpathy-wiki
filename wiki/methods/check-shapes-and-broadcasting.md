@@ -7,7 +7,8 @@ steps:
   - Verify a row sums to one
   - Check the result against a known answer
   - Read off every layer's shapes
-sources: ["[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]"]
+  - Read the backward structure off the forward shapes
+sources: ["[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]"]
 aliases: [check broadcasting carefully, respect broadcasting, inspect shapes layer by layer]
 ---
 # Check shapes and broadcasting
@@ -21,7 +22,11 @@ How he guards against silent broadcasting bugs: walk both shapes through the rul
 
 5. **Check every layer's shapes.** In the MLP he reads off the embedding output as 32×3×2, reshapes it to 32×6 with `.view`, and checks that the 100-vector bias broadcasts along the right axis of the 32×100 hidden pre-activation, saying to always check broadcasting ([[youtube-2022-09-12-makemore-2-mlp]] @18:16, @24:24, @28:16, @28:49).
 
+6. **Shapes first in the backward pass too.** Writing the backward pass by hand, he says he likes to scrutinise the shapes first and writes out the shape of every tensor before each line; a gradient always has the shape of its variable, a reduction in the forward pass (32×64 to 1×64) signals a broadcast in the backward, and a forward broadcast signals a sum ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @13:13, @22:12, @1:08:38, @1:09:12, @1:09:47, @1:14:15).
+
 ## Seen in
 - [[youtube-2022-09-07-makemore-1-bigram]]
 - [[youtube-2022-09-12-makemore-2-mlp]]
+- [[youtube-2022-10-11-makemore-4-backprop-ninja]]
 - [[makemore]]
+- [[verify-gradients-against-pytorch]] — the same shape discipline used to derive gradients

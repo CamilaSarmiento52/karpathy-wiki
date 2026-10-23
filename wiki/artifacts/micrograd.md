@@ -4,6 +4,7 @@ repo_url: https://github.com/karpathy/micrograd
 language: Python
 status: active
 sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]"]
+context: ["[[youtube-2022-10-11-makemore-4-backprop-ninja]]"]
 aliases: [micrograd autograd engine]
 ---
 # micrograd
@@ -19,10 +20,13 @@ A scalar-valued autograd engine he released on GitHub about two years before the
 
 - In the first makemore lecture he presents makemore as the next repo built the same way, and points back to micrograd for backpropagation and the training loop ([[youtube-2022-09-07-makemore-1-bigram]] @00:00, @1:10:02, @1:33:26).
 
+- In the fourth makemore lecture he describes micrograd as an autograd engine only at the level of individual scalars, which he does not think is enough on its own, and refers back to it for the rule that gradients from multiple uses of a node sum, for the tanh backward, and for topological-order backprop ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @02:43, @25:02, @53:30, @1:39:25).
+
 ## Related
 - [[backpropagation]] — what the engine implements
 - [[multilayer-perceptron]] — what `nn.py` builds
 - [[pytorch]] — the API it is modelled on
 - [[spelled-out-build-from-scratch]], [[verify-gradients-against-pytorch]]
 - [[micrograd-is-all-you-need-everything-else-is-efficiency]]
+- [[understand-backprop-even-with-autograd]] — the tensor-level sequel to the scalar engine
 - **Note:** [[nanogpt]] and [[nanochat]] are his later from-scratch training repos; the sources here do not connect them.

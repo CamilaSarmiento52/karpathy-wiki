@@ -2,9 +2,9 @@
 type: topic
 aliases: [Gradient descent, learning rate, minibatch, SGD, optimization]
 first_seen: 2022-08-16
-last_updated: 2022-09-12
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]"]
-related: ["[[loss-functions]]", "[[backpropagation]]", "[[micrograd]]"]
+last_updated: 2022-10-04
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]"]
+related: ["[[loss-functions]]", "[[backpropagation]]", "[[micrograd]]", "[[training-diagnostics]]"]
 ---
 # Gradient descent
 The gradient is a vector pointing in the direction of increasing loss, so parameters are nudged by a small step size times the negative gradient ([[youtube-2022-08-16-micrograd]] @2:02:10, @2:03:19).
@@ -20,6 +20,8 @@ Minibatches arrive in the second makemore lecture: forwarding and backwarding al
 
 On the learning rate, his initial 0.1 was a guess, and he cannot tell from the loss alone whether steps are too slow or too fast ([[youtube-2022-09-12-makemore-2-mlp]] @44:56, @45:28). A rate of 1 minimises the loss but is unstable and 10 does not optimise at all, so the right value is between 0.001 and 1; stepping linearly between rates does not make sense, so he steps linearly in the exponent ([[youtube-2022-09-12-makemore-2-mlp]] @46:34, @47:07, @47:42). The loss-versus-exponent plot shows nothing happening at low rates, a valley, then instability; around exponent -1, that is 0.1, is a good setting ([[youtube-2022-09-12-makemore-2-mlp]] @49:52, @50:25, @50:59). Learning-rate decay means lowering the rate by 10x in the late stages of training once the loss plateaus ([[youtube-2022-09-12-makemore-2-mlp]] @51:32, @52:04). His rough recipe is to find a decent rate, train a while, then decay by a factor of 10 and take a few more steps, which he calls janky and not production practice ([[youtube-2022-09-12-makemore-2-mlp]] @52:37). He admits his decay is done at random and the optimisation is suspect; in production you would turn these into hyperparameters and run many experiments ([[youtube-2022-09-12-makemore-2-mlp]] @1:09:20, @1:09:55). His final run uses 0.1 for 100,000 steps and then 0.01 for 100,000 ([[youtube-2022-09-12-makemore-2-mlp]] @1:11:38).
 
+The third makemore lecture adds a way to judge the learning rate from the updates themselves. He tracks, per weight tensor, the update-to-data ratio, the standard deviation of learning rate times gradient divided by the standard deviation of the parameter, and plots its log10 over time ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:40:26, @1:41:00). He calls -3 on that scale, updates about a thousandth of the tensor's magnitude, a rough guide: well below it usually means parameters train too slowly, and with learning rate 0.001 the updates were 10,000× too small ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:42:06, @1:43:12, @1:43:45). Dead neurons can arise during training when a high learning rate knocks a neuron off the data manifold ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @21:58, @22:33). Changing the activation scale changes the update scale: with batch normalization and no fan-in scaling the ratio fell well below -3 and he raised the learning rate 10× to 1.0, and he admits he did not fully explain why a different gain needs a different learning rate ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:49:50, @1:50:24, @1:51:00, @1:54:48). He also mentions the earlier learning-rate finding mechanism and says the field has not settled the best update rule ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @1:53:45, @1:55:22).
+
 ## Claims
 - [[approximate-gradient-with-more-steps-beats-exact-gradient]]
 - [[counting-and-gradient-bigram-models-are-the-same-model]]
@@ -33,4 +35,6 @@ On the learning rate, his initial 0.1 was a guess, and he cannot tell from the l
 - [[micrograd]]
 - [[makemore]]
 - [[learning-rate-sweep]] — how he picks the rate
+- [[training-diagnostics]] — the update-to-data ratio plot that checks it
+- [[batch-normalization]] — why the rate had to be retuned
 - [[overfitting-and-generalization]]
