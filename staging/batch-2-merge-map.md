@@ -47,7 +47,7 @@ sources go in published order.
 | llm-security | llm-security, llm-security-is-a-cat-and-mouse-game | LLM security, jailbreaks, prompt injection, data poisoning, sleeper agents | C1 |
 | sampling-from-language-models | sampling (llama2.c), he-does-not-love-autoregressive-sampling context, diffusion-and-autoregressive-models-should-meet | Sampling, temperature, top-p, autoregressive sampling, diffusion | C1 |
 | ai-ecosystem | ai-ecosystem, he-cares-about-the-ecosystem-more-than-any-company | AI ecosystem, open weights, open source AI, coral reef | C2 |
-| compute-efficiency | compute-efficiency (Sequoia), training-efficiency (GPT-2 lecture), use-torch-compile-by-default, use-nice-numbers-in-neural-network-code, batch-size-ramp, quantization (llama2.c) | Compute efficiency, training efficiency, mixed precision, bfloat16, TF32, torch.compile, flash attention, distributed data parallel, DDP, quantization | C2 |
+| compute-efficiency | compute-efficiency (Sequoia), training-efficiency (GPT-2 lecture), gpu-training-efficiency and training-compute-budget (llm.c Discussions), use-torch-compile-by-default, use-nice-numbers-in-neural-network-code, batch-size-ramp, quantization (llama2.c) | Compute efficiency, training efficiency, mixed precision, bfloat16, TF32, torch.compile, flash attention, distributed data parallel, DDP, quantization | C2 |
 | elon-musk-management-style | elon-musk-management-style, founders-can-copy-elons-style-only-from-the-start | Elon Musk, running companies, small teams | C2 |
 | llm-evaluation | llm-evaluation (GPT-2 lecture, llm.c Discussions) | Evaluation, HellaSwag, benchmarks, eval | C3 |
 
@@ -102,13 +102,19 @@ Folded into EXISTING topics (no new page):
 | llm-products-will-take-years-to-figure-out | Sequoia | supports [[this-is-the-decade-of-agents]] (weak: say "a few years", not "a decade") |
 | small-llms-can-be-strong-in-narrow-domains | llama2.c | he-expects-demand-for-custom-micro-llms-at-the-edge |
 | memory-access-not-flops-limits-training-speed | GPT-2 lecture | topic compute-efficiency |
-| inherited-gpt-3-hyperparameters-look-conservative | GPT-2 lecture | |
-| his-gpt-2-reproduction-beat-the-checkpoint-on-fewer-tokens | GPT-2 lecture | the $10 / one-hour cost goes on build-nanogpt |
+| inherited-gpt-3-hyperparameters-look-conservative | whichever of llm.c 481 or the GPT-2 lecture states it first creates it; later sources are added | folds gpt-3-paper-hyperparameters-look-suboptimal |
+| his-gpt-2-reproductions-beat-openais-checkpoints-on-hellaswag | llm.c 481 (C3) first; GPT-2 lecture, 580, 677 added in C4 | folds his-gpt-2-reproduction-beat-the-checkpoint-on-fewer-tokens; say which model size and token count each source reports; the $10 / one-hour cost goes on build-nanogpt |
 | small-projects-can-snowball | Berkeley | |
 | success-comes-from-repeated-practice | Berkeley | |
 | physical-automation-will-lag-digital-automation | Berkeley | |
 
-(31 rows.) Dropped as claims: rlhf-models-lose-entropy, tool-use-is-a-major-source…,
+| llm-c-trained-gpt-2-faster-than-pytorch-in-his-measurements | llm.c Discussions (C3) | "in his measurements" stays in the title |
+| gpt-2-is-the-first-recognizably-modern-llm-stack | llm.c Discussions (C3) | |
+| neural-net-training-should-not-be-complicated | llm.c Discussions | supports [[gpt-is-not-a-complicated-model]]; Note to [[micrograd-is-all-you-need-everything-else-is-efficiency]] |
+| do-not-decay-the-learning-rate-to-zero | llm.c 580 (C4) | his practice across 481 (decays to 0), 580 (says not to) and 677 (decays to 10%) is stated as dated sentences on this claim and on gradient-descent; no timeline |
+| llm-c-was-not-yet-careful-enough-about-training-stability | llm.c 677 (C4) | **Note:** only to modern-innovations-make-precise-initialization-less-important; not a contradiction |
+
+(36 rows.) Dropped as claims: rlhf-models-lose-entropy, tool-use-is-a-major-source…,
 llm-security-is-a-cat-and-mouse-game, the vocabulary / normalisation / separate-stage
 tokenizer claims, founders-can-copy-elons-style, he-cares-about-the-ecosystem,
 rlhf-is-a-weak-form-of-rl, scale-matters-most-but-is-not-enough, use-torch-compile-by-default,
@@ -130,9 +136,13 @@ timeline entry too.
 | slug | absorbs |
 |---|---|
 | make-it-work-then-make-it-cheap | top-performance-then-optimize (State of GPT), make-it-work-then-make-it-cheap (Sequoia) |
-| verify-against-a-reference-implementation | minbpe vs tiktoken, llama2.c vs the PyTorch reference, the llm.c cross-checks; Related → [[verify-gradients-against-pytorch]] (that one is about gradients) |
+| verify-against-a-reference-implementation | minbpe vs tiktoken, llama2.c vs the PyTorch reference, the llm.c cross-checks (454: two whole training runs match), benchmark-against-pytorch (llm.c speed comparisons); Related → [[verify-gradients-against-pytorch]] (that one is about gradients) |
 | reproduce-a-published-model | GPT-2 lecture, llm.c GPT-2 Discussions |
 | build-and-publish-projects | Berkeley keynote |
+
+keep-long-training-runs-alive (llm.c 677) → steps on `training-diagnostics`.
+llm.c Discussions never mention nanoGPT: do not cite them on `nanogpt`. Most cite as
+`§intro`; add the bold paragraph label when the digest gives one, e.g. `§intro (Training)`.
 
 Existing methods extended: spelled-out-build-from-scratch (tokenizer, minbpe, build-nanogpt,
 GPT-2 lecture), small-hackable-educational-code (minbpe, llama2.c, X post, nn-zero-to-hero),
