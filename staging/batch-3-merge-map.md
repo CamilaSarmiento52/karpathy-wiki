@@ -147,4 +147,52 @@ calorie (grocery post as `context` with a labelled Note; no other page for it).
 
 ## Dwarkesh (D4)
 
-To be added when its digest is in.
+`talk-2025-10-17-dwarkesh-ghosts-not-animals`. The transcript has no speaker labels; the
+digest marks spans where the speaker is unclear: never attribute those to him. Where
+Dwarkesh restates him (e.g. the cognitive-core horizon as 10 years; he said 20) and he does
+not correct it, use his own figure. He walks back "possibly no fundamental solution" to
+model collapse later in the interview: say both, in order.
+
+New topics (3, D4):
+
+| slug | aliases |
+|---|---|
+| cognitive-core | Cognitive core, memory vs cognition, small reasoning core |
+| model-collapse | Model collapse, training on own samples, entropy loss |
+| ai-and-the-economy | AI and the economy, GDP, automation, loss of control |
+
+Education material goes on the existing `ai-for-education` (created in D1), not a new
+"education" topic.
+
+New claims (D4):
+
+| slug | relation |
+|---|---|
+| early-agent-attempts-came-too-early | topic partial-autonomy-apps; entry on llm-agents-over-time |
+| rl-is-terrible-but-better-than-imitation | supports [[self-improvement-may-be-possible-in-narrow-domains]] and [[rl-sucks-supervision-bits-through-a-straw]]; entry on llm-self-improvement-over-time |
+| llm-judges-are-gameable-rewards | topic llm-self-improvement |
+| llms-lack-culture-and-self-play | topic llm-self-improvement |
+| training-on-own-samples-collapses-models | topic model-collapse |
+| progress-comes-from-everything-improving-together | Note to scaling-offers-a-guaranteed-path-to-better-models, no link |
+| coding-models-are-weak-at-code-never-written-before | Note to claude-code-is-the-first-convincing-llm-agent (both hold: impressive and used daily, weak off-distribution); entry on vibe-coding-over-time |
+| autocomplete-is-his-coding-sweet-spot | method ai-assisted-coding-loop |
+| ai-will-not-show-up-as-a-jump-in-gdp | topic ai-and-the-economy |
+| gradual-loss-of-control-is-the-most-likely-outcome | topic ai-and-the-economy |
+| education-is-building-ramps-to-knowledge | supports [[build-the-ramp-not-just-the-thing]] (not extends); topic ai-for-education |
+| the-ai-tutor-he-wants-is-not-yet-possible | topic ai-for-education |
+| if-you-cannot-build-it-you-do-not-understand-it | the line is Feynman's; the claim is that he holds it; topic ai-for-education |
+
+Folded into existing claims (add Dwarkesh as a source, cite it): this-is-the-decade-of-agents
+(same claim, more reasons); were-summoning-ghosts-not-building-animals →
+llm-research-summons-ghosts-not-animals; a-cognitive-core-could-be-about-a-billion-parameters
+→ a-cognitive-core-could-be-a-billion-parameters-or-less (set its `topic` to
+cognitive-core); post-agi-education-will-be-like-the-gym → post-agi-education-will-be-like-going-to-the-gym;
+deployment-is-a-march-of-nines → there-is-a-massive-gap-between-demo-and-product (march of
+nines in Context); physical-automation-will-lag-digital-automation; pretraining-is-lossy-compression-of-the-internet
+(Note only to the cognitive core; no extends).
+
+New method (D4): learn-by-building-and-explaining (absorbs teach-by-building-a-ramp as a
+step; Related → spelled-out-build-from-scratch). Extend ai-assisted-coding-loop.
+
+Timelines extended in D4: llm-agents-over-time, vibe-coding-over-time,
+llm-self-improvement-over-time. Dates only; no `contradicts` found.
