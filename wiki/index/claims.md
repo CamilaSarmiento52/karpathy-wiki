@@ -18,11 +18,14 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[deep-learning-is-largely-shape-gymnastics|Much of deep-learning development is making tensor shapes work]] — 2022-11-21; 2-D, 3-D, 4-D, NCL vs NLC, view and permute
 - [[english-is-the-new-programming-language|English is now a programming language]] — 2025-06-19; everyone is now a programmer
 - [[forgetting-to-zero-grad-is-a-common-neural-net-bug|Forgetting to zero grad before backward is a common bug]] — 2022-08-16; he made it on camera
+- [[gpt-2-is-the-first-recognizably-modern-llm-stack|GPT-2 was the first time the modern LLM stack came together in recognisable form]] — the grand-daddy of LLMs, with released weights; later models changed little
 - [[gpt-is-a-general-purpose-computer-running-natural-language-programs|GPT is a general-purpose computer running natural-language programs]] — 2023-05-19; prompts are the programs; supports the English-programming claim
 - [[gpt-is-not-a-complicated-model|GPT is not a complicated model]] — 2023-01-08; about 300 lines, the complexity is batching
 - [[gradient-based-models-scale-where-count-tables-do-not|Gradient-based models scale to longer contexts where count tables do not]] — 2022-09-07; tables blow up with context
 - [[he-does-not-love-autoregressive-sampling|In 2023 he did not love autoregressive sampling]] — 2023-05-19; diffusion's drafts appeal more
 - [[he-prefers-tiktoken-byte-level-bpe-to-sentencepiece|He prefers tiktoken's byte-level BPE to SentencePiece]] — bytes then BPE is cleaner than code-point BPE with byte fallback
+- [[his-gpt-2-reproductions-beat-openais-checkpoints-on-hellaswag|His llm.c GPT-2 reproductions beat OpenAI's GPT-2 checkpoints of the same size on HellaSwag]] — 124M on 10B tokens: 29.9 vs 29.4; below GPT-3 Small's 33.7 on 300B
+- [[llm-c-trained-gpt-2-faster-than-pytorch-in-his-measurements|In his measurements, llm.c trained GPT-2 faster than PyTorch]] — ~6.4% in a constrained fp32 setting (April 2024); each figure with its baseline
 - [[llm-products-will-take-years-to-figure-out|Working out how to oversee LLM products will take the next few years]] — quite autonomous but not fully; oversight and evaluation still to design
 - [[llms-are-mostly-inscrutable-empirical-artifacts|LLMs are mostly inscrutable artifacts, studied empirically]] — 2023-11-23; known operations, unknown parameters; the reversal curse
 - [[llms-are-the-kernel-of-an-emerging-operating-system|An LLM is the kernel process of an emerging operating system, not a chatbot]] — 2023-11-23; context window as RAM
@@ -39,6 +42,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[rlhf-works-better-because-comparing-is-easier-than-generating|RLHF models are preferred, perhaps because comparing is easier than generating]] — 2023-05-25; his offered reason, hedged
 - [[scaling-offers-a-guaranteed-path-to-better-models|In 2023, scaling offered one guaranteed path to better models]] — 2023-11-23; algorithmic progress is a bonus
 - [[self-improvement-may-be-possible-in-narrow-domains|LLM self-improvement may be possible in narrow domains]] — 2023-11-23; hedged; no general reward criterion
+- [[small-llms-can-be-strong-in-narrow-domains|Very small LLMs can perform surprisingly well if the domain is narrow enough]] — TinyStories as reference; demand for custom micro-LLMs at the edge
 - [[the-hockey-stick-loss-means-training-is-wasting-steps|A hockey-stick loss curve means the first iterations are wasted squashing overconfident weights]] — 2022-10-04; fix the output scale at init
 - [[the-logits-softmax-nll-machinery-stays-fixed-up-to-transformers|Only the forward pass changes on the way to transformers]] — 2022-09-07; logits, softmax, NLL and gradient descent stay
 - [[the-transformer-is-a-general-purpose-efficient-optimizable-computer|He would have called the Transformer a general-purpose, efficient, optimizable computer]] — 2023-05-19; expressive, optimizable, efficient, and resilient since 2017

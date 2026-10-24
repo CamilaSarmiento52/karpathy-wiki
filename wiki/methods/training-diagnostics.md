@@ -11,7 +11,8 @@ steps:
   - Retune the learning rate from the update-ratio plot
   - Average the loss over many batches before reading it
   - Switch eval and train mode deliberately
-sources: ["[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2023-01-17-gpt-from-scratch]]"]
+  - Read loss, gradient norm, MFU and tokens per second off every log line
+sources: ["[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2024-05-28-llmc-gpt-2-124m]]"]
 aliases: [training diagnostics plots, activation and gradient statistics, update-to-data ratio, check the loss at initialization, evaluate with a single loss number]
 ---
 # Training diagnostics
@@ -31,6 +32,8 @@ The plots are read over time rather than as one snapshot ([[youtube-2022-10-04-m
 
 The GPT lecture repeats the first step on a new problem: with 65 vocabulary elements he expects an initial loss of about -ln(1/65), roughly 4.17, and the measured 4.87 tells him the initial predictions are not diffuse and the model is guessing wrong at init ([[youtube-2023-01-17-gpt-from-scratch]] @28:03, @28:37). Hygiene he adds in the same script: average the loss over many batches with an `estimate_loss` function because a single batch is a noisy measurement ([[youtube-2023-01-17-gpt-from-scratch]] @39:23, @39:56); switch the model between eval and train mode as good practice even when no layer yet depends on it ([[youtube-2023-01-17-gpt-from-scratch]] @40:31); wrap evaluation in `torch.no_grad` so PyTorch can save memory ([[youtube-2023-01-17-gpt-from-scratch]] @41:04).
 
+11. **Read every log line.** In the llm.c GPT-2 (124M) walkthrough he reads one printed line field by field: step time, MFU, tokens per second, loss and gradient norm ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (Training)). A loss of 7.577 at step 80 means the model is as confused as if guessing at random among exp(7.577), about 2,000 of the 50,257 tokens, and by the end about 3.29 means about 27 ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (Training)). When the gradient norm spikes the gradient is exploding, which he calls very bad; clipping at 1.0 scales it back, and later in training the norm usually calms down ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (Training)). The log file `main.log` is visualised with the `dev/vislog.ipynb` notebook ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (Visualization)).
+
 ## Seen in
 - [[youtube-2023-01-17-gpt-from-scratch]]
 - [[bigram-language-model]], [[ng-video-lecture]]
@@ -38,3 +41,4 @@ The GPT lecture repeats the first step on a new problem: with 65 vocabulary elem
 - [[makemore]]
 - [[weight-initialization]], [[batch-normalization]], [[activation-functions]], [[gradient-descent]]
 - [[the-hockey-stick-loss-means-training-is-wasting-steps]]
+- [[llm-c]]

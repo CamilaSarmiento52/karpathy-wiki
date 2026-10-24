@@ -10,7 +10,9 @@ steps:
   - Keep published lecture code as it was in the video
   - Keep the code clean enough to reference
   - Build the ramp as well as the code
-sources: ["[[github-2022-11-20-makemore-readme]]", "[[github-2023-01-08-mingpt-readme]]", "[[github-2023-01-31-ng-video-lecture-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]"]
+  - Report lines of code and latency as numbers
+  - Put simplicity ahead of efficiency and leave the rest to forks
+sources: ["[[github-2022-11-20-makemore-readme]]", "[[github-2023-01-08-mingpt-readme]]", "[[github-2023-01-31-ng-video-lecture-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]"]
 aliases: [One hackable file, minimal educational re-implementation, hackable code, educational code]
 ---
 # Small, hackable, educational code
@@ -29,6 +31,10 @@ How he writes the repos that accompany his lectures: makemore, he says, is not m
 
 9. **Small code is not enough on its own.** He was happy with how minimal micrograd's code was and assumed that, at about 200 commented lines with a README, it was self-explanatory; engagement showed otherwise until he made the video, so he adds building the ramp after building the thing ([[x-2024-02-21-technical-accessibility]]).
 
+10. **Count the lines and the seconds.** In llm.c's first progress report he lists the main file's size, 2097 lines of clean code, beside nvcc compile latency (2.4 s) and launch-to-first-step latency (2.2 s), as headline numbers next to speed and memory ([[github-2024-04-22-llmc-state-of-the-union]] §intro (lines of code), §intro (latency)). In the next report he marks the growth to about 3,000 lines and the 4.3 s compile, which he says is now about as bad as `import torch`, as downsides, and keeps the simple version alive in a separate fp32 file meant to become pure CUDA kernels with no dependencies, the endpoint of a course that starts from the CPU-only `gpt2.c` ([[github-2024-05-03-llmc-state-of-the-union]] §intro (Lines of code), §intro (Latency), §intro (fp32 CUDA version plans)). By the GPT-2 (124M) post `train_gpt2.cu`, which he says started as a nice clean 1,000 lines of C, is closer to 3,500 ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (Code)).
+
+11. **Simplicity first, by policy.** For llama2.c he wanted something super simple, minimal and educational, so he hard-coded the Llama 2 architecture in one pure-C inference file with no dependencies, and kept the fp32 forward pass as the easy-to-understand reference with quantization in a separate file ([[github-2024-05-29-llama2c-readme]] §intro, §int8 quantization). Its contributing policy says the repo should be the simplest, smallest, most hackable one for training and inference, not a framework of a thousand knobs across hundreds of files; it cares about efficiency but not at the cost of simplicity, readability or portability, and should not be full-featured, take 100 options or be the most efficient, with llama.cpp for those who care most about deployment efficiency ([[github-2024-05-29-llama2c-readme]] §contributing). Small, localised, broadly useful changes such as a loop reorder or a one-line OpenMP pragma are instant merges, while many `#ifdef`s, platform-specific code or hundreds of scenario-specific lines belong in forks ([[github-2024-05-29-llama2c-readme]] §contributing).
+
 ## Seen in
 - [[github-2023-01-31-ng-video-lecture-readme]]
 - [[ng-video-lecture]]
@@ -38,3 +44,5 @@ How he writes the repos that accompany his lectures: makemore, he says, is not m
 - [[makemore]]
 - [[minbpe]]
 - [[build-the-ramp-not-just-the-thing]]
+- [[llm-c]]
+- [[llama2c]]

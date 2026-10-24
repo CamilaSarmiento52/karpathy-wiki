@@ -8,7 +8,14 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[github-2023-01-31-ng-video-lecture-readme|ng-video-lecture README]] — the GPT lecture's code as a hackable repo with its git log; the lecture skipped weight initialisation
 - [[github-2023-07-25-karpathy-profile-readme|karpathy profile README]] — his GitHub profile README: one sentence, he likes deep neural nets
 - [[github-2024-02-20-nn-zero-to-hero-readme|nn-zero-to-hero README]] — the Zero to Hero course's lecture list, micrograd to the GPT tokenizer, with his framing of each lecture
+- [[github-2024-04-12-llmc-discussions-welcome|llm.c discussions]] — one sentence opening GitHub Discussions on llm.c for questions and sharing
+- [[github-2024-04-22-llmc-state-of-the-union|State of the Union [April 22, 2024]]] — first llm.c report: kernel profile, ~6.4% faster than a constrained PyTorch run, memory, LOC, latency, big stones
 - [[github-2024-04-22-minbpe-readme|minbpe README]] — basic and regex BPE tokenizers that train, encode and decode; a GPT-4 wrapper matching tiktoken; exercise and lecture
+- [[github-2024-05-03-llmc-state-of-the-union|State of the Union [May 3, 2024]]] — day-24 llm.c report: ~7% faster than PyTorch nightly, mixed precision, fused classifier, multi-GPU, GPT-2 miniseries goal, LOC and compile costs
+- [[github-2024-05-24-llmc-pytorch-cross-checks|PyTorch vs. llm.c cross-checks]] — llm.c and PyTorch GPT-2 (124M) runs match to ~1e-3 on one GPU; the 4-GPU PyTorch run not yet
+- [[github-2024-05-28-llmc-gpt-2-124m|Reproducing GPT-2 (124M) in llm.c in 90 minutes for $20]] — 124M on 10B FineWeb tokens on one 8×A100 node, every flag explained, HellaSwag vs OpenAI, a 350M run, FAQ
+- [[github-2024-05-29-llama2c-readme|llama2.c README]] — Llama 2 trained in PyTorch, inferred in one C file; TinyStories models, int8 quantization, training guide, custom tokenizers, simplicity-first contributing policy
+- [[github-2024-05-30-calorie-readme|calorie README]] — his personal one-page calorie-deficit tracker with +100 / -100 kcal buttons
 - [[github-2025-11-12-nanogpt-readme|nanoGPT README]] — his earlier training/finetuning repo, marked deprecated in favour of nanochat
 - [[github-2026-07-03-nanochat-readme|nanochat README]] — minimal single-node harness that trains a GPT-2-grade chat model, set by one depth dial
 - [[talk-2023-05-19-stanford-cs25-transformers|Stanford CS25: Introduction to Transformers]] — guest lecture: AI converging on the Transformer, attention as message passing, nanoGPT walk-through, in-context learning

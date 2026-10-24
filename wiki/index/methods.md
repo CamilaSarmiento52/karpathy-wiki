@@ -10,6 +10,7 @@ How he builds, debugs, explains and evaluates. Alphabetical. Maintained by inges
 - [[make-it-work-then-make-it-cheap|Make it work, then make it cheap]] — most capable model and heavy prompting first, then cheaper models and distillation
 - [[prototype-in-jupyter-then-repo|Prototype in Jupyter, then move to the repo]] — read the docs for shapes, prototype in a notebook, paste into VS Code, run experiments from the repo, have a harness
 - [[quick-experiment-loop|Quick experiment loop]] — change one thing, re-run a five-minute d12, read the same plots
+- [[reproduce-a-published-model|Reproduce a published model]] — GPT-2 with released weights, GPT-3's recipe, from scratch on open data, compare with the checkpoint, publish the bill, scale up
 - [[small-hackable-educational-code|Small, hackable, educational code]] — one file, PyTorch only, a few hundred lines, published with its git history; know when it needs teeth
 - [[spelled-out-build-from-scratch|Spelled-out build from scratch]] — blank notebook, by hand first, then code, then the real repo; one addition at a time, one validation number each
 - [[training-diagnostics|Training diagnostics]] — expected loss at init, hockey stick, activation/gradient histograms, update-to-data ratio against -3; average the loss over batches

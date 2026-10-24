@@ -2,8 +2,8 @@
 type: topic
 aliases: [Gradient descent, learning rate, minibatch, SGD, optimization]
 first_seen: 2022-08-16
-last_updated: 2022-11-21
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-11-21-makemore-5-wavenet]]"]
+last_updated: 2024-05-29
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-11-21-makemore-5-wavenet]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]"]
 related: ["[[loss-functions]]", "[[backpropagation]]", "[[micrograd]]", "[[training-diagnostics]]"]
 ---
 # Gradient descent
@@ -24,6 +24,12 @@ The third makemore lecture adds a way to judge the learning rate from the update
 
 In the WaveNet lecture he says the same of hyperparameter tuning as of weights: with no experimental harness they are just guessing and checking, and he says this is not representative of typical deep-learning workflows, which run scripted experiments, plot training and validation losses and search hyperparameters ([[youtube-2022-11-21-makemore-5-wavenet]] @46:42, @54:32).
 
+**What a real reproduction needs (llm.c, May 2024).** Planning a proper reproduction of the GPT-2 miniseries in llm.c, he lists gradient accumulation, gradient clipping, and learning-rate warmup and schedule among the pieces still to build, alongside random initialisation in C, an evaluation and a modern dataset ([[github-2024-05-03-llmc-state-of-the-union]] §intro (Functional)). By the cross-check thread, llm.c takes a desired total batch size and computes the gradient-accumulation steps itself: micro-batch 16 × 1024 tokens against a total of 131072 gives 8 ([[github-2024-05-24-llmc-pytorch-cross-checks]] §1 GPU training in FP32). On 4 GPUs the total batch stays identical, so llm.c lowers the accumulation steps and everything else stays the same ([[github-2024-05-24-llmc-pytorch-cross-checks]] §multiGPU).
+
+**GPT-3's recipe for GPT-2 (llm.c, 2024-05-28).** His settings for the 124M reproduction, as dated practice: many hyperparameters follow the GPT-3 paper rather than GPT-2's because it was much more detailed ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (Args guide)). The total batch is about 0.5M tokens per update, from the GPT-3 paper's table for this model size since GPT-2's batch size is unknown; the code computes the gradient-accumulation inner loop to reach it, none on 8 GPUs at micro-batch 64 and 8 steps on one GPU ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (Args guide)). Weight decay is 0.1 and applies only to 2-D weights, exactly as in GPT-2; the maximum learning rate is 6e-4; it warms up linearly from 0 over the first 700 iterations, 350M tokens; and in this run it decays to 0 over training ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (Args guide)). Gradient clipping at 1.0 is, he says, standard, used to mitigate gradient explosions ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (Training)).
+
+**His brief training guide (llama2.c).** He says he mostly only tunes a handful of settings and leaves the rest unchanged ([[github-2024-05-29-llama2c-readme]] §training). Scale dim, n_layers and n_heads together, inter- or extrapolating the table at the end of the Chinchilla paper; set the max context to the number of tokens that matter for predicting the next one (Llama 2 uses 2048); aim for a total batch of about 100K tokens per update for medium applications, lower for tiny ones and usually about 0.5M or more for large GPT or Llama training, reached by maxing out the batch size and then raising gradient accumulation ([[github-2024-05-29-llama2c-readme]] §training). Tune the learning rate as high as training allows: very small networks can take 1e-3 or more, large ones need lower, and 3e-4 is safe for most medium applications but can be too low for small networks ([[github-2024-05-29-llama2c-readme]] §training). His 110M run, which he does not think is anywhere near optimal: dim 768, 12 layers, 12 heads, sequence length 1024, batch 16 with 8 accumulation steps for 131,072 tokens per update, learning rate 4e-4 (probably a little too low), 200K iterations (probably a bit too high), dropout 0.1, on 4 GPUs with DDP for about a day ([[github-2024-05-29-llama2c-readme]] §training). **Note:** the about 0.5M tokens he gives for large training is the batch size llm.c's GPT-2 (124M) run takes from the GPT-3 paper ([[github-2024-05-29-llama2c-readme]] §training; [[github-2024-05-28-llmc-gpt-2-124m]] §intro (Args guide)).
+
 ## Claims
 - [[approximate-gradient-with-more-steps-beats-exact-gradient]]
 - [[counting-and-gradient-bigram-models-are-the-same-model]]
@@ -41,3 +47,5 @@ In the WaveNet lecture he says the same of hyperparameter tuning as of weights: 
 - [[batch-normalization]] — why the rate had to be retuned
 - [[overfitting-and-generalization]]
 - [[prototype-in-jupyter-then-repo]] — the harness he says is missing
+- [[llm-c]] — where batch size, accumulation, clipping and the schedule are set by flags
+- [[reproduce-a-published-model]] — where the GPT-3 hyperparameters are borrowed

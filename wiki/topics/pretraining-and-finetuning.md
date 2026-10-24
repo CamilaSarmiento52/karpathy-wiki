@@ -2,8 +2,8 @@
 type: topic
 aliases: [Pretraining, finetuning, RLHF, ChatGPT training stages, pretraining vs finetuning, alignment stage, fine-tuning, four-stage training recipe, supervised finetuning, SFT, reward modeling, reinforcement learning from human feedback, base model, assistant model, LoRA, lossy compression of the internet, zip file of the internet, next-word prediction, pretraining data, labeling instructions]
 first_seen: 2023-01-17
-last_updated: 2024-03-26
-sources: ["[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-25-state-of-gpt]]", "[[youtube-2023-11-23-intro-to-llms]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]"]
+last_updated: 2024-05-28
+sources: ["[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-25-state-of-gpt]]", "[[youtube-2023-11-23-intro-to-llms]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[github-2024-05-28-llmc-gpt-2-124m]]"]
 related: ["[[rlvr]]", "[[nanogpt]]", "[[transformer-architecture]]", "[[tokenization]]"]
 ---
 # Pretraining and finetuning
@@ -37,6 +37,8 @@ An optional stage three uses comparison labels, because comparing candidate answ
 **Finetuning regresses, components compose (Sequoia, 2024-03-26).** The more you finetune a model, the more it regresses on everything else; adding a capability without that wants training on a mixture of the old and new data, which needs the dataset and training loop, not just the weights ([[talk-2024-03-26-sequoia-making-ai-accessible]] @08:32). Asked about model composability, he says he sees papers on model merges but does not know that anything has really stuck ([[talk-2024-03-26-sequoia-making-ai-accessible]] @23:21). Neural nets are less composable than traditional code, but they do compose through pretraining: it is very common to pretrain components separately, plug them in and finetune through the whole, for example adding images to a ChatGPT-like system ([[talk-2024-03-26-sequoia-making-ai-accessible]] @23:53, @24:26). The AlphaGo and RLHF points from the same interview are on [[llm-self-improvement]] ([[talk-2024-03-26-sequoia-making-ai-accessible]] @24:59).
 
 **Note:** the January lecture's three finetuning steps (SFT, reward model, PPO) are the same recipe this talk lays out as four stages with the last two named RLHF; more detail, not a change of view ([[youtube-2023-01-17-gpt-from-scratch]] @1:52:36; [[talk-2023-05-25-state-of-gpt]] @01:07).
+
+**Pretraining only (llm.c, 2024-05-28).** llm.c is currently pretraining only, not chat finetuning, so you cannot chat with its GPT-2 reproduction; without a GPU you can still finetune OpenAI's GPT-2 weights on other data such as TinyShakespeare or TinyStories with the more rudimentary `train_gpt2.c` ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (FAQ)).
 
 ## Claims
 - [[pretraining-gives-a-document-completer]]

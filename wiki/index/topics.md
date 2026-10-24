@@ -15,6 +15,7 @@ Ideas he explains, each defined in his framing. Alphabetical. Maintained by inge
 - [[embeddings|Embeddings]] — a shared lookup table C, equivalent to a linear layer on one-hot inputs; positional embeddings for attention
 - [[gradient-descent|Gradient descent]] — forward, backward, step against the gradient; learning rate and minibatches
 - [[jagged-intelligence|Jagged intelligence]] — LLMs as people spirits or ghosts: superhuman in places, broken in others
+- [[llm-evaluation|LLM evaluation]] — FineWeb validation loss as confirmation, HellaSwag as the main number, and why the comparison with OpenAI is not fair
 - [[llm-gui|LLM GUI]] — text suits LLMs, not people; LLMs need a visual interface
 - [[llm-knowledge-bases|LLM knowledge bases]] — an LLM compiles and maintains a markdown wiki of your sources
 - [[llm-security|LLM security]] — jailbreaks, prompt injection and data poisoning; a cat-and-mouse game

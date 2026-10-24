@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [Sampling, sampling from a language model, temperature, top-p, autoregressive sampling, autoregressive generation, diffusion]
+aliases: [Sampling, sampling from a language model, temperature, top-p, autoregressive sampling, autoregressive generation, diffusion, nucleus sampling]
 first_seen: 2023-05-19
-last_updated: 2024-03-26
-sources: ["[[talk-2023-05-19-stanford-cs25-transformers]]", "[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]"]
+last_updated: 2024-05-29
+sources: ["[[talk-2023-05-19-stanford-cs25-transformers]]", "[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[github-2024-05-29-llama2c-readme]]"]
 related: ["[[character-level-language-modeling]]", "[[he-does-not-love-autoregressive-sampling]]"]
 ---
 # Sampling from language models
@@ -18,9 +18,12 @@ In Intro to LLMs he describes the same loop at scale: sample a word, feed it bac
 
 In the Sequoia interview he finds it odd that diffusion and autoregressive models sit as two separate, extremely good points in model space with nothing in between, and thinks a hybrid or unification is probably possible ([[talk-2024-03-26-sequoia-making-ai-accessible]] @12:22, @12:55).
 
+**Temperature and top-p (llama2.c).** For about the best results he recommends sampling at temperature 1.0 with top-p 0.9, both llama2.c's defaults ([[github-2024-05-29-llama2c-readme]] §feel the magic). Intuitively, he says, top-p keeps tokens with tiny probabilities from being sampled, so you cannot get "unlucky" and are less likely to go "off the rails" afterwards ([[github-2024-05-29-llama2c-readme]] §feel the magic). To control diversity, vary either the temperature with top-p off or top-p with temperature at 1, but not both ([[github-2024-05-29-llama2c-readme]] §feel the magic).
+
 ## Claims
 - [[he-does-not-love-autoregressive-sampling]]
 
 ## Related
+- [[llama2c]] — the `-t` and `-p` sampling flags
 - [[character-level-language-modeling]] — his bigram and MLP sampling loops with `torch.multinomial`
 - [[transformer-architecture]] — the decoder whose mask makes this sampling possible

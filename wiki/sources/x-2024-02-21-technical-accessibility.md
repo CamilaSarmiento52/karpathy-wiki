@@ -20,9 +20,11 @@ He recalls that when he first published the micrograd repo it got some traction 
 - The video walkthrough, not the code, changed micrograd's uptake → [[micrograd]]
 - A from-scratch video as the ramp for a repo → [[spelled-out-build-from-scratch]]
 - Minimal, commented code with a README was not enough on its own → [[small-hackable-educational-code]]
+- Linked from the llm.c GPT-2 (124M) post as the promise to build it again from scratch → [[llm-c]]
 
 ## Fed pages
 - [[build-the-ramp-not-just-the-thing]]
 - [[micrograd]]
 - [[spelled-out-build-from-scratch]]
 - [[small-hackable-educational-code]]
+- [[llm-c]]

@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [Transformer, Transformer block, GPT architecture, GPT, decoder-only, residual connections, layer norm, LayerNorm, GPT-1, GPT-2, GPT-3, Image GPT, "Attention Is All You Need", encoder-decoder, cross-attention, encoder-only, BERT, T5, sequence to sequence, history of the Transformer]
+aliases: [Transformer, Transformer block, GPT architecture, GPT, decoder-only, residual connections, layer norm, LayerNorm, GPT-1, GPT-2, GPT-3, Image GPT, "Attention Is All You Need", encoder-decoder, cross-attention, encoder-only, BERT, T5, sequence to sequence, history of the Transformer, Llama, Llama 2, RoPE, SwiGLU, RMSNorm, multiquery attention]
 first_seen: 2023-01-08
-last_updated: 2024-03-26
-sources: ["[[github-2023-01-08-mingpt-readme]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]"]
+last_updated: 2024-05-29
+sources: ["[[github-2023-01-08-mingpt-readme]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]"]
 related: ["[[mingpt]]", "[[nanogpt]]", "[[batch-normalization]]", "[[embeddings]]", "[[self-attention]]", "[[regularization]]", "[[ng-video-lecture]]"]
 ---
 # Transformer architecture
@@ -34,6 +34,8 @@ He reads the 2017 paper as deleting everything except attention and combining se
 
 **Why it works.** He argues it is expressive in the forward pass, optimizable thanks to residual connections and layer norms, and efficient as a shallow, wide graph suited to GPU parallelism ([[talk-2023-05-19-stanford-cs25-transformers]] @58:12, @58:44). RNNs can in principle implement arbitrary programs but are long, thin, serial compute graphs that are poorly optimizable and inefficient, whereas a Transformer has few hops from supervision to inputs and processes every word in parallel ([[talk-2023-05-19-stanford-cs25-transformers]] @1:02:29, @1:03:01, @1:03:35).
 
+**GPT-2 as the template (llm.c, 2024-05-28).** He says GPT-3 changed little about the model relative to GPT-2, he thinks only the context size from 1024 to 2048, and that many later LLMs strongly resemble GPT-2: Llama 3, architecturally, differs by a change of MLP non-linearity and the addition of RoPE relative positional encoding ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (FAQ)). The llama2.c README lists the notable changes from GPT-1/2 in Llama as RoPE relative positional embeddings instead of absolute learned ones, the "a bit more fancy" SwiGLU non-linearity in the MLP, RMSNorm instead of LayerNorm, `bias=False` on all Linear layers, and optional multiquery attention; its 110M model is GPT-1 sized and, as he puts it, equivalent to GPT-2 small except for a max context of 1024 instead of 2048 ([[github-2024-05-29-llama2c-readme]] §models).
+
 ## Claims
 - [[attention-is-a-communication-mechanism]]
 - [[gpt-is-not-a-complicated-model]]
@@ -41,8 +43,10 @@ He reads the 2017 paper as deleting everything except attention and combining se
 - [[the-transformer-is-a-general-purpose-efficient-optimizable-computer]] — expressive, optimizable, efficient
 - [[with-enough-data-encode-less-inductive-bias]] — biases live in connectivity and positional encodings
 - [[the-transformer-is-probably-not-the-final-architecture]] — resilient so far, change expected
+- [[gpt-2-is-the-first-recognizably-modern-llm-stack]] — why llm.c reproduces GPT-2
 
 ## Related
+- [[llama2c]] — the Llama 2 architecture hard-coded in C
 - [[mingpt]] — his ~300-line implementation
 - [[nanogpt]] — the rewrite with teeth
 - [[batch-normalization]] — the normalization layer LayerNorm is compared with in the makemore series

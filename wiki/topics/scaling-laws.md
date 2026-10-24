@@ -19,6 +19,7 @@ Given only those two numbers, he says, you can predict with remarkable confidenc
 
 ## Claims
 - [[scaling-offers-a-guaranteed-path-to-better-models]]
+- [[small-llms-can-be-strong-in-narrow-domains]] — small models, narrow domains
 
 ## Related
 - [[pretraining-and-finetuning]] — the stage whose loss these laws describe
