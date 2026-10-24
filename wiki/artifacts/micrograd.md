@@ -3,7 +3,7 @@ type: artifact
 repo_url: https://github.com/karpathy/micrograd
 language: Python
 status: active
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]"]
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[x-2024-02-21-technical-accessibility]]"]
 context: ["[[youtube-2022-10-11-makemore-4-backprop-ninja]]"]
 aliases: [micrograd autograd engine]
 ---
@@ -22,11 +22,17 @@ A scalar-valued autograd engine he released on GitHub about two years before the
 
 - In the fourth makemore lecture he describes micrograd as an autograd engine only at the level of individual scalars, which he does not think is enough on its own, and refers back to it for the rule that gradients from multiple uses of a node sum, for the tanh backward, and for topological-order backprop ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @02:43, @25:02, @53:30, @1:39:25).
 
+- In the Zero to Hero README it is the companion repo of Lecture 1, which covers backpropagation and training and assumes basic Python and a vague memory of high-school calculus ([[github-2024-02-20-nn-zero-to-hero-readme]] §intro, Lecture 1).
+
+- In a February 2024 post he recalls that the repo, when first published, got some traction on GitHub and then stagnated for many months; after he made the video building it from scratch it went through hockey-stick growth and became an often-cited reference for learning backpropagation, though the code had not changed at all ([[x-2024-02-21-technical-accessibility]]). He describes it there as about 200 lines, extensively commented in the `.py` files and README, getting to the heart of an autograd engine on one page; the 2022 lecture gives roughly 150, and both are his approximations ([[x-2024-02-21-technical-accessibility]]; [[youtube-2022-08-16-micrograd]] @07:35). He says the video almost 100X'd interest and engagement with the same code ([[x-2024-02-21-technical-accessibility]]).
+
 ## Related
 - [[backpropagation]] — what the engine implements
 - [[multilayer-perceptron]] — what `nn.py` builds
 - [[pytorch]] — the API it is modelled on
 - [[spelled-out-build-from-scratch]], [[verify-gradients-against-pytorch]]
 - [[micrograd-is-all-you-need-everything-else-is-efficiency]]
+- [[nn-zero-to-hero]] — the course it opens
+- [[build-the-ramp-not-just-the-thing]] — the lesson he draws from its uptake
 - [[understand-backprop-even-with-autograd]] — the tensor-level sequel to the scalar engine
 - **Note:** [[nanogpt]] and [[nanochat]] are his later from-scratch training repos; the sources here do not connect them.

@@ -43,3 +43,4 @@ At tensor level, from the backprop lecture, where the whole MLP backward pass is
 - [[micrograd]]
 - [[makemore]]
 - [[backpropagation]], [[check-shapes-and-broadcasting]]
+- [[verify-against-a-reference-implementation]] — the general parity habit; this page is about gradients

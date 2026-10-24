@@ -15,3 +15,4 @@ Closing State of GPT, he lists limitations: models may be biased, fabricate and 
 
 ## Related claims
 - Supports [[this-is-the-decade-of-agents]]: in 2023 he advises copilots with human oversight over autonomous agents ([[talk-2023-05-25-state-of-gpt]] @39:57); in 2025 he says agents need humans in the loop and will take a decade ([[youtube-2025-06-19-software-is-changing]] @27:09, @27:44). Consistent caution, not an extension: the 2023 talk gives no timescale.
+- **Note:** the dated sequence of his statements on agents is on [[llm-agents-over-time]] ([[talk-2023-05-25-state-of-gpt]] @39:57).

@@ -2,23 +2,23 @@
 
 The last 20 page changes, newest first.
 
-- 2026-10-24 [[talk-2023-05-25-state-of-gpt]] — updated: Fed pages gains scaling-laws, llm-security, llms-currently-only-have-a-system-1
-- 2026-10-24 [[youtube-2025-06-19-software-is-changing]] — updated: Fed pages gains the LLM-kernel claim
-- 2026-10-24 [[llms-are-the-kernel-of-an-emerging-operating-system]] — created: kernel process, context window as RAM (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[self-improvement-may-be-possible-in-narrow-domains]] — created: hedged; no general reward criterion (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[llms-currently-only-have-a-system-1]] — created: convert time into accuracy (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[scaling-offers-a-guaranteed-path-to-better-models]] — created: algorithmic progress a bonus (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[llms-are-mostly-inscrutable-empirical-artifacts]] — created: known operations, unknown parameters (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[pretraining-is-lossy-compression-of-the-internet]] — created: 10 TB to 140 GB, lossy (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[an-llm-is-just-two-files]] — created: parameters plus ~500 lines of C (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[llm-security]] — created: jailbreaks, prompt injection, data poisoning (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[llm-self-improvement]] — created: AlphaGo's step two (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[scaling-laws]] — created: smooth in N and D (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[system-1-and-system-2-thinking]] — updated: System 2 as a research direction (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[llm-tool-use]] — updated: tools in ChatGPT, multimodality, customization (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[llms-as-operating-systems]] — updated: 2023 kernel version; first_seen now 2023-11-23 (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[pretraining-gives-a-document-completer]] — updated: third source, Llama 2 base model (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[jagged-intelligence]] — updated: reversal curse and prompt injection Note, as context (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[sampling-from-language-models]] — updated: the network dreams documents (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[pretraining-and-finetuning]] — updated: lossy compression, finetuning loop, RLHF named (from [[youtube-2023-11-23-intro-to-llms]])
-- 2026-10-24 [[youtube-2023-11-23-intro-to-llms]] — created: source page
+- 2026-10-24 [[spelled-out-build-from-scratch]] — updated: exercise.md and lecture.md (from [[github-2024-04-22-minbpe-readme]])
+- 2026-10-24 [[small-hackable-educational-code]] — updated: clean, readable, hackable (from [[github-2024-04-22-minbpe-readme]])
+- 2026-10-24 [[verify-against-a-reference-implementation]] — updated: tiktoken parity with special tokens (from [[github-2024-04-22-minbpe-readme]])
+- 2026-10-24 [[tokenization]] — updated: three functions, 256 byte tokens, special-token footgun (from [[github-2024-04-22-minbpe-readme]])
+- 2026-10-24 [[minbpe]] — updated: files, tests, todos, status basis (from [[github-2024-04-22-minbpe-readme]])
+- 2026-10-24 [[github-2024-04-22-minbpe-readme]] — created: source page
+- 2026-10-24 [[transformer-architecture]] — updated: resilient but not final (from [[talk-2024-03-26-sequoia-making-ai-accessible]])
+- 2026-10-24 [[this-is-the-decade-of-agents]] — updated: weak support from the 2024 claim, timeline link (from [[talk-2024-03-26-sequoia-making-ai-accessible]])
+- 2026-10-24 [[llms-as-operating-systems]] — updated: the 2024 LLM OS with default apps (from [[talk-2024-03-26-sequoia-making-ai-accessible]])
+- 2026-10-24 [[scaling-laws]] — updated: scale first but not enough (from [[talk-2024-03-26-sequoia-making-ai-accessible]])
+- 2026-10-24 [[llm-self-improvement]] — updated: AlphaGo step one, RLHF a weak form of RL (from [[talk-2024-03-26-sequoia-making-ai-accessible]])
+- 2026-10-24 [[llm-agents-over-time]] — created: four dated entries, accumulated not changed (from [[talk-2024-03-26-sequoia-making-ai-accessible]])
+- 2026-10-24 [[make-it-work-then-make-it-cheap]] — created from State of GPT and Sequoia (from [[talk-2024-03-26-sequoia-making-ai-accessible]])
+- 2026-10-24 [[llm-products-will-take-years-to-figure-out]] — created; weak supports to the decade claim (from [[talk-2024-03-26-sequoia-making-ai-accessible]])
+- 2026-10-24 [[the-transformer-is-probably-not-the-final-architecture]] — created; Note to the CS25 resilience claim (from [[talk-2024-03-26-sequoia-making-ai-accessible]])
+- 2026-10-24 [[ai-is-far-less-energy-efficient-than-the-brain]] — created (from [[talk-2024-03-26-sequoia-making-ai-accessible]])
+- 2026-10-24 [[open-weights-models-are-not-open-source]] — created (from [[talk-2024-03-26-sequoia-making-ai-accessible]])
+- 2026-10-24 [[elon-musk-management-style]] — created: four traits, copy it from the start (from [[talk-2024-03-26-sequoia-making-ai-accessible]])
+- 2026-10-24 [[compute-efficiency]] — created: energy gap and levers (from [[talk-2024-03-26-sequoia-making-ai-accessible]])
+- 2026-10-24 [[ai-ecosystem]] — created: coral reef, three model categories, Meta (from [[talk-2024-03-26-sequoia-making-ai-accessible]])

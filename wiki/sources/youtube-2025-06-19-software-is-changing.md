@@ -51,3 +51,5 @@ vibe coding and MenuGen (@29:22, @31:38), and closes on building infrastructure 
 - [[gpt-is-a-general-purpose-computer-running-natural-language-programs]]
 - [[use-llms-as-copilots-with-human-oversight]]
 - [[llms-are-the-kernel-of-an-emerging-operating-system]]
+- [[llm-products-will-take-years-to-figure-out]]
+- [[llm-agents-over-time]]

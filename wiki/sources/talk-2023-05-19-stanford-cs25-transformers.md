@@ -47,3 +47,4 @@ The course instructors introduce CS25 and an attention timeline for the first te
 - [[english-is-the-new-programming-language]]
 - [[with-enough-data-encode-less-inductive-bias]]
 - [[he-does-not-love-autoregressive-sampling]]
+- [[the-transformer-is-probably-not-the-final-architecture]]

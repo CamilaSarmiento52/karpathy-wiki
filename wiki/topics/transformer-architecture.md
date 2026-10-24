@@ -2,8 +2,8 @@
 type: topic
 aliases: [Transformer, Transformer block, GPT architecture, GPT, decoder-only, residual connections, layer norm, LayerNorm, GPT-1, GPT-2, GPT-3, Image GPT, "Attention Is All You Need", encoder-decoder, cross-attention, encoder-only, BERT, T5, sequence to sequence, history of the Transformer]
 first_seen: 2023-01-08
-last_updated: 2023-05-19
-sources: ["[[github-2023-01-08-mingpt-readme]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-19-stanford-cs25-transformers]]"]
+last_updated: 2024-03-26
+sources: ["[[github-2023-01-08-mingpt-readme]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]"]
 related: ["[[mingpt]]", "[[nanogpt]]", "[[batch-normalization]]", "[[embeddings]]", "[[self-attention]]", "[[regularization]]", "[[ng-video-lecture]]"]
 ---
 # Transformer architecture
@@ -26,6 +26,8 @@ He reads the 2017 paper as deleting everything except attention and combining se
 
 **Resilience.** He says papers have tried changing all kinds of details and nothing sticks because the design is quite good; the change he knows of that stuck is moving the layer norms to the pre-norm position, so today's GPTs are basically the 2017 architecture ([[talk-2023-05-19-stanford-cs25-transformers]] @21:39). Positional encodings have also changed, rotary and relative encodings being more common now, but for the most part it has proven very resilient ([[talk-2023-05-19-stanford-cs25-transformers]] @22:11). Five years on, he says, it has not changed even though everyone is trying to change it ([[talk-2023-05-19-stanford-cs25-transformers]] @49:02). **Note:** this matches the GPT lecture's remark that GPT-3 is nearly identical to the lecture model, only larger ([[talk-2023-05-19-stanford-cs25-transformers]] @21:39; [[youtube-2023-01-17-gpt-from-scratch]] @1:50:56).
 
+**Resilient, but not final (Sequoia, 2024-03-26).** He calls the Transformer amazing and says he would not have seen it coming: before it he expected an insane diversification of neural networks, and instead it is all the same model ([[talk-2024-03-26-sequoia-making-ai-accessible]] @33:51). He says the Transformer was designed for the GPU, an extremely parallelisable architecture that broke the RNN's sequential dependencies through attention, with predecessors such as the Neural GPU ([[talk-2024-03-26-sequoia-making-ai-accessible]] @34:57). It has proven remarkably resilient, the original and today's being not super different, but he thinks changes are very likely ([[talk-2024-03-26-sequoia-making-ai-accessible]] @35:30).
+
 **Encoder, decoder, encoder-decoder.** Encoder tokens are fully connected; decoder tokens connect to all encoder states and only to earlier decoder tokens, a triangular structure, and cross-attention consumes features from the top of the encoder ([[talk-2023-05-19-stanford-cs25-transformers]] @26:06, @26:40). In nanoGPT's code, deleting the mask line makes an encoder, and adding a cross-attention line whose queries come from x and keys and values from the top of the encoder makes an encoder-decoder ([[talk-2023-05-19-stanford-cs25-transformers]] @43:13, @43:47, @44:20). GPT is decoder-only, BERT encoder-only and T5 encoder-decoder; BERT trains with masking and other denoising objectives rather than next-token prediction ([[talk-2023-05-19-stanford-cs25-transformers]] @44:20, @44:52). In nanoGPT's block the residual pathway feeds a layer norm and self-attention (communicate), then the MLP (compute), a two-layer net with a GELU nonlinearity applied per node ([[talk-2023-05-19-stanford-cs25-transformers]] @37:08, @37:41, @38:17). Context length is finite, typically 1,024 or 2,048 tokens in such models, and extending it is hard because attention is quadratic ([[talk-2023-05-19-stanford-cs25-transformers]] @42:39).
 
 **Flexible inputs.** He calls the way Transformers were brought to vision "kind of ridiculous" from a computer-vision perspective, chopping an image into squares and feeding them in so the model must rediscover structure, yet the simplest baseline works fairly well ([[talk-2023-05-19-stanford-cs25-transformers]] @52:43, @53:17). At Tesla, adding radar, map, vehicle-type or audio inputs to a convnet raised hard questions of where to feed them; with a Transformer you chop everything up, add it to the set and let self-attention work out the communication ([[talk-2023-05-19-stanford-cs25-transformers]] @54:23, @54:57). This frees neural nets from laying out computation in Euclidean space, which he finds beautiful ([[talk-2023-05-19-stanford-cs25-transformers]] @54:57, @55:30).
@@ -38,6 +40,7 @@ He reads the 2017 paper as deleting everything except attention and combining se
 - [[ai-has-converged-on-one-architecture]] — every field copy-pastes this architecture
 - [[the-transformer-is-a-general-purpose-efficient-optimizable-computer]] — expressive, optimizable, efficient
 - [[with-enough-data-encode-less-inductive-bias]] — biases live in connectivity and positional encodings
+- [[the-transformer-is-probably-not-the-final-architecture]] — resilient so far, change expected
 
 ## Related
 - [[mingpt]] — his ~300-line implementation
@@ -48,3 +51,4 @@ He reads the 2017 paper as deleting everything except attention and combining se
 - [[regularization]] — dropout in the block
 - [[ng-video-lecture]] — the lecture code
 - [[pretraining-and-finetuning]] — the stages that train it
+- [[compute-efficiency]] — precision, sparsity and hardware co-design

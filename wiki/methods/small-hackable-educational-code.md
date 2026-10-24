@@ -8,7 +8,9 @@ steps:
   - Give education-only code teeth when it needs them
   - Publish lecture code with its git history
   - Keep published lecture code as it was in the video
-sources: ["[[github-2022-11-20-makemore-readme]]", "[[github-2023-01-08-mingpt-readme]]", "[[github-2023-01-31-ng-video-lecture-readme]]"]
+  - Keep the code clean enough to reference
+  - Build the ramp as well as the code
+sources: ["[[github-2022-11-20-makemore-readme]]", "[[github-2023-01-08-mingpt-readme]]", "[[github-2023-01-31-ng-video-lecture-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]"]
 aliases: [One hackable file, minimal educational re-implementation, hackable code, educational code]
 ---
 # Small, hackable, educational code
@@ -23,6 +25,10 @@ How he writes the repos that accompany his lectures: makemore, he says, is not m
 6. **Publish with the history.** He publishes lecture code as a GitHub repo so people can easily hack it and walk through its `git log` history ([[github-2023-01-31-ng-video-lecture-readme]] §intro).
 7. **Leave it as taught.** He keeps the published lecture code almost exactly as it was in the video, deferring the initialisation fix until a follow-up lecture explains it ([[github-2023-01-31-ng-video-lecture-readme]] §intro).
 
+8. **Clean enough to reference.** He says he tried to keep minbpe's code fairly clean and understandable so learners can reference it when stuck on the exercise; it is in Python and not yet efficient, which he hopes to change ([[youtube-2024-02-20-gpt-tokenizer]] @1:26:20, @2:11:45, @2:12:18). The README says he tried hard to keep the code clean, readable and hackable and that readers should not be scared to read it; every file is very short, thoroughly commented and ends with a usage example, and the tests double as usage examples ([[github-2024-04-22-minbpe-readme]] §intro, §training).
+
+9. **Small code is not enough on its own.** He was happy with how minimal micrograd's code was and assumed that, at about 200 commented lines with a README, it was self-explanatory; engagement showed otherwise until he made the video, so he adds building the ramp after building the thing ([[x-2024-02-21-technical-accessibility]]).
+
 ## Seen in
 - [[github-2023-01-31-ng-video-lecture-readme]]
 - [[ng-video-lecture]]
@@ -30,3 +36,5 @@ How he writes the repos that accompany his lectures: makemore, he says, is not m
 - [[mingpt]], [[nanogpt]]
 - [[github-2022-11-20-makemore-readme]]
 - [[makemore]]
+- [[minbpe]]
+- [[build-the-ramp-not-just-the-thing]]

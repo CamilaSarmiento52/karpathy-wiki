@@ -2,8 +2,8 @@
 type: topic
 aliases: [Embeddings, embedding table, lookup table, positional embeddings, positional encodings]
 first_seen: 2022-09-12
-last_updated: 2023-05-19
-sources: ["[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-19-stanford-cs25-transformers]]"]
+last_updated: 2024-02-20
+sources: ["[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[youtube-2024-02-20-gpt-tokenizer]]"]
 related: ["[[multilayer-perceptron]]", "[[softmax]]", "[[pytorch]]", "[[makemore]]"]
 ---
 # Embeddings
@@ -20,6 +20,8 @@ In the GPT lecture he adds positional embeddings: beyond token identity, a secon
 
 In the CS25 lecture he explains that because the Transformer processes sets, token-identity embeddings and positional embeddings are added together to give what and where ([[talk-2023-05-19-stanford-cs25-transformers]] @35:29, @36:01). Extra inputs such as radar or vehicle information get a learnable special embedding token so the Transformer knows their source ([[talk-2023-05-19-stanford-cs25-transformers]] @1:04:42). Positional encodings can be hard-wired with sines and cosines, but he prefers a trainable vector that always sits at a location, and says they carry very little inductive bias ([[talk-2023-05-19-stanford-cs25-transformers]] @1:05:18, @1:05:57). Rotary and relative positional encodings are now more common than the original ([[talk-2023-05-19-stanford-cs25-transformers]] @22:11).
 
+In the tokenizer lecture each token's integer looks up a row of trainable parameters in the embedding table, and that vector is how the Transformer perceives the token ([[youtube-2024-02-20-gpt-tokenizer]] @01:40, @02:12). A larger vocabulary means more rows, and rare tokens get few examples, so their vectors may be undertrained ([[youtube-2024-02-20-gpt-tokenizer]] @1:44:13, @1:45:18, @1:45:51). Adding a token means adding a row initialised with small random numbers ([[youtube-2024-02-20-gpt-tokenizer]] @1:24:37, @1:47:32). A token that never appears in the LLM's training data keeps a random row that is never updated; he likens it to unallocated memory in a C program, so invoking it gives undefined behaviour, his reading of SolidGoldMagikarp ([[youtube-2024-02-20-gpt-tokenizer]] @2:08:24, @2:08:57).
+
 ## Claims
 - [[attention-is-a-communication-mechanism]] — attention acts over a set of vectors with no notion of space, which is why position is added
 - [[gradient-based-models-scale-where-count-tables-do-not]] — embeddings are how the net takes more context than a table can
@@ -31,3 +33,4 @@ In the CS25 lecture he explains that because the Transformer processes sets, tok
 - [[makemore]]
 - [[self-attention]] — why positional embeddings are needed
 - [[transformer-architecture]]
+- [[tokenization]] — what the integers come from

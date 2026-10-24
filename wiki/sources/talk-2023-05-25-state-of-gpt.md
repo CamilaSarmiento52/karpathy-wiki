@@ -52,3 +52,5 @@ He splits the talk into how GPT assistants are trained and how to use them well 
 - [[scaling-laws]]
 - [[llm-security]]
 - [[llms-currently-only-have-a-system-1]]
+- [[make-it-work-then-make-it-cheap]]
+- [[llm-agents-over-time]]

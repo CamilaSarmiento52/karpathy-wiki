@@ -3,12 +3,15 @@
 Ideas he explains, each defined in his framing. Alphabetical. Maintained by ingest; do not edit by hand.
 
 - [[activation-functions|Activation functions]] — tanh, sigmoid, ReLU and their local derivatives
+- [[ai-ecosystem|AI ecosystem]] — a coral reef of startups over a few megacorps; open-weights, open-source and proprietary models
 - [[backpropagation|Backpropagation]] — recursive chain rule backwards through an expression graph
 - [[batch-normalization|Batch normalization]] — standardise pre-activations over the batch, learned gain and bias, running statistics; it couples examples and its state causes bugs
 - [[bigram-language-model|Bigram language model]] — one character of context; a 27×27 count table, a one-layer net, or the GPT lecture's embedding-table baseline
 - [[broadcasting|Broadcasting]] — PyTorch's shape rules and the keepdim bug
 - [[building-for-agents|Building for agents]] — make docs and infrastructure readable and actionable for LLM agents
 - [[character-level-language-modeling|Character-level language modeling]] — predict the next character; the makemore task and how he samples from it
+- [[compute-efficiency|Compute efficiency]] — a thousand- to millionfold gap with the brain; precision, sparsity, hardware co-design
+- [[elon-musk-management-style|Elon Musk's management style]] — small technical teams, no non-technical middle management, direct contact with engineers, the large hammer
 - [[embeddings|Embeddings]] — a shared lookup table C, equivalent to a linear layer on one-hot inputs; positional embeddings for attention
 - [[gradient-descent|Gradient descent]] — forward, backward, step against the gradient; learning rate and minibatches
 - [[jagged-intelligence|Jagged intelligence]] — LLMs as people spirits or ghosts: superhuman in places, broken in others

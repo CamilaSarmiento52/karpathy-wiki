@@ -3,7 +3,7 @@ type: artifact
 repo_url: https://github.com/karpathy/makemore
 language: Python
 status: active
-sources: ["[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[github-2022-11-20-makemore-readme]]", "[[youtube-2022-11-21-makemore-5-wavenet]]"]
+sources: ["[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[github-2022-11-20-makemore-readme]]", "[[youtube-2022-11-21-makemore-5-wavenet]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]"]
 aliases: [make more]
 ---
 # makemore
@@ -43,6 +43,8 @@ makemore is a repository on his GitHub that, like micrograd before it, he builds
 - The default settings reach a test log-probability of about 1.92, and he says lower is achievable with hyperparameter tuning ([[github-2022-11-20-makemore-readme]] §Usage).
 - Licensed MIT; the README also backs the `repo_url` above, which group A1 took from the merge map ([[github-2022-11-20-makemore-readme]] §License).
 
+- In the Zero to Hero README it is the companion repo of Lectures 2 to 5, and Lecture 6's WaveNet notebook continues the same series ([[github-2024-02-20-nn-zero-to-hero-readme]] §intro, Lectures 2–6).
+
 ## Related
 - [[character-level-language-modeling]] — the task
 - [[bigram-language-model]] — the first model
@@ -52,6 +54,7 @@ makemore is a repository on his GitHub that, like micrograd before it, he builds
 - [[wavenet-hierarchical-model]] — the fifth lecture's deeper model
 - [[prototype-in-jupyter-then-repo]] — how he says the code gets written
 - [[micrograd]] — the predecessor repo and lecture
+- [[nn-zero-to-hero]] — the course the makemore lectures belong to
 - [[spelled-out-build-from-scratch]], [[check-shapes-and-broadcasting]], [[verify-gradients-against-pytorch]]
 - [[backpropagation]] — the fourth lecture's hand-written tensor backward pass
 - [[small-hackable-educational-code]] — the README's one-file, PyTorch-only framing

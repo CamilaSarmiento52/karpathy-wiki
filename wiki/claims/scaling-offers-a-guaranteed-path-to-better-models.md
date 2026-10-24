@@ -3,6 +3,7 @@ type: claim
 stated_on: 2023-11-23
 confidence: stated
 sources: ["[[youtube-2023-11-23-intro-to-llms]]"]
+context: ["[[talk-2024-03-26-sequoia-making-ai-accessible]]"]
 topic: "[[scaling-laws]]"
 ---
 # In 2023 he said scaling offers one guaranteed path to better models, with algorithmic progress a bonus
@@ -13,3 +14,4 @@ Because next-word accuracy is a smooth, predictable function of parameters and t
 
 ## Related claims
 - **Note:** no other claim in the wiki addresses scaling yet; his 2025 account of test-time compute on [[rlvr]] is a different axis, not a contradiction ([[youtube-2023-11-23-intro-to-llms]] @27:10).
+- **Note:** in the Sequoia interview he still ranks scale as number one but adds that money and GPUs alone do not produce a model without infrastructure, algorithm and data expertise ([[talk-2024-03-26-sequoia-making-ai-accessible]] @09:38, @11:15). Both statements can hold; no relation is set, and the detail is on [[scaling-laws]] ([[youtube-2023-11-23-intro-to-llms]] @27:10).

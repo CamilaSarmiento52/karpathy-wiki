@@ -19,4 +19,4 @@ The README of his `karpathy/karpathy` profile repository, the text GitHub shows 
 - His one-line self-description on GitHub: "I like deep neural nets." (§intro)
 
 ## Fed pages
-- none yet; the batch 2 merge map has it cited as `context` on nn-zero-to-hero, created by a later group
+- [[nn-zero-to-hero]]

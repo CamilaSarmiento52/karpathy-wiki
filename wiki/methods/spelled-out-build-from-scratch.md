@@ -13,11 +13,14 @@ steps:
   - Package the baseline as a script with a stable loss estimate
   - Add one component at a time and read validation loss
   - Release the code with its git log
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2023-01-17-gpt-from-scratch]]"]
+  - Ship exercises and have viewers work them alongside
+  - Motivate with the failures before the code
+  - Round-trip test on unseen text
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]"]
 aliases: [spelled-out lecture, spell it out step by step, explicit baseline then neural net, build from a blank notebook, build up from a bigram baseline, incremental model build-up]
 ---
 # Spelled-out build from scratch
-How he teaches: he starts with a blank Jupyter notebook and builds the whole thing step by step, commenting on every piece ([[youtube-2022-08-16-micrograd]] @00:00, @00:32).
+How he teaches: he starts with a blank Jupyter notebook and builds the whole thing step by step, commenting on every piece ([[youtube-2022-08-16-micrograd]] @00:00, @00:32). He credits the video that built micrograd and walked through it, not the code, with making that code accessible: he calls such a walkthrough the ramp to build after the thing ([[x-2024-02-21-technical-accessibility]]).
 
 ## Steps
 1. **Blank notebook.** Start with nothing and build up live ([[youtube-2022-08-16-micrograd]] @00:00, @00:32).
@@ -43,6 +46,11 @@ How he teaches: he starts with a blank Jupyter notebook and builds the whole thi
 19. **Regularise, then scale up last.** He adds dropout before scaling up because he is concerned about overfitting ([[youtube-2023-01-17-gpt-from-scratch]] @1:39:13).
 20. **Release the git log.** He releases the code with the commits made along the way so the build-up can be followed step by step ([[youtube-2023-01-17-gpt-from-scratch]] @1:54:50).
 
+21. **Ship exercises; work them alongside the video.** Every Zero to Hero lecture has exercises in its video description; for the backprop lecture he recommends working the exercise yourself in tandem with the video, unpausing to see him give the answer when stuck, and says the video is not meant to be simply watched ([[github-2024-02-20-nn-zero-to-hero-readme]] §intro, Lecture 5). He asks viewers of the GPT lecture to watch the earlier makemore videos first, since it takes the language-modelling framework and tensor basics for granted ([[github-2024-02-20-nn-zero-to-hero-readme]] §intro, Lecture 7).
+
+22. **Failures first.** The tokenizer lecture opens with the list of LLM weirdness that tokenization causes, demonstrated in a tokenizer web app, and promises to loop back; it does, at the end ([[youtube-2024-02-20-gpt-tokenizer]] @04:27, @05:33, @1:51:24). He explains BPE on Wikipedia's four-letter toy example before applying it to bytes ([[youtube-2024-02-20-gpt-tokenizer]] @23:32, @24:06), and invites viewers to write `get_stats`, the merge, decode and encode themselves before showing his ([[youtube-2024-02-20-gpt-tokenizer]] @28:01, @30:47, @42:59, @48:38). He shows decode failing on token 128 and asks viewers to work out why before fixing it ([[youtube-2024-02-20-gpt-tokenizer]] @45:16, @45:51).
+23. **Round-trip tests.** He checks that encoding then decoding returns the original string, on the training text and on validation text the tokenizer never saw ([[youtube-2024-02-20-gpt-tokenizer]] @55:56, @56:30). He then shows OpenAI's `encoder.py` is algorithmically identical to what he built, and publishes minbpe with an `exercise.md` breaking the build into four steps toward a GPT-4 tokenizer ([[youtube-2024-02-20-gpt-tokenizer]] @1:15:36, @1:17:50, @1:25:45). The repo's README points to that advised progression and to the lecture, also kept in text form as `lecture.md` ([[github-2024-04-22-minbpe-readme]] §exercise, §lecture).
+
 ## Seen in
 - [[youtube-2023-01-17-gpt-from-scratch]]
 - [[ng-video-lecture]], [[nanogpt]]
@@ -50,3 +58,6 @@ How he teaches: he starts with a blank Jupyter notebook and builds the whole thi
 - [[youtube-2022-09-07-makemore-1-bigram]]
 - [[makemore]]
 - [[micrograd]]
+- [[nn-zero-to-hero]]
+- [[build-the-ramp-not-just-the-thing]]
+- [[minbpe]], [[youtube-2024-02-20-gpt-tokenizer]]

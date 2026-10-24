@@ -2,8 +2,8 @@
 type: topic
 aliases: [Scaling laws, scale, scaling, model size, compute, N and D, GPU gold rush]
 first_seen: 2023-11-23
-last_updated: 2023-11-23
-sources: ["[[youtube-2023-11-23-intro-to-llms]]"]
+last_updated: 2024-03-26
+sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]"]
 context: ["[[talk-2023-05-25-state-of-gpt]]"]
 related: ["[[pretraining-and-finetuning]]", "[[rlvr]]"]
 ---
@@ -15,9 +15,12 @@ Given only those two numbers, he says, you can predict with remarkable confidenc
 
 **Note:** six months earlier he made a related point about data: LLaMA 65B is more powerful than GPT-3 175B because it trained on 1.4 trillion tokens rather than 300 billion, so parameter count alone is no guide to a model's power ([[talk-2023-05-25-state-of-gpt]] @03:56; [[youtube-2023-11-23-intro-to-llms]] @25:28).
 
+**Scale first, but not enough (Sequoia, 2024-03-26).** Asked by the host whether scale is all that matters, he says scale is definitely number one, the first principal component, though there are details to get right; dataset preparation and algorithms are compute-efficiency gains that matter a lot ([[talk-2024-03-26-sequoia-making-ai-accessible]] @09:38, @10:10). Scale sets something like a speed limit: without it you cannot train the massive models, though finetuning may need less ([[talk-2024-03-26-sequoia-making-ai-accessible]] @10:10). Even with money and scale, training is a very complicated distributed-optimisation problem on tens of thousands of GPUs failing at random, the infrastructure is creaking and the talent is scarce ([[talk-2024-03-26-sequoia-making-ai-accessible]] @10:43, @11:15). It is not obvious to him that someone given a ton of money or GPUs could produce one of these models; it takes expertise in infrastructure, algorithms and data ([[talk-2024-03-26-sequoia-making-ai-accessible]] @11:15).
+
 ## Claims
 - [[scaling-offers-a-guaranteed-path-to-better-models]]
 
 ## Related
 - [[pretraining-and-finetuning]] — the stage whose loss these laws describe
+- [[compute-efficiency]] — the efficiency gains he lists beside scale
 - [[rlvr]] — **Note:** his 2025 account adds test-time compute as a different knob; not a link set between claims
