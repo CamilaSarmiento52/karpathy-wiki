@@ -11,15 +11,22 @@ You are a DIGEST step for an LLM-compiled wiki about Andrej Karpathy, in
 2. `staging/README.md`: the digest format. Follow it exactly.
 3. The index: `wiki/index/topics.md`, `claims.md`, `methods.md`, `artifacts.md` and
    `sources.md` list every existing page (since 2026-10-24 the index is split by type;
-   `wiki/index.md` only links these files). **The wiki already has 94 pages** from batch 1
-   (2022–2023 Zero to Hero lectures) and phase 1 (2025–2026 posts and talks). Reuse an
+   `wiki/index.md` only links these files). **The wiki already has 182 pages** from batches
+   1–2 (2022–mid 2024 lectures, talks, llm.c) and phase 1 (2025–2026 posts and talks). Reuse an
    existing slug whenever the idea is the same; check `aliases` by opening the page.
    Common ones: backpropagation, tokenization, self-attention, transformer-architecture,
    pretraining-and-finetuning, nanogpt, mingpt, micrograd, makemore, gradient-descent,
    pytorch, training-diagnostics, spelled-out-build-from-scratch,
    small-hackable-educational-code, software-3-0, llms-as-operating-systems,
-   jagged-intelligence, rlvr, building-for-agents, partial-autonomy-apps, vibe-coding.
-4. `staging/batch-1-merge-map.md`: how batch 1 chose page granularity. Prefer coarse
+   jagged-intelligence, rlvr, building-for-agents, partial-autonomy-apps, vibe-coding,
+   prompting-llms, llm-tool-use, scaling-laws, system-1-and-system-2-thinking,
+   llm-self-improvement, llm-security, sampling-from-language-models, ai-ecosystem,
+   compute-efficiency, llm-evaluation, nanochat, llm-c, minbpe, build-nanogpt,
+   nn-zero-to-hero, make-it-work-then-make-it-cheap, build-and-publish-projects,
+   verify-against-a-reference-implementation, reproduce-a-published-model. Timelines:
+   vibe-coding-over-time, llm-agents-over-time, llm-os-over-time.
+4. `staging/batch-1-merge-map.md` and `staging/batch-2-merge-map.md`: how earlier
+   batches chose page granularity. Prefer coarse
    topics: a sub-step of an idea is a section of that idea's page, not a new page.
 5. Your raw file(s), **in full**. Read long files in chunks with Read offset/limit. Do not
    skim and do not stop before the end.
@@ -45,6 +52,8 @@ You are a DIGEST step for an LLM-compiled wiki about Andrej Karpathy, in
 ## Rules
 
 - Paraphrase no stronger than what he says. No facts from your own knowledge.
+- Dates are published dates (CLAUDE.md §2). Do not write intervals or order between
+  sources ("a year later", "first said"); if he gives a date himself, quote his words.
 - **Talks and podcasts include other speakers.** Attribute only what he says. Mark any
   statement where the speaker is unclear. Never quote the host as him.
 - A paper's or another person's position that he reports is theirs, not his.
