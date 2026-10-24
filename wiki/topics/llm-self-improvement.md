@@ -2,8 +2,8 @@
 type: topic
 aliases: [Self-improvement, LLM self-improvement, AlphaGo step two, beyond imitation, reward function, reinforcement learning beyond RLHF]
 first_seen: 2023-11-23
-last_updated: 2024-09-05
-sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]"]
+last_updated: 2025-02-05
+sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]", "[[youtube-2025-02-05-deep-dive-into-llms]]"]
 related: ["[[rlvr]]", "[[system-1-and-system-2-thinking]]"]
 ---
 # LLM self-improvement
@@ -14,14 +14,19 @@ AlphaGo, he recalls, had two stages: imitating expert human games, which can onl
 
 **Step one of AlphaGo (Sequoia, 2024-03-26).** Asked whether next-word predictors can become a physicist, he says current models are not good enough and there are big rocks in capability still to turn: the field has done AlphaGo's imitation-learning step and not its RL step, which is what made AlphaGo work ([[talk-2024-03-26-sequoia-making-ai-accessible]] @24:59, @25:32). He calls data collection for ChatGPT-like models terrible, because human and model psychology differ: a human's ideal solution has steps trivial to the model and others that are leaps it does not understand ([[talk-2024-03-26-sequoia-making-ai-accessible]] @25:32, @26:04). The model needs to practise for itself and learn what works for it; he calls imitation a good initializer for something agent-like ([[talk-2024-03-26-sequoia-making-ai-accessible]] @26:04, @26:39).
 
-**RLHF is a weak form of RL.** He says RLHF barely counts as reinforcement learning, since its reward model is a vibe check: an AlphaGo trained by RLHF would ask people which of two boards they prefer and train against those labels ([[talk-2024-03-26-sequoia-making-ai-accessible]] @26:39, @27:13). A neural-net reward model is easy for the optimised model to overfit and hack in spurious ways, whereas AlphaGo had a clear objective function; he calls imitation learning super silly and RLHF a nice improvement that is still silly, and wants training where the model is in the loop with its own psychology ([[talk-2024-03-26-sequoia-making-ai-accessible]] @27:13, @27:46). Learning from a textbook involves exercises, note-taking and rephrasing, and he says nothing equivalent exists in LLMs yet: super early days ([[talk-2024-03-26-sequoia-making-ai-accessible]] @28:19).
+**RLHF is a weak form of RL.** He says RLHF is such a weak form of reinforcement learning that, he thinks, it does not even count, since its reward model is a vibe check: an AlphaGo trained by RLHF would ask people which of two boards they prefer and train against those labels ([[talk-2024-03-26-sequoia-making-ai-accessible]] @26:39, @27:13). A neural-net reward model is easy for the optimised model to overfit and hack in spurious ways, whereas AlphaGo had a clear objective function; he calls imitation learning super silly and RLHF a nice improvement that is still silly, and wants training where the model is in the loop with its own psychology ([[talk-2024-03-26-sequoia-making-ai-accessible]] @27:13, @27:46). Learning from a textbook involves exercises, note-taking and rephrasing, and he says nothing equivalent exists in LLMs yet: super early days ([[talk-2024-03-26-sequoia-making-ai-accessible]] @28:19).
 
 **A staircase (No Priors, 2024-09-05).** He says current models are helping create the next generation of models, a staircase of improvement ([[talk-2024-09-05-no-priors-ep-80]] @18:05). **Note:** this is models helping build their successors, for instance through synthetic data, not the AlphaGo-style self-play of the sections above; no claim relation is set ([[talk-2024-09-05-no-priors-ep-80]] @18:05; [[youtube-2023-11-23-intro-to-llms]] @38:46).
 
+**AlphaGo and Move 37 (Deep Dive, 2025-02-05).** He does not use the word self-improvement in this lecture, but returns to AlphaGo: supervised learning on expert games tops out below the best humans, while RL plays the moves that lead to wins and beat Lee Sedol ([[youtube-2025-02-05-deep-dive-into-llms]] @2:42:41, @2:43:14, @2:43:46, @2:44:20). We are only starting to see hints of that diagram in LLMs for reasoning, he says, and need to go beyond imitating experts ([[youtube-2025-02-05-deep-dive-into-llms]] @2:44:20, @2:44:52). Move 37, which a human would play about 1 in 10,000 times, is his example of RL discovering a strategy unknown to humans; what the LLM equivalent would look like is unknown, perhaps new analogies, new thinking strategies or a language of its own rather than English ([[youtube-2025-02-05-deep-dive-into-llms]] @2:45:26, @2:46:00, @2:46:33, @2:47:05). He calls RL in LLMs primordial and nascent, in principle capable of a Move 37 in open-domain thinking ([[youtube-2025-02-05-deep-dive-into-llms]] @3:29:18, @3:29:50). On RLHF he repeats that its reward model can be gamed, so it is not RL in that sense; see [[rlhf-is-not-real-rl]] ([[youtube-2025-02-05-deep-dive-into-llms]] @3:05:54, @3:06:27). **Note:** his 2025 reasons why humans cannot write the model's best token sequences, and why it must find what works for itself, echo the Sequoia points above; a connection, not a link ([[talk-2024-03-26-sequoia-making-ai-accessible]] @25:32, @26:04; [[youtube-2025-02-05-deep-dive-into-llms]] @2:18:16, @2:19:55).
+
 ## Claims
 - [[self-improvement-may-be-possible-in-narrow-domains]]
+- [[rlhf-is-not-real-rl]]
+- [[rl-lets-models-discover-their-own-thinking-strategies]] — extends the narrow-domain claim; dated on [[llm-self-improvement-over-time]]
 
 ## Related
+- [[llm-self-improvement-over-time]] — the dated sequence
 - [[rlvr]] — **Note:** his 2025 account of training against automatically checkable rewards in verifiable domains is close to the narrow-domain case he speculated about in 2023; a connection, not a link set between claims
 - [[system-1-and-system-2-thinking]] — the other open direction in the same talk
 - [[jagged-intelligence]] — in 2025, capability spikes near verifiable domains

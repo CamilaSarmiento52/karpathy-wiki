@@ -3,9 +3,9 @@ type: claim
 stated_on: 2023-05-25
 confidence: stated
 sources: ["[[talk-2023-05-25-state-of-gpt]]"]
-context: ["[[youtube-2025-06-19-software-is-changing]]"]
+context: ["[[youtube-2025-06-19-software-is-changing]]", "[[youtube-2025-02-05-deep-dive-into-llms]]"]
 topic: "[[partial-autonomy-apps]]"
-supports: ["[[this-is-the-decade-of-agents]]"]
+supports: ["[[this-is-the-decade-of-agents]]", "[[use-llms-as-tools-and-check-their-work]]"]
 ---
 # In 2023 he recommended LLMs for low-stakes uses, with human oversight, as copilots rather than autonomous agents
 > "think co-pilots, instead of completely autonomous agents" — [[talk-2023-05-25-state-of-gpt]] @39:57
@@ -16,3 +16,4 @@ Closing State of GPT, he lists limitations: models may be biased, fabricate and 
 ## Related claims
 - Supports the human-in-the-loop half of [[this-is-the-decade-of-agents]]: in 2023 he advises copilots with human oversight over autonomous agents ([[talk-2023-05-25-state-of-gpt]] @39:57); in 2025 he says agents need humans in the loop and will take a decade ([[youtube-2025-06-19-software-is-changing]] @27:09, @27:44). Consistent caution, not an extension: the 2023 talk gives no timescale.
 - **Note:** the dated sequence of his statements on agents is on [[llm-agents-over-time]] ([[talk-2023-05-25-state-of-gpt]] @39:57).
+- Supported by [[use-llms-as-tools-and-check-their-work]]: here models are a source of inspiration and suggestions under human oversight ([[talk-2023-05-25-state-of-gpt]] @39:24, @39:57); on 2025-02-05 he says to use them as tools for inspiration and first drafts and check their work ([[youtube-2025-02-05-deep-dive-into-llms]] @3:09:14).

@@ -2,8 +2,8 @@
 type: topic
 aliases: [Evaluation, LLM evaluation, evals, eval, HellaSwag, benchmarks, validation loss comparison, Eleuther evaluation harness, early signal]
 first_seen: 2024-05-03
-last_updated: 2024-07-11
-sources: ["[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-12-llmc-gpt-2-774m]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
+last_updated: 2025-02-05
+sources: ["[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-12-llmc-gpt-2-774m]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[youtube-2025-02-05-deep-dive-into-llms]]"]
 related: ["[[llm-c]]", "[[loss-functions]]", "[[reproduce-a-published-model]]"]
 ---
 # LLM evaluation
@@ -25,6 +25,8 @@ Small models cannot do multiple choice with labels, so he scores each option as 
 **Wider evals, and a suspected overlap (2024-06-12).** After the 774M run beat expectations he plans to convert the checkpoint to Hugging Face format and run a wider, bigger suite of evals before the next big run ([[github-2024-06-12-llmc-gpt-2-774m]] §intro (Reflections)). A downward kink in validation loss exactly at the one-epoch boundary makes him nervous that FineWeb's validation and training sets overlap more than expected ([[github-2024-06-12-llmc-gpt-2-774m]] §intro (Reflections)).
 
 **Reading the 1.6B evals (2024-07-11).** OpenAI's GPT-2 scores 2.83 on FineWeb-Edu validation loss by his measurement, and his run passes it by about step 5,000; he calls that unfair because GPT-2 trained on the never-released WebText, and shows that finetuning OpenAI's model for 1,000 steps at LR 1e-4 drops its loss to 2.61 as it adapts to the new data ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Evals)). He looks at validation loss as a sanity check and wants fixed third-party evals for the real comparison; HellaSwag, simple common-sense scenarios where the model picks the right continuation, is well-behaved, smooth, common, often cited and gives early signal ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Evals)). Even HellaSwag is not an ideal single comparison, he says: it tests simple English and common sense, not multilingual, math or code, which WebText may have weighted more, and good evals are harder at GPT-2's capability because such models do not understand multiple choice and their samples cannot dent math or code evals ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Evals)). Exporting to Hugging Face format enables the Eleuther harness and Hugging Face sampling, and `dev/eval` has instructions for the Eleuther harness and the Open LLM Leaderboard evals ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Model export)).
+
+**Leaderboards (Deep Dive, 2025-02-05).** LM Arena ranks models by blind human comparisons; he says it was good for a long time but he thinks it has become a little gamed in the last few months and trusts it less, pointing to Claude Sonnet's low rank against how widely it is used, so he treats it as a first pass ([[youtube-2025-02-05-deep-dive-into-llms]] @3:15:18, @3:16:57). As of 2025-02-05 Google led it with DeepSeek third ([[youtube-2025-02-05-deep-dive-into-llms]] @3:15:51, @3:16:24). To keep up he recommends the AI News newsletter by swyx and friends and following people you trust on X ([[youtube-2025-02-05-deep-dive-into-llms]] @3:17:32, @3:18:04).
 
 ## Claims
 - [[his-gpt-2-reproductions-beat-openais-checkpoints-on-hellaswag]]

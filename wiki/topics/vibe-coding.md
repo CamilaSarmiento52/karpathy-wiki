@@ -3,7 +3,7 @@ type: topic
 aliases: [Vibe coding, vibe coded]
 first_seen: 2025-02-02
 last_updated: 2026-04-02
-sources: ["[[x-2025-02-02-vibe-coding]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[x-2026-04-02-llm-knowledge-bases]]"]
+sources: ["[[x-2025-02-02-vibe-coding]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[youtube-2025-02-27-how-i-use-llms]]"]
 related: ["[[software-3-0]]", "[[english-is-the-new-programming-language]]", "[[vibe-coding-over-time]]"]
 ---
 # Vibe coding
@@ -19,6 +19,8 @@ His lesson from MenuGen is that the code was the easy part: authentication, paym
 By December 2025 he says vibe coding empowers trained professionals as well as regular people, and that he vibe-coded nanochat's Rust BPE tokenizer instead of learning Rust to that level ([[blog-2025-12-19-year-in-review-2025]] §5). He describes code as suddenly "free, ephemeral, malleable, discardable after single use" ([[blog-2025-12-19-year-in-review-2025]] §5).
 
 In April 2026 he mentions vibe-coding a small search engine over his knowledge-base wiki ([[x-2026-04-02-llm-knowledge-bases]] §Extra tools).
+
+In How I use LLMs, published 2025-02-27, he says the name for giving Cursor's Composer control, telling it what to do and hoping it works, is vibe coding, a name he thinks he probably minted ([[youtube-2025-02-27-how-i-use-llms]] @1:18:01). Worst case, he says, you fall back to ordinary programming, because all the files are there to inspect ([[youtube-2025-02-27-how-i-use-llms]] @1:18:01, @1:21:55). He builds a tic-tac-toe app from about five sentences, and adding confetti and a sound he admits he is not keeping full track of the code ([[youtube-2025-02-27-how-i-use-llms]] @1:16:19, @1:19:40, @1:21:55).
 
 **Note:** the scope he gives the practice widens across these sources; see [[vibe-coding-over-time]] ([[x-2025-02-02-vibe-coding]], [[blog-2025-12-19-year-in-review-2025]]).
 

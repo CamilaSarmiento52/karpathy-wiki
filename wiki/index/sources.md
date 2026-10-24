@@ -3,6 +3,9 @@
 One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. Maintained by ingest; do not edit by hand.
 
 - [[blog-2024-09-08-i-love-calculator|I love calculator]] — the pocket calculator, self-contained and owned outright, as an ideal against user-hostile technology
+- [[blog-2025-03-17-digital-hygiene|Digital hygiene]] — the privacy and security practices he follows: password manager, hardware keys, per-merchant cards, DNS blocking, network monitor
+- [[blog-2025-03-19-append-and-review-note|The append-and-review note]] — one plain text note, appended at the top, reviewed by scrolling and rescuing
+- [[blog-2025-03-24-best-sleep-tracker|Finding the Best Sleep Tracker]] — four sleep trackers worn for two months: Oura and Whoop best, AutoSleep near random; sleep tracks his work quality
 - [[blog-2025-12-19-year-in-review-2025|2025 LLM Year in Review]] — six 2025 paradigm changes: RLVR, jagged intelligence, LLM apps, Claude Code, vibe coding, LLM GUI
 - [[github-2022-11-20-makemore-readme|makemore README]] — one hackable PyTorch file; bigram to Transformer models for line-per-example generation, CNN in progress
 - [[github-2023-01-08-mingpt-readme|minGPT README]] — his ~300-line GPT re-implementation, semi-archived in January 2023 in favour of nanoGPT; his notes on the GPT papers
@@ -44,4 +47,6 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[youtube-2023-11-23-intro-to-llms|Intro to Large Language Models (1hr talk)]] — general-audience talk: two files, lossy compression, finetuning, scaling, tools, System 2, the LLM OS kernel, security
 - [[youtube-2024-02-20-gpt-tokenizer|Let's build the GPT Tokenizer]] — byte-level BPE from scratch, GPT-2/GPT-4 regex, tiktoken, special tokens, SentencePiece, and the LLM failures he traces to tokenization
 - [[youtube-2024-06-09-reproduce-gpt-2|Let's reproduce GPT-2 (124M)]] — GPT-2 (124M) from scratch in PyTorch: OpenAI weights as the target, an ~11× speed-up on one A100, GPT-3's recipe, DDP, FineWeb-Edu, HellaSwag
+- [[youtube-2025-02-05-deep-dive-into-llms|Deep Dive into LLMs like ChatGPT]] — 3.5-hour general-audience lecture: FineWeb, tokens, base models, SFT as simulated labelers, hallucination, Swiss cheese capabilities, RL thinking models, RLHF not real RL
+- [[youtube-2025-02-27-how-i-use-llms|How I use LLMs]] — practical tour of LLM apps as he uses them: tiers, thinking models, search, deep research, uploads, interpreter, artifacts, Cursor, voice, custom GPTs
 - [[youtube-2025-06-19-software-is-changing|Andrej Karpathy: Software Is Changing (Again)]] — YC keynote on Software 3.0, the LLM OS, partial autonomy and building for agents

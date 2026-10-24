@@ -4,7 +4,7 @@ aliases: [Scaling laws, scale, scaling, model size, compute, N and D, GPU gold r
 first_seen: 2023-11-23
 last_updated: 2024-09-05
 sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]"]
-context: ["[[talk-2023-05-25-state-of-gpt]]"]
+context: ["[[talk-2023-05-25-state-of-gpt]]", "[[youtube-2025-02-05-deep-dive-into-llms]]"]
 related: ["[[pretraining-and-finetuning]]", "[[rlvr]]"]
 ---
 # Scaling laws
@@ -18,6 +18,8 @@ Given only those two numbers, he says, you can predict with remarkable confidenc
 **Scale first, but not enough (Sequoia, 2024-03-26).** Asked by the host whether scale is all that matters, he says scale is definitely number one, the first principal component, though there are details to get right; dataset preparation and algorithms are compute-efficiency gains that matter a lot ([[talk-2024-03-26-sequoia-making-ai-accessible]] @09:38, @10:10). Scale sets something like a speed limit: without it you cannot train the massive models, though finetuning may need less ([[talk-2024-03-26-sequoia-making-ai-accessible]] @10:10). Even with money and scale, training is a very complicated distributed-optimisation problem on tens of thousands of GPUs failing at random, the infrastructure is creaking and the talent is scarce ([[talk-2024-03-26-sequoia-making-ai-accessible]] @10:43, @11:15). It is not obvious to him that someone given a ton of money or GPUs could produce one of these models; it takes expertise in infrastructure, algorithms and data ([[talk-2024-03-26-sequoia-making-ai-accessible]] @11:15).
 
 **A property of the Transformer (No Priors, 2024-09-05).** He says scaling laws are to a large extent a property of the Transformer: stacked LSTMs did not give clean scaling laws, and the Transformer was the first thing that just scales ([[talk-2024-09-05-no-priors-ep-80]] @14:49). On the data wall and the cost of another generation of scale, he says the architecture no longer holds us back fundamentally; the dataset and the loss function have become the bottlenecks ([[talk-2024-09-05-no-priors-ep-80]] @15:56, @16:29). On model size he expects a small cognitive core may suffice ([[talk-2024-09-05-no-priors-ep-80]] @27:27).
+
+**The GPU gold rush (Deep Dive, 2025-02-05, background).** He says big tech's demand for GPUs to train language models is what drove Nvidia to $3.4 trillion (as of 2025-02-05), and calls getting enough GPUs the gold rush; more GPUs let you process the data and iterate faster and train a bigger network ([[youtube-2025-02-05-deep-dive-into-llms]] @41:23, @41:56). **Note:** he states no scaling law there, so the lecture is background on this page ([[youtube-2025-02-05-deep-dive-into-llms]] @41:56).
 
 ## Claims
 - [[scaling-offers-a-guaranteed-path-to-better-models]]

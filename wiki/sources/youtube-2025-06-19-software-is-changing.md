@@ -57,3 +57,7 @@ vibe coding and MenuGen (@29:22, @31:38), and closes on building infrastructure 
 - [[physical-automation-will-lag-digital-automation]]
 - [[self-driving]]
 - [[there-is-a-massive-gap-between-demo-and-product]]
+- [[hallucinations-come-from-imitating-confident-answers]]
+- [[llm-hallucinations]]
+- [[longer-context-windows-alone-will-not-scale-to-long-multimodal-tasks]]
+- [[use-llms-as-tools-and-check-their-work]]

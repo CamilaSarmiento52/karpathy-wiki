@@ -48,3 +48,6 @@ A re-recording, on his own channel, of a 30-minute intro talk he had given at an
 - [[llms-are-the-kernel-of-an-emerging-operating-system]]
 - [[llm-security]]
 - [[llm-os-over-time]]
+- [[llm-self-improvement-over-time]]
+- [[parameters-are-vague-recollection-context-is-working-memory]]
+- [[rl-lets-models-discover-their-own-thinking-strategies]]

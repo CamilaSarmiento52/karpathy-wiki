@@ -18,6 +18,7 @@ Ideas he explains, each defined in his framing. Alphabetical. Maintained by inge
 - [[jagged-intelligence|Jagged intelligence]] — LLMs as people spirits or ghosts: superhuman in places, broken in others
 - [[llm-evaluation|LLM evaluation]] — FineWeb validation loss as confirmation, HellaSwag as the main number, and why the comparison with OpenAI is not fair
 - [[llm-gui|LLM GUI]] — text suits LLMs, not people; LLMs need a visual interface
+- [[llm-hallucinations|LLM hallucinations]] — imitating confident answers; "I don't know" training and search as mitigations; no persistent self
 - [[llm-knowledge-bases|LLM knowledge bases]] — an LLM compiles and maintains a markdown wiki of your sources
 - [[llm-security|LLM security]] — jailbreaks, prompt injection and data poisoning; a cat-and-mouse game
 - [[llm-self-improvement|LLM self-improvement]] — AlphaGo's step two for language models; no general reward criterion

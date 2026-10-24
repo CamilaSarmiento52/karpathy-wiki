@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [Prompting, in-context learning, few-shot prompting, chain of thought, prompt engineering, meta-learning, scratchpad, self-consistency, let's think step by step, constrained prompting]
+aliases: [Prompting, in-context learning, few-shot prompting, chain of thought, prompt engineering, meta-learning, scratchpad, self-consistency, let's think step by step, constrained prompting, custom GPTs, XML tags in prompts]
 first_seen: 2023-05-19
-last_updated: 2023-05-25
-sources: ["[[talk-2023-05-19-stanford-cs25-transformers]]", "[[talk-2023-05-25-state-of-gpt]]"]
+last_updated: 2025-02-27
+sources: ["[[talk-2023-05-19-stanford-cs25-transformers]]", "[[talk-2023-05-25-state-of-gpt]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[youtube-2025-02-27-how-i-use-llms]]"]
 context: ["[[talk-2024-10-03-cuda-mode-keynote]]"]
 related: ["[[software-3-0]]", "[[transformer-architecture]]", "[[gpt-is-a-general-purpose-computer-running-natural-language-programs]]"]
 ---
@@ -23,10 +23,15 @@ So he spreads reasoning over tokens with few-shot examples that show their work 
 
 **Example code in context (CUDA MODE keynote, published 2024-10-03).** He expects few-shot learning to help an LLM write low-level code: prompted to write GPT-2 in C from scratch you probably would not get llm.c, but with llm.c in the context you are a lot more likely to ([[talk-2024-10-03-cuda-mode-keynote]] @22:37).
 
+**Base models and pasted context (Deep Dive, 2025-02-05).** A base model can be prompted to elicit knowledge, for example by starting a top-10 list of Paris landmarks ([[youtube-2025-02-05-deep-dive-into-llms]] @50:34). Few-shot prompts such as English–Korean word pairs use in-context learning, so apps can be built on a base model alone ([[youtube-2025-02-05-deep-dive-into-llms]] @56:04, @56:37, @57:11). An assistant can be instantiated from a base model by a prompt shaped like a web page of human–assistant turns, though it then also hallucinates the next human turn ([[youtube-2025-02-05-deep-dive-into-llms]] @57:11, @57:43, @58:17, @58:52). Recall works better if you paste the material into the prompt, such as the text of the first chapter of Pride and Prejudice, than if you rely on the model's memory ([[youtube-2025-02-05-deep-dive-into-llms]] @1:40:32, @1:41:04). Saying "don't use any tools" is enough to make ChatGPT answer from memory ([[youtube-2025-02-05-deep-dive-into-llms]] @1:38:15). For hard math or code he reaches for thinking models; as of 2025-02-05 about 80–90% of his own use was GPT-4o, since thinking for 30 seconds about a factual question is overkill ([[youtube-2025-02-05-deep-dive-into-llms]] @2:40:27).
+
+**Custom GPTs as saved few-shot prompts (How I use LLMs, 2025-02-27).** A custom GPT, he says, is just a saved prompt: nothing special happens beyond prompting, and it saves retyping a prompt you reuse ([[youtube-2025-02-27-how-i-use-llms]] @1:59:23, @2:00:31, @2:01:06). He gives a description plus concrete examples, a few-shot rather than a zero-shot prompt, and says he finds this always increases accuracy ([[youtube-2025-02-27-how-i-use-llms]] @1:59:58, @2:00:31). For longer examples he wraps each in XML-like tags so the model sees where it begins and ends, and compares it to teaching a person, where showing by example works much better than explaining ([[youtube-2025-02-27-how-i-use-llms]] @2:03:17, @2:03:49). His examples are Korean-learning GPTs: a vocabulary extractor whose lines go into Anki, a detailed translator, and one that reads, translates and breaks down screenshots of subtitles ([[youtube-2025-02-27-how-i-use-llms]] @1:58:48, @2:02:11, @2:04:21, @2:04:55).
+
 ## Claims
 - [[gpt-is-a-general-purpose-computer-running-natural-language-programs]] — prompts as the programs GPT runs
 - [[transformers-need-tokens-to-think]] — spread reasoning over tokens
 - [[llms-want-to-imitate-not-succeed]] — ask for a strong solution
+- [[parameters-are-vague-recollection-context-is-working-memory]] — paste the material in
 
 ## Related
 - [[software-3-0]] — prompts as programs, his 2025 framing

@@ -4,6 +4,8 @@ stated_on: 2023-05-25
 confidence: stated
 sources: ["[[talk-2023-05-25-state-of-gpt]]"]
 topic: "[[prompting-llms]]"
+context: ["[[youtube-2025-02-05-deep-dive-into-llms]]"]
+supports: ["[[chatgpt-answers-simulate-a-human-data-labeler]]"]
 ---
 # LLMs don't want to succeed, they want to imitate, so ask for good performance
 > "LLMs don't want to succeed, they want to imitate." — [[talk-2023-05-25-state-of-gpt]] @30:02
@@ -13,3 +15,4 @@ He calls this an almost psychological quirk of LLMs: training data spans everyth
 
 ## Related claims
 - **Note:** [[transformers-need-tokens-to-think]] is the companion prompting point from the same talk ([[talk-2023-05-25-state-of-gpt]] @24:59).
+- Supported by [[chatgpt-answers-simulate-a-human-data-labeler]]: here the model imitates everything in its training data ([[talk-2023-05-25-state-of-gpt]] @30:02); on 2025-02-05 the assistant's answer imitates the labelers who wrote its post-training data ([[youtube-2025-02-05-deep-dive-into-llms]] @1:16:35, @1:18:17). The later lecture supports the imitation half only, not the advice to ask for strong performance.

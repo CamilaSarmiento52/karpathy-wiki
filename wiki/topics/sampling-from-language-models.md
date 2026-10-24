@@ -2,8 +2,8 @@
 type: topic
 aliases: [Sampling, sampling from a language model, temperature, top-p, autoregressive sampling, autoregressive generation, diffusion, nucleus sampling, top-k]
 first_seen: 2023-05-19
-last_updated: 2024-06-09
-sources: ["[[talk-2023-05-19-stanford-cs25-transformers]]", "[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]"]
+last_updated: 2025-02-05
+sources: ["[[talk-2023-05-19-stanford-cs25-transformers]]", "[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[youtube-2025-02-05-deep-dive-into-llms]]"]
 related: ["[[character-level-language-modeling]]", "[[he-does-not-love-autoregressive-sampling]]"]
 ---
 # Sampling from language models
@@ -21,6 +21,8 @@ In the Sequoia interview he finds it odd that diffusion and autoregressive model
 **Temperature and top-p (llama2.c).** For about the best results he recommends sampling at temperature 1.0 with top-p 0.9, both llama2.c's defaults ([[github-2024-05-29-llama2c-readme]] §feel the magic). Intuitively, he says, top-p keeps tokens with tiny probabilities from being sampled, so you cannot get "unlucky" and are less likely to go "off the rails" afterwards ([[github-2024-05-29-llama2c-readme]] §feel the magic). To control diversity, vary either the temperature with top-p off or top-p with temperature at 1, but not both ([[github-2024-05-29-llama2c-readme]] §feel the magic).
 
 **Top-k in the GPT-2 lecture (2024-06-09).** His sampling loop takes only the last position's logits, applies softmax and then top-k with k = 50, the Hugging Face pipeline default, which keeps the model from sampling rare tokens and going off the rails ([[youtube-2024-06-09-reproduce-gpt-2]] @37:39, @38:13, @38:45). His samples did not match the pipeline's; replicating his loop on the Hugging Face model gave his results, so he concludes his model is correct and the pipeline does something extra ([[youtube-2024-06-09-reproduce-gpt-2]] @40:26, @40:59).
+
+**A biased coin (Deep Dive, 2025-02-05).** Generation feeds a prefix in, samples one token from the predicted distribution like flipping a biased coin, appends it and repeats ([[youtube-2025-02-05-deep-dive-into-llms]] @26:18, @26:54, @27:27). Because of sampling, outputs are stochastic remixes inspired by the training data, statistically similar but not identical to it ([[youtube-2025-02-05-deep-dive-into-llms]] @28:00, @28:32, @29:06), and the same prompt to a base model gives a different continuation each time ([[youtube-2025-02-05-deep-dive-into-llms]] @48:49). ChatGPT itself, he says, is only inference on fixed parameters trained months earlier ([[youtube-2025-02-05-deep-dive-into-llms]] @30:11, @30:44).
 
 ## Claims
 - [[he-does-not-love-autoregressive-sampling]]

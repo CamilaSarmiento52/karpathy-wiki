@@ -23,3 +23,4 @@ Browsing a book on the history of the pocket calculator, he realises he loves th
 ## Fed pages
 - [[user-hostile-technology]]
 - [[technology-could-be-like-the-calculator]]
+- [[he-prefers-to-pay-and-be-the-customer]]

@@ -56,3 +56,6 @@ He splits the talk into how GPT assistants are trained and how to use them well 
 - [[llm-agents-over-time]]
 - [[synthetic-data-is-the-future-if-you-keep-its-entropy]]
 - [[llms-may-write-custom-low-level-code-for-any-application]]
+- [[chatgpt-answers-simulate-a-human-data-labeler]]
+- [[rlhf-is-not-real-rl]]
+- [[use-llms-as-tools-and-check-their-work]]
