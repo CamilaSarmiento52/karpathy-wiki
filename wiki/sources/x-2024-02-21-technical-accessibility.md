@@ -28,3 +28,4 @@ He recalls that when he first published the micrograd repo it got some traction 
 - [[spelled-out-build-from-scratch]]
 - [[small-hackable-educational-code]]
 - [[llm-c]]
+- [[education-is-building-ramps-to-knowledge]]

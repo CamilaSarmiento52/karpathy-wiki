@@ -4,8 +4,9 @@ stated_on: 2023-11-23
 confidence: stated
 sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]"]
 topic: "[[llm-self-improvement]]"
-context: ["[[youtube-2025-02-05-deep-dive-into-llms]]"]
+context: ["[[youtube-2025-02-05-deep-dive-into-llms]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]"]
 extends: ["[[rl-lets-models-discover-their-own-thinking-strategies]]"]
+supports: ["[[rl-is-terrible-but-better-than-imitation]]"]
 ---
 # He thinks LLM self-improvement may be possible in narrow domains that have a reward function
 > "in narrow domains it will be possible to self-improve language models" — [[youtube-2023-11-23-intro-to-llms]] @40:27
@@ -18,3 +19,4 @@ In the Sequoia interview he puts it as the field having done AlphaGo's imitation
 ## Related claims
 - Extended by [[rl-lets-models-discover-their-own-thinking-strategies]]: here self-improvement may be possible in narrow domains with a reward function ([[youtube-2023-11-23-intro-to-llms]] @40:27); on 2025-02-05 he describes RL on math and code problems with known answers producing the models' own reasoning strategies, still early and short of AlphaGo ([[youtube-2025-02-05-deep-dive-into-llms]] @2:32:04, @2:44:20). Dated on [[llm-self-improvement-over-time]].
 - **Note:** his 2025-12-19 account of RLVR is on the [[rlvr]] topic, a connection rather than a link set here ([[youtube-2023-11-23-intro-to-llms]] @40:27).
+- Supported by [[rl-is-terrible-but-better-than-imitation]]: on 2025-10-17 he says RL lets a model hill-climb on problems that just have correct answers, without expert trajectories, while calling the method noisy and still stupid ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @42:46, @44:36); here self-improvement may be possible in narrow domains with a reward function ([[youtube-2023-11-23-intro-to-llms]] @40:27). Evidence for the hedge, not a statement that it has arrived.

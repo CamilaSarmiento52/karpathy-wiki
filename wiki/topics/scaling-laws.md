@@ -4,7 +4,7 @@ aliases: [Scaling laws, scale, scaling, model size, compute, N and D, GPU gold r
 first_seen: 2023-11-23
 last_updated: 2024-09-05
 sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]"]
-context: ["[[talk-2023-05-25-state-of-gpt]]", "[[youtube-2025-02-05-deep-dive-into-llms]]"]
+context: ["[[talk-2023-05-25-state-of-gpt]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[blog-2025-10-01-animals-vs-ghosts]]"]
 related: ["[[pretraining-and-finetuning]]", "[[rlvr]]"]
 ---
 # Scaling laws
@@ -21,13 +21,17 @@ Given only those two numbers, he says, you can predict with remarkable confidenc
 
 **The GPU gold rush (Deep Dive, 2025-02-05, background).** He says big tech's demand for GPUs to train language models is what drove Nvidia to $3.4 trillion (as of 2025-02-05), and calls getting enough GPUs the gold rush; more GPUs let you process the data and iterate faster and train a bigger network ([[youtube-2025-02-05-deep-dive-into-llms]] @41:23, @41:56). **Note:** he states no scaling law there, so the lecture is background on this page ([[youtube-2025-02-05-deep-dive-into-llms]] @41:56).
 
+**Note:** in a post dated 2025-10-01 he reports that frontier researchers assume LLMs are highly bitter-lesson pilled because scaling laws go up and to the right with compute, and Richard Sutton's counterpoint that the data is human and finite; he expects more powerful paradigms but does not say scaling stops working, so the post is background here; see [[bitter-lesson]] ([[blog-2025-10-01-animals-vs-ghosts]] §intro).
+
 ## Claims
 - [[scaling-offers-a-guaranteed-path-to-better-models]]
 - [[small-llms-can-be-strong-in-narrow-domains]] — small models, narrow domains
 - [[the-architecture-is-no-longer-the-bottleneck]]
 - [[a-cognitive-core-could-be-a-billion-parameters-or-less]]
+- [[progress-comes-from-everything-improving-together]] — data, hardware, kernels and algorithms, none winning
 
 ## Related
 - [[pretraining-and-finetuning]] — the stage whose loss these laws describe
+- [[bitter-lesson]] — why researchers read scaling laws as bitter-lesson pilled
 - [[compute-efficiency]] — the efficiency gains he lists beside scale
 - [[rlvr]] — **Note:** his 2025 account adds test-time compute as a different knob; not a link set between claims

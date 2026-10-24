@@ -56,3 +56,6 @@ A 44-minute podcast interview with hosts Sarah Guo and Elad Gil. He says self-dr
 - [[the-transformer-is-a-general-purpose-efficient-optimizable-computer]]
 - [[small-llms-can-be-strong-in-narrow-domains]]
 - [[llm-agents-over-time]]
+- [[cognitive-core]]
+- [[model-collapse]]
+- [[training-on-own-samples-collapses-models]]

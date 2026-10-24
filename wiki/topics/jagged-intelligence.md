@@ -3,7 +3,7 @@ type: topic
 aliases: [Jagged intelligence, people spirits, ghosts vs animals, Swiss cheese model, Swiss cheese capabilities, sharp edges, 9.11 vs 9.9]
 first_seen: 2025-02-05
 last_updated: 2025-12-19
-sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[blog-2025-04-07-power-to-the-people]]"]
+sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[blog-2025-04-07-power-to-the-people]]", "[[blog-2025-10-01-animals-vs-ghosts]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]"]
 context: ["[[talk-2023-05-25-state-of-gpt]]", "[[youtube-2023-11-23-intro-to-llms]]"]
 related: ["[[rlvr]]", "[[llms-as-operating-systems]]"]
 ---
@@ -21,6 +21,10 @@ In December 2025 he frames this as "summoning ghosts" rather than growing animal
 
 **Versatile but shallow (Power to the people, 2025-04-07).** In the April 2025 essay he describes LLMs' capability profile as merely quasi-expert knowledge and performance, but across a very wide variety of domains at once: "they are simultaneously versatile but also shallow and fallible." ([[blog-2025-04-07-power-to-the-people]] §intro ¶3). He uses this profile to explain why individuals gain more from LLMs than organisations do; see [[technology-diffusion]] ([[blog-2025-04-07-power-to-the-people]] §intro ¶3, ¶4). He does not use the words "jagged" or "people spirits" in the essay ([[blog-2025-04-07-power-to-the-people]] §intro ¶3).
 
+**Ghosts, not animals (Animals vs Ghosts, 2025-10-01).** In his response to Richard Sutton he writes that today's frontier LLM research is not about building animals but about summoning ghosts: entities muddled and engineered by humanity, imperfect replicas that are a statistical distillation of humanity's documents ([[blog-2025-10-01-animals-vs-ghosts]] §intro). He thinks they may be finetuned toward animals or may diverge and stay un-animal-like while still world-altering, and offers planes and birds as a possible analogy; see [[llm-research-summons-ghosts-not-animals]] ([[blog-2025-10-01-animals-vs-ghosts]] §intro). **Note:** the October post keeps open a move toward animals and treats animals as a source of ideas, while the December review says an animal lens is inappropriate for understanding current LLMs; the two are given with their dates, not as a contradiction ([[blog-2025-10-01-animals-vs-ghosts]] §intro; [[blog-2025-12-19-year-in-review-2025]] §2).
+
+**Savant kids without continual learning (Dwarkesh, published 2025-10-17).** He says the models, booted with zero tokens, always restart from scratch; he thinks humans distil the day's context into the weights during sleep, and LLMs have no equivalent phase ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @22:30, @23:09). He imagines something like a per-person neural net, perhaps a LoRA changing a sparse subset of weights, and points to DeepSeek v3.2's sparse attention as an early hint for long context ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @23:47, @24:27). Claude Code and Codex still feel to him like an elementary-grade student: savant kids with perfect memory who can convincingly create slop but don't really know what they are doing ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:42:26, @1:43:07). He also uses the ghosts framing in this interview, recorded on [[llm-research-summons-ghosts-not-animals]] ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @08:49).
+
 **Note:** in May 2023, without the words "jagged" or "people spirits", he described the same mix: LLMs have vast fact-based knowledge and a perfect working memory in the context window, but do not know what they don't know and do not reflect, sanity-check or correct their mistakes ([[talk-2023-05-25-state-of-gpt]] @22:45, @23:22, @23:55). The prompting he recommends around those deficits is on [[prompting-llms]] ([[talk-2023-05-25-state-of-gpt]] @23:55).
 
 **Note:** in November 2023, again without the word "jagged", he gave the reversal curse as an example of how strange and imperfect the knowledge in an LLM is: GPT-4 knows Tom Cruise's mother but not, asked the other way, her son, knowledge accessible from one direction only ([[youtube-2023-11-23-intro-to-llms]] @12:43). The same talk explains prompt injection, the gullibility he lists in 2025, as hijacking the model with what look like new instructions; the attacks are on [[llm-security]] ([[youtube-2023-11-23-intro-to-llms]] @51:27, @51:59).
@@ -28,9 +32,11 @@ In December 2025 he frames this as "summoning ghosts" rather than growing animal
 ## Claims
 - [[use-llms-as-tools-and-check-their-work]] — the holes are why he checks the work
 - [[longer-context-windows-alone-will-not-scale-to-long-multimodal-tasks]] — no learning at test time
+- [[llm-research-summons-ghosts-not-animals]] — ghosts, not animals
 
 ## Related
 - [[rlvr]] — the training stage that makes the spikes
+- [[bitter-lesson]] — the Sutton exchange the ghosts framing answers
 - [[llms-as-operating-systems]]
 - [[llm-knowledge-bases]] — one way to work around the missing long-term memory
 - [[technology-diffusion]] — the shallow, fallible profile is his first reason organisations gain less

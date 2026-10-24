@@ -8,38 +8,49 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[ai-has-converged-on-one-architecture|Since 2017, AI fields have converged on one architecture, the Transformer]] — 2023-05-19; separate vocabularies in 2011, one copy-pasted model now
 - [[ai-is-far-less-energy-efficient-than-the-brain|Running these models is probably a thousand to a million times less efficient than a brain]] — 20 watts against megawatts, hedged
 - [[ai-should-be-the-front-end-of-a-teacher-designed-course|The teacher designs the course; AI is the front end to the student]] — 2024-09-05; models cannot yet create a good course
+- [[ai-will-not-show-up-as-a-jump-in-gdp|AI will not show up as a jump in GDP]] — AI diffuses into the same growth exponential, no discrete change (2025-10-17)
 - [[an-llm-is-just-two-files|A large language model is just two files]] — 2023-11-23; 140 GB of parameters and ~500 lines of C
 - [[approximate-gradient-with-more-steps-beats-exact-gradient|An approximate minibatch gradient with more steps beats an exact one with fewer]] — 2022-09-12; minibatch training
 - [[attention-is-a-communication-mechanism|Attention is a communication mechanism between nodes in a directed graph]] — 2023-01-17; no notion of space; the mask makes it a decoder
+- [[autocomplete-is-his-coding-sweet-spot|Autocomplete is his coding sweet spot]] — October 2025: autocomplete as architect, agents for some code (2025-10-17)
 - [[avoid-batch-normalization-where-possible|He tells learners to avoid batch normalization as much as possible]] — 2022-10-04; coupling examples regularises by accident and causes bugs
 - [[backpropagation-is-more-general-than-neural-networks|Backpropagation does not care about neural networks]] — 2022-08-16; it works on arbitrary expressions
 - [[batchnorm-train-test-variance-mismatch-is-a-bug|He considers batchnorm's biased-in-training, unbiased-at-test variance a bug]] — 2022-10-11; he uses Bessel's correction throughout
 - [[build-the-ramp-not-just-the-thing|After building the thing, build the ramp]] — accessibility, not quality, held micrograd back; 10–100X of potential left on the table
 - [[chatgpt-answers-simulate-a-human-data-labeler|An assistant's answer is roughly a simulation of a human data labeler]] — 2025-02-05; labeling instructions; supports the imitate-not-succeed claim
 - [[claude-code-is-the-first-convincing-llm-agent|Claude Code is the first convincing LLM agent]] — 2025-12-19; agents belong on your own computer
+- [[coding-models-are-weak-at-code-never-written-before|Coding models are weak at code never written before]] — not net useful for nanochat's novel code; good for boilerplate and unfamiliar languages (2025-10-17)
 - [[counting-and-gradient-bigram-models-are-the-same-model|The counting bigram model and the one-layer net are the same model]] — 2022-09-07; W.exp() is the count table
 - [[deep-learning-is-largely-shape-gymnastics|Much of deep-learning development is making tensor shapes work]] — 2022-11-21; 2-D, 3-D, 4-D, NCL vs NLC, view and permute
 - [[deploying-a-vibe-coded-app-is-harder-than-writing-it|Vibe coding MenuGen's code was the easy part; the deployed app was the slog]] — 2025-04-27; extends the weekend-projects claim; YC talk as further source
 - [[do-not-decay-the-learning-rate-to-zero|He concluded the llm.c runs should not decay the learning rate to zero]] — 2024-06-12; 124M decayed to 0, 774M's tail too slow, 1.6B decays to 10%
+- [[early-agent-attempts-came-too-early|Early agent attempts came too early]] — Atari RL and Universe before LLM representations (2025-10-17)
+- [[education-is-building-ramps-to-knowledge|Education is building ramps to knowledge]] — education as a hard technical problem; eurekas per second; supports build-the-ramp (2025-10-17)
 - [[english-is-the-new-programming-language|English is now a programming language]] — 2025-06-19; everyone is now a programmer
 - [[forgetting-to-zero-grad-is-a-common-neural-net-bug|Forgetting to zero grad before backward is a common bug]] — 2022-08-16; he made it on camera
+- [[frontier-llms-are-not-platonically-bitter-lesson-pilled|Frontier LLMs are not platonically bitter-lesson pilled]] — he grants Sutton the human input at every stage; the bitter lesson is correct but platonic (2025-10-01)
 - [[gpt-2-is-the-first-recognizably-modern-llm-stack|GPT-2 was the first time the modern LLM stack came together in recognisable form]] — the grand-daddy of LLMs, with released weights; later models changed little
 - [[gpt-is-a-general-purpose-computer-running-natural-language-programs|GPT is a general-purpose computer running natural-language programs]] — 2023-05-19; prompts are the programs; supports the English-programming claim
 - [[gpt-is-not-a-complicated-model|GPT is not a complicated model]] — 2023-01-08; about 300 lines, the complexity is batching
 - [[gradient-based-models-scale-where-count-tables-do-not|Gradient-based models scale to longer contexts where count tables do not]] — 2022-09-07; tables blow up with context
+- [[gradual-loss-of-control-is-the-most-likely-outcome|Gradual loss of control is the most likely outcome]] — loss of understanding and control through competing autonomous entities, flagged as speculation (2025-10-17)
 - [[hallucinations-come-from-imitating-confident-answers|Models hallucinate because they imitate the confident style of training answers]] — 2025-02-05; a presumed uncertainty neuron not wired to words
 - [[he-does-not-love-autoregressive-sampling|In 2023 he did not love autoregressive sampling]] — 2023-05-19; diffusion's drafts appeal more
 - [[he-prefers-tiktoken-byte-level-bpe-to-sentencepiece|He prefers tiktoken's byte-level BPE to SentencePiece]] — bytes then BPE is cleaner than code-point BPE with byte fallback
 - [[he-prefers-to-pay-and-be-the-customer|He prefers to pay for products and be the customer, not the product]] — 2025-03-17; the calculator post as a second source on paying and owning
 - [[his-gpt-2-reproductions-beat-openais-checkpoints-on-hellaswag|His GPT-2 reproductions beat OpenAI's GPT-2 checkpoints of the same size on HellaSwag]] — 124M on 10B (llm.c 29.9 vs 29.4; lecture past 29.55, 33.24 after 40B); 774M on 150B (eval unnamed); 1558M crosses GPT-2 at ~25K steps
 - [[humanoid-robots-should-start-in-your-own-factory|Humanoid robots should start with their maker as first customer]] — 2024-09-05; factory, then B2B, consumers last
+- [[if-you-cannot-build-it-you-do-not-understand-it|If you cannot build it, you do not understand it]] — the Feynman line he holds; rebuild nanochat without copy-paste (2025-10-17)
 - [[inherited-gpt-3-hyperparameters-look-conservative|The GPT-3 hyperparameters he inherited look conservative and are probably not tuned precisely]] — 2024-06-09; a learning rate about 3× higher may work; 2024-07-11 "appear to be quite suboptimal"
 - [[llm-c-trained-gpt-2-faster-than-pytorch-in-his-measurements|In his measurements, llm.c trained GPT-2 faster than PyTorch]] — ~6.4% in a constrained fp32 setting (April 2024); each figure with its baseline
 - [[llm-c-was-not-yet-careful-enough-about-training-stability|He judged llm.c not yet careful enough about initialisation, activation ranges and stability for long runs]] — 2024-07-11; the 420B-token run exploded after ~330K steps
+- [[llm-judges-are-gameable-rewards|LLM judges are gameable rewards]] — RL against an LLM judge finds adversarial examples within tens of steps (2025-10-17)
 - [[llm-products-will-take-years-to-figure-out|Working out how to oversee LLM products will take the next few years]] — quite autonomous but not fully; oversight and evaluation still to design
+- [[llm-research-summons-ghosts-not-animals|LLM research summons ghosts, not animals]] — LLMs as statistical distillations of human documents that may or may not move toward animals (2025-10-01)
 - [[llms-are-mostly-inscrutable-empirical-artifacts|LLMs are mostly inscrutable artifacts, studied empirically]] — 2023-11-23; known operations, unknown parameters; the reversal curse
 - [[llms-are-the-kernel-of-an-emerging-operating-system|An LLM is the kernel process of an emerging operating system, not a chatbot]] — 2023-11-23; context window as RAM
 - [[llms-currently-only-have-a-system-1|In November 2023, LLMs had only System 1]] — 2023-11-23; the goal is converting time into accuracy
+- [[llms-lack-culture-and-self-play|LLMs lack culture and self-play]] — no LLM equivalent yet of culture or of self-play (2025-10-17)
 - [[llms-may-write-custom-low-level-code-for-any-application|He expects LLMs may come to write custom low-level code like llm.c for any application]] — 2024-10-02; abstractions exist because humans are finite
 - [[llms-reverse-the-usual-diffusion-of-technology|LLMs reverse the usual top-down diffusion of technology, so far]] — 2025-04-07; the YC talk as second source
 - [[llms-want-to-imitate-not-succeed|LLMs don't want to succeed, they want to imitate]] — 2023-05-25; ask for a strong solution, but not too much
@@ -58,8 +69,12 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[post-agi-education-will-be-like-going-to-the-gym|After AGI, he hopes education is like going to the gym]] — 2024-09-05; effortful fun with a payoff
 - [[pretraining-gives-a-document-completer|Pretraining alone gives a document completer, not an assistant]] — 2023-01-17; it babbles internet until finetuned
 - [[pretraining-is-lossy-compression-of-the-internet|Pretraining is a lossy compression of the internet]] — 2023-11-23; 10 TB to 140 GB; next-word prediction learns the world
+- [[pretraining-is-our-crappy-evolution|Pretraining is our crappy evolution]] — pretraining as a candidate solution to cold start, in the role evolution plays for animals, before RL (2025-10-01)
+- [[progress-comes-from-everything-improving-together|Progress comes from everything improving together]] — data, hardware, kernels and algorithms, none winning; everything plus 20% (2025-10-17)
 - [[pytorch-documentation-is-unreliable|PyTorch's documentation is unmaintained and will mislead you]] — 2022-11-21; wrong, incomplete, unclear; do your best
+- [[rl-is-terrible-but-better-than-imitation|RL is terrible but better than imitation]] — one final reward through a straw; supports the narrow-domain claim (2025-10-17)
 - [[rl-lets-models-discover-their-own-thinking-strategies|Through RL on problems with known answers, models discover their own ways of thinking]] — 2025-02-05; DeepSeek-R1's backtracking; extends two 2023 claims
+- [[rl-sucks-supervision-bits-through-a-straw|RL is sucking supervision bits through a straw]] — his reason the nanochat RL stage runs long, said in passing (2025-10-13)
 - [[rlhf-is-not-real-rl|RLHF is not reinforcement learning in the full sense, because its reward model can be gamed]] — 2024-03-26 (Sequoia), 2025-02-05; a vibe check, pelican jokes
 - [[rlhf-works-better-because-comparing-is-easier-than-generating|RLHF models are preferred, perhaps because comparing is easier than generating]] — 2023-05-25; his offered reason, hedged
 - [[scaling-offers-a-guaranteed-path-to-better-models|In 2023, scaling offered one guaranteed path to better models]] — 2023-11-23; algorithmic progress is a bonus
@@ -70,6 +85,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[synthetic-data-is-the-future-if-you-keep-its-entropy|Synthetic data is the way forward, if its entropy is kept]] — 2024-09-05; models are silently collapsed; three jokes; Persona prompts
 - [[technology-could-be-like-the-calculator|Technology could be like the calculator, at least as an ideal]] — 2024-09-08; a platonic ideal to approach, not for every product
 - [[tesla-is-ahead-of-waymo-in-self-driving|He thinks Tesla, with a software problem, is ahead of Waymo, with a hardware problem]] — 2024-09-05; software problems are easier; lidar only at training time
+- [[the-ai-tutor-he-wants-is-not-yet-possible|The AI tutor he wants is not yet possible]] — no LLM probes a student like a good tutor; not the time to build it (2025-10-17)
 - [[the-architecture-is-no-longer-the-bottleneck|The architecture no longer holds progress back; dataset and loss function are the bottlenecks]] — 2024-09-05; only RoPE has changed since Llama
 - [[the-hockey-stick-loss-means-training-is-wasting-steps|A hockey-stick loss curve means the first iterations are wasted squashing overconfident weights]] — 2022-10-04; fix the output scale at init
 - [[the-logits-softmax-nll-machinery-stays-fixed-up-to-transformers|Only the forward pass changes on the way to transformers]] — 2022-09-07; logits, softmax, NLL and gradient descent stay
@@ -78,6 +94,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[there-is-a-massive-gap-between-demo-and-product|In self-driving, and he expects in AGI, there is a massive gap between demo and product]] — 2024-09-05; Waymo's decade; globalisation has not happened
 - [[this-is-the-decade-of-agents|This is the decade of agents, not the year]] — 2025-06-19; self-driving shows how long autonomy takes
 - [[tokenization-free-modeling-would-be-amazing-but-is-unproven|Tokenization-free modelling would be amazing but is unproven]] — raw bytes need architecture changes; he does not know it is proven at scale
+- [[training-on-own-samples-collapses-models|Training on own samples collapses models]] — silently collapsed samples; possibly no fundamental solution, later walked back (2025-10-17)
 - [[transformers-need-tokens-to-think|Transformers need tokens to think]] — 2023-05-25; same compute per token, so spread the reasoning
 - [[treat-broadcasting-with-respect|Broadcasting deserves respect, not fast-and-loose use]] — 2022-09-07; the bugs are subtle
 - [[understand-backprop-even-with-autograd|Autograd being available is no reason to ignore how backpropagation works]] — 2022-10-11; backprop is a leaky abstraction

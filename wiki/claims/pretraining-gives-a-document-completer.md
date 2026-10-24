@@ -2,7 +2,7 @@
 type: claim
 stated_on: 2023-01-17
 confidence: stated
-sources: ["[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-25-state-of-gpt]]", "[[youtube-2023-11-23-intro-to-llms]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]", "[[youtube-2025-02-05-deep-dive-into-llms]]"]
+sources: ["[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-25-state-of-gpt]]", "[[youtube-2023-11-23-intro-to-llms]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[github-2025-10-13-nanochat-discussion-introducing]]"]
 topic: "[[pretraining-and-finetuning]]"
 ---
 # Pretraining alone gives a document completer, not an assistant
@@ -20,6 +20,8 @@ In the GPT-2 lecture, published 2024-06-09, he says everything he built is only 
 The build-nanogpt README, dated 2024-06-17, says GPT-2 and GPT-3 are simple language models trained on internet documents and all they do is "dream" internet documents, so you cannot talk to them as you can to ChatGPT ([[github-2024-06-17-build-nanogpt-readme]] §intro).
 
 In the Deep Dive lecture, published 2025-02-05, he calls the base model an internet text token simulator that dreams internet pages, not by itself an assistant ([[youtube-2025-02-05-deep-dive-into-llms]] @43:04, @43:38). Asked "what is 2 plus 2", it just continues the sequence, a glorified autocomplete ([[youtube-2025-02-05-deep-dive-into-llms]] @47:39, @48:10), and his recap calls it an internet document simulator on the token level ([[youtube-2025-02-05-deep-dive-into-llms]] @59:58).
+
+In the nanochat launch post, dated 2025-10-13, his own base model "at this point is a fancy autocomplete": it completes prompts rather than answering them, and only after midtraining is it, in his words, a proper chat model ([[github-2025-10-13-nanochat-discussion-introducing]] §Pretraining, §Midtraining).
 
 ## Related claims
 - **Note:** no earlier claim in the wiki covers the training stages; his 2025 account of RLVR as a new stage is on [[rlvr]], linked from [[pretraining-and-finetuning]] as related only ([[youtube-2023-01-17-gpt-from-scratch]] @1:55:22).

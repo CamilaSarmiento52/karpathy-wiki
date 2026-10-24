@@ -59,3 +59,4 @@ He splits the talk into how GPT assistants are trained and how to use them well 
 - [[chatgpt-answers-simulate-a-human-data-labeler]]
 - [[rlhf-is-not-real-rl]]
 - [[use-llms-as-tools-and-check-their-work]]
+- [[autocomplete-is-his-coding-sweet-spot]]

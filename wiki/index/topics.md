@@ -3,14 +3,17 @@
 Ideas he explains, each defined in his framing. Alphabetical. Maintained by ingest; do not edit by hand.
 
 - [[activation-functions|Activation functions]] — tanh, sigmoid, ReLU and their local derivatives
+- [[ai-and-the-economy|AI and the economy]] — AI as a continuation of computing and automation: the GDP exponential, coding first, bits before atoms, gradual loss of control
 - [[ai-ecosystem|AI ecosystem]] — a coral reef of startups over a few megacorps; open-weights, open-source and proprietary models
 - [[ai-for-education|AI for education]] — LLM101n and his plans for AI-assisted teaching
 - [[backpropagation|Backpropagation]] — recursive chain rule backwards through an expression graph
 - [[batch-normalization|Batch normalization]] — standardise pre-activations over the batch, learned gain and bias, running statistics; it couples examples and its state causes bugs
 - [[bigram-language-model|Bigram language model]] — one character of context; a 27×27 count table, a one-layer net, or the GPT lecture's embedding-table baseline
+- [[bitter-lesson|Bitter lesson]] — Sutton's bitter lesson and learn-from-experience program, as he reports it, and where he agrees and disagrees
 - [[broadcasting|Broadcasting]] — PyTorch's shape rules and the keepdim bug
 - [[building-for-agents|Building for agents]] — make docs and infrastructure readable and actionable for LLM agents
 - [[character-level-language-modeling|Character-level language modeling]] — predict the next character; the makemore task and how he samples from it
+- [[cognitive-core|Cognitive core]] — keep the algorithms of thought, shed memorised knowledge; a billion-parameter core that looks things up
 - [[compute-efficiency|Compute efficiency]] — a thousand- to millionfold gap with the brain; precision, sparsity, hardware co-design
 - [[elon-musk-management-style|Elon Musk's management style]] — small technical teams, no non-technical middle management, direct contact with engineers, the large hammer
 - [[embeddings|Embeddings]] — a shared lookup table C, equivalent to a linear layer on one-hot inputs; positional embeddings for attention
@@ -25,6 +28,7 @@ Ideas he explains, each defined in his framing. Alphabetical. Maintained by inge
 - [[llm-tool-use|LLM tool use]] — calculators, code, search and retrieval into the context window
 - [[llms-as-operating-systems|LLMs as operating systems]] — utility, fab, and above all a 1960s-era operating system
 - [[loss-functions|Loss functions]] — one number to minimise: mean squared error, negative log likelihood, cross-entropy
+- [[model-collapse|Model collapse]] — why training on its own samples degrades a model: silently collapsed outputs, lost entropy, and his walk-back on how fundamental it is
 - [[multilayer-perceptron|Multilayer perceptron]] — neurons, layers and MLPs, from micrograd to the Bengio 2003 language model
 - [[overfitting-and-generalization|Overfitting and generalization]] — train/dev/test splits; equal train and dev loss means under-fitting
 - [[partial-autonomy-apps|Partial autonomy apps]] — LLM apps with context management, a GUI and an autonomy slider

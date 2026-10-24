@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [Evaluation, LLM evaluation, evals, eval, HellaSwag, benchmarks, validation loss comparison, Eleuther evaluation harness, early signal]
+aliases: [CORE, CORE metric, ChatCORE, bits per byte, bpb, MMLU, GSM8K, HumanEval, ARC, Evaluation, LLM evaluation, evals, eval, HellaSwag, benchmarks, validation loss comparison, Eleuther evaluation harness, early signal]
 first_seen: 2024-05-03
-last_updated: 2025-02-05
-sources: ["[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-12-llmc-gpt-2-774m]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[youtube-2025-02-05-deep-dive-into-llms]]"]
+last_updated: 2025-10-13
+sources: ["[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-12-llmc-gpt-2-774m]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[github-2025-10-13-nanochat-discussion-introducing]]"]
 related: ["[[llm-c]]", "[[loss-functions]]", "[[reproduce-a-published-model]]"]
 ---
 # LLM evaluation
@@ -28,11 +28,18 @@ Small models cannot do multiple choice with labels, so he scores each option as 
 
 **Leaderboards (Deep Dive, 2025-02-05).** LM Arena ranks models by blind human comparisons; he says it was good for a long time but he thinks it has become a little gamed in the last few months and trusts it less, pointing to Claude Sonnet's low rank against how widely it is used, so he treats it as a first pass ([[youtube-2025-02-05-deep-dive-into-llms]] @3:15:18, @3:16:57). As of 2025-02-05 Google led it with DeepSeek third ([[youtube-2025-02-05-deep-dive-into-llms]] @3:15:51, @3:16:24). To keep up he recommends the AI News newsletter by swyx and friends and following people you trust on X ([[youtube-2025-02-05-deep-dive-into-llms]] @3:17:32, @3:18:04).
 
+**CORE, bits per byte and ChatCORE (nanochat launch post, 2025-10-13).** During pretraining nanochat evaluates the CORE metric from the DCLM paper, which he describes as a normalised, broad measure of autocompletion over 22 datasets including HellaSwag, ARC, PIQA and Winograd ([[github-2025-10-13-nanochat-discussion-introducing]] §Pretraining). It reports validation bits per byte, which normalises each token's loss by its byte count; he says "Bits per byte is a much better measure than just the typical cross-entropy loss" because it is tokenizer-invariant and comparable across vocabulary sizes ([[github-2025-10-13-nanochat-discussion-introducing]] §Pretraining). His d20 base model reaches about 0.81 bpb and CORE 0.22 (measured), against GPT-2 large at 0.21 and GPT-2 xl at 0.26 (comparison) ([[github-2025-10-13-nanochat-discussion-introducing]] §Pretraining).
+
+For the chat model he uses ARC-Easy, ARC-Challenge and MMLU, multiple choice with about 25% chance, and GSM8K and HumanEval, with a 0% baseline (comparison) ([[github-2025-10-13-nanochat-discussion-introducing]] §Midtraining). ChatCORE, his attempt to extend CORE to chat models, subtracts each task's baseline so random is 0 and averages, a single-number summary ([[github-2025-10-13-nanochat-discussion-introducing]] §Midtraining). After midtraining ChatCORE is 0.0730, after SFT 0.0884, which he calls a small bump (measured) ([[github-2025-10-13-nanochat-discussion-introducing]] §Midtraining, §Supervised Finetuning (SFT)); after RL, GSM8K is 0.0758 (measured) ([[github-2025-10-13-nanochat-discussion-introducing]] §Report card). He says "The evals are still fairly incomplete" ([[github-2025-10-13-nanochat-discussion-introducing]] §Midtraining).
+
+**Small models must be taught multiple choice.** At this scale, he says, the model does not learn multiple choice from random internet data: it must learn to associate choices with letters and emit the right one, so midtraining mixes in 100K MMLU auxiliary_train questions (setting) because common evals like MMLU are multiple choice ([[github-2025-10-13-nanochat-discussion-introducing]] §Midtraining). "Multiple choice is pretty hard for models this small." ([[github-2025-10-13-nanochat-discussion-introducing]] §Midtraining). **Note:** the 2024-07-11 llm.c post says models at GPT-2's capability do not understand multiple choice, which makes good evals harder; here he teaches it in midtraining ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Evals); [[github-2025-10-13-nanochat-discussion-introducing]] §Midtraining).
+
 ## Claims
 - [[his-gpt-2-reproductions-beat-openais-checkpoints-on-hellaswag]]
 
 ## Related
 - [[llm-c]] — the codebase whose runs are evaluated
+- [[nanochat]] — CORE, bpb and ChatCORE in its report card
 - [[reproduce-a-published-model]] — evaluation as the last steps of a reproduction
 - [[loss-functions]] — the validation loss read as perplexity
 - [[overfitting-and-generalization]] — train and validation splits in the earlier lectures

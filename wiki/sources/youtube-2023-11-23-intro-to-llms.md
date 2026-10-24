@@ -51,3 +51,8 @@ A re-recording, on his own channel, of a 30-minute intro talk he had given at an
 - [[llm-self-improvement-over-time]]
 - [[parameters-are-vague-recollection-context-is-working-memory]]
 - [[rl-lets-models-discover-their-own-thinking-strategies]]
+- [[frontier-llms-are-not-platonically-bitter-lesson-pilled]]
+- [[pretraining-is-our-crappy-evolution]]
+- [[llms-lack-culture-and-self-play]]
+- [[progress-comes-from-everything-improving-together]]
+- [[rl-is-terrible-but-better-than-imitation]]

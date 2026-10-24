@@ -2,8 +2,8 @@
 type: topic
 aliases: [Self-improvement, LLM self-improvement, AlphaGo step two, beyond imitation, reward function, reinforcement learning beyond RLHF]
 first_seen: 2023-11-23
-last_updated: 2025-02-05
-sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]", "[[youtube-2025-02-05-deep-dive-into-llms]]"]
+last_updated: 2025-10-17
+sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[blog-2025-10-01-animals-vs-ghosts]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]"]
 related: ["[[rlvr]]", "[[system-1-and-system-2-thinking]]"]
 ---
 # LLM self-improvement
@@ -20,13 +20,23 @@ AlphaGo, he recalls, had two stages: imitating expert human games, which can onl
 
 **AlphaGo and Move 37 (Deep Dive, 2025-02-05).** He does not use the word self-improvement in this lecture, but returns to AlphaGo: supervised learning on expert games tops out below the best humans, while RL plays the moves that lead to wins and beat Lee Sedol ([[youtube-2025-02-05-deep-dive-into-llms]] @2:42:41, @2:43:14, @2:43:46, @2:44:20). We are only starting to see hints of that diagram in LLMs for reasoning, he says, and need to go beyond imitating experts ([[youtube-2025-02-05-deep-dive-into-llms]] @2:44:20, @2:44:52). Move 37, which a human would play about 1 in 10,000 times, is his example of RL discovering a strategy unknown to humans; what the LLM equivalent would look like is unknown, perhaps new analogies, new thinking strategies or a language of its own rather than English ([[youtube-2025-02-05-deep-dive-into-llms]] @2:45:26, @2:46:00, @2:46:33, @2:47:05). He calls RL in LLMs primordial and nascent, in principle capable of a Move 37 in open-domain thinking ([[youtube-2025-02-05-deep-dive-into-llms]] @3:29:18, @3:29:50). On RLHF he repeats that its reward model can be gamed, so it is not RL in that sense; see [[rlhf-is-not-real-rl]] ([[youtube-2025-02-05-deep-dive-into-llms]] @3:05:54, @3:06:27). **Note:** his 2025 reasons why humans cannot write the model's best token sequences, and why it must find what works for itself, echo the Sequoia points above; a connection, not a link ([[talk-2024-03-26-sequoia-making-ai-accessible]] @25:32, @26:04; [[youtube-2025-02-05-deep-dive-into-llms]] @2:18:16, @2:19:55).
 
+**What to borrow from animals (Animals vs Ghosts, 2025-10-01).** Reporting Richard Sutton's view that a human-data prior is off course, he likens it to AlphaZero, never shown human games, beating AlphaGo, which was initialized from them; the comparison is his paraphrase of Sutton's view ([[blog-2025-10-01-animals-vs-ghosts]] §intro). **Note:** the 2023 account above has AlphaGo's two stages, imitation then self-play; this is the same analogy taken one step further, from Sutton's side ([[youtube-2023-11-23-intro-to-llms]] @38:14; [[blog-2025-10-01-animals-vs-ghosts]] §intro). He names ideas LLM agents might adapt from animals: intrinsic motivation, fun, curiosity, empowerment, multi-agent self-play and culture ([[blog-2025-10-01-animals-vs-ghosts]] §intro). On very long-horizon sparse rewards, which Dwarkesh raised with building a startup as the example, Sutton offered temporal-difference learning and future-reward discounting; he does not find that particularly compelling, thinks something else is going on, and that it is not reinforcement learning ([[blog-2025-10-01-animals-vs-ghosts]] §Appendix). See [[bitter-lesson]] ([[blog-2025-10-01-animals-vs-ghosts]] §intro).
+
+**Terrible, but better than imitation (Dwarkesh, published 2025-10-17).** He says RL is terrible and just happens to beat the imitation that came before, because it broadcasts a single final reward across a whole trajectory; see [[rl-is-terrible-but-better-than-imitation]] ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @41:33, @42:46). Process supervision with LLM judges is gameable within tens of steps; see [[llm-judges-are-gameable-rewards]] ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @46:34, @47:11). Asked what else could work, he points to reviewing solutions with synthetic examples and meta-learning, says he is only at the stage of reading abstracts, and has not seen it shown convincingly at frontier scale, though the labs are closed ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @49:46, @50:23). Reading a book is for a human a set of prompts for generating synthetic data, and he would like a pretraining stage that thinks material through; why the model cannot simply train on its own reflections is on [[model-collapse]] ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @51:00, @51:37). Culture and self-play, two multi-agent ideas no one has claimed, are [[llms-lack-culture-and-self-play]] ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:41:10, @1:41:47). On animals he says much of what looks like learning is maturation, that RL in animals is mostly motor tasks, and that humans don't really use RL for intelligence tasks like problem solving ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @10:04, @10:41).
+
 ## Claims
 - [[self-improvement-may-be-possible-in-narrow-domains]]
 - [[rlhf-is-not-real-rl]]
 - [[rl-lets-models-discover-their-own-thinking-strategies]] — extends the narrow-domain claim; dated on [[llm-self-improvement-over-time]]
+- [[rl-sucks-supervision-bits-through-a-straw]] — the nanochat post's phrase for RL's thin signal
+- [[rl-is-terrible-but-better-than-imitation]] — the 2025-10-17 verdict; supports the narrow-domain claim
+- [[llm-judges-are-gameable-rewards]] — why process rewards from LLMs fail
+- [[llms-lack-culture-and-self-play]] — two multi-agent ideas not yet claimed
 
 ## Related
 - [[llm-self-improvement-over-time]] — the dated sequence
+- [[bitter-lesson]] — Sutton's learn-from-experience program and his response
+- [[model-collapse]] — why training on its own samples fails
 - [[rlvr]] — **Note:** his 2025 account of training against automatically checkable rewards in verifiable domains is close to the narrow-domain case he speculated about in 2023; a connection, not a link set between claims
 - [[system-1-and-system-2-thinking]] — the other open direction in the same talk
 - [[jagged-intelligence]] — in 2025, capability spikes near verifiable domains

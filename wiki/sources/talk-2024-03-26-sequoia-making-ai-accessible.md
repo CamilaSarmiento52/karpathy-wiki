@@ -58,3 +58,5 @@ A 37-minute interview at Sequoia, with Stephanie Zhan asking the questions and a
 - [[there-is-a-massive-gap-between-demo-and-product]]
 - [[llm-self-improvement-over-time]]
 - [[rlhf-is-not-real-rl]]
+- [[llm-judges-are-gameable-rewards]]
+- [[rl-is-terrible-but-better-than-imitation]]

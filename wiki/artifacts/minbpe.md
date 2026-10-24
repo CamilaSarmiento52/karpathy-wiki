@@ -3,7 +3,7 @@ type: artifact
 repo_url: https://github.com/karpathy/minbpe
 language: Python
 status: active
-sources: ["[[youtube-2024-02-20-gpt-tokenizer]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2025-08-08-minbpe-gpt-4-tokenizer-discussion]]"]
+sources: ["[[youtube-2024-02-20-gpt-tokenizer]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2025-08-08-minbpe-gpt-4-tokenizer-discussion]]", "[[github-2025-10-13-nanochat-discussion-introducing]]"]
 aliases: [minBPE, min bpe]
 ---
 # minbpe
@@ -25,6 +25,8 @@ The tokenizer code he wrote while developing the GPT tokenizer lecture and publi
 - `status: active` rests on the lecture's stated plan to keep working on it and on the open todo list in this snapshot ([[youtube-2024-02-20-gpt-tokenizer]] @1:25:45; [[github-2024-04-22-minbpe-readme]] §todos).
 
 - The repo's Discussions hold his post of 2025-08-08 on training a GPT-4-style tokenizer with the Hugging Face Tokenizers library instead, which he puts there for future reference and comparison; the post does not mention minbpe's own code or compare against it ([[github-2025-08-08-minbpe-gpt-4-tokenizer-discussion]] §intro). The configuration is described on [[tokenization]] ([[github-2025-08-08-minbpe-gpt-4-tokenizer-discussion]] §intro (code)).
+
+- In the nanochat launch post he calls minbpe's Python "way too slow" for nanochat's tokenizer training, which is why nanochat has its own Rust tokenizer ([[github-2025-10-13-nanochat-discussion-introducing]] §Environment setup). **Note:** the 2024-04-22 todos list a faster Python version and a C or Rust version; a connection, not a claim that the Rust tokenizer is that todo ([[github-2024-04-22-minbpe-readme]] §todos; [[github-2025-10-13-nanochat-discussion-introducing]] §Environment setup).
 
 ## Related
 - [[tokenization]] — what it implements

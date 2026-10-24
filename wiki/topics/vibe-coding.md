@@ -3,7 +3,7 @@ type: topic
 aliases: [Vibe coding, vibe coded]
 first_seen: 2025-02-02
 last_updated: 2026-04-02
-sources: ["[[x-2025-02-02-vibe-coding]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[youtube-2025-02-27-how-i-use-llms]]", "[[blog-2025-04-07-power-to-the-people]]", "[[blog-2025-04-27-vibe-coding-menugen]]", "[[x-2025-05-01-vibe-coding-hackathon]]", "[[github-2025-08-21-rendergit-readme]]"]
+sources: ["[[x-2025-02-02-vibe-coding]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[youtube-2025-02-27-how-i-use-llms]]", "[[blog-2025-04-07-power-to-the-people]]", "[[blog-2025-04-27-vibe-coding-menugen]]", "[[x-2025-05-01-vibe-coding-hackathon]]", "[[github-2025-08-21-rendergit-readme]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]"]
 related: ["[[software-3-0]]", "[[english-is-the-new-programming-language]]", "[[vibe-coding-over-time]]"]
 ---
 # Vibe coding
@@ -28,6 +28,8 @@ In How I use LLMs, published 2025-02-27, he says the name for giving Cursor's Co
 
 In Power to the people, dated 2025-04-07, he lists "People can now vibe code apps." among the things an individual can do at an adequate level without another expert ([[blog-2025-04-07-power-to-the-people]] §intro ¶3). Organisations, with their complexity and lower margin for error, are different: "You can't just vibe code something." ([[blog-2025-04-07-power-to-the-people]] §intro ¶4).
 
+**Building nanochat (Dwarkesh, published 2025-10-17).** He built nanochat over a bit more than a month and sees three classes of coders: those who reject LLMs, the intermediate, where he is, writing from scratch with autocomplete as the architect, and vibe coders, who ask agents to implement things ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @30:43, @31:21). He partially vibe-coded nanochat's report, which was boilerplate and not mission-critical, and vibe-coded some of the Rust tokenizer, being fairly new to Rust, with a Python implementation he fully understands and tests, so he felt safer ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @34:26). Models, he says, increase accessibility to unfamiliar languages ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @34:26). For the core code they were not net useful; see [[coding-models-are-weak-at-code-never-written-before]] and [[autocomplete-is-his-coding-sweet-spot]] ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @33:14, @37:33). A lot of vibe coding lacks the high cost of failure that production code has, where any mistake can become a security vulnerability ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:45:02).
+
 **Note:** the scope he gives the practice widens across these sources; see [[vibe-coding-over-time]] ([[x-2025-02-02-vibe-coding]], [[blog-2025-12-19-year-in-review-2025]]).
 
 ## Claims
@@ -36,6 +38,8 @@ In Power to the people, dated 2025-04-07, he lists "People can now vibe code app
 - [[vibe-coding-full-web-apps-is-not-yet-for-anything-important]] — April 2025: messy, but hints of greatness
 - [[vibe-coding-will-terraform-software]]
 - [[english-is-the-new-programming-language]]
+- [[coding-models-are-weak-at-code-never-written-before]] — October 2025: not net useful for nanochat's novel code
+- [[autocomplete-is-his-coding-sweet-spot]] — October 2025: his own mode, with agents for some code
 
 ## Related
 - [[vibe-coding-over-time]]

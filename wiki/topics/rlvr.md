@@ -3,7 +3,7 @@ type: topic
 aliases: [RLVR, Reinforcement Learning from Verifiable Rewards, reinforcement learning stage, RL for LLMs, thinking models, reasoning models, DeepSeek-R1, o1, o3, chains of thought, verifiable domains, practice problems]
 first_seen: 2025-02-05
 last_updated: 2025-12-19
-sources: ["[[blog-2025-12-19-year-in-review-2025]]", "[[youtube-2025-02-05-deep-dive-into-llms]]"]
+sources: ["[[blog-2025-12-19-year-in-review-2025]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[github-2025-10-13-nanochat-discussion-introducing]]"]
 related: ["[[jagged-intelligence]]"]
 ---
 # RLVR
@@ -20,8 +20,11 @@ The high-level idea is simple but the details are hard; companies experimented i
 
 Frontier research, he says, is building large, diverse prompt distributions, game environments for every domain of knowledge ([[youtube-2025-02-05-deep-dive-into-llms]] @2:47:40). Whether thinking learned in verifiable domains transfers to unverifiable ones is unknown in the field, and these models will mostly shine in verifiable domains like math and code ([[youtube-2025-02-05-deep-dive-into-llms]] @3:28:45, @3:29:18, @3:29:50). His claim that models discover their own ways of thinking this way is [[rl-lets-models-discover-their-own-thinking-strategies]] ([[youtube-2025-02-05-deep-dive-into-llms]] @2:32:04). **Note:** the 2025-02-05 lecture and the 2025-12-19 review describe the same stage in different words; the dates are given, not an order of discovery ([[youtube-2025-02-05-deep-dive-into-llms]] @2:13:19; [[blog-2025-12-19-year-in-review-2025]] §1).
 
+**GRPO on GSM8K (nanochat launch post, 2025-10-13).** He does not use the term RLVR in this post. Of nanochat's datasets GSM8K has a clear, objective reward, the correct answer, so the optional RL stage interleaves sampling and training to hill-climb it ([[github-2025-10-13-nanochat-discussion-introducing]] §Reinforcement Learning (RL)). His GRPO is highly simplified: no trust region (no reference model or KL), on-policy (no PPO ratios or clipping), token-level normalisation and advantage as reward minus the mean, closer to REINFORCE while keeping the group-relative advantage ([[github-2025-10-13-nanochat-discussion-introducing]] §Reinforcement Learning (RL)). Reward, pass@1 and pass@8 rise over the default run of about 1.5 hours (measured), and pass@8 well above pass@1 suggests more to gain from more RL; he says gains are larger on bigger models and that he ran up to d30, without giving numbers ([[github-2025-10-13-nanochat-discussion-introducing]] §Reinforcement Learning (RL)). It is off by default because it is not well tuned, gives a GSM-specific model and there is no full general RLHF; why it runs so long is [[rl-sucks-supervision-bits-through-a-straw]] ([[github-2025-10-13-nanochat-discussion-introducing]] §Reinforcement Learning (RL)).
+
 ## Claims
 - [[rl-lets-models-discover-their-own-thinking-strategies]]
+- [[rl-sucks-supervision-bits-through-a-straw]] — why the RL stage runs long
 
 ## Related
 - [[llm-self-improvement]] — the AlphaGo comparison he draws

@@ -3,7 +3,7 @@ type: topic
 aliases: [Partial autonomy apps, LLM apps, Cursor for X, autonomy slider]
 first_seen: 2025-02-27
 last_updated: 2025-12-19
-sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[youtube-2025-02-27-how-i-use-llms]]"]
+sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[youtube-2025-02-27-how-i-use-llms]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]"]
 context: ["[[talk-2023-05-25-state-of-gpt]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]"]
 related: ["[[llm-gui]]", "[[ai-assisted-coding-loop]]", "[[this-is-the-decade-of-agents]]"]
 ---
@@ -25,10 +25,13 @@ In December 2025 he repeats the four properties, now calling the first one conte
 
 **Cursor (How I use LLMs, 2025-02-27).** For professional coding he does not ask a chat web page for snippets, which is too slow and lacks context; he uses an app on his file system, then Cursor, calling Claude 3.7 Sonnet through the API with the context of his files ([[youtube-2025-02-27-how-i-use-llms]] @1:14:07, @1:14:40, @1:15:12, @1:15:47). Its features went from Cmd-K, change this line, to Cmd-L, explain this chunk, to Cmd-I, Composer, which with agent integration is an autonomous agent on the codebase that runs commands and edits multiple files ([[youtube-2025-02-27-how-i-use-llms]] @1:16:51, @1:17:26, @1:18:01). Composer paused and waited for him to confirm commands explicitly ([[youtube-2025-02-27-how-i-use-llms]] @1:20:46). **Note:** these are concrete steps along the autonomy slider described above ([[youtube-2025-02-27-how-i-use-llms]] @1:17:26; [[youtube-2025-06-19-software-is-changing]] @22:43).
 
+**The slider in the economy (Dwarkesh, published 2025-10-17).** He describes an "autonomy slider" in which more of what can be automated is automated and humans raise themselves in the layer of abstraction ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @39:23). The job he would watch is call-centre work: rote, similar tasks, a short horizon, little context, purely digital ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:10:27, @1:11:05). Even there he is not looking for full automation but for AIs doing 80% of the volume and delegating 20% to humans who supervise teams of about five AIs, with new interfaces for managing imperfect AIs ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:11:05, @1:11:44). He would wait a year or two on call-centre trends, since companies may pull back and rehire ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:13:32). The radiologist and safety-driver argument that follows is Dwarkesh's ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:11:44). Why earlier agent efforts failed is [[early-agent-attempts-came-too-early]] ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @06:58).
+
 ## Claims
 - [[this-is-the-decade-of-agents]]
 - [[use-llms-as-copilots-with-human-oversight]] — the 2023 version of the human-in-the-loop stance
 - [[llm-products-will-take-years-to-figure-out]] — the 2024 version: oversight still to be designed
+- [[early-agent-attempts-came-too-early]] — Atari RL and Universe, before LLM representations
 
 ## Related
 - [[llm-agents-over-time]] — his statements on agents by date
