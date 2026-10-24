@@ -98,7 +98,11 @@ About 2.4M agent tokens for batch 1 (digest ≈ 0.9M, merge ≈ 0.65M, verify �
 fix ≈ 0.1M), plus the coordinating session. Batches 2–4 together hold about 2.6× the words
 of batch 1.
 
-## Pilot gate (open)
+## Pilot gate
 
-Batch 1 stops here for the user's review in Obsidian (decision 3). Batches 2–4 run after
-that review, with the merge map step added for each.
+Batch 1 stopped for the user's review in Obsidian (decision 3). On 2026-10-24 the user
+said "start batch 2" without reviewing, so decision 3 was waived for this phase. An early
+question check on 2026-10-23 (`staging/phase-3-question-validation.md`) found the
+backpropagation question answerable, and the agents and tokenization questions only
+partly answerable until batch 2 is compiled. Batches 2–4 run with a merge map step added
+for each.
