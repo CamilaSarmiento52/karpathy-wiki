@@ -58,6 +58,9 @@ pass.
   they are expected (usually nowhere).
 - Timeline pages: `type: timeline`, `topic: "[[topic-slug]]"`, dated bullets oldest first,
   each citing a source page.
+- **Dates are published dates** (CLAUDE.md §2). Never write "N months later", "a week
+  after" or "first said in" between sources; write the dates. Talks can be published long
+  after they were given (CS25: given ~January 2023, published May 2023).
 - YAML values containing `: ` must be quoted (a source `summary` broke lint this way).
 - Every new page needs an inbound link from a content page (Fed pages count; index files,
   hot and log do not).

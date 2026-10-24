@@ -33,7 +33,9 @@ boundaries and garbled numbers).
 5. For video and talks, grep the `[mm:ss]` / `[h:mm:ss]` marker and read that 30-second
    block and its neighbours; @12:34 means the block starting at or just before 12:34. For
    text, find the `§heading` (or the bold paragraph label).
-6. Also: **Note:** sentences are editorial, not disguised claims; caption garble is
+6. Check every interval or ordering between sources ("later", "first", "after"): dates
+   are published dates, and talks can be published months after they were given.
+7. Also: **Note:** sentences are editorial, not disguised claims; caption garble is
    corrected outside quotes; nothing is stated that the source is silent on.
 
 ## Report format

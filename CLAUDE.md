@@ -41,6 +41,11 @@ Project docs: `specs/mission.md` (why), `specs/tech-stack.md` (how), `specs/road
 - Source slugs: `<medium>-<yyyy-mm-dd>-<short-name>`, e.g. `youtube-2025-06-19-software-is-changing`.
 - Claim slugs read as the claim, e.g. `english-is-the-new-programming-language`.
 - Dates are ISO `YYYY-MM-DD`.
+- A source's date is its `published` date, which for a talk or lecture can be months after
+  he gave it (the CS25 lecture was given around January 2023 and published in May). Do not
+  write intervals or order between sources ("four months later", "a week after", "first
+  said in") from published dates alone. Write the dates themselves, and say "published"
+  when a recording date is known to differ.
 
 ## 3. raw/ files (read-only reference)
 
