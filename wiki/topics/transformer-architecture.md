@@ -2,8 +2,8 @@
 type: topic
 aliases: [Transformer, Transformer block, GPT architecture, GPT, decoder-only, residual connections, layer norm, LayerNorm, GPT-1, GPT-2, GPT-3, Image GPT, "Attention Is All You Need", encoder-decoder, cross-attention, encoder-only, BERT, T5, sequence to sequence, history of the Transformer, Llama, Llama 2, RoPE, SwiGLU, RMSNorm, multiquery attention, pre-norm, clean residual stream, map-reduce view]
 first_seen: 2023-01-08
-last_updated: 2024-07-11
-sources: ["[[github-2023-01-08-mingpt-readme]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
+last_updated: 2024-09-05
+sources: ["[[github-2023-01-08-mingpt-readme]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[talk-2024-09-05-no-priors-ep-80]]"]
 related: ["[[mingpt]]", "[[nanogpt]]", "[[batch-normalization]]", "[[embeddings]]", "[[self-attention]]", "[[regularization]]", "[[ng-video-lecture]]"]
 ---
 # Transformer architecture
@@ -44,6 +44,10 @@ In his summary of the papers, GPT-2 and GPT-3 are very similar architectures: th
 
 In the 1.6B post he again says GPT-3 of the same size is pretty much GPT-2's architecture with minor differences (context length 1024 to 2048) but trained for 300B tokens, and that GPT-2's release had weights but very few details while GPT-3's had details but no weights ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Evals), §intro (Args guide)). The 1558M model is `-e "d48"`, a depth-48 GPT-2 initialised from scratch, with 1,557,686,400 parameters per the log ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Args guide), §intro (Training)).
 
+**A differentiable computer (No Priors, 2024-09-05).** He says the Transformer is not just another neural net but an amazing, extremely general one, which he thinks of as a general-purpose training computer, a differentiable computer: given billions of inputs and outputs and trained with backpropagation, it arranges itself into a thing that does the task ([[talk-2024-09-05-no-priors-ep-80]] @14:49, @15:24). Four or five existing innovations were put together into it, which he says Google did in its paper: residual connections, layer normalisation, the attention block, and the absence of saturating nonlinearities like tanh, which kill gradient signals ([[talk-2024-09-05-no-priors-ep-80]] @15:24, @15:56). Since the Llama release the major change is RoPE positional encodings; everything else is about plus 3%, over the last five years or so ([[talk-2024-09-05-no-priors-ep-80]] @16:29, @17:01).
+
+**Better than the brain in some ways.** Cautioning against brain analogies, he still thinks Transformers are better than the human brain in a bunch of ways, a more efficient system that works less well mostly because of data, as a first approximation ([[talk-2024-09-05-no-priors-ep-80]] @20:13, @20:46). His examples: a Transformer memorises a sequence after a single forward-backward pass, which a human cannot; there is a good chance gradient-based optimisation is more efficient than the brain in some ways; and human working memory is very small next to a Transformer's ([[talk-2024-09-05-no-priors-ep-80]] @20:46, @21:18). It is not obvious the brain does backpropagation, and it works under many constraints; what we have is potentially better than the brain, just not there yet ([[talk-2024-09-05-no-priors-ep-80]] @21:51). **Note:** this is learning and memory efficiency; the energy comparison on [[ai-is-far-less-energy-efficient-than-the-brain]] is a different measure, and he does not compare the two ([[talk-2024-03-26-sequoia-making-ai-accessible]] @13:27; [[talk-2024-09-05-no-priors-ep-80]] @20:46).
+
 ## Claims
 - [[attention-is-a-communication-mechanism]]
 - [[gpt-is-not-a-complicated-model]]
@@ -53,6 +57,7 @@ In the 1.6B post he again says GPT-3 of the same size is pretty much GPT-2's arc
 - [[the-transformer-is-probably-not-the-final-architecture]] — resilient so far, change expected
 - [[gpt-2-is-the-first-recognizably-modern-llm-stack]] — why llm.c reproduces GPT-2
 - [[neural-net-training-should-not-be-complicated]] — the training loop, not only the model, should be simple
+- [[the-architecture-is-no-longer-the-bottleneck]]
 
 ## Related
 - [[llama2c]] — the Llama 2 architecture hard-coded in C

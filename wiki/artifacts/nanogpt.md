@@ -3,7 +3,7 @@ type: artifact
 repo_url: https://github.com/karpathy/nanoGPT
 language: Python
 status: superseded
-sources: ["[[github-2023-01-08-mingpt-readme]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2023-01-31-ng-video-lecture-readme]]", "[[github-2025-11-12-nanogpt-readme]]", "[[github-2026-07-03-nanochat-readme]]", "[[youtube-2025-06-19-software-is-changing]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]"]
+sources: ["[[github-2023-01-08-mingpt-readme]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2023-01-31-ng-video-lecture-readme]]", "[[github-2025-11-12-nanogpt-readme]]", "[[github-2026-07-03-nanochat-readme]]", "[[youtube-2025-06-19-software-is-changing]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]", "[[github-2024-09-24-llmc-readme]]"]
 aliases: [nanoGPT]
 ---
 # nanoGPT
@@ -29,6 +29,8 @@ His earlier repo for training and finetuning medium-sized GPTs, a rewrite of min
 - In the June 2024 GPT-2 lecture he says what the lecture builds was building toward nanoGPT, and that llm.c's PyTorch reference `train_gpt2.py` is essentially nanoGPT ([[youtube-2024-06-09-reproduce-gpt-2]] @3:56:27, @3:57:01).
 
 - build-nanogpt, dated 2024-06-17, holds a from-scratch reproduction of nanoGPT built up commit by commit ([[github-2024-06-17-build-nanogpt-readme]] §intro).
+
+- The llm.c README (2024-09-24) calls its PyTorch reference `train_gpt2.py` a slightly tweaked nanoGPT, "an earlier project of mine" ([[github-2024-09-24-llmc-readme]] §intro).
 
 ## Related
 - [[weight-initialization]]

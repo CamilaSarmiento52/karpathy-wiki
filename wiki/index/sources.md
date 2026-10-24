@@ -2,6 +2,7 @@
 
 One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. Maintained by ingest; do not edit by hand.
 
+- [[blog-2024-09-08-i-love-calculator|I love calculator]] — the pocket calculator, self-contained and owned outright, as an ideal against user-hostile technology
 - [[blog-2025-12-19-year-in-review-2025|2025 LLM Year in Review]] — six 2025 paradigm changes: RLVR, jagged intelligence, LLM apps, Claude Code, vibe coding, LLM GUI
 - [[github-2022-11-20-makemore-readme|makemore README]] — one hackable PyTorch file; bigram to Transformer models for line-per-example generation, CNN in progress
 - [[github-2023-01-08-mingpt-readme|minGPT README]] — his ~300-line GPT re-implementation, semi-archived in January 2023 in favour of nanoGPT; his notes on the GPT papers
@@ -19,13 +20,18 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[github-2024-06-12-llmc-gpt-2-774m|GPT-2 (774M) reproduced]] — six days, 150B FineWeb tokens on one 8×A100 node; beats GPT-2 and GPT-3 sooner than expected; decay to 10%, not 0; a watcher script
 - [[github-2024-06-17-build-nanogpt-readme|build-nanogpt README]] — from-scratch nanoGPT to GPT-2 (124M), one clean commit per step, about an hour and $10; base models only dream documents; errata
 - [[github-2024-07-11-llmc-gpt-2-1-6b|Let's reproduce GPT-2 (1.6B): one 8XH100 node, 24 hours, $672, in llm.c]] — the full 1558M GPT-2 in llm.c: flags, evals, memory guide, why the code is beautiful, PyTorch comparison, a 420B-token run that exploded
+- [[github-2024-08-01-llm101n-readme|LLM101n README]] — his planned storyteller-LLM course; 17-chapter syllabus; course not yet existing, repo archived until ready
+- [[github-2024-09-24-llmc-readme|llm.c README]] — pure C/CUDA pretraining with a PyTorch reference; ~7% faster than PyTorch Nightly; tests, quick starts, and his education-plus-speed policy
 - [[github-2025-11-12-nanogpt-readme|nanoGPT README]] — his earlier training/finetuning repo, marked deprecated in favour of nanochat
 - [[github-2026-07-03-nanochat-readme|nanochat README]] — minimal single-node harness that trains a GPT-2-grade chat model, set by one depth dial
 - [[talk-2023-05-19-stanford-cs25-transformers|Stanford CS25: Introduction to Transformers]] — guest lecture: AI converging on the Transformer, attention as message passing, nanoGPT walk-through, in-context learning
 - [[talk-2023-05-25-state-of-gpt|State of GPT]] — Microsoft Build 2023: the four-stage assistant recipe, then prompting, tools, finetuning and human-overseen use
 - [[talk-2024-03-26-sequoia-making-ai-accessible|Making AI accessible with Andrej Karpathy and Stephanie Zhan]] — Sequoia interview: LLM OS, open weights vs open source, scale, energy efficiency, Elon's style, AlphaGo step two, the ecosystem
 - [[talk-2024-07-03-berkeley-hackathon-keynote|Andrej Karpathy's Keynote at UC Berkeley AI Hackathon 2024]] — the LLM OS at a 1980s moment; small projects snowball, 10,000 hours, publish your projects (keynote only)
+- [[talk-2024-09-05-no-priors-ep-80|No Priors Ep. 80]] — podcast interview: self-driving's demo-to-product gap, Tesla vs Waymo, humanoids, data as the bottleneck, a small cognitive core, AI-assisted education
+- [[talk-2024-10-03-cuda-mode-keynote|CUDA Mode Keynote]] — the story of llm.c: dropping PyTorch, the layer-by-layer port to C and CUDA, contributors, beating PyTorch on GPT-2, LLMs as compilers for custom code
 - [[x-2024-02-21-technical-accessibility|on technical accessibility]] — micrograd stagnated until the video; build the thing, then build the ramp
+- [[x-2024-10-02-gpu-mode-talk|I gave a talk at GPU MODE workshop last week on llm.c]] — the talk's outline: dropping PyTorch, the layer port, CUDA work, the $672 1.6B run, LLMs writing custom binaries
 - [[x-2025-02-02-vibe-coding|There's a new kind of coding I call "vibe coding"]] — the post that coined vibe coding
 - [[x-2026-04-02-llm-knowledge-bases|LLM Knowledge Bases]] — his workflow for an LLM-compiled Obsidian wiki, the pattern this project follows
 - [[youtube-2022-08-16-micrograd|The spelled-out intro to neural networks and backpropagation: building micrograd]] — builds a scalar autograd engine from a blank notebook and trains a tiny MLP

@@ -29,3 +29,5 @@ He opens by saying the scale of today's AI scene is not normal compared with the
 - [[small-projects-can-snowball]]
 - [[success-comes-from-repeated-practice]]
 - [[build-and-publish-projects]]
+- [[llm101n]]
+- [[humanoid-robots-should-start-in-your-own-factory]]

@@ -2,7 +2,7 @@
 type: claim
 stated_on: 2024-05-28
 confidence: stated
-sources: ["[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-12-llmc-gpt-2-774m]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
+sources: ["[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-12-llmc-gpt-2-774m]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[talk-2024-10-03-cuda-mode-keynote]]"]
 topic: "[[llm-evaluation]]"
 ---
 # His GPT-2 reproductions beat OpenAI's GPT-2 checkpoints of the same size on HellaSwag
@@ -18,3 +18,5 @@ He qualifies the comparison: the run also beats OpenAI's checkpoint on FineWeb v
 **2024-06-12, 774M on 150B tokens (llm.c).** As with the previous run, he says, the 774M somewhat unexpectedly outperforms both GPT-2 and GPT-3 very quickly ([[github-2024-06-12-llmc-gpt-2-774m]] §intro). The text gives no score and does not name the eval; the comparison is in a chart image, so this source alone does not say HellaSwag ([[github-2024-06-12-llmc-gpt-2-774m]] §intro). He is not sure why: it could be the evaluations, the model could be much worse on multilingual, math or code, or possibly FineWeb's quality; he is very curious and plans a wider suite of evals before the next big run ([[github-2024-06-12-llmc-gpt-2-774m]] §intro, §intro (Reflections)).
 
 **2024-07-11, 1558M on 33.6B tokens (llm.c).** The 24-hour 1.6B run crosses OpenAI's GPT-2 on HellaSwag around step 25K, earlier than GPT-2, which is estimated to have trained on about 100B tokens; he says this possibly has to do with data quality, as in the 124M run ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Evals)). The comparison line for GPT-3 of the same size, nearly the same architecture trained on 300B tokens, about 10X his run, is in a chart; the text gives no final HellaSwag score for the 24-hour run ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Evals)). Longer runs he uploaded reach 57.7 at 100K steps and 62.7 at 330K steps ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (The final model)). His 420B-token run gets up to about 61% and, in his words, dramatically beats GPT-2 and GPT-3 of its size on HellaSwag before going unstable ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (400B token run)). The ~61% and 62.7 figures both appear in the post and are not reconciled here ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (The final model), §intro (400B token run)).
+
+In the CUDA MODE keynote (published 2024-10-03) he says the 1.6B run beats GPT-2 on HellaSwag, which he reads as the optimisation going well with no crazy numerical issues or loss spikes at that size; he gives no number there ([[talk-2024-10-03-cuda-mode-keynote]] @18:44).

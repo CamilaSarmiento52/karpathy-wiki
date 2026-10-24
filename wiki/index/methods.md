@@ -9,6 +9,7 @@ How he builds, debugs, explains and evaluates. Alphabetical. Maintained by inges
 - [[learning-rate-sweep|Learning-rate sweep]] — exponentially spaced rates over 1,000 steps, read the valley in the plot
 - [[llm-wiki-workflow|LLM wiki workflow]] — collect, compile, browse, ask, file back, lint
 - [[make-it-work-then-make-it-cheap|Make it work, then make it cheap]] — most capable model and heavy prompting first, then cheaper models and distillation
+- [[port-a-pytorch-model-to-c-and-cuda|Port a PyTorch model to C and CUDA]] — explicit PyTorch, hand-written backward, C on float arrays, one file, then CUDA kernels and library swaps
 - [[prototype-in-jupyter-then-repo|Prototype in Jupyter, then move to the repo]] — read the docs for shapes, prototype in a notebook, paste into VS Code, run experiments from the repo, have a harness
 - [[quick-experiment-loop|Quick experiment loop]] — change one thing, re-run a five-minute d12, read the same plots
 - [[reproduce-a-published-model|Reproduce a published model]] — GPT-2 with released weights, GPT-3's recipe, from scratch on open data, compare with the checkpoint, publish the bill, scale up

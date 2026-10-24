@@ -40,3 +40,4 @@ llama2.c trains the Llama 2 architecture in PyTorch and runs inference with one 
 - [[regularization]]
 - [[small-hackable-educational-code]]
 - [[verify-against-a-reference-implementation]]
+- [[a-cognitive-core-could-be-a-billion-parameters-or-less]]

@@ -2,7 +2,7 @@
 type: claim
 stated_on: 2024-04-22
 confidence: stated
-sources: ["[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
+sources: ["[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[github-2024-09-24-llmc-readme]]", "[[x-2024-10-02-gpu-mode-talk]]", "[[talk-2024-10-03-cuda-mode-keynote]]"]
 topic: "[[compute-efficiency]]"
 ---
 # In his measurements, llm.c trained GPT-2 faster than PyTorch
@@ -17,3 +17,9 @@ His fine print: an A100 40GB PCIe on Lambda; llm.c at about 167K tokens/s on a p
 In the GPT-2 lecture, published 2024-06-09, he runs both on one GPU on camera: about 223,000 tokens per second for llm.c against about 185,000 for the PyTorch version, with identical losses and norms, and says he does not have full confidence he squeezed all the juice out of the PyTorch implementation ([[youtube-2024-06-09-reproduce-gpt-2]] @3:58:46, @3:59:19).
 
 **At 1.6B (2024-07-11).** For a relatively comparable 1.6B run in PyTorch nightly, with the vocabulary hacked to 50304, he measures about 80GB of memory against llm.c's 57GB, a 29% improvement, and about 3386 against 2750 ms per iteration, llm.c stepping about 19% faster ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (PyTorch comparison)). Some of the gain has a known origin, such as llm.c's fused classifier that kicks off the backward pass, which he says torch.compile does not do as far as he knows ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (PyTorch comparison)). He does not have full confidence that the PyTorch script is maximally tuned and shows the comparison so others can check and help tune; his conclusion is scoped to GPT-2/3 training ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (PyTorch comparison)).
+
+**The README (2024-09-24).** The README says llm.c is currently a bit faster than PyTorch Nightly, by about 7%, without naming a model size, hardware or setting ([[github-2024-09-24-llmc-readme]] §intro). **Note:** the 2024-05-03 report's ~7% was GPT-2 (124M) on one A100 40GB; the README does not say whether it refers to that measurement, so the two are not merged ([[github-2024-05-03-llmc-state-of-the-union]] §intro (Single GPU training); [[github-2024-09-24-llmc-readme]] §intro).
+
+**The talk outline (2024-10-02).** His post repeats the 1.6B figures with his own hedge: the run achieved "(at the time)" 29% less memory and 19% faster training than PyTorch nightly, and much faster compile and run ([[x-2024-10-02-gpu-mode-talk]]).
+
+**The CUDA MODE keynote (published 2024-10-03).** He rounds the 1.6B comparison: at the time of that post llm.c used about 30% less memory and was about 20% faster in training throughput; he does not know whether that still holds, because the PyTorch team keeps optimising, and is not sure he fully optimised the PyTorch implementation, saying he did his personal best ([[talk-2024-10-03-cuda-mode-keynote]] @19:17). He scopes the win to GPT-2 training: to train anything else you are in a lot of trouble and have to change the code a lot ([[talk-2024-10-03-cuda-mode-keynote]] @19:17). It also compiles and runs much faster ([[talk-2024-10-03-cuda-mode-keynote]] @19:50). **Note:** the talk's 30% and 20% are rounded versions of the 2024-07-11 post's 29% and about 19%; each figure is cited to its own source ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (PyTorch comparison); [[talk-2024-10-03-cuda-mode-keynote]] @19:17).

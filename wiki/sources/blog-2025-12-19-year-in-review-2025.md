@@ -45,3 +45,4 @@ an LLM GUI (§6). He closes saying LLMs are both smarter and dumber than he expe
 - [[vibe-coding-is-for-throwaway-weekend-projects]]
 - [[llm-agents-over-time]]
 - [[llm-os-over-time]]
+- [[llms-may-write-custom-low-level-code-for-any-application]]

@@ -4,7 +4,7 @@ repo_url: https://github.com/karpathy/nn-zero-to-hero
 language: Python (Jupyter notebooks)
 status: active
 sources: ["[[github-2024-02-20-nn-zero-to-hero-readme]]"]
-context: ["[[github-2023-07-25-karpathy-profile-readme]]"]
+context: ["[[github-2023-07-25-karpathy-profile-readme]]", "[[github-2024-09-24-llmc-readme]]"]
 aliases: ["Neural Networks: Zero to Hero", Zero to Hero, nn-zero-to-hero]
 ---
 # nn-zero-to-hero
@@ -21,6 +21,8 @@ The repository of Neural Networks: Zero to Hero, which he describes as a course 
 - Lecture 7 builds a GPT following "Attention is All You Need" and OpenAI's GPT-2 and GPT-3, with GitHub Copilot helping write it; he recommends the earlier makemore videos first ([[github-2024-02-20-nn-zero-to-hero-readme]] §intro, Lecture 7).
 - Lecture 8 builds the GPT-series tokenizer from scratch ([[github-2024-02-20-nn-zero-to-hero-readme]] §intro, Lecture 8).
 - `status: active` rests on the list ending "Ongoing..." at this snapshot ([[github-2024-02-20-nn-zero-to-hero-readme]] §intro).
+
+- The llm.c README points developers to a `#llmc` channel on his Zero to Hero Discord for faster coordination ([[github-2024-09-24-llmc-readme]] §intro, §discussions).
 
 ## Related
 - [[micrograd]], [[makemore]] — the companion repos of lectures 1–6

@@ -15,7 +15,7 @@ steps:
   - Re-initialise and train, aiming to beat the checkpoint
   - Check that a faster implementation gives the same numbers
   - Reproduce the full-size model and say what is still unproven
-sources: ["[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
+sources: ["[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[github-2024-09-24-llmc-readme]]", "[[x-2024-10-02-gpu-mode-talk]]", "[[talk-2024-10-03-cuda-mode-keynote]]"]
 aliases: [Reproduce GPT-2, reproduce a paper, reproduction run]
 ---
 # Reproduce a published model
@@ -40,6 +40,12 @@ In the GPT-2 lecture he works the same method from the other end, starting at th
 13. **Check the fast version.** A faster or parallel implementation must give the same numbers: his llm.c run prints the same losses and norms as the PyTorch one ([[youtube-2024-06-09-reproduce-gpt-2]] @3:59:19).
 
 14. **The full-size model, with caveats.** On 2024-07-11 llm.c reaches the target named in step 2: the 1558M GPT-2, 33.6B tokens in 24 hours on one 8×H100 node for $672, with the launch command, every flag and the bill published, and caveats stated up front that it is not perfectly tuned or stabilised and its evals are not comprehensive ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro, §intro (Training), §intro (Args guide)).
+
+The llm.c README (2024-09-24) makes reproduction the way in: the best introduction to the repo is reproducing GPT-2 (124M) as stepped through in Discussion #481, and other GPT-2 and GPT-3 models can be reproduced in both llm.c and the parallel PyTorch implementation ([[github-2024-09-24-llmc-readme]] §quick start). Reproducing the big GPT-2 (1.6B) run is the first example it gives of llm.c being practically useful ([[github-2024-09-24-llmc-readme]] §repo).
+
+His 2024-10-02 talk outline gives the same 1.6B figures: GPT-2 (1.6B) on one 8×H100 node in 24 hours for $672 in llm.c ([[x-2024-10-02-gpu-mode-talk]]).
+
+In the CUDA MODE keynote he rounds it: llm.c reproduces the 1.6B GPT-2 on a single H100 node in about 24 hours for roughly $600, with no Python, PyTorch, conda or pip, and only an optional cuDNN as a dependency ([[talk-2024-10-03-cuda-mode-keynote]] @17:38, @18:10).
 
 ## Seen in
 - [[llm-c]]

@@ -55,3 +55,5 @@ vibe coding and MenuGen (@29:22, @31:38), and closes on building infrastructure 
 - [[llm-agents-over-time]]
 - [[llm-os-over-time]]
 - [[physical-automation-will-lag-digital-automation]]
+- [[self-driving]]
+- [[there-is-a-massive-gap-between-demo-and-product]]

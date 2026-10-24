@@ -54,3 +54,5 @@ He splits the talk into how GPT assistants are trained and how to use them well 
 - [[llms-currently-only-have-a-system-1]]
 - [[make-it-work-then-make-it-cheap]]
 - [[llm-agents-over-time]]
+- [[synthetic-data-is-the-future-if-you-keep-its-entropy]]
+- [[llms-may-write-custom-low-level-code-for-any-application]]

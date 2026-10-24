@@ -48,3 +48,4 @@ The course instructors introduce CS25 and an attention timeline for the first te
 - [[with-enough-data-encode-less-inductive-bias]]
 - [[he-does-not-love-autoregressive-sampling]]
 - [[the-transformer-is-probably-not-the-final-architecture]]
+- [[the-architecture-is-no-longer-the-bottleneck]]

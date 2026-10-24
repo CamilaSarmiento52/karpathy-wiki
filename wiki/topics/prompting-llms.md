@@ -4,6 +4,7 @@ aliases: [Prompting, in-context learning, few-shot prompting, chain of thought, 
 first_seen: 2023-05-19
 last_updated: 2023-05-25
 sources: ["[[talk-2023-05-19-stanford-cs25-transformers]]", "[[talk-2023-05-25-state-of-gpt]]"]
+context: ["[[talk-2024-10-03-cuda-mode-keynote]]"]
 related: ["[[software-3-0]]", "[[transformer-architecture]]", "[[gpt-is-a-general-purpose-computer-running-natural-language-programs]]"]
 ---
 # Prompting LLMs
@@ -19,6 +20,8 @@ On extending memory, he likes keeping the context fixed and teaching the model, 
 So he spreads reasoning over tokens with few-shot examples that show their work or by asking for step-by-step thinking ([[talk-2023-05-25-state-of-gpt]] @24:59, @25:32). Self-consistency samples several times and keeps the good ones or takes a majority vote, because a model that samples a bad token cannot recover and continues down the blind alley ([[talk-2023-05-25-state-of-gpt]] @25:32, @26:05). Bigger models such as GPT-4 often know when they failed, for instance a poem that rhymes when asked not to, but only check if prompted to ([[talk-2023-05-25-state-of-gpt]] @26:40, @27:12). He groups such techniques as recreating System 2, citing Tree of Thought, and describes ReAct's thought–action–observation rollouts with tool use ([[talk-2023-05-25-state-of-gpt]] @27:12, @27:46, @28:54, @29:28). Constrained prompting, his example being Microsoft's Guidance, clamps token probabilities to force a template such as JSON ([[talk-2023-05-25-state-of-gpt]] @34:27, @35:00).
 
 **His default recommendations.** He splits the work into achieving top performance first and optimising cost second ([[talk-2023-05-25-state-of-gpt]] @37:12). For the first: start with GPT-4, the most capable model by far; write very detailed prompts, as for a contractor who cannot email back, while catering to LLM psychology; retrieve and add relevant context; show with few-shot examples rather than only tell; offload hard tasks to tools and plugins; and think in chains, reflection and multiple samples rather than one prompt ([[talk-2023-05-25-state-of-gpt]] @37:12, @37:44, @38:17). Only after prompting is squeezed should you consider finetuning, with RLHF a fragile research zone; then cut cost with lower-capacity models or shorter prompts ([[talk-2023-05-25-state-of-gpt]] @38:17, @38:51). **Note:** the full order, with the Sequoia interview's distillation step, is the method [[make-it-work-then-make-it-cheap]] ([[talk-2023-05-25-state-of-gpt]] @37:12).
+
+**Example code in context (CUDA MODE keynote, published 2024-10-03).** He expects few-shot learning to help an LLM write low-level code: prompted to write GPT-2 in C from scratch you probably would not get llm.c, but with llm.c in the context you are a lot more likely to ([[talk-2024-10-03-cuda-mode-keynote]] @22:37).
 
 ## Claims
 - [[gpt-is-a-general-purpose-computer-running-natural-language-programs]] — prompts as the programs GPT runs

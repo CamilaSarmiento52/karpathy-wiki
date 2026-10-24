@@ -2,8 +2,8 @@
 type: topic
 aliases: [PyTorch, tensors, view, nn.Module, torch.cat, Sequential, pytorchifying, torch.nn-style modules, torch.compile, autocast, torchrun, state_dict]
 first_seen: 2022-08-16
-last_updated: 2024-07-11
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[youtube-2022-11-21-makemore-5-wavenet]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
+last_updated: 2024-10-03
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[youtube-2022-11-21-makemore-5-wavenet]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[talk-2024-10-03-cuda-mode-keynote]]"]
 related: ["[[micrograd]]", "[[verify-gradients-against-pytorch]]", "[[backpropagation]]", "[[batch-normalization]]", "[[weight-initialization]]"]
 ---
 # PyTorch
@@ -33,6 +33,8 @@ He writes the learning-rate schedule himself rather than using PyTorch's schedul
 **Errata (build-nanogpt README, 2024-06-17).** `torch.autocast`'s `device_type` wants only the type, `cuda` rather than `cuda:3`, and errors in some PyTorch versions if given a device; he is not 100% sure that mapping `mps` to CPU is the intended way ([[github-2024-06-17-build-nanogpt-readme]] §Errata). Earlier PyTorch versions may struggle converting uint16 to long, so the loader converts via numpy int32 first ([[github-2024-06-17-build-nanogpt-readme]] §Errata). Confusingly, he writes, `model.require_backward_grad_sync` is used by both the forward and the backward pass ([[github-2024-06-17-build-nanogpt-readme]] §Errata).
 
 In the 1.6B post the PyTorch `train_gpt2.py` is described as a testing reference, not an actual implementation, so its training loop differs in places; he also hacked its default vocabulary from 50257 to 50304 for efficiency ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (PyTorch comparison)).
+
+**What dropping it costs (CUDA MODE keynote, published 2024-10-03).** He lists what PyTorch gives you: an n-dimensional array, without which you do pointer arithmetic to ravel and unravel indices; autograd, without which you write every layer's forward and backward; device handling of host and GPU memory; dtype conversions; torch.compile, without which you do kernel fusions and space and time optimisation by hand; and distributed, without which you spin up processes and communicate with NCCL yourself ([[talk-2024-10-03-cuda-mode-keynote]] @03:55, @04:27, @05:00). He calls PyTorch really nice and says that without it "we're kind of naked in the world" ([[talk-2024-10-03-cuda-mode-keynote]] @05:00). Stacking device, compile and DDP on a model left him unsure in what order to apply them and what they do, and he says he does not fully understand how they work ([[talk-2024-10-03-cuda-mode-keynote]] @01:45, @02:19). torch.compile takes about a minute, which he personally does not like working with ([[talk-2024-10-03-cuda-mode-keynote]] @19:50).
 
 ## Claims
 - [[pytorch-documentation-is-unreliable]]

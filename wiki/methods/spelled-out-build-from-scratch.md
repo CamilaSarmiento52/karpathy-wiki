@@ -19,7 +19,7 @@ steps:
   - Write your own class rather than read the library's
   - Debug on a toy before fixing the real code
   - Keep one clean commit per step and narrate each
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]"]
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]", "[[github-2024-08-01-llm101n-readme]]"]
 aliases: [spelled-out lecture, spell it out step by step, explicit baseline then neural net, build from a blank notebook, build up from a bigram baseline, incremental model build-up]
 ---
 # Spelled-out build from scratch
@@ -59,6 +59,8 @@ How he teaches: he starts with a blank Jupyter notebook and builds the whole thi
 
 26. **One clean commit per step.** The build-nanogpt README says they start from an empty file and work up to GPT-2 (124M), with the git commits kept step by step and clean so the history can be walked, and the video introducing each commit ([[github-2024-06-17-build-nanogpt-readme]] §intro). **Note:** this makes explicit the git log released after the GPT lecture (step 20) ([[youtube-2023-01-17-gpt-from-scratch]] @1:54:50; [[github-2024-06-17-build-nanogpt-readme]] §intro).
 
+The same approach appears as a plan in the [[llm101n]] README: build everything end to end from basics, from scratch in Python, C and CUDA, with minimal computer science prerequisites; the course does not yet exist, so this is stated intent, not a performed build ([[github-2024-08-01-llm101n-readme]] §intro).
+
 ## Seen in
 - [[youtube-2023-01-17-gpt-from-scratch]]
 - [[ng-video-lecture]], [[nanogpt]]
@@ -71,3 +73,4 @@ How he teaches: he starts with a blank Jupyter notebook and builds the whole thi
 - [[minbpe]], [[youtube-2024-02-20-gpt-tokenizer]]
 - [[youtube-2024-06-09-reproduce-gpt-2]]
 - [[build-nanogpt]]
+- [[llm101n]] — planned, not yet built

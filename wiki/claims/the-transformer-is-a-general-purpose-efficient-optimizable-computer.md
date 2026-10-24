@@ -3,7 +3,8 @@ type: claim
 stated_on: 2023-05-19
 confidence: stated
 sources: ["[[talk-2023-05-19-stanford-cs25-transformers]]"]
-context: ["[[talk-2024-03-26-sequoia-making-ai-accessible]]"]
+supports: ["[[the-architecture-is-no-longer-the-bottleneck]]"]
+context: ["[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]"]
 topic: "[[transformer-architecture]]"
 ---
 # He would have called the Transformer a general-purpose, efficient, optimizable computer
@@ -19,3 +20,4 @@ Earlier in the lecture he says the architecture has proven remarkably resilient:
 ## Related claims
 - **Note:** compatible with [[gpt-is-not-a-complicated-model]] (simple to write down) and [[ai-has-converged-on-one-architecture]] (why everyone copies it); neither link is set as support ([[talk-2023-05-19-stanford-cs25-transformers]] @59:18).
 - **Note:** in the Sequoia interview (published 2024-03-26) he again calls it remarkably resilient and designed for the GPU, but says it is probably not the final neural network; see [[the-transformer-is-probably-not-the-final-architecture]] ([[talk-2024-03-26-sequoia-making-ai-accessible]] @33:51, @35:30). Both can hold; no relation is set ([[talk-2023-05-19-stanford-cs25-transformers]] @21:39).
+- Supported by [[the-architecture-is-no-longer-the-bottleneck]]: in the No Priors interview (published 2024-09-05) he again calls the Transformer a general-purpose training computer, a differentiable computer, and says it has barely changed apart from RoPE ([[talk-2024-09-05-no-priors-ep-80]] @15:24, @17:01); here it is a general-purpose computer and remarkably resilient ([[talk-2023-05-19-stanford-cs25-transformers]] @21:39, @59:18).

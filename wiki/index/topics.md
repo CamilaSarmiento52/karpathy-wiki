@@ -4,6 +4,7 @@ Ideas he explains, each defined in his framing. Alphabetical. Maintained by inge
 
 - [[activation-functions|Activation functions]] — tanh, sigmoid, ReLU and their local derivatives
 - [[ai-ecosystem|AI ecosystem]] — a coral reef of startups over a few megacorps; open-weights, open-source and proprietary models
+- [[ai-for-education|AI for education]] — LLM101n and his plans for AI-assisted teaching
 - [[backpropagation|Backpropagation]] — recursive chain rule backwards through an expression graph
 - [[batch-normalization|Batch normalization]] — standardise pre-activations over the batch, learned gain and bias, running statistics; it couples examples and its state causes bugs
 - [[bigram-language-model|Bigram language model]] — one character of context; a 27×27 count table, a one-layer net, or the GPT lecture's embedding-table baseline
@@ -34,11 +35,13 @@ Ideas he explains, each defined in his framing. Alphabetical. Maintained by inge
 - [[sampling-from-language-models|Sampling from language models]] — feed each sample back, crop at block size; he does not love committing token by token
 - [[scaling-laws|Scaling laws]] — next-word accuracy as a smooth function of parameters and data
 - [[self-attention|Self-attention]] — lower-triangular weighted aggregation made data-dependent by queries, keys and values; scaling, causal mask, multiple heads
+- [[self-driving|Self-driving]] — Waymo's decade from demo to product, Tesla's vision-only bet, the net eating the C++ stack, humanoid robots
 - [[softmax|Softmax]] — logits as log counts; exponentiate and normalise; one-hot inputs
 - [[software-3-0|Software 3.0]] — prompts as programs, after code (1.0) and weights (2.0)
 - [[system-1-and-system-2-thinking|System 1 and System 2 thinking]] — token sampling as System 1; prompting and research aim at a System 2
 - [[tokenization|Tokenization]] — text to integers over a vocabulary; characters versus sub-word BPE trades codebook size against sequence length
 - [[transformer-architecture|Transformer architecture]] — communication then computation; residual pathway, pre-norm LayerNorm, decoder-only; his notes on the GPT papers
+- [[user-hostile-technology|User-hostile technology]] — accounts, tracking and dependency bloat, against the self-contained calculator
 - [[vibe-coding|Vibe coding]] — building by prompting and not reading the code
 - [[wavenet-hierarchical-model|WaveNet-style hierarchical model]] — fuse two consecutive elements per level instead of one squashing layer; convolutions only make it efficient
 - [[weight-initialization|Weight initialization]] — expected loss at init, confidently wrong logits, divide by the square root of fan-in, Kaiming gain; the GPT lecture code skipped it

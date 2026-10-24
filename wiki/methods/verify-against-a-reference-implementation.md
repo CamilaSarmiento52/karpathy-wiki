@@ -12,7 +12,9 @@ steps:
   - Check that more GPUs at the same total batch give the same run
   - Test both implementations against known-good output
   - Publish the comparable reference run with its known differences
-sources: ["[[youtube-2024-02-20-gpt-tokenizer]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
+  - Unit-test logits, loss and training steps against the reference
+  - Check every layer and every kernel version against the reference
+sources: ["[[youtube-2024-02-20-gpt-tokenizer]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[github-2024-09-24-llmc-readme]]", "[[talk-2024-10-03-cuda-mode-keynote]]"]
 aliases: [parity check, reproduce the reference output, match tiktoken, benchmark against PyTorch, cross-check against a reference]
 ---
 # Verify against a reference implementation
@@ -37,6 +39,10 @@ When he reimplements something that already exists, he treats matching the exist
 
 11. **Publish the comparable run and its differences.** In the 1.6B post he gives the full `torchrun` command for a relatively comparable PyTorch run, says the PyTorch script is a testing reference rather than an implementation so its loop differs in places (the dataloader does not permute shards, for example), and notes the vocabulary hack he applied to it ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (PyTorch comparison)). He then reports memory and step time, names a known cause of the gap, and says the PyTorch side may not be maximally tuned, inviting others to check ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (PyTorch comparison)).
 
+12. **Unit-test against it.** In the llm.c README, `test_gpt2` loads a debug state written by the PyTorch reference, runs a forward pass, compares logits and loss with PyTorch, then runs 10 training iterations with Adam and checks the losses match; the GPU tests cover both the fp32 path and the mixed-precision cuDNN path ([[github-2024-09-24-llmc-readme]] §test). For speed, library kernels such as cuBLAS serve as an expert upper bound and a unit of measurement, so hand-written kernels can be reported as, say, 80% of cuBLAS speed ([[github-2024-09-24-llmc-readme]] §repo).
+
+13. **Every layer, every kernel.** In the keynote's account of the llm.c port, PyTorch becomes only the correctness reference: each layer's explicit forward and hand-derived backward are checked against PyTorch, the strung-together C program is verified identical to the PyTorch code, and every CUDA kernel version matches the specification exactly and gives the same numbers ([[talk-2024-10-03-cuda-mode-keynote]] @05:00, @05:32, @06:05, @08:48, @10:27). Because a PyTorch implementation is kept in parallel, the equivalent training loop can be run side by side for comparison ([[talk-2024-10-03-cuda-mode-keynote]] @18:44, @19:17).
+
 ## Seen in
 - [[minbpe]]
 - [[github-2024-04-22-minbpe-readme]]
@@ -46,3 +52,4 @@ When he reimplements something that already exists, he treats matching the exist
 - [[reproduce-a-published-model]] — what the parity checks prepared for
 - [[llama2c]] — C against Python
 - [[youtube-2024-06-09-reproduce-gpt-2]]
+- [[port-a-pytorch-model-to-c-and-cuda]]

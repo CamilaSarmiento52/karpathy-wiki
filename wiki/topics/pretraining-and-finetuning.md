@@ -2,8 +2,9 @@
 type: topic
 aliases: [Pretraining, finetuning, RLHF, ChatGPT training stages, pretraining vs finetuning, alignment stage, fine-tuning, four-stage training recipe, supervised finetuning, SFT, reward modeling, reinforcement learning from human feedback, base model, assistant model, LoRA, lossy compression of the internet, zip file of the internet, next-word prediction, pretraining data, labeling instructions, FineWeb, FineWeb-Edu, WebText, OpenWebText, Common Crawl, data mixtures]
 first_seen: 2023-01-17
-last_updated: 2024-07-11
-sources: ["[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-25-state-of-gpt]]", "[[youtube-2023-11-23-intro-to-llms]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
+last_updated: 2024-09-05
+sources: ["[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-25-state-of-gpt]]", "[[youtube-2023-11-23-intro-to-llms]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[talk-2024-09-05-no-priors-ep-80]]"]
+context: ["[[github-2024-08-01-llm101n-readme]]"]
 related: ["[[rlvr]]", "[[nanogpt]]", "[[transformer-architecture]]", "[[tokenization]]"]
 ---
 # Pretraining and finetuning
@@ -50,12 +51,17 @@ The build-nanogpt README says the same on 2024-06-17: the repo covers only pretr
 
 In the 2024-07-11 llm.c post the 1.6B model is again pretraining only, so you cannot chat with it, and SFT and RLHF finetuning are on the roadmap ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (FAQ), §intro (Coming up)). Finetuning OpenAI's GPT-2 for 1,000 steps at LR 1e-4 quickly adapts it to the new data's statistics ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Evals)).
 
+**In the LLM101n syllabus (2024-08-01).** The planned course splits finetuning into two chapters, SFT (PEFT, LoRA, chat) and RL (RLHF, PPO, DPO); these are chapter headings only ([[github-2024-08-01-llm101n-readme]] §intro (Syllabus)).
+
+**Data as the bottleneck (No Priors, 2024-09-05).** Internet data, he says, is not the data you want for a Transformer but a nearest neighbour that gets you surprisingly far ([[talk-2024-09-05-no-priors-ep-80]] @17:33). What you want is the inner thought monologue of a brain solving problems; with a billion such trajectories, roughly speaking, AGI would be here ([[talk-2024-09-05-no-priors-ep-80]] @17:33). Internet data happens to contain enough reasoning traces and knowledge, and the Transformer makes it work ([[talk-2024-09-05-no-priors-ep-80]] @17:33, @18:05). A lot of activity is refactoring the dataset into inner-monologue formats, with a lot of synthetic data generation, which must keep its entropy ([[talk-2024-09-05-no-priors-ep-80]] @18:05, @19:10). **Note:** the loss of diversity he describes in synthetic data is akin to the RLHF entropy loss above; a connection, not a claim relation ([[talk-2023-05-25-state-of-gpt]] @18:21; [[talk-2024-09-05-no-priors-ep-80]] @18:38).
+
 ## Claims
 - [[pretraining-gives-a-document-completer]]
 - [[an-llm-is-just-two-files]] — parameters plus a small program
 - [[pretraining-is-lossy-compression-of-the-internet]] — about 100x, lossy, a Gestalt
 - [[llms-are-mostly-inscrutable-empirical-artifacts]] — known architecture, unknown parameters
 - [[rlhf-works-better-because-comparing-is-easier-than-generating]] — why the comparison stage helps, in his offered reason
+- [[synthetic-data-is-the-future-if-you-keep-its-entropy]]
 
 ## Related
 - [[rlvr]] — **Note:** the lecture describes the 2023 recipe of pretraining, supervised finetuning and reward-model/PPO finetuning (the recipe now called RLHF; he does not use the term in that lecture, but names it in State of GPT (published 2023-05-25), [[talk-2023-05-25-state-of-gpt]] @12:48, @16:43, and again in Intro to LLMs, [[youtube-2023-11-23-intro-to-llms]] @22:09); his 2025 review names RLVR as a different, later training stage. The pages are linked here as related only, not as evidence for each other.
@@ -64,3 +70,4 @@ In the 2024-07-11 llm.c post the 1.6B model is again pretraining only, so you ca
 - [[tokenization]] — why 1 million characters is about 300,000 tokens
 - [[scaling-laws]] — why bigger models on more text keep improving
 - [[sampling-from-language-models]] — how a pretrained model dreams documents
+- [[llm101n]] — the planned course's finetuning chapters

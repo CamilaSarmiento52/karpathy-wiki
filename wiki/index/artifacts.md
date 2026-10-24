@@ -6,6 +6,7 @@ His repositories and what each demonstrates. Alphabetical. Maintained by ingest;
 - [[calorie|calorie]] — his calorie-deficit tracking web app in one index.html
 - [[llama2c|llama2.c]] — Llama 2 architecture trained in PyTorch and run from one dependency-free C file; tiny TinyStories models and int8 quantization
 - [[llm-c|llm.c]] — GPT-2 training in C/CUDA; Discussions host his progress reports
+- [[llm101n|LLM101n]] — his planned course on building a storyteller LLM end to end; archived until Eureka Labs has it ready
 - [[makemore|makemore]] — character-level name generator built across the makemore lectures, from a bigram table to a 76k-parameter WaveNet-like model; one hackable file
 - [[micrograd|micrograd]] — ~150-line scalar autograd engine and neural-net library
 - [[minbpe|minbpe]] — his minimal, clean byte-level BPE tokenizer in Python, with training code tiktoken lacks and an exercise progression

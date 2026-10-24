@@ -14,7 +14,8 @@ steps:
   - Put simplicity ahead of efficiency and leave the rest to forks
   - Prefer a few lines you understand over a library abstraction
   - Keep it minimal, fast to compile, constant in memory and deterministic
-sources: ["[[github-2022-11-20-makemore-readme]]", "[[github-2023-01-08-mingpt-readme]]", "[[github-2023-01-31-ng-video-lecture-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
+  - Reject small speedups that cost a lot of complexity
+sources: ["[[github-2022-11-20-makemore-readme]]", "[[github-2023-01-08-mingpt-readme]]", "[[github-2023-01-31-ng-video-lecture-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[github-2024-09-24-llmc-readme]]", "[[x-2024-10-02-gpu-mode-talk]]", "[[talk-2024-10-03-cuda-mode-keynote]]"]
 aliases: [One hackable file, minimal educational re-implementation, hackable code, educational code]
 ---
 # Small, hackable, educational code
@@ -43,6 +44,12 @@ The build-nanogpt README keeps its commits clean for walking through and, for pr
 
 13. **Minimal, and still fast.** In the 1.6B post he lists why he finds llm.c beautiful: basic CUDA dependencies only; direct, minimal, readable C/CUDA in about 5,000 lines, mostly C rather than C++ to keep it simple; compiles and runs in seconds, so you step more and wait less; allocates all GPU memory once for a constant footprint; bitwise deterministic; and just below ~50% MFU ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Code)). `train_gpt2.cu` holds the model and training loop, about 2,000 lines by his count (1353 by `cloc`), importing 23 helper files of 3170 lines from `llmc` ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Code)). Its stated goal pairs a simple, minimal, clean training stack in direct C/CUDA with companion educational materials ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Coming up)).
 
+In the 2024-10-02 talk outline he sums up the C stage the same way: one file of C with no dependencies that compiles and runs about instantly, all memory pre-planned and allocated once, fully deterministic, portable enough to run "on a potato or a von Neumann probe" ([[x-2024-10-02-gpu-mode-talk]]).
+
+14. **Reject complexity that does not pay.** The llm.c README sets the trade: he wants llm.c to be a place for education and also very fast, but the mainline root folder must stay simple and readable, so a PR that improves performance by 2% at the cost of 500 lines of complex C and maybe an exotic dependency may be rejected ([[github-2024-09-24-llmc-readme]] §repo). His counter-example is making cuBLAS the default for matmuls, a no-brainer because it is much faster, one line of interpretable code and a very common dependency; hand-written competitors live in `dev/cuda` ([[github-2024-09-24-llmc-readme]] §repo). He is much more sensitive to complexity in the root folder, while `dev/` is a scratch space where code may be locally complex; the frozen fp32 and CPU files are kept because they are simpler, and only C and CUDA live in the repo ([[github-2024-09-24-llmc-readme]] §repo, §quick start (1 GPU, fp32 only), §intro).
+
+In the CUDA MODE keynote he gives examples of the trade: CUDA streams to overlap computation produced weird race conditions, so he deleted all of them and made everything single-threaded, leaving llm.c less overlapped than it could be because it was too much complexity for not enough gain; a ZeRO-2 pull request was not merged, as far as he believes, because it gets messy ([[talk-2024-10-03-cuda-mode-keynote]] @15:25, @15:58, @17:05). He has rejected a lot of pull requests because the code starts to get crazy, which he thinks decreases how many people can be on board with the project ([[talk-2024-10-03-cuda-mode-keynote]] @17:05, @17:38).
+
 ## Seen in
 - [[github-2023-01-31-ng-video-lecture-readme]]
 - [[ng-video-lecture]]
@@ -57,3 +64,4 @@ The build-nanogpt README keeps its commits clean for walking through and, for pr
 - [[build-nanogpt]]
 - [[build-and-publish-projects]] — the publishing habit around it
 - [[neural-net-training-should-not-be-complicated]]
+- [[github-2024-09-24-llmc-readme]]
