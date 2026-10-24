@@ -318,3 +318,33 @@ Intervals between sources computed from published dates (CLAUDE.md §2, rule add
 - created: [[blog-2025-03-24-best-sleep-tracker]], [[oura-and-whoop-were-the-best-sleep-trackers-he-tested]]
 - updated: none
 - notes: Per the map, his-sleep-score-tracks-his-work-quality is a section of the claim and compare-measuring-devices-head-to-head is its numbered comparison steps; no method page. The claim has no `topic` (no sleep or health-tracking topic exists, and the map assigns none). His statement that 8Sleep agrees least on heart rate is reported next to his printed matrix, in which 8Sleep correlates 0.947 with AutoSleep and Oura; not reconciled. "About two months" is written as his words, not a computed date. Bryan Johnson's habits are attributed to Johnson; only the endorsement that sleep matters is his. No Note added on calorie (left for D3, which handles calorie).
+
+## 2026-10-24 ingest [[blog-2025-04-07-power-to-the-people]]
+- created: [[blog-2025-04-07-power-to-the-people]], [[technology-diffusion]], [[llms-reverse-the-usual-diffusion-of-technology]]
+- updated: [[llms-as-operating-systems]], [[jagged-intelligence]], [[vibe-coding]], [[youtube-2025-06-19-software-is-changing]]
+- notes: money-cannot-buy-better-chatgpt is a section of technology-diffusion (map), not a claim. The YC talk is a `sources` entry on the topic and the claim (it states the flip directly); its "I wrote about" is a **Note:** only, since it does not name the post; both dates given, no order asserted. No `supports` to english-is-the-new-programming-language: a **Note:** instead, since the only shared ground is one example sentence ("vibe code apps") and the claims are about different things. Not put on vibe-coding-over-time (the map's D3 entries are 2025-04-27 and 2025-05-01); the two vibe-coding lines are on the topic page. No Sequoia Note on ai-ecosystem (only a Related link from the topic). Gibson's line is not quoted; the 400 million users figure is attributed to the post. The essay is cited on jagged-intelligence with the caveat that it does not say "jagged". llms-as-operating-systems cites only the talk; the link to the new topic sits in that sentence.
+
+## 2026-10-24 ingest [[blog-2025-04-27-vibe-coding-menugen]]
+- created: [[blog-2025-04-27-vibe-coding-menugen]], [[deploying-a-vibe-coded-app-is-harder-than-writing-it]], [[vibe-coding-full-web-apps-is-not-yet-for-anything-important]]
+- updated: [[vibe-coding]], [[vibe-coding-over-time]], [[vibe-coding-is-for-throwaway-weekend-projects]], [[building-for-agents]], [[llm-gui]], [[youtube-2025-06-19-software-is-changing]], [[x-2025-02-02-vibe-coding]], [[blog-2025-12-19-year-in-review-2025]]
+- notes: Money is not reconciled: the post's 10% markup (§intro ¶3) and the YC talk's negative-revenue app (@31:38, @32:13) each sit on vibe-coding with their own source and a Note saying so. "Took another week" is cited to the talk only; the blog gives no total time. deploying… `extends` vibe-coding-is-for-throwaway-weekend-projects (set on both, both on vibe-coding-over-time); vibe-coding-full-web-apps… `supports` it (both sides). The February post is `context` on both new claims and the December review `context` on the full-web-apps claim (cited in Related claims Notes); the MenuGen post is `context` on the weekend claim. No relation to vibe-coding-will-terraform-software: a Note says April is "today" and December says "will". The 2025-06-19 timeline entry was reworded from "builds MenuGen" to "retells MenuGen" and now links the deploying claim; its content is unchanged. "IKEA future" is paraphrased as furniture. The companion X post link is added when the X post (x-2025-05-01-vibe-coding-hackathon) is ingested. The llm-gui paragraph is written as his questions. No Note on ai-assisted-coding-loop.
+
+## 2026-10-24 ingest [[x-2025-05-01-vibe-coding-hackathon]]
+- created: [[x-2025-05-01-vibe-coding-hackathon]]
+- updated: [[deploying-a-vibe-coded-app-is-harder-than-writing-it]], [[vibe-coding]], [[vibe-coding-over-time]], [[blog-2025-04-27-vibe-coding-menugen]]
+- notes: The post pastes the blog's TLDR word for word; it is cited as a second location of the same text, never as independent evidence, and no quote is taken from it. Its own model wording ("Cursor+Claude/o3") is kept apart from the blog's ("Cursor + Claude 3.7"). The timeline gets its own 2025-05-01 bullet (dates only), as the caller asked, rather than folding into the 2025-04-27 entry. The two source pages link each other. The hackathon is unnamed in both sources.
+
+## 2026-10-24 ingest [[x-2025-07-08-ideal-grocery-store]]
+- created: [[x-2025-07-08-ideal-grocery-store]]
+- updated: [[calorie]]
+- notes: Source page only (map: the-ideal-grocery-store… → none). Cited once as `context` on [[calorie]] in a labelled **Note:** paragraph after What it demonstrates, so the source page is not an orphan; the Note says the two are about different things (food quality vs quantity). No link to user-hostile-technology (the digest's parallel is a reading, not his). "NOVA Group 1" is his term and is not explained. The image the post refers to is not in the raw.
+
+## 2026-10-24 ingest [[github-2025-08-08-minbpe-gpt-4-tokenizer-discussion]]
+- created: [[github-2025-08-08-minbpe-gpt-4-tokenizer-discussion]]
+- updated: [[minbpe]], [[tokenization]]
+- notes: No claim (he states uncertainty, not a position) and no link to he-prefers-tiktoken-byte-level-bpe-to-sentencepiece (he does not comment on byte fallback beyond "needed!"). The regex and code are paraphrased, not copied. The 1B characters is the example's subset cap, not the dataset. The missing `Regex` import in the snippet is not mentioned on wiki pages. Not linked to nanochat (the post does not mention it). The minbpe sentence says only that the post sits on its Discussions.
+
+## 2026-10-24 ingest [[github-2025-08-21-rendergit-readme]]
+- created: [[github-2025-08-21-rendergit-readme]], [[rendergit]]
+- updated: [[building-for-agents]], [[vibe-coding]]
+- notes: rendergit `status: active` (he keeps using it; nothing deprecates it) with the maintenance disclaimer quoted; `language: Python` inferred from the pip/uv install and Pygments, said so on the page. On building-for-agents the README is a `sources` entry with the caveat that it speaks of LLMs, Claude and ChatGPT, not agents, and makes no argument. No vibe-coding-over-time entry for 2025-08-21 (the D3 entries are 2025-04-27 and 2025-05-01 only); the README is a sentence on vibe-coding instead. "A few months ago" is quoted as his phrase, not turned into a date. CXML is not expanded. No llm-gui link (the two-views parallel is a reading, not his). nanoGPT appears only as the usage example: rendergit links [[nanogpt]] under Related; the nanogpt page is not changed.

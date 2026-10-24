@@ -3,7 +3,7 @@ type: topic
 aliases: [LLM GUI, visual output, Claude artifacts, diagrams]
 first_seen: 2025-02-27
 last_updated: 2026-04-02
-sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[youtube-2025-02-27-how-i-use-llms]]"]
+sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[youtube-2025-02-27-how-i-use-llms]]", "[[blog-2025-04-27-vibe-coding-menugen]]"]
 related: ["[[partial-autonomy-apps]]", "[[llms-as-operating-systems]]"]
 ---
 # LLM GUI
@@ -17,6 +17,8 @@ In December 2025 he says people dislike reading text and want images, slides, wh
 In his knowledge-base workflow he has the LLM render markdown files, Marp slides and matplotlib images instead of terminal text ([[x-2026-04-02-llm-knowledge-bases]] §Output).
 
 **Claude artifacts (How I use LLMs, 2025-02-27).** Claude artifacts write a small React app, such as a flashcard app, that runs in the browser inside the chat; he calls this a different paradigm from engineers shipping one app for everyone ([[youtube-2025-02-27-how-i-use-llms]] @1:09:40, @1:10:15, @1:10:48, @1:11:20). He is not a daily artifacts user; the use he finds most useful is conceptual diagrams of book chapters, since as a visual thinker he likes seeing an argument laid out as a tree ([[youtube-2025-02-27-how-i-use-llms]] @1:11:20, @1:11:53, @1:12:26, @1:13:33).
+
+**An app as a prompt (MenuGen post, 2025-04-27).** He says MenuGen is really one GPT call to OCR the menu and a loop that generates an image per item, almost a simple custom GPT ([[blog-2025-04-27-vibe-coding-menugen]] §intro ¶Going forward). He asks whether it could be just a prompt, whether the LLM could respond not with text but with a simple webpage presenting the results, along the lines of Artifacts, and whether many other apps could look like that; these are questions, not predictions ([[blog-2025-04-27-vibe-coding-menugen]] §intro ¶Going forward).
 
 ## Related
 - [[partial-autonomy-apps]]

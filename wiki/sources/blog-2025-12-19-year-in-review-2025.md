@@ -29,6 +29,7 @@ an LLM GUI (§6). He closes saying LLMs are both smarter and dumber than he expe
 - Programs built "simply via English" → [[english-is-the-new-programming-language]], [[software-3-0]]
 
 ## Fed pages
+- [[vibe-coding-full-web-apps-is-not-yet-for-anything-important]]
 - [[rlvr]]
 - [[jagged-intelligence]]
 - [[partial-autonomy-apps]]

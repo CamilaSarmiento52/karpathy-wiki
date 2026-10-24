@@ -40,6 +40,7 @@ Ideas he explains, each defined in his framing. Alphabetical. Maintained by inge
 - [[softmax|Softmax]] — logits as log counts; exponentiate and normalise; one-hot inputs
 - [[software-3-0|Software 3.0]] — prompts as programs, after code (1.0) and weights (2.0)
 - [[system-1-and-system-2-thinking|System 1 and System 2 thinking]] — token sampling as System 1; prompting and research aim at a System 2
+- [[technology-diffusion|Technology diffusion]] — LLMs reverse the usual government-to-individual path; money cannot (yet) buy better ChatGPT
 - [[tokenization|Tokenization]] — text to integers over a vocabulary; characters versus sub-word BPE trades codebook size against sequence length
 - [[transformer-architecture|Transformer architecture]] — communication then computation; residual pathway, pre-norm LayerNorm, decoder-only; his notes on the GPT papers
 - [[user-hostile-technology|User-hostile technology]] — accounts, tracking and dependency bloat, against the self-contained calculator

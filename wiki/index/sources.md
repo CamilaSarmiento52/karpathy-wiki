@@ -6,6 +6,8 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[blog-2025-03-17-digital-hygiene|Digital hygiene]] — the privacy and security practices he follows: password manager, hardware keys, per-merchant cards, DNS blocking, network monitor
 - [[blog-2025-03-19-append-and-review-note|The append-and-review note]] — one plain text note, appended at the top, reviewed by scrolling and rescuing
 - [[blog-2025-03-24-best-sleep-tracker|Finding the Best Sleep Tracker]] — four sleep trackers worn for two months: Oura and Whoop best, AutoSleep near random; sleep tracks his work quality
+- [[blog-2025-04-07-power-to-the-people|Power to the people: How LLMs flip the script on technology diffusion]] — LLMs reach individuals before corporations and governments; why, and whether it lasts
+- [[blog-2025-04-27-vibe-coding-menugen|Vibe coding MenuGen]] — his first end-to-end vibe coded web app: a quick local demo, then a slog of keys, deploys, auth and payments
 - [[blog-2025-12-19-year-in-review-2025|2025 LLM Year in Review]] — six 2025 paradigm changes: RLVR, jagged intelligence, LLM apps, Claude Code, vibe coding, LLM GUI
 - [[github-2022-11-20-makemore-readme|makemore README]] — one hackable PyTorch file; bigram to Transformer models for line-per-example generation, CNN in progress
 - [[github-2023-01-08-mingpt-readme|minGPT README]] — his ~300-line GPT re-implementation, semi-archived in January 2023 in favour of nanoGPT; his notes on the GPT papers
@@ -25,6 +27,8 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[github-2024-07-11-llmc-gpt-2-1-6b|Let's reproduce GPT-2 (1.6B): one 8XH100 node, 24 hours, $672, in llm.c]] — the full 1558M GPT-2 in llm.c: flags, evals, memory guide, why the code is beautiful, PyTorch comparison, a 420B-token run that exploded
 - [[github-2024-08-01-llm101n-readme|LLM101n README]] — his planned storyteller-LLM course; 17-chapter syllabus; course not yet existing, repo archived until ready
 - [[github-2024-09-24-llmc-readme|llm.c README]] — pure C/CUDA pretraining with a PyTorch reference; ~7% faster than PyTorch Nightly; tests, quick starts, and his education-plus-speed policy
+- [[github-2025-08-08-minbpe-gpt-4-tokenizer-discussion|Train a GPT-4 tokenizer using huggingface Tokenizers]] — minbpe Discussion: his best-guess HF Tokenizers configuration for a GPT-4-style BPE tokenizer
+- [[github-2025-08-21-rendergit-readme|rendergit README]] — flatten a GitHub repo into one HTML page, with a Human View and an LLM View
 - [[github-2025-11-12-nanogpt-readme|nanoGPT README]] — his earlier training/finetuning repo, marked deprecated in favour of nanochat
 - [[github-2026-07-03-nanochat-readme|nanochat README]] — minimal single-node harness that trains a GPT-2-grade chat model, set by one depth dial
 - [[talk-2023-05-19-stanford-cs25-transformers|Stanford CS25: Introduction to Transformers]] — guest lecture: AI converging on the Transformer, attention as message passing, nanoGPT walk-through, in-context learning
@@ -36,6 +40,8 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[x-2024-02-21-technical-accessibility|on technical accessibility]] — micrograd stagnated until the video; build the thing, then build the ramp
 - [[x-2024-10-02-gpu-mode-talk|I gave a talk at GPU MODE workshop last week on llm.c]] — the talk's outline: dropping PyTorch, the layer port, CUDA work, the $672 1.6B run, LLMs writing custom binaries
 - [[x-2025-02-02-vibe-coding|There's a new kind of coding I call "vibe coding"]] — the post that coined vibe coding
+- [[x-2025-05-01-vibe-coding-hackathon|I attended a vibe coding hackathon recently…]] — X companion to the MenuGen blog; pastes its TLDR
+- [[x-2025-07-08-ideal-grocery-store|This is what the ideal grocery store looks like]] — one post: minimally processed, organic, local, fresh food only; he doubts such a store exists
 - [[x-2026-04-02-llm-knowledge-bases|LLM Knowledge Bases]] — his workflow for an LLM-compiled Obsidian wiki, the pattern this project follows
 - [[youtube-2022-08-16-micrograd|The spelled-out intro to neural networks and backpropagation: building micrograd]] — builds a scalar autograd engine from a blank notebook and trains a tiny MLP
 - [[youtube-2022-09-07-makemore-1-bigram|The spelled-out intro to language modeling: building makemore]] — bigram character model built by counting and as a one-layer net; they are the same model

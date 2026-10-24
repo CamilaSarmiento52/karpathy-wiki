@@ -20,7 +20,7 @@ His analogy is that the LLM is the kernel of a new kind of operating system: in 
 
 He places this at roughly the 1960s of computing: compute is expensive, so models are centralised in the cloud and time-shared, and personal computing has not happened yet ([[youtube-2025-06-19-software-is-changing]] @10:34, @11:05). Talking to a chatbot feels to him like using an operating system through a terminal ([[youtube-2025-06-19-software-is-changing]] @12:12).
 
-One way LLMs differ is that they flip technology diffusion: consumers adopted them before governments and corporations ([[youtube-2025-06-19-software-is-changing]] @12:45, @13:18).
+One way LLMs differ is that they flip technology diffusion: consumers adopted them before governments and corporations; the argument is on [[technology-diffusion]] ([[youtube-2025-06-19-software-is-changing]] @12:45, @13:18).
 
 In December 2025 he restates the paradigm as similar to computers of the 1970s and 80s, expecting equivalents of personal computing, microcontrollers and an internet of agents ([[blog-2025-12-19-year-in-review-2025]] §6).
 
@@ -41,4 +41,5 @@ In December 2025 he restates the paradigm as similar to computers of the 1970s a
 - [[llm-tool-use]] — the tools the kernel coordinates
 - [[llm-security]] — the security challenges of the new stack
 - [[ai-ecosystem]] — open weights, open source and proprietary as the market's three kinds
+- [[technology-diffusion]] — the flip in who adopts LLMs first
 - [[llm-os-over-time]] — the analogy's dated versions

@@ -19,6 +19,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[claude-code-is-the-first-convincing-llm-agent|Claude Code is the first convincing LLM agent]] — 2025-12-19; agents belong on your own computer
 - [[counting-and-gradient-bigram-models-are-the-same-model|The counting bigram model and the one-layer net are the same model]] — 2022-09-07; W.exp() is the count table
 - [[deep-learning-is-largely-shape-gymnastics|Much of deep-learning development is making tensor shapes work]] — 2022-11-21; 2-D, 3-D, 4-D, NCL vs NLC, view and permute
+- [[deploying-a-vibe-coded-app-is-harder-than-writing-it|Vibe coding MenuGen's code was the easy part; the deployed app was the slog]] — 2025-04-27; extends the weekend-projects claim; YC talk as further source
 - [[do-not-decay-the-learning-rate-to-zero|He concluded the llm.c runs should not decay the learning rate to zero]] — 2024-06-12; 124M decayed to 0, 774M's tail too slow, 1.6B decays to 10%
 - [[english-is-the-new-programming-language|English is now a programming language]] — 2025-06-19; everyone is now a programmer
 - [[forgetting-to-zero-grad-is-a-common-neural-net-bug|Forgetting to zero grad before backward is a common bug]] — 2022-08-16; he made it on camera
@@ -40,6 +41,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[llms-are-the-kernel-of-an-emerging-operating-system|An LLM is the kernel process of an emerging operating system, not a chatbot]] — 2023-11-23; context window as RAM
 - [[llms-currently-only-have-a-system-1|In November 2023, LLMs had only System 1]] — 2023-11-23; the goal is converting time into accuracy
 - [[llms-may-write-custom-low-level-code-for-any-application|He expects LLMs may come to write custom low-level code like llm.c for any application]] — 2024-10-02; abstractions exist because humans are finite
+- [[llms-reverse-the-usual-diffusion-of-technology|LLMs reverse the usual top-down diffusion of technology, so far]] — 2025-04-07; the YC talk as second source
 - [[llms-want-to-imitate-not-succeed|LLMs don't want to succeed, they want to imitate]] — 2023-05-25; ask for a strong solution, but not too much
 - [[longer-context-windows-alone-will-not-scale-to-long-multimodal-tasks|Longer context windows alone will not scale to long multimodal tasks]] — 2025-02-05; test-time training needed, hedged
 - [[memory-access-not-flops-limits-training-speed|Memory access patterns, not FLOP counts, limit much of training speed]] — 2024-06-09; TF32 gave 3× not 8×; flash attention wins with more FLOPs
@@ -83,7 +85,8 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[use-hardware-security-keys-not-sms-as-a-second-factor|Secure critical accounts with hardware security keys, not a phone number]] — 2025-03-17; SIM swaps; about 1000X less risk
 - [[use-llms-as-copilots-with-human-oversight|In 2023 he recommended LLMs as copilots with human oversight]] — 2023-05-25; low stakes, not autonomous agents; supports the decade-of-agents claim
 - [[use-llms-as-tools-and-check-their-work|Use LLMs as tools: first drafts, check their work, own the result]] — 2025-02-05; supports the 2023 copilots claim
-- [[vibe-coding-is-for-throwaway-weekend-projects|Vibe coding is fine for throwaway weekend projects]] — 2025-02-02; extended by the 2025-12-19 claim
+- [[vibe-coding-full-web-apps-is-not-yet-for-anything-important|Vibe coding full web apps was not yet for anything important (April 2025)]] — 2025-04-27; supports the weekend-projects claim
+- [[vibe-coding-is-for-throwaway-weekend-projects|Vibe coding is fine for throwaway weekend projects]] — 2025-02-02; extended by the 2025-04-27 and 2025-12-19 claims, supported by the 2025-04-27 judgement
 - [[vibe-coding-will-terraform-software|Vibe coding will reshape software and jobs]] — 2025-12-19; adds professional uses
 - [[weight-regularization-is-equivalent-to-count-smoothing|Pushing weights toward zero is equivalent to count smoothing]] — 2022-09-07; strength plays the role of added counts
 - [[with-enough-data-encode-less-inductive-bias|With enough data, hand-coded inductive biases tend to hurt]] — 2023-05-19; biases live in connectivity and positional encodings

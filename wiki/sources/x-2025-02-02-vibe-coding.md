@@ -22,6 +22,8 @@ He judges it fine for throwaway weekend projects and calls it "not really coding
 - First entry in how the idea evolved → [[vibe-coding-over-time]]
 
 ## Fed pages
+- [[deploying-a-vibe-coded-app-is-harder-than-writing-it]]
+- [[vibe-coding-full-web-apps-is-not-yet-for-anything-important]]
 - [[vibe-coding]]
 - [[vibe-coding-is-for-throwaway-weekend-projects]]
 - [[vibe-coding-over-time]]

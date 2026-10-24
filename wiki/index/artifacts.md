@@ -15,3 +15,4 @@ His repositories and what each demonstrates. Alphabetical. Maintained by ingest;
 - [[nanogpt|nanoGPT]] — his rewrite of minGPT with teeth, two ~300-line files that reproduce GPT-2 (124M); deprecated in favour of nanochat
 - [[ng-video-lecture|ng-video-lecture]] — the GPT lecture's code, from a 120-line bigram script to a 200-line Transformer, released with its git log; initialisation left for a follow-up
 - [[nn-zero-to-hero|nn-zero-to-hero]] — Neural Networks: Zero to Hero, his from-the-basics video course and its notebooks; eight lectures, ongoing
+- [[rendergit|rendergit]] — a repo as one static HTML page; Human View and LLM View; vibe coded, not maintained

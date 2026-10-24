@@ -3,7 +3,7 @@ type: artifact
 repo_url: https://github.com/karpathy/minbpe
 language: Python
 status: active
-sources: ["[[youtube-2024-02-20-gpt-tokenizer]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[github-2024-04-22-minbpe-readme]]"]
+sources: ["[[youtube-2024-02-20-gpt-tokenizer]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2025-08-08-minbpe-gpt-4-tokenizer-discussion]]"]
 aliases: [minBPE, min bpe]
 ---
 # minbpe
@@ -23,6 +23,8 @@ The tokenizer code he wrote while developing the GPT tokenizer lecture and publi
 - `exercise.md` gives the advised progression for building your own minbpe step by step, and `lecture.md` holds the lecture in text form ([[github-2024-04-22-minbpe-readme]] §exercise, §lecture).
 - Todos at the snapshot: a faster Python version for large files and vocabularies, a C or Rust version, generalising the GPT-4 wrapper to GPT-2, GPT-3 and GPT-3.5, and a LlamaTokenizer attempting a SentencePiece equivalent ([[github-2024-04-22-minbpe-readme]] §todos).
 - `status: active` rests on the lecture's stated plan to keep working on it and on the open todo list in this snapshot ([[youtube-2024-02-20-gpt-tokenizer]] @1:25:45; [[github-2024-04-22-minbpe-readme]] §todos).
+
+- The repo's Discussions hold his post of 2025-08-08 on training a GPT-4-style tokenizer with the Hugging Face Tokenizers library instead, which he puts there for future reference and comparison; the post does not mention minbpe's own code or compare against it ([[github-2025-08-08-minbpe-gpt-4-tokenizer-discussion]] §intro). The configuration is described on [[tokenization]] ([[github-2025-08-08-minbpe-gpt-4-tokenizer-discussion]] §intro (code)).
 
 ## Related
 - [[tokenization]] — what it implements
