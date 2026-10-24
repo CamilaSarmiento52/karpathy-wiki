@@ -3,7 +3,7 @@
 Working files for phase 3 ingest. Not part of the wiki; hidden from the Obsidian vault.
 
 - `digests/<raw-stem>.md` — one per raw file, written by a digest step that reads only
-  `CLAUDE.md`, `wiki/index.md` and that raw file. Never writes to `wiki/`.
+  `CLAUDE.md`, the index files in `wiki/index/` and that raw file. Never writes to `wiki/`.
 - `verify/batch-<n>.md` — a verification report per batch, written by a fresh reader
   after the merge, checking pages against the raw files. One `[[source-slug]]` per
   source checked; findings are fixed by merge and logged as corrections in `wiki/log.md`.
@@ -21,7 +21,7 @@ Working files for phase 3 ingest. Not part of the wiki; hidden from the Obsidian
 
 ## Candidates
 ### <type>: <proposed-slug>            ← topic | claim | artifact | method | timeline
-- existing: yes|no (yes = slug or alias already in wiki/index.md)
+- existing: yes|no (yes = slug or alias already in a `wiki/index/` type file)
 - aliases: ...
 - statements:
   - <paraphrase, one sentence, no stronger than the source> (@h:mm:ss or §heading)

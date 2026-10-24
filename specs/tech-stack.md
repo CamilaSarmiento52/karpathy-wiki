@@ -73,8 +73,11 @@ caption block (grouped into ~30-second blocks so citations stay readable). X thr
 | method | `methods/` | `type, steps[], sources[]` |
 | synthesis | `syntheses/` | `type, question, answered_on, sources[], rules_applied[]` |
 
-Plus three fixed files: `index.md` (TOC by type), `hot.md` (recent changes), `log.md`
-(append-only journal).
+Plus fixed files: `index.md` (top-level table of contents), `index/<type>.md` (every page
+of one type, one file per type), `hot.md` (recent changes), `log.md` (append-only journal).
+The index was split on 2026-10-24, between phase 3 batches 1 and 2, at 110 lines with
+about 80 pages to come in batch 2; lint checks that each page is listed in its type's file
+and treats index files like hot and log (not inbound links).
 
 ### Invariants
 

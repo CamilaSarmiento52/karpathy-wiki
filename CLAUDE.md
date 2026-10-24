@@ -16,8 +16,9 @@ Project docs: `specs/mission.md` (why), `specs/tech-stack.md` (how), `specs/road
    re-run of ingest or lint.
 3. **Every factual sentence cites a source page.** Every source page cites its raw file.
    Opinions, connections and summaries you add yourself are labelled (see §5).
-4. **No orphans.** Every page except `index.md`, `hot.md` and `log.md` has at least one
-   inbound wikilink from another content page. Links from the three fixed files do not count.
+4. **No orphans.** Every page except the fixed files (`index.md`, the type files in
+   `wiki/index/`, `hot.md` and `log.md`) has at least one inbound wikilink from another
+   content page. Links from fixed files do not count.
 5. **Wikilinks only.** `[[slug]]` or `[[slug|Display text]]`. No markdown links between
    wiki pages. External URLs are fine as plain markdown links.
 6. **Never overwrite a position; always fix a mistake.** Two different things:
@@ -180,9 +181,14 @@ One-paragraph definition in his framing, cited.
 
 ## 6. Fixed files
 
-- `wiki/index.md`: every page, grouped under `## Sources`, `## Topics`, `## Claims`,
-  `## Artifacts`, `## Methods`, `## Timelines`, `## Principles`, `## Syntheses`;
-  one line per page: `- [[slug|Title]] — one-line summary`. Alphabetical within a group.
+- **Index** (split on 2026-10-24, when it reached 110 lines with ~80 pages to come):
+  - `wiki/index.md`: a short top-level page linking the eight type files below, plus
+    `[[hot]]` and `[[log]]`. It does not list pages.
+  - `wiki/index/<type>.md`, one per page type: `sources`, `topics`, `claims`, `artifacts`,
+    `methods`, `timelines`, `principles`, `syntheses`. Each lists every page of that type,
+    one line per page: `- [[slug|Title]] — one-line summary`, alphabetical.
+  - Index files are fixed files: no frontmatter, and links from them do not count as
+    inbound links. Lint checks that every page is in its own type's file.
 - `wiki/hot.md`: the last 20 page changes, newest first:
   `- YYYY-MM-DD [[slug]] — created|updated: what changed (from [[source-slug]])`.
 - `wiki/log.md`: append-only. Never edit past entries. One entry per operation:
@@ -199,11 +205,13 @@ One-paragraph definition in his framing, cited.
 
 ### Ingest (one raw file at a time, in `published` order)
 
-1. Read this file, `wiki/index.md` and `wiki/hot.md`.
+1. Read this file, `wiki/hot.md`, and the index type files you need (`wiki/index/topics.md`,
+   `claims.md`, `methods.md`, `artifacts.md` at least).
 2. Read the raw file in full. List the topics, specific claims, artifacts and methods
    (how he explains, debugs, builds, reviews) it contains.
-3. For each item, search the index for an existing page (check `aliases`). Prefer updating
-   an existing page over creating a near-duplicate.
+3. For each item, search for an existing page: the type's index file, then file names and
+   `aliases` (`grep -ril "<term>" wiki/topics wiki/claims wiki/methods wiki/artifacts`).
+   Prefer updating an existing page over creating a near-duplicate.
 4. Write the source page.
 5. Create or update each topic, claim, artifact and method page. Add this source to the
    page's `sources` (or `context` if it is only background), update
@@ -215,19 +223,21 @@ One-paragraph definition in his framing, cited.
    `extends`, or `contradicts` only if both cannot hold. For `extends` and `contradicts`,
    create or update `wiki/timeline/<topic>.md`.
 8. Principles are not extracted until phase 4. Do not write principle pages during ingest yet.
-9. Update `index.md`, prepend to `hot.md`, append to `log.md`.
+9. Add each new page to its type's file in `wiki/index/`, prepend to `hot.md`, append to
+   `log.md`.
 10. Run `python3 scripts/lint_check.py` and fix every finding before moving on.
 11. Lint is structural only. Before finishing, re-read each sentence you wrote against the
     cited passage: does the source say this, at this strength?
 
 ### Query
 
-1. Read `wiki/index.md`, then the relevant topic, claim and timeline pages.
+1. Read `wiki/index.md` and the type files it links, then the relevant topic, claim and
+   timeline pages.
 2. Open the raw file only when you need exact wording or a timestamp.
 3. Answer with citations to wiki source pages. If the wiki has nothing, say "the wiki has
    nothing on this" and stop; do not answer from general knowledge as if it were his view.
 4. If the answer is reusable, save it as `wiki/syntheses/<slug>.md`, link it from the pages
-   it cites, update index, hot and log. A synthesis is never evidence: no page may cite a
+   it cites, add it to `wiki/index/syntheses.md`, update hot and log. A synthesis is never evidence: no page may cite a
    synthesis as a source, and its claims must trace to source pages like any other page.
 
 ### Lint

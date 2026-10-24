@@ -9,7 +9,9 @@ You are a DIGEST step for an LLM-compiled wiki about Andrej Karpathy, in
 1. `CLAUDE.md`: page types, citation rules, quote rules (one sentence, under 15 words,
    verbatim), invariants 6–9.
 2. `staging/README.md`: the digest format. Follow it exactly.
-3. `wiki/index.md`: every existing page. **The wiki already has 94 pages** from batch 1
+3. The index: `wiki/index/topics.md`, `claims.md`, `methods.md`, `artifacts.md` and
+   `sources.md` list every existing page (since 2026-10-24 the index is split by type;
+   `wiki/index.md` only links these files). **The wiki already has 94 pages** from batch 1
    (2022–2023 Zero to Hero lectures) and phase 1 (2025–2026 posts and talks). Reuse an
    existing slug whenever the idea is the same; check `aliases` by opening the page.
    Common ones: backpropagation, tokenization, self-attention, transformer-architecture,
