@@ -181,3 +181,17 @@ The early check on 2026-10-23 found the agents and tokenization questions only p
 answerable. Batch 2 compiled the tokenizer lecture (with his failure list on
 `tokenization` and `a-lot-of-llm-oddness-traces-back-to-tokenization`) and the 2023–2024
 agent statements (`llm-agents-over-time`). The gate itself is re-run at the end of the phase.
+
+## Batch 3 (in progress, stopped 2026-10-24)
+
+21 new sources merged in four groups (D1–D4), 182 → 265 pages, lint 0 findings, 98 tests.
+Verification: D1 8 findings, D2 9, D3 7 (reports in `staging/verify/batch-3-*`). The D4
+verifier stopped when the account usage limit was reached and wrote no report.
+
+To resume: run the D4 verifier (`staging/verify-brief.md`, sources
+animals-vs-ghosts, Sutton post, nanochat Discussion 1, Dwarkesh), then one fix pass over
+all four batch 3 reports. Decided for that pass (CLAUDE.md: weakest true link):
+rl-lets-models-discover-their-own-thinking-strategies ↔ llms-currently-only-have-a-system-1
+becomes a Note only; ↔ self-improvement-may-be-possible-in-narrow-domains becomes
+`supports`. The date-interval search over batch 3 pages found only intervals he states
+himself. Then batch 4 (24 uncompiled sources).
