@@ -116,7 +116,7 @@ Berkeley keynote, seven llm.c Discussions and seven short READMEs and posts.
 | Step | How | Result |
 |---|---|---|
 | Index split | between batches, before any batch 2 merge | `wiki/index.md` links one file per type in `wiki/index/`; lint checks each page is in its type's file; 4 new tests (98 total) |
-| Digest | 9 agents, 8 in parallel then 1; shared brief `staging/digest-brief.md` | 18 digests (52k words) |
+| Digest | 9 agents, 8 in parallel then 1; shared brief `staging/digest-brief.md` | 21 digests (52k words) |
 | Reconcile | `staging/batch-2-merge-map.md`, written while the last digest ran | ~30 proposed topics and ~80 claims reduced to 11 new topics, 36 claims, 4 methods, 6 artifacts, 2 timelines |
 | Merge | 4 sequential groups (C1 2023, C2 early 2024, C3 llm.c + llama2.c, C4 GPT-2 + Berkeley); shared brief `staging/merge-brief.md` | 94 → 182 pages |
 | Verify | 4 fresh readers, each started as soon as its group was committed, in parallel with the next merge; shared brief `staging/verify-brief.md` | 31 findings: 3 wrong, 6 overstated, 7 mis-cited, 15 minor |
