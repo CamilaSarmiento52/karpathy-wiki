@@ -4,7 +4,8 @@ stated_on: 2025-06-19
 confidence: stated
 sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]"]
 topic: "[[software-3-0]]"
-supports: ["[[vibe-coding-will-terraform-software]]"]
+context: ["[[talk-2023-05-19-stanford-cs25-transformers]]"]
+supports: ["[[vibe-coding-will-terraform-software]]", "[[gpt-is-a-general-purpose-computer-running-natural-language-programs]]"]
 ---
 # English is now a programming language
 > "we're now programming computers in English" — [[youtube-2025-06-19-software-is-changing]] @04:23
@@ -16,3 +17,4 @@ In December 2025 he says AI crossed the threshold for building impressive progra
 
 ## Related claims
 - Supports [[vibe-coding-will-terraform-software]]: the essay ties building programs via English to more software being written by more people ([[blog-2025-12-19-year-in-review-2025]] §5).
+- Supported by [[gpt-is-a-general-purpose-computer-running-natural-language-programs]]: two years earlier he read out his tweet that GPT runs natural-language programs given as prompts ([[talk-2023-05-19-stanford-cs25-transformers]] @59:51), the same prompts-as-programs idea behind this claim ([[youtube-2025-06-19-software-is-changing]] @03:19).

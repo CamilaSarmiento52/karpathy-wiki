@@ -48,3 +48,6 @@ vibe coding and MenuGen (@29:22, @31:38), and closes on building infrastructure 
 - [[nanogpt]]
 - [[llm-knowledge-bases]]
 - [[claude-code-is-the-first-convincing-llm-agent]]
+- [[gpt-is-a-general-purpose-computer-running-natural-language-programs]]
+- [[use-llms-as-copilots-with-human-oversight]]
+- [[llms-are-the-kernel-of-an-emerging-operating-system]]

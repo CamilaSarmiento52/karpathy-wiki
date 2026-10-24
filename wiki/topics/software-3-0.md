@@ -25,3 +25,5 @@ By the end of 2025 he describes LLMs as the next major computing paradigm and sa
 - [[llms-as-operating-systems]] — the computer that Software 3.0 programs
 - [[vibe-coding]] — what programming in English looks like in practice
 - [[partial-autonomy-apps]]
+- [[gpt-is-a-general-purpose-computer-running-natural-language-programs]] — his 2023 tweet framing prompts as programs
+- [[prompting-llms]] — how he says to write those programs

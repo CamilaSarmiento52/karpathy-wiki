@@ -4,6 +4,7 @@ aliases: [Partial autonomy apps, LLM apps, Cursor for X, autonomy slider]
 first_seen: 2025-06-19
 last_updated: 2025-12-19
 sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]"]
+context: ["[[talk-2023-05-25-state-of-gpt]]"]
 related: ["[[llm-gui]]", "[[ai-assisted-coding-loop]]", "[[this-is-the-decade-of-agents]]"]
 ---
 # Partial autonomy apps
@@ -18,8 +19,11 @@ His education example separates a course-authoring app from a course-serving app
 
 In December 2025 he repeats the four properties, now calling the first one context engineering, and says LLM apps will turn generally capable models into deployed professionals in specific verticals ([[blog-2025-12-19-year-in-review-2025]] §3).
 
+**Note:** in May 2023, before he used "partial autonomy" or "autonomy slider", he already recommended LLMs as copilots under human oversight rather than autonomous agents, and described advanced prompting as Python glue code stringing many prompts together in a loop ([[talk-2023-05-25-state-of-gpt]] @28:21, @28:54, @39:57). That is background for the 2025 framing, not the same term.
+
 ## Claims
 - [[this-is-the-decade-of-agents]]
+- [[use-llms-as-copilots-with-human-oversight]] — the 2023 version of the human-in-the-loop stance
 
 ## Related
 - [[llm-gui]]

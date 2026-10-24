@@ -14,18 +14,25 @@ Ideas he explains, each defined in his framing. Alphabetical. Maintained by inge
 - [[jagged-intelligence|Jagged intelligence]] — LLMs as people spirits or ghosts: superhuman in places, broken in others
 - [[llm-gui|LLM GUI]] — text suits LLMs, not people; LLMs need a visual interface
 - [[llm-knowledge-bases|LLM knowledge bases]] — an LLM compiles and maintains a markdown wiki of your sources
+- [[llm-security|LLM security]] — jailbreaks, prompt injection and data poisoning; a cat-and-mouse game
+- [[llm-self-improvement|LLM self-improvement]] — AlphaGo's step two for language models; no general reward criterion
+- [[llm-tool-use|LLM tool use]] — calculators, code, search and retrieval into the context window
 - [[llms-as-operating-systems|LLMs as operating systems]] — utility, fab, and above all a 1960s-era operating system
 - [[loss-functions|Loss functions]] — one number to minimise: mean squared error, negative log likelihood, cross-entropy
 - [[multilayer-perceptron|Multilayer perceptron]] — neurons, layers and MLPs, from micrograd to the Bengio 2003 language model
 - [[overfitting-and-generalization|Overfitting and generalization]] — train/dev/test splits; equal train and dev loss means under-fitting
 - [[partial-autonomy-apps|Partial autonomy apps]] — LLM apps with context management, a GUI and an autonomy slider
 - [[pretraining-and-finetuning|Pretraining and finetuning]] — pretrain a document completer on the internet, then align it with supervised data, a reward model and PPO
+- [[prompting-llms|Prompting LLMs]] — in-context learning from examples in the prompt; how to write prompts around LLM psychology
 - [[pytorch|PyTorch]] — the production library micrograd mirrors; tensors, autograd, nn.Module-style layers and containers, and its unreliable docs
 - [[regularization|Regularization]] — count smoothing and the squared-weight term that does the same job; dropout before scaling up
 - [[rlvr|RLVR]] — reinforcement learning from verifiable rewards, the new training stage of 2025
+- [[sampling-from-language-models|Sampling from language models]] — feed each sample back, crop at block size; he does not love committing token by token
+- [[scaling-laws|Scaling laws]] — next-word accuracy as a smooth function of parameters and data
 - [[self-attention|Self-attention]] — lower-triangular weighted aggregation made data-dependent by queries, keys and values; scaling, causal mask, multiple heads
 - [[softmax|Softmax]] — logits as log counts; exponentiate and normalise; one-hot inputs
 - [[software-3-0|Software 3.0]] — prompts as programs, after code (1.0) and weights (2.0)
+- [[system-1-and-system-2-thinking|System 1 and System 2 thinking]] — token sampling as System 1; prompting and research aim at a System 2
 - [[tokenization|Tokenization]] — text to integers over a vocabulary; characters versus sub-word BPE trades codebook size against sequence length
 - [[transformer-architecture|Transformer architecture]] — communication then computation; residual pathway, pre-norm LayerNorm, decoder-only; his notes on the GPT papers
 - [[vibe-coding|Vibe coding]] — building by prompting and not reading the code

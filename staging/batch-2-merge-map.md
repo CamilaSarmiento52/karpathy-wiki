@@ -133,6 +133,11 @@ timeline entry too.
 
 ## New methods (4)
 
+Groups (added after C1): make-it-work-then-make-it-cheap and
+verify-against-a-reference-implementation in C2 (the first also cites State of GPT, which
+C1 merged; add it to that source's Fed pages); reproduce-a-published-model in C3 (from
+llm.c 481); build-and-publish-projects in C4.
+
 | slug | absorbs |
 |---|---|
 | make-it-work-then-make-it-cheap | top-performance-then-optimize (State of GPT), make-it-work-then-make-it-cheap (Sequoia) |

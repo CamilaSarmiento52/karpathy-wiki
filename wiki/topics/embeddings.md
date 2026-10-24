@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [Embeddings, embedding table, lookup table, positional embeddings]
+aliases: [Embeddings, embedding table, lookup table, positional embeddings, positional encodings]
 first_seen: 2022-09-12
-last_updated: 2023-01-17
-sources: ["[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2023-01-17-gpt-from-scratch]]"]
+last_updated: 2023-05-19
+sources: ["[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-19-stanford-cs25-transformers]]"]
 related: ["[[multilayer-perceptron]]", "[[softmax]]", "[[pytorch]]", "[[makemore]]"]
 ---
 # Embeddings
@@ -17,6 +17,8 @@ A one-hot vector times C gives the same result as indexing the row, because the 
 After training with 2D embeddings, the vowels a, e, i, o, u cluster together, q and the dot are outliers, and the structure is not random ([[youtube-2022-09-12-makemore-2-mlp]] @1:06:02, @1:06:35). He suspects two dimensions are the bottleneck and raises the embedding size to 10; the lower loss afterwards suggests the embedding size was holding the model back ([[youtube-2022-09-12-makemore-2-mlp]] @1:04:25, @1:07:08, @1:11:05).
 
 In the GPT lecture he adds positional embeddings: beyond token identity, a second embedding table of block size by n_embd gives each position its own vector, and the input x becomes token embeddings plus positional embeddings, broadcast across the batch ([[youtube-2023-01-17-gpt-from-scratch]] @1:00:15, @1:00:47, @1:01:20). For a bigram model position is useless because the model is translation invariant; it starts to matter with self-attention, whose nodes have no notion of where they are ([[youtube-2023-01-17-gpt-from-scratch]] @1:01:20, @1:12:32). Because the table only covers block-size positions, generation must crop the context to the last block-size tokens ([[youtube-2023-01-17-gpt-from-scratch]] @1:20:55).
+
+In the CS25 lecture he explains that because the Transformer processes sets, token-identity embeddings and positional embeddings are added together to give what and where ([[talk-2023-05-19-stanford-cs25-transformers]] @35:29, @36:01). Extra inputs such as radar or vehicle information get a learnable special embedding token so the Transformer knows their source ([[talk-2023-05-19-stanford-cs25-transformers]] @1:04:42). Positional encodings can be hard-wired with sines and cosines, but he prefers a trainable vector that always sits at a location, and says they carry very little inductive bias ([[talk-2023-05-19-stanford-cs25-transformers]] @1:05:18, @1:05:57). Rotary and relative positional encodings are now more common than the original ([[talk-2023-05-19-stanford-cs25-transformers]] @22:11).
 
 ## Claims
 - [[attention-is-a-communication-mechanism]] — attention acts over a set of vectors with no notion of space, which is why position is added
