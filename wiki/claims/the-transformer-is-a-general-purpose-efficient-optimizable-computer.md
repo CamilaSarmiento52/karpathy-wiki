@@ -18,4 +18,4 @@ Earlier in the lecture he says the architecture has proven remarkably resilient:
 
 ## Related claims
 - **Note:** compatible with [[gpt-is-not-a-complicated-model]] (simple to write down) and [[ai-has-converged-on-one-architecture]] (why everyone copies it); neither link is set as support ([[talk-2023-05-19-stanford-cs25-transformers]] @59:18).
-- **Note:** on 2024-03-26 he again calls it remarkably resilient and designed for the GPU, but says it is probably not the final neural network; see [[the-transformer-is-probably-not-the-final-architecture]] ([[talk-2024-03-26-sequoia-making-ai-accessible]] @33:51, @35:30). Both can hold; no relation is set ([[talk-2023-05-19-stanford-cs25-transformers]] @21:39).
+- **Note:** in the Sequoia interview (published 2024-03-26) he again calls it remarkably resilient and designed for the GPU, but says it is probably not the final neural network; see [[the-transformer-is-probably-not-the-final-architecture]] ([[talk-2024-03-26-sequoia-making-ai-accessible]] @33:51, @35:30). Both can hold; no relation is set ([[talk-2023-05-19-stanford-cs25-transformers]] @21:39).

@@ -80,3 +80,14 @@ Verified 2026-10-24 by a fresh reader. Sources: [[github-2024-02-20-nn-zero-to-h
 - [[nn-zero-to-hero]], [[micrograd]], [[makemore]]: README Lectures 1–8, "Ongoing...", and the post's ~200 lines vs the lecture's 150 kept apart. Supported.
 - [[spelled-out-build-from-scratch]], [[small-hackable-educational-code]], [[verify-against-a-reference-implementation]]: 10 sentences checked (@28:01, @45:16, @55:56, @56:30, @1:11:42, @1:17:50, @1:26:20; README §inference, §exercise, §lecture, §training; the post). Supported.
 - Source pages: the Summaries and Key points of all five were checked about 1 in 3. Fed pages match the pages that actually cite each source. The minbpe "in principle and to my knowledge" hedge is kept. Apart from F8, supported.
+
+## Resolution
+Fixed 2026-10-24 (log: `## 2026-10-24 correction`).
+- F1 fixed (claim page and both tokenization bullets)
+- F2 fixed (citation also adds @2:02:14, @2:03:53)
+- F3 fixed (all three pages)
+- F4 fixed
+- F5 fixed
+- F6 fixed
+- F7 fixed
+- F8 fixed (Summary and the matching Key point)

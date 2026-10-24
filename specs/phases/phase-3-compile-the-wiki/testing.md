@@ -10,7 +10,8 @@ _What the phase's automated tests cover and why. Drafted at the start of the pha
   page and verified state. _Built 2026-10-23, 4 tests._
 - **Lint, if the index is split**: a split index (`index.md` + `wiki/index/<type>.md`)
   counts as coverage; links from index files do not count against orphans; a page missing
-  from its type's index file is reported.
+  from its type's index file is reported. _Built 2026-10-24, 4 tests in `tests/test_lint_check.py`; also
+  reports a missing type file._
 - **Existing suites** (`test_lint_check.py`, `test_fetch_one.py`, collectors) must keep
   passing; no change to the raw store is planned.
 - `scripts/lint_check.py` runs after every merge group, not only at the end. It is the

@@ -106,3 +106,78 @@ question check on 2026-10-23 (`staging/phase-3-question-validation.md`) found th
 backpropagation question answerable, and the agents and tokenization questions only
 partly answerable until batch 2 is compiled. Batches 2–4 run with a merge map step added
 for each.
+
+## Batch 2
+
+Ran 2026-10-24. 21 sources, May 2023 to July 2024, about 150k raw words: CS25, State of
+GPT, Intro to LLMs, the tokenizer lecture, Sequoia 2024, the GPT-2 reproduction, the
+Berkeley keynote, seven llm.c Discussions and seven short READMEs and posts.
+
+| Step | How | Result |
+|---|---|---|
+| Index split | between batches, before any batch 2 merge | `wiki/index.md` links one file per type in `wiki/index/`; lint checks each page is in its type's file; 4 new tests (98 total) |
+| Digest | 9 agents, 8 in parallel then 1; shared brief `staging/digest-brief.md` | 18 digests (52k words) |
+| Reconcile | `staging/batch-2-merge-map.md`, written while the last digest ran | ~30 proposed topics and ~80 claims reduced to 11 new topics, 36 claims, 4 methods, 6 artifacts, 2 timelines |
+| Merge | 4 sequential groups (C1 2023, C2 early 2024, C3 llm.c + llama2.c, C4 GPT-2 + Berkeley); shared brief `staging/merge-brief.md` | 94 → 182 pages |
+| Verify | 4 fresh readers, each started as soon as its group was committed, in parallel with the next merge; shared brief `staging/verify-brief.md` | 31 findings: 3 wrong, 6 overstated, 7 mis-cited, 15 minor |
+| Fix | 1 agent for all four reports, then a wiki-wide search for one class of error | 30 fixed, 1 left as is (the report asked for no change); 14 interval phrases replaced by dates |
+
+Pages after batch 2: 37 sources, 40 topics, 64 claims, 12 artifacts, 15 methods,
+3 timelines. Lint 0 findings; 98 tests pass; 45 raw files left (batches 3–4).
+
+### What the verification caught
+
+- **Published date is not when he said it.** CS25 was given around January 2023 and
+  published in May, so "four months later" and "a week later" between sources were wrong.
+  This is a schema issue, not a one-off: CLAUDE.md §2 now forbids intervals or orderings
+  between sources computed from published dates, the merge and verify briefs carry the
+  rule, and a search after the fix pass replaced 14 such phrases across batch 1 and 2
+  pages (logged as a correction).
+- **Order inside one source.** A failure he raises only at the end of the tokenizer
+  lecture had been put into his opening list.
+- **Hedges dropped.** "end of text token I think" written as fact; the GPT-2 run's 1.7
+  hours was his projection at launch, not the measured time.
+- **Invented purpose or connection.** TinyStories presented as his evidence for small
+  models (the README cites the paper); the calorie app called a personal project outside
+  his AI work (the README does not say so); both sides of the llm.c cross-check described
+  with flags only one side used.
+
+No verifier found a number that did not match its raw file, a quote that was not his, or
+a host's words attributed to him.
+
+### Decisions made while building
+
+- **The index was split between batches**, not mid-merge, so merge agents saw one layout.
+  The top `index.md` lists no pages and carries no counts, so ingest never has to update it.
+- **Shared briefs.** Digest, merge and verify instructions live in `staging/*-brief.md`;
+  each agent prompt names its sources and the few things specific to them. Prompts got
+  shorter and the rules stayed the same across agents.
+- **Verify overlaps merge.** Each group's verifier starts when that group is committed,
+  while the next group merges; it checks only sentences citing its own sources. The fix
+  pass runs once, after all groups. This cut wall-clock without two writers on `wiki/`.
+- **A rule found mid-batch is pushed to running agents.** The published-date rule was sent
+  to the C2 merge agent while it was writing the agents timeline.
+- **Two timelines** (`llm-agents-over-time`, `llm-os-over-time`) record dated statements
+  without asserting a change of view; their closing Notes say where views only
+  accumulated. No `extends` or `contradicts` link was found in batch 2.
+- **Profile README** (five words) is cited once as `context` on `nn-zero-to-hero` with a
+  labelled Note, so its source page is not an orphan.
+- **`llm101n` deferred to batch 3**, where its README is.
+
+### Deviations
+
+- The map left four methods without a group; groups were assigned after C1.
+- Two claims assigned to C3 were stated only in C4 sources and moved to C4.
+- Raw word count for the batch was ~150k; digests were 52k words, about a third.
+
+### Cost
+
+About 4.2M agent tokens for batch 2 (digest ≈ 1.3M, merge ≈ 1.1M, verify ≈ 0.8M,
+fix ≈ 0.15M), plus the coordinating session.
+
+### Gate questions after batch 2
+
+The early check on 2026-10-23 found the agents and tokenization questions only partly
+answerable. Batch 2 compiled the tokenizer lecture (with his failure list on
+`tokenization` and `a-lot-of-llm-oddness-traces-back-to-tokenization`) and the 2023–2024
+agent statements (`llm-agents-over-time`). The gate itself is re-run at the end of the phase.

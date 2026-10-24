@@ -17,7 +17,7 @@ In his framing, just as the original operating-system stack had security challen
 
 **Data poisoning.** In a backdoor or "sleeper agent" attack, a trigger phrase planted in training data, such as "James Bond", corrupts the model's outputs; he notes the paper showed it for finetuning, that he is not aware of a convincing pretraining demonstration, and that it is possible in principle ([[youtube-2023-11-23-intro-to-llms]] @56:28, @57:00, @57:32, @58:06).
 
-Many of these attacks have published defenses and may no longer work; he calls it the cat-and-mouse game of traditional security, now in LLM security, a new and rapidly evolving field ([[youtube-2023-11-23-intro-to-llms]] @58:40, @59:11). Six months earlier he had already listed prompt injection, jailbreaks and data poisoning among the limitations that keep LLMs to low-stakes uses ([[talk-2023-05-25-state-of-gpt]] @39:24).
+Many of these attacks have published defenses and may no longer work; he calls it the cat-and-mouse game of traditional security, now in LLM security, a new and rapidly evolving field ([[youtube-2023-11-23-intro-to-llms]] @58:40, @59:11). In State of GPT (published 2023-05-25) he had also listed prompt injection, jailbreaks and data poisoning among the limitations that keep LLMs to low-stakes uses ([[talk-2023-05-25-state-of-gpt]] @39:24).
 
 ## Claims
 - [[use-llms-as-copilots-with-human-oversight]] — security attacks among the reasons for human oversight

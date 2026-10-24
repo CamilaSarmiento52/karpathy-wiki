@@ -9,16 +9,17 @@ _How we know the phase is done. Drafted at the start of the phase._
       verbatim in raw, Fed pages and `sources` consistent).
 - [ ] Every batch has a verification report in `staging/verify/`, and every finding in it
       is fixed or explained, with corrections logged in `log.md`. _Batch 1: three reports
-      (one per merge group), 21 findings, all fixed and logged 2026-10-23._
+      (one per merge group), 21 findings, all fixed and logged 2026-10-23. Batch 2: four
+      reports, 31 findings, 30 fixed and 1 left as asked, logged 2026-10-24._
 - [ ] `log.md` has one ingest entry per source and one correction entry per verification
       round; `hot.md` shows the last 20 changes.
-- [ ] Index covers every page; if it was split, the split is recorded in `tech-stack.md`
-      and lint checks the split files.
+- [x] Index covers every page; if it was split, the split is recorded in `tech-stack.md`
+      and lint checks the split files. _Split 2026-10-24 between batches 1 and 2._
 - [ ] Every schema change made during the phase is in `CLAUDE.md` and noted in
       `implement.md`, and pages written before the change were migrated.
 - [ ] Batch 1 pilot reviewed and approved by the user before batches 2–4 ran. _Batch 1
       compiled and verified 2026-10-23; the user waived the review on 2026-10-24._
-- [x] `pytest tests` passes. _94 tests, 2026-10-23._
+- [x] `pytest tests` passes. _98 tests, 2026-10-24._
 
 ## Phase gate 3 → 4 (from the roadmap)
 

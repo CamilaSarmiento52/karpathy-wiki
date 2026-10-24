@@ -69,3 +69,13 @@ Verified 2026-10-24 by a fresh reader. Sources: [[youtube-2024-06-09-reproduce-g
 - [[training-diagnostics]]: 6 sentences checked, all correct apart from F7 (initial loss 10.82 vs about 11; gradient norm about 30 settling below 1; watcher.sh about two minutes; skipped updates).
 - [[tokenization]] (apart from F5), [[activation-functions]], [[regularization]], [[overfitting-and-generalization]], [[loss-functions]] and [[sampling-from-language-models]]: 10 sentences checked, all correct.
 - Source pages: every Summary sentence of all five was checked and is correct (580: 6 days / 150B / 1.5 epochs, the config arithmetic described as planning, about two minutes for the watcher; 677: 24 h / $672 / 33.6B / about 50% MFU / 57GB vs about 80GB / about 19%).
+
+## Resolution
+Fixed 2026-10-24 (log: `## 2026-10-24 correction`).
+- F1 fixed (build-nanogpt and compute-efficiency)
+- F2 fixed
+- F3 fixed (a and b)
+- F4 fixed (entry and closing Note)
+- F5 fixed
+- F6 fixed (citation; the Note label is kept, as the report allows)
+- F7 fixed

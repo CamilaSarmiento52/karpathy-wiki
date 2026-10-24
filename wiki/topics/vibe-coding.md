@@ -12,7 +12,7 @@ A term he coined for building software by talking to an LLM and accepting its ou
 ## What he says
 In the original post he describes dictating requests to Cursor Composer, always accepting all diffs, pasting errors back without comment, and asking for random changes when a bug will not go away ([[x-2025-02-02-vibe-coding]]). He called it fine for throwaway weekend projects and said it was not really coding ([[x-2025-02-02-vibe-coding]]).
 
-Four months later he said he expected the post to fizzle and was surprised it gave a name to something people felt but could not say ([[youtube-2025-06-19-software-is-changing]] @29:22, @29:56). He calls a video of kids vibe coding a gateway drug to software development ([[youtube-2025-06-19-software-is-changing]] @30:30). He vibe-coded an iOS app without knowing Swift and the MenuGen web app ([[youtube-2025-06-19-software-is-changing]] @31:04, @31:38).
+In the talk published 2025-06-19 he said he expected the post to fizzle and was surprised it gave a name to something people felt but could not say ([[youtube-2025-06-19-software-is-changing]] @29:22, @29:56). He calls a video of kids vibe coding a gateway drug to software development ([[youtube-2025-06-19-software-is-changing]] @30:30). He vibe-coded an iOS app without knowing Swift and the MenuGen web app ([[youtube-2025-06-19-software-is-changing]] @31:04, @31:38).
 
 His lesson from MenuGen is that the code was the easy part: authentication, payments, domains and deployment took a week of clicking through browser instructions ([[youtube-2025-06-19-software-is-changing]] @32:13, @32:47). That frustration leads directly to his argument for [[building-for-agents]] ([[youtube-2025-06-19-software-is-changing]] @33:19).
 

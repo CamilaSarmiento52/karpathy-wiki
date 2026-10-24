@@ -15,7 +15,7 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[github-2024-05-24-llmc-pytorch-cross-checks|PyTorch vs. llm.c cross-checks]] — llm.c and PyTorch GPT-2 (124M) runs match to ~1e-3 on one GPU; the 4-GPU PyTorch run not yet
 - [[github-2024-05-28-llmc-gpt-2-124m|Reproducing GPT-2 (124M) in llm.c in 90 minutes for $20]] — 124M on 10B FineWeb tokens on one 8×A100 node, every flag explained, HellaSwag vs OpenAI, a 350M run, FAQ
 - [[github-2024-05-29-llama2c-readme|llama2.c README]] — Llama 2 trained in PyTorch, inferred in one C file; TinyStories models, int8 quantization, training guide, custom tokenizers, simplicity-first contributing policy
-- [[github-2024-05-30-calorie-readme|calorie README]] — his personal one-page calorie-deficit tracker with +100 / -100 kcal buttons
+- [[github-2024-05-30-calorie-readme|calorie README]] — his one-page calorie-deficit tracker with +100 / -100 kcal buttons
 - [[github-2024-06-12-llmc-gpt-2-774m|GPT-2 (774M) reproduced]] — six days, 150B FineWeb tokens on one 8×A100 node; beats GPT-2 and GPT-3 sooner than expected; decay to 10%, not 0; a watcher script
 - [[github-2024-06-17-build-nanogpt-readme|build-nanogpt README]] — from-scratch nanoGPT to GPT-2 (124M), one clean commit per step, about an hour and $10; base models only dream documents; errata
 - [[github-2024-07-11-llmc-gpt-2-1-6b|Let's reproduce GPT-2 (1.6B): one 8XH100 node, 24 hours, $672, in llm.c]] — the full 1558M GPT-2 in llm.c: flags, evals, memory guide, why the code is beautiful, PyTorch comparison, a 420B-token run that exploded

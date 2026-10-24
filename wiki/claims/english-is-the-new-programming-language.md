@@ -17,4 +17,4 @@ In December 2025 he says AI crossed the threshold for building impressive progra
 
 ## Related claims
 - Supports [[vibe-coding-will-terraform-software]]: the essay ties building programs via English to more software being written by more people ([[blog-2025-12-19-year-in-review-2025]] §5).
-- Supported by [[gpt-is-a-general-purpose-computer-running-natural-language-programs]]: two years earlier he read out his tweet that GPT runs natural-language programs given as prompts ([[talk-2023-05-19-stanford-cs25-transformers]] @59:51), the same prompts-as-programs idea behind this claim ([[youtube-2025-06-19-software-is-changing]] @03:19).
+- Supported by [[gpt-is-a-general-purpose-computer-running-natural-language-programs]]: in the CS25 lecture (published 2023-05-19) he read out his tweet that GPT runs natural-language programs given as prompts ([[talk-2023-05-19-stanford-cs25-transformers]] @59:51), the same prompts-as-programs idea behind this claim ([[youtube-2025-06-19-software-is-changing]] @03:19).

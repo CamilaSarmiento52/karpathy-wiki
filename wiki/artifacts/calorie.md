@@ -7,7 +7,7 @@ sources: ["[[github-2024-05-30-calorie-readme]]"]
 aliases: [calorie tracker, calorie deficit tracker]
 ---
 # calorie
-His calorie deficit tracking web app, a personal project outside his AI work ([[github-2024-05-30-calorie-readme]] §intro).
+His calorie deficit tracking web app ([[github-2024-05-30-calorie-readme]] §intro).
 
 ## What it demonstrates
 - **The model behind it.** As he explains it, you burn calories at a base metabolic rate just by living, roughly 2000 kcal/day for him; food adds calories, exercise burns them, and a net deficit means weight loss ([[github-2024-05-30-calorie-readme]] §intro). His goal might be a 500 kcal/day deficit, which he works out as 7 × 500 = 3500 kcal a week, roughly a pound of fat ([[github-2024-05-30-calorie-readme]] §intro).

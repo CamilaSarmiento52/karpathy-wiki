@@ -116,3 +116,16 @@ Verified 2026-10-24 by a fresh reader. Sources: [[github-2024-04-12-llmc-discuss
 - [[pretraining-and-finetuning]], [[regularization]], [[tokenization]], [[transformer-architecture]]: 1, 1, 3 and 2 sentences, all supported. The 110M context comparison is paraphrased "as he puts it", as the digest asked.
 - [[small-hackable-educational-code]]: steps 10–11 are supported (2097 LOC / 2.4 s / 2.2 s, ~3,000 LOC / 4.3 s "as bad as import torch", 1,000 → 3,500 LOC, contributing policy).
 - Ordering and interval words are all consistent with published dates: "next report", "by the GPT-2 post", "came first", "day 24", "10 days ago" → "April 22 report".
+
+## Resolution
+Fixed 2026-10-24 (log: `## 2026-10-24 correction`).
+- F1 fixed (method step 8 and source Key point)
+- F2 fixed: resolved by C4, no title change; the 1558M section adds a second same-size HellaSwag comparison
+- F3 fixed (claim and llama2c Related line)
+- F4 fixed (artifact, source header line, plus the source `summary` and the index/artifacts.md and index/sources.md lines, which carried the same wording)
+- F5 fixed
+- F6 fixed
+- F7 fixed
+- F8 fixed
+- F9 fixed
+- F10 fixed

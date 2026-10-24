@@ -19,7 +19,7 @@ sources: ["[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-28-
 aliases: [Reproduce GPT-2, reproduce a paper, reproduction run]
 ---
 # Reproduce a published model
-How he tests a training stack: retrain a model someone has published, from scratch, and show that his run matches or beats the released checkpoint. In llm.c the model is GPT-2 (124M), reproduced in about 90 minutes for about $20 on one 8×A100 node ([[github-2024-05-28-llmc-gpt-2-124m]] §intro).
+How he validated the llm.c training stack: retrain a published model from scratch and compare the run with the released checkpoint. In llm.c the model is GPT-2 (124M), reproduced in about 90 minutes for about $20 on one 8×A100 node ([[github-2024-05-28-llmc-gpt-2-124m]] §intro).
 
 ## Steps
 1. **Pick a model with released weights.** He cares about GPT-2 because it was the first recognisably modern LLM stack and OpenAI released its parameters, and he picks the 124M, the smallest of the series, as accessible even for the "GPU poor" ([[github-2024-05-28-llmc-gpt-2-124m]] §intro, §intro (FAQ)).
@@ -29,7 +29,7 @@ How he tests a training stack: retrain a model someone has published, from scrat
 5. **Compare with the checkpoint, and say why it is unfair.** His run beats OpenAI's checkpoint on held-out FineWeb validation loss, which he calls not a super fair comparison because GPT-2 trained on different data ([[github-2024-05-28-llmc-gpt-2-124m]] §intro).
 6. **Confirm on a shared benchmark.** He evaluates HellaSwag because it can be compared across papers, and reports 29.9 for his run against 29.4 for GPT-2 (124M) and 33.7 for GPT-3 Small as cited in the GPT-3 paper ([[github-2024-05-28-llmc-gpt-2-124m]] §intro, §intro (Args guide)).
 7. **Publish the recipe and the bill.** He gives the full install and launch commands, explains every flag, and states time and cost: about 90 minutes at about $14/hour, about $20 ([[github-2024-05-28-llmc-gpt-2-124m]] §intro, §intro (Args guide)).
-8. **Scale up with more tokens.** Overnight he reproduced the 350M model, found 10B tokens was not enough, and trained about 30B tokens in 14 hours for about $200; next on his list is the 1558M "GPT-2" ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (350M model), §intro (Coming up)).
+8. **Scale up with more tokens.** Overnight he reproduced the 350M model, found 10B tokens was not enough, and trained about 30B tokens in 14 hours for about $200; next he names the next size up and then the 1558M "GPT-2" ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (350M model), §intro (Coming up)).
 
 In the GPT-2 lecture he works the same method from the other end, starting at the target ([[youtube-2024-06-09-reproduce-gpt-2]] @03:18):
 

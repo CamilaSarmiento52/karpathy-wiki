@@ -66,3 +66,12 @@ Verified 2026-10-24 by a fresh reader. Sources: [[talk-2023-05-19-stanford-cs25-
 - [[tokenization]], [[embeddings]], [[character-level-language-modeling]], [[sampling-from-language-models]], [[nanogpt]]: 12 sentences checked; all supported; the 38-hour figure is correctly omitted.
 - [[nn-zero-to-hero]]: the one profile-README **Note:** sentence matches the five-word raw ("I like deep neural nets.").
 - Source pages: Summaries and Key points of all four spot-checked (~15 sentences); speaker boundaries stated correctly; all supported.
+
+## Resolution
+Fixed 2026-10-24 (log: `## 2026-10-24 correction`).
+- F1 fixed
+- F2 fixed
+- F3 fixed (also dropped "first", per the §2 rule on ordering from published dates, and made the definition a full sentence; optional Note not added)
+- F4 fixed (mirror line on this-is-the-decade-of-agents also loses "two years earlier")
+- F5 fixed
+- F6 left as is: the report asks for no change; the wiki's pre-norm reading is correct

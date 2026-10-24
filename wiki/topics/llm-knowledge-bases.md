@@ -17,7 +17,7 @@ Outputs are filed back into the wiki, so his queries "add up" over time ([[x-202
 
 He sees finetuning on the wiki as a natural next step, so the model knows the data in its weights, and thinks there is room for a real product here ([[x-2026-04-02-llm-knowledge-bases]] §Further explorations, §TLDR).
 
-**Note:** a year earlier he described context windows as working memory that must be programmed directly, because LLMs do not learn on the job; a knowledge base is one way of doing that ([[youtube-2025-06-19-software-is-changing]] @16:38, @17:10; [[x-2026-04-02-llm-knowledge-bases]]).
+**Note:** in the talk published 2025-06-19 he described context windows as working memory that must be programmed directly, because LLMs do not learn on the job; a knowledge base is one way of doing that ([[youtube-2025-06-19-software-is-changing]] @16:38, @17:10; [[x-2026-04-02-llm-knowledge-bases]]).
 
 ## Claims
 - [[no-rag-needed-for-a-small-wiki]]
