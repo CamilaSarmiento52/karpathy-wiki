@@ -47,3 +47,4 @@ A re-recording, on his own channel, of a 30-minute intro talk he had given at an
 - [[self-improvement-may-be-possible-in-narrow-domains]]
 - [[llms-are-the-kernel-of-an-emerging-operating-system]]
 - [[llm-security]]
+- [[llm-os-over-time]]

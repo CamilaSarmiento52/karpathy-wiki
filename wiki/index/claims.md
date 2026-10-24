@@ -16,6 +16,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[claude-code-is-the-first-convincing-llm-agent|Claude Code is the first convincing LLM agent]] — 2025-12-19; agents belong on your own computer
 - [[counting-and-gradient-bigram-models-are-the-same-model|The counting bigram model and the one-layer net are the same model]] — 2022-09-07; W.exp() is the count table
 - [[deep-learning-is-largely-shape-gymnastics|Much of deep-learning development is making tensor shapes work]] — 2022-11-21; 2-D, 3-D, 4-D, NCL vs NLC, view and permute
+- [[do-not-decay-the-learning-rate-to-zero|He concluded the llm.c runs should not decay the learning rate to zero]] — 2024-06-12; 124M decayed to 0, 774M's tail too slow, 1.6B decays to 10%
 - [[english-is-the-new-programming-language|English is now a programming language]] — 2025-06-19; everyone is now a programmer
 - [[forgetting-to-zero-grad-is-a-common-neural-net-bug|Forgetting to zero grad before backward is a common bug]] — 2022-08-16; he made it on camera
 - [[gpt-2-is-the-first-recognizably-modern-llm-stack|GPT-2 was the first time the modern LLM stack came together in recognisable form]] — the grand-daddy of LLMs, with released weights; later models changed little
@@ -24,18 +25,23 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[gradient-based-models-scale-where-count-tables-do-not|Gradient-based models scale to longer contexts where count tables do not]] — 2022-09-07; tables blow up with context
 - [[he-does-not-love-autoregressive-sampling|In 2023 he did not love autoregressive sampling]] — 2023-05-19; diffusion's drafts appeal more
 - [[he-prefers-tiktoken-byte-level-bpe-to-sentencepiece|He prefers tiktoken's byte-level BPE to SentencePiece]] — bytes then BPE is cleaner than code-point BPE with byte fallback
-- [[his-gpt-2-reproductions-beat-openais-checkpoints-on-hellaswag|His llm.c GPT-2 reproductions beat OpenAI's GPT-2 checkpoints of the same size on HellaSwag]] — 124M on 10B tokens: 29.9 vs 29.4; below GPT-3 Small's 33.7 on 300B
+- [[his-gpt-2-reproductions-beat-openais-checkpoints-on-hellaswag|His GPT-2 reproductions beat OpenAI's GPT-2 checkpoints of the same size on HellaSwag]] — 124M on 10B (llm.c 29.9 vs 29.4; lecture past 29.55, 33.24 after 40B); 774M on 150B (eval unnamed); 1558M crosses GPT-2 at ~25K steps
+- [[inherited-gpt-3-hyperparameters-look-conservative|The GPT-3 hyperparameters he inherited look conservative and are probably not tuned precisely]] — 2024-06-09; a learning rate about 3× higher may work; 2024-07-11 "appear to be quite suboptimal"
 - [[llm-c-trained-gpt-2-faster-than-pytorch-in-his-measurements|In his measurements, llm.c trained GPT-2 faster than PyTorch]] — ~6.4% in a constrained fp32 setting (April 2024); each figure with its baseline
+- [[llm-c-was-not-yet-careful-enough-about-training-stability|He judged llm.c not yet careful enough about initialisation, activation ranges and stability for long runs]] — 2024-07-11; the 420B-token run exploded after ~330K steps
 - [[llm-products-will-take-years-to-figure-out|Working out how to oversee LLM products will take the next few years]] — quite autonomous but not fully; oversight and evaluation still to design
 - [[llms-are-mostly-inscrutable-empirical-artifacts|LLMs are mostly inscrutable artifacts, studied empirically]] — 2023-11-23; known operations, unknown parameters; the reversal curse
 - [[llms-are-the-kernel-of-an-emerging-operating-system|An LLM is the kernel process of an emerging operating system, not a chatbot]] — 2023-11-23; context window as RAM
 - [[llms-currently-only-have-a-system-1|In November 2023, LLMs had only System 1]] — 2023-11-23; the goal is converting time into accuracy
 - [[llms-want-to-imitate-not-succeed|LLMs don't want to succeed, they want to imitate]] — 2023-05-25; ask for a strong solution, but not too much
+- [[memory-access-not-flops-limits-training-speed|Memory access patterns, not FLOP counts, limit much of training speed]] — 2024-06-09; TF32 gave 3× not 8×; flash attention wins with more FLOPs
 - [[micrograd-is-all-you-need-everything-else-is-efficiency|micrograd is all you need; everything else is efficiency]] — 2022-08-16; tensors change nothing in the math
 - [[modern-innovations-make-precise-initialization-less-important|Residual connections, normalization layers and better optimisers make exact initialisation less important]] — 2022-10-04; Kaiming is still the most common init
+- [[neural-net-training-should-not-be-complicated|Neural net training is one loop of simple arithmetic and should not be that complicated]] — 2024-07-11; llm.c's minimal C/CUDA; supports GPT-is-not-complicated
 - [[neural-networks-are-just-mathematical-expressions|Neural networks are just a class of mathematical expressions]] — 2022-08-16; data and weights in, loss out
 - [[no-rag-needed-for-a-small-wiki|His ~100-article wiki worked without RAG]] — 2026-04-02; one wiki's experience, not a general result
 - [[open-weights-models-are-not-open-source|Llama and Mistral are open-weights models, not open source]] — weights are a binary; open source releases data and training
+- [[physical-automation-will-lag-digital-automation|Automation of physical infrastructure will probably lag digital automation]] — 2024-07-03; bits are easier than atoms; hedged
 - [[pretraining-gives-a-document-completer|Pretraining alone gives a document completer, not an assistant]] — 2023-01-17; it babbles internet until finetuned
 - [[pretraining-is-lossy-compression-of-the-internet|Pretraining is a lossy compression of the internet]] — 2023-11-23; 10 TB to 140 GB; next-word prediction learns the world
 - [[pytorch-documentation-is-unreliable|PyTorch's documentation is unmaintained and will mislead you]] — 2022-11-21; wrong, incomplete, unclear; do your best
@@ -43,6 +49,8 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[scaling-offers-a-guaranteed-path-to-better-models|In 2023, scaling offered one guaranteed path to better models]] — 2023-11-23; algorithmic progress is a bonus
 - [[self-improvement-may-be-possible-in-narrow-domains|LLM self-improvement may be possible in narrow domains]] — 2023-11-23; hedged; no general reward criterion
 - [[small-llms-can-be-strong-in-narrow-domains|Very small LLMs can perform surprisingly well if the domain is narrow enough]] — TinyStories as reference; demand for custom micro-LLMs at the edge
+- [[small-projects-can-snowball|Small, fragile projects can snowball into very big ones]] — 2024-07-03; game tutorials to CS231n, Zero to Hero, LLM101n; a Reddit chatbot to GPT-4o
+- [[success-comes-from-repeated-practice|To a very large extent, success comes from repeated practice, on the order of 10,000 hours]] — 2024-07-03; count the hours; his 20th website, the Tesla rewrite
 - [[the-hockey-stick-loss-means-training-is-wasting-steps|A hockey-stick loss curve means the first iterations are wasted squashing overconfident weights]] — 2022-10-04; fix the output scale at init
 - [[the-logits-softmax-nll-machinery-stays-fixed-up-to-transformers|Only the forward pass changes on the way to transformers]] — 2022-09-07; logits, softmax, NLL and gradient descent stay
 - [[the-transformer-is-a-general-purpose-efficient-optimizable-computer|He would have called the Transformer a general-purpose, efficient, optimizable computer]] — 2023-05-19; expressive, optimizable, efficient, and resilient since 2017

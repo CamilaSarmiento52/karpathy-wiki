@@ -2,8 +2,8 @@
 type: topic
 aliases: [Overfitting, underfitting, train/dev/test split, validation loss, generalization]
 first_seen: 2022-09-12
-last_updated: 2022-11-21
-sources: ["[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-11-21-makemore-5-wavenet]]"]
+last_updated: 2024-06-09
+sources: ["[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-11-21-makemore-5-wavenet]]", "[[youtube-2024-06-09-reproduce-gpt-2]]"]
 related: ["[[diagnose-under-or-overfitting]]", "[[regularization]]", "[[gradient-descent]]", "[[embeddings]]", "[[batch-normalization]]"]
 ---
 # Overfitting and generalization
@@ -17,6 +17,8 @@ With 3,400 parameters and 32 examples the network overfits a single batch and re
 In the third lecture he notes an accidental regulariser: batch normalization couples the examples in a batch, so each example's hidden states jitter depending on the others, which he says pads out the examples like a form of data augmentation and makes overfitting harder ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @50:57, @51:31, @52:04).
 
 In the fifth lecture a training loss of 2.05 against a validation loss of 2.10 tells him the model is not overfitting much, so he can make progress by scaling the network up ([[youtube-2022-11-21-makemore-5-wavenet]] @17:09). He admits they were only looking at training loss, whereas normally you look at training and validation loss together, and that things look different when squeezing out numbers ([[youtube-2022-11-21-makemore-5-wavenet]] @46:42, @47:13). After the hierarchical model he says a large enough one-hidden-layer network might still beat it ([[youtube-2022-11-21-makemore-5-wavenet]] @55:40).
+
+**Near-infinite data (2024-06-09).** Training GPT-2 on FineWeb-Edu, he expects train and validation loss to be about the same with roughly infinite data; a validation split matters more in multi-epoch training, where a big model may memorise ([[youtube-2024-06-09-reproduce-gpt-2]] @3:24:20, @3:24:55, @3:25:28). He also evaluates OpenAI's GPT-2 124M on the same validation split as a reference, noting it is not a fair comparison because GPT-2 trained on a different distribution ([[youtube-2024-06-09-reproduce-gpt-2]] @3:24:20, @3:24:55).
 
 ## Claims
 - [[approximate-gradient-with-more-steps-beats-exact-gradient]] — the minibatch loss is noisy, so progress is read on the full set

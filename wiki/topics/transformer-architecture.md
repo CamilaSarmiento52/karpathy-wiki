@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [Transformer, Transformer block, GPT architecture, GPT, decoder-only, residual connections, layer norm, LayerNorm, GPT-1, GPT-2, GPT-3, Image GPT, "Attention Is All You Need", encoder-decoder, cross-attention, encoder-only, BERT, T5, sequence to sequence, history of the Transformer, Llama, Llama 2, RoPE, SwiGLU, RMSNorm, multiquery attention]
+aliases: [Transformer, Transformer block, GPT architecture, GPT, decoder-only, residual connections, layer norm, LayerNorm, GPT-1, GPT-2, GPT-3, Image GPT, "Attention Is All You Need", encoder-decoder, cross-attention, encoder-only, BERT, T5, sequence to sequence, history of the Transformer, Llama, Llama 2, RoPE, SwiGLU, RMSNorm, multiquery attention, pre-norm, clean residual stream, map-reduce view]
 first_seen: 2023-01-08
-last_updated: 2024-05-29
-sources: ["[[github-2023-01-08-mingpt-readme]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]"]
+last_updated: 2024-07-11
+sources: ["[[github-2023-01-08-mingpt-readme]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
 related: ["[[mingpt]]", "[[nanogpt]]", "[[batch-normalization]]", "[[embeddings]]", "[[self-attention]]", "[[regularization]]", "[[ng-video-lecture]]"]
 ---
 # Transformer architecture
@@ -36,6 +36,14 @@ He reads the 2017 paper as deleting everything except attention and combining se
 
 **GPT-2 as the template (llm.c, 2024-05-28).** He says GPT-3 changed little about the model relative to GPT-2, he thinks only the context size from 1024 to 2048, and that many later LLMs strongly resemble GPT-2: Llama 3, architecturally, differs by a change of MLP non-linearity and the addition of RoPE relative positional encoding ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (FAQ)). The llama2.c README lists the notable changes from GPT-1/2 in Llama as RoPE relative positional embeddings instead of absolute learned ones, the "a bit more fancy" SwiGLU non-linearity in the MLP, RMSNorm instead of LayerNorm, `bias=False` on all Linear layers, and optional multiquery attention; its 110M model is GPT-1 sized and, as he puts it, equivalent to GPT-2 small except for a max context of 1024 instead of 2048 ([[github-2024-05-29-llama2c-readme]] §models).
 
+**GPT-2 rebuilt in PyTorch (GPT-2 lecture, 2024-06-09).** The GPT-2 miniseries runs from 124M to 1,558M parameters; he says the parameter table in the GPT-2 paper is wrong and points to OpenAI's repo noting the error ([[youtube-2024-06-09-reproduce-gpt-2]] @01:05). The 124M model has 12 layers and 768 channels, properties of the released model ([[youtube-2024-06-09-reproduce-gpt-2]] @01:38). GPT-2 is decoder-only: the original Transformer's encoder, and the cross-attention that used it, are gone ([[youtube-2024-06-09-reproduce-gpt-2]] @13:55). Per the GPT-2 paper the layer norms move before the attention and MLP and an extra layer norm sits before the final classifier, which projects 768 channels to the 50,257-token vocabulary with no bias ([[youtube-2024-06-09-reproduce-gpt-2]] @14:29, @16:48). He wants one clean residual stream from the supervision down to the tokens, because addition passes gradients to both branches unchanged, and calls normalisations inside the residual path undesirable ([[youtube-2024-06-09-reproduce-gpt-2]] @18:28, @19:04).
+
+He describes attention as where the 1,024 tokens communicate, a pooling or weighted-sum reduce, and the MLP as acting on each token individually, a map, so the Transformer is a repeated map-reduce in which each block refines the residual stream ([[youtube-2024-06-09-reproduce-gpt-2]] @19:38, @20:12). He implements all heads in one attention module, treating the head count as a batch dimension; it is mathematically equivalent to the concatenated heads of the earlier lecture, only more efficient in PyTorch ([[youtube-2024-06-09-reproduce-gpt-2]] @24:38, @25:46, @26:20, @26:53). His complete GPT-2 is under 100 lines, against roughly 2,000 in Hugging Face's `modeling_gpt2.py` ([[youtube-2024-06-09-reproduce-gpt-2]] @27:27).
+
+In his summary of the papers, GPT-2 and GPT-3 are very similar architectures: the context length goes from 1,024 to 2,048, and GPT-3 was trained longer on more data, up to 175B parameters against GPT-2's 1.6B ([[youtube-2024-06-09-reproduce-gpt-2]] @2:15:55, @2:16:28). To be faithful to GPT-3 one would set sequence length 2,048 and micro-batch 32 so a step stays at about half a million tokens ([[youtube-2024-06-09-reproduce-gpt-2]] @3:52:03).
+
+In the 1.6B post he again says GPT-3 of the same size is pretty much GPT-2's architecture with minor differences (context length 1024 to 2048) but trained for 300B tokens, and that GPT-2's release had weights but very few details while GPT-3's had details but no weights ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Evals), §intro (Args guide)). The 1558M model is `-e "d48"`, a depth-48 GPT-2 initialised from scratch, with 1,557,686,400 parameters per the log ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Args guide), §intro (Training)).
+
 ## Claims
 - [[attention-is-a-communication-mechanism]]
 - [[gpt-is-not-a-complicated-model]]
@@ -44,6 +52,7 @@ He reads the 2017 paper as deleting everything except attention and combining se
 - [[with-enough-data-encode-less-inductive-bias]] — biases live in connectivity and positional encodings
 - [[the-transformer-is-probably-not-the-final-architecture]] — resilient so far, change expected
 - [[gpt-2-is-the-first-recognizably-modern-llm-stack]] — why llm.c reproduces GPT-2
+- [[neural-net-training-should-not-be-complicated]] — the training loop, not only the model, should be simple
 
 ## Related
 - [[llama2c]] — the Llama 2 architecture hard-coded in C

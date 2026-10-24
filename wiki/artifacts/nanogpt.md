@@ -3,7 +3,7 @@ type: artifact
 repo_url: https://github.com/karpathy/nanoGPT
 language: Python
 status: superseded
-sources: ["[[github-2023-01-08-mingpt-readme]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2023-01-31-ng-video-lecture-readme]]", "[[github-2025-11-12-nanogpt-readme]]", "[[github-2026-07-03-nanochat-readme]]", "[[youtube-2025-06-19-software-is-changing]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[github-2024-05-29-llama2c-readme]]"]
+sources: ["[[github-2023-01-08-mingpt-readme]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2023-01-31-ng-video-lecture-readme]]", "[[github-2025-11-12-nanogpt-readme]]", "[[github-2026-07-03-nanochat-readme]]", "[[youtube-2025-06-19-software-is-changing]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]"]
 aliases: [nanoGPT]
 ---
 # nanoGPT
@@ -26,6 +26,10 @@ His earlier repo for training and finetuning medium-sized GPTs, a rewrite of min
 - In his Stanford CS25 lecture he presents nanoGPT as a complete, very minimal Transformer implementation that reproduces GPT-2 on OpenWebText and is very readable at about 300 lines ([[talk-2023-05-19-stanford-cs25-transformers]] @31:02). He walks through it: the GPT class, token embeddings from `nn.Embedding` plus positional embeddings, the blocks, a final layer norm, the LM head, and cross-entropy against targets offset by one ([[talk-2023-05-19-stanford-cs25-transformers]] @34:55, @35:29, @36:01, @36:34). Asked what he is working on next, he names nanoGPT, a move from computer vision toward language and from minGPT rewritten into nanoGPT to reproduce GPTs ([[talk-2023-05-19-stanford-cs25-transformers]] @1:10:52).
 - llama2.c started from it: he took nanoGPT and tuned it to implement the Llama 2 architecture instead of GPT-2, then wrote the C inference engine ([[github-2024-05-29-llama2c-readme]] §intro).
 
+- In the June 2024 GPT-2 lecture he says what the lecture builds was building toward nanoGPT, and that llm.c's PyTorch reference `train_gpt2.py` is essentially nanoGPT ([[youtube-2024-06-09-reproduce-gpt-2]] @3:56:27, @3:57:01).
+
+- build-nanogpt, dated 2024-06-17, holds a from-scratch reproduction of nanoGPT built up commit by commit ([[github-2024-06-17-build-nanogpt-readme]] §intro).
+
 ## Related
 - [[weight-initialization]]
 - [[ng-video-lecture]] — the lecture code that builds toward it
@@ -35,3 +39,4 @@ His earlier repo for training and finetuning medium-sized GPTs, a rewrite of min
 - [[nanochat]]
 - [[llama2c]] — adapted from it to Llama 2
 - [[building-for-agents]]
+- [[build-nanogpt]] — the from-scratch rebuild of it

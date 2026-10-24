@@ -53,3 +53,5 @@ vibe coding and MenuGen (@29:22, @31:38), and closes on building infrastructure 
 - [[llms-are-the-kernel-of-an-emerging-operating-system]]
 - [[llm-products-will-take-years-to-figure-out]]
 - [[llm-agents-over-time]]
+- [[llm-os-over-time]]
+- [[physical-automation-will-lag-digital-automation]]

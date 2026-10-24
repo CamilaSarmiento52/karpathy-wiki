@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [Activation functions, tanh, ReLU, dead neurons, saturation]
+aliases: [Activation functions, tanh, ReLU, dead neurons, saturation, GELU, tanh-approximate GELU]
 first_seen: 2022-08-16
-last_updated: 2022-10-11
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]"]
+last_updated: 2024-06-09
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[youtube-2024-06-09-reproduce-gpt-2]]"]
 related: ["[[multilayer-perceptron]]", "[[backpropagation]]", "[[micrograd]]", "[[weight-initialization]]", "[[batch-normalization]]"]
 ---
 # Activation functions
@@ -20,6 +20,8 @@ The third makemore lecture is about what goes wrong with tanh. After fixing the 
 
 In the hand-written tensor backward pass, the backward of tanh is again 1 minus the output squared, expressed in terms of the output rather than the input; he lists saturating nonlinearities killing gradients and dead neurons among the ways backprop leaks ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @01:37, @54:03, @54:35).
 
+**GELU in GPT-2 (2024-06-09).** The GPT-2 MLP is two linear layers around a GELU, using its tanh approximation ([[youtube-2024-06-09-reproduce-gpt-2]] @20:46). He describes GELU as like a smoother ReLU without an exactly flat tail at zero, from the "Gaussian error linear units" paper ([[youtube-2024-06-09-reproduce-gpt-2]] @21:18). As far as he can tell, the approximation exists because the erf needed for exact GELU was very slow in TensorFlow at the time, and BERT and GPT-2 picked it up; today he expects no big difference and would prefer the exact version, but keeps the approximation to reproduce GPT-2 exactly ([[youtube-2024-06-09-reproduce-gpt-2]] @21:51, @22:25). Because GELU always contributes a local gradient, it avoids the dead-ReLU problem of exactly zero gradient in the flat region ([[youtube-2024-06-09-reproduce-gpt-2]] @22:57). More modern networks such as Llama 3 change the nonlinearity again, to SwiGLU and variants ([[youtube-2024-06-09-reproduce-gpt-2]] @23:31).
+
 ## Claims
 - [[micrograd-is-all-you-need-everything-else-is-efficiency]] — tanh as atomic op or composite gives the same gradients
 - [[modern-innovations-make-precise-initialization-less-important]] — why saturation is less fatal than it was
@@ -32,3 +34,4 @@ In the hand-written tensor backward pass, the backward of tanh is again 1 minus 
 - [[batch-normalization]] — normalising pre-activations instead
 - [[training-diagnostics]] — the saturation plots
 - [[makemore]]
+- [[transformer-architecture]] — the MLP the GELU sits in

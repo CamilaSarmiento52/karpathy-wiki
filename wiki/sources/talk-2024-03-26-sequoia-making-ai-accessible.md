@@ -53,3 +53,4 @@ A 37-minute interview at Sequoia, with Stephanie Zhan asking the questions and a
 - [[build-the-ramp-not-just-the-thing]]
 - [[make-it-work-then-make-it-cheap]]
 - [[llm-agents-over-time]]
+- [[llm-os-over-time]]

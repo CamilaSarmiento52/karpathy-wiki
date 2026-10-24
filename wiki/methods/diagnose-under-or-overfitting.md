@@ -9,7 +9,7 @@ steps:
   - Evaluate the test split once at the end
   - Match parameter counts before comparing architectures
   - Check for bugs before reading a null result
-sources: ["[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-11-21-makemore-5-wavenet]]"]
+sources: ["[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-11-21-makemore-5-wavenet]]", "[[youtube-2024-06-09-reproduce-gpt-2]]"]
 aliases: [overfit a single batch, compare train and dev loss, reading train vs dev loss, control for parameter count, parameter-matched comparison]
 ---
 # Diagnose under- or overfitting
@@ -32,7 +32,10 @@ How he reads whether a model is too small or memorising: note that a few dozen e
 13. **Suspect bugs before concluding.** Before reading the null result (2.029 against 2.027), he notes the architecture has not been tuned and that BatchNorm might still have a bug, which it did ([[youtube-2022-11-21-makemore-5-wavenet]] @38:20, @45:01).
 14. **Watch both losses.** He admits to looking only at training loss and says normally you watch training and validation together ([[youtube-2022-11-21-makemore-5-wavenet]] @46:42, @47:13).
 
+Step 2 again at GPT-2 scale: before real training he overfits a single 4 × 32 batch until the loss is very low, showing that the Transformer can memorise it ([[youtube-2024-06-09-reproduce-gpt-2]] @1:00:42, @1:01:14).
+
 ## Seen in
 - [[youtube-2022-11-21-makemore-5-wavenet]]
 - [[youtube-2022-09-12-makemore-2-mlp]]
 - [[makemore]]
+- [[youtube-2024-06-09-reproduce-gpt-2]]

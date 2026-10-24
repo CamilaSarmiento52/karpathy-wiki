@@ -16,7 +16,10 @@ steps:
   - Ship exercises and have viewers work them alongside
   - Motivate with the failures before the code
   - Round-trip test on unseen text
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]"]
+  - Write your own class rather than read the library's
+  - Debug on a toy before fixing the real code
+  - Keep one clean commit per step and narrate each
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]"]
 aliases: [spelled-out lecture, spell it out step by step, explicit baseline then neural net, build from a blank notebook, build up from a bigram baseline, incremental model build-up]
 ---
 # Spelled-out build from scratch
@@ -51,6 +54,11 @@ How he teaches: he starts with a blank Jupyter notebook and builds the whole thi
 22. **Failures first.** The tokenizer lecture opens with the list of LLM weirdness that tokenization causes, demonstrated in a tokenizer web app, and promises to loop back; it does, at the end ([[youtube-2024-02-20-gpt-tokenizer]] @04:27, @05:33, @1:51:24). He explains BPE on Wikipedia's four-letter toy example before applying it to bytes ([[youtube-2024-02-20-gpt-tokenizer]] @23:32, @24:06), and invites viewers to write `get_stats`, the merge, decode and encode themselves before showing his ([[youtube-2024-02-20-gpt-tokenizer]] @28:01, @30:47, @42:59, @48:38). He shows decode failing on token 128 and asks viewers to work out why before fixing it ([[youtube-2024-02-20-gpt-tokenizer]] @45:16, @45:51).
 23. **Round-trip tests.** He checks that encoding then decoding returns the original string, on the training text and on validation text the tokenizer never saw ([[youtube-2024-02-20-gpt-tokenizer]] @55:56, @56:30). He then shows OpenAI's `encoder.py` is algorithmically identical to what he built, and publishes minbpe with an `exercise.md` breaking the build into four steps toward a GPT-4 tokenizer ([[youtube-2024-02-20-gpt-tokenizer]] @1:15:36, @1:17:50, @1:25:45). The repo's README points to that advised progression and to the lecture, also kept in text form as `lecture.md` ([[github-2024-04-22-minbpe-readme]] §exercise, §lecture).
 
+24. **Write your own class.** In the GPT-2 lecture he writes the GPT-2 class from scratch instead of using Hugging Face's `modeling_gpt2.py`, which he finds too complicated, to have full understanding ([[youtube-2024-06-09-reproduce-gpt-2]] @12:18, @12:50).
+25. **Toy first.** He debugs the gradient-accumulation bug on a toy MSE network in a notebook before fixing the real code ([[youtube-2024-06-09-reproduce-gpt-2]] @2:39:41, @2:40:15).
+
+26. **One clean commit per step.** The build-nanogpt README says they start from an empty file and work up to GPT-2 (124M), with the git commits kept step by step and clean so the history can be walked, and the video introducing each commit ([[github-2024-06-17-build-nanogpt-readme]] §intro). **Note:** this makes explicit the git log released after the GPT lecture (step 20) ([[youtube-2023-01-17-gpt-from-scratch]] @1:54:50; [[github-2024-06-17-build-nanogpt-readme]] §intro).
+
 ## Seen in
 - [[youtube-2023-01-17-gpt-from-scratch]]
 - [[ng-video-lecture]], [[nanogpt]]
@@ -61,3 +69,5 @@ How he teaches: he starts with a blank Jupyter notebook and builds the whole thi
 - [[nn-zero-to-hero]]
 - [[build-the-ramp-not-just-the-thing]]
 - [[minbpe]], [[youtube-2024-02-20-gpt-tokenizer]]
+- [[youtube-2024-06-09-reproduce-gpt-2]]
+- [[build-nanogpt]]

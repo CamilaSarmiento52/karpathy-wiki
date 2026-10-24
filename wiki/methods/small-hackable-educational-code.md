@@ -12,7 +12,9 @@ steps:
   - Build the ramp as well as the code
   - Report lines of code and latency as numbers
   - Put simplicity ahead of efficiency and leave the rest to forks
-sources: ["[[github-2022-11-20-makemore-readme]]", "[[github-2023-01-08-mingpt-readme]]", "[[github-2023-01-31-ng-video-lecture-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]"]
+  - Prefer a few lines you understand over a library abstraction
+  - Keep it minimal, fast to compile, constant in memory and deterministic
+sources: ["[[github-2022-11-20-makemore-readme]]", "[[github-2023-01-08-mingpt-readme]]", "[[github-2023-01-31-ng-video-lecture-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
 aliases: [One hackable file, minimal educational re-implementation, hackable code, educational code]
 ---
 # Small, hackable, educational code
@@ -35,6 +37,12 @@ How he writes the repos that accompany his lectures: makemore, he says, is not m
 
 11. **Simplicity first, by policy.** For llama2.c he wanted something super simple, minimal and educational, so he hard-coded the Llama 2 architecture in one pure-C inference file with no dependencies, and kept the fp32 forward pass as the easy-to-understand reference with quantization in a separate file ([[github-2024-05-29-llama2c-readme]] §intro, §int8 quantization). Its contributing policy says the repo should be the simplest, smallest, most hackable one for training and inference, not a framework of a thousand knobs across hundreds of files; it cares about efficiency but not at the cost of simplicity, readability or portability, and should not be full-featured, take 100 options or be the most efficient, with llama.cpp for those who care most about deployment efficiency ([[github-2024-05-29-llama2c-readme]] §contributing). Small, localised, broadly useful changes such as a loop reorder or a one-line OpenMP pragma are instant merges, while many `#ifdef`s, platform-specific code or hundreds of scenario-specific lines belong in forks ([[github-2024-05-29-llama2c-readme]] §contributing).
 
+12. **Lines you understand.** In the GPT-2 lecture he writes the learning-rate schedule himself rather than using PyTorch's scheduler, because he fully understands what happens inside those few lines and dislikes abstractions he cannot see into, which he calls personal style ([[youtube-2024-06-09-reproduce-gpt-2]] @2:22:45). He made a git commit every time he added something, so the released repo documents the build from scratch in its commit history ([[youtube-2024-06-09-reproduce-gpt-2]] @3:27:41).
+
+The build-nanogpt README keeps its commits clean for walking through and, for production-grade runs very similar to nanoGPT, points to litGPT and TinyLlama rather than growing the repo ([[github-2024-06-17-build-nanogpt-readme]] §intro, §Prod).
+
+13. **Minimal, and still fast.** In the 1.6B post he lists why he finds llm.c beautiful: basic CUDA dependencies only; direct, minimal, readable C/CUDA in about 5,000 lines, mostly C rather than C++ to keep it simple; compiles and runs in seconds, so you step more and wait less; allocates all GPU memory once for a constant footprint; bitwise deterministic; and just below ~50% MFU ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Code)). `train_gpt2.cu` holds the model and training loop, about 2,000 lines by his count (1353 by `cloc`), importing 23 helper files of 3170 lines from `llmc` ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Code)). Its stated goal pairs a simple, minimal, clean training stack in direct C/CUDA with companion educational materials ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Coming up)).
+
 ## Seen in
 - [[github-2023-01-31-ng-video-lecture-readme]]
 - [[ng-video-lecture]]
@@ -46,3 +54,6 @@ How he writes the repos that accompany his lectures: makemore, he says, is not m
 - [[build-the-ramp-not-just-the-thing]]
 - [[llm-c]]
 - [[llama2c]]
+- [[build-nanogpt]]
+- [[build-and-publish-projects]] — the publishing habit around it
+- [[neural-net-training-should-not-be-complicated]]

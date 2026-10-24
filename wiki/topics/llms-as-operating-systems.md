@@ -3,7 +3,7 @@ type: topic
 aliases: [LLM OS, LLMs are operating systems, LLM as kernel process, context window as RAM]
 first_seen: 2023-11-23
 last_updated: 2025-12-19
-sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]"]
+sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-07-03-berkeley-hackathon-keynote]]"]
 related: ["[[software-3-0]]", "[[llm-gui]]", "[[jagged-intelligence]]"]
 ---
 # LLMs as operating systems
@@ -13,6 +13,8 @@ His analogy that the LLM is a new kind of computer, first drawn in his November 
 **The 2023 version.** He says it is not accurate to think of an LLM as a chatbot or word generator; it is more correct to see it as the kernel process of an emerging operating system ([[youtube-2023-11-23-intro-to-llms]] @42:06). His picture of an LLM in a few years: it reads and generates text, knows more than any single human, browses and uses retrieval, uses a calculator and Python, sees and generates images and video, hears and speaks, thinks for a long time with a System 2, maybe self-improves in narrow domains, and is customized into many experts ([[youtube-2023-11-23-intro-to-llms]] @42:38, @43:11). The memory hierarchy maps over, with the internet as disk via browsing and the context window as RAM, a finite, precious working memory that the kernel pages information in and out of ([[youtube-2023-11-23-intro-to-llms]] @43:45). He sees further equivalents in multithreading, multiprocessing, speculative execution, and user and kernel space ([[youtube-2023-11-23-intro-to-llms]] @44:18). The ecosystem matches too: proprietary systems like Windows and macOS against an open Linux-based ecosystem, and proprietary GPT, Claude and Bard against an open ecosystem mostly based on Llama ([[youtube-2023-11-23-intro-to-llms]] @44:52). On Chatbot Arena the closed models work a lot better, while open models work worse but may be good enough, and open source is chasing the proprietary ecosystems ([[youtube-2023-11-23-intro-to-llms]] @24:22, @24:55). The new computing stack, he says, is built around LLMs orchestrating tools through a natural-language interface ([[youtube-2023-11-23-intro-to-llms]] @45:25).
 
 **The 2024 version (Sequoia, 2024-03-26).** He says a few years ago it was unclear how AGI would happen and the question was academic, and now he thinks it is very clear, with everyone trying to fill the space ([[talk-2024-03-26-sequoia-making-ai-accessible]] @03:30). Everyone, he says, is trying to build what he calls an LLM OS: modalities such as text, images and audio are peripherals plugged into a new CPU, the LLM Transformer itself, which is also connected to the Software 1.0 infrastructure already built, all made customisable for the nooks and crannies of the economy ([[talk-2024-03-26-sequoia-making-ai-accessible]] @04:05, @04:39). He expects to bring up and down relatively self-contained agents given high-level tasks ([[talk-2024-03-26-sequoia-making-ai-accessible]] @04:39). He sees OpenAI building out this LLM OS as a platform; as Windows ships with a default browser, it or other companies may ship a few default apps, while other apps can still run on the infrastructure ([[talk-2024-03-26-sequoia-making-ai-accessible]] @05:48, @06:20). The market may look like operating systems too, an oligopoly of proprietary systems beside Linux and its distributions; open weights are like being tossed a binary ([[talk-2024-03-26-sequoia-making-ai-accessible]] @07:27, @07:59).
+
+**The Berkeley version (published 2024-07-03).** He says the reason for the current AI boom is that the nature of computation is changing and a new computing paradigm is starting, which is very rare; it feels almost like the 1980s of computing all over again ([[talk-2024-07-03-berkeley-hackathon-keynote]] @06:10). Instead of a CPU working on instructions over bytes, the LLM is like a CPU working on tokens, little string pieces; the context window of tokens stands in for RAM of bytes, with equivalents of disk and the rest ([[talk-2024-07-03-berkeley-hackathon-keynote]] @06:10, @06:49). He calls the LLM the orchestrator and the whole the LLM OS, a new computer people are learning to program: what it is good and bad at, how to put it into products, how to get the most out of it ([[talk-2024-07-03-berkeley-hackathon-keynote]] @06:49). He points to the GPT-4o demo as something you can talk to in audio that sees, hears and paints, and notes that in the film "Her" the AI is called an operating system ([[talk-2024-07-03-berkeley-hackathon-keynote]] @06:49, @07:27).
 
 **The 2025 version.** He tries three analogies in turn. LLMs are like utilities, with capex to build the grid, opex to serve it, metered access per token, and an "intelligence brownout" when models go down ([[youtube-2025-06-19-software-is-changing]] @06:41, @07:14). They are like fabs, with large capex and research secrets centralising in labs ([[youtube-2025-06-19-software-is-changing]] @07:47, @08:22). But the analogy he finds strongest is the operating system: closed providers like Windows and macOS, and open models as a possible Linux ([[youtube-2025-06-19-software-is-changing]] @08:54, @09:28).
 
@@ -24,10 +26,11 @@ In December 2025 he restates the paradigm as similar to computers of the 1970s a
 
 **Note:** the component he names differs: in 2023 the LLM is the kernel process, in 2025 it is like the CPU, with the context window as memory in both. This is a difference of wording, not a change of view ([[youtube-2023-11-23-intro-to-llms]] @42:06, @43:45; [[youtube-2025-06-19-software-is-changing]] @10:01).
 
-**Note:** the decade he names moves from the 1960s in the talk to the 1970s–80s in the essay; both are framed as early-stage analogies, not a stated change of view ([[youtube-2025-06-19-software-is-changing]], [[blog-2025-12-19-year-in-review-2025]]).
+**Note:** the decade he names moves from the 1980s in the Berkeley keynote to the 1960s in the YC talk and the 1970s–80s in the essay; all are framed as early-stage analogies, differences of wording rather than a stated change of view; the dated list is on [[llm-os-over-time]] ([[talk-2024-07-03-berkeley-hackathon-keynote]] @06:10; [[youtube-2025-06-19-software-is-changing]] @10:34; [[blog-2025-12-19-year-in-review-2025]] §6).
 
 ## Claims
 - [[llms-are-the-kernel-of-an-emerging-operating-system]] — the 2023 statement of the analogy
+- [[physical-automation-will-lag-digital-automation]] — the many digital entities, with robots behind
 
 ## Related
 - [[software-3-0]]
@@ -36,3 +39,4 @@ In December 2025 he restates the paradigm as similar to computers of the 1970s a
 - [[llm-tool-use]] — the tools the kernel coordinates
 - [[llm-security]] — the security challenges of the new stack
 - [[ai-ecosystem]] — open weights, open source and proprietary as the market's three kinds
+- [[llm-os-over-time]] — the analogy's dated versions

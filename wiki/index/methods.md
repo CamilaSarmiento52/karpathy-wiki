@@ -3,6 +3,7 @@
 How he builds, debugs, explains and evaluates. Alphabetical. Maintained by ingest; do not edit by hand.
 
 - [[ai-assisted-coding-loop|AI-assisted coding loop]] — small concrete diffs, verified fast; keep the AI on the leash
+- [[build-and-publish-projects|Build and publish projects]] — end to end, learn on demand, remix, publish, let the audience raise the bar, count the hours
 - [[check-shapes-and-broadcasting|Check shapes and broadcasting]] — walk the shapes through the rules, verify a row sums to one, print every layer's output shape
 - [[diagnose-under-or-overfitting|Diagnose under- or overfitting]] — overfit a small batch first, compare train and dev loss, match parameter counts before comparing architectures
 - [[learning-rate-sweep|Learning-rate sweep]] — exponentially spaced rates over 1,000 steps, read the valley in the plot

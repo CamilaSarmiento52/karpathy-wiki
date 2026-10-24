@@ -2,6 +2,7 @@
 
 His repositories and what each demonstrates. Alphabetical. Maintained by ingest; do not edit by hand.
 
+- [[build-nanogpt|build-nanogpt]] — the GPT-2 (124M) lecture's code, built commit by commit from an empty file; about an hour and $10 to reproduce
 - [[calorie|calorie]] — personal calorie-deficit tracking web app in one index.html; not AI work
 - [[llama2c|llama2.c]] — Llama 2 architecture trained in PyTorch and run from one dependency-free C file; tiny TinyStories models and int8 quantization
 - [[llm-c|llm.c]] — GPT-2 training in C/CUDA; Discussions host his progress reports

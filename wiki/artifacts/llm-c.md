@@ -3,7 +3,7 @@ type: artifact
 repo_url: https://github.com/karpathy/llm.c
 language: C / CUDA
 status: active
-sources: ["[[github-2024-04-12-llmc-discussions-welcome]]", "[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]"]
+sources: ["[[github-2024-04-12-llmc-discussions-welcome]]", "[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-12-llmc-gpt-2-774m]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
 context: ["[[x-2024-02-21-technical-accessibility]]"]
 aliases: [llm.c, llm.c repo, train_gpt2.cu]
 ---
@@ -30,6 +30,14 @@ His codebase for training GPT-2, whose mainline is the CUDA file `train_gpt2.cu`
 - **Note:** the 2024-05-03 report forecast the reproduction at "~2 weeks out"; the 124M result is in the Discussion published 2024-05-28 ([[github-2024-05-03-llmc-state-of-the-union]] §intro (Goal); [[github-2024-05-28-llmc-gpt-2-124m]] §intro).
 - **Note:** his line that he wants to build the whole thing again from scratch, piece by piece, links to his 2024-02-21 post on building the ramp ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (Coming up); [[x-2024-02-21-technical-accessibility]]).
 
+- **In the GPT-2 lecture, 2024-06-09.** He presents llm.c as a pure CUDA implementation of GPT-2/GPT-3 training with a nanoGPT-like PyTorch reference file ([[youtube-2024-06-09-reproduce-gpt-2]] @3:56:27, @3:57:01). It gives the same losses and norms as the PyTorch version but runs faster, starts faster and takes less space; he notes it is specific to GPT-2/3 while PyTorch is general ([[youtube-2024-06-09-reproduce-gpt-2]] @3:57:37, @3:58:11, @3:58:46, @3:59:19).
+
+- **GPT-2 (774M), 2024-06-12.** He ran the 774M model for about six days on his 8×A100 80GB node, 150B tokens or 1.5 epochs of the 100B FineWeb sample, and it finished with no major issues; the launch script is `scripts/run_gpt2_774M.sh`, the final log and checkpoint are on S3, and a Hugging Face upload is credited to another user, `mdouglas` ([[github-2024-06-12-llmc-gpt-2-774m]] §intro, §intro (s3 paths), §intro (huggingface paths)). Next he wants to figure out the evals, then launch "the GPT-2", 1558M, on a bigger node so it does not take half a month, and use it to merge multi-GPU pull requests ([[github-2024-06-12-llmc-gpt-2-774m]] §intro (Next up)).
+
+- **GPT-2 (1558M), 2024-07-11.** llm.c reproduces the full 1558M GPT-2 of OpenAI's 2019 release directly in C/CUDA, about 5,000 lines, without Python or a library such as PyTorch, JAX or huggingface/transformers, on one 8×H100 node in 24 hours for $672 ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro). His caveats: not perfectly tuned, not sufficiently stabilised, evals not comprehensive ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro). From a blank box it takes about a minute to start stepping; one GPU gives the same model in about 8 days, 16 GPUs in about 12 hours ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Training)). On OpenAI's unicorn prompt the completion is fairly coherent and, he judges, qualitatively around GPT-2's level ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Unicorns)).
+- **Release and FAQ.** The final model is on S3 and Hugging Face, with longer 100K- and 330K-step versions also uploaded; export to Hugging Face format enables the Eleuther harness and sampling ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (The final model), §intro (Model export)). Sampling in llm.c is inefficient and hacky, there is no chat (pretraining only), fp8 is in progress, and it is CUDA only, with an actively maintained AMD fork by @anthonix ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (FAQ)). He names @ngc92, @ademeure, @gordicaleksa and @rosslwheeler as the core contributors, Lambda as the GPU sponsor, and Nvidia and Ubicloud for CI runners ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Authors)).
+- **Roadmap and goal.** Next: tune GPT-2 hyperparameters, improve training and scaling stability, fp8, inference with a KV cache, SFT and RLHF, multimodal extensions, and Llama/Gemma support; the goal remains a simple, minimal, clean training stack for a full-featured LLM agent in direct C/CUDA, with companion educational materials ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Coming up)).
+
 ## Related
 - [[llm-c-trained-gpt-2-faster-than-pytorch-in-his-measurements]] — his speed and memory comparisons
 - [[compute-efficiency]] — the kernel and memory work
@@ -39,3 +47,4 @@ His codebase for training GPT-2, whose mainline is the CUDA file `train_gpt2.cu`
 - [[llm-evaluation]] — FineWeb validation and HellaSwag
 - [[his-gpt-2-reproductions-beat-openais-checkpoints-on-hellaswag]], [[gpt-2-is-the-first-recognizably-modern-llm-stack]]
 - [[build-the-ramp-not-just-the-thing]] — the post he links for rebuilding it from scratch
+- [[neural-net-training-should-not-be-complicated]], [[llm-c-was-not-yet-careful-enough-about-training-stability]] — his 2024-07-11 claims about it

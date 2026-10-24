@@ -11,7 +11,8 @@ steps:
   - Match whole training runs with schedules switched off
   - Check that more GPUs at the same total batch give the same run
   - Test both implementations against known-good output
-sources: ["[[youtube-2024-02-20-gpt-tokenizer]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]"]
+  - Publish the comparable reference run with its known differences
+sources: ["[[youtube-2024-02-20-gpt-tokenizer]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
 aliases: [parity check, reproduce the reference output, match tiktoken, benchmark against PyTorch, cross-check against a reference]
 ---
 # Verify against a reference implementation
@@ -32,6 +33,10 @@ When he reimplements something that already exists, he treats matching the exist
 
 **Note:** the commands he posts under the FP32 heading compile llm.c in FP32 but pass bfloat16 and flash attention on the PyTorch side, so the wiki does not say both sides ran in fp32 ([[github-2024-05-24-llmc-pytorch-cross-checks]] §1 GPU training in FP32).
 
+**Two checks in the GPT-2 lecture (2024-06-09).** When his samples did not match the Hugging Face pipeline's, he replicated his own sampling loop on the Hugging Face model, got his results, and concluded his model was right and the pipeline does something extra ([[youtube-2024-06-09-reproduce-gpt-2]] @40:26, @40:59). At the end he lines up the llm.c and PyTorch runs step by step and shows the printed losses and norms are identical, the C version only faster ([[youtube-2024-06-09-reproduce-gpt-2]] @3:58:46, @3:59:19).
+
+11. **Publish the comparable run and its differences.** In the 1.6B post he gives the full `torchrun` command for a relatively comparable PyTorch run, says the PyTorch script is a testing reference rather than an implementation so its loop differs in places (the dataloader does not permute shards, for example), and notes the vocabulary hack he applied to it ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (PyTorch comparison)). He then reports memory and step time, names a known cause of the gap, and says the PyTorch side may not be maximally tuned, inviting others to check ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (PyTorch comparison)).
+
 ## Seen in
 - [[minbpe]]
 - [[github-2024-04-22-minbpe-readme]]
@@ -40,3 +45,4 @@ When he reimplements something that already exists, he treats matching the exist
 - [[llm-c]] — speed and memory against the PyTorch reference
 - [[reproduce-a-published-model]] — what the parity checks prepared for
 - [[llama2c]] — C against Python
+- [[youtube-2024-06-09-reproduce-gpt-2]]

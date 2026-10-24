@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [Embeddings, embedding table, lookup table, positional embeddings, positional encodings]
+aliases: [Embeddings, embedding table, lookup table, positional embeddings, positional encodings, weight tying, tied embeddings, learned position embeddings]
 first_seen: 2022-09-12
-last_updated: 2024-02-20
-sources: ["[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[youtube-2024-02-20-gpt-tokenizer]]"]
+last_updated: 2024-06-09
+sources: ["[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[youtube-2024-06-09-reproduce-gpt-2]]"]
 related: ["[[multilayer-perceptron]]", "[[softmax]]", "[[pytorch]]", "[[makemore]]"]
 ---
 # Embeddings
@@ -21,6 +21,10 @@ In the GPT lecture he adds positional embeddings: beyond token identity, a secon
 In the CS25 lecture he explains that because the Transformer processes sets, token-identity embeddings and positional embeddings are added together to give what and where ([[talk-2023-05-19-stanford-cs25-transformers]] @35:29, @36:01). Extra inputs such as radar or vehicle information get a learnable special embedding token so the Transformer knows their source ([[talk-2023-05-19-stanford-cs25-transformers]] @1:04:42). Positional encodings can be hard-wired with sines and cosines, but he prefers a trainable vector that always sits at a location, and says they carry very little inductive bias ([[talk-2023-05-19-stanford-cs25-transformers]] @1:05:18, @1:05:57). Rotary and relative positional encodings are now more common than the original ([[talk-2023-05-19-stanford-cs25-transformers]] @22:11).
 
 In the tokenizer lecture each token's integer looks up a row of trainable parameters in the embedding table, and that vector is how the Transformer perceives the token ([[youtube-2024-02-20-gpt-tokenizer]] @01:40, @02:12). A larger vocabulary means more rows, and rare tokens get few examples, so their vectors may be undertrained ([[youtube-2024-02-20-gpt-tokenizer]] @1:44:13, @1:45:18, @1:45:51). Adding a token means adding a row initialised with small random numbers ([[youtube-2024-02-20-gpt-tokenizer]] @1:24:37, @1:47:32). A token that never appears in the LLM's training data keeps a random row that is never updated; he likens it to unallocated memory in a C program, so invoking it gives undefined behaviour, his reading of SolidGoldMagikarp ([[youtube-2024-02-20-gpt-tokenizer]] @2:08:24, @2:08:57).
+
+**GPT-2's embeddings (2024-06-09).** In the released GPT-2 weights the token embedding is 50,257 × 768 and the position embedding covers 1,024 positions, each a learned 768-dimensional vector ([[youtube-2024-06-09-reproduce-gpt-2]] @06:06, @07:13). Plotted, the learned position embeddings show sinusoid-like structure; their jaggedness suggests to him the model was somewhat undertrained, and since they start as random noise he finds the smooth structure falling out of optimisation impressive ([[youtube-2024-06-09-reproduce-gpt-2]] @08:19, @09:30, @10:03). In the original Transformer paper the positional encodings were, if he remembers correctly, fixed sinusoids; in GPT-2 they are trained, which seems to work about as well ([[youtube-2024-06-09-reproduce-gpt-2]] @10:03, @10:37).
+
+**Weight tying.** In GPT-2 the token embedding at the bottom and the language-model head at the top are one tensor: same shape, same values, same data pointer ([[youtube-2024-06-09-reproduce-gpt-2]] @1:06:53, @1:07:27, @1:07:58). The scheme comes from "Attention is all you need" and a 2017 paper it cites; the intuition is that semantically similar tokens should be close in embedding space and also get similar output probabilities ([[youtube-2024-06-09-reproduce-gpt-2]] @1:07:58, @1:08:34, @1:09:07). In his summary, that paper found output embeddings behave like word embeddings and that tying improved performance a lot ([[youtube-2024-06-09-reproduce-gpt-2]] @1:09:41). He could not find the tying in Hugging Face's implementation but found it in OpenAI's TensorFlow GPT-2 code, where the embedding is reused to compute the logits and gets gradient from both ends ([[youtube-2024-06-09-reproduce-gpt-2]] @1:10:14, @1:10:46, @1:11:19). It saves about 40M of the 124M parameters, roughly 30%, which may be one reason it helps when training is short ([[youtube-2024-06-09-reproduce-gpt-2]] @1:13:03).
 
 ## Claims
 - [[attention-is-a-communication-mechanism]] — attention acts over a set of vectors with no notion of space, which is why position is added

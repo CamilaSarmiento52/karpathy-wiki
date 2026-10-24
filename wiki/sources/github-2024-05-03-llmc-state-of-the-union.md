@@ -36,3 +36,4 @@ On day 24 of the project he reports that llm.c trains GPT-2 (124M) on one GPU ab
 - [[pytorch]]
 - [[llm-evaluation]]
 - [[reproduce-a-published-model]]
+- [[memory-access-not-flops-limits-training-speed]]

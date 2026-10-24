@@ -44,3 +44,4 @@ an LLM GUI (§6). He closes saying LLMs are both smarter and dumber than he expe
 - [[this-is-the-decade-of-agents]]
 - [[vibe-coding-is-for-throwaway-weekend-projects]]
 - [[llm-agents-over-time]]
+- [[llm-os-over-time]]

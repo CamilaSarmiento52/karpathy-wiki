@@ -1,9 +1,10 @@
 ---
 type: topic
-aliases: [Weight initialization, Kaiming init, He init, initial loss, Kaiming normal, fan-in scaling, expected loss at initialization]
+aliases: [Weight initialization, Kaiming init, He init, initial loss, Kaiming normal, fan-in scaling, expected loss at initialization, GPT-2 initialization, residual scaling, 1/sqrt(N) init, NANOGPT_SCALE_INIT]
 first_seen: 2022-10-04
-last_updated: 2023-01-31
-sources: ["[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[github-2023-01-31-ng-video-lecture-readme]]"]
+last_updated: 2024-06-09
+sources: ["[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[github-2023-01-31-ng-video-lecture-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]"]
+context: ["[[github-2023-01-08-mingpt-readme]]"]
 related: ["[[batch-normalization]]", "[[activation-functions]]", "[[training-diagnostics]]", "[[multilayer-perceptron]]"]
 ---
 # Weight initialization
@@ -18,9 +19,16 @@ A one-hidden-layer MLP is forgiving of bad initialisation, but with 50-layer net
 
 The ng-video-lecture README restates the point for the GPT lecture's code: he did not go much into model initialisation in that lecture, but says it is quite important for good performance; the code trains and works fine, yet converges more slowly because it starts off in a not-great spot in weight space ([[github-2023-01-31-ng-video-lecture-readme]] §intro). The proper initialisation, he says, is nanoGPT's `_init_weights` function in `model.py`, which cannot be copy-pasted into the lecture code because the modules are named and stored differently; he planned a supplementary lecture and a code push to follow ([[github-2023-01-31-ng-video-lecture-readme]] §intro).
 
+**GPT-2's initialisation (2024-06-09).** The GPT-2 and GPT-3 papers are not explicit about initialisation, so in the GPT-2 lecture he reads it from OpenAI's released code: normal weights with std 0.02, zero biases, token embeddings at 0.02 and position embeddings at 0.01 ([[youtube-2024-06-09-reproduce-gpt-2]] @1:13:36, @1:14:09). He uses 0.02 for both embeddings, notes that zero bias is not PyTorch's uniform default, and keeps LayerNorm's default scale 1 and offset 0 ([[youtube-2024-06-09-reproduce-gpt-2]] @1:15:16, @1:15:49). He says 0.02 is roughly consistent with Xavier-style 1/√(fan-in) for GPT-2's widths, about 0.03 for 768 and 0.02 for 1,600, though ideally the scale would grow with model size ([[youtube-2024-06-09-reproduce-gpt-2]] @1:16:23, @1:16:59).
+
+The GPT-2 paper scales the residual layers' weights at initialisation by 1/√N, N the number of residual layers ([[youtube-2024-06-09-reproduce-gpt-2]] @1:16:59). His demonstration: adding 100 unit-Gaussian contributions to a residual stream grows its standard deviation to about 10, and scaling each by 1/√n brings it back to about 1 ([[youtube-2024-06-09-reproduce-gpt-2]] @1:18:05, @1:18:37, @1:19:14). He flags the projection layers with a `NANOGPT_SCALE_INIT` attribute and uses 2 × n_layer, because each block adds to the residual path twice, once from attention and once from the MLP ([[youtube-2024-06-09-reproduce-gpt-2]] @1:19:48, @1:20:59). With weight tying the shared tensor is initialised twice with the same 0.02, which he leaves alone ([[youtube-2024-06-09-reproduce-gpt-2]] @1:20:59, @1:21:33).
+
+**Note:** his January 2023 minGPT notes say he could not find the 1/√N residual initialisation in OpenAI's GPT-2 code; here he implements it from the paper's text, so the two do not conflict ([[github-2023-01-08-mingpt-readme]] §References (GPT-2); [[youtube-2024-06-09-reproduce-gpt-2]] @1:16:59).
+
 ## Claims
 - [[the-hockey-stick-loss-means-training-is-wasting-steps]]
 - [[modern-innovations-make-precise-initialization-less-important]]
+- [[llm-c-was-not-yet-careful-enough-about-training-stability]] — 2024-07-11; long large runs still drift into instability
 
 ## Related
 - [[batch-normalization]] — the layer that makes exact scaling less necessary
