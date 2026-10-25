@@ -30,6 +30,7 @@ He reproduces GPT-2 (124M), the smallest model OpenAI released in 2019, in llm.c
 - Started as 1,000 clean lines of C, now ~3,500 → [[small-hackable-educational-code]]
 
 ## Fed pages
+- [[only-actual-metrics-are-real-and-comparable]]
 - [[llm-c]]
 - [[reproduce-a-published-model]]
 - [[llm-evaluation]]

@@ -2,8 +2,8 @@
 type: topic
 aliases: [Gradient descent, learning rate, minibatch, SGD, optimization, AdamW, Adam, learning-rate schedule, cosine decay, warmup, gradient clipping, gradient accumulation, batch size]
 first_seen: 2022-08-16
-last_updated: 2024-07-11
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-11-21-makemore-5-wavenet]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-12-llmc-gpt-2-774m]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
+last_updated: 2026-02-12
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-11-21-makemore-5-wavenet]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-12-llmc-gpt-2-774m]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[github-2026-01-07-nanochat-miniseries-v1]]", "[[github-2026-01-31-nanochat-beating-gpt-2]]", "[[blog-2026-02-12-microgpt]]"]
 related: ["[[loss-functions]]", "[[backpropagation]]", "[[micrograd]]", "[[training-diagnostics]]"]
 ---
 # Gradient descent
@@ -40,6 +40,12 @@ In the GPT-3 table bigger networks use lower learning rates and bigger batches, 
 
 **The 1.6B recipe (llm.c, 2024-07-11).** The total batch is 2^20 ≈ 1M tokens, from the GPT-3 paper's table; with 8 GPUs × 16 × 1024 = 131,072 tokens per micro-step the code does 8 forward-backward passes per update ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Args guide)). The schedule is cosine (the default), maximum learning rate 6e-4, tripled from the GPT-3 paper's 2e-4, with a 700-step warmup; weight decay is 0.1 on 2-D weights only; and 32,000 steps were chosen as a nice number that fits 24 hours ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Args guide)). He skips updates on instantaneous instability with `-sl 5.0 -sg 5.0` ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (400B token run)).
 
+**Tuning the miniseries (2026-01-07).** For miniseries v1 he says the learning rates were close to optimal after a small nudge to the embedding learning rate; "The warmdown ratio was the biggest surprise", nudged from 0.2 to 0.4 (settings) ([[github-2026-01-07-nanochat-miniseries-v1]] §Details (Hyperparameter sweeps)). A sequence length of 2048 balances context length and document diversity in the 0.5M-token batch (setting), and he calls the tuning basic, by no means exhaustive ([[github-2026-01-07-nanochat-miniseries-v1]] §Details (Hyperparameter sweeps)).
+
+**Muon and AdamW (nanochat record, 2026-01-31).** The record model splits its optimizer: AdamW for embeddings and scalars, Muon for the weight matrices of attention and MLP, grouped by shape and stacked for batched updates ([[github-2026-01-31-nanochat-beating-gpt-2]] §Optimizer). The AdamW groups use lr 0.004 for the lm_head and 0.3 for the token and value embeddings, both scaled by 1/√(dim/768), 0.005 for the residual scalars, and 0.5 with beta1 0.96 for the x0 scalars (settings) ([[github-2026-01-31-nanochat-beating-gpt-2]] §Optimizer). Inside Muon: Nesterov momentum warmed from 0.85 to 0.95 over 300 steps, Polar Express orthogonalisation (5 iterations) instead of Newton-Schulz, Adafactor-style factored variance reduction, and cautious weight decay, applied only where grad·param ≥ 0, on a linear schedule to zero (settings) ([[github-2026-01-31-nanochat-beating-gpt-2]] §Optimizer). The Muon overhaul worked, cautious weight decay was a clear win, and "I tried to delete Muon and couldn't." ([[github-2026-01-31-nanochat-beating-gpt-2]] §What Worked). Warmdown is 50% of training with linear decay to 0, and weight decay 0.2 at d12 scaled by (12/depth)² (settings) ([[github-2026-01-31-nanochat-beating-gpt-2]] §Training Script). The run in the post's chart was a little better after tuning warmdown from 0.4 to 0.5 (setting; no number given) ([[github-2026-01-31-nanochat-beating-gpt-2]] §intro). A 320-experiment sweep found `x0_beta1=0.96` optimal at d20, which he takes as a lesson that small-scale tuning does not transfer; see [[small-scale-tuning-does-not-always-transfer]] ([[github-2026-01-31-nanochat-beating-gpt-2]] §What Worked). **Note:** the 2026-01-07 post nudged warmdown from 0.2 to 0.4; each value is given with its date ([[github-2026-01-07-nanochat-miniseries-v1]] §Details (Hyperparameter sweeps); [[github-2026-01-31-nanochat-beating-gpt-2]] §intro).
+
+**Adam in microgpt (2026-02-12).** Plain gradient descent would subtract the learning rate times the gradient; Adam keeps running means of recent gradients (momentum) and of squared gradients (a per-parameter rate), with bias corrections because both start at zero, and microgpt decays the learning rate linearly and resets each gradient to zero after the update ([[blog-2026-02-12-microgpt]] §Training loop). At scale, he says, optimisation becomes its own discipline: reduced precision, learning rate, weight decay, betas, warmup and decay tuned to model size, batch and data, scaling laws such as Chinchilla to allocate compute, and smaller experiments first because mistakes can waste millions of dollars of compute ([[blog-2026-02-12-microgpt]] §Real stuff).
+
 ## Claims
 - [[approximate-gradient-with-more-steps-beats-exact-gradient]]
 - [[counting-and-gradient-bigram-models-are-the-same-model]]
@@ -48,6 +54,7 @@ In the GPT-3 table bigger networks use lower learning rates and bigger batches, 
 - [[a-buggy-neural-net-can-still-train-on-a-simple-problem]]
 - [[inherited-gpt-3-hyperparameters-look-conservative]] — the GPT-3 settings may be conservative
 - [[do-not-decay-the-learning-rate-to-zero]] — 2024-06-12; decay to 10%, not 0
+- [[small-scale-tuning-does-not-always-transfer]] — 2026-01-31; validate at target scale
 
 ## Related
 - [[loss-functions]] — what is being minimised

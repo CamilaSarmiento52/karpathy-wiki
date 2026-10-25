@@ -23,6 +23,7 @@ minbpe is minimal, clean code for byte-level Byte Pair Encoding, the algorithm h
 - Verifying parity against tiktoken's GPT-4 encoding, special tokens included → [[verify-against-a-reference-implementation]]
 
 ## Fed pages
+- [[rustbpe]]
 - [[minbpe]]
 - [[tokenization]]
 - [[small-hackable-educational-code]]

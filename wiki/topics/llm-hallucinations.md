@@ -2,8 +2,8 @@
 type: topic
 aliases: [Hallucinations, hallucination, LLM hallucinations, confabulation, "I don't know", model self-knowledge, self-knowledge, knowledge of self, model identity, "who built you", factuality, making stuff up, LLM psychology]
 first_seen: 2025-02-05
-last_updated: 2025-02-05
-sources: ["[[youtube-2025-02-05-deep-dive-into-llms]]"]
+last_updated: 2026-02-12
+sources: ["[[youtube-2025-02-05-deep-dive-into-llms]]", "[[blog-2026-02-12-microgpt]]"]
 related: ["[[jagged-intelligence]]", "[[llm-tool-use]]", "[[pretraining-and-finetuning]]"]
 context: ["[[youtube-2025-06-19-software-is-changing]]"]
 ---
@@ -22,6 +22,8 @@ Hallucination, in his framing, is when an LLM fabricates information; he opens h
 **Self-knowledge.** Asking a model what it is and who built it is, he says, a little nonsensical, since it has no persistent existence and restarts every conversation ([[youtube-2025-02-05-deep-dive-into-llms]] @1:41:37, @1:42:11). Falcon saying it was built by OpenAI is not evidence it trained on OpenAI data; more likely it is a hallucinated label picked up from internet text about ChatGPT ([[youtube-2025-02-05-deep-dive-into-llms]] @1:42:44, @1:43:55). Developers override identity with hardcoded conversations, OLMo's SFT mixture has 240 of them, or with a hidden system message; he calls both cooked up and bolted on ([[youtube-2025-02-05-deep-dive-into-llms]] @1:44:27, @1:44:59, @1:45:33, @1:46:07, @1:46:42).
 
 **Note:** [[jagged-intelligence]] lists hallucination and missing self-knowledge among the deficits he names in the 2025-06-19 YC talk; this page is his account of the cause ([[youtube-2025-06-19-software-is-changing]] @16:04; [[youtube-2025-02-05-deep-dive-into-llms]] @1:20:31).
+
+**Plausible, not true (microgpt, 2026-02-12).** The model samples tokens from a probability distribution; "It has no concept of truth", only what sequences are statistically plausible given the training data ([[blog-2026-02-12-microgpt]] §FAQ). He says microgpt "hallucinating" a name like "karia" is the same phenomenon as ChatGPT confidently stating a false fact: both are plausible-sounding completions that happen not to be real ([[blog-2026-02-12-microgpt]] §FAQ). **Note:** [[hallucinations-come-from-imitating-confident-answers]] explains why models answer confidently; this explains hallucination as plausible sampling; both can hold and no relation is set ([[blog-2026-02-12-microgpt]] §FAQ).
 
 ## Claims
 - [[hallucinations-come-from-imitating-confident-answers]]

@@ -2,7 +2,7 @@
 type: claim
 stated_on: 2023-01-17
 confidence: stated
-sources: ["[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[youtube-2024-06-09-reproduce-gpt-2]]"]
+sources: ["[[youtube-2023-01-17-gpt-from-scratch]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[blog-2026-02-12-microgpt]]"]
 topic: "[[self-attention]]"
 ---
 # Attention is a communication mechanism between nodes in a directed graph
@@ -14,6 +14,8 @@ Having written one head of self-attention, he steps back: nodes in a directed gr
 In his Stanford CS25 lecture, given in the winter 2023 quarter and published in May, he restates it: attention is the communication phase of the Transformer, a data-dependent message passing scheme on directed graphs, and you can forget machine translation, since each node simply stores a vector ([[talk-2023-05-19-stanford-cs25-transformers]] @22:45). In nanoGPT with block size eight there are eight nodes, the first pointed to only by itself, the second by the first and itself, and so on ([[talk-2023-05-19-stanford-cs25-transformers]] @37:08). Answering a question, he suggests everything today might be a graph network, since the Transformer's native representation is sets connected by directed edges ([[talk-2023-05-19-stanford-cs25-transformers]] @51:35).
 
 In the GPT-2 lecture, published 2024-06-09, he again calls attention the place where tokens communicate and exchange information, now a pooling or weighted-sum reduce to the MLP's per-token map ([[youtube-2024-06-09-reproduce-gpt-2]] @19:38, @20:12).
+
+In the microgpt post of 2026-02-12 he restates it: "Attention is a token communication mechanism.", the only place a token at position t looks at past tokens, while the MLP is computation local to that position; "The Transformer intersperses communication (Attention) with computation (MLP)." ([[blog-2026-02-12-microgpt]] §Architecture).
 
 ## Related claims
 - **Note:** [[gpt-is-not-a-complicated-model]] is the README-side version of the same simplicity: indices in, a Transformer, a distribution out; that page cites the minGPT README ([[youtube-2023-01-17-gpt-from-scratch]] @1:11:26).

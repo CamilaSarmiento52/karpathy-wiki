@@ -17,7 +17,7 @@ His calorie deficit tracking web app ([[github-2024-05-30-calorie-readme]] §int
 - **Setup.** Edit two constants in `index.html`, `hourlyCalorieBurn` and `hourlyCalorieTargetDeficit` (daily values divided by 24), then open the file in a browser; it is MIT licensed ([[github-2024-05-30-calorie-readme]] §intro, §License).
 - `status: active` because the README has no deprecation notice; `language` reflects the JavaScript constants in its single `index.html` ([[github-2024-05-30-calorie-readme]] §intro).
 
-**Note:** the one X post in the wiki about his food, on the ideal grocery store, is about what food should be (minimally processed, organic, local, fresh) rather than how much of it to eat; the calorie README does not mention food quality ([[x-2025-07-08-ideal-grocery-store]]; [[github-2024-05-30-calorie-readme]] §intro).
+**Note:** the one X post in the wiki about his food, on the ideal grocery store, is about what food should be (minimally processed, organic, local, fresh) rather than how much of it to eat; the calorie README does not mention food quality ([[x-2025-07-08-ideal-grocery-store]]; [[github-2024-05-30-calorie-readme]] §intro). What he says about food quality is on [[chemical-hygiene]].
 
 ## Related
 - [[github-2024-05-30-calorie-readme]]

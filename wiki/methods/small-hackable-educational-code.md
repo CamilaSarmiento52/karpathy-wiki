@@ -15,7 +15,7 @@ steps:
   - Prefer a few lines you understand over a library abstraction
   - Keep it minimal, fast to compile, constant in memory and deterministic
   - Reject small speedups that cost a lot of complexity
-sources: ["[[github-2022-11-20-makemore-readme]]", "[[github-2023-01-08-mingpt-readme]]", "[[github-2023-01-31-ng-video-lecture-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[github-2024-09-24-llmc-readme]]", "[[x-2024-10-02-gpu-mode-talk]]", "[[talk-2024-10-03-cuda-mode-keynote]]"]
+sources: ["[[github-2022-11-20-makemore-readme]]", "[[github-2023-01-08-mingpt-readme]]", "[[github-2023-01-31-ng-video-lecture-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[github-2024-09-24-llmc-readme]]", "[[x-2024-10-02-gpu-mode-talk]]", "[[talk-2024-10-03-cuda-mode-keynote]]", "[[github-2026-01-07-nanochat-miniseries-v1]]", "[[blog-2026-02-12-microgpt]]"]
 aliases: [One hackable file, minimal educational re-implementation, hackable code, educational code]
 ---
 # Small, hackable, educational code
@@ -50,6 +50,10 @@ In the 2024-10-02 talk outline he sums up the C stage the same way: one file of 
 
 In the CUDA MODE keynote he gives examples of the trade: CUDA streams to overlap computation produced weird race conditions, so he deleted all of them and made everything single-threaded, leaving llm.c less overlapped than it could be because it was too much complexity for not enough gain; a ZeRO-2 pull request was not merged, as far as he believes, because it gets messy ([[talk-2024-10-03-cuda-mode-keynote]] @15:25, @15:58, @17:05). He has rejected a lot of pull requests because the code starts to get crazy, which he thinks decreases how many people can be on board with the project ([[talk-2024-10-03-cuda-mode-keynote]] @17:05, @17:38).
 
+**One file for an eval (2026-01-07).** He found DCLM's code for the CORE metric "complicated and bloated" and stripped it into one simple, dependency-free file, `core_eval.py` ([[github-2026-01-07-nanochat-miniseries-v1]] §intro (Comparison to GPT-2/GPT-3 miniseries)).
+
+**Zero dependencies (microgpt, 2026-02-12).** microgpt is a single file of 200 lines of pure Python with no dependencies, needing no pip install, which he says even breaks perfectly across three columns ([[blog-2026-02-12-microgpt]] §intro, §Run it). It goes past step 2, PyTorch as the only dependency, to none at all ([[blog-2026-02-12-microgpt]] §Run it). It is published as a gist, a web page and a Colab notebook ([[blog-2026-02-12-microgpt]] §intro).
+
 ## Seen in
 - [[github-2023-01-31-ng-video-lecture-readme]]
 - [[ng-video-lecture]]
@@ -65,3 +69,4 @@ In the CUDA MODE keynote he gives examples of the trade: CUDA streams to overlap
 - [[build-and-publish-projects]] — the publishing habit around it
 - [[neural-net-training-should-not-be-complicated]]
 - [[github-2024-09-24-llmc-readme]]
+- [[microgpt]] — 200 lines, no dependencies

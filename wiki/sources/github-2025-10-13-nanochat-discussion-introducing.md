@@ -29,6 +29,7 @@ He steps through `speedrun.sh`, which trains "the best ChatGPT that $100 can buy
 - The learning-rate multiplier ramps to 0 at the end of training → [[do-not-decay-the-learning-rate-to-zero]]
 
 ## Fed pages
+- [[rustbpe]]
 - [[nanochat]]
 - [[tokenization]]
 - [[minbpe]]

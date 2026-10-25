@@ -15,7 +15,7 @@ steps:
   - Re-initialise and train, aiming to beat the checkpoint
   - Check that a faster implementation gives the same numbers
   - Reproduce the full-size model and say what is still unproven
-sources: ["[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[github-2024-09-24-llmc-readme]]", "[[x-2024-10-02-gpu-mode-talk]]", "[[talk-2024-10-03-cuda-mode-keynote]]"]
+sources: ["[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[github-2024-09-24-llmc-readme]]", "[[x-2024-10-02-gpu-mode-talk]]", "[[talk-2024-10-03-cuda-mode-keynote]]", "[[github-2026-01-07-nanochat-miniseries-v1]]", "[[github-2026-01-31-nanochat-beating-gpt-2]]"]
 aliases: [Reproduce GPT-2, reproduce a paper, reproduction run]
 ---
 # Reproduce a published model
@@ -47,8 +47,13 @@ His 2024-10-02 talk outline gives the same 1.6B figures: GPT-2 (1.6B) on one 8×
 
 In the CUDA MODE keynote he rounds it: llm.c reproduces the 1.6B GPT-2 on a single H100 node in about 24 hours for roughly $600, with no Python, PyTorch, conda or pip, and only an optional cuDNN as a dependency ([[talk-2024-10-03-cuda-mode-keynote]] @17:38, @18:10).
 
+**Scoring an unreleased model (nanochat miniseries v1, 2026-01-07).** nanochat aims at the score rather than at GPT-2's architecture: he sets the whole GPT-2 and GPT-3 miniseries as targets on one CORE-against-cost chart ([[github-2026-01-07-nanochat-miniseries-v1]] §intro (Comparison to GPT-2/GPT-3 miniseries)). GPT-2's CORE he calculated by downloading the released models and running the eval; for GPT-3, never released, he took six tasks reported both in CORE and in the GPT-3 paper's tables, in a very similar setting, and calibrated on GPT-2 to estimate GPT-3's CORE, posting the approach as a notebook ([[github-2026-01-07-nanochat-miniseries-v1]] §Details (GPT-2 / GPT-3 CORE scores)).
+
+**Publish the record so anyone can rerun it (2026-01-31).** For nanochat's first GPT-2 record he gives the commit, the setup script, the full `torchrun` command, the wandb run summary, the time and the cost, so the run can be repeated on a rented 8×H100 node, and he cites the Reddit thread and Hugging Face card behind his 2019 GPT-2 cost estimate ([[github-2026-01-31-nanochat-beating-gpt-2]] §Reproduce, §intro). The target is GPT-2's CORE score, not its architecture ([[github-2026-01-31-nanochat-beating-gpt-2]] §The Goal).
+
 ## Seen in
 - [[llm-c]]
+- [[nanochat]] — CORE targets for the GPT-2 and GPT-3 series
 - [[github-2024-05-28-llmc-gpt-2-124m]]
 - [[llm-evaluation]] — the comparison steps
 - [[verify-against-a-reference-implementation]] — the parity checks that came first

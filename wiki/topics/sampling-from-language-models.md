@@ -2,8 +2,8 @@
 type: topic
 aliases: [Sampling, sampling from a language model, temperature, top-p, autoregressive sampling, autoregressive generation, diffusion, nucleus sampling, top-k]
 first_seen: 2023-05-19
-last_updated: 2025-02-05
-sources: ["[[talk-2023-05-19-stanford-cs25-transformers]]", "[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[youtube-2025-02-05-deep-dive-into-llms]]"]
+last_updated: 2026-02-12
+sources: ["[[talk-2023-05-19-stanford-cs25-transformers]]", "[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[blog-2026-02-12-microgpt]]"]
 related: ["[[character-level-language-modeling]]", "[[he-does-not-love-autoregressive-sampling]]"]
 ---
 # Sampling from language models
@@ -23,6 +23,8 @@ In the Sequoia interview he finds it odd that diffusion and autoregressive model
 **Top-k in the GPT-2 lecture (2024-06-09).** His sampling loop takes only the last position's logits, applies softmax and then top-k with k = 50, the Hugging Face pipeline default, which keeps the model from sampling rare tokens and going off the rails ([[youtube-2024-06-09-reproduce-gpt-2]] @37:39, @38:13, @38:45). His samples did not match the pipeline's; replicating his loop on the Hugging Face model gave his results, so he concludes his model is correct and the pipeline does something extra ([[youtube-2024-06-09-reproduce-gpt-2]] @40:26, @40:59).
 
 **A biased coin (Deep Dive, 2025-02-05).** Generation feeds a prefix in, samples one token from the predicted distribution like flipping a biased coin, appends it and repeats ([[youtube-2025-02-05-deep-dive-into-llms]] @26:18, @26:54, @27:27). Because of sampling, outputs are stochastic remixes inspired by the training data, statistically similar but not identical to it ([[youtube-2025-02-05-deep-dive-into-llms]] @28:00, @28:32, @29:06), and the same prompt to a base model gives a different continuation each time ([[youtube-2025-02-05-deep-dive-into-llms]] @48:49). ChatGPT itself, he says, is only inference on fixed parameters trained months earlier ([[youtube-2025-02-05-deep-dive-into-llms]] @30:11, @30:44).
+
+**Temperature (microgpt, 2026-02-12).** Sampling starts from BOS, samples a token from the softmax, feeds it back as the next input, and stops at BOS or the maximum length ([[blog-2026-02-12-microgpt]] §Inference). Dividing the logits by the temperature before the softmax controls randomness: 1.0 samples the learned distribution, lower values such as microgpt's 0.5 sharpen it toward the top choices, near 0 is greedy decoding, and higher values flatten it toward more diverse but less coherent output ([[blog-2026-02-12-microgpt]] §Inference).
 
 ## Claims
 - [[he-does-not-love-autoregressive-sampling]]

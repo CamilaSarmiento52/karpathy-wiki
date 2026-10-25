@@ -27,6 +27,8 @@ disclose LLM-written code (§Contributing), and points readers to DeepWiki for q
 - Recommends DeepWiki, an LLM-generated view of the repo → [[building-for-agents]]
 
 ## Fed pages
+- [[microgpt]]
+- [[small-scale-tuning-does-not-always-transfer]]
 - [[nanochat]]
 - [[nanogpt]]
 - [[quick-experiment-loop]]

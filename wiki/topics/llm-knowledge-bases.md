@@ -4,7 +4,7 @@ aliases: [LLM Knowledge Bases, LLM Wiki, personal wiki]
 first_seen: 2026-04-02
 last_updated: 2026-04-02
 sources: ["[[x-2026-04-02-llm-knowledge-bases]]"]
-context: ["[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-10-01-animals-vs-ghosts]]"]
+context: ["[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-10-01-animals-vs-ghosts]]", "[[github-2025-12-10-hn-time-capsule-readme]]"]
 related: ["[[llm-wiki-workflow]]", "[[no-rag-needed-for-a-small-wiki]]", "[[jagged-intelligence]]"]
 ---
 # LLM knowledge bases
@@ -21,6 +21,8 @@ He sees finetuning on the wiki as a natural next step, so the model knows the da
 
 **Note:** in the Appendix of a post dated 2025-10-01 he says a lot of recent work is interested in memory, "think CLAUDE.md files", as test-time learning with text and context as the substrate instead of weights; he does not mention a wiki there, so the post is background here ([[blog-2025-10-01-animals-vs-ghosts]] §Appendix).
 
+**Note:** the hn-time-capsule README, dated 2025-12-10, says the more general and interesting idea behind that grading pipeline is LLMs automatically scouring past human artifacts and synthesising them into knowledge and insights; it describes a pipeline, not a wiki, so it is background here; see [[hn-time-capsule]] ([[github-2025-12-10-hn-time-capsule-readme]] §What it does).
+
 ## Claims
 - [[no-rag-needed-for-a-small-wiki]]
 
@@ -28,3 +30,4 @@ He sees finetuning on the wiki as a natural next step, so the model knows the da
 - [[llm-wiki-workflow]]
 - [[building-for-agents]]
 - [[jagged-intelligence]]
+- [[hn-time-capsule]] — LLMs synthesising past artifacts into knowledge, as a grading pipeline

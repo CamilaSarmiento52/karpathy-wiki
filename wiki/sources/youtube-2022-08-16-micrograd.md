@@ -31,6 +31,7 @@ He starts from a blank Jupyter notebook and rebuilds micrograd, the scalar-value
 - Production libraries like PyTorch are meant to be used, not inspected: he spent about 15 minutes searching PyTorch for tanh's backward without finding it, and only reached the kernel through a pointer in a thread (@2:21:33, @2:22:07) → [[pytorch]], [[micrograd-is-all-you-need-everything-else-is-efficiency]]
 
 ## Fed pages
+- [[microgpt-is-the-full-algorithm-everything-else-is-efficiency]]
 - [[backpropagation]]
 - [[multilayer-perceptron]]
 - [[activation-functions]]

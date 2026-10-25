@@ -3,7 +3,7 @@ type: artifact
 repo_url: https://github.com/karpathy/makemore
 language: Python
 status: active
-sources: ["[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[github-2022-11-20-makemore-readme]]", "[[youtube-2022-11-21-makemore-5-wavenet]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]"]
+sources: ["[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[github-2022-11-20-makemore-readme]]", "[[youtube-2022-11-21-makemore-5-wavenet]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[blog-2026-02-12-microgpt]]"]
 aliases: [make more]
 ---
 # makemore
@@ -45,6 +45,8 @@ makemore is a repository on his GitHub that, like micrograd before it, he builds
 
 - In the Zero to Hero README it is the companion repo of Lectures 2 to 5, and Lecture 6's WaveNet notebook continues the same series ([[github-2024-02-20-nn-zero-to-hero-readme]] §intro, Lectures 2–6).
 
+- microgpt, dated 2026-02-12, downloads its default dataset, about 32,000 names, from makemore's `names.txt`, and he names makemore among the projects it culminates; see [[microgpt]] ([[blog-2026-02-12-microgpt]] §Dataset, §intro).
+
 ## Related
 - [[character-level-language-modeling]] — the task
 - [[bigram-language-model]] — the first model
@@ -59,3 +61,4 @@ makemore is a repository on his GitHub that, like micrograd before it, he builds
 - [[backpropagation]] — the fourth lecture's hand-written tensor backward pass
 - [[small-hackable-educational-code]] — the README's one-file, PyTorch-only framing
 - **Note:** the series' endpoint is a GPT-2-grade transformer; [[nanogpt]] is his later repo for that, a connection the source does not make.
+- [[microgpt]] — the same names task in one 200-line file

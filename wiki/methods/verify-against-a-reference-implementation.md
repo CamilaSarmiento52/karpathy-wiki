@@ -14,7 +14,7 @@ steps:
   - Publish the comparable reference run with its known differences
   - Unit-test logits, loss and training steps against the reference
   - Check every layer and every kernel version against the reference
-sources: ["[[youtube-2024-02-20-gpt-tokenizer]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[github-2024-09-24-llmc-readme]]", "[[talk-2024-10-03-cuda-mode-keynote]]"]
+sources: ["[[youtube-2024-02-20-gpt-tokenizer]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2024-04-22-llmc-state-of-the-union]]", "[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-24-llmc-pytorch-cross-checks]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[github-2024-05-29-llama2c-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[github-2024-09-24-llmc-readme]]", "[[talk-2024-10-03-cuda-mode-keynote]]", "[[github-2026-01-03-rustbpe-readme]]"]
 aliases: [parity check, reproduce the reference output, match tiktoken, benchmark against PyTorch, cross-check against a reference]
 ---
 # Verify against a reference implementation
@@ -43,8 +43,11 @@ When he reimplements something that already exists, he treats matching the exist
 
 13. **Every layer, every kernel.** In the keynote's account of the llm.c port, PyTorch becomes only the correctness reference: each layer's explicit forward and hand-derived backward are checked against PyTorch, the strung-together C program is verified identical to the PyTorch code, and every CUDA kernel version matches the specification exactly and gives the same numbers ([[talk-2024-10-03-cuda-mode-keynote]] @05:00, @05:32, @06:05, @08:48, @10:27). Because a PyTorch implementation is kept in parallel, the equivalent training loop can be run side by side for comparison ([[talk-2024-10-03-cuda-mode-keynote]] @18:44, @19:17).
 
+**Equality tests against his own Python (rustbpe, 2026-01-03).** For rustbpe he wrote the Python reference code personally and from scratch, then wrote the Rust against it "with tests for equality", Rust tests under `cargo test` and the Python side under pytest; all the equality tests pass, he says, as far as he is aware ([[github-2026-01-03-rustbpe-readme]] §LLM Assistance note, §Development). Here the known-good implementation is his own, in a language he knows, checking code written with LLM help in one he does not ([[github-2026-01-03-rustbpe-readme]] §LLM Assistance note).
+
 ## Seen in
 - [[minbpe]]
+- [[rustbpe]] — Rust tested for equality against his Python reference
 - [[github-2024-04-22-minbpe-readme]]
 - [[youtube-2024-02-20-gpt-tokenizer]]
 - [[verify-gradients-against-pytorch]] — the gradient-specific version of the same habit

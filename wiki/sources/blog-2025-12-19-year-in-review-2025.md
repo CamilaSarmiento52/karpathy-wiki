@@ -56,3 +56,4 @@ an LLM GUI (§6). He closes saying LLMs are both smarter and dumber than he expe
 - [[code-is-ephemeral-now-and-libraries-are-over]]
 - [[llm-council]]
 - [[llms-are-shaped-by-commercial-not-biological-evolution]]
+- [[hn-time-capsule]]

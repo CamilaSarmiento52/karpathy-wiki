@@ -3,7 +3,7 @@ type: artifact
 repo_url: https://github.com/karpathy/minbpe
 language: Python
 status: active
-sources: ["[[youtube-2024-02-20-gpt-tokenizer]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2025-08-08-minbpe-gpt-4-tokenizer-discussion]]", "[[github-2025-10-13-nanochat-discussion-introducing]]"]
+sources: ["[[youtube-2024-02-20-gpt-tokenizer]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[github-2024-04-22-minbpe-readme]]", "[[github-2025-08-08-minbpe-gpt-4-tokenizer-discussion]]", "[[github-2025-10-13-nanochat-discussion-introducing]]", "[[github-2026-01-03-rustbpe-readme]]"]
 aliases: [minBPE, min bpe]
 ---
 # minbpe
@@ -28,8 +28,11 @@ The tokenizer code he wrote while developing the GPT tokenizer lecture and publi
 
 - In the nanochat launch post he calls minbpe's Python "way too slow" for nanochat's tokenizer training, which is why nanochat has its own Rust tokenizer ([[github-2025-10-13-nanochat-discussion-introducing]] §Environment setup). **Note:** the 2024-04-22 todos list a faster Python version and a C or Rust version; a connection, not a claim that the Rust tokenizer is that todo ([[github-2024-04-22-minbpe-readme]] §todos; [[github-2025-10-13-nanochat-discussion-introducing]] §Environment setup).
 
+- The rustbpe README (2026-01-03) says his minbpe handles both training and inference, but only in Python and not optimised for speed, which is the gap rustbpe fills; see [[rustbpe]] ([[github-2026-01-03-rustbpe-readme]] §intro). **Note:** rustbpe fits the 2024-04-22 todo of a C or Rust version, but neither README says so ([[github-2024-04-22-minbpe-readme]] §todos; [[github-2026-01-03-rustbpe-readme]] §intro).
+
 ## Related
 - [[tokenization]] — what it implements
+- [[rustbpe]] — the Rust trainer that names it as too slow
 - [[nn-zero-to-hero]] — the course whose eighth lecture builds it
 - [[small-hackable-educational-code]], [[spelled-out-build-from-scratch]]
 - [[verify-against-a-reference-implementation]] — tiktoken as the reference

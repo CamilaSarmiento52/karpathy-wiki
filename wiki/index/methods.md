@@ -9,6 +9,7 @@ How he builds, debugs, explains and evaluates. Alphabetical. Maintained by inges
 - [[choose-a-model-tier|Choose a model tier]] — check the model, compare tiers, most powerful that works, non-thinking first, an LLM council, know each model's tools
 - [[diagnose-under-or-overfitting|Diagnose under- or overfitting]] — overfit a small batch first, compare train and dev loss, match parameter counts before comparing architectures
 - [[digital-hygiene-checklist|Digital hygiene checklist]] — fifteen practices from password manager and hardware keys to a network monitor and work-life separation
+- [[fit-your-own-scaling-law|Fit your own scaling law]] — fix a FLOP budget, sweep depth, fit the optima, read off the tokens-to-parameters ratio, check the family does not cross
 - [[learn-by-building-and-explaining|Learn by building and explaining]] — rebuild without copy-paste, find the first-order term, ramp up, let the learner try, explain to find the gaps
 - [[learning-rate-sweep|Learning-rate sweep]] — exponentially spaced rates over 1,000 steps, read the valley in the plot
 - [[llm-wiki-workflow|LLM wiki workflow]] — collect, compile, browse, ask, file back, lint

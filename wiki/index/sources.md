@@ -11,7 +11,10 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[blog-2025-10-01-animals-vs-ghosts|Animals vs Ghosts]] — his response to Sutton on the Dwarkesh podcast: not platonically bitter-lesson pilled, animals are not blank slates, pretraining as crappy evolution, ghosts not animals
 - [[blog-2025-11-17-verifiability|Verifiability]] — Software 1.0 automates what you can specify, Software 2.0 what you can verify; verifiability drives the jagged frontier
 - [[blog-2025-11-29-space-of-minds|The space of minds]] — animal intelligence as one point in a large space; LLMs shaped by commercial, not biological, evolution
+- [[blog-2025-12-10-auto-grade-hn|Auto-grading decade-old Hacker News discussions with hindsight]] — HN time capsule: GPT 5.1 Thinking grades December 2015 HN threads; future LLMs are watching
+- [[blog-2025-12-18-chemical-hygiene|Chemical hygiene]] — his evolving, opinionated guide to limiting chemicals and plastics at home; personal choices, not professional advice
 - [[blog-2025-12-19-year-in-review-2025|2025 LLM Year in Review]] — six 2025 paradigm changes: RLVR, jagged intelligence, LLM apps, Claude Code, vibe coding, LLM GUI
+- [[blog-2026-02-12-microgpt|microgpt]] — his guide to a 200-line, dependency-free Python GPT trained on names; what changes at production scale
 - [[github-2022-11-20-makemore-readme|makemore README]] — one hackable PyTorch file; bigram to Transformer models for line-per-example generation, CNN in progress
 - [[github-2023-01-08-mingpt-readme|minGPT README]] — his ~300-line GPT re-implementation, semi-archived in January 2023 in favour of nanoGPT; his notes on the GPT papers
 - [[github-2023-01-31-ng-video-lecture-readme|ng-video-lecture README]] — the GPT lecture's code as a hackable repo with its git log; the lecture skipped weight initialisation
@@ -38,6 +41,10 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[github-2025-11-18-reader3-readme|reader3 README]] — a chapter-at-a-time EPUB reader for reading with an LLM; 90% vibe coded, unsupported
 - [[github-2025-11-20-nanochat-d34-model|d34 model (~$2,500)]] — nanochat d34: 2X past Chinchilla, ~100 hours and ~$2,500 on 8×H100, CORE 0.3382, ChatCORE 0.41
 - [[github-2025-11-22-llm-council-readme|llm-council README]] — several LLMs answer, anonymously rank each other, and a Chairman writes the final answer; 99% vibe coded
+- [[github-2025-12-10-hn-time-capsule-readme|hn-time-capsule README]] — five-stage pipeline grading decade-old HN threads with an LLM; 99% vibe coded with Opus 4.5
+- [[github-2026-01-03-rustbpe-readme|rustbpe README]] — the missing tiktoken training code: Rust BPE trainer, Python bindings, tiktoken export; Rust written with LLM help against his Python
+- [[github-2026-01-07-nanochat-miniseries-v1|nanochat miniseries v1 (Jan 7 2026)]] — d10–d20 compute-optimal series in ~4 h for ~$100; own scaling-law fits (ratio ~8); CORE against GPT-2 and estimated GPT-3
+- [[github-2026-01-31-nanochat-beating-gpt-2|Beating GPT-2 for <<$100: the nanochat journey]] — d24 beats GPT-2's CORE in 3.04 h for ~$73; leaderboard, record model, what worked and what did not
 - [[github-2026-07-03-nanochat-readme|nanochat README]] — minimal single-node harness that trains a GPT-2-grade chat model, set by one depth dial
 - [[talk-2023-05-19-stanford-cs25-transformers|Stanford CS25: Introduction to Transformers]] — guest lecture: AI converging on the Transformer, attention as message passing, nanoGPT walk-through, in-context learning
 - [[talk-2023-05-25-state-of-gpt|State of GPT]] — Microsoft Build 2023: the four-stage assistant recipe, then prompting, tools, finetuning and human-overseen use

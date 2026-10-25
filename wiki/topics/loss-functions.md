@@ -2,8 +2,8 @@
 type: topic
 aliases: [Loss functions, cross-entropy, negative log likelihood, NLL, mean squared error]
 first_seen: 2022-08-16
-last_updated: 2024-06-09
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]"]
+last_updated: 2026-02-12
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[blog-2026-02-12-microgpt]]"]
 related: ["[[gradient-descent]]", "[[backpropagation]]", "[[micrograd]]", "[[training-diagnostics]]"]
 ---
 # Loss functions
@@ -25,6 +25,8 @@ In the backprop lecture he derives the gradient of cross-entropy with respect to
 **Loss as perplexity (llm.c, 2024-05-28).** Reading a training log, he turns the loss into a count: the perplexity exp(loss) is how many tokens the model is effectively guessing uniformly among, about 2,000 at a loss of 7.577 and about 27 at 3.29, out of a vocabulary of 50,257 ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (Training)).
 
 **Cross-entropy at GPT-2 scale (2024-06-09).** `F.cross_entropy` does not take B×T×vocab inputs, so he flattens the logits to (B·T, vocab) and the targets to B·T ([[youtube-2024-06-09-reproduce-gpt-2]] @53:55, @54:28). Cross-entropy, like MSE, reduces by mean by default, which is why gradient accumulation must divide the loss by the number of micro-steps ([[youtube-2024-06-09-reproduce-gpt-2]] @2:40:49, @2:43:37, @2:44:10).
+
+**Cross-entropy as surprise (microgpt, 2026-02-12).** At each position the loss is the negative log probability of the correct next token, which he calls the cross-entropy loss; it measures how surprised the model is, 0 when it gave the right token probability 1 and going to infinity near 0, averaged over the document ([[blog-2026-02-12-microgpt]] §Training loop). The initial loss of about 3.3 is random guessing among 27 tokens, -log(1/27) ([[blog-2026-02-12-microgpt]] §Training loop).
 
 ## Claims
 - [[use-cross-entropy-not-a-hand-rolled-loss]]

@@ -3,7 +3,7 @@ type: artifact
 repo_url: https://github.com/karpathy/micrograd
 language: Python
 status: active
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[x-2024-02-21-technical-accessibility]]"]
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[x-2024-02-21-technical-accessibility]]", "[[blog-2026-02-12-microgpt]]"]
 context: ["[[youtube-2022-10-11-makemore-4-backprop-ninja]]"]
 aliases: [micrograd autograd engine]
 ---
@@ -26,6 +26,8 @@ A scalar-valued autograd engine he released on GitHub about two years before the
 
 - In a February 2024 post he recalls that the repo, when first published, got some traction on GitHub and then stagnated for many months; after he made the video building it from scratch it went through hockey-stick growth and became an often-cited reference for learning backpropagation, though the code had not changed at all ([[x-2024-02-21-technical-accessibility]]). He describes it there as about 200 lines, extensively commented in the `.py` files and README, getting to the heart of an autograd engine on one page; the 2022 lecture gives roughly 150, and both are his approximations ([[x-2024-02-21-technical-accessibility]]; [[youtube-2022-08-16-micrograd]] @07:35). He says the video almost 100X'd interest and engagement with the same code ([[x-2024-02-21-technical-accessibility]]).
 
+- **microgpt (2026-02-12).** He names micrograd first among the projects microgpt culminates; microgpt's autograd is a scalar `Value` class, and for that part he points readers to his 2.5-hour micrograd video; see [[microgpt]] ([[blog-2026-02-12-microgpt]] §intro, §Autograd). The post does not itself compare the two engines ([[blog-2026-02-12-microgpt]] §Autograd).
+
 ## Related
 - [[backpropagation]] — what the engine implements
 - [[multilayer-perceptron]] — what `nn.py` builds
@@ -36,3 +38,4 @@ A scalar-valued autograd engine he released on GitHub about two years before the
 - [[build-the-ramp-not-just-the-thing]] — the lesson he draws from its uptake
 - [[understand-backprop-even-with-autograd]] — the tensor-level sequel to the scalar engine
 - **Note:** [[nanogpt]] and [[nanochat]] are his later from-scratch training repos; the sources here do not connect them.
+- [[microgpt]] — a whole GPT on a scalar autograd engine

@@ -19,7 +19,7 @@ steps:
   - Write your own class rather than read the library's
   - Debug on a toy before fixing the real code
   - Keep one clean commit per step and narrate each
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]", "[[github-2024-08-01-llm101n-readme]]"]
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[github-2024-04-22-minbpe-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-17-build-nanogpt-readme]]", "[[github-2024-08-01-llm101n-readme]]", "[[blog-2026-02-12-microgpt]]"]
 aliases: [spelled-out lecture, spell it out step by step, explicit baseline then neural net, build from a blank notebook, build up from a bigram baseline, incremental model build-up]
 ---
 # Spelled-out build from scratch
@@ -61,6 +61,8 @@ How he teaches: he starts with a blank Jupyter notebook and builds the whole thi
 
 The same approach appears as a plan in the [[llm101n]] README: build everything end to end from basics, from scratch in Python, C and CUDA, with minimal computer science prerequisites; the course does not yet exist, so this is stated intent, not a performed build ([[github-2024-08-01-llm101n-readme]] §intro).
 
+**Layers of the onion (microgpt, 2026-02-12).** To see the code built up piece by piece he advises six files: a bigram count table with no net and no gradients; an MLP with manual numerical and analytic gradients and SGD; autograd replacing the manual gradients; position embeddings, single-head attention, RMSNorm and residuals; multi-head attention and the layer loop; and Adam ([[blog-2026-02-12-microgpt]] §Progression). Each is a revision of the build_microgpt.py gist, so the diffs show one component added at a time ([[blog-2026-02-12-microgpt]] §Progression). In the post he explains each piece with plain intuitions: lego blocks for operations, a car, a bicycle and a walking man for the chain rule, and the "emma" example for attention ([[blog-2026-02-12-microgpt]] §Autograd, §Architecture).
+
 ## Seen in
 - [[youtube-2023-01-17-gpt-from-scratch]]
 - [[ng-video-lecture]], [[nanogpt]]
@@ -74,3 +76,4 @@ The same approach appears as a plan in the [[llm101n]] README: build everything 
 - [[youtube-2024-06-09-reproduce-gpt-2]]
 - [[build-nanogpt]]
 - [[llm101n]] — planned, not yet built
+- [[microgpt]] — six gist revisions, one component each

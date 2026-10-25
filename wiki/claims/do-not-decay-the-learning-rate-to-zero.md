@@ -3,7 +3,7 @@ type: claim
 stated_on: 2024-06-12
 confidence: stated
 sources: ["[[github-2024-06-12-llmc-gpt-2-774m]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
-context: ["[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2025-10-13-nanochat-discussion-introducing]]"]
+context: ["[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2025-10-13-nanochat-discussion-introducing]]", "[[github-2026-01-31-nanochat-beating-gpt-2]]"]
 topic: "[[gradient-descent]]"
 ---
 # He concluded the llm.c runs should not decay the learning rate to zero
@@ -16,7 +16,7 @@ topic: "[[gradient-descent]]"
 
 **Note:** the PyTorch run in the GPT-2 lecture, published 2024-06-09, already decayed to 10% at its last step, following the GPT-3 paper; the lecture mentions a zero minimum only on the schedule plot it starts from, and does not argue for or against decaying to zero ([[youtube-2024-06-09-reproduce-gpt-2]] @2:21:02, @2:24:59; [[github-2024-06-12-llmc-gpt-2-774m]] §intro (Reflections)).
 
-**Note:** in nanochat's launch post, dated 2025-10-13, the default learning-rate multiplier `lrm` ramps linearly down to 0 near the end of training (setting) ([[github-2025-10-13-nanochat-discussion-introducing]] §Pretraining). This claim is scoped to the llm.c runs, and nanochat is a different project with a different optimiser setup (Muon for the matrices, AdamW for the embeddings); he gives no reason or opinion on the schedule there, so this is not a contradiction or a change of mind ([[github-2025-10-13-nanochat-discussion-introducing]] §Pretraining; [[github-2024-06-12-llmc-gpt-2-774m]] §intro (Reflections)).
+**Note:** in nanochat's launch post, dated 2025-10-13, the default learning-rate multiplier `lrm` ramps linearly down to 0 near the end of training (setting) ([[github-2025-10-13-nanochat-discussion-introducing]] §Pretraining). This claim is scoped to the llm.c runs, and nanochat is a different project with a different optimiser setup (Muon for the matrices, AdamW for the embeddings); he gives no reason or opinion on the schedule there, so this is not a contradiction or a change of mind ([[github-2025-10-13-nanochat-discussion-introducing]] §Pretraining; [[github-2024-06-12-llmc-gpt-2-774m]] §intro (Reflections)). On 2026-01-31 the nanochat record run again decays linearly to 0, over a warmdown of 50% of training (setting), and he gives no view on the floor there either ([[github-2026-01-31-nanochat-beating-gpt-2]] §Training Script).
 
 ## Related claims
 - **Note:** [[inherited-gpt-3-hyperparameters-look-conservative]] is about the GPT-3 settings being too cautious; here he returns to one of them, the 10% floor, after his own run went too slow at zero ([[github-2024-06-12-llmc-gpt-2-774m]] §intro (Reflections); [[youtube-2024-06-09-reproduce-gpt-2]] @3:51:29).

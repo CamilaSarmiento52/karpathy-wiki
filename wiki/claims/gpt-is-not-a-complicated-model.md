@@ -2,7 +2,7 @@
 type: claim
 stated_on: 2023-01-08
 confidence: stated
-sources: ["[[github-2023-01-08-mingpt-readme]]"]
+sources: ["[[github-2023-01-08-mingpt-readme]]", "[[blog-2026-02-12-microgpt]]"]
 context: ["[[github-2025-11-12-nanogpt-readme]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
 supports: ["[[neural-net-training-should-not-be-complicated]]"]
 topic: "[[transformer-architecture]]"
@@ -12,6 +12,8 @@ topic: "[[transformer-architecture]]"
 
 ## Context
 He backs it with the implementation: minGPT's model is appropriately about 300 lines of code, because all that goes on is that a sequence of indices feeds into a Transformer and a probability distribution over the next index comes out ([[github-2023-01-08-mingpt-readme]] §intro). The majority of the complexity, he says, is being clever with batching, across examples and over sequence length, for efficiency ([[github-2023-01-08-mingpt-readme]] §intro). **Note:** the README is dated by its January 2023 snapshot; the repo itself is older ([[github-2023-01-08-mingpt-readme]] §intro).
+
+The microgpt post of 2026-02-12 gives evidence rather than restating the phrase: a GPT-2-like model that trains and samples in 200 lines of pure Python, processing one token at a time with no batch dimension and no parallel time steps ([[blog-2026-02-12-microgpt]] §intro, §Architecture).
 
 ## Related claims
 - **Note:** the [[nanogpt]] README makes the same point in code size, a roughly 300-line model file, without stating the claim; a later claim page could carry it ([[github-2023-01-08-mingpt-readme]] §intro; [[github-2025-11-12-nanogpt-readme]] §intro).

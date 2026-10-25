@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [Scaling laws, scale, scaling, model size, compute, N and D, GPU gold rush]
+aliases: [Scaling laws, scale, scaling, model size, compute, N and D, GPU gold rush, Chinchilla, compute-optimal, tokens-to-parameters ratio, D:N ratio, target_param_data_ratio, Kaplan]
 first_seen: 2023-11-23
-last_updated: 2025-11-20
-sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]", "[[github-2025-11-20-nanochat-d34-model]]"]
+last_updated: 2026-01-31
+sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]", "[[github-2025-11-20-nanochat-d34-model]]", "[[github-2026-01-07-nanochat-miniseries-v1]]", "[[github-2026-01-31-nanochat-beating-gpt-2]]"]
 context: ["[[talk-2023-05-25-state-of-gpt]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[blog-2025-10-01-animals-vs-ghosts]]"]
 related: ["[[pretraining-and-finetuning]]", "[[rlvr]]"]
 ---
@@ -25,15 +25,23 @@ Given only those two numbers, he says, you can predict with remarkable confidenc
 
 **Training past Chinchilla (nanochat d34, 2025-11-20).** His d34 run is "2X longtrained" compared to Chinchilla: the parameter-to-token ratio is overridden from 20 (comparison, Chinchilla) to 40 (setting), so the model is trained longer than compute optimal, "just to squeeze a bit more capability into a bit smaller package" ([[github-2025-11-20-nanochat-d34-model]] §intro). The script derives 88,683,315,200 training tokens and 169,150 iterations at 524,288 tokens per batch and sequence length 2048 (settings) ([[github-2025-11-20-nanochat-d34-model]] §intro). Here "compute optimal" means Chinchilla's ratio of 20 ([[github-2025-11-20-nanochat-d34-model]] §intro).
 
+**A family on one dial (miniseries v1, 2026-01-07).** The correct way to think about LLMs, he says, is that you are optimising not one model but a family controlled by a single dial, the compute you wish to spend, for monotonically better results; that allows careful scaling-law science and the confidence that, when you pay for "the big run", the extrapolation will work ([[github-2026-01-07-nanochat-miniseries-v1]] §intro (Why miniseries)). If code, architecture, optimisation and scaling laws are right, the curves of such a series should not intersect ([[github-2026-01-07-nanochat-miniseries-v1]] §intro (Miniseries v1)). At nanochat's scale training is in the infinite-data regime, with no overfitting and validation loss falling indefinitely as you train longer, so "how long to train a d12" is the wrong question; the real one is whether, for a FLOP budget, a small model trained long or a big model trained short does better ([[github-2026-01-07-nanochat-miniseries-v1]] §Details (Scaling laws)). His procedure, fixed-FLOP sweeps over depth fitted to U-shaped curves, is [[fit-your-own-scaling-law]] ([[github-2026-01-07-nanochat-miniseries-v1]] §Details (Scaling laws)).
+
+**What his fits show (2026-01-07).** Like Chinchilla, optimal parameters and tokens each scale as compute to about 0.5, so the optimal tokens-to-parameters ratio is constant; see [[nanochat-reproduces-chinchillas-equal-scaling-of-parameters-and-tokens]] ([[github-2026-01-07-nanochat-miniseries-v1]] §Details (Scaling laws)). Chinchilla measures that constant at 20 (comparison); nanochat's fits give about 8 (measured, fit), which he says might come from nanochat specifics such as Muon or from the small model sizes ([[github-2026-01-07-nanochat-miniseries-v1]] §Details (Scaling laws)). He reports that Kaplan et al. found a size-dependent ratio because of a major learning-rate-decay bug that Chinchilla pointed out, and his code comment says his nanochat experiments confirm that counting all parameters, Chinchilla's way, gives the much cleaner law than excluding embeddings, as Kaplan did ([[github-2026-01-07-nanochat-miniseries-v1]] §Details (Scaling laws)). A fit over d12 and up gives `CORE = 1.0000 - 3.7555 * FLOPs^(-0.0344)` (estimate, fit), which he uses to extrapolate to GPT-2 and GPT-3; he warns against reading much into it, since it spans orders of magnitude from few points and assumes d20's utilisation at scale, though as a sanity check it predicts 5.7e23 FLOPs for GPT-3 against about 3e23 for the real run (estimate; comparison) ([[github-2026-01-07-nanochat-miniseries-v1]] §Details (Miniseries v1 CORE scores)). That extrapolation table is headed "12:1 D:N ratio" while the text gives 8; the post does not reconcile them ([[github-2026-01-07-nanochat-miniseries-v1]] §Details (Miniseries v1 CORE scores)). **Note:** the 2025-11-20 d34 post calls Chinchilla's 20 "compute optimal" ([[github-2025-11-20-nanochat-d34-model]] §intro); this post measures about 8 for nanochat at its code state of 2026-01-07 ([[github-2026-01-07-nanochat-miniseries-v1]] §Details (Scaling laws)). Each is given with its date.
+
+**About 10 (2026-01-31).** In the record run's training script the tokens-to-parameters ratio is 10.5 for compute optimal, or 12 for the speedrun, a slight overtrain (settings), needing about 8.8B FineWeb-edu tokens in total ([[github-2026-01-31-nanochat-beating-gpt-2]] §Training Script). Among what worked he lists that they empirically measured the optimal ratio at about 10 (measured), adding "It's important to do the actual experiment on your own network." ([[github-2026-01-31-nanochat-beating-gpt-2]] §What Worked). **Note:** the 2026-01-07 fits gave about 8 and the 2025-11-20 d34 post used Chinchilla's 20 as compute optimal; each figure is given with its date and code state, not as a revision ([[github-2026-01-07-nanochat-miniseries-v1]] §Details (Scaling laws); [[github-2025-11-20-nanochat-d34-model]] §intro; [[github-2026-01-31-nanochat-beating-gpt-2]] §What Worked).
+
 ## Claims
 - [[scaling-offers-a-guaranteed-path-to-better-models]]
 - [[small-llms-can-be-strong-in-narrow-domains]] — small models, narrow domains
 - [[the-architecture-is-no-longer-the-bottleneck]]
 - [[a-cognitive-core-could-be-a-billion-parameters-or-less]]
 - [[progress-comes-from-everything-improving-together]] — data, hardware, kernels and algorithms, none winning
+- [[nanochat-reproduces-chinchillas-equal-scaling-of-parameters-and-tokens]] — equal exponents, but a ratio near 8
 
 ## Related
 - [[pretraining-and-finetuning]] — the stage whose loss these laws describe
 - [[bitter-lesson]] — why researchers read scaling laws as bitter-lesson pilled
 - [[compute-efficiency]] — the efficiency gains he lists beside scale
+- [[fit-your-own-scaling-law]] — his sweep procedure
 - [[rlvr]] — **Note:** his 2025 account adds test-time compute as a different knob; not a link set between claims

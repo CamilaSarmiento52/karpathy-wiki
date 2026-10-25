@@ -18,7 +18,7 @@ steps:
   - Keep long runs alive: watch the log and restart a hung run
   - Make runs resumable, deterministic and constant in memory
   - Skip updates on instantaneous instability, and watch for drift
-sources: ["[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-12-llmc-gpt-2-774m]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[github-2025-11-20-nanochat-d34-model]]"]
+sources: ["[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-12-llmc-gpt-2-774m]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[github-2025-11-20-nanochat-d34-model]]", "[[github-2026-01-31-nanochat-beating-gpt-2]]"]
 aliases: [training diagnostics plots, activation and gradient statistics, update-to-data ratio, check the loss at initialization, evaluate with a single loss number]
 ---
 # Training diagnostics
@@ -52,6 +52,8 @@ The GPT-2 lecture repeats step 1 at a larger vocabulary: with 50,257 tokens he e
 17. **Skip spikes, and watch for drift.** Loss spikes and bad activation ranges are his signs of instability; the code detects simple instantaneous instability and skips the update (`-sl 5.0 -sg 5.0`), which mitigates and defers problems, but his 420B-token run still exploded after about step 330,000 ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro, §intro (400B token run)).
 
 In the nanochat d34 post he reads the wandb curves against d32's: d34 trained fairly stably except for a tiny bump near the beginning that recovered quickly ([[github-2025-11-20-nanochat-d34-model]] §intro). When training crashed in the last 5% with a cryptic NCCL error, he used nanochat's new optimisation-resumption logic to resume from that point, which he says "worked perfect" ([[github-2025-11-20-nanochat-d34-model]] §intro).
+
+He calls the GPT-2 record run of 2026-01-31 "a nicely uneventful run of training a GPT-2 capability model", and notes that its wandb x-axis looks longer because it includes inline evaluation ([[github-2026-01-31-nanochat-beating-gpt-2]] §intro).
 
 ## Seen in
 - [[youtube-2023-01-17-gpt-from-scratch]]

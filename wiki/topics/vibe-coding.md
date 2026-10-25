@@ -3,7 +3,7 @@ type: topic
 aliases: [Vibe coding, vibe coded]
 first_seen: 2025-02-02
 last_updated: 2026-04-02
-sources: ["[[x-2025-02-02-vibe-coding]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[youtube-2025-02-27-how-i-use-llms]]", "[[blog-2025-04-07-power-to-the-people]]", "[[blog-2025-04-27-vibe-coding-menugen]]", "[[x-2025-05-01-vibe-coding-hackathon]]", "[[github-2025-08-21-rendergit-readme]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[github-2025-11-18-reader3-readme]]", "[[github-2025-11-22-llm-council-readme]]"]
+sources: ["[[x-2025-02-02-vibe-coding]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[youtube-2025-02-27-how-i-use-llms]]", "[[blog-2025-04-07-power-to-the-people]]", "[[blog-2025-04-27-vibe-coding-menugen]]", "[[x-2025-05-01-vibe-coding-hackathon]]", "[[github-2025-08-21-rendergit-readme]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[github-2025-11-18-reader3-readme]]", "[[github-2025-11-22-llm-council-readme]]", "[[blog-2025-12-10-auto-grade-hn]]", "[[github-2025-12-10-hn-time-capsule-readme]]", "[[github-2026-01-03-rustbpe-readme]]"]
 related: ["[[software-3-0]]", "[[english-is-the-new-programming-language]]", "[[vibe-coding-over-time]]"]
 ---
 # Vibe coding
@@ -22,7 +22,9 @@ The rendergit README, dated 2025-08-21, says he vibe coded the utility a few mon
 
 The reader3 README, dated 2025-11-18, says he 90% vibe coded the EPUB reader just to illustrate an idea and will not support or improve it, because "Code is ephemeral now and libraries are over"; see [[reader3]] and [[code-is-ephemeral-now-and-libraries-are-over]] ([[github-2025-11-18-reader3-readme]] §intro). The llm-council README, dated 2025-11-22, says that app was 99% vibe coded as a fun Saturday hack, will not be supported or improved, and repeats the same two sentences on code being ephemeral; see [[llm-council]] ([[github-2025-11-22-llm-council-readme]] §Vibe Code Alert).
 
-By December 2025 he says vibe coding empowers trained professionals as well as regular people, and that he vibe-coded nanochat's Rust BPE tokenizer instead of learning Rust to that level ([[blog-2025-12-19-year-in-review-2025]] §5). He describes code as suddenly "free, ephemeral, malleable, discardable after single use" ([[blog-2025-12-19-year-in-review-2025]] §5).
+The HN time capsule post, dated 2025-12-10, says vibe coding the project was relatively painless and took about 3 hours with Opus 4.5, with a few hiccups but overall very impressive, and calls the repo "My code (wait, Opus' code?)"; see [[hn-time-capsule]] ([[blog-2025-12-10-auto-grade-hn]] §intro). Its README says 99% of the repo was vibe coded in a few hours with Opus 4.5, provided as is, without support ([[github-2025-12-10-hn-time-capsule-readme]] §Vibe code alert). **Note:** MenuGen's slog was deployment with auth and payments ([[blog-2025-04-27-vibe-coding-menugen]] §intro ¶TLDR); this project renders static HTML hosted on his own site ([[blog-2025-12-10-auto-grade-hn]] §intro). Different kinds of app; no link is set.
+
+By December 2025 he says vibe coding empowers trained professionals as well as regular people, and that he vibe-coded nanochat's Rust BPE tokenizer instead of learning Rust to that level ([[blog-2025-12-19-year-in-review-2025]] §5). He describes code as suddenly "free, ephemeral, malleable, discardable after single use" ([[blog-2025-12-19-year-in-review-2025]] §5). The rustbpe README, dated 2026-01-03, does not use the word "vibe": it says he wrote the Rust against a Python reference he wrote and understands fully, with equality tests, and had significant help from ChatGPT and Claude Code Opus 4.5 because he is not a Rust developer; see [[rustbpe]] ([[github-2026-01-03-rustbpe-readme]] §LLM Assistance note). **Note:** the review's "vibe coded" and the README's tested account can both be true; whether rustbpe is that same nanochat tokenizer is stated in neither ([[blog-2025-12-19-year-in-review-2025]] §5; [[github-2026-01-03-rustbpe-readme]] §LLM Assistance note).
 
 In April 2026 he mentions vibe-coding a small search engine over his knowledge-base wiki ([[x-2026-04-02-llm-knowledge-bases]] §Extra tools).
 
@@ -50,6 +52,7 @@ In Power to the people, dated 2025-04-07, he lists "People can now vibe code app
 - [[rendergit]] — a vibe-coded utility he keeps using
 - [[reader3]] — a 90% vibe-coded EPUB reader, unsupported
 - [[llm-council]] — a 99% vibe-coded Saturday hack, unsupported
+- [[hn-time-capsule]] — vibe coded in about 3 hours with Opus 4.5
 - [[software-3-0]]
 - [[technology-diffusion]] — why individuals, not organisations, gain most from it so far
 - [[ai-assisted-coding-loop]] — what he does when he is not vibe coding

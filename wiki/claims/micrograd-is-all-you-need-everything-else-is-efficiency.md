@@ -2,9 +2,9 @@
 type: claim
 stated_on: 2022-08-16
 confidence: stated
-sources: ["[[youtube-2022-08-16-micrograd]]"]
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[blog-2026-02-12-microgpt]]"]
 topic: "[[backpropagation]]"
-supports: ["[[neural-networks-are-just-mathematical-expressions]]"]
+supports: ["[[neural-networks-are-just-mathematical-expressions]]", "[[microgpt-is-the-full-algorithm-everything-else-is-efficiency]]"]
 ---
 # micrograd is all you need to train neural nets; everything else is efficiency
 > "micrograd is what you need to train your networks" — [[youtube-2022-08-16-micrograd]] @06:30
@@ -18,3 +18,4 @@ By contrast he searched PyTorch for tanh, got 2,800 results in 406 files, and sp
 
 ## Related claims
 - Supports [[neural-networks-are-just-mathematical-expressions]]: if a net is an expression over scalars, a scalar autograd engine is enough to train it ([[youtube-2022-08-16-micrograd]] @04:19, @06:30).
+- Supported by [[microgpt-is-the-full-algorithm-everything-else-is-efficiency]]: on 2026-02-12 microgpt trains and samples a whole GPT on a scalar `Value` engine, and he says "Everything else is just efficiency." ([[blog-2026-02-12-microgpt]] §intro, §Autograd); here, a scalar engine is what you need to train networks, with tensors purely for efficiency ([[youtube-2022-08-16-micrograd]] @05:56, @06:30). Evidence for this claim, not a broader one; no timeline.

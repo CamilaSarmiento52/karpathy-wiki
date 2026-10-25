@@ -30,7 +30,9 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[english-is-the-new-programming-language|English is now a programming language]] — 2025-06-19; everyone is now a programmer
 - [[forgetting-to-zero-grad-is-a-common-neural-net-bug|Forgetting to zero grad before backward is a common bug]] — 2022-08-16; he made it on camera
 - [[frontier-llms-are-not-platonically-bitter-lesson-pilled|Frontier LLMs are not platonically bitter-lesson pilled]] — he grants Sutton the human input at every stage; the bitter lesson is correct but platonic (2025-10-01)
+- [[future-llms-are-watching|Everything we do today might be scrutinised in great detail by future LLMs]] — 2025-12-10; if intelligence becomes too cheap to meter
 - [[gpt-2-is-the-first-recognizably-modern-llm-stack|GPT-2 was the first time the modern LLM stack came together in recognisable form]] — the grand-daddy of LLMs, with released weights; later models changed little
+- [[gpt-2-training-cost-falls-to-about-40-percent-a-year|He estimates the cost to train GPT-2 falls each year to about 40% of the year before]] — 2026-01-31; $43,000 in 2019 vs ~$73, which he thinks an underestimate
 - [[gpt-is-a-general-purpose-computer-running-natural-language-programs|GPT is a general-purpose computer running natural-language programs]] — 2023-05-19; prompts are the programs; supports the English-programming claim
 - [[gpt-is-not-a-complicated-model|GPT is not a complicated model]] — 2023-01-08; about 300 lines, the complexity is batching
 - [[gradient-based-models-scale-where-count-tables-do-not|Gradient-based models scale to longer contexts where count tables do not]] — 2022-09-07; tables blow up with context
@@ -58,12 +60,15 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[llms-want-to-imitate-not-succeed|LLMs don't want to succeed, they want to imitate]] — 2023-05-25; ask for a strong solution, but not too much
 - [[longer-context-windows-alone-will-not-scale-to-long-multimodal-tasks|Longer context windows alone will not scale to long multimodal tasks]] — 2025-02-05; test-time training needed, hedged
 - [[memory-access-not-flops-limits-training-speed|Memory access patterns, not FLOP counts, limit much of training speed]] — 2024-06-09; TF32 gave 3× not 8×; flash attention wins with more FLOPs
+- [[microgpt-is-the-full-algorithm-everything-else-is-efficiency|microgpt's 200 lines hold the full algorithmic content of a GPT; everything else is efficiency]] — 2026-02-12; supports the 2022 micrograd claim
 - [[micrograd-is-all-you-need-everything-else-is-efficiency|micrograd is all you need; everything else is efficiency]] — 2022-08-16; tensors change nothing in the math
 - [[modern-innovations-make-precise-initialization-less-important|Residual connections, normalization layers and better optimisers make exact initialisation less important]] — 2022-10-04; Kaiming is still the most common init
+- [[nanochat-reproduces-chinchillas-equal-scaling-of-parameters-and-tokens|His nanochat sweeps reproduce Chinchilla's finding that compute-optimal parameters and tokens grow equally with compute]] — 2026-01-07; the exponents, not the constant (about 8, not 20)
 - [[neural-net-training-should-not-be-complicated|Neural net training is one loop of simple arithmetic and should not be that complicated]] — 2024-07-11; llm.c's minimal C/CUDA; supports GPT-is-not-complicated
 - [[neural-networks-are-just-mathematical-expressions|Neural networks are just a class of mathematical expressions]] — 2022-08-16; data and weights in, loss out
 - [[no-rag-needed-for-a-small-wiki|His ~100-article wiki worked without RAG]] — 2026-04-02; one wiki's experience, not a general result
 - [[one-text-note-beats-many-organized-notes|For him, one text note works better than many notes sorted into folders]] — 2025-03-19; folders cost cognitive bloat; CTRL+F stays trivial
+- [[only-actual-metrics-are-real-and-comparable|Validation loss can deceive when comparing models; he trusts benchmark metrics instead]] — 2026-01-07; modded-nanogpt's B=1, GPT-2's unknown data mix
 - [[open-weights-models-are-not-open-source|Llama and Mistral are open-weights models, not open source]] — weights are a binary; open source releases data and training
 - [[oura-and-whoop-were-the-best-sleep-trackers-he-tested|In his two-month test, Oura and Whoop were the best sleep trackers and AutoSleep near random]] — 2025-03-24; how he compared them; sleep tracks his work quality
 - [[parameters-are-vague-recollection-context-is-working-memory|Knowledge in the parameters is a vague recollection; the context window is working memory]] — 2025-02-05; paste the material into the prompt
@@ -83,6 +88,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[self-improvement-may-be-possible-in-narrow-domains|LLM self-improvement may be possible in narrow domains]] — 2023-11-23; hedged; no general reward criterion
 - [[small-llms-can-be-strong-in-narrow-domains|Very small LLMs can perform surprisingly well if the domain is narrow enough]] — TinyStories as reference; demand for custom micro-LLMs at the edge
 - [[small-projects-can-snowball|Small, fragile projects can snowball into very big ones]] — 2024-07-03; game tutorials to CS231n, Zero to Hero, LLM101n; a Reddit chatbot to GPT-4o
+- [[small-scale-tuning-does-not-always-transfer|In his nanochat sweeps, small-scale hyperparameter tuning did not transfer, so he validates at target scale]] — 2026-01-31; many but not all ideas transfer
 - [[software-2-0-automates-what-you-can-verify|Software 2.0 easily automates what you can verify, as Software 1.0 automated what you can specify]] — verifiability as the predictor of automation, with resettable, efficient, rewardable environments
 - [[success-comes-from-repeated-practice|To a very large extent, success comes from repeated practice, on the order of 10,000 hours]] — 2024-07-03; count the hours; his 20th website, the Tesla rewrite
 - [[synthetic-data-is-the-future-if-you-keep-its-entropy|Synthetic data is the way forward, if its entropy is kept]] — 2024-09-05; models are silently collapsed; three jokes; Persona prompts
@@ -101,6 +107,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[transformers-need-tokens-to-think|Transformers need tokens to think]] — 2023-05-25; same compute per token, so spread the reasoning
 - [[treat-broadcasting-with-respect|Broadcasting deserves respect, not fast-and-loose use]] — 2022-09-07; the bugs are subtle
 - [[understand-backprop-even-with-autograd|Autograd being available is no reason to ignore how backpropagation works]] — 2022-10-11; backprop is a leaky abstraction
+- [[us-chemical-regulation-lags-the-industry|He says US chemical and food regulation lags far behind the industry and behind Europe]] — 2025-12-18; so the responsibility falls to you
 - [[use-cross-entropy-not-a-hand-rolled-loss|Call F.cross_entropy rather than rolling your own loss]] — 2022-09-12; fused kernels, simpler backward, no overflow
 - [[use-hardware-security-keys-not-sms-as-a-second-factor|Secure critical accounts with hardware security keys, not a phone number]] — 2025-03-17; SIM swaps; about 1000X less risk
 - [[use-llms-as-copilots-with-human-oversight|In 2023 he recommended LLMs as copilots with human oversight]] — 2023-05-25; low stakes, not autonomous agents; supports the decade-of-agents claim

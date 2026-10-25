@@ -2,8 +2,8 @@
 type: topic
 aliases: [Character-level language model, language modeling, makemore task, tiny Shakespeare]
 first_seen: 2022-09-07
-last_updated: 2023-05-19
-sources: ["[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[github-2022-11-20-makemore-readme]]", "[[talk-2023-05-19-stanford-cs25-transformers]]"]
+last_updated: 2026-02-12
+sources: ["[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[github-2022-11-20-makemore-readme]]", "[[talk-2023-05-19-stanford-cs25-transformers]]", "[[blog-2026-02-12-microgpt]]"]
 related: ["[[makemore]]", "[[bigram-language-model]]", "[[softmax]]", "[[loss-functions]]"]
 ---
 # Character-level language modeling
@@ -19,6 +19,8 @@ The 32,000 names give 228,000 three-character examples for the MLP ([[youtube-20
 The makemore README frames the task the same way: each line of a text file is one training example, and the model learns to generate more lines like it, one character at a time, as an autoregressive character-level language model ([[github-2022-11-20-makemore-readme]] §intro). The simplest version is a bigram model, where one character predicts the next from a lookup table of counts; the README lists an MLP, RNN, LSTM, GRU, CNN and Transformer as other models for the same task ([[github-2022-11-20-makemore-readme]] §intro). His example inputs are names, company names and Scrabble words ([[github-2022-11-20-makemore-readme]] §intro).
 
 In the CS25 lecture his character-level example is tiny Shakespeare, one of his favourite toy datasets: all of Shakespeare concatenated into a file of about 1 MB ([[talk-2023-05-19-stanford-cs25-transformers]] @31:35). Batches are B×T chunks of the one-dimensional sequence; block size is the maximum context, and a 4×8 batch holds many examples because every prefix predicts its next element ([[talk-2023-05-19-stanford-cs25-transformers]] @32:40, @33:15, @33:48, @34:19). His generation loop for it is on [[sampling-from-language-models]] ([[talk-2023-05-19-stanford-cs25-transformers]] @41:34).
+
+**microgpt (2026-02-12).** The goal is to learn the statistical patterns of about 32,000 names and generate new, plausible-sounding ones ([[blog-2026-02-12-microgpt]] §Dataset). The model learns a distribution that reflects rules such as names often starting with consonants, "qu" appearing together and three consonants in a row being rare, not the rules themselves ([[blog-2026-02-12-microgpt]] §FAQ). Swap in city names, Pokemon names, English words or short poems and it learns those instead, with no other code change; see [[microgpt]] ([[blog-2026-02-12-microgpt]] §FAQ).
 
 ## Claims
 - [[the-logits-softmax-nll-machinery-stays-fixed-up-to-transformers]]

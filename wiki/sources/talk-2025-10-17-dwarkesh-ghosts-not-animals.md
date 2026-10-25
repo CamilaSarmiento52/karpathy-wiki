@@ -38,6 +38,7 @@ A two-and-a-half-hour interview with Dwarkesh Patel, who asks the questions and 
 - Build it yourself to understand it; find the first-order terms; explain to learn → [[if-you-cannot-build-it-you-do-not-understand-it]], [[learn-by-building-and-explaining]]
 
 ## Fed pages
+- [[gpt-2-training-cost-falls-to-about-40-percent-a-year]]
 - [[a-cognitive-core-could-be-a-billion-parameters-or-less]]
 - [[ai-and-the-economy]]
 - [[ai-assisted-coding-loop]]

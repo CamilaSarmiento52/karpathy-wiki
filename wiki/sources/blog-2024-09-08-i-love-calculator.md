@@ -21,6 +21,7 @@ Browsing a book on the history of the pocket calculator, he realises he loves th
 - Bought once and then his, with no other master → [[user-hostile-technology]]
 
 ## Fed pages
+- [[us-chemical-regulation-lags-the-industry]]
 - [[user-hostile-technology]]
 - [[technology-could-be-like-the-calculator]]
 - [[he-prefers-to-pay-and-be-the-customer]]
