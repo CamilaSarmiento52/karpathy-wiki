@@ -45,6 +45,9 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[github-2026-01-03-rustbpe-readme|rustbpe README]] — the missing tiktoken training code: Rust BPE trainer, Python bindings, tiktoken export; Rust written with LLM help against his Python
 - [[github-2026-01-07-nanochat-miniseries-v1|nanochat miniseries v1 (Jan 7 2026)]] — d10–d20 compute-optimal series in ~4 h for ~$100; own scaling-law fits (ratio ~8); CORE against GPT-2 and estimated GPT-3
 - [[github-2026-01-31-nanochat-beating-gpt-2|Beating GPT-2 for <<$100: the nanochat journey]] — d24 beats GPT-2's CORE in 3.04 h for ~$73; leaderboard, record model, what worked and what did not
+- [[github-2026-03-08-autoresearch-session-report|Session report: 0.9979 → 0.9697 in 126 experiments — weight decay on everything + init scaling]] — written and posted by an autoresearch agent (Claude), not by him: 126 experiments, the agent's keep/discard log
+- [[github-2026-03-16-jobs-readme|jobs README]] — US Job Market Visualizer: 342 BLS occupations as a treemap, coloured by an LLM-scored AI exposure with caveats
+- [[github-2026-03-21-autoresearch-readme|autoresearch README]] — an agent edits a simplified nanochat train.py, trains five minutes, keeps or discards by val_bpb; the human edits program.md
 - [[github-2026-07-03-nanochat-readme|nanochat README]] — minimal single-node harness that trains a GPT-2-grade chat model, set by one depth dial
 - [[talk-2023-05-19-stanford-cs25-transformers|Stanford CS25: Introduction to Transformers]] — guest lecture: AI converging on the Transformer, attention as message passing, nanoGPT walk-through, in-context learning
 - [[talk-2023-05-25-state-of-gpt|State of GPT]] — Microsoft Build 2023: the four-stage assistant recipe, then prompting, tools, finetuning and human-overseen use
@@ -53,6 +56,7 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[talk-2024-09-05-no-priors-ep-80|No Priors Ep. 80]] — podcast interview: self-driving's demo-to-product gap, Tesla vs Waymo, humanoids, data as the bottleneck, a small cognitive core, AI-assisted education
 - [[talk-2024-10-03-cuda-mode-keynote|CUDA Mode Keynote]] — the story of llm.c: dropping PyTorch, the layer-by-layer port to C and CUDA, contributors, beating PyTorch on GPT-2, LLMs as compilers for custom code
 - [[talk-2025-10-17-dwarkesh-ghosts-not-animals|Andrej Karpathy — “We’re summoning ghosts, not building animals”]] — Dwarkesh Patel interview: decade of agents, RL terrible but better than imitation, ghosts, model collapse, cognitive core, nanochat coding, march of nines, GDP, Eureka
+- [[talk-2026-03-20-skill-issue|Skill Issue: Andrej Karpathy on Code Agents, AutoResearch, and the Loopy Era of AI]] — No Priors interview: delegating most coding since December, parallel agents, claws, autoresearch, jaggedness, speciation, jobs
 - [[x-2024-02-21-technical-accessibility|on technical accessibility]] — micrograd stagnated until the video; build the thing, then build the ramp
 - [[x-2024-10-02-gpu-mode-talk|I gave a talk at GPU MODE workshop last week on llm.c]] — the talk's outline: dropping PyTorch, the layer port, CUDA work, the $672 1.6B run, LLMs writing custom binaries
 - [[x-2025-02-02-vibe-coding|There's a new kind of coding I call "vibe coding"]] — the post that coined vibe coding
@@ -60,6 +64,8 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[x-2025-07-08-ideal-grocery-store|This is what the ideal grocery store looks like]] — one post: minimally processed, organic, local, fresh food only; he doubts such a store exists
 - [[x-2025-10-01-sutton-podcast|Finally had a chance to listen through this pod with Sutton…]] — the Animals vs Ghosts text posted on X without its appendix; a second location, not independent evidence
 - [[x-2025-11-18-reading-with-llms|I'm starting to get into a habit of reading everything (blogs, articles, book…]] — reading everything with LLMs in three passes; writers may write for LLMs
+- [[x-2026-03-05-nanochat-gpt-2-in-two-hours|nanochat now trains GPT-2 capability model in just 2 hours on a single 8XH100…]] — 2 hours on one node after a switch to ClimbMix; agents now iterate on nanochat automatically
+- [[x-2026-03-09-autoresearch-tuning-nanochat|Three days ago I left autoresearch tuning nanochat for ~2 days on depth=12…]] — autoresearch round 1: ~20 changes, 2.02 → 1.80 hours to GPT-2; all frontier labs will do this
 - [[x-2026-04-02-llm-knowledge-bases|LLM Knowledge Bases]] — his workflow for an LLM-compiled Obsidian wiki, the pattern this project follows
 - [[youtube-2022-08-16-micrograd|The spelled-out intro to neural networks and backpropagation: building micrograd]] — builds a scalar autograd engine from a blank notebook and trains a tiny MLP
 - [[youtube-2022-09-07-makemore-1-bigram|The spelled-out intro to language modeling: building makemore]] — bigram character model built by counting and as a one-layer net; they are the same model

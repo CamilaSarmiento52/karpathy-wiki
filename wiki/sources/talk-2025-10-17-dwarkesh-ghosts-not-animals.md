@@ -81,3 +81,5 @@ A two-and-a-half-hour interview with Dwarkesh Patel, who asks the questions and 
 - [[vibe-coding]]
 - [[vibe-coding-over-time]]
 - [[verifiability-drives-the-jagged-frontier]]
+- [[autoresearch-found-real-improvements-to-nanochat]]
+- [[he-now-delegates-most-coding-to-agents]]

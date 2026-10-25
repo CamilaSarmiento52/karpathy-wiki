@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [AI and the economy, GDP, automation, loss of control, AGI definition, intelligence explosion, superintelligence, compute buildout]
+aliases: [AI and the economy, GDP, automation, loss of control, AGI definition, intelligence explosion, superintelligence, compute buildout, AI and jobs, AI exposure, job market, occupations]
 first_seen: 2025-10-17
-last_updated: 2025-11-17
-sources: ["[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[blog-2025-11-17-verifiability]]"]
+last_updated: 2026-03-20
+sources: ["[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[blog-2025-11-17-verifiability]]", "[[github-2026-03-16-jobs-readme]]", "[[talk-2026-03-20-skill-issue]]"]
 related: ["[[technology-diffusion]]", "[[physical-automation-will-lag-digital-automation]]", "[[partial-autonomy-apps]]"]
 ---
 # AI and the economy
@@ -24,6 +24,10 @@ How he expects AI to enter the economy: as a continuation of computing and of ce
 
 **Which jobs get automated (Verifiability, 2025-11-17).** He calls AI as a new computing paradigm the strongest historical analogy, above electricity or the industrial revolution, since both are about automating digital information processing ([[blog-2025-11-17-verifiability]] §intro). To forecast job impact in the 1980s you would ask whether a job was specifiable; now you would ask whether it is verifiable, and the more verifiable a task or job, the more amenable it is to automation; see [[software-2-0-automates-what-you-can-verify]] ([[blog-2025-11-17-verifiability]] §intro). **Note:** the Dwarkesh interview also treats AI as an extension of computing; there the point is about GDP growth, here about which tasks get automated, so the two are shared framing only ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:07:55; [[blog-2025-11-17-verifiability]] §intro).
 
+**AI exposure by occupation (jobs README, 2026-03-16).** His [[jobs]] tool colours 342 US occupations by a "Digital AI Exposure" score that an LLM, Gemini Flash via OpenRouter, assigns from 0 to 10; it estimates how much current AI, which the README calls primarily digital, will reshape each occupation ([[github-2026-03-16-jobs-readme]] §What's here, §LLM-powered coloring). The README says the score does not predict that a job will disappear: the tool's LLM scores software developers 9/10 because AI is transforming their work, yet demand for software could easily grow as each developer becomes more productive; see [[many-high-ai-exposure-jobs-will-be-reshaped-not-replaced]] ([[github-2026-03-16-jobs-readme]] §LLM-powered coloring). It says the score ignores demand elasticity, latent demand, regulatory barriers and social preferences for human workers, and frames the tool as exploration, not a report, paper or serious economic publication ([[github-2026-03-16-jobs-readme]] §intro, §LLM-powered coloring). **Note:** the reshaped-not-replaced framing sits beside his Dwarkesh remark that society will refactor jobs around which of their tasks are automatable; both describe jobs changing by task rather than vanishing whole, a connection, not his statement ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:09:16; [[github-2026-03-16-jobs-readme]] §LLM-powered coloring).
+
+**The jobs data and the Jevons paradox (Skill Issue, 2026-03-20).** Asked by the host about his jobs-data visualisation, he says he wanted to look at the job market, which roles exist and how many people are in each, to fuel his own thinking about which professions AI tools will change, using the Bureau of Labor Statistics outlooks ([[talk-2026-03-20-skill-issue]] @38:11, @38:43). He coloured professions by whether they manipulate digital information, work you could do from home, because he expects the current, mostly digital AI to change them first; AIs are a third kind of manipulator of digital information after computers and people, and there will be a lot of refactoring in those professions, with more or fewer jobs depending on demand elasticity and other factors ([[talk-2026-03-20-skill-issue]] @39:17, @39:50, @40:22). **Note:** this is likely the [[jobs]] tool, whose README is dated 2026-03-16; the interview does not name the repo ([[github-2026-03-16-jobs-readme]] §intro; [[talk-2026-03-20-skill-issue]] @38:43). He says jobs are bundles of tasks, people should treat AI as primarily a tool for now and keep up, and the long-term future is a job for economists ([[talk-2026-03-20-skill-issue]] @41:29). On software he is cautiously optimistic: cheaper software should raise demand for it; see [[cheaper-software-will-raise-demand-for-it]] ([[talk-2026-03-20-skill-issue]] @42:02, @42:34). He is surprised there are not more information markets, such as paying $10 for a photo from Tehran that agents betting on markets would use, and cites the novel Daemon, where humans become an intelligence's sensors and actuators ([[talk-2026-03-20-skill-issue]] @58:59, @59:31).
+
 **Note:** the slow diffusion he describes here is about GDP; his essay on individuals gaining more from LLMs than institutions is on [[technology-diffusion]] ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:23:57).
 
 ## Claims
@@ -31,8 +35,11 @@ How he expects AI to enter the economy: as a continuation of computing and of ce
 - [[gradual-loss-of-control-is-the-most-likely-outcome]]
 - [[physical-automation-will-lag-digital-automation]] — bits are easier than atoms
 - [[software-2-0-automates-what-you-can-verify]] — verifiability predicts what gets automated
+- [[many-high-ai-exposure-jobs-will-be-reshaped-not-replaced]] — 2026-03-16; a caveat on the jobs tool's LLM scores
+- [[cheaper-software-will-raise-demand-for-it]] — 2026-03-20; the Jevons paradox for software
 
 ## Related
+- [[jobs]] — his treemap of 342 occupations by LLM-scored AI exposure
 - [[technology-diffusion]]
 - [[partial-autonomy-apps]] — the autonomy slider and call centres
 - [[self-driving]] — the deployment lesson he applies to AI

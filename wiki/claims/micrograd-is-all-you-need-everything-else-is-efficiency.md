@@ -2,7 +2,7 @@
 type: claim
 stated_on: 2022-08-16
 confidence: stated
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[blog-2026-02-12-microgpt]]"]
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[blog-2026-02-12-microgpt]]", "[[talk-2026-03-20-skill-issue]]"]
 topic: "[[backpropagation]]"
 supports: ["[[neural-networks-are-just-mathematical-expressions]]", "[[microgpt-is-the-full-algorithm-everything-else-is-efficiency]]"]
 ---
@@ -15,6 +15,8 @@ Tensors package scalars into arrays to exploit parallelism; he says none of the 
 The granularity of operations is up to you: you can implement backward for a single plus or for a composite like tanh, as long as you have a forward pass and can write the local derivative, which he shows by building tanh atomically and then from exp with identical gradients ([[youtube-2022-08-16-micrograd]] @58:24, @1:37:47, @1:38:22, @1:38:54). PyTorch's `torch.autograd.Function` registration is the same idea ([[youtube-2022-08-16-micrograd]] @2:23:43, @2:24:15).
 
 By contrast he searched PyTorch for tanh, got 2,800 results in 406 files, and spent 15 minutes before finding the backward kernel; he says these libraries are complex and meant to be used, not really inspected ([[youtube-2022-08-16-micrograd]] @2:21:33, @2:22:07). Finding the real code for what micrograd does in a few lines is difficult ([[youtube-2022-08-16-micrograd]] @2:23:11).
+
+On 2026-03-20 he says the same of LLM training: it is a huge amount of code, but all of it is complexity from efficiency, needed only to go fast; the algorithm itself is 200 lines of Python in microGPT, with an autograd engine of about 100 lines ([[talk-2026-03-20-skill-issue]] @1:01:40, @1:02:12).
 
 ## Related claims
 - Supports [[neural-networks-are-just-mathematical-expressions]]: if a net is an expression over scalars, a scalar autograd engine is enough to train it ([[youtube-2022-08-16-micrograd]] @04:19, @06:30).

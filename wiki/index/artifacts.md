@@ -2,9 +2,11 @@
 
 His repositories and what each demonstrates. Alphabetical. Maintained by ingest; do not edit by hand.
 
+- [[autoresearch|autoresearch]] — an AI agent edits a small nanochat training script, trains five minutes, keeps or discards by val_bpb, and repeats
 - [[build-nanogpt|build-nanogpt]] — the GPT-2 (124M) lecture's code, built commit by commit from an empty file; about an hour and $10 to reproduce
 - [[calorie|calorie]] — his calorie-deficit tracking web app in one index.html
 - [[hn-time-capsule|hn-time-capsule]] — an LLM grades decade-old Hacker News threads with hindsight and ranks commenters; vibe coded, unsupported
+- [[jobs|jobs]] — US Job Market Visualizer: a treemap of 342 BLS occupations; LLM-scored colour layers and a prompt.md to paste into an LLM
 - [[llama2c|llama2.c]] — Llama 2 architecture trained in PyTorch and run from one dependency-free C file; tiny TinyStories models and int8 quantization
 - [[llm-c|llm.c]] — GPT-2 training in C/CUDA; Discussions host his progress reports
 - [[llm-council|llm-council]] — local ChatGPT-like app: first opinions, anonymised peer review, Chairman's answer, via OpenRouter; vibe coded, unsupported

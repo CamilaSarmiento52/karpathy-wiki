@@ -2,8 +2,8 @@
 type: topic
 aliases: [Jagged intelligence, people spirits, ghosts vs animals, Swiss cheese model, Swiss cheese capabilities, sharp edges, 9.11 vs 9.9, jagged frontier, verifiability, space of minds, space of intelligences]
 first_seen: 2025-02-05
-last_updated: 2025-12-19
-sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[blog-2025-04-07-power-to-the-people]]", "[[blog-2025-10-01-animals-vs-ghosts]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[blog-2025-11-17-verifiability]]", "[[blog-2025-11-29-space-of-minds]]"]
+last_updated: 2026-03-20
+sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[blog-2025-04-07-power-to-the-people]]", "[[blog-2025-10-01-animals-vs-ghosts]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[blog-2025-11-17-verifiability]]", "[[blog-2025-11-29-space-of-minds]]", "[[talk-2026-03-20-skill-issue]]"]
 context: ["[[talk-2023-05-25-state-of-gpt]]", "[[youtube-2023-11-23-intro-to-llms]]"]
 related: ["[[rlvr]]", "[[llms-as-operating-systems]]"]
 ---
@@ -29,6 +29,8 @@ In December 2025 he frames this as "summoning ghosts" rather than growing animal
 
 **Savant kids without continual learning (Dwarkesh, published 2025-10-17).** He says the models, booted with zero tokens, always restart from scratch; he thinks humans distil the day's context into the weights during sleep, and LLMs have no equivalent phase ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @22:30, @23:09). He imagines something like a per-person neural net, perhaps a LoRA changing a sparse subset of weights, and points to DeepSeek v3.2's sparse attention as an early hint for long context ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @23:47, @24:27). Claude Code and Codex still feel to him like an elementary-grade student: savant kids with perfect memory who can convincingly create slop but don't really know what they are doing ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:42:26, @1:43:07). He also uses the ghosts framing in this interview, recorded on [[llm-research-summons-ghosts-not-animals]] ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @08:49).
 
+**A PhD student and a 10-year-old (Skill Issue, 2026-03-20).** He says he simultaneously feels he is talking to an extremely brilliant PhD student who has been a systems programmer all their life and a 10-year-old, and that agents are much more jagged than humans ([[talk-2026-03-20-skill-issue]] @24:34). His hypothesis is that RL lets labs improve what is verifiable or has rewards, while nuance, intent and when to ask clarifying questions lag: you are either on rails or outside the verifiable domains, where things meander ([[talk-2026-03-20-skill-issue]] @25:39, @26:11). A frontier model still tells the same atoms joke it told three or four years ago; see [[what-rl-does-not-optimize-does-not-improve]] ([[talk-2026-03-20-skill-issue]] @26:11, @26:44). He does not think getting better at code is making models better at everything, perhaps a little but not a satisfying amount ([[talk-2026-03-20-skill-issue]] @27:51).
+
 **Note:** in May 2023, without the words "jagged" or "people spirits", he described the same mix: LLMs have vast fact-based knowledge and a perfect working memory in the context window, but do not know what they don't know and do not reflect, sanity-check or correct their mistakes ([[talk-2023-05-25-state-of-gpt]] @22:45, @23:22, @23:55). The prompting he recommends around those deficits is on [[prompting-llms]] ([[talk-2023-05-25-state-of-gpt]] @23:55).
 
 **Note:** in November 2023, again without the word "jagged", he gave the reversal curse as an example of how strange and imperfect the knowledge in an LLM is: GPT-4 knows Tom Cruise's mother but not, asked the other way, her son, knowledge accessible from one direction only ([[youtube-2023-11-23-intro-to-llms]] @12:43). The same talk explains prompt injection, the gullibility he lists in 2025, as hijacking the model with what look like new instructions; the attacks are on [[llm-security]] ([[youtube-2023-11-23-intro-to-llms]] @51:27, @51:59).
@@ -39,6 +41,7 @@ In December 2025 he frames this as "summoning ghosts" rather than growing animal
 - [[llm-research-summons-ghosts-not-animals]] — ghosts, not animals
 - [[verifiability-drives-the-jagged-frontier]] — verifiable tasks race ahead, the rest lag
 - [[llms-are-shaped-by-commercial-not-biological-evolution]] — the objective differs, so the shape does
+- [[what-rl-does-not-optimize-does-not-improve]] — 2026-03-20: jokes outside the RL have not improved
 
 ## Related
 - [[rlvr]] — the training stage that makes the spikes

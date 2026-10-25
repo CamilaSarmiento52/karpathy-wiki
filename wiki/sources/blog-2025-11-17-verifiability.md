@@ -30,3 +30,5 @@ He takes AI as a new computing paradigm, which he calls the strongest of the his
 - [[llm-self-improvement]]
 - [[software-2-0-automates-what-you-can-verify]]
 - [[verifiability-drives-the-jagged-frontier]]
+- [[autoresearch-needs-an-objective-metric]]
+- [[what-rl-does-not-optimize-does-not-improve]]

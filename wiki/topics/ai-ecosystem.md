@@ -2,8 +2,8 @@
 type: topic
 aliases: [AI ecosystem, open weights, open source AI, open-source LLMs, open vs closed models, coral reef]
 first_seen: 2024-03-26
-last_updated: 2025-02-27
-sources: ["[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[youtube-2025-02-27-how-i-use-llms]]"]
+last_updated: 2026-03-20
+sources: ["[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[youtube-2025-02-27-how-i-use-llms]]", "[[talk-2026-03-20-skill-issue]]"]
 related: ["[[llms-as-operating-systems]]", "[[build-the-ramp-not-just-the-thing]]"]
 ---
 # AI ecosystem
@@ -24,9 +24,16 @@ Asked what gives him meaning, he says he cares not about any one specific compan
 
 **The apps in February 2025 (How I use LLMs, 2025-02-27).** He calls ChatGPT the incumbent, the most popular and most feature-rich app because it has been around longest, with clones that sometimes offer unique experiences ([[youtube-2025-02-27-how-i-use-llms]] @01:08). He lists Gemini, Meta AI and Copilot from Google, Meta and Microsoft, Claude from Anthropic, Grok from xAI, DeepSeek from a Chinese company and Le Chat from the French Mistral ([[youtube-2025-02-27-how-i-use-llms]] @01:08, @01:42). To keep track he points to Chatbot Arena's Elo rankings and Scale's SEAL leaderboard ([[youtube-2025-02-27-how-i-use-llms]] @01:42, @02:16). In his summary it is a rapidly growing, shifting ecosystem in which other apps reach feature parity with ChatGPT or overtake it in specific cases; how he chooses among them is [[choose-a-model-tier]] ([[youtube-2025-02-27-how-i-use-llms]] @2:06:40, @2:07:13).
 
+**Speciation (Skill Issue, 2026-03-20).** He thinks the labs currently aim for one monoculture model and expects more speciation, smaller specialised models that keep the cognitive core; see [[expect-more-speciation-of-models]] ([[talk-2026-03-20-skill-issue]] @29:29, @30:03).
+
+**Open models some months behind.** He calls himself a huge fan of open source and compares it with Linux, which he says runs on the vast majority of computers because the industry needs a common open platform everyone feels safe using; the difference with LLMs is the capital expenditure, which makes competing harder ([[talk-2026-03-20-skill-issue]] @49:39, @50:13). The months-behind figures at @49:39 are partly the host's and are not attributed to him ([[talk-2026-03-20-skill-issue]] @49:39). He thinks open models are already quite good for most consumer uses and that simple uses will be covered and even run locally, while frontier intelligence serves very large projects ([[talk-2026-03-20-skill-issue]] @50:13, @50:47). He expects closed oracles at the frontier with open models some months behind to continue, and calls that a pretty good setup ([[talk-2026-03-20-skill-issue]] @51:20). He sees systemic risk in intelligence that is only closed, saying "centralization has a very poor track record in my view", and wants something behind the frontier as a common working space the industry can access, which he calls a decent power balance; "by accident", he says, we are in an okay spot ([[talk-2026-03-20-skill-issue]] @51:53, @52:25, @52:59). He would love more frontier labs, because in machine learning ensembles outperform any individual model and he wants ensembles of people in the room for the hardest decisions ([[talk-2026-03-20-skill-issue]] @53:31).
+
+**Inside and outside a frontier lab.** Asked by the host why he does not autoresearch at a frontier lab, he says he feels very good about the impact people can have outside the labs, in ecosystem-level roles like his own ([[talk-2026-03-20-skill-issue]] @44:43). Lab employees have large financial incentives tied to a technology they say will change society, which he calls the conundrum OpenAI was started to solve and still not fully resolved; inside a lab there are things you cannot say and things the organisation wants you to say, so "you can't like really be an independent agent", and in the end you are not in charge of the entity ([[talk-2026-03-20-skill-issue]] @45:17, @45:49, @46:55). Conversely, outside a lab he expects his judgment to drift, since he will not see what is coming, which makes him nervous; going back and forth may be ideal ([[talk-2026-03-20-skill-issue]] @46:55, @47:28, @48:33).
+
 ## Claims
 - [[open-weights-models-are-not-open-source]]
 - [[build-the-ramp-not-just-the-thing]] — the ramp as what the ecosystem lacks
+- [[expect-more-speciation-of-models]] — 2026-03-20: specialised smaller models instead of one oracle
 
 ## Related
 - [[llms-as-operating-systems]] — the analogy he extends to the market

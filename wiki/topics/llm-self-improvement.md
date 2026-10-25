@@ -2,8 +2,8 @@
 type: topic
 aliases: [Self-improvement, LLM self-improvement, AlphaGo step two, beyond imitation, reward function, reinforcement learning beyond RLHF]
 first_seen: 2023-11-23
-last_updated: 2025-11-17
-sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[blog-2025-10-01-animals-vs-ghosts]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[blog-2025-11-17-verifiability]]"]
+last_updated: 2026-03-20
+sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[blog-2025-10-01-animals-vs-ghosts]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[blog-2025-11-17-verifiability]]", "[[talk-2026-03-20-skill-issue]]"]
 related: ["[[rlvr]]", "[[system-1-and-system-2-thinking]]"]
 ---
 # LLM self-improvement
@@ -26,6 +26,8 @@ AlphaGo, he recalls, had two stages: imitating expert human games, which can onl
 
 **Practice needs a verifiable task (Verifiability, 2025-11-17).** He does not use the word self-improvement in the post: a task an AI can "practice" must be verifiable, with a resettable, efficient and rewardable environment, and tasks that are not verifiable fall back on generalisation or weaker means like imitation ([[blog-2025-11-17-verifiability]] §intro). See [[software-2-0-automates-what-you-can-verify]] ([[blog-2025-11-17-verifiability]] §intro).
 
+**LLMs improving LLMs (Skill Issue, 2026-03-20).** He says that training GPT-2-size models is for him a little harness and playground, and that what he is fundamentally interested in is recursive self-improvement, the extent to which LLMs can improve LLMs; he thinks the frontier labs are all trying to do this, "roughly speaking" ([[talk-2026-03-20-skill-issue]] @17:32, @18:04). His [[autoresearch]] loop, left overnight on nanochat, came back with tunings he had missed ([[talk-2026-03-20-skill-issue]] @18:36). It needs an objective, easy-to-evaluate metric; see [[autoresearch-needs-an-objective-metric]] ([[talk-2026-03-20-skill-issue]] @24:02). **Note:** autoresearch is an agent editing a model's training code against a metric, not RL on the model's own behaviour, so it is not the AlphaGo-style step two this page began with ([[youtube-2023-11-23-intro-to-llms]] @39:20; [[talk-2026-03-20-skill-issue]] @17:32).
+
 ## Claims
 - [[self-improvement-may-be-possible-in-narrow-domains]]
 - [[rlhf-is-not-real-rl]]
@@ -34,9 +36,12 @@ AlphaGo, he recalls, had two stages: imitating expert human games, which can onl
 - [[rl-is-terrible-but-better-than-imitation]] — the 2025-10-17 verdict; supports the narrow-domain claim
 - [[llm-judges-are-gameable-rewards]] — why process rewards from LLMs fail
 - [[llms-lack-culture-and-self-play]] — two multi-agent ideas not yet claimed
+- [[all-frontier-labs-will-autoresearch]] — 2026-03-09 and 2026-03-20: the labs will do it, are trying to
+- [[autoresearch-needs-an-objective-metric]] — 2026-03-20: only what can be evaluated
 
 ## Related
 - [[llm-self-improvement-over-time]] — the dated sequence
+- [[autoresearch]] — an agent tuning training code against a metric
 - [[bitter-lesson]] — Sutton's learn-from-experience program and his response
 - [[model-collapse]] — why training on its own samples fails
 - [[rlvr]] — **Note:** his 2025 account of training against automatically checkable rewards in verifiable domains is close to the narrow-domain case he speculated about in 2023; a connection, not a link set between claims

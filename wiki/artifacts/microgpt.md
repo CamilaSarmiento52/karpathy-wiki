@@ -3,7 +3,7 @@ type: artifact
 repo_url: https://gist.github.com/karpathy/8627fe009c40f57531cb18360106ce95
 language: Python
 status: active
-sources: ["[[blog-2026-02-12-microgpt]]"]
+sources: ["[[blog-2026-02-12-microgpt]]", "[[talk-2026-03-20-skill-issue]]"]
 context: ["[[github-2026-07-03-nanochat-readme]]"]
 aliases: [microgpt, microgpt.py, build_microgpt]
 ---
@@ -23,6 +23,8 @@ What he calls his new art project: a single file of 200 lines of pure Python, wi
 - **Note:** its autograd is a scalar `Value` class, for which he points readers to his 2.5-hour micrograd video; see [[micrograd]] ([[blog-2026-02-12-microgpt]] §Autograd).
 - **Note:** the post never mentions nanochat. Both are his from-scratch GPT code, nanochat a full harness that trains a ChatGPT-style model end to end and microgpt the algorithm alone in one file; the comparison is the wiki's ([[github-2026-07-03-nanochat-readme]] §intro; [[blog-2026-02-12-microgpt]] §intro).
 - **Note:** `status: active` because nothing in the post marks it otherwise; `repo_url` is the gist URL the post gives ([[blog-2026-02-12-microgpt]] §intro).
+
+**In the Skill Issue interview (2026-03-20).** He calls microGPT the current state of a decade-or-two obsession with boiling LLMs down to their essence, after nanoGPT, makemore and micrograd: training code is huge only because of efficiency, while the algorithm is 200 lines of Python, comments included, with an architecture of about 50 lines, an autograd engine of about 100 and Adam in about 10 ([[talk-2026-03-20-skill-issue]] @1:01:40, @1:02:12). He tried to make a video stepping through it and found it adds little, since anyone can ask an agent to explain it; see [[building-for-agents]] ([[talk-2026-03-20-skill-issue]] @1:02:46). An agent he asked to boil his training code down to the simplest thing could not write it, though it understands it ([[talk-2026-03-20-skill-issue]] @1:04:59, @1:05:33).
 
 ## Related
 - [[microgpt-is-the-full-algorithm-everything-else-is-efficiency]]

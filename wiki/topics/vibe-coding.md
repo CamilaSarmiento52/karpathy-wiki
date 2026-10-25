@@ -3,7 +3,7 @@ type: topic
 aliases: [Vibe coding, vibe coded]
 first_seen: 2025-02-02
 last_updated: 2026-04-02
-sources: ["[[x-2025-02-02-vibe-coding]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[youtube-2025-02-27-how-i-use-llms]]", "[[blog-2025-04-07-power-to-the-people]]", "[[blog-2025-04-27-vibe-coding-menugen]]", "[[x-2025-05-01-vibe-coding-hackathon]]", "[[github-2025-08-21-rendergit-readme]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[github-2025-11-18-reader3-readme]]", "[[github-2025-11-22-llm-council-readme]]", "[[blog-2025-12-10-auto-grade-hn]]", "[[github-2025-12-10-hn-time-capsule-readme]]", "[[github-2026-01-03-rustbpe-readme]]"]
+sources: ["[[x-2025-02-02-vibe-coding]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[youtube-2025-02-27-how-i-use-llms]]", "[[blog-2025-04-07-power-to-the-people]]", "[[blog-2025-04-27-vibe-coding-menugen]]", "[[x-2025-05-01-vibe-coding-hackathon]]", "[[github-2025-08-21-rendergit-readme]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[github-2025-11-18-reader3-readme]]", "[[github-2025-11-22-llm-council-readme]]", "[[blog-2025-12-10-auto-grade-hn]]", "[[github-2025-12-10-hn-time-capsule-readme]]", "[[github-2026-01-03-rustbpe-readme]]", "[[talk-2026-03-20-skill-issue]]"]
 related: ["[[software-3-0]]", "[[english-is-the-new-programming-language]]", "[[vibe-coding-over-time]]"]
 ---
 # Vibe coding
@@ -34,6 +34,8 @@ In Power to the people, dated 2025-04-07, he lists "People can now vibe code app
 
 **Building nanochat (Dwarkesh, published 2025-10-17).** He built nanochat over a bit more than a month and sees three classes of coders: those who reject LLMs, the intermediate, where he is, writing from scratch with autocomplete as the architect, and vibe coders, who ask agents to implement things ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @30:43, @31:21). He partially vibe-coded nanochat's report, which was boilerplate and not mission-critical, and vibe-coded some of the Rust tokenizer, being fairly new to Rust, with a Python implementation he fully understands and tests, so he felt safer ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @34:26). Models, he says, increase accessibility to unfamiliar languages ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @34:26). For the core code they were not net useful; see [[coding-models-are-weak-at-code-never-written-before]] and [[autocomplete-is-his-coding-sweet-spot]] ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @33:14, @37:33). A lot of vibe coding lacks the high cost of failure that production code has, where any mistake can become a security vulnerability ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:45:02).
 
+**Delegating most of his coding (Skill Issue, 2026-03-20).** He says that in December something flipped and he went from writing about 80% of his code himself to delegating most of it to agents, hardly typing a line since; see [[he-now-delegates-most-coding-to-agents]] ([[talk-2026-03-20-skill-issue]] @01:41). He does not use the word "vibe" in the interview; the caption's "write coding" for setting up home automation may be that word but is not asserted, and he expects that work to need no such coding in a year or two or three ([[talk-2026-03-20-skill-issue]] @14:13, @14:47).
+
 **Note:** the scope he gives the practice widens across these sources; see [[vibe-coding-over-time]] ([[x-2025-02-02-vibe-coding]], [[blog-2025-12-19-year-in-review-2025]]).
 
 ## Claims
@@ -45,6 +47,7 @@ In Power to the people, dated 2025-04-07, he lists "People can now vibe code app
 - [[english-is-the-new-programming-language]]
 - [[coding-models-are-weak-at-code-never-written-before]] — October 2025: not net useful for nanochat's novel code
 - [[autocomplete-is-his-coding-sweet-spot]] — October 2025: his own mode, with agents for some code
+- [[he-now-delegates-most-coding-to-agents]] — 2026-03-20: since December, mostly delegated to agents; extends the sweet-spot claim
 
 ## Related
 - [[vibe-coding-over-time]]

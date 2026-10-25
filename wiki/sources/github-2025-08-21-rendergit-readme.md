@@ -24,3 +24,4 @@ rendergit flattens any GitHub repository into a single static HTML page with syn
 - [[rendergit]]
 - [[building-for-agents]]
 - [[vibe-coding]]
+- [[jobs]]

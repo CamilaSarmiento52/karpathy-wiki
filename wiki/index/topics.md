@@ -14,6 +14,7 @@ Ideas he explains, each defined in his framing. Alphabetical. Maintained by inge
 - [[building-for-agents|Building for agents]] — make docs and infrastructure readable and actionable for LLM agents
 - [[character-level-language-modeling|Character-level language modeling]] — predict the next character; the makemore task and how he samples from it
 - [[chemical-hygiene|Chemical hygiene]] — his personal choices on water, air, food, plastics, fabrics and care products, with his hedges; never medical fact
+- [[claws|Claws]] — a persistent, looping layer above coding agents, with its own sandbox and memory; his home claw Dobby
 - [[cognitive-core|Cognitive core]] — keep the algorithms of thought, shed memorised knowledge; a billion-parameter core that looks things up
 - [[compute-efficiency|Compute efficiency]] — a thousand- to millionfold gap with the brain; precision, sparsity, hardware co-design
 - [[elon-musk-management-style|Elon Musk's management style]] — small technical teams, no non-technical middle management, direct contact with engineers, the large hammer
