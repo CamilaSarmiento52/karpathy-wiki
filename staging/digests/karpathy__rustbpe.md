@@ -121,3 +121,4 @@ All grep-checked (one match each, under 15 words). "The missing tiktoken trainin
 - "Claude Code Opus 4.5" is his wording for the tool and model.
 - The README is mostly installation and API; code blocks are usage, not statements. Do not quote API docs as his views.
 - No numbers from runs; vocab sizes are example arguments.
+- **AI-written text (CLAUDE.md §3):** the LLM Assistance note says the Rust code had significant LLM help; it does not say the README text was AI-written. Treat the README prose as his. Do not cite the Rust code itself as his wording.

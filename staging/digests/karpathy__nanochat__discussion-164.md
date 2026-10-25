@@ -152,3 +152,4 @@ All grep-checked against the raw (one match each, all under 15 words).
 - d32 is not described here (size, cost); the 2025-11-20 d34 post calls d32 a "$1000 run" with CORE 0.3168. Do not import those numbers into this source's statements.
 - He says bigger models "probably" place the two pollocks tokens nearby; keep the hedge.
 - The "data engine" phrase is in quotes in the raw; it is a name he uses, not explained further here.
+- **AI-written text (CLAUDE.md §3):** nothing in this post says any part was model-written; treated as his.

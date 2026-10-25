@@ -190,3 +190,4 @@ All grep-checked (one match each, under 15 words). "a family models" is his typo
 - He says "Earlier in the year I stumbled by the DCLM paper": his own time reference; do not convert to a date.
 - Images (wandb plots, CORE vs FLOPs chart, Chinchilla comparison) are not described beyond his text.
 - modded-nanogpt is Keller Jordan's repo, not his; the B=1 critique is his opinion of their change.
+- **AI-written text (CLAUDE.md §3):** nothing in this post says any part was model-written; treated as his.

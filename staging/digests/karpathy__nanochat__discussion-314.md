@@ -110,3 +110,4 @@ All grep-checked (one match each, under 15 words).
 - d34 has no RL column; d32 has RL only for GSM8K (0.1994).
 - The two images (wandb curves, live demo screenshot) are not described beyond his bullets; do not invent curve details.
 - No headings, no replies.
+- **AI-written text (CLAUDE.md §3):** nothing in this post says any part was model-written; treated as his.

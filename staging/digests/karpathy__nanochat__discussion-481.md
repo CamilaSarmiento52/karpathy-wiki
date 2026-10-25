@@ -212,3 +212,4 @@ All grep-checked (one match each, under 15 words). "understimate" is his typo; k
 - Most architecture and optimizer ideas are credited to modded-nanogpt (Keller Jordan and contributors); attribute them as adopted by nanochat, not invented by him.
 - Samples are model output; do not quote them as his words.
 - The 2019 GPT-2 compute and cost figures come from a Reddit thread and the Hugging Face card he cites; they are his comparison, not his measurement.
+- **AI-written text (CLAUDE.md §3):** nothing in this post says any part was written by a model, so all of it is treated as his. Its heavily structured style (numbered departures, bold lists) is not evidence either way; do not label it AI-written without a statement from him.
