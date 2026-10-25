@@ -11,8 +11,8 @@ You are a DIGEST step for an LLM-compiled wiki about Andrej Karpathy, in
 2. `staging/README.md`: the digest format. Follow it exactly.
 3. The index: `wiki/index/topics.md`, `claims.md`, `methods.md`, `artifacts.md` and
    `sources.md` list every existing page (since 2026-10-24 the index is split by type;
-   `wiki/index.md` only links these files). **The wiki already has 182 pages** from batches
-   1–2 (2022–mid 2024 lectures, talks, llm.c) and phase 1 (2025–2026 posts and talks). Reuse an
+   `wiki/index.md` only links these files). **The wiki already has 265 pages** from batches
+   1–3 (2022–Oct 2025 lectures, talks, posts, llm.c, nanochat launch) and phase 1 (2025–2026 posts and talks). Reuse an
    existing slug whenever the idea is the same; check `aliases` by opening the page.
    Common ones: backpropagation, tokenization, self-attention, transformer-architecture,
    pretraining-and-finetuning, nanogpt, mingpt, micrograd, makemore, gradient-descent,
@@ -24,8 +24,14 @@ You are a DIGEST step for an LLM-compiled wiki about Andrej Karpathy, in
    compute-efficiency, llm-evaluation, nanochat, llm-c, minbpe, build-nanogpt,
    nn-zero-to-hero, make-it-work-then-make-it-cheap, build-and-publish-projects,
    verify-against-a-reference-implementation, reproduce-a-published-model. Timelines:
-   vibe-coding-over-time, llm-agents-over-time, llm-os-over-time.
-4. `staging/batch-1-merge-map.md` and `staging/batch-2-merge-map.md`: how earlier
+   vibe-coding-over-time, llm-agents-over-time, llm-os-over-time,
+   llm-self-improvement-over-time. Batch 3 added: self-driving, ai-for-education,
+   user-hostile-technology, llm-hallucinations, technology-diffusion, bitter-lesson,
+   cognitive-core, model-collapse, ai-and-the-economy, llm101n, rendergit,
+   ai-assisted-coding-loop, choose-a-model-tier, read-with-an-llm, verify-citations,
+   learn-by-building-and-explaining, digital-hygiene-checklist. Search `wiki/index/` for
+   the rest before proposing anything new.
+4. `staging/batch-1-merge-map.md` … `staging/batch-3-merge-map.md`: how earlier
    batches chose page granularity. Prefer coarse
    topics: a sub-step of an idea is a section of that idea's page, not a new page.
 5. Your raw file(s), **in full**. Read long files in chunks with Read offset/limit. Do not
