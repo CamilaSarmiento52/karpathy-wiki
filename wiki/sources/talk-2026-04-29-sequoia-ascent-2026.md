@@ -50,3 +50,4 @@ He says that in December the chunks of code his agents produced started coming o
 - [[llms-are-the-kernel-of-an-emerging-operating-system]]
 - [[vibe-coding-over-time]]
 - [[llm-os-over-time]]
+- [[llm-agents-over-time]]

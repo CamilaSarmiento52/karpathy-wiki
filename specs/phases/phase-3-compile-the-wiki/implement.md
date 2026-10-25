@@ -234,3 +234,60 @@ Pages after batch 3: 58 sources, 49 topics, 105 claims, 14 artifacts, 24 methods
 ### Cost
 
 About 4.5M agent tokens (digest ≈ 1.4M, merge ≈ 1.2M, verify ≈ 0.95M, fix ≈ 0.25M).
+
+## Batch 4
+
+Ran 2026-10-25. 28 sources, October 2025 to August 2026; 4 were phase 1 sources, so 24
+were compiled, about 60k raw words: the nanochat Discussions, verifiability, space of minds,
+reader3, llm-council, hn-time-capsule, chemical hygiene, rustbpe, microgpt, autoresearch,
+jobs, Skill Issue, the llm-wiki gist, Sequoia Ascent 2026, the 2026 micrograd README.
+
+| Step | Result |
+|---|---|
+| Digest | 7 agents in parallel, 24 digests |
+| Reconcile | `staging/batch-4-merge-map.md`: 3 new topics, 30 claims, 2 methods, 7 artifacts; timelines extended only |
+| Merge | 4 groups (E1 Oct–Nov 2025, E2 Dec 2025–Feb 2026, E3 Mar 2026, E4 Apr–Aug 2026); 265 → 331 pages; backlog 0 |
+| Verify | 4 fresh readers: 28 findings, 0 wrong, 5 overstated, 1 mis-cited, 22 minor |
+| Fix | all 28 fixed; then `scripts/quote_check.py` (new) found 21 suspect inline quotes: 7 misquotes made verbatim, 7 non-quotes unquoted, 1 method step reworded, 6 already verbatim; then 2 prompt strings made verbatim |
+
+### Schema changes
+
+- **AI-written text is never his** (CLAUDE.md §3, 2026-10-25). Autoresearch Discussion #43
+  was written by the agent; most of the Sequoia Ascent 2026 post was written by Codex,
+  with only the intro his. Those parts are described as what they are and never cited as
+  his view; the talk itself is cited for what he said. Merge and verify briefs carry the
+  rule. No earlier source was found to contain AI-written text, so no migration.
+- **No new date rule violations.** Searches after batches 3 and 4 found only intervals he
+  states himself.
+
+### The first real change of view
+
+He states it himself in Skill Issue (2026-03-20): in December something flipped, and he
+went from writing most of his code to delegating most of it to agents. The Dwarkesh
+interview (2025-10-17) had autocomplete as his sweet spot "for now". Per invariant 6 the
+old claim stays, the new dated claim `he-now-delegates-most-coding-to-agents` `extends`
+it, and `vibe-coding-over-time` says that entries up to the 2025-12-19 review accumulated
+and that this one records a change he states. The Sequoia Ascent talk is its second
+source. Two more `extends` links (agentic engineering after weekend projects; neural nets
+as host process after the LLM kernel) were confirmed by their verifier.
+
+## Phase totals
+
+| | Batch 1 | Batch 2 | Batch 3 | Batch 4 | Total |
+|---|---|---|---|---|---|
+| Sources compiled | 10 | 21 | 21 | 24 | 76 (+6 from phase 1) |
+| Pages after batch | 94 | 182 | 265 | 331 | 331 |
+| Verification findings | 21 | 31 | 32 | 28 | 112 |
+| of which wrong | 0 | 3 | 0 | 0 | 3 |
+| Agent tokens (approx.) | 2.4M | 4.2M | 4.5M | 3.9M | 15M |
+
+Final wiki: 82 sources, 52 topics, 135 claims, 21 artifacts, 26 methods, 4 timelines.
+Lint 0 findings, 0 raw files uncompiled; 342 inline quotes verbatim against their cited
+raw; 101 tests pass. One ingest entry per source in `log.md`; 10 correction entries.
+
+What the method found across the phase: verification by a reader who did not write the
+pages caught ~1 issue per 20 sentences, almost all overstatement, mis-citation, or a
+host's or paper's words given to him; none was a number not in the source. Three classes
+of error recurred across batches and became rules or tools rather than one-off fixes:
+intervals computed from published dates (CLAUDE.md §2), AI-written text in his sources
+(§3), and inline quotes lint could not see (`quote_check.py`).

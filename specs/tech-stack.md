@@ -41,7 +41,9 @@ karpathy-wiki/
 ├── .claude/             agent, skills, hooks
 ├── scripts/             rawstore.py, collect_{youtube,x,github,blog,talks}.py, fetch_one.py
 │                        (one-offs, --restore), coverage_queue.py, coverage_report.py,
-│                        spot_check.py, lint_check.py
+│                        spot_check.py, lint_check.py, quote_check.py (inline quotes
+│                        vs raw, report-only), batches.py (phase 3 batch bookkeeping)
+├── staging/             phase 3 working files: digests, merge maps, briefs, verify reports
 ├── tests/               test_lint_check.py; prompts.md (real-task validation, phase 4)
 └── .obsidian/           vault config: graph colours by folder, wikilinks on
 ```
@@ -81,8 +83,10 @@ and treats index files like hot and log (not inbound links).
 
 ### Invariants
 
-`scripts/lint_check.py` checks the structural ones; the semantic ones (does the citation
-support the sentence, is a `contradicts` link a real conflict) need a reading pass.
+`scripts/lint_check.py` checks the structural ones; `scripts/quote_check.py` reports quoted
+spans in evidence text that are not verbatim in a cited raw file (lint itself checks only
+each claim's opening quote); the semantic ones (does the citation support the sentence, is
+a `contradicts` link a real conflict) need a reading pass.
 
 - Every factual sentence cites a source page; every source page cites a raw path.
 - No orphan pages: every page has an inbound link from another content page (links from

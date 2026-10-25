@@ -547,3 +547,26 @@ Batch 4 verification (four fresh readers, reports in staging/verify/batch-4-*). 
 - [[microgpt]]: the quote "The models hate this. They can't do it." was two sentences (invariant 7; E4 F4). Now quotes only "The models hate this." and paraphrases the rest.
 - [[building-for-agents]]: "it reads ok without glaring mistakes" was his exact wording without quotation marks (E4 F5). Now quoted.
 - [[agentic-engineering-keeps-the-quality-bar-while-going-faster]]: "he keeps vibe coding as floor-raising" implied an earlier floor-raising framing the cited sources do not show (E4 F6). Now "he describes vibe coding as raising the floor for everyone".
+
+## 2026-10-25 correction
+Inline quote check (script after batch 4; list in staging/verify/inline-quote-check.md). Compilation errors fixed in place:
+- [[activation-functions]]: "Gaussian error linear units" was in quotation marks as a paper title, but the raw @21:18 captions read "Gan error linear units". Quotation marks dropped; now "the paper on Gaussian error linear units".
+- [[ai-ecosystem]]: "build the thing, build the ramp" was not verbatim; @32:13 has "number one build the thing number two build the ramp". Now paraphrased without quotation marks.
+- [[coding-models-are-weak-at-code-never-written-before]]: "never written before" was not verbatim and cited @34:26; he says "never been written before" at @35:43. Now quotes that and cites @35:43 too.
+- [[hallucinations-come-from-imitating-confident-answers]], [[llm-hallucinations]]: "who is X" was in quotation marks; the raw says "who is blah" and gives named examples. Now paraphrased as questions asking who some person is.
+- [[nanochat]]: the 2026-01-31 bullet quoted "time to GPT-2", which is not in the cited post (it names only a new leaderboard). Quotation marks and the name dropped there; the README bullet that carries the name is unchanged.
+- [[pretraining-and-finetuning]]: "cat sat on a" and "mat" were quoted, but the captions @06:37, @07:10 read "C set on a" and "Matt". Now unquoted, as an example context and prediction.
+- [[prompting-llms]]: the GPT-3 title was in quotation marks though the captions garble it ("two shot Learners"); now italicised as a title. His renaming was not verbatim; now "Transformers are capable of in context learning or like meta learning" as at @55:30.
+- [[quick-experiment-loop]]: the README's "about five minutes" was a paraphrase in quotation marks; the README §Research has "~5 min pretraining runs". Now quotes that.
+- [[rl-is-terrible-but-better-than-imitation]]: "just have correct answers" reordered his words; @44:36 has "have just correct answers". Now verbatim.
+- [[scaling-laws]]: "how long to train a d12" was not in the post; it asks how many iterations to train a d12 for and says the question is not quite right. Now paraphrased.
+- [[small-scale-tuning-does-not-always-transfer]]: the Note quoted a step of the wiki's own method page as if it were the README's wording. Now says, unquoted, that the method page's last step keeps a change only if it holds at every scale, drawn from the README.
+- [[software-3-0]]: the host's "explicit rules / learned weights" was not verbatim (@02:11 has "software 1.0 was explicit rules, software 2.0 was learned weights"). Quotation marks dropped; still attributed to the host.
+- [[vibe-coding-over-time]]: "not for anything important" was a paraphrase in quotation marks; the MenuGen post has "not a good idea for anything of actual importance". Now quotes that.
+
+## 2026-10-25 correction
+- [[llms-want-to-imitate-not-succeed]]: the two prompt strings from the paper he cites were quoted as "step by step"; the transcript has "step-by-step" (@31:08). Now verbatim. Found by `scripts/quote_check.py`.
+
+## 2026-10-25 correction
+Fresh-reader gate question check (staging/phase-3-question-validation-2.md):
+- [[llm-agents-over-time]]: had no entry for the Sequoia Ascent talk and did not link [[he-now-delegates-most-coding-to-agents]]; now has a 2026-04-29 entry and the link on the 2026-03-20 entry, both cited. Its first closing Note said "these six sources" although the page now has more entries; it now says "the six sources up to 2025-12-19", the entries it was written about.

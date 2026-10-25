@@ -17,6 +17,12 @@ _What the phase's automated tests cover and why. Drafted at the start of the pha
 - `scripts/lint_check.py` runs after every merge group, not only at the end. It is the
   gate between groups.
 
+- **`tests/test_quote_check.py`** (added 2026-10-25): `scripts/quote_check.py` finds an
+  inline quote across a `[mm:ss]` caption marker, reports a misquote, and skips quotes in
+  blocks that cite no source. Built after a batch 4 verifier found a non-verbatim quote
+  that lint could not see; its first run found 7 misquotes and 7 non-quotes in quotation
+  marks across the wiki.
+
 ## Not automated, and why
 
 The phase's real risk is semantic: a page that is well-formed but says more than the
