@@ -35,3 +35,5 @@ finetuning as a next step and a product opportunity (§Further explorations, §T
 - [[vibe-coding]]
 - [[vibe-coding-over-time]]
 - [[building-for-agents]]
+- [[a-wiki-compounds-where-rag-rediscovers]]
+- [[an-index-file-avoids-rag-at-moderate-scale]]

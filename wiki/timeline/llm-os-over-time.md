@@ -8,5 +8,8 @@ topic: "[[llms-as-operating-systems]]"
 - **2024-07-03** — The LLM is like a CPU working on tokens, the context window like RAM; he calls it the LLM OS and says it feels almost like the 1980s of computing ([[talk-2024-07-03-berkeley-hackathon-keynote]] @06:10, @06:49)
 - **2025-06-19** — The operating system is the analogy he finds strongest, at roughly the 1960s of computing: expensive, centralised, time-shared ([[youtube-2025-06-19-software-is-changing]] @08:54, @10:34, @11:05)
 - **2025-12-19** — The paradigm is similar to computers of the 1970s and 80s ([[blog-2025-12-19-year-in-review-2025]] §6)
+- **2026-04-29** — As a hedged extrapolation, the neural net may become the host process and CPUs the coprocessors, with tools as a historical appendage → [[neural-nets-may-become-the-host-process]], which extends [[llms-are-the-kernel-of-an-emerging-operating-system]] ([[talk-2026-04-29-sequoia-ascent-2026]] @08:40, @09:13)
 
 **Note:** the dates are publication dates. The 1960s, 1970s–80s and 1980s comparisons are differences of wording, each an analogy for an early stage of computing, not a change of view; so is kernel (2023) against CPU (2024, 2025). Across these sources the analogy is restated and filled in, never withdrawn ([[talk-2024-07-03-berkeley-hackathon-keynote]] @06:10; [[youtube-2025-06-19-software-is-changing]] @10:01, @10:34; [[blog-2025-12-19-year-in-review-2025]] §6).
+
+**Note:** the 2026-04-29 entry is the first in this list to imagine the roles flipping, classical compute becoming the coprocessor; he frames it as weird, foreign and "TBD", so it is an extension, not a forecast ([[talk-2026-04-29-sequoia-ascent-2026]] @08:07, @09:13).

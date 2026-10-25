@@ -3,6 +3,7 @@
 Ideas he explains, each defined in his framing. Alphabetical. Maintained by ingest; do not edit by hand.
 
 - [[activation-functions|Activation functions]] — tanh, sigmoid, ReLU and their local derivatives
+- [[agentic-engineering|Agentic engineering]] — coordinating fallible, powerful agents to go faster while keeping professional software's quality bar; the human owns spec, taste and design
 - [[ai-and-the-economy|AI and the economy]] — AI as a continuation of computing and automation: the GDP exponential, coding first, bits before atoms, gradual loss of control
 - [[ai-ecosystem|AI ecosystem]] — a coral reef of startups over a few megacorps; open-weights, open-source and proprietary models
 - [[ai-for-education|AI for education]] — LLM101n and his plans for AI-assisted teaching

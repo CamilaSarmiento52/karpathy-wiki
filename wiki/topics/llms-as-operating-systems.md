@@ -2,8 +2,8 @@
 type: topic
 aliases: [LLM OS, LLMs are operating systems, LLM as kernel process, context window as RAM]
 first_seen: 2023-11-23
-last_updated: 2025-12-19
-sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-07-03-berkeley-hackathon-keynote]]", "[[talk-2024-09-05-no-priors-ep-80]]"]
+last_updated: 2026-04-29
+sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-07-03-berkeley-hackathon-keynote]]", "[[talk-2024-09-05-no-priors-ep-80]]", "[[talk-2026-04-29-sequoia-ascent-2026]]"]
 related: ["[[software-3-0]]", "[[llm-gui]]", "[[jagged-intelligence]]"]
 ---
 # LLMs as operating systems
@@ -26,6 +26,8 @@ In December 2025 he restates the paradigm as similar to computers of the 1970s a
 
 **Companies of LLMs (No Priors, published 2024-09-05).** He thinks it is probably not a single model: you want a parallel rather than sequential process, and companies parallelise work with a hierarchy for processing and reducing information ([[talk-2024-09-05-no-priors-ep-80]] @29:09). He finds it not unlikely that we end up with something like companies of LLMs, models of different capabilities specialised to domains, a programmer, a program manager, working in parallel and orchestrating computation on your behalf ([[talk-2024-09-05-no-priors-ep-80]] @29:41). It would be like a biological ecosystem with specialised roles and niches, with automatic escalation to other parts of the swarm depending on how hard the problem is ([[talk-2024-09-05-no-priors-ep-80]] @29:41, @30:13). Asked earlier about augmenting people with AI, he says he does not know what a merger looks like yet, but sees AI as a kind of exocortex built on top of the neocortex, the next layer of the brain, which happens to be in the cloud ([[talk-2024-09-05-no-priors-ep-80]] @22:59). The exocortex exchange around it is mostly the hosts' ([[talk-2024-09-05-no-priors-ep-80]] @22:24, @23:31).
 
+**Neural computers (Sequoia Ascent, 2026-04-29).** Extrapolating from MenuGen, he says one could imagine completely neural computers, a device feeding raw video or audio into a neural net that renders a moment-specific UI with diffusion, and calls the extrapolation very weird ([[talk-2026-04-29-sequoia-ascent-2026]] @08:07). Computing went the calculator path in the 1950s and 60s, and neural nets now run virtualised on classical computers; he imagines this flipping, with the neural net as the host process and CPUs as coprocessors, tools a historical appendage for deterministic tasks, reached piece by piece and "TBD"; see [[neural-nets-may-become-the-host-process]] ([[talk-2026-04-29-sequoia-ascent-2026]] @08:40, @09:13).
+
 **Note:** the component he names differs: in 2023 the LLM is the kernel process, in 2025 it is like the CPU, with the context window as memory in both. This is a difference of wording, not a change of view ([[youtube-2023-11-23-intro-to-llms]] @42:06, @43:45; [[youtube-2025-06-19-software-is-changing]] @10:01).
 
 **Note:** the decade he names moves from the 1980s in the Berkeley keynote to the 1960s in the YC talk and the 1970s–80s in the essay; all are framed as early-stage analogies, differences of wording rather than a stated change of view; the dated list is on [[llm-os-over-time]] ([[talk-2024-07-03-berkeley-hackathon-keynote]] @06:10; [[youtube-2025-06-19-software-is-changing]] @10:34; [[blog-2025-12-19-year-in-review-2025]] §6).
@@ -33,6 +35,7 @@ In December 2025 he restates the paradigm as similar to computers of the 1970s a
 ## Claims
 - [[llms-are-the-kernel-of-an-emerging-operating-system]] — the 2023 statement of the analogy
 - [[physical-automation-will-lag-digital-automation]] — the many digital entities, with robots behind
+- [[neural-nets-may-become-the-host-process]] — 2026-04-29: a hedged extrapolation, CPUs as coprocessors
 
 ## Related
 - [[software-3-0]]

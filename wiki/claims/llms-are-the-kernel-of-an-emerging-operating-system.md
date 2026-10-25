@@ -3,8 +3,9 @@ type: claim
 stated_on: 2023-11-23
 confidence: stated
 sources: ["[[youtube-2023-11-23-intro-to-llms]]"]
-context: ["[[youtube-2025-06-19-software-is-changing]]"]
+context: ["[[youtube-2025-06-19-software-is-changing]]", "[[talk-2026-04-29-sequoia-ascent-2026]]"]
 topic: "[[llms-as-operating-systems]]"
+extends: ["[[neural-nets-may-become-the-host-process]]"]
 ---
 # An LLM is better thought of as the kernel process of an emerging operating system than as a chatbot
 > "I don't think it's accurate to think of large language models as a chatbot" — [[youtube-2023-11-23-intro-to-llms]] @42:06
@@ -14,3 +15,4 @@ Tying his talk together, he says it is a lot more correct to think of the LLM as
 
 ## Related claims
 - **Note:** in 2025 he restates the analogy with the model "like the CPU" rather than the kernel; the wording differs, the view does not, and no claim page exists for the 2025 version to link ([[youtube-2023-11-23-intro-to-llms]] @42:06; [[youtube-2025-06-19-software-is-changing]] @10:01).
+- Extended by [[neural-nets-may-become-the-host-process]]: at Sequoia Ascent (2026-04-29) he imagines, as a weird extrapolation whose progression is "TBD", the neural net becoming the host process with CPUs as coprocessors and tools as a historical appendage ([[talk-2026-04-29-sequoia-ascent-2026]] @08:40, @09:13); here the LLM is the kernel coordinating memory and tools ([[youtube-2023-11-23-intro-to-llms]] @42:38). Same direction, broadened; both are on [[llm-os-over-time]].

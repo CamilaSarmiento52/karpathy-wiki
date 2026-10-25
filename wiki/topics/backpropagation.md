@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [Backpropagation, backprop, chain rule, autograd, expression graph]
+aliases: [Backpropagation, backprop, chain rule, autograd, expression graph, reverse-mode autodiff]
 first_seen: 2022-08-16
-last_updated: 2026-02-12
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[blog-2026-02-12-microgpt]]"]
+last_updated: 2026-08-03
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[blog-2026-02-12-microgpt]]", "[[github-2026-08-03-micrograd-readme]]"]
 related: ["[[micrograd]]", "[[gradient-descent]]", "[[multilayer-perceptron]]", "[[pytorch]]", "[[broadcasting]]", "[[batch-normalization]]", "[[verify-gradients-against-pytorch]]"]
 ---
 # Backpropagation
@@ -41,6 +41,8 @@ Exercise one breaks batchnorm into mean, diff, diff squared, variance, inverse s
 Training with the manual gradients gives the same loss and samples as before, with full visibility into what happens under the hood; he says that in practice you probably do not want to derive these yourself and should use PyTorch's autograd, but should have the intuition ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @1:50:31, @1:53:18, @1:54:25).
 
 **Lego blocks (microgpt, 2026-02-12).** Training needs, for each parameter, whether nudging it up raises or lowers the loss and by how much; the graph funnels many inputs to one scalar loss, and backpropagation works backwards from it with the chain rule ([[blog-2026-02-12-microgpt]] §Autograd). "Think of each operation as a little lego block": it produces an output and knows its local gradient with respect to each input, which is all autograd needs; the rest is the chain rule ([[blog-2026-02-12-microgpt]] §Autograd). `backward()` walks the graph in reverse topological order from the loss, whose own gradient is set to 1, multiplying local gradients along every path; he explains the chain rule with a car twice as fast as a bicycle that is four times as fast as a walking man ([[blog-2026-02-12-microgpt]] §Autograd). Gradients accumulate with += because a value used in several places gets a contribution from each branch, summed by the multivariable chain rule ([[blog-2026-02-12-microgpt]] §Autograd). His worked example matches PyTorch's `.backward()`, which he calls the same algorithm on scalars instead of tensors ([[blog-2026-02-12-microgpt]] §Autograd). A gradient gives the direction and steepness of each input's influence on the loss ([[blog-2026-02-12-microgpt]] §Autograd).
+
+The micrograd README, at its commit dated 2026-08-03, describes what the engine implements as "backpropagation (reverse-mode autodiff) over a dynamically built DAG", operating only over scalar values ([[github-2026-08-03-micrograd-readme]] §intro).
 
 ## Claims
 - [[neural-networks-are-just-mathematical-expressions]]

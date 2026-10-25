@@ -2,7 +2,7 @@
 type: claim
 stated_on: 2025-11-17
 confidence: stated
-sources: ["[[blog-2025-11-17-verifiability]]"]
+sources: ["[[blog-2025-11-17-verifiability]]", "[[talk-2026-04-29-sequoia-ascent-2026]]"]
 context: ["[[blog-2025-12-19-year-in-review-2025]]", "[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2026-03-20-skill-issue]]"]
 topic: "[[software-3-0]]"
 supports: ["[[autoresearch-needs-an-objective-metric]]"]
@@ -14,6 +14,8 @@ supports: ["[[autoresearch-needs-an-objective-metric]]"]
 He treats AI as a new computing paradigm, the strongest of the historical analogies in his view, and asks which jobs it will automate ([[blog-2025-11-17-verifiability]] §intro). In the 1980s, he argues, the most predictive feature of a task or job was specifiability: whether it mechanically transforms information by a rote, easy-to-specify algorithm, as typing, bookkeeping and human calculators did, the hand-written programs he calls Software 1.0 ([[blog-2025-11-17-verifiability]] §intro). In Software 2.0, where programs are found by specifying an objective and searching program space with gradient descent, "the new most predictive feature to look at is verifiability" ([[blog-2025-11-17-verifiability]] §intro).
 
 A verifiable task, he says, is optimisable directly or with reinforcement learning, and a neural net can be trained to work extremely well on it; the question is to what extent an AI can "practice" it ([[blog-2025-11-17-verifiability]] §intro). The environment has to be resettable, so a new attempt can start, efficient, so many attempts can be made, and rewardable, so an automated process can reward each attempt ([[blog-2025-11-17-verifiability]] §intro). The more verifiable a task or job, the more amenable it is to automation in the new paradigm ([[blog-2025-11-17-verifiability]] §intro). He closes on the pair: Software 1.0 easily automates what you can specify, Software 2.0 what you can verify ([[blog-2025-11-17-verifiability]] §intro).
+
+**Sequoia Ascent (2026-04-29).** Saying he spent some time writing about verifiability, he restates the pair: traditional computers can easily automate what you can specify in code, and this latest round of LLMs can easily automate what you can verify ([[talk-2026-04-29-sequoia-ascent-2026]] @09:47). Here the second half is about LLMs trained by labs in giant RL environments with verification rewards, not "Software 2.0" ([[talk-2026-04-29-sequoia-ascent-2026]] @09:47, @10:19). Verifiability makes something tractable because you can throw a huge amount of RL at it, even where labs are not focusing, so a founder with diverse RL environments can fine-tune and pull the lever ([[talk-2026-04-29-sequoia-ascent-2026]] @14:10, @14:43). He thinks almost everything can ultimately be made verifiable to some extent, even writing with a council of LLM judges, so it is more about what is easy or hard ([[talk-2026-04-29-sequoia-ascent-2026]] @15:17). Why this makes models jagged is on [[jagged-intelligence]] ([[talk-2026-04-29-sequoia-ascent-2026]] @12:00).
 
 ## Related claims
 - [[verifiability-drives-the-jagged-frontier]] is the consequence he draws in the same post for tasks that are not verifiable ([[blog-2025-11-17-verifiability]] §intro).

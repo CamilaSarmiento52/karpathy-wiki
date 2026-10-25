@@ -11,7 +11,7 @@ steps:
   - Derive on a tiny concrete example, then arrange for the shapes to work out
   - Retain intermediate grads and compare exact, approximate and max difference
   - Expect failures on unfinished branches
-sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]"]
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[github-2026-08-03-micrograd-readme]]"]
 aliases: [inline gradient check, numerical gradient check, verify against PyTorch, PyTorch parity check, derive gradients by shape matching, check manual gradients against PyTorch, cmp, gradient checking]
 ---
 # Verify gradients against PyTorch
@@ -23,7 +23,7 @@ After deriving a gradient by hand he verifies it two ways: numerically, by bumpi
 3. **Every node.** He applies it to every node in the manual example (d, f, c, e, a, b), accepting small floating-point differences ([[youtube-2022-08-16-micrograd]] @36:47, @37:18, @46:45, @50:03).
 4. **Rebuild in PyTorch.** Reproduce the expression with double-precision, single-element tensors with `requires_grad=True` ([[youtube-2022-08-16-micrograd]] @1:40:01, @1:41:08, @1:41:43).
 5. **Compare.** Check that the forward output (0.707) and all gradients (0.5, 0, -1.5, 1) agree ([[youtube-2022-08-16-micrograd]] @1:39:28, @1:42:48).
-6. **Match the API.** Design the toy library to match PyTorch's API on both the autograd and nn.Module sides; micrograd's test file does the comparison systematically for simple and more complicated expressions ([[youtube-2022-08-16-micrograd]] @1:44:26, @2:18:12, @2:18:45).
+6. **Match the API.** Design the toy library to match PyTorch's API on both the autograd and nn.Module sides; micrograd's test file does the comparison systematically for simple and more complicated expressions ([[youtube-2022-08-16-micrograd]] @1:44:26, @2:18:12, @2:18:45). The README, at its commit dated 2026-08-03, says the unit tests need PyTorch, which they use as the reference for verifying the calculated gradients ([[github-2026-08-03-micrograd-readme]] §Running tests).
 
 At tensor level, from the backprop lecture, where the whole MLP backward pass is derived by hand and checked line by line ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @07:46, @1:26:06):
 

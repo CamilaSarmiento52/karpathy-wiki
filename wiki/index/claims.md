@@ -5,12 +5,15 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[a-buggy-neural-net-can-still-train-on-a-simple-problem|A buggy neural net can still appear to train on a simple problem]] — 2022-08-16; un-zeroed grads acted as a huge step size
 - [[a-cognitive-core-could-be-a-billion-parameters-or-less|A tool-using cognitive core could be about a billion parameters or fewer]] — 2024-09-05; capacity wasted on memorisation; distillation works
 - [[a-lot-of-llm-oddness-traces-back-to-tokenization|A lot of LLM oddness traces back to tokenization]] — spelling, non-English text, arithmetic, Python, special tokens, trailing spaces, SolidGoldMagikarp, YAML
+- [[a-wiki-compounds-where-rag-rediscovers|RAG rediscovers knowledge on every question, while an LLM-maintained wiki accumulates it]] — 2026-04-04; RAG works but builds nothing up
 - [[agent-failures-mostly-feel-like-a-skill-issue|Agent failures mostly feel like a skill issue]] — not missing capability, he says, though it is hard to tell (2026-03-20)
+- [[agentic-engineering-keeps-the-quality-bar-while-going-faster|Vibe coding raises the floor; agentic engineering keeps the quality bar while going faster]] — 2026-04-29; the host's term, adopted and defined; extends the weekend-projects claim
 - [[ai-has-converged-on-one-architecture|Since 2017, AI fields have converged on one architecture, the Transformer]] — 2023-05-19; separate vocabularies in 2011, one copy-pasted model now
 - [[ai-is-far-less-energy-efficient-than-the-brain|Running these models is probably a thousand to a million times less efficient than a brain]] — 20 watts against megawatts, hedged
 - [[ai-should-be-the-front-end-of-a-teacher-designed-course|The teacher designs the course; AI is the front end to the student]] — 2024-09-05; models cannot yet create a good course
 - [[ai-will-not-show-up-as-a-jump-in-gdp|AI will not show up as a jump in GDP]] — AI diffuses into the same growth exponential, no discrete change (2025-10-17)
 - [[all-frontier-labs-will-autoresearch|All LLM frontier labs will do autoresearch]] — swarms of agents tune small models and promote ideas; "just engineering" (2026-03-09)
+- [[an-index-file-avoids-rag-at-moderate-scale|An LLM-maintained index works at moderate scale without embedding-based RAG]] — 2026-04-04; ~100 sources, hundreds of pages; proper search as it grows
 - [[an-llm-is-just-two-files|A large language model is just two files]] — 2023-11-23; 140 GB of parameters and ~500 lines of C
 - [[approximate-gradient-with-more-steps-beats-exact-gradient|An approximate minibatch gradient with more steps beats an exact one with fewer]] — 2022-09-12; minibatch training
 - [[attention-is-a-communication-mechanism|Attention is a communication mechanism between nodes in a directed graph]] — 2023-01-17; no notion of space; the mask makes it a decoder
@@ -48,9 +51,11 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[he-now-delegates-most-coding-to-agents|He now delegates most coding to agents]] — since December, 80/20 to 20/80 and beyond; extends autocomplete-is-his-coding-sweet-spot (2026-03-20)
 - [[he-prefers-tiktoken-byte-level-bpe-to-sentencepiece|He prefers tiktoken's byte-level BPE to SentencePiece]] — bytes then BPE is cleaner than code-point BPE with byte fallback
 - [[he-prefers-to-pay-and-be-the-customer|He prefers to pay for products and be the customer, not the product]] — 2025-03-17; the calculator post as a second source on paying and owning
+- [[hiring-should-test-building-a-big-project-with-agents|Hiring should test building and securing a big project with agents, not puzzles]] — 2026-04-29; a Twitter clone for agents, attacked by agents
 - [[his-gpt-2-reproductions-beat-openais-checkpoints-on-hellaswag|His GPT-2 reproductions beat OpenAI's GPT-2 checkpoints of the same size on HellaSwag]] — 124M on 10B (llm.c 29.9 vs 29.4; lecture past 29.55, 33.24 after 40B); 774M on 150B (eval unnamed); 1558M crosses GPT-2 at ~25K steps
 - [[humanoid-robots-should-start-in-your-own-factory|Humanoid robots should start with their maker as first customer]] — 2024-09-05; factory, then B2B, consumers last
 - [[if-you-cannot-build-it-you-do-not-understand-it|If you cannot build it, you do not understand it]] — the Feynman line he holds; rebuild nanochat without copy-paste (2025-10-17)
+- [[in-software-3-0-some-apps-should-not-exist|In the Software 3.0 version, an app like his MenuGen should not exist]] — 2026-04-29; one Gemini prompt does it
 - [[inherited-gpt-3-hyperparameters-look-conservative|The GPT-3 hyperparameters he inherited look conservative and are probably not tuned precisely]] — 2024-06-09; a learning rate about 3× higher may work; 2024-07-11 "appear to be quite suboptimal"
 - [[llm-c-trained-gpt-2-faster-than-pytorch-in-his-measurements|In his measurements, llm.c trained GPT-2 faster than PyTorch]] — ~6.4% in a constrained fp32 setting (April 2024); each figure with its baseline
 - [[llm-c-was-not-yet-careful-enough-about-training-stability|He judged llm.c not yet careful enough about initialisation, activation ranges and stability for long runs]] — 2024-07-11; the 420B-token run exploded after ~330K steps
@@ -62,6 +67,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[llms-are-the-kernel-of-an-emerging-operating-system|An LLM is the kernel process of an emerging operating system, not a chatbot]] — 2023-11-23; context window as RAM
 - [[llms-currently-only-have-a-system-1|In November 2023, LLMs had only System 1]] — 2023-11-23; the goal is converting time into accuracy
 - [[llms-lack-culture-and-self-play|LLMs lack culture and self-play]] — no LLM equivalent yet of culture or of self-play (2025-10-17)
+- [[llms-make-wiki-maintenance-nearly-free|Humans abandon wikis because maintenance outgrows their value; LLMs make it nearly free]] — 2026-04-04; bookkeeping is the tedious part; the Memex comparison
 - [[llms-may-write-custom-low-level-code-for-any-application|He expects LLMs may come to write custom low-level code like llm.c for any application]] — 2024-10-02; abstractions exist because humans are finite
 - [[llms-reverse-the-usual-diffusion-of-technology|LLMs reverse the usual top-down diffusion of technology, so far]] — 2025-04-07; the YC talk as second source
 - [[llms-want-to-imitate-not-succeed|LLMs don't want to succeed, they want to imitate]] — 2023-05-25; ask for a strong solution, but not too much
@@ -73,6 +79,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[modern-innovations-make-precise-initialization-less-important|Residual connections, normalization layers and better optimisers make exact initialisation less important]] — 2022-10-04; Kaiming is still the most common init
 - [[nanochat-reproduces-chinchillas-equal-scaling-of-parameters-and-tokens|His nanochat sweeps reproduce Chinchilla's finding that compute-optimal parameters and tokens grow equally with compute]] — 2026-01-07; the exponents, not the constant (about 8, not 20)
 - [[neural-net-training-should-not-be-complicated|Neural net training is one loop of simple arithmetic and should not be that complicated]] — 2024-07-11; llm.c's minimal C/CUDA; supports GPT-is-not-complicated
+- [[neural-nets-may-become-the-host-process|Neural nets may become the host process, with CPUs as coprocessors]] — 2026-04-29; a hedged extrapolation; extends the kernel claim
 - [[neural-networks-are-just-mathematical-expressions|Neural networks are just a class of mathematical expressions]] — 2022-08-16; data and weights in, loss out
 - [[no-rag-needed-for-a-small-wiki|His ~100-article wiki worked without RAG]] — 2026-04-02; one wiki's experience, not a general result
 - [[one-text-note-beats-many-organized-notes|For him, one text note works better than many notes sorted into folders]] — 2025-03-19; folders cost cognitive bloat; CTRL+F stays trivial
@@ -116,6 +123,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[transformers-need-tokens-to-think|Transformers need tokens to think]] — 2023-05-25; same compute per token, so spread the reasoning
 - [[treat-broadcasting-with-respect|Broadcasting deserves respect, not fast-and-loose use]] — 2022-09-07; the bugs are subtle
 - [[understand-backprop-even-with-autograd|Autograd being available is no reason to ignore how backpropagation works]] — 2022-10-11; backprop is a leaky abstraction
+- [[understanding-cannot-be-outsourced|He endorses the line that you can outsource your thinking but not your understanding]] — 2026-04-29; from someone else's tweet; he is the bottleneck
 - [[us-chemical-regulation-lags-the-industry|He says US chemical and food regulation lags far behind the industry and behind Europe]] — 2025-12-18; so the responsibility falls to you
 - [[use-cross-entropy-not-a-hand-rolled-loss|Call F.cross_entropy rather than rolling your own loss]] — 2022-09-12; fused kernels, simpler backward, no overflow
 - [[use-hardware-security-keys-not-sms-as-a-second-factor|Secure critical accounts with hardware security keys, not a phone number]] — 2025-03-17; SIM swaps; about 1000X less risk

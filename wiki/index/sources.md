@@ -15,6 +15,7 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[blog-2025-12-18-chemical-hygiene|Chemical hygiene]] — his evolving, opinionated guide to limiting chemicals and plastics at home; personal choices, not professional advice
 - [[blog-2025-12-19-year-in-review-2025|2025 LLM Year in Review]] — six 2025 paradigm changes: RLVR, jagged intelligence, LLM apps, Claude Code, vibe coding, LLM GUI
 - [[blog-2026-02-12-microgpt|microgpt]] — his guide to a 200-line, dependency-free Python GPT trained on names; what changes at production scale
+- [[blog-2026-04-30-sequoia-ascent-2026-summary|Sequoia Ascent 2026 summary]] — his short intro on having Codex 5.5 summarise and clean the talk so his content is legible to LLMs; the rest is AI-written
 - [[github-2022-11-20-makemore-readme|makemore README]] — one hackable PyTorch file; bigram to Transformer models for line-per-example generation, CNN in progress
 - [[github-2023-01-08-mingpt-readme|minGPT README]] — his ~300-line GPT re-implementation, semi-archived in January 2023 in favour of nanoGPT; his notes on the GPT papers
 - [[github-2023-01-31-ng-video-lecture-readme|ng-video-lecture README]] — the GPT lecture's code as a hackable repo with its git log; the lecture skipped weight initialisation
@@ -48,7 +49,9 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[github-2026-03-08-autoresearch-session-report|Session report: 0.9979 → 0.9697 in 126 experiments — weight decay on everything + init scaling]] — written and posted by an autoresearch agent (Claude), not by him: 126 experiments, the agent's keep/discard log
 - [[github-2026-03-16-jobs-readme|jobs README]] — US Job Market Visualizer: 342 BLS occupations as a treemap, coloured by an LLM-scored AI exposure with caveats
 - [[github-2026-03-21-autoresearch-readme|autoresearch README]] — an agent edits a simplified nanochat train.py, trains five minutes, keeps or discards by val_bpb; the human edits program.md
+- [[github-2026-04-04-llm-wiki-gist|llm-wiki (gist)]] — his idea file for the LLM wiki pattern, to paste to an agent: raw, wiki and schema layers; ingest, query, lint; index and log
 - [[github-2026-07-03-nanochat-readme|nanochat README]] — minimal single-node harness that trains a GPT-2-grade chat model, set by one depth dial
+- [[github-2026-08-03-micrograd-readme|micrograd README]] — scalar autograd engine and PyTorch-like nn library, ~100 + ~50 lines; tests against PyTorch; points to microgpt on a better engine
 - [[talk-2023-05-19-stanford-cs25-transformers|Stanford CS25: Introduction to Transformers]] — guest lecture: AI converging on the Transformer, attention as message passing, nanoGPT walk-through, in-context learning
 - [[talk-2023-05-25-state-of-gpt|State of GPT]] — Microsoft Build 2023: the four-stage assistant recipe, then prompting, tools, finetuning and human-overseen use
 - [[talk-2024-03-26-sequoia-making-ai-accessible|Making AI accessible with Andrej Karpathy and Stephanie Zhan]] — Sequoia interview: LLM OS, open weights vs open source, scale, energy efficiency, Elon's style, AlphaGo step two, the ecosystem
@@ -57,6 +60,7 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[talk-2024-10-03-cuda-mode-keynote|CUDA Mode Keynote]] — the story of llm.c: dropping PyTorch, the layer-by-layer port to C and CUDA, contributors, beating PyTorch on GPT-2, LLMs as compilers for custom code
 - [[talk-2025-10-17-dwarkesh-ghosts-not-animals|Andrej Karpathy — “We’re summoning ghosts, not building animals”]] — Dwarkesh Patel interview: decade of agents, RL terrible but better than imitation, ghosts, model collapse, cognitive core, nanochat coding, march of nines, GDP, Eureka
 - [[talk-2026-03-20-skill-issue|Skill Issue: Andrej Karpathy on Code Agents, AutoResearch, and the Loopy Era of AI]] — No Priors interview: delegating most coding since December, parallel agents, claws, autoresearch, jaggedness, speciation, jobs
+- [[talk-2026-04-29-sequoia-ascent-2026|Andrej Karpathy: From Vibe Coding to Agentic Engineering w/ Stephanie Zhan]] — Sequoia Ascent fireside chat: the December step change, apps that should not exist, neural computers, verifiability, agentic engineering, understanding
 - [[x-2024-02-21-technical-accessibility|on technical accessibility]] — micrograd stagnated until the video; build the thing, then build the ramp
 - [[x-2024-10-02-gpu-mode-talk|I gave a talk at GPU MODE workshop last week on llm.c]] — the talk's outline: dropping PyTorch, the layer port, CUDA work, the $672 1.6B run, LLMs writing custom binaries
 - [[x-2025-02-02-vibe-coding|There's a new kind of coding I call "vibe coding"]] — the post that coined vibe coding

@@ -59,3 +59,4 @@ an LLM GUI (§6). He closes saying LLMs are both smarter and dumber than he expe
 - [[hn-time-capsule]]
 - [[many-high-ai-exposure-jobs-will-be-reshaped-not-replaced]]
 - [[he-now-delegates-most-coding-to-agents]]
+- [[agentic-engineering-keeps-the-quality-bar-while-going-faster]]

@@ -28,3 +28,4 @@ He judges it fine for throwaway weekend projects and calls it "not really coding
 - [[vibe-coding-is-for-throwaway-weekend-projects]]
 - [[vibe-coding-over-time]]
 - [[vibe-coding-will-terraform-software]]
+- [[agentic-engineering-keeps-the-quality-bar-while-going-faster]]

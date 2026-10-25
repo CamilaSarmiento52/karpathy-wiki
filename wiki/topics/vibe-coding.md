@@ -2,8 +2,8 @@
 type: topic
 aliases: [Vibe coding, vibe coded]
 first_seen: 2025-02-02
-last_updated: 2026-04-02
-sources: ["[[x-2025-02-02-vibe-coding]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[youtube-2025-02-27-how-i-use-llms]]", "[[blog-2025-04-07-power-to-the-people]]", "[[blog-2025-04-27-vibe-coding-menugen]]", "[[x-2025-05-01-vibe-coding-hackathon]]", "[[github-2025-08-21-rendergit-readme]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[github-2025-11-18-reader3-readme]]", "[[github-2025-11-22-llm-council-readme]]", "[[blog-2025-12-10-auto-grade-hn]]", "[[github-2025-12-10-hn-time-capsule-readme]]", "[[github-2026-01-03-rustbpe-readme]]", "[[talk-2026-03-20-skill-issue]]"]
+last_updated: 2026-04-29
+sources: ["[[x-2025-02-02-vibe-coding]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[youtube-2025-02-27-how-i-use-llms]]", "[[blog-2025-04-07-power-to-the-people]]", "[[blog-2025-04-27-vibe-coding-menugen]]", "[[x-2025-05-01-vibe-coding-hackathon]]", "[[github-2025-08-21-rendergit-readme]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[github-2025-11-18-reader3-readme]]", "[[github-2025-11-22-llm-council-readme]]", "[[blog-2025-12-10-auto-grade-hn]]", "[[github-2025-12-10-hn-time-capsule-readme]]", "[[github-2026-01-03-rustbpe-readme]]", "[[talk-2026-03-20-skill-issue]]", "[[talk-2026-04-29-sequoia-ascent-2026]]"]
 related: ["[[software-3-0]]", "[[english-is-the-new-programming-language]]", "[[vibe-coding-over-time]]"]
 ---
 # Vibe coding
@@ -36,6 +36,8 @@ In Power to the people, dated 2025-04-07, he lists "People can now vibe code app
 
 **Delegating most of his coding (Skill Issue, 2026-03-20).** He says that in December something flipped and he went from writing about 80% of his code himself to delegating most of it to agents, hardly typing a line since; see [[he-now-delegates-most-coding-to-agents]] ([[talk-2026-03-20-skill-issue]] @01:41). He does not use the word "vibe" in the interview; the caption's "write coding" for setting up home automation may be that word but is not asserted, and he expects that work to need no such coding in a year or two or three ([[talk-2026-03-20-skill-issue]] @14:13, @14:47).
 
+**Floor and quality bar (Sequoia Ascent, 2026-04-29).** Retelling December, he says that once agent output kept coming out fine and he trusted it more and more, "And then I was vibe coding." ([[talk-2026-04-29-sequoia-ascent-2026]] @01:08). Asked by the host how it differs from "agentic engineering", he says vibe coding is about raising the floor for everyone, "everyone can vibe code anything, and that's amazing", while agentic engineering keeps professional software's quality bar and goes faster; see [[agentic-engineering]] ([[talk-2026-04-29-sequoia-ascent-2026]] @15:49, @16:22). The MenuGen Stripe-email bug, he says, is the kind of mistake agents still make ([[talk-2026-04-29-sequoia-ascent-2026]] @19:38, @20:10).
+
 **Note:** the scope he gives the practice widens across these sources; see [[vibe-coding-over-time]] ([[x-2025-02-02-vibe-coding]], [[blog-2025-12-19-year-in-review-2025]]).
 
 ## Claims
@@ -48,6 +50,7 @@ In Power to the people, dated 2025-04-07, he lists "People can now vibe code app
 - [[coding-models-are-weak-at-code-never-written-before]] — October 2025: not net useful for nanochat's novel code
 - [[autocomplete-is-his-coding-sweet-spot]] — October 2025: his own mode, with agents for some code
 - [[he-now-delegates-most-coding-to-agents]] — 2026-03-20: since December, mostly delegated to agents; extends the sweet-spot claim
+- [[agentic-engineering-keeps-the-quality-bar-while-going-faster]] — 2026-04-29: vibe coding raises the floor; extends the weekend-projects claim
 
 ## Related
 - [[vibe-coding-over-time]]
@@ -59,3 +62,4 @@ In Power to the people, dated 2025-04-07, he lists "People can now vibe code app
 - [[software-3-0]]
 - [[technology-diffusion]] — why individuals, not organisations, gain most from it so far
 - [[ai-assisted-coding-loop]] — what he does when he is not vibe coding
+- [[agentic-engineering]] — the professional counterpart he names in 2026
