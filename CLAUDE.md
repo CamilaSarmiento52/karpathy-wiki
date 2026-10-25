@@ -74,6 +74,14 @@ interviews.
 someone else (the YC talk `LCEmiRjPEtQ` is a known exception, filed as `youtube`). Talk
 transcripts include the other speakers: attribute only what he says.
 
+**AI-written text in a source is not his.** Some sources he published are partly or wholly
+written by a model: autoresearch Discussion #43 was written by the agent; most of the
+Sequoia Ascent 2026 blog post is a summary and cleaned transcript produced by Codex, with
+only the intro his own. The source page says which parts are AI-written. Nothing in those
+parts is cited as his view, quote or wording; cite the part he wrote, or the original
+recording, instead. An AI-written result he reports (an agent's experiment log) may be
+described as that agent's output, labelled as such.
+
 GitHub READMEs are versioned: the first snapshot is `raw/github/<owner>__<repo>.md`, later
 ones `raw/github/<owner>__<repo>@<short-commit>.md`, each dated by its commit. A newer
 snapshot is a new source, not a correction of the old one. Discussions he opened are

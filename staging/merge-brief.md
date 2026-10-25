@@ -45,6 +45,8 @@ pass.
   Locations come from the digests.
 - Paraphrase no stronger than the digest's statement. No facts from your own knowledge.
   Your own connections between pages start with **Note:** and still cite.
+- **AI-written text is not his** (CLAUDE.md §3): never cite an AI-written part of a source as
+  his view or quote; the digest marks those parts.
 - **Talks include other speakers.** Never attribute a host's or interviewer's words, or a
   paper's finding, to him. The digests mark these; respect the marks.
 - Garbled caption numbers flagged in a digest's notes are never repeated as fact.

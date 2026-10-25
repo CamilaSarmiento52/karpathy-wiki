@@ -35,7 +35,8 @@ boundaries and garbled numbers).
    text, find the `§heading` (or the bold paragraph label).
 6. Check every interval or ordering between sources ("later", "first", "after"): dates
    are published dates, and talks can be published months after they were given.
-7. Also: **Note:** sentences are editorial, not disguised claims; caption garble is
+7. Check that nothing from an AI-written part of a source (CLAUDE.md §3) is cited as his.
+8. Also: **Note:** sentences are editorial, not disguised claims; caption garble is
    corrected outside quotes; nothing is stated that the source is silent on.
 
 ## Report format
