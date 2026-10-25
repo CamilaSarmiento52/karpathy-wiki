@@ -46,3 +46,4 @@ A follow-up in his general-audience series to [[youtube-2025-02-05-deep-dive-int
 - [[voice-input]]
 - [[use-llms-as-tools-and-check-their-work]]
 - [[transformers-need-tokens-to-think]]
+- [[llm-council]]

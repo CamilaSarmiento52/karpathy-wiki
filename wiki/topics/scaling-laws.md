@@ -2,8 +2,8 @@
 type: topic
 aliases: [Scaling laws, scale, scaling, model size, compute, N and D, GPU gold rush]
 first_seen: 2023-11-23
-last_updated: 2024-09-05
-sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]"]
+last_updated: 2025-11-20
+sources: ["[[youtube-2023-11-23-intro-to-llms]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]", "[[github-2025-11-20-nanochat-d34-model]]"]
 context: ["[[talk-2023-05-25-state-of-gpt]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[blog-2025-10-01-animals-vs-ghosts]]"]
 related: ["[[pretraining-and-finetuning]]", "[[rlvr]]"]
 ---
@@ -22,6 +22,8 @@ Given only those two numbers, he says, you can predict with remarkable confidenc
 **The GPU gold rush (Deep Dive, 2025-02-05, background).** He says big tech's demand for GPUs to train language models is what drove Nvidia to $3.4 trillion (as of 2025-02-05), and calls getting enough GPUs the gold rush; more GPUs let you process the data and iterate faster and train a bigger network ([[youtube-2025-02-05-deep-dive-into-llms]] @41:23, @41:56). **Note:** he states no scaling law there, so the lecture is background on this page ([[youtube-2025-02-05-deep-dive-into-llms]] @41:56).
 
 **Note:** in a post dated 2025-10-01 he reports that frontier researchers assume LLMs are highly bitter-lesson pilled because scaling laws go up and to the right with compute, and Richard Sutton's counterpoint that the data is human and finite; he expects more powerful paradigms but does not say scaling stops working, so the post is background here; see [[bitter-lesson]] ([[blog-2025-10-01-animals-vs-ghosts]] §intro).
+
+**Training past Chinchilla (nanochat d34, 2025-11-20).** His d34 run is "2X longtrained" compared to Chinchilla: the parameter-to-token ratio is overridden from 20 (comparison, Chinchilla) to 40 (setting), so the model is trained longer than compute optimal, "just to squeeze a bit more capability into a bit smaller package" ([[github-2025-11-20-nanochat-d34-model]] §intro). The script derives 88,683,315,200 training tokens and 169,150 iterations at 524,288 tokens per batch and sequence length 2048 (settings) ([[github-2025-11-20-nanochat-d34-model]] §intro). Here "compute optimal" means Chinchilla's ratio of 20 ([[github-2025-11-20-nanochat-d34-model]] §intro).
 
 ## Claims
 - [[scaling-offers-a-guaranteed-path-to-better-models]]

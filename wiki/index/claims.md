@@ -19,6 +19,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[build-the-ramp-not-just-the-thing|After building the thing, build the ramp]] — accessibility, not quality, held micrograd back; 10–100X of potential left on the table
 - [[chatgpt-answers-simulate-a-human-data-labeler|An assistant's answer is roughly a simulation of a human data labeler]] — 2025-02-05; labeling instructions; supports the imitate-not-succeed claim
 - [[claude-code-is-the-first-convincing-llm-agent|Claude Code is the first convincing LLM agent]] — 2025-12-19; agents belong on your own computer
+- [[code-is-ephemeral-now-and-libraries-are-over|Code is ephemeral now and libraries are over]] — why he will not maintain his vibe-coded demos: ask your LLM to change them
 - [[coding-models-are-weak-at-code-never-written-before|Coding models are weak at code never written before]] — not net useful for nanochat's novel code; good for boilerplate and unfamiliar languages (2025-10-17)
 - [[counting-and-gradient-bigram-models-are-the-same-model|The counting bigram model and the one-layer net are the same model]] — 2022-09-07; W.exp() is the count table
 - [[deep-learning-is-largely-shape-gymnastics|Much of deep-learning development is making tensor shapes work]] — 2022-11-21; 2-D, 3-D, 4-D, NCL vs NLC, view and permute
@@ -48,6 +49,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[llm-products-will-take-years-to-figure-out|Working out how to oversee LLM products will take the next few years]] — quite autonomous but not fully; oversight and evaluation still to design
 - [[llm-research-summons-ghosts-not-animals|LLM research summons ghosts, not animals]] — LLMs as statistical distillations of human documents that may or may not move toward animals (2025-10-01)
 - [[llms-are-mostly-inscrutable-empirical-artifacts|LLMs are mostly inscrutable artifacts, studied empirically]] — 2023-11-23; known operations, unknown parameters; the reversal curse
+- [[llms-are-shaped-by-commercial-not-biological-evolution|LLMs are shaped a lot less by biological evolution and a lot more by commercial evolution]] — imitation, RL for rewards and A/B tests for upvotes; supports the ghosts claim
 - [[llms-are-the-kernel-of-an-emerging-operating-system|An LLM is the kernel process of an emerging operating system, not a chatbot]] — 2023-11-23; context window as RAM
 - [[llms-currently-only-have-a-system-1|In November 2023, LLMs had only System 1]] — 2023-11-23; the goal is converting time into accuracy
 - [[llms-lack-culture-and-self-play|LLMs lack culture and self-play]] — no LLM equivalent yet of culture or of self-play (2025-10-17)
@@ -81,6 +83,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[self-improvement-may-be-possible-in-narrow-domains|LLM self-improvement may be possible in narrow domains]] — 2023-11-23; hedged; no general reward criterion
 - [[small-llms-can-be-strong-in-narrow-domains|Very small LLMs can perform surprisingly well if the domain is narrow enough]] — TinyStories as reference; demand for custom micro-LLMs at the edge
 - [[small-projects-can-snowball|Small, fragile projects can snowball into very big ones]] — 2024-07-03; game tutorials to CS231n, Zero to Hero, LLM101n; a Reddit chatbot to GPT-4o
+- [[software-2-0-automates-what-you-can-verify|Software 2.0 easily automates what you can verify, as Software 1.0 automated what you can specify]] — verifiability as the predictor of automation, with resettable, efficient, rewardable environments
 - [[success-comes-from-repeated-practice|To a very large extent, success comes from repeated practice, on the order of 10,000 hours]] — 2024-07-03; count the hours; his 20th website, the Tesla rewrite
 - [[synthetic-data-is-the-future-if-you-keep-its-entropy|Synthetic data is the way forward, if its entropy is kept]] — 2024-09-05; models are silently collapsed; three jokes; Persona prompts
 - [[technology-could-be-like-the-calculator|Technology could be like the calculator, at least as an ideal]] — 2024-09-08; a platonic ideal to approach, not for every product
@@ -102,8 +105,10 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[use-hardware-security-keys-not-sms-as-a-second-factor|Secure critical accounts with hardware security keys, not a phone number]] — 2025-03-17; SIM swaps; about 1000X less risk
 - [[use-llms-as-copilots-with-human-oversight|In 2023 he recommended LLMs as copilots with human oversight]] — 2023-05-25; low stakes, not autonomous agents; supports the decade-of-agents claim
 - [[use-llms-as-tools-and-check-their-work|Use LLMs as tools: first drafts, check their work, own the result]] — 2025-02-05; supports the 2023 copilots claim
+- [[verifiability-drives-the-jagged-frontier|Verifiability is what drives the jagged frontier of LLM progress]] — verifiable tasks race ahead; creative, strategic and common-sense tasks lag
 - [[vibe-coding-full-web-apps-is-not-yet-for-anything-important|Vibe coding full web apps was not yet for anything important (April 2025)]] — 2025-04-27; supports the weekend-projects claim
 - [[vibe-coding-is-for-throwaway-weekend-projects|Vibe coding is fine for throwaway weekend projects]] — 2025-02-02; extended by the 2025-04-27 and 2025-12-19 claims, supported by the 2025-04-27 judgement
 - [[vibe-coding-will-terraform-software|Vibe coding will reshape software and jobs]] — 2025-12-19; adds professional uses
 - [[weight-regularization-is-equivalent-to-count-smoothing|Pushing weights toward zero is equivalent to count smoothing]] — 2022-09-07; strength plays the role of added counts
 - [[with-enough-data-encode-less-inductive-bias|With enough data, hand-coded inductive biases tend to hurt]] — 2023-05-19; biases live in connectivity and positional encodings
+- [[writers-may-increasingly-write-for-llms|Writers may increasingly write for an LLM rather than for another human]] — once an LLM gets an idea it can target, personalise and serve it

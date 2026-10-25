@@ -65,3 +65,4 @@ vibe coding and MenuGen (@29:22, @31:38), and closes on building infrastructure 
 - [[technology-diffusion]]
 - [[deploying-a-vibe-coded-app-is-harder-than-writing-it]]
 - [[llms-reverse-the-usual-diffusion-of-technology]]
+- [[writers-may-increasingly-write-for-llms]]

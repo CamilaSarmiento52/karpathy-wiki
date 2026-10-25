@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [RLVR, Reinforcement Learning from Verifiable Rewards, reinforcement learning stage, RL for LLMs, thinking models, reasoning models, DeepSeek-R1, o1, o3, chains of thought, verifiable domains, practice problems]
+aliases: [RLVR, Reinforcement Learning from Verifiable Rewards, reinforcement learning stage, RL for LLMs, thinking models, reasoning models, DeepSeek-R1, o1, o3, chains of thought, verifiable domains, practice problems, verifiability, resettable efficient rewardable]
 first_seen: 2025-02-05
 last_updated: 2025-12-19
-sources: ["[[blog-2025-12-19-year-in-review-2025]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[github-2025-10-13-nanochat-discussion-introducing]]"]
+sources: ["[[blog-2025-12-19-year-in-review-2025]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[github-2025-10-13-nanochat-discussion-introducing]]", "[[github-2025-10-24-nanochat-strawberry-guide]]", "[[blog-2025-11-17-verifiability]]", "[[blog-2025-11-29-space-of-minds]]"]
 related: ["[[jagged-intelligence]]"]
 ---
 # RLVR
@@ -22,9 +22,16 @@ Frontier research, he says, is building large, diverse prompt distributions, gam
 
 **GRPO on GSM8K (nanochat launch post, 2025-10-13).** He does not use the term RLVR in this post. Of nanochat's datasets GSM8K has a clear, objective reward, the correct answer, so the optional RL stage interleaves sampling and training to hill-climb it ([[github-2025-10-13-nanochat-discussion-introducing]] §Reinforcement Learning (RL)). His GRPO is highly simplified: no trust region (no reference model or KL), on-policy (no PPO ratios or clipping), token-level normalisation and advantage as reward minus the mean, closer to REINFORCE while keeping the group-relative advantage ([[github-2025-10-13-nanochat-discussion-introducing]] §Reinforcement Learning (RL)). Reward, pass@1 and pass@8 rise over the default run of about 1.5 hours (measured), and pass@8 well above pass@1 suggests more to gain from more RL; he says gains are larger on bigger models and that he ran up to d30, without giving numbers ([[github-2025-10-13-nanochat-discussion-introducing]] §Reinforcement Learning (RL)). It is off by default because it is not well tuned, gives a GSM-specific model and there is no full general RLHF; why it runs so long is [[rl-sucks-supervision-bits-through-a-straw]] ([[github-2025-10-13-nanochat-discussion-introducing]] §Reinforcement Learning (RL)).
 
+**RL to make reasoning real (strawberry guide, 2025-10-24).** For nanochat's letter-counting task he calls RL, as already done on GSM8K, the significantly more principled way to make the shown reasoning real, letting nanochat practise and learn to recover from its own mistakes; he does not run it in this post and does not use the term RLVR ([[github-2025-10-24-nanochat-strawberry-guide]] §Reasoning structure).
+
+**Verifiability (2025-11-17).** In a short essay he says a verifiable task is optimisable directly or with reinforcement learning, so a neural net can be trained to work extremely well on it; what matters is to what extent an AI can "practice" it ([[blog-2025-11-17-verifiability]] §intro). The environment must be resettable (a new attempt can start), efficient (many attempts can be made) and rewardable (an automated process rewards each attempt) ([[blog-2025-11-17-verifiability]] §intro). He does not use the word RLVR in the post; see [[software-2-0-automates-what-you-can-verify]] ([[blog-2025-11-17-verifiability]] §intro). **Note:** the 2025-12-19 review, which names RLVR as training against automatically verifiable rewards, links this post as further reading; dates only ([[blog-2025-12-19-year-in-review-2025]] §1, §2; [[blog-2025-11-17-verifiability]] §intro).
+
+**An urge to guess the task (The space of minds, 2025-11-29).** He writes that LLMs are increasingly finetuned by RL on problem distributions, which gives them an "innate urge to guess at the underlying environment/task to collect task rewards"; he does not say RLVR or "verifiable" there ([[blog-2025-11-29-space-of-minds]] §intro).
+
 ## Claims
 - [[rl-lets-models-discover-their-own-thinking-strategies]]
 - [[rl-sucks-supervision-bits-through-a-straw]] — why the RL stage runs long
+- [[software-2-0-automates-what-you-can-verify]] — verifiable tasks are the ones RL can optimise
 
 ## Related
 - [[llm-self-improvement]] — the AlphaGo comparison he draws

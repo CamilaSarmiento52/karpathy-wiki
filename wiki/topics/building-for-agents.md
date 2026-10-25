@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [Building for agents, llms.txt, LLM-legible docs]
+aliases: [Building for agents, llms.txt, LLM-legible docs, writing for LLMs]
 first_seen: 2025-04-27
 last_updated: 2026-07-03
-sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[github-2026-07-03-nanochat-readme]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[blog-2025-04-27-vibe-coding-menugen]]", "[[github-2025-08-21-rendergit-readme]]"]
+sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[github-2026-07-03-nanochat-readme]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[blog-2025-04-27-vibe-coding-menugen]]", "[[github-2025-08-21-rendergit-readme]]", "[[x-2025-11-18-reading-with-llms]]"]
 related: ["[[vibe-coding]]", "[[llm-knowledge-bases]]"]
 ---
 # Building for agents
@@ -19,6 +19,11 @@ He likes tools where changing a URL makes something LLM-readable, such as giting
 **rendergit (README, 2025-08-21).** His [[rendergit]] renders a GitHub repo two ways: a browsable Human View, and an LLM View that gives the whole codebase as CXML text to paste into Claude or ChatGPT ([[github-2025-08-21-rendergit-readme]] §Basic usage, §Features). The README speaks of LLMs, Claude and ChatGPT, not of agents, and makes no argument; it is an example of a repo made LLM-readable, next to the gitingest and DeepWiki tools he praises in the YC talk ([[github-2025-08-21-rendergit-readme]] §Features; [[youtube-2025-06-19-software-is-changing]] @36:40).
 
 The nanochat README sends readers with questions to DeepWiki first ([[github-2026-07-03-nanochat-readme]] §intro). In his knowledge-base workflow he builds small tools and hands them to the LLM via CLI ([[x-2026-04-02-llm-knowledge-bases]] §Extra tools).
+
+**Writing for an LLM (X, 2025-11-18).** On the flip side of reading with LLMs, he says writers explaining something may increasingly shift from writing for another human to writing for an LLM, because once an LLM "gets it" it can target, personalise and serve the idea to its user; see [[writers-may-increasingly-write-for-llms]] ([[x-2025-11-18-reading-with-llms]] #1). The post speaks of LLMs and writers, not agents, docs or llms.txt ([[x-2025-11-18-reading-with-llms]] #1).
+
+## Claims
+- [[writers-may-increasingly-write-for-llms]] — writing for the LLM that serves the reader
 
 ## Related
 - [[vibe-coding]] — MenuGen's DevOps pain is where this argument starts

@@ -39,3 +39,4 @@ He writes up his reaction to the Dwarkesh podcast with Richard Sutton, whose "Th
 - [[llm-knowledge-bases]]
 - [[scaling-laws]]
 - [[rl-sucks-supervision-bits-through-a-straw]]
+- [[llms-are-shaped-by-commercial-not-biological-evolution]]

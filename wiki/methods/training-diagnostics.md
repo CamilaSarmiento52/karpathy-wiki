@@ -18,7 +18,7 @@ steps:
   - Keep long runs alive: watch the log and restart a hung run
   - Make runs resumable, deterministic and constant in memory
   - Skip updates on instantaneous instability, and watch for drift
-sources: ["[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-12-llmc-gpt-2-774m]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]"]
+sources: ["[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-06-12-llmc-gpt-2-774m]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[github-2025-11-20-nanochat-d34-model]]"]
 aliases: [training diagnostics plots, activation and gradient statistics, update-to-data ratio, check the loss at initialization, evaluate with a single loss number]
 ---
 # Training diagnostics
@@ -51,6 +51,8 @@ The GPT-2 lecture repeats step 1 at a larger vocabulary: with 50,257 tokens he e
 16. **Make the run resumable.** In the 1.6B post `-y 1` turns on resume: if training crashes or hangs, CTRL+C and re-run the same command and it resumes, and because llm.c is bitwise-deterministic the result is identical to an uninterrupted run ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Args guide)). Checkpoints are written every 2,000 steps (`-n 2000`), and llm.c allocates all GPU memory once at the start with a constant footprint, so once stepping starts it will not run out of memory ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Args guide), §intro (Code)). In the same log he expects the gradient norm to stabilise around 0.1–1, with the learning rate warming up over the first few steps, and uses validation loss as a sanity check rather than the comparison ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro (Training), §intro (Evals)).
 17. **Skip spikes, and watch for drift.** Loss spikes and bad activation ranges are his signs of instability; the code detects simple instantaneous instability and skips the update (`-sl 5.0 -sg 5.0`), which mitigates and defers problems, but his 420B-token run still exploded after about step 330,000 ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro, §intro (400B token run)).
 
+In the nanochat d34 post he reads the wandb curves against d32's: d34 trained fairly stably except for a tiny bump near the beginning that recovered quickly ([[github-2025-11-20-nanochat-d34-model]] §intro). When training crashed in the last 5% with a cryptic NCCL error, he used nanochat's new optimisation-resumption logic to resume from that point, which he says "worked perfect" ([[github-2025-11-20-nanochat-d34-model]] §intro).
+
 ## Seen in
 - [[youtube-2023-01-17-gpt-from-scratch]]
 - [[bigram-language-model]], [[ng-video-lecture]]
@@ -62,3 +64,4 @@ The GPT-2 lecture repeats step 1 at a larger vocabulary: with 50,257 tokens he e
 - [[youtube-2024-06-09-reproduce-gpt-2]]
 - [[github-2024-06-12-llmc-gpt-2-774m]]
 - [[llm-c-was-not-yet-careful-enough-about-training-stability]]
+- [[nanochat]] — the d34 run's curves and resumed crash

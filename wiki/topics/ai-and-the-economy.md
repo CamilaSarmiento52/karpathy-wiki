@@ -2,8 +2,8 @@
 type: topic
 aliases: [AI and the economy, GDP, automation, loss of control, AGI definition, intelligence explosion, superintelligence, compute buildout]
 first_seen: 2025-10-17
-last_updated: 2025-10-17
-sources: ["[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]"]
+last_updated: 2025-11-17
+sources: ["[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[blog-2025-11-17-verifiability]]"]
 related: ["[[technology-diffusion]]", "[[physical-automation-will-lag-digital-automation]]", "[[partial-autonomy-apps]]"]
 ---
 # AI and the economy
@@ -22,12 +22,15 @@ How he expects AI to enter the economy: as a continuation of computing and of ce
 
 **Compute.** He does not know that compute is being overbuilt: Claude Code and OpenAI Codex did not exist a year earlier, he believes, checking with Dwarkesh, and he expects demand to absorb what is being built ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:56:09).
 
+**Which jobs get automated (Verifiability, 2025-11-17).** He calls AI as a new computing paradigm the strongest historical analogy, above electricity or the industrial revolution, since both are about automating digital information processing ([[blog-2025-11-17-verifiability]] §intro). To forecast job impact in the 1980s you would ask whether a job was specifiable; now you would ask whether it is verifiable, and the more verifiable a task or job, the more amenable it is to automation; see [[software-2-0-automates-what-you-can-verify]] ([[blog-2025-11-17-verifiability]] §intro). **Note:** the Dwarkesh interview also treats AI as an extension of computing; there the point is about GDP growth, here about which tasks get automated, so the two are shared framing only ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:07:55; [[blog-2025-11-17-verifiability]] §intro).
+
 **Note:** the slow diffusion he describes here is about GDP; his essay on individuals gaining more from LLMs than institutions is on [[technology-diffusion]] ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:23:57).
 
 ## Claims
 - [[ai-will-not-show-up-as-a-jump-in-gdp]]
 - [[gradual-loss-of-control-is-the-most-likely-outcome]]
 - [[physical-automation-will-lag-digital-automation]] — bits are easier than atoms
+- [[software-2-0-automates-what-you-can-verify]] — verifiability predicts what gets automated
 
 ## Related
 - [[technology-diffusion]]

@@ -9,6 +9,8 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[blog-2025-04-07-power-to-the-people|Power to the people: How LLMs flip the script on technology diffusion]] — LLMs reach individuals before corporations and governments; why, and whether it lasts
 - [[blog-2025-04-27-vibe-coding-menugen|Vibe coding MenuGen]] — his first end-to-end vibe coded web app: a quick local demo, then a slog of keys, deploys, auth and payments
 - [[blog-2025-10-01-animals-vs-ghosts|Animals vs Ghosts]] — his response to Sutton on the Dwarkesh podcast: not platonically bitter-lesson pilled, animals are not blank slates, pretraining as crappy evolution, ghosts not animals
+- [[blog-2025-11-17-verifiability|Verifiability]] — Software 1.0 automates what you can specify, Software 2.0 what you can verify; verifiability drives the jagged frontier
+- [[blog-2025-11-29-space-of-minds|The space of minds]] — animal intelligence as one point in a large space; LLMs shaped by commercial, not biological, evolution
 - [[blog-2025-12-19-year-in-review-2025|2025 LLM Year in Review]] — six 2025 paradigm changes: RLVR, jagged intelligence, LLM apps, Claude Code, vibe coding, LLM GUI
 - [[github-2022-11-20-makemore-readme|makemore README]] — one hackable PyTorch file; bigram to Transformer models for line-per-example generation, CNN in progress
 - [[github-2023-01-08-mingpt-readme|minGPT README]] — his ~300-line GPT re-implementation, semi-archived in January 2023 in favour of nanoGPT; his notes on the GPT papers
@@ -31,7 +33,11 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[github-2025-08-08-minbpe-gpt-4-tokenizer-discussion|Train a GPT-4 tokenizer using huggingface Tokenizers]] — minbpe Discussion: his best-guess HF Tokenizers configuration for a GPT-4-style BPE tokenizer
 - [[github-2025-08-21-rendergit-readme|rendergit README]] — flatten a GitHub repo into one HTML page, with a Human View and an LLM View
 - [[github-2025-10-13-nanochat-discussion-introducing|Introducing nanochat: The best ChatGPT that $100 can buy.]] — launch walkthrough of the nanochat speedrun: Rust tokenizer, d20 pretraining, midtraining, SFT, optional GSM8K RL, report card
+- [[github-2025-10-24-nanochat-strawberry-guide|Guide: counting r in strawberry (and how to add abilities generally)]] — teaching nanochat d32 to count letters with synthetic SpellingBee and SimpleSpelling tasks, formatted around the tokenizer
 - [[github-2025-11-12-nanogpt-readme|nanoGPT README]] — his earlier training/finetuning repo, marked deprecated in favour of nanochat
+- [[github-2025-11-18-reader3-readme|reader3 README]] — a chapter-at-a-time EPUB reader for reading with an LLM; 90% vibe coded, unsupported
+- [[github-2025-11-20-nanochat-d34-model|d34 model (~$2,500)]] — nanochat d34: 2X past Chinchilla, ~100 hours and ~$2,500 on 8×H100, CORE 0.3382, ChatCORE 0.41
+- [[github-2025-11-22-llm-council-readme|llm-council README]] — several LLMs answer, anonymously rank each other, and a Chairman writes the final answer; 99% vibe coded
 - [[github-2026-07-03-nanochat-readme|nanochat README]] — minimal single-node harness that trains a GPT-2-grade chat model, set by one depth dial
 - [[talk-2023-05-19-stanford-cs25-transformers|Stanford CS25: Introduction to Transformers]] — guest lecture: AI converging on the Transformer, attention as message passing, nanoGPT walk-through, in-context learning
 - [[talk-2023-05-25-state-of-gpt|State of GPT]] — Microsoft Build 2023: the four-stage assistant recipe, then prompting, tools, finetuning and human-overseen use
@@ -46,6 +52,7 @@ One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. M
 - [[x-2025-05-01-vibe-coding-hackathon|I attended a vibe coding hackathon recently…]] — X companion to the MenuGen blog; pastes its TLDR
 - [[x-2025-07-08-ideal-grocery-store|This is what the ideal grocery store looks like]] — one post: minimally processed, organic, local, fresh food only; he doubts such a store exists
 - [[x-2025-10-01-sutton-podcast|Finally had a chance to listen through this pod with Sutton…]] — the Animals vs Ghosts text posted on X without its appendix; a second location, not independent evidence
+- [[x-2025-11-18-reading-with-llms|I'm starting to get into a habit of reading everything (blogs, articles, book…]] — reading everything with LLMs in three passes; writers may write for LLMs
 - [[x-2026-04-02-llm-knowledge-bases|LLM Knowledge Bases]] — his workflow for an LLM-compiled Obsidian wiki, the pattern this project follows
 - [[youtube-2022-08-16-micrograd|The spelled-out intro to neural networks and backpropagation: building micrograd]] — builds a scalar autograd engine from a blank notebook and trains a tiny MLP
 - [[youtube-2022-09-07-makemore-1-bigram|The spelled-out intro to language modeling: building makemore]] — bigram character model built by counting and as a one-layer net; they are the same model

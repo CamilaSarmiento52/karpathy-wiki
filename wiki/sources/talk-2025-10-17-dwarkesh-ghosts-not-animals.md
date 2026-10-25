@@ -79,3 +79,4 @@ A two-and-a-half-hour interview with Dwarkesh Patel, who asks the questions and 
 - [[training-on-own-samples-collapses-models]]
 - [[vibe-coding]]
 - [[vibe-coding-over-time]]
+- [[verifiability-drives-the-jagged-frontier]]

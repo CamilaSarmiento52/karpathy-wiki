@@ -2,7 +2,7 @@
 type: claim
 stated_on: 2024-02-20
 confidence: stated
-sources: ["[[youtube-2024-02-20-gpt-tokenizer]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[youtube-2025-02-05-deep-dive-into-llms]]"]
+sources: ["[[youtube-2024-02-20-gpt-tokenizer]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[youtube-2025-02-05-deep-dive-into-llms]]", "[[github-2025-10-24-nanochat-strawberry-guide]]"]
 topic: "[[tokenization]]"
 ---
 # A lot of LLM oddness traces back to tokenization
@@ -14,6 +14,8 @@ He opens the tokenizer lecture by advising viewers not to brush tokenization off
 The Zero to Hero README's description of the same lecture says a lot of weird behaviours and problems of LLMs actually trace back to tokenization, and that the lecture discusses why tokenization is at fault ([[github-2024-02-20-nn-zero-to-hero-readme]] §intro, Lecture 8).
 
 In the Deep Dive lecture, published 2025-02-05, he explains spelling failures the same way: models do not see characters, they see tokens, so a task such as printing every third letter of "ubiquitous", three tokens, often fails ([[youtube-2025-02-05-deep-dive-into-llms]] @2:01:07, @2:01:39, @2:02:12). Counting the r's in "strawberry" combines not seeing characters with not being good at counting ([[youtube-2025-02-05-deep-dive-into-llms]] @2:03:51), and the dots in a counting prompt are chunked into a few tokens ([[youtube-2025-02-05-deep-dive-into-llms]] @1:58:51, @1:59:25).
+
+**Strawberry guide, 2025-10-24.** Asking why counting the r's in "strawberry" is so hard for an LLM, he gives three reasons, the first two from tokenization: whitespace makes the model translate between tokens with and without a space ("Tokenization makes whitespace annoying"), and it has to break tokens into individual characters; the third is comparing and counting ([[github-2025-10-24-nanochat-strawberry-guide]] §Summary). Here he builds a fix around the same diagnosis, formatting nanochat's training answers so the word is spelled into single-letter tokens ([[github-2025-10-24-nanochat-strawberry-guide]] §Spelling). **Note:** the post does not use the word "oddness" or cite the tokenizer lecture; the connection is by content ([[github-2025-10-24-nanochat-strawberry-guide]] §Summary; [[youtube-2024-02-20-gpt-tokenizer]] @04:27).
 
 ## Related claims
 - **Note:** [[tokenization-free-modeling-would-be-amazing-but-is-unproven]] is the remedy he wishes for in the same lecture ([[youtube-2024-02-20-gpt-tokenizer]] @2:10:39). Not a claim relation: one diagnoses, the other hopes.

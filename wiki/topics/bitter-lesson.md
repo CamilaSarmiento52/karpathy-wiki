@@ -4,6 +4,7 @@ aliases: [Bitter lesson, The Bitter Lesson, bitter lesson pilled, Richard Sutton
 first_seen: 2025-10-01
 last_updated: 2025-10-17
 sources: ["[[blog-2025-10-01-animals-vs-ghosts]]", "[[x-2025-10-01-sutton-podcast]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]"]
+context: ["[[blog-2025-11-29-space-of-minds]]"]
 related: ["[[llm-self-improvement]]", "[[jagged-intelligence]]", "[[pretraining-and-finetuning]]", "[[scaling-laws]]"]
 ---
 # Bitter lesson
@@ -25,6 +26,8 @@ Richard Sutton's essay "The Bitter Lesson", which he says has become a bit of bi
 **In the Dwarkesh interview (published 2025-10-17).** Asked why AI should not learn from scratch like an animal, he refers to his write-up of the Sutton podcast and says he is very careful with animal analogies, since animals came from a very different optimisation process; the zebra running minutes after birth is baked in, not reinforcement learning ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @08:14, @08:49). Sutton's framework, he says, is to build animals; a single algorithm you could run on the internet that learns everything would be wonderful, but he is not sure it exists, and animals do not do that, because they have the outer loop of evolution ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @09:25, @10:04).
 
 **Note:** the `§intro` text cited here was also posted on X the same day, word for word; that post is a second location of the same words, not independent evidence, and has no Appendix ([[x-2025-10-01-sutton-podcast]] #1; [[blog-2025-10-01-animals-vs-ghosts]] §intro).
+
+**Note:** the 2025-11-29 post on the space of minds does not mention Sutton or the bitter lesson, so it is background here: it lists animal intelligence's optimisation pressures, an embodied self seeking homeostasis and self-preservation, natural selection's drives for power, status and reproduction, a social mind spending much compute on theory of mind and alliances, and tuned curiosity and play, against LLMs' commercial ones; see [[llms-are-shaped-by-commercial-not-biological-evolution]] ([[blog-2025-11-29-space-of-minds]] §intro).
 
 ## Claims
 - [[frontier-llms-are-not-platonically-bitter-lesson-pilled]]

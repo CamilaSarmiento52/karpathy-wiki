@@ -3,7 +3,7 @@ type: artifact
 repo_url: https://github.com/karpathy/nanochat
 language: Python
 status: active
-sources: ["[[github-2026-07-03-nanochat-readme]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[github-2025-10-13-nanochat-discussion-introducing]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]"]
+sources: ["[[github-2026-07-03-nanochat-readme]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[github-2025-10-13-nanochat-discussion-introducing]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[github-2025-10-24-nanochat-strawberry-guide]]", "[[github-2025-11-20-nanochat-d34-model]]"]
 aliases: [nanochat]
 ---
 # nanochat
@@ -32,10 +32,15 @@ A minimal, hackable harness that trains a ChatGPT-style model end to end on one 
 
 **In the Dwarkesh interview (published 2025-10-17).** He calls nanochat the simplest complete repository for the end-to-end pipeline of a ChatGPT clone, released a day or two before the recording in his words, and about 8,000 lines in his spoken figure ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @27:31, @28:09, @28:48). He says he did not necessarily learn anything new building it; it was the mechanical work of making it clean enough to learn from ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @28:09). The chunk-by-chunk building process is missing from the final repo, and he plans to add it, probably as a video ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @29:27). It syncs gradients in its own optimizer step instead of PyTorch's DDP container ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @32:36). He calls it the capstone of LLM101n and a ramp to knowledge ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @2:02:21, @2:03:02).
 
+**Teaching d32 to count letters (2025-10-24).** He taught nanochat d32 to count the r's in "strawberry" as an example of how any arbitrary computing capability can be added, with a new `SpellingBee` task under `tasks/` and a simpler `SimpleSpelling` task mixed into midtraining and SFT; the procedure is [[teach-a-capability-with-synthetic-tasks]] ([[github-2025-10-24-nanochat-strawberry-guide]] §intro, §Spelling). The d32 deployed on nanochat.karpathy.ai can count letters now, he says ([[github-2025-10-24-nanochat-strawberry-guide]] §Summary). This post gives no size or cost for d32 ([[github-2025-10-24-nanochat-strawberry-guide]] §intro).
+
+**The d34 model (2025-11-20).** He trained d34 and uploaded it to Hugging Face as `karpathy/nanochat-d34` ([[github-2025-11-20-nanochat-d34-model]] §intro). It was pretrained with `--depth=34 --device_batch_size=4 --target_param_data_ratio=40` (settings) on an 8×H100 node for about 100 hours, about 4 days (measured, approximate), at a cost of about $2,500 (his rounded cost; no hourly rate is given in the post) ([[github-2025-11-20-nanochat-d34-model]] §intro). The base model reaches CORE 0.3382 (measured), against d32 at 0.3168, the d20 speedrun at 0.22 and GPT-2 at 0.25 (comparison); he calls d32 a "$1000 run" (comparison, no time given) ([[github-2025-11-20-nanochat-d34-model]] §intro). ChatCORE rose from d32's 0.27 to 0.41 (measured); see [[llm-evaluation]] ([[github-2025-11-20-nanochat-d34-model]] §intro). d34 is now deployed live on nanochat.karpathy.ai ([[github-2025-11-20-nanochat-d34-model]] §intro). **Note:** this post gives the cost of a model past GPT-2 on CORE, not a time-to-GPT-2 figure; each cost and time on this page is given with its own source and date, with no order between them ([[github-2025-11-20-nanochat-d34-model]] §intro; [[github-2025-10-13-nanochat-discussion-introducing]] §Report card). The GPT-2 CORE is 0.25 here and 0.26 for GPT-2 xl in the launch post, likely rounding of nearby figures, not reconciled ([[github-2025-11-20-nanochat-d34-model]] §intro; [[github-2025-10-13-nanochat-discussion-introducing]] §Pretraining).
+
 ## Related
 - [[nanogpt]] — its predecessor, now deprecated in its favour
 - [[pretraining-and-finetuning]] — the stages it runs, midtraining included
 - [[llm-evaluation]] — CORE, bits per byte and ChatCORE
 - [[quick-experiment-loop]]
+- [[teach-a-capability-with-synthetic-tasks]] — adding an ability with a synthetic task
 - [[vibe-coding]]
 - [[building-for-agents]]

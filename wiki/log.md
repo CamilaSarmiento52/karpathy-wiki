@@ -402,3 +402,38 @@ Batch 3 verification (four fresh readers, reports in staging/verify/batch-3-*). 
 - [[frontier-llms-are-not-platonically-bitter-lesson-pilled]]: the reading of "is not inadequate" as agreement sat inside a cited sentence (D4 F5). Sentence now ends at the quote; the reading is a separate **Note:**.
 - [[training-on-own-samples-collapses-models]]: "Asked why ..." but Dwarkesh does not ask; he poses the question himself (D4 F6). Now "Explaining why a model cannot simply train on its own reflections".
 - [[pretraining-and-finetuning]]: tagged "about 24GB" as a setting; it is his download estimate (D4 F8). Now "240 shards (setting), about 24GB to download (estimate)".
+
+## 2026-10-25 ingest [[github-2025-10-24-nanochat-strawberry-guide]]
+- created: [[github-2025-10-24-nanochat-strawberry-guide]], [[teach-a-capability-with-synthetic-tasks]]
+- updated: [[nanochat]], [[tokenization]], [[a-lot-of-llm-oddness-traces-back-to-tokenization]], [[transformers-need-tokens-to-think]], [[synthetic-data-is-the-future-if-you-keep-its-entropy]], [[rl-lets-models-discover-their-own-thinking-strategies]], [[pretraining-and-finetuning]], [[llm-tool-use]], [[rlvr]]
+- notes: Batch 4 group E1. The post never names the tokenization-oddness claim; the link is by content and said so in a **Note:**. rl-lets-models-discover… gains the post as a source (not in the map's list of claims gaining sources; the digest routes it and it adds no claim relation). The worked example is "pollocks", not strawberry; generated templates and conversations are not quoted as his. No d32 size or cost is imported from the 2025-11-20 post. "probably" kept on the latent-space remark. He does not say RLVR.
+
+## 2026-10-25 ingest [[blog-2025-11-17-verifiability]]
+- created: [[blog-2025-11-17-verifiability]], [[software-2-0-automates-what-you-can-verify]], [[verifiability-drives-the-jagged-frontier]]
+- updated: [[rlvr]], [[software-3-0]], [[jagged-intelligence]], [[ai-and-the-economy]], [[llm-self-improvement]], [[blog-2025-12-19-year-in-review-2025]], [[youtube-2023-11-23-intro-to-llms]], [[talk-2025-10-17-dwarkesh-ghosts-not-animals]] (Fed pages)
+- notes: software-2-0-automates… has topic software-3-0 (the map left it open; the Software 2.0 alias lives there); the Sequoia talk folds in as a second source in E4. No claim relations set: the digest's supports to self-improvement-may-be-possible-in-narrow-domains (automation, not self-improvement) and to rl-is-terrible… (only the imitation ranking is shared) are **Note:** lines citing both sides, so intro-to-llms and Dwarkesh are `context`. The year-in-review links this post (§2); written as dated Notes, with the review as `context` on both claims. He does not say RLVR or Software 3.0 here. His Software 2.0 blog post is not in raw/ and is not dated.
+
+## 2026-10-25 ingest [[github-2025-11-18-reader3-readme]]
+- created: [[github-2025-11-18-reader3-readme]], [[reader3]], [[code-is-ephemeral-now-and-libraries-are-over]]
+- updated: [[read-with-an-llm]], [[vibe-coding]], [[vibe-coding-over-time]], [[vibe-coding-will-terraform-software]], [[blog-2025-12-19-year-in-review-2025]] (Fed pages)
+- notes: code-is-ephemeral… supports vibe-coding-will-terraform-software (map), set on both sides; dated on vibe-coding-over-time, though supports needs no timeline. reader3 `status: active` and `language: Python` (inferred) with a **Note:**, as for rendergit. The year-in-review §5 names reader3 among his vibe-coded app demos: dated Notes, the review a source of reader3 and `context` of the claim. The README links [[x-2025-11-18-reading-with-llms]], same published date, no order stated.
+
+## 2026-10-25 ingest [[x-2025-11-18-reading-with-llms]]
+- created: [[x-2025-11-18-reading-with-llms]], [[writers-may-increasingly-write-for-llms]]
+- updated: [[read-with-an-llm]], [[building-for-agents]], [[reader3]], [[youtube-2025-06-19-software-is-changing]] (Fed pages)
+- notes: The three-pass order (manual, explain/summarise, Q&A) is a dated variant on read-with-an-llm beside the 2025-02-27 summary-first steps; `steps` not reordered (map). The writers claim keeps his "may increasingly"; its topic is building-for-agents and the post is in that topic's `sources` with a sentence saying it does not mention agents; the YC talk is `context` on the claim for the Note. building-for-agents gains a ## Claims section. Curly quotes copied from the raw.
+
+## 2026-10-25 ingest [[github-2025-11-20-nanochat-d34-model]]
+- created: [[github-2025-11-20-nanochat-d34-model]]
+- updated: [[nanochat]], [[scaling-laws]], [[llm-evaluation]], [[compute-efficiency]], [[training-diagnostics]], [[pretraining-and-finetuning]]
+- notes: Numbers tagged as in the digest; the ~$2,500 is his rounded cost with no rate given (no $24/hour arithmetic written). d32 appears only as a comparison ("$1000 run"). GPT-2 CORE 0.25 here vs 0.26 (GPT-2 xl, launch post) left unreconciled. No order written between nanochat cost/time figures. The digest's Note to the 2026-01-07 miniseries ratio of about 8 is left for E2, whose source page does not exist yet. scaling-laws `last_updated` now 2025-11-20.
+
+## 2026-10-25 ingest [[github-2025-11-22-llm-council-readme]]
+- created: [[github-2025-11-22-llm-council-readme]], [[llm-council]]
+- updated: [[choose-a-model-tier]], [[read-with-an-llm]], [[vibe-coding]], [[vibe-coding-over-time]], [[code-is-ephemeral-now-and-libraries-are-over]], [[youtube-2025-02-27-how-i-use-llms]], [[blog-2025-12-19-year-in-review-2025]] (Fed pages)
+- notes: Per the map, the alias "LLM council" is removed from choose-a-model-tier and now lives on the llm-council artifact ("LLM Council"); step 6 links the artifact in a **Note:**, dates only, since the README never mentions the 2025-02-27 video. The README's code-is-ephemeral sentences are a second location of the reader3 wording, not independent evidence; the timeline gets one code-is-ephemeral entry (2025-11-18) naming the 2025-11-22 repeat. No claim that the council beats one model (he says only "nice and useful"). Not fed: verify-citations (the digest found no fit). Default models are the config strings; the API key placeholder is not reproduced. `language: Python, JavaScript` from §Tech Stack.
+
+## 2026-10-25 ingest [[blog-2025-11-29-space-of-minds]]
+- created: [[blog-2025-11-29-space-of-minds]], [[llms-are-shaped-by-commercial-not-biological-evolution]]
+- updated: [[llm-research-summons-ghosts-not-animals]], [[jagged-intelligence]], [[bitter-lesson]], [[pretraining-and-finetuning]], [[rlvr]], [[blog-2025-12-19-year-in-review-2025]], [[blog-2025-10-01-animals-vs-ghosts]] (Fed pages)
+- notes: The new claim supports llm-research-summons-ghosts-not-animals (map), set on both sides; not `extends`. The ghosts claim gains this post as a source (he refers back to the ghosts name) and its October/December Note now places the November post beside the review, no contradiction. bitter-lesson takes the post as `context` only (no Sutton). Two explanations of jaggedness (verifiability 2025-11-17, no death penalty 2025-11-29) are a Note, no link. The A/B-test upvote is kept apart from the review's LM Arena. "SGD vs. ???" is not filled in; the garbled "= >" span and the linked X image are not quoted.

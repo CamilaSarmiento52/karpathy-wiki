@@ -21,6 +21,7 @@ How he builds, debugs, explains and evaluates. Alphabetical. Maintained by inges
 - [[small-hackable-educational-code|Small, hackable, educational code]] — one file, PyTorch only, a few hundred lines, published with its git history; know when it needs teeth
 - [[spelled-out-build-from-scratch|Spelled-out build from scratch]] — blank notebook, by hand first, then code, then the real repo; one addition at a time, one validation number each
 - [[start-a-new-chat-per-topic|Start a new chat per topic]] — wipe the context window when switching topic; tokens are a precious resource
+- [[teach-a-capability-with-synthetic-tasks|Teach a capability with synthetic tasks]] — synthetic conversations in midtraining and SFT, randomised prompts, answers shaped around the tokenizer, a drill for the weak part
 - [[training-diagnostics|Training diagnostics]] — expected loss at init, hockey stick, activation/gradient histograms, update-to-data ratio against -3; average the loss over batches
 - [[verify-against-a-reference-implementation|Verify against a reference implementation]] — run the same input through a known-good implementation and match its output exactly
 - [[verify-citations|Verify citations]] — primary sources, follow citations, first drafts, read the code, transcribe images first

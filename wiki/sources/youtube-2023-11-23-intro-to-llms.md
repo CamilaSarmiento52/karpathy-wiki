@@ -56,3 +56,4 @@ A re-recording, on his own channel, of a 30-minute intro talk he had given at an
 - [[llms-lack-culture-and-self-play]]
 - [[progress-comes-from-everything-improving-together]]
 - [[rl-is-terrible-but-better-than-imitation]]
+- [[software-2-0-automates-what-you-can-verify]]

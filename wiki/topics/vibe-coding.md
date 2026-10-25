@@ -3,7 +3,7 @@ type: topic
 aliases: [Vibe coding, vibe coded]
 first_seen: 2025-02-02
 last_updated: 2026-04-02
-sources: ["[[x-2025-02-02-vibe-coding]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[youtube-2025-02-27-how-i-use-llms]]", "[[blog-2025-04-07-power-to-the-people]]", "[[blog-2025-04-27-vibe-coding-menugen]]", "[[x-2025-05-01-vibe-coding-hackathon]]", "[[github-2025-08-21-rendergit-readme]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]"]
+sources: ["[[x-2025-02-02-vibe-coding]]", "[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[youtube-2025-02-27-how-i-use-llms]]", "[[blog-2025-04-07-power-to-the-people]]", "[[blog-2025-04-27-vibe-coding-menugen]]", "[[x-2025-05-01-vibe-coding-hackathon]]", "[[github-2025-08-21-rendergit-readme]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[github-2025-11-18-reader3-readme]]", "[[github-2025-11-22-llm-council-readme]]"]
 related: ["[[software-3-0]]", "[[english-is-the-new-programming-language]]", "[[vibe-coding-over-time]]"]
 ---
 # Vibe coding
@@ -19,6 +19,8 @@ His lesson from MenuGen is that the code was the easy part: authentication, paym
 **MenuGen, the written account (2025-04-27).** MenuGen takes a photo of a restaurant menu and generates an image for each item; he notes the pictures are not what that restaurant will serve, only the basic idea ([[blog-2025-04-27-vibe-coding-menugen]] §intro ¶2). He got the first version working on localhost at a vibe coding hackathon, then kept vibe coding to deploy it and add authentication and payments ([[blog-2025-04-27-vibe-coding-menugen]] §intro ¶1, ¶2). He calls it his first end-to-end vibe coded app, built as someone who tinkers but has little to no web development experience, into a product people can sign up and pay for, on which, he writes, he pockets a 10% markup ([[blog-2025-04-27-vibe-coding-menugen]] §intro ¶3). He wrote no code directly: "100% of the code was written by Cursor+Claude", and he says he does not really know how MenuGen works in the conventional sense ([[blog-2025-04-27-vibe-coding-menugen]] §intro ¶3). The LLMs, he sums up, have slightly outdated knowledge of everything, make subtle but critical design mistakes when watched closely, and sometimes hallucinate or gaslight ([[blog-2025-04-27-vibe-coding-menugen]] §intro ¶TLDR). His example is Claude matching Stripe payments to users by email, which could leave a buyer without credits; it rewrote the code with user ids when he pointed this out, and its promise to do better next time he calls gaslighting ([[blog-2025-04-27-vibe-coding-menugen]] §intro ¶Stripe). He left a database and work queue as future work, meaning more services, logins, keys and docs ([[blog-2025-04-27-vibe-coding-menugen]] §intro ¶Database). The two MenuGen claims below come from this post ([[blog-2025-04-27-vibe-coding-menugen]] §intro ¶TLDR, ¶For now). In the companion X post, dated 2025-05-01, he says he tinkers but is not a web developer by background, that Cursor with Claude and o3 wrote the code, and that he does not really know how the app works in the conventional sense he is used to as an engineer ([[x-2025-05-01-vibe-coding-hackathon]] #1). **Note:** the 10% markup is the post's figure and the negative revenue the talk's; each is given with its own source and they are not reconciled ([[blog-2025-04-27-vibe-coding-menugen]] §intro ¶3; [[youtube-2025-06-19-software-is-changing]] @32:13).
 
 The rendergit README, dated 2025-08-21, says he vibe coded the utility a few months before, keeps using it very often and is sharing it without intending to maintain or support it; see [[rendergit]] ([[github-2025-08-21-rendergit-readme]] §Contributing).
+
+The reader3 README, dated 2025-11-18, says he 90% vibe coded the EPUB reader just to illustrate an idea and will not support or improve it, because "Code is ephemeral now and libraries are over"; see [[reader3]] and [[code-is-ephemeral-now-and-libraries-are-over]] ([[github-2025-11-18-reader3-readme]] §intro). The llm-council README, dated 2025-11-22, says that app was 99% vibe coded as a fun Saturday hack, will not be supported or improved, and repeats the same two sentences on code being ephemeral; see [[llm-council]] ([[github-2025-11-22-llm-council-readme]] §Vibe Code Alert).
 
 By December 2025 he says vibe coding empowers trained professionals as well as regular people, and that he vibe-coded nanochat's Rust BPE tokenizer instead of learning Rust to that level ([[blog-2025-12-19-year-in-review-2025]] §5). He describes code as suddenly "free, ephemeral, malleable, discardable after single use" ([[blog-2025-12-19-year-in-review-2025]] §5).
 
@@ -37,6 +39,7 @@ In Power to the people, dated 2025-04-07, he lists "People can now vibe code app
 - [[deploying-a-vibe-coded-app-is-harder-than-writing-it]] — MenuGen: the code was easy, the deployed app a slog
 - [[vibe-coding-full-web-apps-is-not-yet-for-anything-important]] — April 2025: messy, but hints of greatness
 - [[vibe-coding-will-terraform-software]]
+- [[code-is-ephemeral-now-and-libraries-are-over]] — November 2025: ask your LLM to change it
 - [[english-is-the-new-programming-language]]
 - [[coding-models-are-weak-at-code-never-written-before]] — October 2025: not net useful for nanochat's novel code
 - [[autocomplete-is-his-coding-sweet-spot]] — October 2025: his own mode, with agents for some code
@@ -45,6 +48,8 @@ In Power to the people, dated 2025-04-07, he lists "People can now vibe code app
 - [[vibe-coding-over-time]]
 - [[nanochat]] — its tokenizer was vibe-coded
 - [[rendergit]] — a vibe-coded utility he keeps using
+- [[reader3]] — a 90% vibe-coded EPUB reader, unsupported
+- [[llm-council]] — a 99% vibe-coded Saturday hack, unsupported
 - [[software-3-0]]
 - [[technology-diffusion]] — why individuals, not organisations, gain most from it so far
 - [[ai-assisted-coding-loop]] — what he does when he is not vibe coding
