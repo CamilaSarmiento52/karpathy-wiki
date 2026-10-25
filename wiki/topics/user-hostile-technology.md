@@ -7,7 +7,7 @@ sources: ["[[blog-2024-09-08-i-love-calculator]]", "[[blog-2025-03-17-digital-hy
 related: ["[[technology-could-be-like-the-calculator]]"]
 ---
 # User-hostile technology
-His name for technology drifting toward the "complex, dependency-bloated, user-hostile" products he contrasts with the pocket calculator, which is self-contained, owned outright and private ([[blog-2024-09-08-i-love-calculator]] §intro).
+Technology drifting toward what he calls a "complex, dependency-bloated, user-hostile" mess, which he contrasts with the pocket calculator, which is self-contained, owned outright and private ([[blog-2024-09-08-i-love-calculator]] §intro).
 
 ## What he says
 **The calculator (2024-09-08).** He says he loves the calculator not as a device you would buy today but as a product of technology and a symbol of a kind of philosophy ([[blog-2024-09-08-i-love-calculator]] §intro). Operated with your fingers it becomes a plugin for your brain that extends its arithmetic and makes you smarter ([[blog-2024-09-08-i-love-calculator]] §intro). It has an almost zero "dependency footprint" on the rest of the technosphere: it needs only light for its solar panel and/or batteries, a universal commodity; you buy it in one exchange for money and from then on it is yours; carried back thousands of years, it would just work ([[blog-2024-09-08-i-love-calculator]] §intro).

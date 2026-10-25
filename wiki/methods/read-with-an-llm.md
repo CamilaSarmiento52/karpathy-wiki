@@ -10,7 +10,7 @@ sources: ["[[youtube-2025-02-27-how-i-use-llms]]"]
 aliases: [reading papers with an LLM, reading books with an LLM, don't read books alone, file uploads]
 ---
 # Read with an LLM
-How he reads papers and books: he says it is no longer the case that he reads books by himself, and always involves an LLM ([[youtube-2025-02-27-how-i-use-llms]] @55:03). His advice is "don't read books alone" ([[youtube-2025-02-27-how-i-use-llms]] @58:28).
+How he reads papers and books: he says it is rarely the case any more that he reads books by himself; he always involves an LLM ([[youtube-2025-02-27-how-i-use-llms]] @54:30, @55:03). His advice is "don't read books alone" ([[youtube-2025-02-27-how-i-use-llms]] @58:28).
 
 ## Steps
 1. **Get the raw text.** For The Wealth of Nations, from 1776, he gets the chapter from Project Gutenberg, because the model probably does not remember the chapter exactly ([[youtube-2025-02-27-how-i-use-llms]] @55:37, @56:13, @56:47).

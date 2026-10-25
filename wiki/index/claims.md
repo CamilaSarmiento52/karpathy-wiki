@@ -44,7 +44,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[inherited-gpt-3-hyperparameters-look-conservative|The GPT-3 hyperparameters he inherited look conservative and are probably not tuned precisely]] — 2024-06-09; a learning rate about 3× higher may work; 2024-07-11 "appear to be quite suboptimal"
 - [[llm-c-trained-gpt-2-faster-than-pytorch-in-his-measurements|In his measurements, llm.c trained GPT-2 faster than PyTorch]] — ~6.4% in a constrained fp32 setting (April 2024); each figure with its baseline
 - [[llm-c-was-not-yet-careful-enough-about-training-stability|He judged llm.c not yet careful enough about initialisation, activation ranges and stability for long runs]] — 2024-07-11; the 420B-token run exploded after ~330K steps
-- [[llm-judges-are-gameable-rewards|LLM judges are gameable rewards]] — RL against an LLM judge finds adversarial examples within tens of steps (2025-10-17)
+- [[llm-judges-are-gameable-rewards|An LLM judge used as a reward gets gamed by adversarial examples, so RL against it works for only tens of steps]] — maybe 10 or 20 steps, not 100 or 1,000 (2025-10-17)
 - [[llm-products-will-take-years-to-figure-out|Working out how to oversee LLM products will take the next few years]] — quite autonomous but not fully; oversight and evaluation still to design
 - [[llm-research-summons-ghosts-not-animals|LLM research summons ghosts, not animals]] — LLMs as statistical distillations of human documents that may or may not move toward animals (2025-10-01)
 - [[llms-are-mostly-inscrutable-empirical-artifacts|LLMs are mostly inscrutable artifacts, studied empirically]] — 2023-11-23; known operations, unknown parameters; the reversal curse
@@ -66,14 +66,14 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[oura-and-whoop-were-the-best-sleep-trackers-he-tested|In his two-month test, Oura and Whoop were the best sleep trackers and AutoSleep near random]] — 2025-03-24; how he compared them; sleep tracks his work quality
 - [[parameters-are-vague-recollection-context-is-working-memory|Knowledge in the parameters is a vague recollection; the context window is working memory]] — 2025-02-05; paste the material into the prompt
 - [[physical-automation-will-lag-digital-automation|Automation of physical infrastructure will probably lag digital automation]] — 2024-07-03; bits are easier than atoms; hedged
-- [[post-agi-education-will-be-like-going-to-the-gym|After AGI, he hopes education is like going to the gym]] — 2024-09-05; effortful fun with a payoff
+- [[post-agi-education-will-be-like-going-to-the-gym|After AGI, he thinks education will be largely entertainment, and hopes people will go to a mental gym]] — 2024-09-05; effortful fun with a payoff
 - [[pretraining-gives-a-document-completer|Pretraining alone gives a document completer, not an assistant]] — 2023-01-17; it babbles internet until finetuned
 - [[pretraining-is-lossy-compression-of-the-internet|Pretraining is a lossy compression of the internet]] — 2023-11-23; 10 TB to 140 GB; next-word prediction learns the world
 - [[pretraining-is-our-crappy-evolution|Pretraining is our crappy evolution]] — pretraining as a candidate solution to cold start, in the role evolution plays for animals, before RL (2025-10-01)
 - [[progress-comes-from-everything-improving-together|Progress comes from everything improving together]] — data, hardware, kernels and algorithms, none winning; everything plus 20% (2025-10-17)
 - [[pytorch-documentation-is-unreliable|PyTorch's documentation is unmaintained and will mislead you]] — 2022-11-21; wrong, incomplete, unclear; do your best
 - [[rl-is-terrible-but-better-than-imitation|RL is terrible but better than imitation]] — one final reward through a straw; supports the narrow-domain claim (2025-10-17)
-- [[rl-lets-models-discover-their-own-thinking-strategies|Through RL on problems with known answers, models discover their own ways of thinking]] — 2025-02-05; DeepSeek-R1's backtracking; extends two 2023 claims
+- [[rl-lets-models-discover-their-own-thinking-strategies|Through RL on problems with known answers, models discover their own ways of thinking]] — 2025-02-05; DeepSeek-R1's backtracking; supports the 2023 narrow-domain claim
 - [[rl-sucks-supervision-bits-through-a-straw|RL is sucking supervision bits through a straw]] — his reason the nanochat RL stage runs long, said in passing (2025-10-13)
 - [[rlhf-is-not-real-rl|RLHF is not reinforcement learning in the full sense, because its reward model can be gamed]] — 2024-03-26 (Sequoia), 2025-02-05; a vibe check, pelican jokes
 - [[rlhf-works-better-because-comparing-is-easier-than-generating|RLHF models are preferred, perhaps because comparing is easier than generating]] — 2023-05-25; his offered reason, hedged
@@ -91,7 +91,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[the-logits-softmax-nll-machinery-stays-fixed-up-to-transformers|Only the forward pass changes on the way to transformers]] — 2022-09-07; logits, softmax, NLL and gradient descent stay
 - [[the-transformer-is-a-general-purpose-efficient-optimizable-computer|He would have called the Transformer a general-purpose, efficient, optimizable computer]] — 2023-05-19; expressive, optimizable, efficient, and resilient since 2017
 - [[the-transformer-is-probably-not-the-final-architecture|The Transformer is resilient but probably not the final architecture]] — designed for the GPU, little changed, change still expected
-- [[there-is-a-massive-gap-between-demo-and-product|In self-driving, and he expects in AGI, there is a massive gap between demo and product]] — 2024-09-05; Waymo's decade; globalisation has not happened
+- [[there-is-a-massive-gap-between-demo-and-product|In self-driving, and he suspects in AGI, there is a massive gap between demo and product]] — 2024-09-05; Waymo's decade; globalisation has not happened
 - [[this-is-the-decade-of-agents|This is the decade of agents, not the year]] — 2025-06-19; self-driving shows how long autonomy takes
 - [[tokenization-free-modeling-would-be-amazing-but-is-unproven|Tokenization-free modelling would be amazing but is unproven]] — raw bytes need architecture changes; he does not know it is proven at scale
 - [[training-on-own-samples-collapses-models|Training on own samples collapses models]] — silently collapsed samples; possibly no fundamental solution, later walked back (2025-10-17)

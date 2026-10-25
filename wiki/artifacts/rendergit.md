@@ -15,7 +15,7 @@ His tool that flattens a GitHub repository into a single static HTML page with s
 - **Two views of one repo.** A Human View for browsing with syntax highlighting, sidebar navigation and "visual goodies", and an LLM View that gives the entire codebase as raw CXML text to copy into Claude, ChatGPT and the like for code analysis ([[github-2025-08-21-rendergit-readme]] §Basic usage, §Features).
 - **Features.** Highlighting via Pygments, Markdown rendering for READMEs and docs, skipping of binaries and oversized files, a directory tree at the top, file sizes in the sidebar, and a layout that works on mobile ([[github-2025-08-21-rendergit-readme]] §Features).
 - **Vibe coded, shared, not maintained.** He says he vibe coded it a few months before the README and keeps using it very often, so he is sharing it, but "I don't super intend to maintain or support it though." ([[github-2025-08-21-rendergit-readme]] §Contributing). The licence is BSD0 ([[github-2025-08-21-rendergit-readme]] §License).
-- `status: active` because he says he keeps using it and nothing marks it deprecated, despite the maintenance disclaimer; `language: Python` is inferred from the pip and uv install and Pygments, since the README does not name the language ([[github-2025-08-21-rendergit-readme]] §Basic usage, §Contributing).
+- **Note:** `status: active` because he says he keeps using it and nothing marks it deprecated, despite the maintenance disclaimer; `language: Python` is inferred from the pip and uv install and Pygments, since the README does not name the language ([[github-2025-08-21-rendergit-readme]] §Basic usage, §Contributing).
 
 ## Related
 - [[building-for-agents]] — the LLM View makes a repo readable to an LLM, like the gitingest and DeepWiki tools he praises

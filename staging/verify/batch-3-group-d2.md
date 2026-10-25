@@ -100,3 +100,15 @@ Verified 2026-10-24 by a fresh reader. Sources: [[youtube-2025-02-05-deep-dive-i
   - vibe-coding: about five sentences; the "probably minted" hedge.
   - user-hostile-technology: the fraud-apparatus and CO2-monitor sentences; the internetofshit link is in both posts.
 - Source pages: the Summary and Key points of all five checked about 1 in 3. All are supported apart from F4.
+
+## Resolution
+Fix pass 2026-10-25; logged in wiki/log.md `## 2026-10-25 correction`.
+- F1: fixed (`extends` removed from both claims; a **Note:** citing both sources on each page and on [[system-1-and-system-2-thinking]], saying the 2023 claim describes a limitation of models at the time and the 2025 lecture describes thinking models; no relation set).
+- F2: fixed (the two closing Notes on [[llm-self-improvement-over-time]] merged into one that claims no `extends`, keeps "hints" and "primordial", and says the view accumulated).
+- F3: fixed (`extends` changed to `supports` on both pages and both bullets; bullets say the lecture speaks of verifiable domains; index/claims.md and the llm-self-improvement Claims list updated).
+- F4: fixed (timeline entry, Summary and Key point attribute o1/o3 training to OpenAI employees' statements; @2:37:07 added).
+- F5: fixed (@2:04:57 added).
+- F6: fixed.
+- F7: fixed (body reworded; frontmatter step now "Know the read-aloud options for output").
+- F8: fixed (@54:30 added).
+- F9: fixed (1.5 billion with his self-correction; @43:38 added).

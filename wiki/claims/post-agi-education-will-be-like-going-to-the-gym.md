@@ -5,7 +5,7 @@ confidence: stated
 sources: ["[[talk-2024-09-05-no-priors-ep-80]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]"]
 topic: "[[ai-for-education]]"
 ---
-# After AGI, he hopes education will be more like entertainment, effortful the way the gym is
+# After AGI, he thinks education will be largely entertainment, and hopes people will go to a mental gym
 > "learning something is kind of like going to the gym but for the brain" — [[talk-2024-09-05-no-priors-ep-80]] @40:29
 
 ## Context

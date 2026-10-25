@@ -69,3 +69,14 @@ Verified 2026-10-25 by a fresh reader. Sources: [[blog-2025-10-01-animals-vs-gho
 - X post: everywhere it is cited, it is cited as the same words as the blog §intro, never as independent evidence. Its source page's diff Note is accurate (the post has no Appendix).
 - Source pages: the Summary and Key points of all four are supported. Dwarkesh summary timestamps checked: @01:59, @03:14, @12:28, @41:33, @42:46, @52:12, @33:14, @37:33, @1:45:36, @1:22:43, @2:03:02.
 - Other pages: cognitive-core (8 sentences), model-collapse (12), ai-and-the-economy (13), ai-for-education (9), partial-autonomy-apps (6), vibe-coding (5), jagged-intelligence (6 D4), prompting-llms (5), bitter-lesson (22), learn-by-building-and-explaining (9), nanochat (16), plus 4–6 each on tokenization, llm-evaluation, rlvr and pretraining-and-finetuning. All supported apart from F3, F4, F7 and F8.
+
+## Resolution
+Fix pass 2026-10-25; logged in wiki/log.md `## 2026-10-25 correction`.
+- F1: fixed (claim title, index/claims.md line, llm-self-improvement sentence and timeline entry reworded; @46:34 added to the timeline entry).
+- F2: fixed (quote now verbatim).
+- F3: fixed.
+- F4: fixed.
+- F5: fixed (sentence ends at the quote; reading moved to a **Note:**).
+- F6: fixed.
+- F7: fixed (topic sentence and timeline entry reordered).
+- F8: fixed.

@@ -7,7 +7,7 @@ sources: ["[[github-2024-08-01-llm101n-readme]]", "[[talk-2024-09-05-no-priors-e
 related: ["[[llm101n]]", "[[spelled-out-build-from-scratch]]", "[[small-projects-can-snowball]]"]
 ---
 # AI for education
-How he wants AI to scale a really good teacher: the teacher designs the course and the AI is the front end that takes each student through it ([[talk-2024-09-05-no-priors-ep-80]] @32:21, @32:54). His planned first course, LLM101n, is being developed by Eureka Labs, according to its README ([[github-2024-08-01-llm101n-readme]] §intro).
+How he wants AI to scale a really good teacher: the teacher designs the course and the AI is the front end that takes each student through it ([[talk-2024-09-05-no-priors-ep-80]] @32:21, @32:54). His planned course LLM101n is being developed by Eureka Labs, according to its README ([[github-2024-08-01-llm101n-readme]] §intro).
 
 ## What he says
 **The LLM101n README (2024-08-01).** The banner says the course does not yet exist, is currently being developed by Eureka Labs, and that the repo is archived until it is ready; it links Eureka Labs' site and says nothing else about it ([[github-2024-08-01-llm101n-readme]] §intro). The course would take learners from basics to a ChatGPT-like web app with minimal computer science prerequisites ([[github-2024-08-01-llm101n-readme]] §intro).

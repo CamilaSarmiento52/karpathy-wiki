@@ -64,3 +64,13 @@ Verified 2026-10-24 by a fresh reader. Sources: [[blog-2025-04-07-power-to-the-p
 - [[calorie]]: the grocery-post Note is correct and labelled. Grep of wiki/sources/x-* and raw/x confirms the grocery post is currently the only X post on food. The calorie README raw has nothing on food quality. The post sits in `context`, not `sources`.
 - [[rendergit]]: the other 6 sentences are supported, including the tagline, the two views, CXML (not expanded), the features list, the §Contributing disclaimer quote (verbatim) and the BSD0 licence.
 - Source pages: all six Summaries are supported. The hackathon X Summary's "built a web app with auth, payments and deployment at a vibe coding hackathon" follows the X post's own wording. The blog says deployment came after the hackathon, but each source page keeps its own source's wording, which is fine.
+
+## Resolution
+Fix pass 2026-10-25; logged in wiki/log.md `## 2026-10-25 correction`.
+- F1: fixed ("Most of the obstacles he lists are in services and their configuration rather than in the app's logic"; list kept).
+- F2: fixed (both `supports` bullets reworded as suggested; link kept).
+- F3: fixed (¶3 added; the sentence's "outside the code" also aligned with F1).
+- F4: fixed.
+- F5: fixed (bullet now starts with **Note:**; `status` and `language` unchanged).
+- F6: fixed.
+- F7: fixed ("instead" deleted).

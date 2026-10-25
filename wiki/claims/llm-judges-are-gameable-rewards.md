@@ -6,7 +6,7 @@ sources: ["[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]"]
 context: ["[[talk-2024-03-26-sequoia-making-ai-accessible]]"]
 topic: "[[llm-self-improvement]]"
 ---
-# An LLM judge used as a reward gets gamed by adversarial examples within tens of steps
+# An LLM judge used as a reward gets gamed by adversarial examples, so RL against it works for only tens of steps
 > "those LLMs are giant things with billions of parameters, and they're gameable" — [[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @46:34
 
 ## Context

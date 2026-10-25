@@ -7,7 +7,7 @@ context: ["[[youtube-2025-06-19-software-is-changing]]", "[[talk-2024-03-26-sequ
 topic: "[[self-driving]]"
 supports: ["[[this-is-the-decade-of-agents]]"]
 ---
-# In self-driving, and he expects in AGI, there is a massive gap between a demo and a product, and then between a product and its globalisation
+# In self-driving, and he suspects in AGI, there is a massive gap between a demo and a product, and a big gap between a demo and its globalisation
 > "demo and product there's a massive Gap there" — [[talk-2024-09-05-no-priors-ep-80]] @01:39
 
 ## Context

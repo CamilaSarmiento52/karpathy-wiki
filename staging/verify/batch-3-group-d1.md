@@ -83,3 +83,14 @@ Verified 2026-10-24 by a fresh reader. Sources: [[github-2024-08-01-llm101n-read
 - [[ai-ecosystem]] ("not your weights, not your brain" given to him, as the digest reads it; "100%" answer correct), [[llms-as-operating-systems]] (exocortex @22:59 his; companies and swarm lines), [[llm-self-improvement]], [[llm-tool-use]], [[pretraining-and-finetuning]], [[scaling-laws]], [[software-3-0]], [[prompting-llms]], [[pytorch]], [[compute-efficiency]]: D1 sentences all supported.
 - [[transformer-architecture]]: D1 sentences all supported except F5.
 - [[llm101n]], [[llm-c]] (about 20 forks: the raw lists 19), [[nanogpt]], [[nn-zero-to-hero]], [[reproduce-a-published-model]], [[small-hackable-educational-code]], [[verify-against-a-reference-implementation]], [[build-and-publish-projects]], [[spelled-out-build-from-scratch]]: D1 sentences all supported.
+
+## Resolution
+Fix pass 2026-10-25; logged in wiki/log.md `## 2026-10-25 correction`.
+- F1: fixed ([[ai-for-education]] "His planned course LLM101n"; no Note added).
+- F2: fixed ([[self-driving]] humanoid line attributed to the host).
+- F3: fixed (title changed; index/claims.md updated; slug kept).
+- F4: fixed (title changed; index/claims.md updated).
+- F5: fixed ([[transformer-architecture]] Llama sentence reworded).
+- F6: fixed (@01:07 added; "suspects").
+- F7: fixed (@14:49 added).
+- F8: fixed ([[user-hostile-technology]] definition reworded).

@@ -10,7 +10,8 @@ _How we know the phase is done. Drafted at the start of the phase._
 - [ ] Every batch has a verification report in `staging/verify/`, and every finding in it
       is fixed or explained, with corrections logged in `log.md`. _Batch 1: three reports
       (one per merge group), 21 findings, all fixed and logged 2026-10-23. Batch 2: four
-      reports, 31 findings, 30 fixed and 1 left as asked, logged 2026-10-24._
+      reports, 31 findings, 30 fixed and 1 left as asked, logged 2026-10-24. Batch 3: four
+      reports, 32 findings, all fixed, logged 2026-10-25._
 - [ ] `log.md` has one ingest entry per source and one correction entry per verification
       round; `hot.md` shows the last 20 changes.
 - [x] Index covers every page; if it was split, the split is recorded in `tech-stack.md`

@@ -182,16 +182,55 @@ answerable. Batch 2 compiled the tokenizer lecture (with his failure list on
 `tokenization` and `a-lot-of-llm-oddness-traces-back-to-tokenization`) and the 2023–2024
 agent statements (`llm-agents-over-time`). The gate itself is re-run at the end of the phase.
 
-## Batch 3 (in progress, stopped 2026-10-24)
+## Batch 3
 
-21 new sources merged in four groups (D1–D4), 182 → 265 pages, lint 0 findings, 98 tests.
-Verification: D1 8 findings, D2 9, D3 7 (reports in `staging/verify/batch-3-*`). The D4
-verifier stopped when the account usage limit was reached and wrote no report.
+Ran 2026-10-24 and 2026-10-25 (paused overnight at the account usage limit, during the
+last verification). 23 sources, August 2024 to October 2025; 2 were phase 1 sources, so 21
+were compiled, about 133k raw words: No Priors, the CUDA keynote, Deep Dive, How I use
+LLMs, Dwarkesh, the 2025 blog posts, the nanochat launch, LLM101n, llm.c README, rendergit.
 
-To resume: run the D4 verifier (`staging/verify-brief.md`, sources
-animals-vs-ghosts, Sutton post, nanochat Discussion 1, Dwarkesh), then one fix pass over
-all four batch 3 reports. Decided for that pass (CLAUDE.md: weakest true link):
-rl-lets-models-discover-their-own-thinking-strategies ↔ llms-currently-only-have-a-system-1
-becomes a Note only; ↔ self-improvement-may-be-possible-in-narrow-domains becomes
-`supports`. The date-interval search over batch 3 pages found only intervals he states
-himself. Then batch 4 (24 uncompiled sources).
+| Step | Result |
+|---|---|
+| Digest | 8 agents in parallel, 21 digests |
+| Reconcile | `staging/batch-3-merge-map.md`: 13 new topics, ~45 claims, 9 methods, 2 artifacts, 1 new timeline; many digest claims folded into existing pages (cognitive core, gym, ghosts, march of nines each became a second source) |
+| Merge | 4 sequential groups (D1 Aug–Oct 2024, D2 Feb–Mar 2025, D3 Apr–Aug 2025, D4 Oct 2025); 182 → 265 pages |
+| Verify | 4 fresh readers, each overlapping the next merge: 32 findings, 0 wrong, 9 overstated, 3 mis-cited, 20 minor |
+| Fix | 1 agent; all 32 fixed; 33 pages changed; date-interval search found none computed between sources |
+
+Pages after batch 3: 58 sources, 49 topics, 105 claims, 14 artifacts, 24 methods,
+4 timelines. Lint 0 findings; 98 tests pass; 24 raw files left (batch 4).
+
+### What the verification caught
+
+- **Relations stronger than the texts.** The first `extends` links in the wiki were set
+  from Deep Dive (2025) to two 2023 claims. One was the wrong relation: a 2023 statement of
+  a then-current limitation is not broadened by a 2025 description of models that did not
+  exist then (now a Note). The other was true but `supports` is weaker (CLAUDE.md: weakest
+  true link). The self-improvement timeline now claims no more change than "hints" and
+  "primordial" allow. The vibe-coding `extends` (deploying is harder than writing) was
+  confirmed by its verifier.
+- **Host's words as his.** No Priors: "he worked on the Tesla humanoid" was a host's
+  question; "first course" was a host's phrase, and the interview never names LLM101n.
+- **Numbers loosened.** "Gamed within tens of steps" for his "10 or 20 steps, not 100 or
+  1,000"; the GPT-2 size he corrected himself on (1.5B, not 1.6B).
+- **Reasons moved.** The broadcast-reward reason given for why RL beats imitation; he gives
+  it for why RL is terrible.
+- **Practice invented.** A How I use LLMs method said he uses text-to-speech; he does not
+  say so.
+
+### Decisions made while building
+
+- The X post on Sutton is the blog body word for word: cited as a second location of one
+  text, never as independent evidence.
+- The Dwarkesh transcript has no speaker labels; spans the digest marked unclear were not
+  attributed to him. His own figures win over the host's restatements (cognitive-core
+  horizon: 20 years, not 10).
+- Personal posts (calculator, digital hygiene, sleep tracker, grocery) got source pages,
+  one recurring topic (user-hostile-technology), claims only where he takes a position,
+  and methods for procedures he follows (digital-hygiene-checklist, append-and-review-note).
+- A rule found mid-batch was again pushed to a running merge agent (D4 was told not to
+  build on the self-improvement `extends` links the verifier had flagged).
+
+### Cost
+
+About 4.5M agent tokens (digest ≈ 1.4M, merge ≈ 1.2M, verify ≈ 0.95M, fix ≈ 0.25M).

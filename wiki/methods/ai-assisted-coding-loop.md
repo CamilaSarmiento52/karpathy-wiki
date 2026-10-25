@@ -24,7 +24,7 @@ How he says he works with coding agents when he is trying to get real work done 
 5. **Fast loop.** The goal is to spin generation and verification very fast ([[youtube-2025-06-19-software-is-changing]] @23:48).
 6. **Know the tools.** Autocomplete and agents are tools; you have to learn what they are good and bad at and when to use them ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @31:21).
 7. **Point, then autocomplete.** Instead of typing what he wants in English, he goes to where the code must appear and types the first few letters, a high-bandwidth specification; see [[autocomplete-is-his-coding-sweet-spot]] ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @33:50, @37:33).
-8. **Agents where they fit.** He uses agents for boilerplate that is not mission-critical, such as nanochat's report, and in an unfamiliar language, Rust, only with a Python implementation he fully understands and tests ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @31:21, @34:26).
+8. **Agents where they fit.** He uses agents for boilerplate that is not mission-critical, such as nanochat's report, and in an unfamiliar language, Rust, where having a Python implementation he fully understands, plus tests, made him feel safer ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @31:21, @34:26).
 9. **Ask the oracle.** For some questions he pastes the whole repo into the strongest model, GPT-5 Pro at the time ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @36:57).
 
 ## Seen in
