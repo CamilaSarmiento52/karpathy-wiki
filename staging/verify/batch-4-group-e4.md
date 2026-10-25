@@ -70,3 +70,12 @@ Verified 2026-10-25 by a fresh reader. Sources: [[github-2026-04-04-llm-wiki-gis
 - [[building-for-agents]]: 12 sentences; all supported apart from F5
 - [[llm-wiki-workflow]], [[verify-gradients-against-pytorch]], [[micrograd]]: E4 sentences all supported
 - [[microgpt]]: E4 sentences supported apart from F4
+
+## Resolution
+Applied 2026-10-25 (correction entry in wiki/log.md).
+- F1: fixed
+- F2: fixed
+- F3: fixed
+- F4: fixed
+- F5: fixed
+- F6: fixed

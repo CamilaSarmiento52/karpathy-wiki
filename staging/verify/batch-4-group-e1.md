@@ -78,3 +78,15 @@ Verified 2026-10-25 by a fresh reader. Sources: [[github-2025-10-24-nanochat-str
 - [[llm-evaluation]]: all 13 table values, both quotes and the Note match the raw.
 - [[training-diagnostics]], [[pretraining-and-finetuning]], [[llm-tool-use]], [[rlvr]], [[software-3-0]], [[ai-and-the-economy]], [[llm-self-improvement]], [[building-for-agents]], [[vibe-coding]], [[bitter-lesson]] (space of minds correctly in `context`), [[read-with-an-llm]], [[choose-a-model-tier]]: all sentences citing E1 sources supported.
 - Source pages: all 7 Summaries and Key points supported; Fed pages match the pages citing each source; every year-in-review link is dates only.
+
+## Resolution
+Applied 2026-10-25 (correction entry in wiki/log.md).
+- F1: fixed
+- F2: fixed
+- F3: fixed
+- F4: fixed
+- F5: fixed
+- F6: fixed
+- F7: fixed
+- F8: fixed
+- F9: fixed

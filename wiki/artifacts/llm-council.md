@@ -7,7 +7,7 @@ sources: ["[[github-2025-11-22-llm-council-readme]]", "[[blog-2025-12-19-year-in
 aliases: [LLM Council]
 ---
 # llm-council
-His simple local web app that looks like ChatGPT but sends a query through OpenRouter to several LLMs, has them review and rank each other's work, and has a Chairman LLM produce the final response; instead of asking one provider, he says, "you can group them into your “LLM Council”" ([[github-2025-11-22-llm-council-readme]] §intro).
+His simple local web app that looks like ChatGPT but sends a query through OpenRouter to several LLMs, has them review and rank each other's work, and has a Chairman LLM produce the final response; instead of asking one provider, he says, "you can group them into your "LLM Council"" ([[github-2025-11-22-llm-council-readme]] §intro).
 
 ## What it demonstrates
 - **Stage 1, first opinions.** Each LLM answers the query separately, and the answers appear in a tab view for inspection one by one ([[github-2025-11-22-llm-council-readme]] §intro).

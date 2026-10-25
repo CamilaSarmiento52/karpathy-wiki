@@ -124,7 +124,7 @@ Specific positions he takes, dated, with a short quote. Alphabetical. Maintained
 - [[treat-broadcasting-with-respect|Broadcasting deserves respect, not fast-and-loose use]] — 2022-09-07; the bugs are subtle
 - [[understand-backprop-even-with-autograd|Autograd being available is no reason to ignore how backpropagation works]] — 2022-10-11; backprop is a leaky abstraction
 - [[understanding-cannot-be-outsourced|He endorses the line that you can outsource your thinking but not your understanding]] — 2026-04-29; from someone else's tweet; he is the bottleneck
-- [[us-chemical-regulation-lags-the-industry|He says US chemical and food regulation lags far behind the industry and behind Europe]] — 2025-12-18; so the responsibility falls to you
+- [[us-chemical-regulation-lags-the-industry|He says US chemical and food regulation lags significantly behind the industry and far behind Europe]] — 2025-12-18; so the responsibility falls to you
 - [[use-cross-entropy-not-a-hand-rolled-loss|Call F.cross_entropy rather than rolling your own loss]] — 2022-09-12; fused kernels, simpler backward, no overflow
 - [[use-hardware-security-keys-not-sms-as-a-second-factor|Secure critical accounts with hardware security keys, not a phone number]] — 2025-03-17; SIM swaps; about 1000X less risk
 - [[use-llms-as-copilots-with-human-oversight|In 2023 he recommended LLMs as copilots with human oversight]] — 2023-05-25; low stakes, not autonomous agents; supports the decade-of-agents claim

@@ -8,7 +8,7 @@ topic: "[[jagged-intelligence]]"
 supports: ["[[what-rl-does-not-optimize-does-not-improve]]"]
 ---
 # Verifiability is what drives the jagged frontier of LLM progress
-> "This is what's driving the “jagged” frontier of progress in LLMs." — [[blog-2025-11-17-verifiability]] §intro
+> "This is what's driving the "jagged" frontier of progress in LLMs." — [[blog-2025-11-17-verifiability]] §intro
 
 ## Context
 Having argued that verifiable tasks are the ones AI can practise and optimise, he says what is not verifiable has to come from the "neural net magic of generalization fingers crossed", or from weaker means like imitation, and that this drives the jagged frontier ([[blog-2025-11-17-verifiability]] §intro). Verifiable tasks progress rapidly, possibly beyond the ability of top experts: his examples are math, code, amount of time spent watching videos, and anything like puzzles with correct answers ([[blog-2025-11-17-verifiability]] §intro). Many others lag by comparison: creative and strategic tasks, and tasks that combine real-world knowledge, state, context and common sense ([[blog-2025-11-17-verifiability]] §intro).

@@ -6,7 +6,7 @@ sources: ["[[blog-2025-12-18-chemical-hygiene]]"]
 context: ["[[blog-2024-09-08-i-love-calculator]]"]
 topic: "[[chemical-hygiene]]"
 ---
-# He says US chemical and food regulation lags far behind the industry and behind Europe
+# He says US chemical and food regulation lags significantly behind the industry and far behind Europe
 > "The government is significantly lagging behind the industry on chemical regulation" — [[blog-2025-12-18-chemical-hygiene]] §intro (TLDR)
 
 ## Context

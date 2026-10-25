@@ -28,7 +28,7 @@ What he calls his new art project: a single file of 200 lines of pure Python, wi
 
 **In the micrograd README (commit dated 2026-08-03).** The README points to microgpt as the more advanced example, a full GPT-2-like transformer trained and sampled in pure, dependency-free Python, built on a more efficient and better version of micrograd's engine that stores local gradients at forward time instead of per-op backward closures ([[github-2026-08-03-micrograd-readme]] §Training a GPT). **Note:** the post's `Value` class likewise records each operation's children and local gradients; the judgement "better" is the README's ([[blog-2026-02-12-microgpt]] §Autograd; [[github-2026-08-03-micrograd-readme]] §Training a GPT).
 
-**At Sequoia Ascent (2026-04-29).** He says that trying to simplify LLM training to be as simple as possible with microGPT, he kept prompting an LLM to simplify more and "The models hate this. They can't do it.", which felt like being outside the RL circuits; he sees nothing fundamental preventing it ([[talk-2026-04-29-sequoia-ascent-2026]] @22:58). See [[agentic-engineering]] ([[talk-2026-04-29-sequoia-ascent-2026]] @22:58).
+**At Sequoia Ascent (2026-04-29).** He says that trying to simplify LLM training to be as simple as possible with microGPT, he kept prompting an LLM to simplify more; "The models hate this.", and they could not do it, which felt like being outside the RL circuits; he sees nothing fundamental preventing it ([[talk-2026-04-29-sequoia-ascent-2026]] @22:58). See [[agentic-engineering]] ([[talk-2026-04-29-sequoia-ascent-2026]] @22:58).
 
 ## Related
 - [[microgpt-is-the-full-algorithm-everything-else-is-efficiency]]

@@ -38,3 +38,4 @@ He argues you optimise not one model but a family set by one compute dial, which
 - [[gradient-descent]]
 - [[quick-experiment-loop]]
 - [[small-hackable-educational-code]]
+- [[gpt-2-training-cost-falls-to-about-40-percent-a-year]]

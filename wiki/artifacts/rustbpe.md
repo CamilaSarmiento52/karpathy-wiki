@@ -23,7 +23,7 @@ His lightweight Rust library, with Python bindings, for training GPT-style BPE t
 
 ## Related
 - [[tokenization]] — the algorithm it trains
-- [[minbpe]] — his Python tokenizer, which it names as too slow
+- [[minbpe]] — his Python tokenizer, which it calls not optimized for speed
 - [[nanochat]] — whose Rust tokenizer it likely is
 - [[he-prefers-tiktoken-byte-level-bpe-to-sentencepiece]] — tiktoken with training code
 - [[verify-against-a-reference-implementation]] — equality tests against his Python

@@ -67,3 +67,13 @@ Verified 2026-10-25 by a fresh reader. Sources: [[blog-2025-12-10-auto-grade-hn]
 - [[hn-time-capsule]], [[blog-2025-12-10-auto-grade-hn]], [[github-2025-12-10-hn-time-capsule-readme]], [[vibe-coding]], [[vibe-coding-over-time]], [[llm-knowledge-bases]]: ~30 sentences, all supported. The pipeline, 930 queries, ~$58, ~1 h vs ~3 h coding, "a few hours" vs "about 3 hours", the five steps vs five stages plus clean, and gpt-5-mini all check out.
 - [[rustbpe]], [[tokenization]], [[minbpe]], [[he-prefers-tiktoken-byte-level-bpe-to-sentencepiece]], [[verify-against-a-reference-implementation]], [[coding-models-are-weak-at-code-never-written-before]]: ~20 sentences, all supported. The nanochat link is always a hedged **Note:**. Only F7.
 - [[microgpt]] and the microgpt sentences on [[micrograd]], [[makemore]], [[nanogpt]], [[backpropagation]], [[self-attention]], [[tokenization]], [[sampling-from-language-models]], [[loss-functions]], [[llm-hallucinations]], [[character-level-language-modeling]], [[pretraining-and-finetuning]], [[spelled-out-build-from-scratch]], [[gpt-is-not-a-complicated-model]], [[neural-net-training-should-not-be-complicated]], [[attention-is-a-communication-mechanism]], [[pretraining-gives-a-document-completer]]: ~35 sentences, all supported. The quotes are verbatim; 4,192, 27, 32,033, 3.3→2.37, temperature 0.5, 20 samples and GPT-2 1.6B "in his figures" all check out. The 1-minute and seconds-per-step timings are kept apart. Only F5.
+
+## Resolution
+Applied 2026-10-25 (correction entry in wiki/log.md).
+- F1: fixed
+- F2: fixed
+- F3: fixed
+- F4: fixed
+- F5: fixed
+- F6: fixed
+- F7: fixed

@@ -59,3 +59,12 @@ Verified 2026-10-25 by a fresh reader. Sources: [[x-2026-03-05-nanochat-gpt-2-in
 - [[nanochat]], [[microgpt]], [[quick-experiment-loop]], [[ai-assisted-coding-loop]], [[building-for-agents]], [[partial-autonomy-apps]], [[vibe-coding]], [[llm-self-improvement]], [[jagged-intelligence]], [[ai-ecosystem]], [[pretraining-and-finetuning]], [[llm-evaluation]], [[compute-efficiency]]: every sentence I checked is supported, and the quotes are verbatim ("tries out ideas, merges them when they work and iterates"; "I am slightly suspicious about about goodharting"; "centralization has a very poor track record in my view"; "I'm not explaining to people anymore."; "the customer is not the human anymore").
 - The cited Skill Issue sentences on [[coding-models-are-weak-at-code-never-written-before]], [[vibe-coding-will-terraform-software]], [[physical-automation-will-lag-digital-automation]], [[micrograd-is-all-you-need-everything-else-is-efficiency]], [[software-2-0-automates-what-you-can-verify]] and [[verifiability-drives-the-jagged-frontier]] are all supported.
 - Source pages for the 2026-03-05 post, the 2026-03-09 post, the jobs README and the autoresearch README: Summaries and Key points are supported.
+
+## Resolution
+Applied 2026-10-25 (correction entry in wiki/log.md).
+- F1: fixed
+- F2: fixed
+- F3: fixed
+- F4: fixed
+- F5: fixed
+- F6: fixed
