@@ -56,3 +56,9 @@ Ask the agent what he recommends for pruning apple trees.
 
 ## 6. Learning (phase 5 gate)
 `/karpathy-ingest <url of a new post>`
+
+- **2026-10-26, rehearsal in a throwaway copy: pass.** No new in-scope post existed, so the
+  2019 "Recipe for Training Neural Networks" post was fetched into a copy of the repo (no
+  remote) and ingested there: source page, method, 2 claims, 5 pages updated, 2 supports
+  relations, quotes added to 2 principles, verifier 5 findings fixed, checks clean, one
+  local commit. The real run waits for a new post.

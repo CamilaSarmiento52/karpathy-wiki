@@ -9,7 +9,7 @@ Status: ⬜ not started · 🟨 in progress · ✅ done
 | 2 | [Collectors and backfill](phases/phase-2-collectors-and-backfill/plan.md) | ✅ | Five idempotent collector scripts with versioned snapshots, manifest, a coverage queue (collected / pending / excluded, seeded from leads in existing sources), parallel backfill from 2023 onward prioritising his teaching material, coverage report |
 | 3 | [Compile the wiki](phases/phase-3-compile-the-wiki/plan.md) | 🟨 | Batch ingest of the backfill, first lint, index, hot, log; free questions answered with citations. _All 82 sources compiled, 331 pages, lint 0 (2026-10-25); waiting on the user's gate check_ |
 | 4 | [Rules and agent](phases/phase-4-rules-and-agent/plan.md) | 🟨 | Rule extraction with quotes, bench and promotion, karpathy sub-agent, teach and review skills, run-gate hook; validated with the real-task prompts. _Built 2026-10-26: 10 promoted rules + 1 bench, agent, skills, gate, installer; 5 prompts pass; waiting on the user's own run_ |
-| 5 | [Keep it alive](phases/phase-5-keep-it-alive/plan.md) | 🟨 | `/karpathy-ingest`, weekday scheduled collection with morning brief, Sunday lint, sub-agent regeneration |
+| 5 | [Keep it alive](phases/phase-5-keep-it-alive/plan.md) | 🟨 | `/karpathy-ingest`, weekday scheduled collection with morning brief, Sunday lint, sub-agent regeneration _Built 2026-10-26: daily runner, brief, `/karpathy-ingest`, weekday and Sunday scheduled tasks; waiting on a real new source for the gate_ |
 
 ## Phase gates
 
@@ -22,8 +22,8 @@ Status: ⬜ not started · 🟨 in progress · ✅ done
 - **4 → 5**: the five phase 4 validation prompts in `tests/prompts.md` pass (the sixth,
   Learning, needs `/karpathy-ingest` and moves to the 5 → done gate; approved 2026-10-26).
 - **5 → done**: one real new post ingested end to end via the scheduled run, brief received,
-  a bench rule promoted; the Learning prompt in `tests/prompts.md` passes. (Proposed in phase 5
-  decision 7, pending the user: the promotion is proven on a fixture, since the only bench
+  a bench rule promoted; the Learning prompt in `tests/prompts.md` passes. (Phase 5 decision 7,
+  approved 2026-10-26: the promotion is proven on a fixture, since the only bench
   rule is inferred and cannot be promoted unless a new source states it directly.)
 
 ## Known gaps (from the phase 1 review, 2026-10-20)
