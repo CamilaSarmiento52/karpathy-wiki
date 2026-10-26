@@ -22,7 +22,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_agent  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-SKILLS = ("karpathy-teach", "karpathy-review")
+SKILLS = ("karpathy-teach", "karpathy-review", "karpathy-ingest")
 HOOK_LINK = ".claude/hooks/karpathy-run-gate.py"  # fallback path in build_agent.USER_HOOK
 MARKER = "<!-- Installed by karpathy-wiki scripts/install.py -->"
 

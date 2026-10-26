@@ -49,6 +49,6 @@ def test_uninstall_removes_only_what_it_created(tmp_path):
     other = home / ".claude/skills/someone-else"
     other.mkdir()
     removed = install.uninstall(root, home)
-    assert len(removed) == 4 and other.exists()
+    assert len(removed) == len(install.SKILLS) + 2 and other.exists()
     assert not (home / ".claude/agents/karpathy.md").exists()
     assert install.uninstall(root, home) == []
