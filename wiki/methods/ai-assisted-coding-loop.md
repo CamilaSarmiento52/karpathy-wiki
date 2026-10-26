@@ -40,3 +40,5 @@ A second mode, beside the small-diff loop above: several agents run at once, eac
 - [[youtube-2025-06-19-software-is-changing]]
 - [[partial-autonomy-apps]] — the product version of the same idea
 - [[vibe-coding]] — the opposite mode
+- [[check-model-written-code-before-you-trust-it]] — the rule, dated: small checked diffs in 2025, spec-level oversight since December
+- [[surface-assumptions-and-ask-when-unclear]] — the inferred rule on stating assumptions

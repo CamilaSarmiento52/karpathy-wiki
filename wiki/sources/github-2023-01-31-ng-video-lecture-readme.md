@@ -26,3 +26,4 @@ The repo holds the code written during the first nanoGPT lecture of his Neural N
 - [[weight-initialization]]
 - [[nanogpt]]
 - [[small-hackable-educational-code]]
+- [[how-he-explains]]

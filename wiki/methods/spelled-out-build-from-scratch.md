@@ -77,3 +77,6 @@ The same approach appears as a plan in the [[llm101n]] README: build everything 
 - [[build-nanogpt]]
 - [[llm101n]] — planned, not yet built
 - [[microgpt]] — six gist revisions, one component each
+- [[how-he-explains]] — the explaining moves across his lectures, compiled
+- [[start-from-the-simplest-thing-that-shows-it]] — the rule: simplest working thing first, one piece at a time
+- [[show-the-instructive-bug-failing-then-explain-it]] — the rule: show an instructive bug failing, then explain it

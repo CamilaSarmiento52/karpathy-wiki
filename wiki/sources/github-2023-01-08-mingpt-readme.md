@@ -32,3 +32,4 @@ minGPT is a PyTorch re-implementation of GPT covering both training and inferenc
 - [[tokenization]]
 - [[weight-initialization]]
 - [[neural-net-training-should-not-be-complicated]]
+- [[cut-complexity-that-does-not-pay-for-itself]]

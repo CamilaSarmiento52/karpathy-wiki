@@ -86,3 +86,7 @@ build-nanogpt repo (@3:56:27, @4:00:28).
 - [[attention-is-a-communication-mechanism]]
 - [[do-not-decay-the-learning-rate-to-zero]]
 - [[build-nanogpt]]
+- [[how-he-explains]]
+- [[build-it-yourself-to-understand-it]]
+- [[predict-the-number-before-you-run]]
+- [[report-a-comparison-with-its-setting-and-caveats]]

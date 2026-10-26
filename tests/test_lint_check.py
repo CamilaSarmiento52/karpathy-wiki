@@ -297,3 +297,91 @@ def test_split_index_needs_every_type_file(tmp_path, capsys):
     del files["wiki/index/methods.md"]
     code, out = run(tmp_path, capsys, files)
     assert "missing index file: wiki/index/methods.md" in out
+
+
+RAW2 = "---\nid: talk\n---\n\n[00:00] Always predict the loss before you run it.\n"
+
+
+def principle(status, quotes, inferred="false", body="Predict first."):
+    q = "".join(f'  - {{text: "{t}", source: "[[{s}]]", location: "{loc}"}}\n' for t, s, loc in quotes)
+    return f"---\ntype: principle\nstatus: {status}\ninferred: {inferred}\nquotes:\n{q}---\n# Predict the loss\n{body}\n"
+
+
+def principle_repo(status, quotes, folder=None, **kw):
+    files = base()
+    files["raw/talks/talk.md"] = RAW2
+    items = json.loads(manifest(RAW))["items"] + [{"id": "talk", "path": "raw/talks/talk.md",
+        "sha256": hashlib.sha256(RAW2.split("---", 2)[2].strip().encode()).hexdigest()}]
+    files["raw/_manifest.json"] = json.dumps({"items": items})
+    files["wiki/sources/talk-a.md"] = SOURCE.replace("raw/blog/post.md", "raw/talks/talk.md").replace(
+        "[[raw/blog/post]]", "[[raw/talks/talk]]").replace("- [[tok]]", "- [[predict]]")
+    files["wiki/sources/blog-post.md"] = SOURCE.replace("- [[tok]]\n", "- [[tok]]\n" + (
+        "- [[predict]]\n" if any(s == "blog-post" for _, s, _ in quotes) else ""))
+    folder = folder or ("wiki/principles/_bench" if status == "bench" else "wiki/principles")
+    files[f"{folder}/predict.md"] = principle(status, quotes, **kw)
+    files["wiki/topics/tok.md"] = TOPIC + "\n## Related\n- [[predict]] ([[blog-post]])\n"
+    files["wiki/index.md"] = INDEX + "- [[talk-a]]\n- [[predict]]\n"
+    return files
+
+
+Q_TALK = ("Always predict the loss before you run it.", "talk-a", "00:00")
+Q_BLOG = ("Tokens are the atoms of the model", "blog-post", "§intro")
+
+
+def test_promoted_principle_with_two_sources_passes(tmp_path, capsys):
+    code, out = run(tmp_path, capsys, principle_repo("promoted", [Q_TALK, Q_BLOG]))
+    assert "independent" not in out and "principle" not in out.split("findings")[0], out
+
+
+def test_promoted_principle_with_one_source_fails(tmp_path, capsys):
+    code, out = run(tmp_path, capsys, principle_repo("promoted", [Q_TALK]))
+    assert "needs quotes from 2+ independent sources (has 1)" in out
+
+
+def test_same_text_sources_count_once(tmp_path, capsys):
+    files = principle_repo("promoted", [Q_TALK, Q_BLOG])
+    files["scripts/independence.json"] = json.dumps({"same_text": [["talk-a", "blog-post"]]})
+    code, out = run(tmp_path, capsys, files)
+    assert "(has 1)" in out
+
+
+def test_ai_written_part_does_not_count(tmp_path, capsys):
+    files = principle_repo("promoted", [Q_TALK, Q_BLOG])
+    files["scripts/independence.json"] = json.dumps({"ai_written": {"blog-post": ["§mine"]}})
+    code, out = run(tmp_path, capsys, files)
+    assert "quotes an AI-written part of blog-post" in out and "(has 1)" in out
+
+
+def test_bench_principle_with_two_sources_is_promotable(tmp_path, capsys):
+    code, out = run(tmp_path, capsys, principle_repo("bench", [Q_TALK, Q_BLOG]))
+    assert "promote it" in out
+
+
+def test_principle_in_wrong_folder(tmp_path, capsys):
+    code, out = run(tmp_path, capsys, principle_repo("bench", [Q_TALK], folder="wiki/principles"))
+    assert "in wrong folder" in out
+
+
+def test_inferred_principle_must_say_so(tmp_path, capsys):
+    code, out = run(tmp_path, capsys, principle_repo("bench", [Q_TALK], inferred="true"))
+    assert "must say so in its body" in out
+    code, out = run(tmp_path, capsys, principle_repo(
+        "bench", [Q_TALK], inferred="true", body="Inferred: no quote states this directly."))
+    assert "must say so" not in out
+
+
+def test_principle_quote_needs_location(tmp_path, capsys):
+    code, out = run(tmp_path, capsys, principle_repo("bench", [(Q_TALK[0], "talk-a", "")]))
+    assert "without a location" in out
+
+
+def test_inferred_principle_cannot_be_promoted(tmp_path, capsys):
+    code, out = run(tmp_path, capsys, principle_repo(
+        "promoted", [Q_TALK, Q_BLOG], inferred="true", body="Inferred: closest quotes only."))
+    assert "inferred principle cannot be promoted" in out
+
+
+def test_inferred_bench_principle_with_two_sources_is_not_promotable(tmp_path, capsys):
+    code, out = run(tmp_path, capsys, principle_repo(
+        "bench", [Q_TALK, Q_BLOG], inferred="true", body="Inferred: closest quotes only."))
+    assert "promote it" not in out

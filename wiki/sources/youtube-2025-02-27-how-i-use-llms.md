@@ -47,3 +47,5 @@ A follow-up in his general-audience series to [[youtube-2025-02-05-deep-dive-int
 - [[use-llms-as-tools-and-check-their-work]]
 - [[transformers-need-tokens-to-think]]
 - [[llm-council]]
+- [[check-model-written-code-before-you-trust-it]]
+- [[surface-assumptions-and-ask-when-unclear]]

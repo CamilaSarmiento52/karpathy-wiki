@@ -19,3 +19,6 @@ __pycache__/
 
 .DS_Store
 .pytest_cache/
+
+# phase 4: code the karpathy agent builds while teaching
+playground/

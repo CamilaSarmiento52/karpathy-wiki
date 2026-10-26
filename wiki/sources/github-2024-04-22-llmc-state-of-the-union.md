@@ -28,3 +28,4 @@ He says he will post periodic reports on where llm.c stands, focusing on the mai
 - [[compute-efficiency]]
 - [[small-hackable-educational-code]]
 - [[llm-c-trained-gpt-2-faster-than-pytorch-in-his-measurements]]
+- [[report-a-comparison-with-its-setting-and-caveats]]

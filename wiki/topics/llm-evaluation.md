@@ -52,3 +52,4 @@ For the chat model he uses ARC-Easy, ARC-Challenge and MMLU, multiple choice wit
 - [[reproduce-a-published-model]] — evaluation as the last steps of a reproduction
 - [[loss-functions]] — the validation loss read as perplexity
 - [[overfitting-and-generalization]] — train and validation splits in the earlier lectures
+- [[report-a-comparison-with-its-setting-and-caveats]] — the rule on caveating comparisons

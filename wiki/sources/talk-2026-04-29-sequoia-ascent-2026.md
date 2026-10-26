@@ -51,3 +51,6 @@ He says that in December the chunks of code his agents produced started coming o
 - [[vibe-coding-over-time]]
 - [[llm-os-over-time]]
 - [[llm-agents-over-time]]
+- [[be-careful-with-shapes-and-be-explicit]]
+- [[build-it-yourself-to-understand-it]]
+- [[check-model-written-code-before-you-trust-it]]

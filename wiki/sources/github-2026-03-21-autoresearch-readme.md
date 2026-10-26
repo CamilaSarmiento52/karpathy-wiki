@@ -28,3 +28,4 @@ The idea is to give an AI agent a small but real LLM training setup and let it e
 - [[quick-experiment-loop]]
 - [[building-for-agents]]
 - [[small-hackable-educational-code]]
+- [[check-model-written-code-before-you-trust-it]]

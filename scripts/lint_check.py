@@ -71,6 +71,18 @@ MAX_QUOTE_WORDS = 14
 LINK = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]")
 FENCE = re.compile(r"^```.*?^```", re.S | re.M)
 QUOTE = re.compile(r'^>\s*"([^"]+)"')
+INDEPENDENCE = "scripts/independence.json"  # same-text source groups, AI-written sources
+
+
+def load_independence(root):
+    """{"same_text": [[slug, ...], ...], "ai_written": {slug: [locations that are his]}}"""
+    f = root / INDEPENDENCE
+    data = json.loads(f.read_text()) if f.exists() else {}
+    group = {}
+    for i, members in enumerate(data.get("same_text", [])):
+        for m in members:
+            group[m] = f"same-text-{i}"
+    return group, data.get("ai_written", {})
 
 
 def split_frontmatter(text):
@@ -142,6 +154,7 @@ def raw_body(path):
 def main(root):
     wiki, raw = root / "wiki", root / "raw"
     findings = []
+    same_text, ai_written = load_independence(root)
     pages = {}  # slug -> (path, meta, body, text)
     for p in sorted(wiki.rglob("*.md")):
         text = p.read_text(encoding="utf-8")
@@ -260,8 +273,35 @@ def main(root):
                 if m:
                     quotes.append((m.group(1), source_links(line)))
         if kind == "principle":
+            independent = set()
             for q in meta.get("quotes") or []:
-                quotes.append((str(q.get("text", "")), source_links(q.get("source", ""))))
+                if not isinstance(q, dict):
+                    findings.append(f"principle quote is not {{text, source, location}}: {rel(p)}")
+                    continue
+                srcs = source_links(q.get("source", ""))
+                quotes.append((str(q.get("text", "")), srcs))
+                loc = str(q.get("location") or "").strip()
+                if not loc:
+                    findings.append(f"principle quote without a location: {rel(p)}: "
+                                    f"{str(q.get('text', ''))[:40]!r}")
+                for s in srcs:
+                    if s in ai_written and loc not in ai_written[s]:
+                        findings.append(f"principle quotes an AI-written part of {s}: {rel(p)} ({loc})")
+                        continue
+                    independent.add(same_text.get(s, s))
+            status, under_bench = meta.get("status"), "_bench" in p.relative_to(wiki).parts
+            inferred = meta.get("inferred") is True
+            if status == "promoted" and inferred:
+                findings.append(f"inferred principle cannot be promoted (no quote states it): {rel(p)}")
+            if status == "promoted" and len(independent) < 2:
+                findings.append(f"promoted principle needs quotes from 2+ independent sources "
+                                f"(has {len(independent)}): {rel(p)}")
+            if status == "bench" and len(independent) >= 2 and not inferred:
+                findings.append(f"bench principle has 2+ independent sources, promote it: {rel(p)}")
+            if (status == "bench") != under_bench:
+                findings.append(f"principle status {status!r} in wrong folder: {rel(p)}")
+            if meta.get("inferred") is True and "inferred" not in body.lower():
+                findings.append(f"inferred principle must say so in its body: {rel(p)}")
         for q, srcs in quotes:
             if len(q.split()) > MAX_QUOTE_WORDS:
                 findings.append(f"quote over {MAX_QUOTE_WORDS} words: {rel(p)}: {q[:40]!r}")

@@ -58,3 +58,4 @@ In the CUDA MODE keynote he rounds it: llm.c reproduces the 1.6B GPT-2 on a sing
 - [[llm-evaluation]] — the comparison steps
 - [[verify-against-a-reference-implementation]] — the parity checks that came first
 - [[youtube-2024-06-09-reproduce-gpt-2]]
+- [[report-a-comparison-with-its-setting-and-caveats]] — the rule: state the setting and caveats of a comparison

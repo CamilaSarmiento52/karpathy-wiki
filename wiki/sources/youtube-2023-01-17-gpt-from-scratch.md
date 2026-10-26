@@ -41,3 +41,6 @@ A 1h56m coding lecture that writes a character-level Transformer language model 
 - [[pretraining-and-finetuning]]
 - [[pretraining-gives-a-document-completer]]
 - [[he-prefers-tiktoken-byte-level-bpe-to-sentencepiece]]
+- [[how-he-explains]]
+- [[predict-the-number-before-you-run]]
+- [[start-from-the-simplest-thing-that-shows-it]]

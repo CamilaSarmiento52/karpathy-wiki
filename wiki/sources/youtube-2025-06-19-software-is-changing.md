@@ -69,3 +69,4 @@ vibe coding and MenuGen (@29:22, @31:38), and closes on building infrastructure 
 - [[take-yourself-out-of-the-agent-loop]]
 - [[neural-nets-may-become-the-host-process]]
 - [[agentic-engineering]]
+- [[check-model-written-code-before-you-trust-it]]

@@ -52,3 +52,6 @@ He introduces makemore, a character-level language model trained on a file of ab
 - [[the-logits-softmax-nll-machinery-stays-fixed-up-to-transformers]]
 - [[spelled-out-build-from-scratch]]
 - [[check-shapes-and-broadcasting]]
+- [[how-he-explains]]
+- [[be-careful-with-shapes-and-be-explicit]]
+- [[show-the-instructive-bug-failing-then-explain-it]]

@@ -33,3 +33,4 @@ MenuGen takes a photo of a restaurant menu and generates a picture for each item
 - [[building-for-agents]]
 - [[llm-gui]]
 - [[vibe-coding-over-time]]
+- [[check-model-written-code-before-you-trust-it]]

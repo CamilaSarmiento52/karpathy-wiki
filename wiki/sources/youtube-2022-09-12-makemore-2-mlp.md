@@ -52,3 +52,5 @@ He opens by showing why the bigram count table cannot take more context: the num
 - [[use-cross-entropy-not-a-hand-rolled-loss]]
 - [[approximate-gradient-with-more-steps-beats-exact-gradient]]
 - [[gradient-based-models-scale-where-count-tables-do-not]]
+- [[how-he-explains]]
+- [[be-careful-with-shapes-and-be-explicit]]

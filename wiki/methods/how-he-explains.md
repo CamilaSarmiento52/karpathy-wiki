@@ -1,0 +1,54 @@
+---
+type: method
+steps:
+  - Start from a blank file and the smallest working thing
+  - Use tiny concrete numbers or a toy input
+  - Add one piece at a time to a baseline and read a number
+  - Predict the expected value, then check it
+  - Show the tensor shapes
+  - Show a bug on purpose, and keep real ones in
+  - Invite the learner to pause and try first
+  - Name the gotcha
+  - Compare against a reference implementation
+  - Sometimes use a physical analogy
+  - Say what is left out
+sources: ["[[youtube-2022-08-16-micrograd]]", "[[youtube-2022-09-07-makemore-1-bigram]]", "[[youtube-2022-09-12-makemore-2-mlp]]", "[[youtube-2022-10-04-makemore-3-activations-batchnorm]]", "[[youtube-2022-10-11-makemore-4-backprop-ninja]]", "[[youtube-2022-11-21-makemore-5-wavenet]]", "[[youtube-2023-01-17-gpt-from-scratch]]", "[[github-2023-01-31-ng-video-lecture-readme]]", "[[github-2024-02-20-nn-zero-to-hero-readme]]", "[[youtube-2024-02-20-gpt-tokenizer]]", "[[x-2024-02-21-technical-accessibility]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[blog-2026-02-12-microgpt]]"]
+aliases: [How he teaches, his teaching style, voice, how he explains things, his explaining moves]
+---
+# How he explains
+The repeatable moves he makes when he explains a technical idea, compiled across his lectures: he starts from a blank notebook and takes the viewer through the build step by step, commenting on every piece ([[youtube-2022-08-16-micrograd]] @00:00, @00:32). He describes the aim as laying out a tangle of understanding as a ramp where everything depends only on the thing before it ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @2:18:43), and credits the video walkthrough, more than the code, with making micrograd accessible ([[x-2024-02-21-technical-accessibility]]). **Note:** the longer lists of lecture steps are on [[spelled-out-build-from-scratch]] and [[learn-by-building-and-explaining]].
+
+## Steps
+1. **Start from a blank file and the smallest working thing.** He begins the micrograd lecture with a blank Jupyter notebook ([[youtube-2022-08-16-micrograd]] @00:00), and the GPT lecture with an empty file, and its first model is the bigram, which he calls, in his opinion, the simplest possible neural network for language modelling ([[youtube-2023-01-17-gpt-from-scratch]] @06:45, @21:57). In the Dwarkesh interview he gives micrograd as the example of the small first-order piece he likes to find: about 100 lines that hold the core of how neural networks train ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @2:18:10, @2:18:43).
+
+2. **Use tiny concrete numbers or a toy input.** In micrograd he sets a bias of 6.88 so that the numbers come out nice ones he can follow in his head ([[youtube-2022-08-16-micrograd]] @1:01:09). In the backprop lecture he says "I always like to work with simpler examples" and writes a 2×2 matmul out as plain multiplies and adds ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @14:26, @45:02). He develops the MLP code on only the first five words, for efficiency while developing, then uses the full set ([[youtube-2022-09-12-makemore-2-mlp]] @10:02), explains BPE on the toy sequence from its Wikipedia page ([[youtube-2024-02-20-gpt-tokenizer]] @23:32), and works out the gradient-accumulation issue on a toy MSE network of four examples in a notebook ([[youtube-2024-06-09-reproduce-gpt-2]] @2:39:41, @2:40:15).
+
+3. **Add one piece at a time to a baseline and read a number.** In the GPT lecture the bigram script converges to about 2.5, and adding a self-attention head (with position embeddings and a lower learning rate) brings it to about 2.4 ([[youtube-2023-01-17-gpt-from-scratch]] @41:36, @1:20:55, @1:21:27). For microgpt he suggests six files, train0 to train5, each adding the next layer of the build ([[blog-2026-02-12-microgpt]] §Progression).
+
+4. **Predict the expected value, then check it.** He says that in training you almost always have a rough idea of the loss to expect at initialisation, and a first loss of 27 tells him the initialisation is wrong ([[youtube-2022-10-04-makemore-3-activations-batchnorm]] @04:28). With 65 characters he expects about 4.17 and reads the measured 4.87 as predictions that are not diffuse enough ([[youtube-2023-01-17-gpt-from-scratch]] @28:03, @28:37); with GPT-2's vocabulary he computes the expected loss from a uniform probability of 1 over 50,257 ([[youtube-2024-06-09-reproduce-gpt-2]] @55:37). Example: before reading the neural bigram's loss he asks what number to expect and answers with the counting model's ([[youtube-2022-09-07-makemore-1-bigram]] @1:44:36).
+
+5. **Show the tensor shapes.** He walks a division through the broadcasting rules, aligning the two shapes from the right ([[youtube-2022-09-07-makemore-1-bigram]] @42:32), checks that a bias row will be copied down every row of the batch, which he calls good practice so you do not shoot yourself in the foot ([[youtube-2022-09-12-makemore-2-mlp]] @28:49), and reads off the shapes 32×27 and 32×1 before backpropagating through a broadcast ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @22:12). In the WaveNet lecture he prints each layer's class name and output shape ([[youtube-2022-11-21-makemore-5-wavenet]] @35:06). The full routine is [[check-shapes-and-broadcasting]] ([[youtube-2022-11-21-makemore-5-wavenet]] @35:06).
+
+6. **Show a bug on purpose, and keep real ones in.** When he makes real mistakes on camera in micrograd he keeps them rather than reshoot: of a failed call he says "I figured I should just leave the error in here because it's pretty funny" ([[youtube-2022-08-16-micrograd]] @1:15:05), and he keeps a forgotten zero-grad in ([[youtube-2022-08-16-micrograd]] @2:10:28). He drops `keepdim` to show a division that runs but is buggy ([[youtube-2022-09-07-makemore-1-bigram]] @45:15, @46:57), decodes token 128 to show the error his decode can throw ([[youtube-2024-02-20-gpt-tokenizer]] @45:16, @45:51), and, after a flat WaveNet result, he suspects a silent BatchNorm bug, inspects the layer and fixes it ([[youtube-2022-11-21-makemore-5-wavenet]] @38:20, @45:01).
+
+7. **Invite the learner to pause and try first.** He tells viewers they could pause and think about the backward pass of exp ([[youtube-2022-08-16-micrograd]] @1:30:38) or why the `keepdim` version is buggy ([[youtube-2022-09-07-makemore-1-bigram]] @46:57), suggests that viewers working along in a notebook write the pair-counting function themselves ([[youtube-2024-02-20-gpt-tokenizer]] @28:01), and invites them to think about why his gradient-accumulation code is not yet correct ([[youtube-2024-06-09-reproduce-gpt-2]] @2:39:41). In the lectures the invitation is brief and optional; in the last example he goes straight on to the fix ([[youtube-2024-06-09-reproduce-gpt-2]] @2:39:41). The Zero to Hero README asks for real work first: it recommends doing the backprop exercise yourself and unpausing the video to see the answer only when stuck ([[github-2024-02-20-nn-zero-to-hero-readme]] §intro, Lecture 5). Separately, in the Dwarkesh interview he describes not presenting a solution before the student has had a shot as something good educators in general do: "I'm not going to present the solution before you guess." ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @2:19:57, @2:20:34).
+
+8. **Name the gotcha.** He calls the forgotten zero-grad a subtle and very common bug and points to his old list of the most common neural-net mistakes ([[youtube-2022-08-16-micrograd]] @2:10:28). He stops to warn that `torch.tensor` and `torch.Tensor` both exist ([[youtube-2022-09-07-makemore-1-bigram]] @1:07:47), and opens the backprop lecture with code from the wild that clips the loss when it means to clip gradients ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @02:11).
+
+9. **Compare against a reference implementation.** He rebuilds the micrograd expression in PyTorch and shows the forward value and gradients agree ([[youtube-2022-08-16-micrograd]] @1:39:28, @1:42:48); in the backprop lecture a helper checks each hand-derived gradient against PyTorch's `.grad`, exactly or approximately ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @17:46). He shows the neural bigram samples exactly what the counting model does ([[youtube-2022-09-07-makemore-1-bigram]] @1:55:39), and that OpenAI's `encoder` is exactly equivalent to his tokenizer's vocab ([[youtube-2024-02-20-gpt-tokenizer]] @1:15:36). The gradient routine is [[verify-gradients-against-pytorch]] ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @17:46).
+
+10. **Sometimes use a physical analogy.** For the chain rule he reads out a borrowed analogy, Wikipedia's car, bicycle and walking man ([[youtube-2022-08-16-micrograd]] @42:53), and repeats it in quotation marks in the microgpt post, where each operation is also a little lego block that knows its local gradient ([[blog-2026-02-12-microgpt]] §Autograd). He uses the lego-block image for micrograd's operations in the Dwarkesh interview too ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @2:18:10). In the backprop lecture he describes the cross-entropy gradients as forces pulling probabilities down and up, and the network as a pulley system that tugs on the weights ([[youtube-2022-10-11-makemore-4-backprop-ninja]] @1:33:50, @1:34:57).
+
+11. **Say what is left out.** He says micrograd works on scalars for teaching reasons, that production code uses tensors, and that none of the math changes ([[youtube-2022-08-16-micrograd]] @05:24, @05:56); he copy-pastes the graph-drawing code rather than building it live ([[youtube-2022-08-16-micrograd]] @24:40). The lecture repo's README notes that the video did not go far into weight initialisation and keeps the code as covered ([[github-2023-01-31-ng-video-lecture-readme]] §intro). The microgpt post has a closing section on what changes between it and a production LLM ([[blog-2026-02-12-microgpt]] §Real stuff).
+
+## Seen in
+- [[youtube-2022-08-16-micrograd]], [[micrograd]]
+- [[youtube-2022-09-07-makemore-1-bigram]], [[youtube-2022-09-12-makemore-2-mlp]], [[youtube-2022-10-04-makemore-3-activations-batchnorm]], [[youtube-2022-10-11-makemore-4-backprop-ninja]], [[youtube-2022-11-21-makemore-5-wavenet]], [[makemore]]
+- [[youtube-2023-01-17-gpt-from-scratch]], [[ng-video-lecture]]
+- [[youtube-2024-02-20-gpt-tokenizer]], [[minbpe]]
+- [[youtube-2024-06-09-reproduce-gpt-2]]
+- [[nn-zero-to-hero]]
+- [[microgpt]]
+- [[spelled-out-build-from-scratch]], [[learn-by-building-and-explaining]], [[small-hackable-educational-code]] — the longer method pages this draws on
+- [[check-shapes-and-broadcasting]], [[training-diagnostics]], [[verify-gradients-against-pytorch]], [[diagnose-under-or-overfitting]]
+- [[ai-for-education]], [[build-the-ramp-not-just-the-thing]], [[education-is-building-ramps-to-knowledge]]

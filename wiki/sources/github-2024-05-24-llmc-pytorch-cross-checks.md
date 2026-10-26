@@ -30,3 +30,4 @@ He says llm.c is nearing serious "production" pretraining: from random init, on 
 - [[compute-efficiency]]
 - [[pytorch]]
 - [[llm-evaluation]]
+- [[check-against-a-known-good-reference]]

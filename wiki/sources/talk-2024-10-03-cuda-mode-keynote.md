@@ -44,3 +44,5 @@ After a host's introduction, he tells the story of llm.c: while preparing a YouT
 - [[software-3-0]]
 - [[llms-may-write-custom-low-level-code-for-any-application]]
 - [[prompting-llms]]
+- [[check-against-a-known-good-reference]]
+- [[cut-complexity-that-does-not-pay-for-itself]]

@@ -29,3 +29,5 @@ He recalls that when he first published the micrograd repo it got some traction 
 - [[small-hackable-educational-code]]
 - [[llm-c]]
 - [[education-is-building-ramps-to-knowledge]]
+- [[how-he-explains]]
+- [[start-from-the-simplest-thing-that-shows-it]]
