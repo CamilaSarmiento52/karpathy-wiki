@@ -56,6 +56,14 @@ version gives the same output as the original on the demo input.
 
 ## Manual checks
 
+_2026-10-26: the agent file was read end to end (nothing claims to be him; the task loop is
+labelled as this project's design). `/karpathy-teach explain backpropagation` built up from
+his `L = -8` toy example, invited the reader to work a gradient first, predicted and ran a
+40-line engine (matched finite differences and PyTorch), then showed a real bug failing;
+the plain Query answer explains the same content without running anything. The review from
+a folder outside the repo is in `tests/prompts.md`._
+
+
 - Read the generated agent file end to end: every rule makes sense on its own, and nothing
   in it claims to be him.
 - `/karpathy-teach explain backpropagation`: compare with the plain Query answer; the teach
