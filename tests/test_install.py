@@ -11,6 +11,8 @@ from test_build_agent import wiki  # noqa: E402
 
 def repo(tmp_path):
     root = wiki(tmp_path / "repo")
+    (root / ".claude/hooks").mkdir(parents=True)
+    (root / ".claude/hooks/run_gate.py").write_text("# gate\n")
     for name in install.SKILLS:
         d = root / ".claude" / "skills" / name
         d.mkdir(parents=True)
@@ -27,6 +29,7 @@ def test_install_is_idempotent_and_uses_absolute_paths(tmp_path):
     for name in install.SKILLS:
         link = home / ".claude/skills" / name
         assert link.is_symlink() and (link / "SKILL.md").exists()
+    assert (home / install.HOOK_LINK).is_symlink()
     assert install.install(root, home) == []
 
 
@@ -46,6 +49,6 @@ def test_uninstall_removes_only_what_it_created(tmp_path):
     other = home / ".claude/skills/someone-else"
     other.mkdir()
     removed = install.uninstall(root, home)
-    assert len(removed) == 3 and other.exists()
+    assert len(removed) == 4 and other.exists()
     assert not (home / ".claude/agents/karpathy.md").exists()
     assert install.uninstall(root, home) == []

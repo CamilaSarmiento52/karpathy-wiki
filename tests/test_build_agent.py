@@ -43,7 +43,7 @@ def test_sections_and_rules(tmp_path):
     assert '"predict the loss" (talk-a 00:10)' in text
     assert "**Simpler wins** (bench)" in text and "(bench, inferred)" in text
     assert "1. Start from a blank file" in text
-    assert 'command: python3 "/h/run_gate.py" check' in text
+    assert 'f="/h/run_gate.py"; [ -f "$f" ] || f="$HOME/.claude/hooks/karpathy-run-gate.py"; python3 "$f" check' in text
     assert "not Andrej Karpathy" in text
 
 

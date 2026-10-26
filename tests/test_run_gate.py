@@ -70,10 +70,13 @@ def test_looking_at_a_file_is_not_running_it(tmp_path, monkeypatch, capsys):
     assert blocked(call("check", stop(), capsys))
 
 
-def test_second_stop_after_block_is_let_through(tmp_path, monkeypatch, capsys):
+def test_blocks_up_to_three_times_then_lets_through(tmp_path, monkeypatch, capsys):
     setup(tmp_path, monkeypatch)
     call("log", write("/w/bpe.py"), capsys)
-    assert not blocked(call("check", stop(active=True), capsys))
+    outs = [call("check", stop(active=i > 0), capsys) for i in range(4)]
+    assert [blocked(o) for o in outs] == [True, True, True, False]
+    assert "block 3 of 3" in json.loads(outs[2])["reason"]
+    assert "even if the request said not to run" in json.loads(outs[0])["reason"]
 
 
 def test_agents_are_kept_apart(tmp_path, monkeypatch, capsys):
@@ -87,3 +90,12 @@ def test_runs_something():
     assert gate.runs_something("cd /w && pytest -q")
     assert not gate.runs_something("cat x.py | head -5")
     assert not gate.runs_something("git status; ls")
+
+
+def test_answer_that_admits_code_was_not_run_may_finish(tmp_path, monkeypatch, capsys):
+    setup(tmp_path, monkeypatch)
+    call("log", write("/w/add.py"), capsys)
+    ev = stop(); ev["last_assistant_message"] = "done. The file was never run, so it is unverified."
+    assert not blocked(call("check", ev, capsys))
+    ev["last_assistant_message"] = "done, it works."
+    assert blocked(call("check", ev, capsys))

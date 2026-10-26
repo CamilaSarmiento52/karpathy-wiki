@@ -6,6 +6,9 @@
   The copy carries a marker line; uninstall removes only a file with that marker.
 - Skills: links ~/.claude/skills/karpathy-teach and karpathy-review to this repo's
   .claude/skills/ folders (skill symlinks are supported).
+- Hook: links ~/.claude/hooks/karpathy-run-gate.py to the run gate, the fallback the agent's
+  hook command uses when the current project has no copy (e.g. the repo agent loaded from
+  another project with --add-dir).
 
 Re-running is safe. Existing files that this script did not create are never overwritten.
 
@@ -20,6 +23,7 @@ import build_agent  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SKILLS = ("karpathy-teach", "karpathy-review")
+HOOK_LINK = ".claude/hooks/karpathy-run-gate.py"  # fallback path in build_agent.USER_HOOK
 MARKER = "<!-- Installed by karpathy-wiki scripts/install.py -->"
 
 
@@ -38,17 +42,17 @@ def install(root, home):
     if not agent.exists() or agent.read_text() != text:
         agent.write_text(text)
         done.append(f"wrote {agent}")
-    for name in SKILLS:
-        target = root / ".claude" / "skills" / name
-        link = home / ".claude" / "skills" / name
+    links = [(root / ".claude" / "skills" / n, home / ".claude" / "skills" / n) for n in SKILLS]
+    links.append((root / ".claude" / "hooks" / "run_gate.py", home / HOOK_LINK))
+    for target, link in links:
         link.parent.mkdir(parents=True, exist_ok=True)
         if link.is_symlink():
             if link.resolve() == target.resolve():
                 continue
             raise SystemExit(f"refusing to replace {link}: it links somewhere else")
         if link.exists():
-            raise SystemExit(f"refusing to replace {link}: it is a real folder")
-        link.symlink_to(target, target_is_directory=True)
+            raise SystemExit(f"refusing to replace {link}: it is a real file or folder")
+        link.symlink_to(target, target_is_directory=target.is_dir())
         done.append(f"linked {link} -> {target}")
     return done
 
@@ -59,9 +63,9 @@ def uninstall(root, home):
     if agent.exists() and not agent.is_symlink() and MARKER in agent.read_text():
         agent.unlink()
         done.append(f"removed {agent}")
-    for name in SKILLS:
-        link = home / ".claude" / "skills" / name
-        target = root / ".claude" / "skills" / name
+    links = [(root / ".claude" / "skills" / n, home / ".claude" / "skills" / n) for n in SKILLS]
+    links.append((root / ".claude" / "hooks" / "run_gate.py", home / HOOK_LINK))
+    for target, link in links:
         if link.is_symlink() and link.resolve() == target.resolve():
             link.unlink()
             done.append(f"removed {link}")
