@@ -1,0 +1,86 @@
+# Sources
+
+One page per raw file: talks, lectures, posts, READMEs, threads. Alphabetical. Maintained by ingest; do not edit by hand.
+
+- [[blog-2024-09-08-i-love-calculator|I love calculator]] — the pocket calculator, self-contained and owned outright, as an ideal against user-hostile technology
+- [[blog-2025-03-17-digital-hygiene|Digital hygiene]] — the privacy and security practices he follows: password manager, hardware keys, per-merchant cards, DNS blocking, network monitor
+- [[blog-2025-03-19-append-and-review-note|The append-and-review note]] — one plain text note, appended at the top, reviewed by scrolling and rescuing
+- [[blog-2025-03-24-best-sleep-tracker|Finding the Best Sleep Tracker]] — four sleep trackers worn for two months: Oura and Whoop best, AutoSleep near random; sleep tracks his work quality
+- [[blog-2025-04-07-power-to-the-people|Power to the people: How LLMs flip the script on technology diffusion]] — LLMs reach individuals before corporations and governments; why, and whether it lasts
+- [[blog-2025-04-27-vibe-coding-menugen|Vibe coding MenuGen]] — his first end-to-end vibe coded web app: a quick local demo, then a slog of keys, deploys, auth and payments
+- [[blog-2025-10-01-animals-vs-ghosts|Animals vs Ghosts]] — his response to Sutton on the Dwarkesh podcast: not platonically bitter-lesson pilled, animals are not blank slates, pretraining as crappy evolution, ghosts not animals
+- [[blog-2025-11-17-verifiability|Verifiability]] — Software 1.0 automates what you can specify, Software 2.0 what you can verify; verifiability drives the jagged frontier
+- [[blog-2025-11-29-space-of-minds|The space of minds]] — animal intelligence as one point in a large space; LLMs shaped by commercial, not biological, evolution
+- [[blog-2025-12-10-auto-grade-hn|Auto-grading decade-old Hacker News discussions with hindsight]] — HN time capsule: GPT 5.1 Thinking grades December 2015 HN threads; future LLMs are watching
+- [[blog-2025-12-18-chemical-hygiene|Chemical hygiene]] — his evolving, opinionated guide to limiting chemicals and plastics at home; personal choices, not professional advice
+- [[blog-2025-12-19-year-in-review-2025|2025 LLM Year in Review]] — six 2025 paradigm changes: RLVR, jagged intelligence, LLM apps, Claude Code, vibe coding, LLM GUI
+- [[blog-2026-02-12-microgpt|microgpt]] — his guide to a 200-line, dependency-free Python GPT trained on names; what changes at production scale
+- [[blog-2026-04-30-sequoia-ascent-2026-summary|Sequoia Ascent 2026 summary]] — his short intro on having Codex 5.5 summarise and clean the talk so his content is legible to LLMs; the rest is AI-written
+- [[github-2022-11-20-makemore-readme|makemore README]] — one hackable PyTorch file; bigram to Transformer models for line-per-example generation, CNN in progress
+- [[github-2023-01-08-mingpt-readme|minGPT README]] — his ~300-line GPT re-implementation, semi-archived in January 2023 in favour of nanoGPT; his notes on the GPT papers
+- [[github-2023-01-31-ng-video-lecture-readme|ng-video-lecture README]] — the GPT lecture's code as a hackable repo with its git log; the lecture skipped weight initialisation
+- [[github-2023-07-25-karpathy-profile-readme|karpathy profile README]] — his GitHub profile README: one sentence, he likes deep neural nets
+- [[github-2024-02-20-nn-zero-to-hero-readme|nn-zero-to-hero README]] — the Zero to Hero course's lecture list, micrograd to the GPT tokenizer, with his framing of each lecture
+- [[github-2024-04-12-llmc-discussions-welcome|llm.c discussions]] — one sentence opening GitHub Discussions on llm.c for questions and sharing
+- [[github-2024-04-22-llmc-state-of-the-union|State of the Union [April 22, 2024]]] — first llm.c report: kernel profile, ~6.4% faster than a constrained PyTorch run, memory, LOC, latency, big stones
+- [[github-2024-04-22-minbpe-readme|minbpe README]] — basic and regex BPE tokenizers that train, encode and decode; a GPT-4 wrapper matching tiktoken; exercise and lecture
+- [[github-2024-05-03-llmc-state-of-the-union|State of the Union [May 3, 2024]]] — day-24 llm.c report: ~7% faster than PyTorch nightly, mixed precision, fused classifier, multi-GPU, GPT-2 miniseries goal, LOC and compile costs
+- [[github-2024-05-24-llmc-pytorch-cross-checks|PyTorch vs. llm.c cross-checks]] — llm.c and PyTorch GPT-2 (124M) runs match to ~1e-3 on one GPU; the 4-GPU PyTorch run not yet
+- [[github-2024-05-28-llmc-gpt-2-124m|Reproducing GPT-2 (124M) in llm.c in 90 minutes for $20]] — 124M on 10B FineWeb tokens on one 8×A100 node, every flag explained, HellaSwag vs OpenAI, a 350M run, FAQ
+- [[github-2024-05-29-llama2c-readme|llama2.c README]] — Llama 2 trained in PyTorch, inferred in one C file; TinyStories models, int8 quantization, training guide, custom tokenizers, simplicity-first contributing policy
+- [[github-2024-05-30-calorie-readme|calorie README]] — his one-page calorie-deficit tracker with +100 / -100 kcal buttons
+- [[github-2024-06-12-llmc-gpt-2-774m|GPT-2 (774M) reproduced]] — six days, 150B FineWeb tokens on one 8×A100 node; beats GPT-2 and GPT-3 sooner than expected; decay to 10%, not 0; a watcher script
+- [[github-2024-06-17-build-nanogpt-readme|build-nanogpt README]] — from-scratch nanoGPT to GPT-2 (124M), one clean commit per step, about an hour and $10; base models only dream documents; errata
+- [[github-2024-07-11-llmc-gpt-2-1-6b|Let's reproduce GPT-2 (1.6B): one 8XH100 node, 24 hours, $672, in llm.c]] — the full 1558M GPT-2 in llm.c: flags, evals, memory guide, why the code is beautiful, PyTorch comparison, a 420B-token run that exploded
+- [[github-2024-08-01-llm101n-readme|LLM101n README]] — his planned storyteller-LLM course; 17-chapter syllabus; course not yet existing, repo archived until ready
+- [[github-2024-09-24-llmc-readme|llm.c README]] — pure C/CUDA pretraining with a PyTorch reference; ~7% faster than PyTorch Nightly; tests, quick starts, and his education-plus-speed policy
+- [[github-2025-08-08-minbpe-gpt-4-tokenizer-discussion|Train a GPT-4 tokenizer using huggingface Tokenizers]] — minbpe Discussion: his best-guess HF Tokenizers configuration for a GPT-4-style BPE tokenizer
+- [[github-2025-08-21-rendergit-readme|rendergit README]] — flatten a GitHub repo into one HTML page, with a Human View and an LLM View
+- [[github-2025-10-13-nanochat-discussion-introducing|Introducing nanochat: The best ChatGPT that $100 can buy.]] — launch walkthrough of the nanochat speedrun: Rust tokenizer, d20 pretraining, midtraining, SFT, optional GSM8K RL, report card
+- [[github-2025-10-24-nanochat-strawberry-guide|Guide: counting r in strawberry (and how to add abilities generally)]] — teaching nanochat d32 to count letters with synthetic SpellingBee and SimpleSpelling tasks, formatted around the tokenizer
+- [[github-2025-11-12-nanogpt-readme|nanoGPT README]] — his earlier training/finetuning repo, marked deprecated in favour of nanochat
+- [[github-2025-11-18-reader3-readme|reader3 README]] — a chapter-at-a-time EPUB reader for reading with an LLM; 90% vibe coded, unsupported
+- [[github-2025-11-20-nanochat-d34-model|d34 model (~$2,500)]] — nanochat d34: 2X past Chinchilla, ~100 hours and ~$2,500 on 8×H100, CORE 0.3382, ChatCORE 0.41
+- [[github-2025-11-22-llm-council-readme|llm-council README]] — several LLMs answer, anonymously rank each other, and a Chairman writes the final answer; 99% vibe coded
+- [[github-2025-12-10-hn-time-capsule-readme|hn-time-capsule README]] — five-stage pipeline grading decade-old HN threads with an LLM; 99% vibe coded with Opus 4.5
+- [[github-2026-01-03-rustbpe-readme|rustbpe README]] — the missing tiktoken training code: Rust BPE trainer, Python bindings, tiktoken export; Rust written with LLM help against his Python
+- [[github-2026-01-07-nanochat-miniseries-v1|nanochat miniseries v1 (Jan 7 2026)]] — d10–d20 compute-optimal series in ~4 h for ~$100; own scaling-law fits (ratio ~8); CORE against GPT-2 and estimated GPT-3
+- [[github-2026-01-31-nanochat-beating-gpt-2|Beating GPT-2 for <<$100: the nanochat journey]] — d24 beats GPT-2's CORE in 3.04 h for ~$73; leaderboard, record model, what worked and what did not
+- [[github-2026-03-08-autoresearch-session-report|Session report: 0.9979 → 0.9697 in 126 experiments — weight decay on everything + init scaling]] — written and posted by an autoresearch agent (Claude), not by him: 126 experiments, the agent's keep/discard log
+- [[github-2026-03-16-jobs-readme|jobs README]] — US Job Market Visualizer: 342 BLS occupations as a treemap, coloured by an LLM-scored AI exposure with caveats
+- [[github-2026-03-21-autoresearch-readme|autoresearch README]] — an agent edits a simplified nanochat train.py, trains five minutes, keeps or discards by val_bpb; the human edits program.md
+- [[github-2026-04-04-llm-wiki-gist|llm-wiki (gist)]] — his idea file for the LLM wiki pattern, to paste to an agent: raw, wiki and schema layers; ingest, query, lint; index and log
+- [[github-2026-07-03-nanochat-readme|nanochat README]] — minimal single-node harness that trains a GPT-2-grade chat model, set by one depth dial
+- [[github-2026-08-03-micrograd-readme|micrograd README]] — scalar autograd engine and PyTorch-like nn library, ~100 + ~50 lines; tests against PyTorch; points to microgpt on a better engine
+- [[talk-2023-05-19-stanford-cs25-transformers|Stanford CS25: Introduction to Transformers]] — guest lecture: AI converging on the Transformer, attention as message passing, nanoGPT walk-through, in-context learning
+- [[talk-2023-05-25-state-of-gpt|State of GPT]] — Microsoft Build 2023: the four-stage assistant recipe, then prompting, tools, finetuning and human-overseen use
+- [[talk-2024-03-26-sequoia-making-ai-accessible|Making AI accessible with Andrej Karpathy and Stephanie Zhan]] — Sequoia interview: LLM OS, open weights vs open source, scale, energy efficiency, Elon's style, AlphaGo step two, the ecosystem
+- [[talk-2024-07-03-berkeley-hackathon-keynote|Andrej Karpathy's Keynote at UC Berkeley AI Hackathon 2024]] — the LLM OS at a 1980s moment; small projects snowball, 10,000 hours, publish your projects (keynote only)
+- [[talk-2024-09-05-no-priors-ep-80|No Priors Ep. 80]] — podcast interview: self-driving's demo-to-product gap, Tesla vs Waymo, humanoids, data as the bottleneck, a small cognitive core, AI-assisted education
+- [[talk-2024-10-03-cuda-mode-keynote|CUDA Mode Keynote]] — the story of llm.c: dropping PyTorch, the layer-by-layer port to C and CUDA, contributors, beating PyTorch on GPT-2, LLMs as compilers for custom code
+- [[talk-2025-10-17-dwarkesh-ghosts-not-animals|Andrej Karpathy — “We’re summoning ghosts, not building animals”]] — Dwarkesh Patel interview: decade of agents, RL terrible but better than imitation, ghosts, model collapse, cognitive core, nanochat coding, march of nines, GDP, Eureka
+- [[talk-2026-03-20-skill-issue|Skill Issue: Andrej Karpathy on Code Agents, AutoResearch, and the Loopy Era of AI]] — No Priors interview: delegating most coding since December, parallel agents, claws, autoresearch, jaggedness, speciation, jobs
+- [[talk-2026-04-29-sequoia-ascent-2026|Andrej Karpathy: From Vibe Coding to Agentic Engineering w/ Stephanie Zhan]] — Sequoia Ascent fireside chat: the December step change, apps that should not exist, neural computers, verifiability, agentic engineering, understanding
+- [[x-2024-02-21-technical-accessibility|on technical accessibility]] — micrograd stagnated until the video; build the thing, then build the ramp
+- [[x-2024-10-02-gpu-mode-talk|I gave a talk at GPU MODE workshop last week on llm.c]] — the talk's outline: dropping PyTorch, the layer port, CUDA work, the $672 1.6B run, LLMs writing custom binaries
+- [[x-2025-02-02-vibe-coding|There's a new kind of coding I call "vibe coding"]] — the post that coined vibe coding
+- [[x-2025-05-01-vibe-coding-hackathon|I attended a vibe coding hackathon recently…]] — X companion to the MenuGen blog; pastes its TLDR
+- [[x-2025-07-08-ideal-grocery-store|This is what the ideal grocery store looks like]] — one post: minimally processed, organic, local, fresh food only; he doubts such a store exists
+- [[x-2025-10-01-sutton-podcast|Finally had a chance to listen through this pod with Sutton…]] — the Animals vs Ghosts text posted on X without its appendix; a second location, not independent evidence
+- [[x-2025-11-18-reading-with-llms|I'm starting to get into a habit of reading everything (blogs, articles, book…]] — reading everything with LLMs in three passes; writers may write for LLMs
+- [[x-2026-03-05-nanochat-gpt-2-in-two-hours|nanochat now trains GPT-2 capability model in just 2 hours on a single 8XH100…]] — 2 hours on one node after a switch to ClimbMix; agents now iterate on nanochat automatically
+- [[x-2026-03-09-autoresearch-tuning-nanochat|Three days ago I left autoresearch tuning nanochat for ~2 days on depth=12…]] — autoresearch round 1: ~20 changes, 2.02 → 1.80 hours to GPT-2; all frontier labs will do this
+- [[x-2026-04-02-llm-knowledge-bases|LLM Knowledge Bases]] — his workflow for an LLM-compiled Obsidian wiki, the pattern this project follows
+- [[youtube-2022-08-16-micrograd|The spelled-out intro to neural networks and backpropagation: building micrograd]] — builds a scalar autograd engine from a blank notebook and trains a tiny MLP
+- [[youtube-2022-09-07-makemore-1-bigram|The spelled-out intro to language modeling: building makemore]] — bigram character model built by counting and as a one-layer net; they are the same model
+- [[youtube-2022-09-12-makemore-2-mlp|Building makemore Part 2: MLP]] — the Bengio 2003 MLP character model; minibatches, learning-rate sweep, train/dev/test splits
+- [[youtube-2022-10-04-makemore-3-activations-batchnorm|Building makemore Part 3: Activations & Gradients, BatchNorm]] — initial loss and the hockey stick, saturated tanh, Kaiming init, batch normalization, and his activation/gradient/update-ratio plots
+- [[youtube-2022-10-11-makemore-4-backprop-ninja|Building makemore Part 4: Becoming a Backprop Ninja]] — the MLP's backward pass written by hand at tensor level, checked against PyTorch; cross-entropy and batchnorm gradients in closed form
+- [[youtube-2022-11-21-makemore-5-wavenet|Building makemore Part 5: Building a WaveNet]] — block size 3 to 8, a WaveNet-like tree of progressive fusion, torch.nn-style containers, a 3-D BatchNorm bug, and his Jupyter-to-repo workflow
+- [[youtube-2023-01-17-gpt-from-scratch|Let's build GPT: from scratch, in code, spelled out.]] — a decoder-only Transformer on tiny Shakespeare from an empty file; self-attention derived step by step; pretraining versus finetuning
+- [[youtube-2023-11-23-intro-to-llms|Intro to Large Language Models (1hr talk)]] — general-audience talk: two files, lossy compression, finetuning, scaling, tools, System 2, the LLM OS kernel, security
+- [[youtube-2024-02-20-gpt-tokenizer|Let's build the GPT Tokenizer]] — byte-level BPE from scratch, GPT-2/GPT-4 regex, tiktoken, special tokens, SentencePiece, and the LLM failures he traces to tokenization
+- [[youtube-2024-06-09-reproduce-gpt-2|Let's reproduce GPT-2 (124M)]] — GPT-2 (124M) from scratch in PyTorch: OpenAI weights as the target, an ~11× speed-up on one A100, GPT-3's recipe, DDP, FineWeb-Edu, HellaSwag
+- [[youtube-2025-02-05-deep-dive-into-llms|Deep Dive into LLMs like ChatGPT]] — 3.5-hour general-audience lecture: FineWeb, tokens, base models, SFT as simulated labelers, hallucination, Swiss cheese capabilities, RL thinking models, RLHF not real RL
+- [[youtube-2025-02-27-how-i-use-llms|How I use LLMs]] — practical tour of LLM apps as he uses them: tiers, thinking models, search, deep research, uploads, interpreter, artifacts, Cursor, voice, custom GPTs
+- [[youtube-2025-06-19-software-is-changing|Andrej Karpathy: Software Is Changing (Again)]] — YC keynote on Software 3.0, the LLM OS, partial autonomy and building for agents

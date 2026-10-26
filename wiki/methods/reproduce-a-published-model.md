@@ -1,0 +1,60 @@
+---
+type: method
+steps:
+  - Pick a published model whose weights are released
+  - Set the whole model series as the target
+  - Take hyperparameters from the most detailed paper
+  - Train from scratch on a modern open dataset
+  - Compare held-out loss with the released checkpoint, and say why it is unfair
+  - Confirm on a benchmark that is comparable across papers
+  - Publish the launch command, the time and the cost
+  - Scale to the next size and give it more tokens
+  - Load the released checkpoint and sample from it first
+  - Write your own model with the reference's parameter names
+  - Load the weights into it and check that it generates coherent text
+  - Re-initialise and train, aiming to beat the checkpoint
+  - Check that a faster implementation gives the same numbers
+  - Reproduce the full-size model and say what is still unproven
+sources: ["[[github-2024-05-03-llmc-state-of-the-union]]", "[[github-2024-05-28-llmc-gpt-2-124m]]", "[[youtube-2024-06-09-reproduce-gpt-2]]", "[[github-2024-07-11-llmc-gpt-2-1-6b]]", "[[github-2024-09-24-llmc-readme]]", "[[x-2024-10-02-gpu-mode-talk]]", "[[talk-2024-10-03-cuda-mode-keynote]]", "[[github-2026-01-07-nanochat-miniseries-v1]]", "[[github-2026-01-31-nanochat-beating-gpt-2]]"]
+aliases: [Reproduce GPT-2, reproduce a paper, reproduction run]
+---
+# Reproduce a published model
+How he validated the llm.c training stack: retrain a published model from scratch and compare the run with the released checkpoint. In llm.c the model is GPT-2 (124M), reproduced in about 90 minutes for about $20 on one 8×A100 node ([[github-2024-05-28-llmc-gpt-2-124m]] §intro).
+
+## Steps
+1. **Pick a model with released weights.** He cares about GPT-2 because it was the first recognisably modern LLM stack and OpenAI released its parameters, and he picks the 124M, the smallest of the series, as accessible even for the "GPU poor" ([[github-2024-05-28-llmc-gpt-2-124m]] §intro, §intro (FAQ)).
+2. **Aim at the whole series.** On 2024-05-03 the stated goal of llm.c is to reproduce the GPT-2 miniseries of all sizes, 124M to 1.6B, directly in C/CUDA ([[github-2024-05-03-llmc-state-of-the-union]] §intro (Goal)).
+3. **Borrow the most detailed recipe.** Many hyperparameters follow the GPT-3 paper rather than GPT-2's, because it was a lot more detailed; the ~0.5M-token batch, for example, comes from the GPT-3 table for this size, since GPT-2's batch size is unknown ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (Args guide)).
+4. **Train from scratch on open data.** The run trains a 12-layer GPT-2 (124M) from scratch on 10B tokens of FineWeb with sequence length 1024 ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (Args guide)).
+5. **Compare with the checkpoint, and say why it is unfair.** His run beats OpenAI's checkpoint on held-out FineWeb validation loss, which he calls not a super fair comparison because GPT-2 trained on different data ([[github-2024-05-28-llmc-gpt-2-124m]] §intro).
+6. **Confirm on a shared benchmark.** He evaluates HellaSwag because it can be compared across papers, and reports 29.9 for his run against 29.4 for GPT-2 (124M) and 33.7 for GPT-3 Small as cited in the GPT-3 paper ([[github-2024-05-28-llmc-gpt-2-124m]] §intro, §intro (Args guide)).
+7. **Publish the recipe and the bill.** He gives the full install and launch commands, explains every flag, and states time and cost: about 90 minutes at about $14/hour, about $20 ([[github-2024-05-28-llmc-gpt-2-124m]] §intro, §intro (Args guide)).
+8. **Scale up with more tokens.** Overnight he reproduced the 350M model, found 10B tokens was not enough, and trained about 30B tokens in 14 hours for about $200; next he names the next size up and then the 1558M "GPT-2" ([[github-2024-05-28-llmc-gpt-2-124m]] §intro (350M model), §intro (Coming up)).
+
+In the GPT-2 lecture he works the same method from the other end, starting at the target ([[youtube-2024-06-09-reproduce-gpt-2]] @03:18):
+
+9. **See the target first.** Load the released checkpoint and sample from it ([[youtube-2024-06-09-reproduce-gpt-2]] @03:18, @11:44).
+10. **Match the reference's names.** Write your own model class with the same parameter names as the reference so its weights port over ([[youtube-2024-06-09-reproduce-gpt-2]] @15:04, @27:27).
+11. **Load and check.** Load the weights into your class and check that it generates coherent text, which confirms it is the same model ([[youtube-2024-06-09-reproduce-gpt-2]] @12:50, @13:22, @40:59).
+12. **Then train from scratch.** Re-initialise randomly and train, aiming to beat the checkpoint; architecture comes from the released model and optimisation settings from the GPT-3 paper (step 3) ([[youtube-2024-06-09-reproduce-gpt-2]] @13:22, @41:32, @2:15:55). He compares on the same validation set and on HellaSwag, as in steps 5–6 ([[youtube-2024-06-09-reproduce-gpt-2]] @3:24:20, @3:44:15).
+13. **Check the fast version.** A faster or parallel implementation must give the same numbers: his llm.c run prints the same losses and norms as the PyTorch one ([[youtube-2024-06-09-reproduce-gpt-2]] @3:59:19).
+
+14. **The full-size model, with caveats.** On 2024-07-11 llm.c reaches the target named in step 2: the 1558M GPT-2, 33.6B tokens in 24 hours on one 8×H100 node for $672, with the launch command, every flag and the bill published, and caveats stated up front that it is not perfectly tuned or stabilised and its evals are not comprehensive ([[github-2024-07-11-llmc-gpt-2-1-6b]] §intro, §intro (Training), §intro (Args guide)).
+
+The llm.c README (2024-09-24) makes reproduction the way in: the best introduction to the repo is reproducing GPT-2 (124M) as stepped through in Discussion #481, and other GPT-2 and GPT-3 models can be reproduced in both llm.c and the parallel PyTorch implementation ([[github-2024-09-24-llmc-readme]] §quick start). Reproducing the big GPT-2 (1.6B) run is the first example it gives of llm.c being practically useful ([[github-2024-09-24-llmc-readme]] §repo).
+
+His 2024-10-02 talk outline gives the same 1.6B figures: GPT-2 (1.6B) on one 8×H100 node in 24 hours for $672 in llm.c ([[x-2024-10-02-gpu-mode-talk]]).
+
+In the CUDA MODE keynote he rounds it: llm.c reproduces the 1.6B GPT-2 on a single H100 node in about 24 hours for roughly $600, with no Python, PyTorch, conda or pip, and only an optional cuDNN as a dependency ([[talk-2024-10-03-cuda-mode-keynote]] @17:38, @18:10).
+
+**Scoring an unreleased model (nanochat miniseries v1, 2026-01-07).** nanochat aims at the score rather than at GPT-2's architecture: he sets the whole GPT-2 and GPT-3 miniseries as targets on one CORE-against-cost chart ([[github-2026-01-07-nanochat-miniseries-v1]] §intro (Comparison to GPT-2/GPT-3 miniseries)). GPT-2's CORE he calculated by downloading the released models and running the eval; for GPT-3, never released, he took six tasks reported both in CORE and in the GPT-3 paper's tables, in a very similar setting, and calibrated on GPT-2 to estimate GPT-3's CORE, posting the approach as a notebook ([[github-2026-01-07-nanochat-miniseries-v1]] §Details (GPT-2 / GPT-3 CORE scores)).
+
+**Publish the record so anyone can rerun it (2026-01-31).** For nanochat's first GPT-2 record he gives the commit, the setup script, the full `torchrun` command, the wandb run summary, the time and the cost, so the run can be repeated on a rented 8×H100 node, and he cites the Reddit thread and Hugging Face card behind his 2019 GPT-2 cost estimate ([[github-2026-01-31-nanochat-beating-gpt-2]] §Reproduce, §intro). The target is GPT-2's CORE score, not its architecture ([[github-2026-01-31-nanochat-beating-gpt-2]] §The Goal).
+
+## Seen in
+- [[llm-c]]
+- [[nanochat]] — CORE targets for the GPT-2 and GPT-3 series
+- [[github-2024-05-28-llmc-gpt-2-124m]]
+- [[llm-evaluation]] — the comparison steps
+- [[verify-against-a-reference-implementation]] — the parity checks that came first
+- [[youtube-2024-06-09-reproduce-gpt-2]]

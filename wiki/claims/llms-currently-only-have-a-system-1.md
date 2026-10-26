@@ -1,0 +1,17 @@
+---
+type: claim
+stated_on: 2023-11-23
+confidence: stated
+sources: ["[[youtube-2023-11-23-intro-to-llms]]"]
+context: ["[[talk-2023-05-25-state-of-gpt]]", "[[youtube-2025-02-05-deep-dive-into-llms]]"]
+topic: "[[system-1-and-system-2-thinking]]"
+---
+# In November 2023, he said, LLMs had only System 1 thinking
+> "large language models currently only have a system one" — [[youtube-2023-11-23-intro-to-llms]] @36:31
+
+## Context
+In his framing, LLMs have only the instinctive part: words enter in a sequence, the network gives the next word, and every chunk of that process takes roughly the same amount of time, so they cannot think and reason through a tree of possibilities ([[youtube-2023-11-23-intro-to-llms]] @36:31). What many people want, he says, is to convert time into accuracy: to be able to give a model 30 minutes on a hard question and get a more accurate answer the longer it thinks, which no model could then do ([[youtube-2023-11-23-intro-to-llms]] @37:06, @37:40). He frames this as something the field is broadly interested in, not an OpenAI product announcement ([[youtube-2023-11-23-intro-to-llms]] @34:52).
+
+## Related claims
+- **Note:** [[transformers-need-tokens-to-think]] made the same-compute-per-token point in State of GPT (published 2023-05-25), as advice on prompting rather than a research goal ([[talk-2023-05-25-state-of-gpt]] @22:45; [[youtube-2023-11-23-intro-to-llms]] @36:31).
+- **Note:** this claim describes a limitation of models at the time: here LLMs "currently" cannot convert time into accuracy ([[youtube-2023-11-23-intro-to-llms]] @36:31, @37:06). On 2025-02-05, in [[rl-lets-models-discover-their-own-thinking-strategies]], he describes thinking models trained with RL whose longer responses raise accuracy, without using the System 1 / System 2 words ([[youtube-2025-02-05-deep-dive-into-llms]] @2:30:24, @2:32:04). A connection between two dated descriptions, not a claim link; no relation is set. Both are dated on [[llm-self-improvement-over-time]].

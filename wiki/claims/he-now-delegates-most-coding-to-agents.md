@@ -1,0 +1,23 @@
+---
+type: claim
+stated_on: 2026-03-20
+confidence: stated
+sources: ["[[talk-2026-03-20-skill-issue]]", "[[talk-2026-04-29-sequoia-ascent-2026]]"]
+context: ["[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[blog-2025-12-19-year-in-review-2025]]"]
+topic: "[[vibe-coding]]"
+extends: ["[[autocomplete-is-his-coding-sweet-spot]]"]
+---
+# Since December, he says, he has hardly typed code himself and delegates most of it to agents
+> "I don't think I've typed like a line of code probably since December basically." — [[talk-2026-03-20-skill-issue]] @01:41
+
+## Context
+Asked by the host about his experience, he says there was a huge unlock in what an individual can achieve, who used to be bottlenecked by typing speed ([[talk-2026-03-20-skill-issue]] @01:08). In December, he says, something flipped: he went from about 80/20 to 20/80 of writing code himself versus delegating to agents, and thinks it is a lot more than 20/80 by now ([[talk-2026-03-20-skill-issue]] @01:41). He calls it an extremely large change that he does not think a normal person realises has happened, and says a random software engineer's default workflow for building software is completely different as of basically December ([[talk-2026-03-20-skill-issue]] @01:41, @02:13). He describes himself as in a state of "AI psychosis", trying to work out what is possible and push it to the limit, asking how he can run more than one session of Claude Code, Codex or other agent harnesses, and says he feels extremely nervous when he sees people on Twitter doing things he is not ([[talk-2026-03-20-skill-issue]] @01:08, @02:13, @02:46). He calls it very rewarding because it actually works, and also the new thing to learn ([[talk-2026-03-20-skill-issue]] @04:57). How he runs the agents is on [[ai-assisted-coding-loop]] ([[talk-2026-03-20-skill-issue]] @04:25).
+
+**Sequoia Ascent (2026-04-29).** Asked about having said he never felt more behind as a programmer, he calls the feeling a mixture of exhilarating and unsettling ([[talk-2026-04-29-sequoia-ascent-2026]] @00:36). He had been using agentic tools for maybe the last year; they were very good at chunks of code but sometimes messed up and needed editing ([[talk-2026-04-29-sequoia-ascent-2026]] @00:36, @01:08). December, he says, was a clear point: on a break, he noticed the chunks from the latest models just came out fine, kept asking for more, "I can't remember the last time I corrected it", trusted the system more and more, "And then I was vibe coding." ([[talk-2026-04-29-sequoia-ascent-2026]] @01:08). He calls it a very stark transition: people who experienced AI as a ChatGPT-adjacent thing had to look again as of December, because the agentic, coherent workflow really started to work ([[talk-2026-04-29-sequoia-ascent-2026]] @01:39). Since then his side-projects folder is extremely full and he has been coding all the time ([[talk-2026-04-29-sequoia-ascent-2026]] @02:11). Here, unlike the Skill Issue interview, he uses "vibe coding" for the moment of trusting the agents ([[talk-2026-04-29-sequoia-ascent-2026]] @01:08).
+
+He does not say "vibe coding" in the Skill Issue interview; the caption's "write coding" at @14:13 may be that word, but it is not asserted ([[talk-2026-03-20-skill-issue]] @14:13).
+
+## Related claims
+- Extends [[autocomplete-is-his-coding-sweet-spot]]: in the Dwarkesh interview, published 2025-10-17, he placed himself in the middle class of coders, writing a lot from scratch with autocomplete as the architect, with agents for some kinds of code, and said "For now" autocomplete was his sweet spot ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @30:43, @37:33). Here he reports a change in his own practice in his own words: in December something flipped, from about 80/20 to 20/80 and beyond ([[talk-2026-03-20-skill-issue]] @01:41). Each statement marks its own period, "for now" there and "since December" here, so both can be true and no contradiction is set; the October claim is kept as it stands. The change is explained on [[vibe-coding-over-time]].
+- **Note:** this does not withdraw [[coding-models-are-weak-at-code-never-written-before]]: in the same interview he says an agent could not write microGPT, though it understands it ([[talk-2026-03-20-skill-issue]] @1:04:59, @1:05:33).
+- **Note:** [[vibe-coding-will-terraform-software]] (2025-12-19) says vibe coding will alter job descriptions ([[blog-2025-12-19-year-in-review-2025]] §5); here he says engineers' default workflow is completely different as of December ([[talk-2026-03-20-skill-issue]] @02:13). He does not call his practice vibe coding here, so no relation is set.

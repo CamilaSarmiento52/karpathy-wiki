@@ -253,3 +253,47 @@ def test_wrong_folder(tmp_path, capsys):
     files["wiki/claims/tok.md"] = files.pop("wiki/topics/tok.md")
     code, out = run(tmp_path, capsys, files)
     assert "type topic in wrong folder" in out
+
+
+SPLIT_TOP = "# Index\n" + "".join(f"- [[{n}]]\n" for n in sorted(set(lint.TYPE_INDEX.values())))
+
+
+def split_index(**overrides):
+    files = {f"wiki/index/{n}.md": f"# {n}\n" for n in set(lint.TYPE_INDEX.values())}
+    files["wiki/index/sources.md"] = "# Sources\n- [[blog-post]]\n"
+    files["wiki/index/topics.md"] = "# Topics\n- [[tok]]\n"
+    files["wiki/index.md"] = SPLIT_TOP
+    files.update(overrides)
+    return files
+
+
+def test_split_index_counts_as_coverage(tmp_path, capsys):
+    files = base()
+    files.update(split_index())
+    code, out = run(tmp_path, capsys, files)
+    assert code == 0, out
+
+
+def test_split_index_links_are_not_inbound(tmp_path, capsys):
+    files = base()
+    files["wiki/sources/blog-post.md"] = SOURCE.replace("- [[tok]]\n", "")
+    files["wiki/topics/tok.md"] = TOPIC.replace("[[blog-post]]", "[[blog-post]]")
+    files.update(split_index())
+    code, out = run(tmp_path, capsys, files)
+    assert "orphan: wiki/topics/tok.md" in out
+
+
+def test_page_missing_from_its_type_index(tmp_path, capsys):
+    files = base()
+    files.update(split_index(**{"wiki/index/topics.md": "# Topics\n",
+                                "wiki/index/sources.md": "# Sources\n- [[blog-post]]\n- [[tok]]\n"}))
+    code, out = run(tmp_path, capsys, files)
+    assert "not in index/topics.md: wiki/topics/tok.md" in out
+
+
+def test_split_index_needs_every_type_file(tmp_path, capsys):
+    files = base()
+    files.update(split_index())
+    del files["wiki/index/methods.md"]
+    code, out = run(tmp_path, capsys, files)
+    assert "missing index file: wiki/index/methods.md" in out

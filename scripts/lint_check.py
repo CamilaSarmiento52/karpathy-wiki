@@ -12,6 +12,10 @@ findings: collectors add raw files before ingest compiles them.
 A clean run means the wiki is well-formed. It does NOT mean a cited passage supports its
 sentence; that is the semantic pass in CLAUDE.md §7 Lint.
 
+The index may be one file (`wiki/index.md`) or split: `wiki/index.md` links one file per
+page type in `wiki/index/`, and each page must be listed in its type's file. Index files,
+like hot and log, do not count as inbound links.
+
 Usage: python3 scripts/lint_check.py [--root PATH]
 """
 import argparse
@@ -57,6 +61,12 @@ EVIDENCE = {
 }
 SYMMETRIC = ("contradicts", "extends")
 FIXED = {"index", "hot", "log"}
+# when the index is split, wiki/index/<name>.md lists every page of one type
+TYPE_INDEX = {
+    "source": "sources", "topic": "topics", "claim": "claims", "artifact": "artifacts",
+    "method": "methods", "timeline": "timelines", "principle": "principles",
+    "synthesis": "syntheses",
+}
 MAX_QUOTE_WORDS = 14
 LINK = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]")
 FENCE = re.compile(r"^```.*?^```", re.S | re.M)
@@ -139,6 +149,9 @@ def main(root):
         if p.stem in pages:
             findings.append(f"duplicate slug: {p.stem} ({pages[p.stem][0]} and {p})")
         pages[p.stem] = (p, meta, body, text)
+    index_dir = wiki / "index"
+    split = index_dir.is_dir()
+    fixed = FIXED | {s for s, v in pages.items() if v[0].parent == index_dir}
     raw_files = sorted(raw.rglob("*.md")) if raw.exists() else []
     raw_stems = {f.stem for f in raw_files}
 
@@ -177,10 +190,10 @@ def main(root):
             hit = resolve(target)
             if hit is None:
                 findings.append(f"broken link: {rel(p)} -> [[{target}]]")
-            elif hit in inbound and hit != slug and slug not in FIXED:
+            elif hit in inbound and hit != slug and slug not in fixed:
                 inbound[hit].add(slug)
 
-        if slug in FIXED:
+        if slug in fixed:
             continue
         if meta is None:
             findings.append(f"missing or invalid frontmatter: {rel(p)}")
@@ -285,7 +298,7 @@ def main(root):
                     findings.append(f"{rel_name} pair not on a timeline: {slug}, {other}")
 
     for slug, srcs in inbound.items():
-        if slug not in FIXED and not srcs:
+        if slug not in fixed and not srcs:
             findings.append(f"orphan: {rel(pages[slug][0])}")
 
     raw_paths = {str(m.get("raw_path")) for _, m, _, _ in pages.values()
@@ -308,10 +321,29 @@ def main(root):
         findings.append("missing raw/_manifest.json")
 
     if "index" in pages:
-        in_index = {resolve(t) for t in links_in(pages["index"][3])}
+        index_slugs = {"index"} | {s for s in fixed if s in pages and pages[s][0].parent == index_dir}
+        in_index = set()
+        for s in index_slugs:
+            in_index |= {resolve(t) for t in links_in(pages[s][3])}
         for slug in pages:
-            if slug not in FIXED and slug not in in_index:
+            if slug not in fixed and slug not in in_index:
                 findings.append(f"not in index: {rel(pages[slug][0])}")
+        if split:
+            # each page is listed in its own type's index file, and index.md links them all
+            top = {resolve(t) for t in links_in(pages["index"][3])}
+            for name in sorted(set(TYPE_INDEX.values())):
+                f = index_dir / f"{name}.md"
+                if not f.exists():
+                    findings.append(f"missing index file: {rel(f)}")
+                elif name not in top:
+                    findings.append(f"index.md does not link {rel(f)}")
+            for slug, (p, m, _, _) in pages.items():
+                if slug in fixed or not isinstance(m, dict) or m.get("type") not in TYPE_INDEX:
+                    continue
+                name = TYPE_INDEX[m["type"]]
+                if name in pages and pages[name][0].parent == index_dir:
+                    if slug not in {resolve(t) for t in links_in(pages[name][3])}:
+                        findings.append(f"not in index/{name}.md: {rel(p)}")
     else:
         findings.append("missing wiki/index.md")
 

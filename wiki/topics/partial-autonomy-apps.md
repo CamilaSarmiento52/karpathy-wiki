@@ -1,9 +1,10 @@
 ---
 type: topic
 aliases: [Partial autonomy apps, LLM apps, Cursor for X, autonomy slider]
-first_seen: 2025-06-19
-last_updated: 2025-12-19
-sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]"]
+first_seen: 2025-02-27
+last_updated: 2026-03-20
+sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[blog-2025-12-19-year-in-review-2025]]", "[[youtube-2025-02-27-how-i-use-llms]]", "[[talk-2025-10-17-dwarkesh-ghosts-not-animals]]", "[[talk-2026-03-20-skill-issue]]"]
+context: ["[[talk-2023-05-25-state-of-gpt]]", "[[talk-2024-03-26-sequoia-making-ai-accessible]]"]
 related: ["[[llm-gui]]", "[[ai-assisted-coding-loop]]", "[[this-is-the-decade-of-agents]]"]
 ---
 # Partial autonomy apps
@@ -18,10 +19,26 @@ His education example separates a course-authoring app from a course-serving app
 
 In December 2025 he repeats the four properties, now calling the first one context engineering, and says LLM apps will turn generally capable models into deployed professionals in specific verticals ([[blog-2025-12-19-year-in-review-2025]] §3).
 
+**Note:** in May 2023, before he used "partial autonomy" or "autonomy slider", he already recommended LLMs as copilots under human oversight rather than autonomous agents, and described advanced prompting as Python glue code stringing many prompts together in a loop ([[talk-2023-05-25-state-of-gpt]] @28:21, @28:54, @39:57). That is background for the 2025 framing, not the same term.
+
+**Note:** in March 2024, again without these terms, he says LLM systems are quite autonomous but not fully, so what oversight and evaluation look like still has to be worked out, over the next few years ([[talk-2024-03-26-sequoia-making-ai-accessible]] @06:20, @06:54). The sequence of his statements on agents is on [[llm-agents-over-time]] ([[talk-2023-05-25-state-of-gpt]] @39:57; [[youtube-2025-06-19-software-is-changing]] @27:09).
+
+**Cursor (How I use LLMs, 2025-02-27).** For professional coding he does not ask a chat web page for snippets, which is too slow and lacks context; he uses an app on his file system, then Cursor, calling Claude 3.7 Sonnet through the API with the context of his files ([[youtube-2025-02-27-how-i-use-llms]] @1:14:07, @1:14:40, @1:15:12, @1:15:47). Its features went from Cmd-K, change this line, to Cmd-L, explain this chunk, to Cmd-I, Composer, which with agent integration is an autonomous agent on the codebase that runs commands and edits multiple files ([[youtube-2025-02-27-how-i-use-llms]] @1:16:51, @1:17:26, @1:18:01). Composer paused and waited for him to confirm commands explicitly ([[youtube-2025-02-27-how-i-use-llms]] @1:20:46). **Note:** these are concrete steps along the autonomy slider described above ([[youtube-2025-02-27-how-i-use-llms]] @1:17:26; [[youtube-2025-06-19-software-is-changing]] @22:43).
+
+**The slider in the economy (Dwarkesh, published 2025-10-17).** He describes an "autonomy slider" in which more of what can be automated is automated and humans raise themselves in the layer of abstraction ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @39:23). The job he would watch is call-centre work: rote, similar tasks, a short horizon, little context, purely digital ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:10:27, @1:11:05). Even there he is not looking for full automation but for AIs doing 80% of the volume and delegating 20% to humans who supervise teams of about five AIs, with new interfaces for managing imperfect AIs ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:11:05, @1:11:44). He would wait a year or two on call-centre trends, since companies may pull back and rehire ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:13:32). The radiologist and safety-driver argument that follows is Dwarkesh's ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @1:11:44). Why earlier agent efforts failed is [[early-agent-attempts-came-too-early]] ([[talk-2025-10-17-dwarkesh-ghosts-not-animals]] @06:58).
+
+**Going up the stack (Skill Issue, 2026-03-20).** Asked what mastery looks like, he says everyone is going up the stack, from a single agent session to multiple agents collaborating in teams, and then to [[claws]], a persistent layer that keeps looping on your behalf ([[talk-2026-03-20-skill-issue]] @06:35, @07:07). To get the most out of the tools, he says, you have to remove yourself as the bottleneck and arrange things to be completely autonomous; see [[take-yourself-out-of-the-agent-loop]] ([[talk-2026-03-20-skill-issue]] @16:28). He keeps caveats: this suits objective, easy-to-evaluate metrics, and the whole thing still does not fully work, so going too far ahead is net not useful ([[talk-2026-03-20-skill-issue]] @23:29, @24:02). **Note:** this sits at the autonomous end of the slider he described in 2025, where he wanted the AI kept "on the leash"; he does not mention the slider in this interview ([[youtube-2025-06-19-software-is-changing]] @22:43; [[talk-2026-03-20-skill-issue]] @16:28).
+
 ## Claims
 - [[this-is-the-decade-of-agents]]
+- [[use-llms-as-copilots-with-human-oversight]] — the 2023 version of the human-in-the-loop stance
+- [[llm-products-will-take-years-to-figure-out]] — the 2024 version: oversight still to be designed
+- [[early-agent-attempts-came-too-early]] — Atari RL and Universe, before LLM representations
+- [[take-yourself-out-of-the-agent-loop]] — 2026-03-20: arrange things to run without him where results can be evaluated
 
 ## Related
+- [[llm-agents-over-time]] — his statements on agents by date
 - [[llm-gui]]
 - [[ai-assisted-coding-loop]]
 - [[claude-code-is-the-first-convincing-llm-agent]]
+- [[claws]] — the persistent layer above agents

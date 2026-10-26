@@ -20,3 +20,4 @@ A November 2025 notice at the top marks the repo as deprecated and points to nan
 
 ## Fed pages
 - [[nanogpt]]
+- [[gpt-is-not-a-complicated-model]]

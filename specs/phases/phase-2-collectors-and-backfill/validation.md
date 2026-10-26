@@ -64,3 +64,5 @@ _How we know the phase is done. Drafted at the start of the phase._
   page-fallback issue (see implement.md).
 - Open: the coverage report and the pilot have been reviewed by Claude, not yet by the
   user.
+
+- **Closed 2026-10-23:** the user reviewed and merged PR #2; phase gate 2 → 3 passed.

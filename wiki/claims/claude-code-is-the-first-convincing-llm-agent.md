@@ -14,3 +14,4 @@ He defines an agent as something that loops tool use and reasoning for extended 
 
 ## Related claims
 - Supports [[this-is-the-decade-of-agents]]: he describes an intermediate, slow-enough takeoff of jagged capabilities ([[blog-2025-12-19-year-in-review-2025]] §4), consistent with the talk's warning that agents will take a decade ([[youtube-2025-06-19-software-is-changing]] @27:09).
+- **Note:** the dated sequence of his statements on agents is on [[llm-agents-over-time]] ([[blog-2025-12-19-year-in-review-2025]] §4).

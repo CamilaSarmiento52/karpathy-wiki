@@ -1,9 +1,9 @@
 ---
 type: topic
-aliases: [Building for agents, llms.txt, LLM-legible docs]
-first_seen: 2025-06-19
+aliases: [Building for agents, llms.txt, LLM-legible docs, writing for LLMs]
+first_seen: 2025-04-27
 last_updated: 2026-07-03
-sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[github-2026-07-03-nanochat-readme]]", "[[x-2026-04-02-llm-knowledge-bases]]"]
+sources: ["[[youtube-2025-06-19-software-is-changing]]", "[[github-2026-07-03-nanochat-readme]]", "[[x-2026-04-02-llm-knowledge-bases]]", "[[blog-2025-04-27-vibe-coding-menugen]]", "[[github-2025-08-21-rendergit-readme]]", "[[x-2025-11-18-reading-with-llms]]", "[[talk-2026-03-20-skill-issue]]", "[[github-2026-03-21-autoresearch-readme]]", "[[github-2026-04-04-llm-wiki-gist]]", "[[talk-2026-04-29-sequoia-ascent-2026]]", "[[blog-2026-04-30-sequoia-ascent-2026-summary]]"]
 related: ["[[vibe-coding]]", "[[llm-knowledge-bases]]"]
 ---
 # Building for agents
@@ -14,9 +14,33 @@ He suggests an `llms.txt` file, like `robots.txt`, that tells LLMs what a domain
 
 He likes tools where changing a URL makes something LLM-readable, such as gitingest and DeepWiki for GitHub repos ([[youtube-2025-06-19-software-is-changing]] @36:40, @37:12). Even though agents can click, he thinks it is still worth meeting them halfway ([[youtube-2025-06-19-software-is-changing]] @37:12, @37:48).
 
+**The MenuGen post (2025-04-27).** Everything a service tells the user, he writes, will be copy-pasted straight into an LLM, so it might as well talk to the LLM directly ([[blog-2025-04-27-vibe-coding-menugen]] §intro ¶Going forward). His suggestions are a CLI tool, a backend configurable with curl commands and docs in Markdown: "Don't talk to a developer." but "Instruct and empower their LLM." ([[blog-2025-04-27-vibe-coding-menugen]] §intro ¶Going forward). He also wants an opinionated, batteries-included platform with domain, hosting, authentication, payments, database and server functions preconfigured, the opposite of Vercel Marketplace, and for his next app is considering plain HTML, CSS and JavaScript with a Python backend ([[blog-2025-04-27-vibe-coding-menugen]] §intro ¶Going forward).
+
+**rendergit (README, 2025-08-21).** His [[rendergit]] renders a GitHub repo two ways: a browsable Human View, and an LLM View that gives the whole codebase as CXML text to paste into Claude or ChatGPT ([[github-2025-08-21-rendergit-readme]] §Basic usage, §Features). The README speaks of LLMs, Claude and ChatGPT, not of agents, and makes no argument; it is an example of a repo made LLM-readable, next to the gitingest and DeepWiki tools he praises in the YC talk ([[github-2025-08-21-rendergit-readme]] §Features; [[youtube-2025-06-19-software-is-changing]] @36:40).
+
 The nanochat README sends readers with questions to DeepWiki first ([[github-2026-07-03-nanochat-readme]] §intro). In his knowledge-base workflow he builds small tools and hands them to the LLM via CLI ([[x-2026-04-02-llm-knowledge-bases]] §Extra tools).
+
+**Writing for an LLM (X, 2025-11-18).** On the flip side of reading with LLMs, he says writers explaining something may increasingly shift from writing for another human to writing for an LLM, because once an LLM "gets it" it can target, personalise and serve the idea to its user; see [[writers-may-increasingly-write-for-llms]] ([[x-2025-11-18-reading-with-llms]] #1). The post speaks of LLMs and writers, not agents, docs or llms.txt ([[x-2025-11-18-reading-with-llms]] #1).
+
+**The customer is agents (Skill Issue, 2026-03-20).** After his home claw replaced six smart-home apps, he says those apps in a sense should not exist: everything should be exposed API endpoints, with agents as the glue that calls the tools ([[talk-2026-03-20-skill-issue]] @13:08, @13:41). He wants his treadmill's data through an API, not a web UI and a login flow ([[talk-2026-03-20-skill-issue]] @13:41). The industry has to reconfigure in many ways, he says, because "the customer is not the human anymore" but agents acting on behalf of humans ([[talk-2026-03-20-skill-issue]] @14:13).
+
+**Explaining to agents.** He says that a year or more earlier he would have made a video stepping through microGPT; he tried, but found it adds little, because anyone can ask their agent to explain 200 lines in various ways: "I'm not explaining to people anymore." ([[talk-2026-03-20-skill-issue]] @1:02:46). If you explain things to agents, they can route them to each person in their language with infinite patience; a skill instructs the agent how to teach, and he could script a microGPT curriculum as one ([[talk-2026-03-20-skill-issue]] @1:02:46, @1:03:20, @1:03:53). He still thinks he explains a little better than agents, but calls it a losing battle as models improve ([[talk-2026-03-20-skill-issue]] @1:03:53). Library documentation, he says, should be markdown for agents rather than HTML for humans ([[talk-2026-03-20-skill-issue]] @1:04:26). His job is now the few bits agents cannot produce, such as microGPT itself ([[talk-2026-03-20-skill-issue]] @1:04:59, @1:05:33). **Note:** this goes further than [[writers-may-increasingly-write-for-llms]] (2025-11-18), which said writers "may increasingly" write for LLMs; here he says he already explains to agents ([[x-2025-11-18-reading-with-llms]] #1; [[talk-2026-03-20-skill-issue]] @1:02:46).
+
+**program.md as a skill (autoresearch README, 2026-03-21).** In [[autoresearch]] the human writes `program.md`, the Markdown instructions that give the agents context, and he calls it essentially a super lightweight "skill" ([[github-2026-03-21-autoresearch-readme]] §intro, §Running the agent). The README also speaks to agents as readers: people can "have their agents reference" the parent nanochat repo, and for small machines he suggests pasting the guide and the full source into a coding agent ([[github-2026-03-21-autoresearch-readme]] §Platform support).
+
+**An idea file for your agent (gist, 2026-04-04).** The llm-wiki gist is designed to be copy-pasted to your own LLM agent (he names OpenAI Codex, Claude Code and OpenCode / Pi); its goal is the high-level idea, and the agent builds out the specifics with you ([[github-2026-04-04-llm-wiki-gist]] §intro). The document's only job, he says, is to communicate the pattern; the right way to use it is to share it with your agent and instantiate a version together ([[github-2026-04-04-llm-wiki-gist]] §Note). The search tool he recommends, qmd, has a CLI the LLM can shell out to and an MCP server it can use as a native tool ([[github-2026-04-04-llm-wiki-gist]] §Optional: CLI tools). **Note:** like `program.md` in autoresearch, which he calls a lightweight "skill", the gist is a text written for an agent to act on ([[github-2026-03-21-autoresearch-readme]] §Running the agent; [[github-2026-04-04-llm-wiki-gist]] §intro).
+
+**Agent-native infrastructure (Sequoia Ascent, 2026-04-29).** He says everything is still fundamentally written for humans and has to be rewritten; framework and library docs still tell him what to do, "This is my favorite pet peeve.", when what he wants to know is what to copy-paste to his agent ([[talk-2026-04-29-sequoia-ascent-2026]] @25:09, @25:41). Workloads should be decomposed into sensors and actuators over the world and described to agents first, and he keeps a lot of automation around data structures legible to LLMs ([[talk-2026-04-29-sequoia-ascent-2026]] @25:41, @26:15). MenuGen's trouble was not the code but deploying it on Vercel, stringing services together and configuring DNS; a good test of agent-native infrastructure would be prompting an LLM to build MenuGen and having it deployed without touching anything, the story on [[deploying-a-vibe-coded-app-is-harder-than-writing-it]] ([[talk-2026-04-29-sequoia-ascent-2026]] @26:15, @26:47). He expects agent representation for people and organisations, his agent talking to yours about meeting details ([[talk-2026-04-29-sequoia-ascent-2026]] @26:47, @27:20).
+
+**Making his talk legible to LLMs (blog, 2026-04-30).** Posting the Sequoia Ascent video, he says that as an experiment he fed an LLM all his recent blog posts and tweets, had it read the transcript and produce a summary and a cleaned-up transcript, and posts both for readers and also for LLMs, "so that my content is legible and available to them" ([[blog-2026-04-30-sequoia-ascent-2026-summary]] §intro). He used Codex 5.5, read the output and says "it reads ok without glaring mistakes"; the summary and transcript are the model's text, not his, and are not cited here ([[blog-2026-04-30-sequoia-ascent-2026-summary]] §intro). **Note:** he does not say how he checked it ([[blog-2026-04-30-sequoia-ascent-2026-summary]] §intro).
+
+## Claims
+- [[writers-may-increasingly-write-for-llms]] — writing for the LLM that serves the reader
 
 ## Related
 - [[vibe-coding]] — MenuGen's DevOps pain is where this argument starts
+- [[deploying-a-vibe-coded-app-is-harder-than-writing-it]] — the browser work an LLM cannot reach
 - [[llm-knowledge-bases]]
 - [[nanochat]]
+- [[rendergit]] — a repo's Human View and LLM View
+- [[claws]] — a persistent agent that glues home APIs together

@@ -1,0 +1,23 @@
+---
+type: claim
+stated_on: 2023-05-19
+confidence: stated
+sources: ["[[talk-2023-05-19-stanford-cs25-transformers]]"]
+supports: ["[[the-architecture-is-no-longer-the-bottleneck]]"]
+context: ["[[talk-2024-03-26-sequoia-making-ai-accessible]]", "[[talk-2024-09-05-no-priors-ep-80]]"]
+topic: "[[transformer-architecture]]"
+---
+# He would have called the Transformer a general-purpose, efficient, optimizable computer
+> "I probably would have called the Transformer a general purpose efficient optimizable computer" — [[talk-2023-05-19-stanford-cs25-transformers]] @59:18
+
+## Context
+Reading his own earlier tweets off a slide, which he says were written for general consumption and are a bit hyped, he argues the Transformer optimizes three properties at once: an expressive forward pass, possibly even meta-learning; optimizability thanks to residual connections and layer norms; and efficiency ([[talk-2023-05-19-stanford-cs25-transformers]] @58:12, @58:44). It is a shallow, wide computational graph suited to GPU parallelism; he thinks it was designed deliberately for GPUs, and he likes the earlier Neural GPU work that designs nets backwards from hardware constraints ([[talk-2023-05-19-stanford-cs25-transformers]] @58:44). In hindsight he would have used this name for the paper instead of "Attention Is All You Need" ([[talk-2023-05-19-stanford-cs25-transformers]] @59:18).
+
+Efficiency is less talked about but, he says, extremely important, because scale matters in deep learning and being efficient on current hardware means the model can be made bigger ([[talk-2023-05-19-stanford-cs25-transformers]] @1:03:35, @1:04:09). He calls the observation that RNNs can implement arbitrary programs a somewhat useless statement, since they are not optimizable or efficient ([[talk-2023-05-19-stanford-cs25-transformers]] @1:02:29).
+
+Earlier in the lecture he says the architecture has proven remarkably resilient: papers have tried changing its details and nothing sticks except moving the layer norms to the pre-norm position, so today's GPTs are basically the 2017 architecture ([[talk-2023-05-19-stanford-cs25-transformers]] @21:39, @22:11).
+
+## Related claims
+- **Note:** compatible with [[gpt-is-not-a-complicated-model]] (simple to write down) and [[ai-has-converged-on-one-architecture]] (why everyone copies it); neither link is set as support ([[talk-2023-05-19-stanford-cs25-transformers]] @59:18).
+- **Note:** in the Sequoia interview (published 2024-03-26) he again calls it remarkably resilient and designed for the GPU, but says it is probably not the final neural network; see [[the-transformer-is-probably-not-the-final-architecture]] ([[talk-2024-03-26-sequoia-making-ai-accessible]] @33:51, @35:30). Both can hold; no relation is set ([[talk-2023-05-19-stanford-cs25-transformers]] @21:39).
+- Supported by [[the-architecture-is-no-longer-the-bottleneck]]: in the No Priors interview (published 2024-09-05) he again calls the Transformer a general-purpose training computer, a differentiable computer, and says it has barely changed apart from RoPE ([[talk-2024-09-05-no-priors-ep-80]] @14:49, @15:24, @17:01); here it is a general-purpose computer and remarkably resilient ([[talk-2023-05-19-stanford-cs25-transformers]] @21:39, @59:18).
