@@ -2,6 +2,7 @@
 
 The last 20 page changes, newest first.
 
+- 2026-10-26 [[how-he-explains]] — updated: steps 3, 6, 7, 10 reworded to what the sources show; definition Note, small fixes (correction)
 - 2026-10-26 [[how-he-explains]] — created: eleven explaining moves compiled from the teaching methods and lectures (from [[youtube-2022-08-16-micrograd]] and 13 other sources)
 - 2026-10-25 [[llm-agents-over-time]] — updated: 2026-04-29 entry, link to the delegation claim (correction)
 - 2026-10-25 [[llms-want-to-imitate-not-succeed]] — updated: prompt strings verbatim (correction)
@@ -21,4 +22,3 @@ The last 20 page changes, newest first.
 - 2026-10-25 [[activation-functions]] — updated: GELU paper title unquoted (correction)
 - 2026-10-25 [[agentic-engineering-keeps-the-quality-bar-while-going-faster]] — updated: vibe coding described, not kept, as floor-raising (correction)
 - 2026-10-25 [[building-for-agents]] — updated: his Codex verdict now quoted (correction)
-- 2026-10-25 [[microgpt]] — updated: two-sentence quote cut to one (correction)

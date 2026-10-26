@@ -10,7 +10,7 @@ How he builds, debugs, explains and evaluates. Alphabetical. Maintained by inges
 - [[diagnose-under-or-overfitting|Diagnose under- or overfitting]] — overfit a small batch first, compare train and dev loss, match parameter counts before comparing architectures
 - [[digital-hygiene-checklist|Digital hygiene checklist]] — fifteen practices from password manager and hardware keys to a network monitor and work-life separation
 - [[fit-your-own-scaling-law|Fit your own scaling law]] — fix a FLOP budget, sweep depth, fit the optima, read off the tokens-to-parameters ratio, check the family does not cross
-- [[how-he-explains|How he explains]] — blank file, tiny numbers, one piece at a time, predict the loss, show shapes, leave the bug in, let the learner try, compare with a reference, analogies, say what is left out
+- [[how-he-explains|How he explains]] — blank file, tiny numbers, one piece at a time, predict the loss, show shapes, show a bug on purpose, invite the learner to try, compare with a reference, analogies, say what is left out
 - [[learn-by-building-and-explaining|Learn by building and explaining]] — rebuild without copy-paste, find the first-order term, ramp up, let the learner try, explain to find the gaps
 - [[learning-rate-sweep|Learning-rate sweep]] — exponentially spaced rates over 1,000 steps, read the valley in the plot
 - [[llm-wiki-workflow|LLM wiki workflow]] — collect, compile, browse, ask, file back, lint
