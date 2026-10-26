@@ -44,3 +44,4 @@ How he guards against silent broadcasting bugs: walk both shapes through the rul
 - [[wavenet-hierarchical-model]] — the shapes printed layer by layer
 - [[deep-learning-is-largely-shape-gymnastics]]
 - [[how-he-explains]] — showing the shapes as one of his explaining moves
+- [[be-careful-with-shapes-and-be-explicit]] — the rule drawn from this method

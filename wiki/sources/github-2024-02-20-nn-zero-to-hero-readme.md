@@ -37,3 +37,4 @@ He describes Zero to Hero as a course on neural networks that starts at the basi
 - [[tokenization-free-modeling-would-be-amazing-but-is-unproven]]
 - [[minbpe]]
 - [[how-he-explains]]
+- [[invite-the-learner-to-try-first]]

@@ -51,3 +51,4 @@ Continuing the makemore character-level MLP, he says the point of staying at the
 - [[wavenet-hierarchical-model]]
 - [[llm-c-was-not-yet-careful-enough-about-training-stability]]
 - [[how-he-explains]]
+- [[predict-the-number-before-you-run]]

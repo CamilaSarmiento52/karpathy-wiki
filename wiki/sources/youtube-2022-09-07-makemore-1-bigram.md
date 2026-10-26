@@ -53,3 +53,5 @@ He introduces makemore, a character-level language model trained on a file of ab
 - [[spelled-out-build-from-scratch]]
 - [[check-shapes-and-broadcasting]]
 - [[how-he-explains]]
+- [[be-careful-with-shapes-and-be-explicit]]
+- [[show-the-instructive-bug-failing-then-explain-it]]

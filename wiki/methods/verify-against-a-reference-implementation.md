@@ -56,3 +56,4 @@ When he reimplements something that already exists, he treats matching the exist
 - [[llama2c]] — C against Python
 - [[youtube-2024-06-09-reproduce-gpt-2]]
 - [[port-a-pytorch-model-to-c-and-cuda]]
+- [[check-against-a-known-good-reference]] — the rule drawn from this method

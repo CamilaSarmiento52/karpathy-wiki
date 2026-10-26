@@ -43,3 +43,5 @@ He pauses the makemore series for one lecture to replace PyTorch's `loss.backwar
 - [[makemore]]
 - [[micrograd]]
 - [[how-he-explains]]
+- [[be-careful-with-shapes-and-be-explicit]]
+- [[build-it-yourself-to-understand-it]]

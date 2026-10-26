@@ -77,3 +77,10 @@ def test_missing_voice_page_fails(tmp_path):
     root = wiki(tmp_path, {build_agent.VOICE: None})
     with pytest.raises(build_agent.BuildError, match="voice page missing"):
         build_agent.render(root, ".", "h")
+
+
+def test_rules_are_short_and_point_to_their_pages(tmp_path):
+    text = build_agent.render(wiki(tmp_path), ".", "h")
+    assert "Predict first." not in text  # In practice stays on the page
+    assert "Page: `./wiki/principles/predict-first.md`" in text
+    assert "do not attribute it to him" in text

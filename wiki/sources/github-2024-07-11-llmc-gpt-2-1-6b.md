@@ -48,3 +48,4 @@ He reproduces the full 1558M GPT-2 of OpenAI's February 2019 release in llm.c, a
 - [[transformer-architecture]]
 - [[pretraining-and-finetuning]]
 - [[pytorch]]
+- [[report-a-comparison-with-its-setting-and-caveats]]

@@ -30,3 +30,5 @@ How he says he learns and teaches technical material: build it from scratch, fin
 - [[build-and-publish-projects]] — his other account of learning on demand
 - [[education-is-building-ramps-to-knowledge]]
 - [[how-he-explains]] — the moves he makes when he explains, compiled from the lectures
+- [[build-it-yourself-to-understand-it]] — the rule drawn from this method
+- [[invite-the-learner-to-try-first]] — the rule: invite the learner to try a step first

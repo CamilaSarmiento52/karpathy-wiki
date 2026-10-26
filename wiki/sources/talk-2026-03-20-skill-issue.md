@@ -61,3 +61,5 @@ He says that in December something flipped: he went from writing about 80% of hi
 - [[vibe-coding-over-time]]
 - [[llm-agents-over-time]]
 - [[llm-self-improvement-over-time]]
+- [[check-model-written-code-before-you-trust-it]]
+- [[surface-assumptions-and-ask-when-unclear]]

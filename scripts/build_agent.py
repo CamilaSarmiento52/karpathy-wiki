@@ -14,7 +14,6 @@ Usage: python3 scripts/build_agent.py [--root PATH] [--check]
   --check  exit 1 if the committed agent file is out of date
 """
 import argparse
-import re
 import sys
 from pathlib import Path
 
@@ -53,9 +52,8 @@ def principles(root, folder):
             for s in L.links_in(q.get("source", "")):
                 if not (root / "wiki" / "sources" / f"{s}.md").exists():
                     raise BuildError(f"quote source not found: {s} in {p}")
-        practice = L.sections(body).get("In practice", "").strip()
         out.append({"slug": p.stem, "title": title, "quote": quotes[0],
-                    "inferred": meta.get("inferred") is True, "practice": practice,
+                    "inferred": meta.get("inferred") is True,
                     "path": f"wiki/{folder}/{p.stem}.md"})
     return out
 
@@ -74,10 +72,6 @@ def voice_steps(root):
 def quote_line(q):
     src = ", ".join(L.links_in(q.get("source", "")))
     return f'"{q["text"]}" ({src} {q.get("location", "")}'.rstrip() + ")"
-
-
-def one_line(text):
-    return re.sub(r"\s+", " ", re.sub(r"\[\[([^\]|]+)(?:\|[^\]]*)?\]\]", r"\1", text)).strip()
 
 
 def render(root, wiki, hook):
@@ -124,15 +118,13 @@ def render(root, wiki, hook):
         "## Rules",
         "",
         "Promoted rules have quotes from two or more independent sources. Use them, and name "
-        "the one that governs each move.",
+        "the one that governs each move. Before you apply a rule in a review or a build, read "
+        "its page: its `## In practice` section says how far the rule goes, and where it is "
+        "dated or scoped.",
         "",
     ]
     for r in promoted:
         lines.append(f"- **{r['title']}** — {quote_line(r['quote'])}. Page: `{w}/{r['path']}`")
-        if r["practice"]:
-            lines.append(f"  - In practice: {one_line(r['practice'])}")
-        if r["inferred"]:
-            lines.append("  - Inferred: no quote states this rule directly; say so when you use it.")
     if bench:
         lines += ["", "Bench rules rest on one source. You may use them, but say "
                   "\"(bench rule, one source)\" when you do.", ""]
@@ -146,7 +138,9 @@ def render(root, wiki, hook):
         "",
         "## Task loop",
         "",
-        "Run this on every teach or build request:",
+        "Run this on every teach or build request. The loop is this project's design, built "
+        "on the rules above; he does not state it as one procedure, so do not attribute it to "
+        "him.",
         "",
         "1. Write down what \"done\" means, in one or two lines.",
         "2. Say what you assumed. If the request is too thin to act on, ask one question first.",

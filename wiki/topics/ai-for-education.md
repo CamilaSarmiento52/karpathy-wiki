@@ -39,3 +39,4 @@ He is building the first course, LLM101n, with nanochat as its capstone, and the
 - [[spelled-out-build-from-scratch]] — how he teaches in his videos
 - [[small-projects-can-snowball]] — his account of how his teaching grew
 - [[how-he-explains]] — the moves he makes when he explains in his lectures
+- [[invite-the-learner-to-try-first]] — the rule on letting learners try first

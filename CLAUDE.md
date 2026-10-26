@@ -236,7 +236,9 @@ One-paragraph definition in his framing, cited.
 7. If a claim relates to an existing claim, pick the weakest true link: `supports`,
    `extends`, or `contradicts` only if both cannot hold. For `extends` and `contradicts`,
    create or update `wiki/timeline/<topic>.md`.
-8. Principles are not extracted until phase 4. Do not write principle pages during ingest yet.
+8. If the new source has a verbatim quote that supports a principle, note it in the log entry
+   ("supports [[principle-slug]]"); adding it to a principle and promoting a bench rule
+   follows §7 Rules and agent, not ingest.
 9. Add each new page to its type's file in `wiki/index/`, prepend to `hot.md`, append to
    `log.md`.
 10. Run `python3 scripts/lint_check.py` and fix every finding before moving on.
@@ -276,6 +278,24 @@ Write it as an explanation; keep it traceable.
    to `wiki/index/syntheses.md`, update hot and log. A synthesis is never evidence: no page
    may cite a synthesis as a source, and its claims must trace to source pages like any
    other page.
+
+### Rules and agent
+
+Principles (`wiki/principles/`, `_bench/`) are his working rules, extracted from methods,
+claims and topics, each backed by verbatim quotes (phase 4).
+
+1. A rule is **promoted** only with quotes from 2+ independent sources: different source
+   pages that are not the same text and not AI-written (`scripts/independence.json` lists
+   same-text and AI-written sources; lint enforces it). One source: **bench**. No quote
+   states it directly: `inferred: true`, the body says so, and it stays on the bench
+   whatever its quotes (lint refuses to promote an inferred rule).
+2. The title claims no more than the quotes: no absolutes, and views tied to a time are
+   dated in `## In practice`.
+3. Every new or changed principle is checked by a fresh reader against raw before it is
+   kept, like any page.
+4. After any principle or `wiki/methods/how-he-explains.md` changes, regenerate the agent:
+   `python3 scripts/build_agent.py` (`--check` fails if it is stale), and, if installed at
+   user level, `python3 scripts/install.py`. Never edit `.claude/agents/karpathy.md` by hand.
 
 ### Lint
 

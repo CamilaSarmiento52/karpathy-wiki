@@ -48,3 +48,6 @@ He starts from a blank Jupyter notebook and rebuilds micrograd, the scalar-value
 - [[a-buggy-neural-net-can-still-train-on-a-simple-problem]]
 - [[neural-net-training-should-not-be-complicated]]
 - [[how-he-explains]]
+- [[invite-the-learner-to-try-first]]
+- [[predict-the-number-before-you-run]]
+- [[show-the-instructive-bug-failing-then-explain-it]]

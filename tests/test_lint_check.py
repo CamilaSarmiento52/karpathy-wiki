@@ -373,3 +373,15 @@ def test_inferred_principle_must_say_so(tmp_path, capsys):
 def test_principle_quote_needs_location(tmp_path, capsys):
     code, out = run(tmp_path, capsys, principle_repo("bench", [(Q_TALK[0], "talk-a", "")]))
     assert "without a location" in out
+
+
+def test_inferred_principle_cannot_be_promoted(tmp_path, capsys):
+    code, out = run(tmp_path, capsys, principle_repo(
+        "promoted", [Q_TALK, Q_BLOG], inferred="true", body="Inferred: closest quotes only."))
+    assert "inferred principle cannot be promoted" in out
+
+
+def test_inferred_bench_principle_with_two_sources_is_not_promotable(tmp_path, capsys):
+    code, out = run(tmp_path, capsys, principle_repo(
+        "bench", [Q_TALK, Q_BLOG], inferred="true", body="Inferred: closest quotes only."))
+    assert "promote it" not in out

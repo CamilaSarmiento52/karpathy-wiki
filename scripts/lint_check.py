@@ -290,10 +290,13 @@ def main(root):
                         continue
                     independent.add(same_text.get(s, s))
             status, under_bench = meta.get("status"), "_bench" in p.relative_to(wiki).parts
+            inferred = meta.get("inferred") is True
+            if status == "promoted" and inferred:
+                findings.append(f"inferred principle cannot be promoted (no quote states it): {rel(p)}")
             if status == "promoted" and len(independent) < 2:
                 findings.append(f"promoted principle needs quotes from 2+ independent sources "
                                 f"(has {len(independent)}): {rel(p)}")
-            if status == "bench" and len(independent) >= 2:
+            if status == "bench" and len(independent) >= 2 and not inferred:
                 findings.append(f"bench principle has 2+ independent sources, promote it: {rel(p)}")
             if (status == "bench") != under_bench:
                 findings.append(f"principle status {status!r} in wrong folder: {rel(p)}")

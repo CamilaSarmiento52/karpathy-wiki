@@ -73,3 +73,4 @@ In the CUDA MODE keynote he gives examples of the trade: CUDA streams to overlap
 - [[github-2024-09-24-llmc-readme]]
 - [[microgpt]] — 200 lines, no dependencies
 - [[how-he-explains]] — how he explains the code in the lectures
+- [[cut-complexity-that-does-not-pay-for-itself]] — the rule: complexity must pay for itself

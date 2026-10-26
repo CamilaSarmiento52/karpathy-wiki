@@ -71,3 +71,4 @@ A comprehensive general-audience lecture on what sits behind the ChatGPT text bo
 - [[use-llms-as-tools-and-check-their-work]]
 - [[longer-context-windows-alone-will-not-scale-to-long-multimodal-tasks]]
 - [[llm-self-improvement-over-time]]
+- [[check-model-written-code-before-you-trust-it]]

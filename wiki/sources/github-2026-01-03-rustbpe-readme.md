@@ -33,3 +33,4 @@ rustbpe is a lightweight Rust library with Python bindings for training GPT-styl
 - [[verify-against-a-reference-implementation]]
 - [[coding-models-are-weak-at-code-never-written-before]]
 - [[vibe-coding]]
+- [[check-against-a-known-good-reference]]

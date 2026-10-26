@@ -36,3 +36,4 @@ The README presents llm.c as LLMs in simple, pure C/CUDA without PyTorch or cPyt
 - [[compute-efficiency]]
 - [[nn-zero-to-hero]]
 - [[port-a-pytorch-model-to-c-and-cuda]]
+- [[cut-complexity-that-does-not-pay-for-itself]]

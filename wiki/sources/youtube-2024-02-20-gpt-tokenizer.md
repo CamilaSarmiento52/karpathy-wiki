@@ -40,3 +40,6 @@ A 2h13m lecture on tokenization, which he calls his least favourite part of work
 - [[spelled-out-build-from-scratch]]
 - [[small-hackable-educational-code]]
 - [[how-he-explains]]
+- [[check-against-a-known-good-reference]]
+- [[invite-the-learner-to-try-first]]
+- [[show-the-instructive-bug-failing-then-explain-it]]
