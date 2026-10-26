@@ -68,7 +68,9 @@ after the remaining sources have been compiled.
 A second fresh-reader check (`staging/phase-3-question-validation-2.md`) found all three
 questions now answered with Sufficient coverage and the negative control refused; 18
 citations checked against raw, all correct. It flagged three gaps on
-`llm-agents-over-time`, fixed and logged the same day. **Still open:** the user's own
+`llm-agents-over-time`, fixed and logged the same day. On 2026-10-26 the Query procedure was changed
+to answer as a plain-language explanation with paragraph-end citations (see
+`implement.md`); the user's check uses that format. **Still open:** the user's own
 fresh-session run of the questions and the two-citation click-through per answer. The
 phase is not done until the user has done that.
 

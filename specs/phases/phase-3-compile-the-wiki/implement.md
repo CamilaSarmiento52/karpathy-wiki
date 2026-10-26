@@ -291,3 +291,18 @@ host's or paper's words given to him; none was a number not in the source. Three
 of error recurred across batches and became rules or tools rather than one-off fixes:
 intervals computed from published dates (CLAUDE.md §2), AI-written text in his sources
 (§3), and inline quotes lint could not see (`quote_check.py`).
+
+## Query answer format (2026-10-26)
+
+After batch 4 the user found query answers unhelpful: a fresh session answered the
+backprop question as a bullet inventory with a citation on every line, which tells you
+where things are written rather than explaining them. That was the old Query procedure
+doing what it said ("answer with citations to wiki source pages", with invariant 3's
+sentence-level citations). CLAUDE.md §7 Query now asks for a plain-language explanation
+first, in short paragraphs, citations at the end of each paragraph or in a Sources list,
+and a closing "More detail" line linking the wiki pages. Wiki pages are unchanged; the
+evidence rules (invariants 7–9) still apply to every statement in an answer. A fresh-reader
+test of two gate questions under the new procedure produced readable explanations; it also
+wrote "December 2025" where he says only "December", so the procedure now says never to add
+a year he did not give. The fuller teaching voice (his style, built up from scratch) is
+still phase 4.

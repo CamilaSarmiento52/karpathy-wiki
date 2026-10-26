@@ -15,7 +15,8 @@ Project docs: `specs/mission.md` (why), `specs/tech-stack.md` (how), `specs/road
 2. **You own `wiki/`.** Humans read it; corrections arrive as edits to this file, then a
    re-run of ingest or lint.
 3. **Every factual sentence cites a source page.** Every source page cites its raw file.
-   Opinions, connections and summaries you add yourself are labelled (see §5).
+   Opinions, connections and summaries you add yourself are labelled (see §5). Query
+   answers are explanations, not pages: they cite per paragraph (see §7 Query).
 4. **No orphans.** Every page except the fixed files (`index.md`, the type files in
    `wiki/index/`, `hot.md` and `log.md`) has at least one inbound wikilink from another
    content page. Links from fixed files do not count.
@@ -244,14 +245,37 @@ One-paragraph definition in his framing, cited.
 
 ### Query
 
+A query answer is for a person who wants to understand something, not a page of evidence.
+Write it as an explanation; keep it traceable.
+
 1. Read `wiki/index.md` and the type files it links, then the relevant topic, claim and
    timeline pages.
 2. Open the raw file only when you need exact wording or a timestamp.
-3. Answer with citations to wiki source pages. If the wiki has nothing, say "the wiki has
-   nothing on this" and stop; do not answer from general knowledge as if it were his view.
-4. If the answer is reusable, save it as `wiki/syntheses/<slug>.md`, link it from the pages
-   it cites, add it to `wiki/index/syntheses.md`, update hot and log. A synthesis is never evidence: no page may cite a
-   synthesis as a source, and its claims must trace to source pages like any other page.
+3. If the wiki has nothing, say "the wiki has nothing on this" and stop; do not answer from
+   general knowledge as if it were his view. If it covers only part, answer that part and
+   say plainly what is missing.
+4. **Explain first.** Plain-language prose, in short paragraphs, the way a good teacher
+   would: start from the core idea, build up in order, use his own examples and analogies,
+   define any term before using it. Say what he thinks and why, not where it is written.
+   No bullet-point inventories of what each source says; use a short list only for things
+   that really are parallel (steps, a list of failures). Keep his hedges: "he suspects" stays
+   "he suspects". Give dates as the sources give them: never add a year he did not say
+   ("in December", not "in December 2025"). Mark your own connections as yours ("Putting
+   these together, …").
+5. **Cite at the end, not on every line.** End each paragraph with its sources in one
+   parenthesis, e.g. `([[youtube-2022-08-16-micrograd]] @41:47, @1:04:28)`, or end the
+   answer with a `Sources` list of the source pages and locations used. Every factual
+   statement must still be supported by a cited passage at that strength (invariants 8–9);
+   only the placement changes. Quotes follow invariant 7.
+6. **Close with where to go deeper**: one line linking the two or three wiki pages that hold
+   the full evidence, e.g. "More detail: [[backpropagation]], [[micrograd]]."
+7. For a question about change over time, tell it as a dated story (2023 → 2024 → 2026) and
+   say whether he changed his mind or only added to his view, as the timeline page does.
+8. If the answer is reusable, save it as `wiki/syntheses/<slug>.md` in the same format (its
+   paragraph-end citations count as its evidence), link it from the pages it cites, add it
+   to `wiki/index/syntheses.md`, update hot and log. A synthesis is never evidence: no page
+   may cite a synthesis as a source, and its claims must trace to source pages like any
+   other page.
 
 ### Lint
 
