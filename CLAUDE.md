@@ -297,6 +297,24 @@ claims and topics, each backed by verbatim quotes (phase 4).
    `python3 scripts/build_agent.py` (`--check` fails if it is stale), and, if installed at
    user level, `python3 scripts/install.py`. Never edit `.claude/agents/karpathy.md` by hand.
 
+### Scheduled operations (phase 5)
+
+Both run as local desktop-app scheduled tasks on the user's Mac, because `raw/` never
+leaves it. They work only inside this repo, commit locally, and never push.
+
+- **Weekday run** (07:00 Lisbon): `scripts/daily.py` runs the collectors and writes
+  `reports/collect-DATE.json`. If it lists new raw files, run `/karpathy-ingest <raw path>`
+  for each, oldest first, one at a time (each verified and committed on its own). Then
+  `scripts/brief.py` writes `reports/briefs/DATE.md` when there is news, and the run sends
+  a short notification only then.
+- **Sunday lint** (09:00 Lisbon): `scripts/daily.py --weekly` (adds talk search), then §7
+  Lint: structural lint, `quote_check.py`, `build_agent.py --check`, a fresh reader on every
+  page changed in the past week, and any bench rule lint reports as promotable is checked
+  and promoted (agent regenerated, user-level copy reinstalled). Append the `lint` entry to
+  `log.md`; `brief.py` includes it.
+- New talk search results are never ingested automatically: they go to the brief's "Needs
+  you" list for the user's triage.
+
 ### Lint
 
 1. Run `python3 scripts/lint_check.py` (structural lint). Fix every finding.

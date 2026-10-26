@@ -106,9 +106,10 @@ a `contradicts` link a real conflict) need a reading pass.
 
 | Operation | Trigger | Reads | Writes |
 |---|---|---|---|
-| ingest | collectors (scheduled) or `/karpathy-ingest <url>` | new raw files, index, hot, related pages | pages, source page, index, hot, log; bench promotions |
+| ingest | weekday scheduled run (`daily.py`, then `/karpathy-ingest <raw path>` per new file) or `/karpathy-ingest <url>` | new raw files, index, hot, related pages | pages, source page, index, hot, log (fields read by `brief.py`); principle quotes and promotions; a fresh verifier's report; one local commit per source |
 | query | a free question in Claude Code | index, relevant pages, raw on demand | optional synthesis page, log |
-| lint | Sunday schedule or on request | all pages | fixes, promotions/demotions, log report; regenerates sub-agent if rules changed |
+| lint | Sunday scheduled run (`daily.py --weekly` first) or on request | all pages; a fresh reader on the week's changed pages | fixes, promotions, log report; regenerates the agent and reinstalls the user-level copy if rules changed |
+| brief | end of the weekday run | `reports/collect-DATE.json`, the day's log entries | `reports/briefs/DATE.md` only when there is news |
 | extract-rules | end of phase 4, then by lint | topics, claims, methods | principles pages |
 
 ## Agent layer

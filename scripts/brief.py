@@ -88,9 +88,10 @@ def build(root, date):
                 if f.get(field):
                     parts.append(f"{field}: {'; '.join(f[field])}")
             lines.append(f"- From [[{slug}]]: " + (" · ".join(parts) or "see the log entry"))
+    fixed = sum(len(f.get("bullets", [])) for kind, _, f in entries if kind == "correction")
+    if fixed:
+        lines.append(f"- Corrections: {fixed} page fix(es) logged today, see `wiki/log.md`.")
     for kind, slug, f in entries:
-        if kind == "correction":
-            lines.append(f"- Corrections: {len(f.get('bullets', []))} page(s), see `wiki/log.md`.")
         if kind == "lint":
             lines.append(f"- Sunday lint: {'; '.join(f.get('bullets', []) or f.get('notes', [])) or 'see the log'}")
     if not ingests and not any(k in ("correction", "lint") for k, _, _ in entries):

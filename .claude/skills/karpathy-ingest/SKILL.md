@@ -5,7 +5,7 @@ argument-hint: <url | raw/<medium>/<id>.md>
 ---
 Ingest this into the karpathy-wiki: $ARGUMENTS
 
-**Where to work.** All work happens in the karpathy-wiki repo. If the current folder is not that repo, read `~/.claude/agents/karpathy.md`, find the wiki path in its Grounding section, and `cd` there. Use the repo's `.venv/bin/python` for every script. Read `CLAUDE.md` in full before starting. Its §7 Ingest procedure and invariants are the rules; this skill only adds the steps around them.
+**Where to work.** All work happens in a karpathy-wiki repo. If the current folder has `CLAUDE.md`, `wiki/index.md` and `scripts/fetch_one.py`, it is the repo: work here and nowhere else. Otherwise read `~/.claude/agents/karpathy.md`, find the wiki path in its Grounding section, and `cd` there. Use the repo's `.venv/bin/python` for every script. Read `CLAUDE.md` in full before starting. Its §7 Ingest procedure and invariants are the rules; this skill only adds the steps around them.
 
 ## 1. Get the raw file
 
