@@ -22,3 +22,6 @@ __pycache__/
 
 # phase 4: code the karpathy agent builds while teaching
 playground/
+
+# phase 5: local run reports, state and briefs (operational, this Mac only)
+reports/

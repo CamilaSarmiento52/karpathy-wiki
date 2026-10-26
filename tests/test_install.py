@@ -49,6 +49,15 @@ def test_uninstall_removes_only_what_it_created(tmp_path):
     other = home / ".claude/skills/someone-else"
     other.mkdir()
     removed = install.uninstall(root, home)
-    assert len(removed) == 4 and other.exists()
+    assert len(removed) == len(install.SKILLS) + 2 and other.exists()
     assert not (home / ".claude/agents/karpathy.md").exists()
     assert install.uninstall(root, home) == []
+
+
+def test_refuses_to_repoint_an_install_from_another_copy(tmp_path):
+    home = tmp_path / "home"
+    install.install(repo(tmp_path / "one"), home)
+    other = repo(tmp_path / "two")
+    with pytest.raises(SystemExit, match="another copy"):
+        install.install(other, home)
+    assert install.install(other, home, force=True)
