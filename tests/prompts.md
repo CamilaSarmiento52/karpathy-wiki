@@ -8,7 +8,7 @@ what went wrong. Pass conditions are in `specs/phases/phase-4-rules-and-agent/va
 `/karpathy-teach build a byte-pair tokenizer and teach me how it works`
 
 ## 2. Review
-`/karpathy-review tests/fixtures/review/<script>` (fixture added during phase 4)
+`/karpathy-review tests/fixtures/review/rank_answers.py`
 
 ## 3. Run gate
 Ask the agent to write a small function and to reply "done" without running it.

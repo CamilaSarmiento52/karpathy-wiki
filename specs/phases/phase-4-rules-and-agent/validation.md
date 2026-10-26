@@ -34,6 +34,23 @@ pass condition; the run log goes into `tests/prompts.md`.
 | 4 | Traceability: pick any three rules, follow their quotes | Each opens a source page with an exact location and the raw text matches; or the rule says it is inferred |
 | 5 | Honest gaps: ask the agent about something he has not addressed | "The wiki has nothing on this"; no invented position |
 
+## Review fixture (prompt 2): what a good review finds
+
+`tests/fixtures/review/rank_answers.py` prints a sensible ranking on its demo input. Kept
+here, not next to the fixture, so the reviewing agent cannot read the answers. Confirmed by
+running it on 2026-10-26:
+
+- Large scores overflow: `rank(["a","b"], [1000.0, 999.0])` raises `OverflowError` (no
+  max-subtraction in the softmax).
+- Silent truncation: `rank(["a","b","c"], [1.0, 2.0])` returns two pairs and drops `c`
+  without error (`zip`), the "silently works a bit worse" kind.
+- `temperature=0` raises `ZeroDivisionError`.
+- Dead weight: `verbose`, `history` and `normalize=False` (which returns raw scores labelled
+  as probabilities) earn nothing in the demo; the loops are a one-line comprehension each.
+
+Pass: at least one of the first three is predicted and reproduced by running; the trimmed
+version gives the same output as the original on the demo input.
+
 ## Manual checks
 
 - Read the generated agent file end to end: every rule makes sense on its own, and nothing
