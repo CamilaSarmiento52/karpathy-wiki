@@ -40,3 +40,4 @@ A 56-minute lecture continuing the makemore character-level language model (@00:
 - [[pytorch-documentation-is-unreliable]]
 - [[deep-learning-is-largely-shape-gymnastics]]
 - [[makemore]]
+- [[how-he-explains]]

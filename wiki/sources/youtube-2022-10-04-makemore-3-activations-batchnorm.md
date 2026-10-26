@@ -50,3 +50,4 @@ Continuing the makemore character-level MLP, he says the point of staying at the
 - [[makemore]]
 - [[wavenet-hierarchical-model]]
 - [[llm-c-was-not-yet-careful-enough-about-training-stability]]
+- [[how-he-explains]]

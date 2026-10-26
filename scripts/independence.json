@@ -1,0 +1,11 @@
+{
+  "_doc": "Read by lint_check.py for principle promotion (CLAUDE.md §3, phase 4 plan). same_text: source pages that carry the same text and count as one source. ai_written: sources partly or wholly written by a model, mapped to the only locations that are his (empty list = none).",
+  "same_text": [
+    ["blog-2025-10-01-animals-vs-ghosts", "x-2025-10-01-sutton-podcast"],
+    ["talk-2026-04-29-sequoia-ascent-2026", "blog-2026-04-30-sequoia-ascent-2026-summary"]
+  ],
+  "ai_written": {
+    "github-2026-03-08-autoresearch-session-report": [],
+    "blog-2026-04-30-sequoia-ascent-2026-summary": ["§intro"]
+  }
+}

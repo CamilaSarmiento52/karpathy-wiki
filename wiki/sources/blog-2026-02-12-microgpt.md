@@ -57,3 +57,4 @@ He calls microgpt an art project: one file of 200 lines of pure Python with no d
 - [[gpt-is-not-a-complicated-model]]
 - [[neural-net-training-should-not-be-complicated]]
 - [[micrograd-is-all-you-need-everything-else-is-efficiency]]
+- [[how-he-explains]]

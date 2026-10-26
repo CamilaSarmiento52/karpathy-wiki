@@ -29,3 +29,4 @@ How he says he learns and teaches technical material: build it from scratch, fin
 - [[micrograd]] — his example of a first-order term
 - [[build-and-publish-projects]] — his other account of learning on demand
 - [[education-is-building-ramps-to-knowledge]]
+- [[how-he-explains]] — the moves he makes when he explains, compiled from the lectures

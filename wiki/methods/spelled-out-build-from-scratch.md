@@ -77,3 +77,4 @@ The same approach appears as a plan in the [[llm101n]] README: build everything 
 - [[build-nanogpt]]
 - [[llm101n]] — planned, not yet built
 - [[microgpt]] — six gist revisions, one component each
+- [[how-he-explains]] — the explaining moves across his lectures, compiled

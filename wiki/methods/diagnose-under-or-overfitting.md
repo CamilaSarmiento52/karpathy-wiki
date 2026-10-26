@@ -39,3 +39,4 @@ Step 2 again at GPT-2 scale: before real training he overfits a single 4 × 32 b
 - [[youtube-2022-09-12-makemore-2-mlp]]
 - [[makemore]]
 - [[youtube-2024-06-09-reproduce-gpt-2]]
+- [[how-he-explains]] — toy inputs and bugs left in as explaining moves

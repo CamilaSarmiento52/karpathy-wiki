@@ -83,3 +83,4 @@ A two-and-a-half-hour interview with Dwarkesh Patel, who asks the questions and 
 - [[verifiability-drives-the-jagged-frontier]]
 - [[autoresearch-found-real-improvements-to-nanochat]]
 - [[he-now-delegates-most-coding-to-agents]]
+- [[how-he-explains]]

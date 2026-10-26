@@ -67,3 +67,4 @@ He calls the GPT-2 record run of 2026-01-31 "a nicely uneventful run of training
 - [[github-2024-06-12-llmc-gpt-2-774m]]
 - [[llm-c-was-not-yet-careful-enough-about-training-stability]]
 - [[nanochat]] — the d34 run's curves and resumed crash
+- [[how-he-explains]] — predicting the loss at init as one of his explaining moves

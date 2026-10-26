@@ -36,3 +36,4 @@ He describes Zero to Hero as a course on neural networks that starts at the basi
 - [[a-lot-of-llm-oddness-traces-back-to-tokenization]]
 - [[tokenization-free-modeling-would-be-amazing-but-is-unproven]]
 - [[minbpe]]
+- [[how-he-explains]]
